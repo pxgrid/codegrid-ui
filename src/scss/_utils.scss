@@ -1,0 +1,50 @@
+
+
+// clearfix
+// ========================================================================== */
+@mixin clearfix () {
+  *zoom: 1;
+  &:before,
+  &:after {
+    content: "";
+    display: table; }
+  &:after { clear: both; }
+}
+
+// resetLink
+// ========================================================================== */
+@mixin resetLink {
+  color: inherit;
+}
+
+// wordbreak
+// ========================================================================== */
+@mixin avoidselect {
+  -webkit-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none;
+}
+
+// wordbreak
+// ========================================================================== */
+@mixin wordbreak () {
+  white-space: normal;
+  word-break: break-word;
+  word-break: break-all;
+  hyphens: auto;
+}
+
+
+// tableToBlock
+// ========================================================================== */
+@mixin tableToBlock () {
+  table, tbody, tr{
+    @include clearfix();
+    display: block;
+  }
+  th, td{
+    float: left;
+    clear: left;
+  }
+}

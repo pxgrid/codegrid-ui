@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.eot');
+  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('embedded-opentype'),
+    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
+    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
+    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="<%= prefix %>-"], [class*=" <%= prefix %>-"] {
+  font-family: "<%= fontName %>";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* For With CJK Text =========== */
+  position: relative;
+  top: -0.1em;
+}
+
+<% _.each ( glyphs, function( glyph ) { %>.<%= prefix %>-<%= glyph.name %>:before { content: "\<%= glyph.codepoint.toString( 16 ).toUpperCase() %>"; }
+<% } ); %>
+
+@function getValue ( $assoc, $key ) {
+  @each $pair in $assoc {
+    @if nth( $pair, 1 ) == $key {
+      @return nth( $pair, 2 );
+    }
+  }
+  @return null;
+}
+
+$icons: (
+  <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %> "\<%= glyph.codepoint.toString( 16 ).toUpperCase() %>",
+  <% } ); %>
+);
+
+@mixin icon ( $name ) {
+  content: getValue( $icons, $name );
+  font-family: "<%= fontName %>";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

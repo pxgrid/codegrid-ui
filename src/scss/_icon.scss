@@ -1,0 +1,110 @@
+@font-face {
+  font-family: "codegrid-icon";
+  src: url('../font/codegrid-icon.eot');
+  src: url('../font/codegrid-icon.eot?#iefix') format('embedded-opentype'),
+    url('../font/codegrid-icon.woff') format('woff'),
+    url('../font/codegrid-icon.ttf') format('truetype'),
+    url('../font/codegrid-icon.svg#codegrid-icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="CG2-icon-"], [class*=" CG2-icon-"] {
+  font-family: "codegrid-icon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* For With CJK Text =========== */
+  position: relative;
+  top: -0.1em;
+}
+
+.CG2-icon-pxg:before { content: "\E600"; }
+.CG2-icon-top:before { content: "\E601"; }
+.CG2-icon-right:before { content: "\E602"; }
+.CG2-icon-down:before { content: "\E603"; }
+.CG2-icon-left:before { content: "\E604"; }
+.CG2-icon-hamburger:before { content: "\E605"; }
+.CG2-icon-list:before { content: "\E606"; }
+.CG2-icon-setting:before { content: "\E607"; }
+.CG2-icon-search:before { content: "\E608"; }
+.CG2-icon-star:before { content: "\E609"; }
+.CG2-icon-twitter:before { content: "\E700"; }
+.CG2-icon-facebook:before { content: "\E701"; }
+.CG2-icon-gplus:before { content: "\E702"; }
+.CG2-icon-cat-elementary:before { content: "\E800"; }
+.CG2-icon-cat-practice:before { content: "\E801"; }
+.CG2-icon-cat-standards:before { content: "\E803"; }
+.CG2-icon-cat-talk:before { content: "\E804"; }
+.CG2-icon-cat-architecture:before { content: "\E805"; }
+.CG2-icon-cat-report:before { content: "\E806"; }
+.CG2-icon-cat-design:before { content: "\E807"; }
+.CG2-icon-cat-future:before { content: "\E808"; }
+.CG2-icon-cat-workstyle:before { content: "\E809"; }
+.CG2-icon-cat-survey:before { content: "\E80A"; }
+.CG2-icon-cat-interview:before { content: "\E80B"; }
+.CG2-icon-cat-discussion:before { content: "\E80C"; }
+
+
+@function getValue ( $assoc, $key ) {
+  @each $pair in $assoc {
+    @if nth( $pair, 1 ) == $key {
+      @return nth( $pair, 2 );
+    }
+  }
+  @return null;
+}
+
+$icons: (
+  pxg "\E600",
+  top "\E601",
+  right "\E602",
+  down "\E603",
+  left "\E604",
+  hamburger "\E605",
+  list "\E606",
+  setting "\E607",
+  search "\E608",
+  star "\E609",
+  twitter "\E700",
+  facebook "\E701",
+  gplus "\E702",
+  cat-elementary "\E800",
+  cat-practice "\E801",
+  cat-standards "\E803",
+  cat-talk "\E804",
+  cat-architecture "\E805",
+  cat-report "\E806",
+  cat-design "\E807",
+  cat-future "\E808",
+  cat-workstyle "\E809",
+  cat-survey "\E80A",
+  cat-interview "\E80B",
+  cat-discussion "\E80C",
+  
+);
+
+@mixin icon ( $name ) {
+  content: getValue( $icons, $name );
+  font-family: "codegrid-icon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
