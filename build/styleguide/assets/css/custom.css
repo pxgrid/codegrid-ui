@@ -1,0 +1,227 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================================================
+   .aigis-toggle
+   ========================================================================== */
+.aigis-toggle{
+  cursor: pointer;
+  position: fixed;
+  z-index: 9999;
+  top: 4px;
+  left: 4px;
+  padding: 6px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  background: rgba( 255, 255, 255, 0.75 );
+  transition: background .2s;
+}
+.aigis-toggle:hover,
+.aigis--navclose .aigis-toggle{
+  background: rgba( 255, 255, 255, 1 );
+}
+
+
+/* ==========================================================================
+   .aigis-sidemenu
+   ========================================================================== */
+.aigis-sidemenu {
+  color: #33331a;
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  bottom: 0;
+  left: -280px;
+  overflow: auto;
+  box-sizing: border-box;
+  width: 280px;
+  padding: 70px 20px 0;
+  border-right: 1px solid #999;
+  background-color: rgba( 230, 230, 230, 0.9 );
+  transition: left .2s; }
+.aigis--navclose .aigis-sidemenu {
+  left: 0;
+}
+  .aigis-sidemenu__heading1{
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 20px;
+  }
+    .aigis-sidemenu__heading1 a {
+      color: inherit;
+      text-decoration: none; }
+  .aigis-sidemenu__heading2 {
+    color: #333;
+    font-size: 20px;
+    font-weight: normal;
+    line-height: 1em;
+    padding: 6px 0 6px 10px;
+    border-left: 6px solid #333;
+    margin: 0 0 12px -20px; }
+    .aigis-sidemenu__heading2 a {
+      color: inherit;
+      text-decoration: none; }
+
+/* Sub-section comment block
+   ========================================================================== */
+.aigis-categoryList {
+  margin: 10px 0; }
+  .aigis-categoryList ul{
+    line-height: normal;
+    padding: 0;
+    margin: 0;
+  }
+    .aigis-categoryList li{
+      margin: 0;
+      padding: 0;
+    }
+    .aigis-categoryList a{
+      color: #454545;
+      white-space: nowrap;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      outline: none;
+      display: block;
+      padding: 8px 10px 8px 10px;
+      border-radius: 0px; }
+        .aigis-categoryList a:hover {
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.1);
+        background-color: #fff; }
+        .aigis-categoryList a[data-path-level]:before {
+        content: "-";
+        margin-right: 10px; }
+        .aigis-categoryList a[data-path-level="1"]:before {
+        margin-left: 1em; }
+        .aigis-categoryList a[data-path-level="2"]:before {
+        margin-left: 2em; }
+        .aigis-categoryList a[data-path-level="3"]:before {
+        margin-left: 3em; }
+        .aigis-categoryList a[data-path-level="4"]:before {
+        margin-left: 4em; }
+
+
+/* ==========================================================================
+   .aigis-categoryHeading
+   ========================================================================== */
+.aigis-categoryHeading{
+  font-size: 32px;
+  font-weight: normal;
+  padding: 0 30px;
+  margin: 60px 0 20px;
+}
+
+/* Sub-section comment block
+   ========================================================================== */
+.aigis-moduleList{
+  font-size: 0;
+  margin: 10px 0;
+  padding: 0 30px;
+}
+  .aigis-moduleList ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    .aigis-moduleList li{
+      font-size: 14px;
+      display: inline-block;
+      margin: 0 5px 5px 0;
+    }
+      .aigis-moduleList a{
+        color: #08f;
+        display: inline-block;
+        padding: 4px 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+      }
+
+/* ==========================================================================
+   .aigis-module
+   ========================================================================== */
+.aigis-module{
+  padding: 0 30px;
+}
+  .aigis-module__heading {
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 1.2;
+    position: relative;
+    border-bottom: 1px solid #333;
+    margin: 0 0 20px; }
+    .aigis-module__heading:hover a {
+    }
+      .aigis-module__heading:hover a:before {
+        content: "\00a7";
+        position: absolute;
+        right: 100%;
+        bottom: 5px;
+        font-size: 20px;
+        color: #000;
+        padding-right: 5px;
+        padding-left: 5px; }
+  .aigis-module__filepath {
+    color: #ADADAD;
+    font-size: 16px;
+    text-align: right;
+    display: block;
+    margin: -15px 0 20px; }
+
+
+/* .aigis-preview
+   ========================================================================== */
+.aigis-preview{
+  margin: 20px -30px;
+}
+
+/* .aigis-codeblock
+   ========================================================================== */
+.aigis-codeblock .editor{
+  font-size: 14px;
+  padding: 16px 20px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   .aigis-colorPalette
+   ========================================================================== */
+.aigis-colorPalette {
+  margin: 20px 0;
+  padding: 20px 30px;
+  background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVnoGCgBGAMmMQACQAA9CflgZrq8LsAAAAASUVORK5CYII=' ); }
+  .aigis-colorPalette__inner{
+    display: table;
+    width: 100%;
+    margin: 0 auto; }
+    .aigis-colorPalette__row{
+      display: table-row; }
+    .aigis-colorPalette__color {
+      display: table-cell;
+      height: 40px;
+      width: 50%;
+      border-radius: 2px; }
+    .aigis-colorPalette__label {
+      font-size: 16px;
+      text-shadow: 0 0 2px #fff;
+      white-space: nowrap;
+      vertical-align: middle;
+      width: 1%;
+      padding-left: 10px;
+      display: table-cell; }
+
+
+/* ==========================================================================
+   .aigis-footer
+   ========================================================================== */
+.aigis-footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  line-height: 1.75;
+  color: #7a7a7a;
+  border-top: 1px solid #eee;
+  text-align: center;
+}

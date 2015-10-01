@@ -1,0 +1,48 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="{{root}}assets/css/highlight/{{config.highlight_theme}}.css" rel="stylesheet">
+<link href="{{root}}assets/css/custom.css" rel="stylesheet">
+<script>
+document.addEventListener( 'DOMContentLoaded', function () {
+
+  var modfiier = ' aigis--navclose';
+  var pattern = new RegExp( modfiier );
+  var $body   = document.body;
+  var $button = document.querySelector( '.aigis-toggle' );
+
+  $button.addEventListener( 'click', function () {
+
+    if ( pattern.test( $body.className ) ) {
+
+      $body.className = $body.className.replace( modfiier, '' );
+
+    } else {
+
+      $body.className += modfiier;
+
+    }
+
+  } );
+
+} );
+</script>
+{{!-- Project Assets --}}
+<link href="{{root}}../assets2/css/codegrid-ui.css" rel="stylesheet">
+{{!-- /Project Assets --}}
+
+<title>{{config.name}}</title>
+</head>
+<body>
+<button class="aigis-toggle">
+	<svg width="32" height="32" viewBox="0 0 256 256">
+		<path d="M249.6,199h-192c-3.5,0-6.4-2.9-6.4-6.4c0-3.5,2.9-6.4,6.4-6.4h192c3.5,0,6.4,2.9,6.4,6.4C256,196.1,253.1,199,249.6,199z"/>
+		<path d="M249.6,135h-192c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4h192c3.5,0,6.4,2.9,6.4,6.4S253.1,135,249.6,135z"/>
+		<path d="M249.6,71h-192c-3.5,0-6.4-2.9-6.4-6.4s2.9-6.4,6.4-6.4h192c3.5,0,6.4,2.9,6.4,6.4S253.1,71,249.6,71z"/>
+		<path d="M19.2,83.8C8.6,83.8,0,75.2,0,64.6s8.6-19.2,19.2-19.2c10.6,0,19.2,8.6,19.2,19.2S29.8,83.8,19.2,83.8L19.2,83.8zM19.2,58.2c-3.5,0-6.4,2.9-6.4,6.4s2.9,6.4,6.4,6.4c3.5,0,6.4-2.9,6.4-6.4S22.7,58.2,19.2,58.2z"/>
+		<path d="M19.2,147.8C8.6,147.8,0,139.2,0,128.6c0-10.6,8.6-19.2,19.2-19.2c10.6,0,19.2,8.6,19.2,19.2C38.4,139.2,29.8,147.8,19.2,147.8z M19.2,122.2c-3.5,0-6.4,2.9-6.4,6.4s2.9,6.4,6.4,6.4c3.5,0,6.4-2.9,6.4-6.4S22.7,122.2,19.2,122.2L19.2,122.2z"/>
+		<path d="M19.2,211.8C8.6,211.8,0,203.2,0,192.6c0-10.6,8.6-19.2,19.2-19.2c10.6,0,19.2,8.6,19.2,19.2C38.4,203.2,29.8,211.8,19.2,211.8z M19.2,186.2c-3.5,0-6.4,2.9-6.4,6.4c0,3.5,2.9,6.4,6.4,6.4c3.5,0,6.4-2.9,6.4-6.4C25.6,189.1,22.7,186.2,19.2,186.2z"/>
+	</svg>
+</button>

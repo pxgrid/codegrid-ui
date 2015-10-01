@@ -1,0 +1,30 @@
+name: CodeCrid CSS Style Guide
+source:
+  - ./src/assets2/scss/codegrid-ui.scss
+format: yaml
+dest: ./build/styleguide
+dependencies: 
+  - ./src/aigis-template/assets
+template: ./src/aigis-template/template
+timestamp_format: YYYY/MM/DD/ HH:mm
+highlight_theme: monokai
+md_class: 
+  heading:    sg-heading
+  hr:         sg-hr
+  link:       sg-link
+  image:      sg-img
+  paragraph:  sg-p
+  list:       sg-list
+  listitem:   sg-list__item
+  table:      sg-table
+  tablerow:   sg-table__row
+  tablecell:  sg-table__cell
+  blockquote: sg-blockquote
+inject:
+  - html
+  - jade
+  - js
+  - coffee
+highlight: true
+beautify: false
+index: ./README.md
