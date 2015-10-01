@@ -8,24 +8,51 @@
 <script>
 document.addEventListener( 'DOMContentLoaded', function () {
 
-  var modfiier = ' aigis--navclose';
-  var pattern = new RegExp( modfiier );
   var $body   = document.body;
-  var $button = document.querySelector( '.aigis-toggle' );
 
-  $button.addEventListener( 'click', function () {
+  ( function () {
 
-    if ( pattern.test( $body.className ) ) {
+    var modfiier = ' aigis--navclose';
+    var pattern = new RegExp( modfiier );
+    var $button = document.querySelector( '.aigis-toggleNav' );
 
-      $body.className = $body.className.replace( modfiier, '' );
+    $button.addEventListener( 'click', function () {
 
-    } else {
+      if ( pattern.test( $body.className ) ) {
 
-      $body.className += modfiier;
+        $body.className = $body.className.replace( modfiier, '' );
 
-    }
+      } else {
 
-  } );
+        $body.className += modfiier;
+
+      }
+
+    } );
+
+  } )();
+
+  ( function () {
+
+    var modfiier = ' aigis--codeclose';
+    var pattern = new RegExp( modfiier );
+    var $button = document.querySelector( '.aigis-toggleCode' );
+
+    $button.addEventListener( 'click', function () {
+
+      if ( pattern.test( $body.className ) ) {
+
+        $body.className = $body.className.replace( modfiier, '' );
+
+      } else {
+
+        $body.className += modfiier;
+
+      }
+
+    } );
+
+  } )();
 
 } );
 </script>
@@ -35,7 +62,10 @@ document.addEventListener( 'DOMContentLoaded', function () {
 
 <title>{{config.name}}</title>
 </head>
-<body>
-<button class="aigis-toggle">
-	<span class="aigis-icon-list"></span>
+<body class=" aigis--codeclose">
+<button class="aigis-toggleNav">
+  <span class="aigis-icon-list"></span>
+</button>
+<button class="aigis-toggleCode">
+  <span class="aigis-icon-code"></span>
 </button>

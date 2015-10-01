@@ -38,6 +38,7 @@
 .aigis-icon-link:before        {content: "\e609"; }
 .aigis-icon-github:before      {content: "\e60a"; }
 .aigis-icon-git:before         {content: "\e60b"; }
+.aigis-icon-code:before        {content: "\e60c";}
 
 
 
@@ -50,22 +51,26 @@ body {
 /* ==========================================================================
    .aigis-toggle
    ========================================================================== */
-.aigis-toggle{
+.aigis-toggleNav,
+.aigis-toggleCode{
   color: #556655;
-  font-size: 32px;
+  font-size: 16px;
   cursor: pointer;
   position: fixed;
   z-index: 9999;
   top: 6px;
-  left: 6px;
   padding: 8px;
   border: 1px solid #BFCBBD;
   border-radius: 2px;
   background: rgba( 255, 255, 255, 0.75 );
   transition: background .2s;
 }
-.aigis-toggle:hover,
-.aigis--navclose .aigis-toggle{
+.aigis-toggleNav  { left: 6px;}
+.aigis-toggleCode { left: 46px;}
+.aigis-toggleNav:hover,
+.aigis-toggleCode:hover,
+.aigis--navclose  .aigis-toggleNav,
+.aigis--codeclose .aigis-toggleCode{
   background: rgba( 255, 255, 255, 1 );
 }
 
@@ -217,7 +222,7 @@ body {
     font-weight: normal;
     line-height: 1.2;
     position: relative;
-    margin: 0 -30px 20px;
+    margin: 30px -30px 20px;
     padding: 10px 30px;
     background: #BFCBBD; }
     .aigis-module__heading a {
@@ -269,27 +274,39 @@ body {
 
 /* .aigis-preview
    ========================================================================== */
-.aigis-preview{}
-.CG2-container .aigis-preview{}
+.aigis-preview{
+  box-sizing: border-box;
+  width: 1020px;
+  padding: 40px 30px;
+  border: 2px solid #BFCBBD;
+  margin: 20px auto;
+}
+.aigis-module.aigis-module--fullWidth .aigis-preview{
+  width: auto;
+  padding: 40px 0;
+  border-left: none;
+  border-right: none;
+}
+@media screen and (max-width: 767px) {
+  .aigis-preview{
+    width: auto;
+    padding: 30px 20px;
+    border-left: none;
+    border-right: none;
+  }
+  .aigis-module.aigis-module--fullWidth .aigis-preview{
+    padding: 30px 0;
+  }
+}
 
 /* .aigis-codeblock
    ========================================================================== */
 .aigis-codeblock{
-  width: 1016px;
-  padding: 0 28px;
-  margin: 0 auto;
+  margin: 20px 0;
 }
-.CG2-container .aigis-codeblock{
-  width: auto;
-  padding: 0;
+body.aigis--codeclose .aigis-codeblock{
+  display: none;
 }
-@media screen and (max-width: 767px) {
-  .aigis-codeblock{
-    width: auto;
-    padding: 0 20px;
-  }
-}
-
 .aigis-codeblock pre.editor{
   font-size: 14px;
   padding: 16px 20px;
@@ -347,6 +364,9 @@ body {
   border-top: 1px solid #BFCBBD;
   text-align: center;
 }
+.aigis-footer a{
+  color: #62775E;
+}
 
 
 
@@ -361,22 +381,23 @@ body {
 .sg-list,
 .sg-table,
 .sg-blockquote{
-  width: 1016px;
+  max-width: 1016px;
   padding: 0 28px;
   margin-left: auto;
   margin-right: auto;
 }
-.CG2-container .sg-heading,
-.CG2-container .sg-hr,
-.CG2-container .sg-link,
-.CG2-container .sg-img,
-.CG2-container .sg-p,
-.CG2-container .sg-list,
-.CG2-container .sg-table,
-.CG2-container .sg-blockquote{
-  width: auto;
+.aigis-module.aigis-module--fullWidth .sg-heading,
+.aigis-module.aigis-module--fullWidth .sg-hr,
+.aigis-module.aigis-module--fullWidth .sg-link,
+.aigis-module.aigis-module--fullWidth .sg-img,
+.aigis-module.aigis-module--fullWidth .sg-p,
+.aigis-module.aigis-module--fullWidth .sg-list,
+.aigis-module.aigis-module--fullWidth .sg-table,
+.aigis-module.aigis-module--fullWidth .sg-blockquote{
+  max-width: none;
   padding: 0;
 }
+
 @media screen and (max-width: 767px) {
   .sg-heading,
   .sg-hr,
@@ -386,7 +407,16 @@ body {
   .sg-list,
   .sg-table,
   .sg-blockquote{
-    width: auto;
-    padding: 0;
+    padding: 0 20px;
+  }
+  .aigis-module.aigis-module--fullWidth .sg-heading,
+  .aigis-module.aigis-module--fullWidth .sg-hr,
+  .aigis-module.aigis-module--fullWidth .sg-link,
+  .aigis-module.aigis-module--fullWidth .sg-img,
+  .aigis-module.aigis-module--fullWidth .sg-p,
+  .aigis-module.aigis-module--fullWidth .sg-list,
+  .aigis-module.aigis-module--fullWidth .sg-table,
+  .aigis-module.aigis-module--fullWidth .sg-blockquote{
+    padding: 0 20px;
   }
 }

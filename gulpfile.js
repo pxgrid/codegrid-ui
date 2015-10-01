@@ -59,6 +59,15 @@ gulp.task( 'copy-img', function () {
 
 } );
 
+gulp.task( 'copy-static', function () {
+
+  return gulp.src( [
+          './static/*/**',
+         ] )
+         .pipe( gulp.dest( './build/' ) );
+
+} );
+
 gulp.task( 'js', function () {
 
   return gulp.src( [
@@ -146,13 +155,13 @@ gulp.task( 'watch', function () {
 
 gulp.task( 'default', function( callback ) {
 
-  runSequence( 'browser-sync', 'iconfont', 'copy-font', 'copy-img', 'js', 'sass', 'watch', callback );
+  runSequence( 'browser-sync', 'iconfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass', 'watch', callback );
 
 } );
 
 gulp.task( 'build', function( callback ) {
 
-  runSequence( 'clean', 'iconfont', 'copy-font', 'copy-img', 'js', 'sass', 'guide', callback );
+  runSequence( 'clean', 'iconfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass', 'guide', callback );
 
 } );
 

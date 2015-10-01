@@ -4,7 +4,7 @@
 @import "0_vars";
 @import "1_utils";
 @import "2_basic";
-@import "3_icon";
+@import "icon";
 
 %search{
   box-sizing: border-box;
@@ -43,3 +43,4 @@
 
 @import "template";
 @import "components";
+@import "www";

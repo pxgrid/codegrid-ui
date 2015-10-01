@@ -34,7 +34,7 @@ category:
   - Templates
 tag:
   - Template
-  - Page_Header
+  - Template/Page_Header
 templateItem:
   - true
 ---
@@ -42,8 +42,9 @@ templateItem:
 - `CG2-pageHeaderPlacer`を併用すると高さを確保することができる、高さ確保が不要なら`CG2-pageHeaderPlacer`を利用しない
 - 実際に利用するときには以下のコードから`style="position:relative;"`を**取り除いて使う**
 
+## ログイン前
+
 ```html
-<!-- ログイン前 -->
 <div class="CG2-pageHeaderPlacer">
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
@@ -64,13 +65,15 @@ templateItem:
           <li><a href="#">ログイン</a></li>
         </ul>
       </div>
-      <div class="CG2-pageHeader__opener"></div>
+      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
   </header>
 </div>
+```
 
+## ログイン後
 
-<!-- ログイン後 -->
+```html
 <div class="CG2-pageHeaderPlacer">
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
@@ -262,7 +265,7 @@ category:
   - Templates
 tag:
   - Template
-  - Page_Footer
+  - Template/Page_Footer
 templateItem:
   - true
 ---
@@ -331,7 +334,7 @@ templateItem:
         <li><a href="#">プライバシーポリシー</a></li>
         <li><a href="#">特定商取引法に基づく表示</a></li>
       </ul>
-      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../build/assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></a></div>
+      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></a></div>
     </div>
   </div>
 <!-- /.CG2-pageFooter --></footer>
@@ -570,6 +573,9 @@ tag:
 templateItem:
   - true
 ---
+
+- スモールスクリーン時のみ有効
+- CG2-pageHeader 内のトグルボタンで表示
 
 ```html
 <div class="CG2-drawer">
@@ -881,6 +887,7 @@ html.js-drawer--show .CG2-drawer__bg {
 .CG2-drawerBody__search{
   @extend %search;
   margin: 20px 0;
+  height: 40px;
 }
 .CG2-drawerBody__searchInner{
   @extend %searchInner;

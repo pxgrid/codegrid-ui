@@ -1,3 +1,19 @@
+/*
+---
+name: Icon
+category:
+  - Icons
+tag:
+  - icon
+---
+
+```html
+<% _.each ( glyphs, function( glyph ) { %><span class="<%= prefix %>-<%= glyph.name %>"></span>
+<% } ); %>
+```
+
+*/
+
 @font-face {
   font-family: "<%= fontName %>";
   src: url('<%= fontPath %><%= fontName %>.eot');

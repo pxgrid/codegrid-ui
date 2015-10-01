@@ -11,7 +11,9 @@
 }
  --}}
 
-<div class="aigis-module">
+{{#unless config.templateItem}}<div class="aigis-module">{{/unless}}
+{{#if     config.templateItem}}<div class="aigis-module aigis-module--fullWidth">{{/if}}
+
 	{{#if config.name}}
 	<h2 class="aigis-module__heading" id="{{config.name}}">
 		<a href="#{{config.name}}"><span class="aigis-icon-link"></span></a>{{config.name}}
@@ -28,10 +30,8 @@
 	</div>
 	{{/if}}
 	<div class="aigis-module__preview">
-		{{#unless config.templateItem}}<div class="CG2-container"><div class="CG2-container__inner">{{/unless}}
 
 {{{html}}}
 
-		{{#unless config.templateItem}}</div></div>{{/unless}}
 	</div>
 </div>

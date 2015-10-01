@@ -367,6 +367,9 @@ tag:
 
 
 
+
+
+
 /* ==========================================================================
    CG2-term
    ========================================================================== */
@@ -426,195 +429,38 @@ tag:
 }
 
 
-
-
-
-
-
-
-
-/* ==========================================================================
-   CG2-logo3d
-   ========================================================================== */
-.CG2-logo3d{
-  position: relative;
-  margin: 0 auto;
-  background: #000;
-}
-  .CG2-logo3d__inner{
-    // height: 100vh;
-    // max-height: 600px;
-    // @include max-screen( $breakpoint-small ) {
-    //   max-height: 0;
-    // }
-    img,
-    canvas{
-      display: block;
-      margin: 0 auto;
-    }
-  }
-    .CG2-logo3d__overlayText{
-      color: #fff;
-      font-size: 32px;
-      font-family: $fontSerif;
-      text-align: center;
-      position: absolute;
-      right: 0;
-      left: 0;
-      bottom: 0;
-      height: 120px;
-      padding: 30px 0 0;
-      background: rgba( 0, 0, 0, .8 );
-      @include max-screen( $breakpoint-small ) {
-        font-size: 20px;
-        line-height: 1.2;
-        height: auto;
-        padding: 10px 5px;
-      }
-      &:after{
-        @include icon( down );
-        font-size: 22px;
-        display: block;
-        text-align: center;
-        margin-top: 16px;
-        @include max-screen( $breakpoint-small ) {
-          font-size: 16px;
-          margin-top: 6px;
-        }
-      }
-    }
-
-
-
-/* ==========================================================================
-   CG2-features
-   ========================================================================== */
-.CG2-features{
-  counter-reset: CG2features;
-  &:first-child{
-    margin-top: -40px;
-  }
-}
-  .CG2-features__item{
-    counter-increment: CG2features;
-    padding: 0 120px;
-    margin: 80px 0;
-    h1{
-      color: #282828;
-      font-size: 32px;
-      font-family: $fontSerif;
-      font-weight: normal;
-      text-align: center;
-      margin: 0 0 30px;
-    }
-    p{}
-  }
-  .CG2-features__itemBody{
-    position: relative;
-    &:before{
-      content: counter( CG2features );
-      line-height: 1;
-      font-size: 60px;
-      font-family: $fontCode;
-      display: block;
-      position: absolute;
-      top: 0;
-      left: -120px;
-    }
-  }
-
-
-
-/* ==========================================================================
-   CG2-howYouReceive
-   ========================================================================== */
-
-.CG2-howYouReceive{
-}
-  .CG2-howYouReceive__header{
-    text-align: center;
-    position: relative;
-    margin: 0 -28px 20px;
-    &:before{
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 100%;
-      height: 0;
-      border-top: 1px solid #000;
-    }
-    h1{
-      color: #282828;
-      font-size: 24px;
-      font-weight: normal;
-      position: relative;
-      display: inline-block;
-      padding: 0 40px;
-      margin: 0;
-      background: #FFF;
-    }
-  }
-  .CG2-howYouReceive__list{
-    display: table;
-    border-spacing: 2px 0;
-  }
-    .CG2-howYouReceive__item{
-      font-size: 14px;
-      display: table-cell;
-      p{;
-        text-align: center;
-      }
-    }
-      .CG2-howYouReceive__image{
-        img{
-          display: block;
-          width: 100%;
-          height: auto;
-        }
-      }
-
-
-/* ==========================================================================
-   CG2-bookInfo [www top]
-   ========================================================================== */
-.CG2-bookInfo{
-  h1{
-    color: #282828;
-    font-size: 24px;
-    font-weight: normal;
-    text-align: center;
-    margin: 0 0 30px;
-  }
-} 
-  .CG2-bookInfo__body{
-    display: table;
-  }
-    .CG2-bookInfo__images{
-      font-size: 0;
-      white-space: nowrap;
-      vertical-align: top;
-      display: table-cell;
-      padding-right: 25px;
-      img{
-        vertical-align: bottom;
-        margin-right: 10px;
-      }
-    }
-    .CG2-bookInfo__text{
-      vertical-align: top;
-      display: table-cell;
-      font-size: 14px;
-      p{
-        margin: 0 0 20px;
-      }
-    }
-
-
 /* ==========================================================================
    CG2-customers
    ========================================================================== */
+/*
+---
+name: customers
+category:
+  - Blocks
+tag:
+  - block
+  - WWW_Item
+---
+
+```html
+<section class="CG2-customers">
+  <h1>団体購読も承っております</h1>
+  <p>CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
+  <div class="CG2-customers__logos">
+    <ul>
+      <li><img src="http://img.pxgrid.net/109x66" alt="" width="109" height="66"></li>
+      <li><img src="http://img.pxgrid.net/158x79" alt="" width="158" height="79"></li>
+      <li><img src="http://img.pxgrid.net/158x61" alt="" width="158" height="61"></li>
+      <li><img src="http://img.pxgrid.net/140x80" alt="" width="140" height="80"></li>
+      <li><img src="http://img.pxgrid.net/196x58" alt="" width="196" height="58"></li>
+      <li><img src="http://img.pxgrid.net/176x69" alt="" width="176" height="69"></li>
+      <li><img src="http://img.pxgrid.net/216x65" alt="" width="216" height="65"></li>
+    </ul>
+  </div>
+</section>
+```
+
+*/
 section.CG2-customers{
   h1{
     color: #282828;
@@ -665,161 +511,97 @@ section.CG2-customers{
 }
 
 
-/* ==========================================================================
-   CG2-customerQuotes
-   ========================================================================== */
-
-section.CG2-customerQuotes{
-  @include clearfix();
-  padding-top: 20px;
-}
-  header.CG2-customerQuotes__header{
-    display: table;
-    width: calc( 100% + 48px );
-    border-bottom: 1px solid #5c5c5c;
-    margin: 0 -28px 30px;
-    h1{
-      font-size: 32px;
-      font-family: $fontSerif;
-      font-weight: normal;
-      line-height: 1.2;
-      vertical-align: middle;
-      display: table-cell;
-      padding: 0 0 30px 28px;
-      margin: 0;
-    }
-  }
-  .CG2-customerQuotes__headerSub{
-    font-size: 14px;
-    text-align: right;
-    vertical-align: middle;
-    display: table-cell;
-    padding: 0 28px 30px 0;
-    a{
-      @include resetLink();
-    }
-  }
-  .CG2-customerQuotes__body{
-    display: table;
-    width: 100%;
-  }
-    .CG2-customerQuotes__list{
-      vertical-align: top;
-      box-sizing: border-box;
-      display: table-cell;
-      width: 60%;
-      padding-right: 20px;
-      ul{
-        line-height: normal;
-        padding: 0;
-        margin: 0;
-      }
-      li{
-        list-style: none;
-        margin: 0 0 20px;
-      }
-      iframe{
-        // twitter
-        display: block !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-      }
-    }
-    .CG2-customerQuotes__timeline{
-      vertical-align: top;
-      box-sizing: border-box;
-      display: table-cell;
-      width: 40%;
-      padding-left: 20px;
-    }
-
-/* ==========================================================================
-   CG2-circulation
-   ========================================================================== */
-
-.CG2-circulation{
-  
-}
-  .CG2-circulation__lastUpdate{
-    font-family: $fontSerif;
-    float: right;
-  }
-  .CG2-circulation__dataList{
-    display: table;
-  }
-    .CG2-circulation__data{
-      display: table-cell;
-      font-size: 0;
-      padding-left: 50px;
-      &:first-child{
-        padding-left: 0;
-      }
-    }
-      .CG2-circulation__dataLabel{
-        font-size: 16px;
-        font-family: $fontSerif;
-      }
-      .CG2-circulation__dataNumber{
-        font-size: 64px;
-        font-family: $fontCode;
-        line-height: 1.2;
-        display: inline;
-      }
-      .CG2-circulation__dataUnit{
-        font-size: 32px;
-        font-family: $fontSerif;
-        line-height: 1.2;
-        display: inline;
-      }
 
 
 
-/* ==========================================================================
-   CG2-pickedup
-   ========================================================================== */
-section.CG2-pickedup{
-  margin: 80px 0;
-}
-  header.CG2-pickedup__header{
-    line-height: 1.2;
-    display: table;
-    width: 100%;
-    margin-bottom: 30px;
-  }
-    .CG2-pickedup__headerHeading{
-      font-size: 32px;
-      font-family: $fontSerif;
-      font-weight: normal;
-      vertical-align: bottom;
-      display: table-cell;
-      width: 33%;
-      margin: 0;
-      padding-left: 28px;
-    }
-    .CG2-pickedup__headerSummary{
-      font-size: 16px;
-      white-space: nowrap;
-      vertical-align: bottom;
-      text-align: center;
-      display: table-cell;
-      width: 33%;
-    }
-    .CG2-pickedup__headerExtra{
-      font-size: 16px;
-      vertical-align: bottom;
-      text-align: right;
-      display: table-cell;
-      width: 33%;
-      padding-right: 28px;
-      a{
-        @include resetLink();
-      }
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==========================================================================
    CG2-seriesWeekHeader
    ========================================================================== */
+/*
+---
+name: seriesWeekHeader
+category:
+  - Blocks
+tag:
+  - app_item
+  - app_item/articleList
+---
+
+```html
+<div class="CG2-seriesWeekHeader">
+  <div class="CG2-seriesWeekHeader__inner">
+    <div class="CG2-seriesWeekHeader__prev">
+      <div class="CG2-seriesWeekHeader__prevInner">
+        <a href="#">
+          <span class="CG2-seriesWeekHeader__label">前号</span>
+          <span class="CG2-seriesWeekHeader__number">10</span>
+          <span class="CG2-seriesWeekHeader__text">月</span>
+          <span class="CG2-seriesWeekHeader__number">1</span>
+          <span class="CG2-seriesWeekHeader__text">日発行</span>
+        </a>
+      </div>
+    </div>
+    <div class="CG2-seriesWeekHeader__current">
+      <div class="CG2-seriesWeekHeader__currentInner">
+        <a href="#">
+          <span class="CG2-seriesWeekHeader__label">最新号</span>
+          <span class="CG2-seriesWeekHeader__number">10</span>
+          <span class="CG2-seriesWeekHeader__text">月</span>
+          <span class="CG2-seriesWeekHeader__number">7</span>
+          <span class="CG2-seriesWeekHeader__text">日発行</span>
+        </a>
+      </div>
+    </div>
+    <div class="CG2-seriesWeekHeader__next">
+      <div class="CG2-seriesWeekHeader__nextInner">
+        <a href="#">
+          <span class="CG2-seriesWeekHeader__label">次号予告</span>
+          <span class="CG2-seriesWeekHeader__number">10</span>
+          <span class="CG2-seriesWeekHeader__text">月</span>
+          <span class="CG2-seriesWeekHeader__number">14</span>
+          <span class="CG2-seriesWeekHeader__text">日発行</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
 .CG2-seriesWeekHeader{
   margin: 80px 0 10px;
   @include max-screen( $breakpoint-middle ) {
@@ -951,6 +733,60 @@ section.CG2-pickedup{
 /* ==========================================================================
    CG2-seriesListHeader
    ========================================================================== */
+/*
+---
+name: seriesListHeader
+category:
+  - Blocks
+tag:
+  - app_item
+  - app_item/articleList
+---
+
+内部で別コンポーネント CG2-compactNav を利用
+
+```html
+<div class="CG2-seriesListHeader">
+  <div class="CG2-seriesListHeader__articleLength">
+    <span class="CG2-seriesListHeader__label">記事数</span>
+    <span class="CG2-seriesListHeader__number">500</span>
+    <span class="CG2-seriesListHeader__unit">本</span>
+  </div>
+  <div class="CG2-seriesListHeader__nav">
+
+    <div class="CG2-compactNav">
+      <ul>
+        <li class="CG2-compactNav__item--current"><a href="#">最新順</a></li>
+        <li><a href="#">おすすめ順</a></li>
+        <li><a href="#">お気に入り</a></li>
+        <li><a href="#">無料公開</a></li>
+      </ul>
+      <div class="CG2-compactNav__navOpener"></div>
+    </div>
+
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-seriesListHeader">
+  <div class="CG2-seriesListHeader__nav">
+
+    <div class="CG2-compactNav">
+      <ul>
+        <li class="CG2-compactNav__item--current"><a href="#">最新順</a></li>
+        <li><a href="#">おすすめ順</a></li>
+        <li><a href="#">お気に入り</a></li>
+        <li><a href="#">無料公開</a></li>
+      </ul>
+      <div class="CG2-compactNav__navOpener"></div>
+    </div>
+
+  </div>
+</div>
+```
+
+*/
 %CG2-seriesListHeader__articleLength{
   white-space: nowrap;
   vertical-align: bottom;
@@ -1053,6 +889,21 @@ section.CG2-pickedup{
 /* ==========================================================================
    CG2-compactNav
    ========================================================================== */
+/*
+---
+name: compactNav
+category:
+  - Blocks
+tag:
+  - app_item
+  - app_item/articleList
+---
+
+別コンポーネント CG2-seriesListHeader 内で利用。利用方法は CG2-seriesListHeader を参照
+
+*/
+
+
 .CG2-compactNav{
   font-family: $fontSansSerif;
   font-size: 1rem;
@@ -1155,6 +1006,143 @@ section.CG2-pickedup{
 /* ==========================================================================
    CG2-seriesList
    ========================================================================== */
+/*
+---
+name: seriesList
+category:
+  - Blocks
+tag:
+  - app_item
+  - app_item/articleList
+---
+
+## 通常
+
+```html
+<div class="CG2-seriesList">
+
+  <div class="CG2-seriesList__item">
+    <div class="CG2-seriesList__itemHeader">
+      <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span></div>
+      <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
+      <div class="CG2-seriesList__itemUtil">
+        <div class="CG2-toolButton"></div>
+      </div>
+    </div>
+    <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+    <div class="CG2-seriesList__articles">
+      <div class="CG2-seriesList__article">
+        <a href="#">
+          <div class="CG2-seriesList__articleStar"></div>
+          <div class="CG2-seriesList__articleOrder">第3回</div>
+          <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
+          <div class="CG2-seriesList__articleDate">4/16</div>
+        </a>
+      </div>
+      <div class="CG2-seriesList__article">
+        <a href="#">
+          <div class="CG2-seriesList__articleStar"></div>
+          <div class="CG2-seriesList__articleOrder">第2回</div>
+          <div class="CG2-seriesList__articleTitle">gulpで生成を自動化</div>
+          <div class="CG2-seriesList__articleDate">4/9</div>
+        </a>
+      </div>
+      <div class="CG2-seriesList__article">
+        <a href="#">
+          <div class="CG2-seriesList__articleStar"></div>
+          <div class="CG2-seriesList__articleOrder">第1回</div>
+          <div class="CG2-seriesList__articleTitle">Webアプリの利用</div>
+          <div class="CG2-seriesList__articleDate">4/2</div>
+        </a>
+      </div>
+    </div>
+    <div class="CG2-seriesList__authors">
+      <div class="CG2-seriesList__author">
+        <div class="CG2-seriesList__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+      <div class="CG2-seriesList__author">
+        <div class="CG2-seriesList__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+      <div class="CG2-seriesList__author">
+        <div class="CG2-seriesList__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- .CG2-seriesList__item 繰り返し -->
+
+  <div class="CG2-seriesList__itemMore">more</div>
+
+</div>
+
+```
+
+## full width
+
+```html
+<div class="CG2-seriesList">
+
+  <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
+    <div class="CG2-seriesList__itemHeader">
+      <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span>実践</div>
+      <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
+      <div class="CG2-seriesList__itemUtil">
+        <div class="CG2-toolButton"></div>
+      </div>
+    </div>
+    <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+    <div class="CG2-seriesList__articles">
+      <div class="CG2-seriesList__article">
+        <a href="#">
+          <div class="CG2-seriesList__articleStar"></div>
+          <div class="CG2-seriesList__articleOrder">第3回</div>
+          <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
+          <div class="CG2-seriesList__articleDate">4/16</div>
+        </a>
+      </div>
+    </div>
+    <div class="CG2-seriesList__authors">
+      <div class="CG2-seriesList__author">
+        <div class="CG2-seriesList__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+      <div class="CG2-seriesList__author">
+        <div class="CG2-seriesList__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+      <div class="CG2-seriesList__author">
+        <div class="CG2-seriesList__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
+
+  <div class="CG2-seriesList__itemMore">more</div>
+
+</div>
+```
+
+*/
+
+
+
 %author{
   display: table;
   margin-bottom: 1px;
@@ -1499,41 +1487,6 @@ section.CG2-pickedup{
   }
 
 
-
-/* ==========================================================================
-   CG2-categoryIntro
-   ========================================================================== */
-.CG2-categoryIntro{
-  ul{
-    font-size: 0;
-    text-align: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    &:after{
-      content: '';
-      display: block;
-      margin-top: -30px;
-    }
-  }
-  li{
-    font-size: 14px;
-    text-align: center;
-    display: inline-block;
-    width: 130px;
-    padding: 0;
-    margin: 0 0 30px;
-  }
-  span[class*="CG2-icon-cat"]{
-    font-size: 80px;
-    display: block;
-    margin-bottom: 10px;
-    position: static;
-    &:before{
-      display: block;
-    }
-  }
-}
 
 
 
