@@ -1,0 +1,187 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../../assets/css/highlight/monokai.css" rel="stylesheet">
+<link href="../../assets/css/custom.css" rel="stylesheet">
+<script>
+document.addEventListener( 'DOMContentLoaded', function () {
+
+  var modfiier = ' aigis--navclose';
+  var pattern = new RegExp( modfiier );
+  var $body   = document.body;
+  var $button = document.querySelector( '.aigis-toggle' );
+
+  $button.addEventListener( 'click', function () {
+
+    if ( pattern.test( $body.className ) ) {
+
+      $body.className = $body.className.replace( modfiier, '' );
+
+    } else {
+
+      $body.className += modfiier;
+
+    }
+
+  } );
+
+} );
+</script>
+<link href="../../../assets2/css/codegrid-ui.css" rel="stylesheet">
+
+<title>CodeCrid CSS Style Guide</title>
+</head>
+<body>
+<button class="aigis-toggle">
+	<span class="aigis-icon-list"></span>
+</button>
+
+<div class="aigis-sidemenu">
+	<nav>
+		<h1 class="aigis-sidemenu__heading1">
+			<a href="../../index.html">CodeCrid CSS Style Guide</a>
+		</h1>
+		<h2 class="aigis-sidemenu__heading2"><a href="../../color.html">Color</a></h2>
+
+		<h2 class="aigis-sidemenu__heading2">Category</h2>
+		<div class="aigis-categoryList">
+			<ul>
+				<li><a data-path-level="0" data-path-root="Blocks" data-path-parent="" href="../../category/Blocks/index.html">Blocks</a></li>
+				<li><a data-path-level="0" data-path-root="Headings_and_Contexts" data-path-parent="" href="../../category/Headings_and_Contexts/index.html">Headings_and_Contexts</a></li>
+				<li><a data-path-level="0" data-path-root="Nav_Items" data-path-parent="" href="../../category/Nav_Items/index.html">Nav_Items</a></li>
+				<li><a data-path-level="0" data-path-root="Templates" data-path-parent="" href="../../category/Templates/index.html">Templates</a></li>
+			</ul>
+		</div>
+
+		<h2 class="aigis-sidemenu__heading2">Tag</h2>
+		<div class="aigis-tagList">
+			<ul>
+				<li><a href="../../tag/Page_Footer/index.html">Page_Footer</a></li>
+				<li><a href="../../tag/Page_Header/index.html">Page_Header</a></li>
+				<li><a href="../../tag/Template/index.html">Template</a></li>
+				<li><a href="../../tag/block/index.html">block</a></li>
+				<li><a href="../../tag/button/index.html">button</a></li>
+				<li><a href="../../tag/context/index.html">context</a></li>
+			</ul>
+			</div>
+	</nav>
+</div>
+
+
+<h2 class="aigis-categoryHeading">Nav_Items</h2>
+
+<nav class="aigis-moduleList">
+	<ul>
+		<li><a href="#ボタン"><span class="aigis-icon-caretdown"></span>ボタン</a>
+		<li><a href="#ボタン格納"><span class="aigis-icon-caretdown"></span>ボタン格納</a>
+		<li><a href="#Tool Button"><span class="aigis-icon-caretdown"></span>Tool Button</a>
+	</ul>
+</nav>
+
+
+<div class="aigis-module">
+	<h2 class="aigis-module__heading" id="ボタン">
+		<a href="#ボタン"><span class="aigis-icon-link"></span></a>ボタン
+	</h2>
+	<div class="aigis-module__filepath">/src/assets2/scss/codegrid-ui.scss</div>
+	<div class="aigis-tags">
+		<ul>
+			<li class="aigis-tags__item aigis-tags__item--button">button
+		</ul>
+	</div>
+	<div class="aigis-module__preview">
+		<div class="CG2-container"><div class="CG2-container__inner">
+
+<div class='aigis-preview'>
+  <p> <a class="CG2-button" href="#">button:a element</a> </p>
+<p>
+    <button class="CG2-button" href="#">button: button element</button>
+</p>
+<p> <a class="CG2-button" href="#"><span class="CG2-icon-pxg"></span>button</a> </p>
+<p> <a class="CG2-button CG2-button--primary" href="#">button</a> </p>
+<p> <a class="CG2-button CG2-button--action" href="#">button</a> </p>
+<p> <a class="CG2-button CG2-button--setting" href="#">button</a> </p>
+<p> <a class="CG2-button CG2-button--thin" href="#">button</a> </p>
+<p> <a class="CG2-button CG2-button--large" href="#">button</a> </p>
+<p> <a class="CG2-button CG2-button--fullWidth" href="#">button</a> </p></div>
+
+<pre><code class="lang-html"><div class="aigis-codeblock aigis-codeblock--html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button:a&nbsp;element</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>button</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button:&nbsp;button&nbsp;element</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>button</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>span</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-icon-pxg</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope between-tag-pair html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>span</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--primary</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--action</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--setting</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--thin</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--large</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--fullWidth</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>p</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre></div>
+</code></pre>
+
+
+		</div></div>
+	</div>
+</div>
+
+
+<div class="aigis-module">
+	<h2 class="aigis-module__heading" id="ボタン格納">
+		<a href="#ボタン格納"><span class="aigis-icon-link"></span></a>ボタン格納
+	</h2>
+	<div class="aigis-module__filepath">/src/assets2/scss/codegrid-ui.scss</div>
+	<div class="aigis-tags">
+		<ul>
+			<li class="aigis-tags__item aigis-tags__item--button">button
+		</ul>
+	</div>
+	<div class="aigis-module__preview">
+		<div class="CG2-container"><div class="CG2-container__inner">
+
+<div class='aigis-preview'>
+  <div class="CG2-buttonContainer">
+    <ul>
+        <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+        <li><a class="CG2-button" href="#">button 2</a></li>
+    </ul>
+</div>
+<!-- 左寄せ -->
+<div class="CG2-buttonContainer CG2-buttonContainer--pullLeft">
+    <ul>
+        <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+        <li><a class="CG2-button" href="#">button 2</a></li>
+    </ul>
+</div></div>
+
+<pre><code class="lang-html"><div class="aigis-codeblock aigis-codeblock--html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-buttonContainer</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>ul</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--primary</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button&nbsp;1</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button&nbsp;2</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>ul</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="comment block html"><span class="punctuation definition comment html"><span>&lt;!--</span></span><span>&nbsp;左寄せ&nbsp;</span><span class="punctuation definition comment html"><span>--&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-buttonContainer&nbsp;CG2-buttonContainer--pullLeft</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>ul</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button&nbsp;CG2-button--primary</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button&nbsp;1</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag inline any html"><span>a</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-button</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>href</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>#</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>button&nbsp;2</span><span class="meta tag inline any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>a</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag inline any html"><span>li</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>ul</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre></div>
+</code></pre>
+
+
+		</div></div>
+	</div>
+</div>
+
+
+<div class="aigis-module">
+	<h2 class="aigis-module__heading" id="Tool Button">
+		<a href="#Tool Button"><span class="aigis-icon-link"></span></a>Tool Button
+	</h2>
+	<div class="aigis-module__filepath">/src/assets2/scss/codegrid-ui.scss</div>
+	<div class="aigis-tags">
+		<ul>
+			<li class="aigis-tags__item aigis-tags__item--button">button
+		</ul>
+	</div>
+	<div class="aigis-module__preview">
+		<div class="CG2-container"><div class="CG2-container__inner">
+
+<div class='aigis-preview'>
+  <div style="padding: 10px; background:#000;">
+    <div class="CG2-toolButton"></div>
+</div></div>
+
+<pre><code class="lang-html"><div class="aigis-codeblock aigis-codeblock--html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>style</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>padding:&nbsp;10px;&nbsp;background:#000;</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag any html"><span class="punctuation definition tag html"><span>&lt;</span></span><span class="entity name tag html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-toolButton</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag html"><span>&gt;</span><span class="meta scope between-tag-pair html"><span>&lt;</span></span><span>/</span></span><span class="entity name tag html"><span>div</span></span><span class="punctuation definition tag html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre></div>
+</code></pre>
+
+
+		</div></div>
+	</div>
+</div>
+
+
+<footer class="aigis-footer">Last update at 2015/10/01/ 18:44</footer>
+<script src="../../../assets2/js/codegrid-ui.min.js"></script>
+</body>
+</html>
+

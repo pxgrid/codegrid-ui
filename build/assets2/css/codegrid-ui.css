@@ -767,12 +767,6 @@ a:hover, a:active {
 .CG2-icon-cat-discussion:before {
   content: "\E80C"; }
 
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-/* Sub-section comment block
-   ========================================================================== */
-/* Basic comment */
 .CG2-pageHeader__search, .CG2-drawerBody__search {
   box-sizing: border-box;
   width: 100%;
@@ -818,183 +812,13 @@ a:hover, a:active {
       background: #303030; }
 
 /* ==========================================================================
-   button
+   Section comment block
    ========================================================================== */
-.CG2-button {
-  color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-  box-sizing: border-box;
-  display: inline-block;
-  border-radius: 2px;
-  border: none;
-  padding: 0.6em 1.8em;
-  background: #707070; }
-  @media screen and (max-width: 767px) {
-    .CG2-button {
-      font-size: 12px; } }
-  .CG2-button.CG2-button--thin {
-    padding: 0.4em 1.8em; }
-  .CG2-button.CG2-button--large {
-    font-size: 20px;
-    text-align: center;
-    display: block;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto; }
-  .CG2-button.CG2-button--fullWidth {
-    display: block;
-    width: 100%; }
-  .CG2-button span[class^="CG2-icon"] {
-    font-size: 20px;
-    margin-right: 5px; }
-    .CG2-button span[class^="CG2-icon"]:first-child {
-      margin-left: -.6em; }
-  .CG2-button.CG2-button--primary {
-    background: #10a040; }
-  .CG2-button.CG2-button--action {
-    background: #282828; }
-  .CG2-button.CG2-button--setting {
-    background: #767676; }
-
-/* ==========================================================================
-   buttonContainer
+/* Sub-section comment block
    ========================================================================== */
-.CG2-buttonContainer {
-  margin: 20px 0; }
-  .CG2-buttonContainer ul {
-    font-size: 0;
-    list-style: none;
-    text-align: center;
-    padding: 0;
-    margin: 0; }
-  .CG2-buttonContainer.CG2-buttonContainer--pullLeft ul {
-    text-align: left; }
-  .CG2-buttonContainer li {
-    font-size: 1rem;
-    display: inline-block; }
-
+/* Basic comment */
 /* ==========================================================================
-   toolButton
-   ========================================================================== */
-.CG2-toolButton {
-  color: #fff;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  padding: 11px;
-  border-radius: 3px;
-  background: rgba(255, 255, 255, 0.2); }
-  @media screen and (max-width: 767px) {
-    .CG2-toolButton {
-      width: 12px;
-      height: 12px;
-      padding: 8px; } }
-  .CG2-toolButton:after {
-    content: "";
-    font-family: "codegrid-icon";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 18px;
-    display: block; }
-    @media screen and (max-width: 767px) {
-      .CG2-toolButton:after {
-        font-size: 12px; } }
-
-/* ==========================================================================
-   holizontalLine
-   ========================================================================== */
-.CG2-holizontalLine {
-  border-top: 1px solid #5c5c5c;
-  margin: 80px -28px; }
-  @media screen and (max-width: 767px) {
-    .CG2-holizontalLine {
-      border-color: #D8D8D8;
-      margin: 30px -20px; } }
-
-/* ==========================================================================
-   header1
-   ========================================================================== */
-.CG2-header1__heading {
-  color: #282828;
-  font-size: 32px;
-  font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-  line-height: 1.2;
-  padding: 0 28px 30px;
-  border-bottom: 1px solid #282828;
-  margin: 0 -28px 30px; }
-  @media screen and (max-width: 767px) {
-    .CG2-header1__heading {
-      font-size: 20px;
-      padding: 0 10px 10px;
-      margin: 20px -10px 30px; } }
-
-/* ==========================================================================
-   header2
-   ========================================================================== */
-.CG2-header2__heading {
-  font-size: 24px;
-  margin: 60px 0 15px; }
-  @media screen and (max-width: 767px) {
-    .CG2-header2__heading {
-      font-size: 16px;
-      margin: 30px 0 10px; } }
-
-/* ==========================================================================
-   header3
-   ========================================================================== */
-.CG2-header3__heading {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 40px 0 15px; }
-
-/* ==========================================================================
-   leadText
-   ========================================================================== */
-.CG2-leadText {
-  font-size: 32px;
-  font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-  line-height: 1.4;
-  text-align: center;
-  margin: 80px 0 40px; }
-  .CG2-container__inner > .CG2-leadText:first-child {
-    margin-top: 20px; }
-  .CG2-container__inner > .CG2-leadText:last-child {
-    margin-bottom: 20px; }
-  @media screen and (max-width: 767px) {
-    .CG2-leadText {
-      font-size: 20px;
-      margin-top: 50px;
-      margin-bottom: 20px; } }
-
-/* ==========================================================================
-   CG2-lastUpdate
-   ========================================================================== */
-.CG2-term dt {
-  font-weight: bold; }
-
-.CG2-term dd {
-  margin: 0 0 15px; }
-
-/* ==========================================================================
-   CG2-lastUpdate
-   ========================================================================== */
-.CG2-lastUpdate {
-  margin-top: 80px; }
-  @media screen and (max-width: 767px) {
-    .CG2-lastUpdate {
-      margin-top: 40px; } }
-
-/* ==========================================================================
-   pageHeader
+   pageHeaderPlacer
    ========================================================================== */
 .CG2-pageHeaderPlacer {
   height: 60px;
@@ -1007,6 +831,81 @@ a:hover, a:active {
 /* ==========================================================================
    pageHeader
    ========================================================================== */
+/*
+---
+name: Page Header
+category:
+  - Templates
+tag:
+  - Template
+  - Page Header
+templateItem:
+  - true
+---
+
+- CG2-pageHeaderPlacer を併用すると高さを確保することができる
+- 実際に利用するときには以下のコードから`style="position:static;"`を取り除いて使う
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader" style="position:static;">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <img src="{{root}}../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      sticky header with `CG-pageHeaderPlacer`
+  </header>
+</div>
+
+
+<!-- ログイン前 -->
+<header class="CG2-pageHeader" style="position:static;">
+  <div class="CG2-pageHeader__inner">
+    <div class="CG2-pageHeader__logo">
+      <img src="{{root}}../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+    </div>
+    <div class="CG2-pageHeader__nav">
+      <ul>
+        <li><a href="#">料金</a></li>
+        <li><a href="#">団体購読</a></li>
+        <li><a href="#">よくある質問</a></li>
+        <li><a href="#">書籍</a></li>
+      </ul>
+    </div>
+    <div class="CG2-pageHeader__buttons">
+      <ul>
+        <li><a class="CG2-button CG2-button--primary CG2-button--thin" href="#">購読する</a></li>
+        <li><a href="#">ログイン</a></li>
+      </ul>
+    </div>
+    <div class="CG2-pageHeader__opener"></div>
+  </div>
+</header>
+
+
+<!-- ログイン後 -->
+<header class="CG2-pageHeader" style="position:static;">
+  <div class="CG2-pageHeader__inner">
+    <div class="CG2-pageHeader__logo">
+      <img src="{{root}}../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+    </div>
+    <div class="CG2-pageHeader__search">
+      <div class="CG2-pageHeader__searchInner">
+        <input>
+      </div>
+    </div>
+    <div class="CG2-pageHeader__buttons">
+      <ul>
+        <li><a class="CG2-button CG2-button--primary CG2-button--thin" href="#">購読する</a></li>
+        <li><a href="#">ログイン</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
+</header>
+```
+
+*/
 .CG2-pageHeader {
   *zoom: 1;
   position: fixed;
@@ -1604,6 +1503,407 @@ html.js-drawer--show .CG2-drawer__bg {
   font-size: 20px; }
 
 /* ==========================================================================
+   CG2-container
+   ========================================================================== */
+.CG2-container,
+.CG2-container + .CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container {
+  background: transparent; }
+
+.CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container {
+  background: #f0f0f0; }
+
+.CG2-container__inner {
+  box-sizing: border-box;
+  width: 1016px;
+  padding: 40px 28px;
+  margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    .CG2-container__inner {
+      width: auto;
+      padding: 10px 20px; } }
+
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+/* Sub-section comment block
+   ========================================================================== */
+/* Basic comment */
+/* ==========================================================================
+   button
+   ========================================================================== */
+/*
+---
+name: ボタン
+category:
+  - Nav Items
+tag:
+  - button
+---
+
+```html
+<p>
+  <a class="CG2-button" href="#">button:a element</a>
+</p>
+<p>
+  <button class="CG2-button" href="#">button: button element</button>
+</p>
+<p>
+  <a class="CG2-button" href="#"><span class="CG2-icon-pxg"></span>button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--primary" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--action" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--setting" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--thin" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--large" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--fullWidth" href="#">button</a>
+</p>
+```
+
+*/
+.CG2-button {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  box-sizing: border-box;
+  display: inline-block;
+  border-radius: 2px;
+  border: none;
+  padding: 0.6em 1.8em;
+  background: #707070; }
+  @media screen and (max-width: 767px) {
+    .CG2-button {
+      font-size: 12px; } }
+  .CG2-button.CG2-button--thin {
+    padding: 0.4em 1.8em; }
+  .CG2-button.CG2-button--large {
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; }
+  .CG2-button.CG2-button--fullWidth {
+    display: block;
+    width: 100%; }
+  .CG2-button span[class^="CG2-icon"] {
+    font-size: 20px;
+    margin-right: 5px; }
+    .CG2-button span[class^="CG2-icon"]:first-child {
+      margin-left: -.6em; }
+  .CG2-button.CG2-button--primary {
+    background: #10a040; }
+  .CG2-button.CG2-button--action {
+    background: #282828; }
+  .CG2-button.CG2-button--setting {
+    background: #767676; }
+
+/* ==========================================================================
+   buttonContainer
+   ========================================================================== */
+/*
+---
+name: ボタン格納
+category:
+  - Nav Items
+tag:
+  - button
+---
+
+```html
+<div class="CG2-buttonContainer">
+  <ul>
+    <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+<!-- 左寄せ -->
+<div class="CG2-buttonContainer CG2-buttonContainer--pullLeft">
+  <ul>
+    <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+```
+
+*/
+.CG2-buttonContainer {
+  margin: 20px 0; }
+  .CG2-buttonContainer ul {
+    font-size: 0;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+  .CG2-buttonContainer.CG2-buttonContainer--pullLeft ul {
+    text-align: left; }
+  .CG2-buttonContainer li {
+    font-size: 1rem;
+    display: inline-block; }
+
+/* ==========================================================================
+   toolButton
+   ========================================================================== */
+/*
+---
+name: Tool Button
+category:
+  - Nav Items
+tag:
+  - button
+---
+
+```html
+<div class="CG2-toolButton"></div>
+```
+
+*/
+.CG2-toolButton {
+  color: #fff;
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  padding: 11px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.2); }
+  @media screen and (max-width: 767px) {
+    .CG2-toolButton {
+      width: 12px;
+      height: 12px;
+      padding: 8px; } }
+  .CG2-toolButton:after {
+    content: "";
+    font-family: "codegrid-icon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 18px;
+    display: block; }
+    @media screen and (max-width: 767px) {
+      .CG2-toolButton:after {
+        font-size: 12px; } }
+
+/* ==========================================================================
+   header1
+   ========================================================================== */
+/*
+---
+name: Header 1
+category:
+  - Heading and Context
+tag:
+  - context
+---
+
+```html
+<div class="CG2-header1">
+  <div class="CG2-header1__heading">Heading text 1</div>
+</div>
+```
+
+*/
+.CG2-header1__heading {
+  color: #282828;
+  font-size: 32px;
+  font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.2;
+  padding: 0 28px 30px;
+  border-bottom: 1px solid #282828;
+  margin: 0 -28px 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-header1__heading {
+      font-size: 20px;
+      padding: 0 10px 10px;
+      margin: 20px -10px 30px; } }
+
+/* ==========================================================================
+   header2
+   ========================================================================== */
+/*
+---
+name: Header 2
+category:
+  - Heading and Context
+tag:
+  - context
+---
+
+```html
+<div class="CG2-header2">
+  <div class="CG2-header2__heading">Heading text 2</div>
+</div>
+```
+
+*/
+.CG2-header2__heading {
+  font-size: 24px;
+  margin: 60px 0 15px; }
+  @media screen and (max-width: 767px) {
+    .CG2-header2__heading {
+      font-size: 16px;
+      margin: 30px 0 10px; } }
+
+/* ==========================================================================
+   header3
+   ========================================================================== */
+/*
+---
+name: Header 3
+category:
+  - Heading and Context
+tag:
+  - context
+---
+
+```html
+<div class="CG2-header3">
+  <div class="CG2-header3__heading">Heading text 3</div>
+</div>
+```
+
+*/
+.CG2-header3__heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 40px 0 15px; }
+
+/* ==========================================================================
+   leadText
+   ========================================================================== */
+/*
+---
+name: LeadText
+category:
+  - Heading and Context
+tag:
+  - context
+---
+
+```html
+<div class="LeadText">LeadText</div>
+```
+
+*/
+.CG2-leadText {
+  font-size: 32px;
+  font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.4;
+  text-align: center;
+  margin: 80px 0 40px; }
+  .CG2-container__inner > .CG2-leadText:first-child {
+    margin-top: 20px; }
+  .CG2-container__inner > .CG2-leadText:last-child {
+    margin-bottom: 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-leadText {
+      font-size: 20px;
+      margin-top: 50px;
+      margin-bottom: 20px; } }
+
+/* ==========================================================================
+   holizontalLine
+   ========================================================================== */
+/*
+---
+name: Horizontal Line
+category:
+  - Heading and Context
+tag:
+  - context
+---
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+<div class="CG2-holizontalLine"></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+```
+
+*/
+.CG2-holizontalLine {
+  border-top: 1px solid #5c5c5c;
+  margin: 80px -28px; }
+  @media screen and (max-width: 767px) {
+    .CG2-holizontalLine {
+      border-color: #D8D8D8;
+      margin: 30px -20px; } }
+
+/* ==========================================================================
+   CG2-term
+   ========================================================================== */
+/*
+---
+name: Term List
+category:
+  - block
+tag:
+  - block
+---
+
+```html
+<div class="CG2-term">
+  <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+  </dl>
+</div>
+```
+
+*/
+.CG2-term dt {
+  font-weight: bold; }
+
+.CG2-term dd {
+  margin: 0 0 15px; }
+
+/* ==========================================================================
+   CG2-lastUpdate
+   ========================================================================== */
+/*
+---
+name: LastUpdate
+category:
+  - block
+tag:
+  - block
+---
+
+```html
+<div class="CG2-lastUpdate">Last Update: 20xx-08-01</div>
+```
+
+*/
+.CG2-lastUpdate {
+  margin-top: 80px; }
+  @media screen and (max-width: 767px) {
+    .CG2-lastUpdate {
+      margin-top: 40px; } }
+
+/* ==========================================================================
    CG2-logo3d
    ========================================================================== */
 .CG2-logo3d {
@@ -1655,30 +1955,6 @@ html.js-drawer--show .CG2-drawer__bg {
       .CG2-logo3d__overlayText:after {
         font-size: 16px;
         margin-top: 6px; } }
-
-/* ==========================================================================
-   CG2-container
-   ========================================================================== */
-.CG2-container,
-.CG2-container + .CG2-container + .CG2-container,
-.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container,
-.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container {
-  background: transparent; }
-
-.CG2-container + .CG2-container,
-.CG2-container + .CG2-container + .CG2-container + .CG2-container,
-.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container {
-  background: #f0f0f0; }
-
-.CG2-container__inner {
-  box-sizing: border-box;
-  width: 1016px;
-  padding: 40px 28px;
-  margin: 0 auto; }
-  @media screen and (max-width: 767px) {
-    .CG2-container__inner {
-      width: auto;
-      padding: 10px 20px; } }
 
 /* ==========================================================================
    CG2-features

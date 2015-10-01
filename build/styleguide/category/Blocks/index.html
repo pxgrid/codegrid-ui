@@ -1,0 +1,142 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link href="../../assets/css/highlight/monokai.css" rel="stylesheet">
+<link href="../../assets/css/custom.css" rel="stylesheet">
+<script>
+document.addEventListener( 'DOMContentLoaded', function () {
+
+  var modfiier = ' aigis--navclose';
+  var pattern = new RegExp( modfiier );
+  var $body   = document.body;
+  var $button = document.querySelector( '.aigis-toggle' );
+
+  $button.addEventListener( 'click', function () {
+
+    if ( pattern.test( $body.className ) ) {
+
+      $body.className = $body.className.replace( modfiier, '' );
+
+    } else {
+
+      $body.className += modfiier;
+
+    }
+
+  } );
+
+} );
+</script>
+<link href="../../../assets2/css/codegrid-ui.css" rel="stylesheet">
+
+<title>CodeCrid CSS Style Guide</title>
+</head>
+<body>
+<button class="aigis-toggle">
+	<span class="aigis-icon-list"></span>
+</button>
+
+<div class="aigis-sidemenu">
+	<nav>
+		<h1 class="aigis-sidemenu__heading1">
+			<a href="../../index.html">CodeCrid CSS Style Guide</a>
+		</h1>
+		<h2 class="aigis-sidemenu__heading2"><a href="../../color.html">Color</a></h2>
+
+		<h2 class="aigis-sidemenu__heading2">Category</h2>
+		<div class="aigis-categoryList">
+			<ul>
+				<li><a data-path-level="0" data-path-root="Blocks" data-path-parent="" href="../../category/Blocks/index.html">Blocks</a></li>
+				<li><a data-path-level="0" data-path-root="Headings_and_Contexts" data-path-parent="" href="../../category/Headings_and_Contexts/index.html">Headings_and_Contexts</a></li>
+				<li><a data-path-level="0" data-path-root="Nav_Items" data-path-parent="" href="../../category/Nav_Items/index.html">Nav_Items</a></li>
+				<li><a data-path-level="0" data-path-root="Templates" data-path-parent="" href="../../category/Templates/index.html">Templates</a></li>
+			</ul>
+		</div>
+
+		<h2 class="aigis-sidemenu__heading2">Tag</h2>
+		<div class="aigis-tagList">
+			<ul>
+				<li><a href="../../tag/Page_Footer/index.html">Page_Footer</a></li>
+				<li><a href="../../tag/Page_Header/index.html">Page_Header</a></li>
+				<li><a href="../../tag/Template/index.html">Template</a></li>
+				<li><a href="../../tag/block/index.html">block</a></li>
+				<li><a href="../../tag/button/index.html">button</a></li>
+				<li><a href="../../tag/context/index.html">context</a></li>
+			</ul>
+			</div>
+	</nav>
+</div>
+
+
+<h2 class="aigis-categoryHeading">Blocks</h2>
+
+<nav class="aigis-moduleList">
+	<ul>
+		<li><a href="#Term List"><span class="aigis-icon-caretdown"></span>Term List</a>
+		<li><a href="#LastUpdate"><span class="aigis-icon-caretdown"></span>LastUpdate</a>
+	</ul>
+</nav>
+
+
+<div class="aigis-module">
+	<h2 class="aigis-module__heading" id="Term List">
+		<a href="#Term List"><span class="aigis-icon-link"></span></a>Term List
+	</h2>
+	<div class="aigis-module__filepath">/src/assets2/scss/codegrid-ui.scss</div>
+	<div class="aigis-tags">
+		<ul>
+			<li class="aigis-tags__item aigis-tags__item--block">block
+		</ul>
+	</div>
+	<div class="aigis-module__preview">
+		<div class="CG2-container"><div class="CG2-container__inner">
+
+<div class='aigis-preview'>
+  <div class="CG2-term">
+    <dl> <dt>Coffee</dt>
+        <dd>Black hot drink</dd> <dt>Milk</dt>
+        <dd>White cold drink</dd>
+    </dl>
+</div></div>
+
+<pre><code class="lang-html"><div class="aigis-codeblock aigis-codeblock--html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-term</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>dl</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>dt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Coffee</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>dt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>dd</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Black&nbsp;hot&nbsp;drink</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>dd</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>dt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Milk</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>dt</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>dd</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>White&nbsp;cold&nbsp;drink</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>dd</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span>&nbsp;&nbsp;</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>dl</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre></div>
+</code></pre>
+
+
+		</div></div>
+	</div>
+</div>
+
+
+<div class="aigis-module">
+	<h2 class="aigis-module__heading" id="LastUpdate">
+		<a href="#LastUpdate"><span class="aigis-icon-link"></span></a>LastUpdate
+	</h2>
+	<div class="aigis-module__filepath">/src/assets2/scss/codegrid-ui.scss</div>
+	<div class="aigis-tags">
+		<ul>
+			<li class="aigis-tags__item aigis-tags__item--block">block
+		</ul>
+	</div>
+	<div class="aigis-module__preview">
+		<div class="CG2-container"><div class="CG2-container__inner">
+
+<div class='aigis-preview'>
+  <div class="CG2-lastUpdate">Last Update: 20xx-08-01</div></div>
+
+<pre><code class="lang-html"><div class="aigis-codeblock aigis-codeblock--html"><pre class="editor editor-colors"><div class="line"><span class="text html gohtml"><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;</span></span><span class="entity name tag block any html"><span>div</span></span><span>&nbsp;</span><span class="entity other attribute-name html"><span>class</span></span><span>=</span><span class="string quoted double html"><span class="punctuation definition string begin html"><span>&quot;</span></span><span>CG2-lastUpdate</span><span class="punctuation definition string end html"><span>&quot;</span></span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span><span>Last&nbsp;Update:&nbsp;20xx-08-01</span><span class="meta tag block any html"><span class="punctuation definition tag begin html"><span>&lt;/</span></span><span class="entity name tag block any html"><span>div</span></span><span class="punctuation definition tag end html"><span>&gt;</span></span></span></span></div></pre></div>
+</code></pre>
+
+
+		</div></div>
+	</div>
+</div>
+
+
+<footer class="aigis-footer">Last update at 2015/10/01/ 18:44</footer>
+<script src="../../../assets2/js/codegrid-ui.min.js"></script>
+</body>
+</html>
+

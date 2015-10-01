@@ -13,15 +13,25 @@
 
 <div class="aigis-module">
 	{{#if config.name}}
-	<h2 class="aigis-module__heading" id="{{config.name}}"><a href="#{{config.name}}"></a>{{config.name}}</h2>
+	<h2 class="aigis-module__heading" id="{{config.name}}">
+		<a href="#{{config.name}}"><span class="aigis-icon-link"></span></a>{{config.name}}
+	</h2>
 	{{/if}}
 	<div class="aigis-module__filepath">{{config.filePath}}</div>
 	{{#if config.tag}}
-	<ul class="aigis-tags">
-		{{#each config.tag}}
-		<li class="aigis-tags__item aigis-tags__item--{{this}}">{{this}}
-		{{/each}}
-	</ul>
+	<div class="aigis-tags">
+		<ul>
+			{{#each config.tag}}
+			<li class="aigis-tags__item aigis-tags__item--{{this}}">{{this}}
+			{{/each}}
+		</ul>
+	</div>
 	{{/if}}
-	{{{html}}}
+	<div class="aigis-module__preview">
+		{{#unless config.templateItem}}<div class="CG2-container"><div class="CG2-container__inner">{{/unless}}
+
+{{{html}}}
+
+		{{#unless config.templateItem}}</div></div>{{/unless}}
+	</div>
 </div>
