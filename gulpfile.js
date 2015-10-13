@@ -143,7 +143,7 @@ gulp.task( 'watch', function () {
     runSequence( 'js', browserSync.reload );
   } );
 
-  watch( [ './src/assets2/css/*.scss' ], function () {
+  watch( [ './src/assets2/scss/*.scss' ], function () {
     runSequence( 'sass', browserSync.reload );
   } );
 

@@ -280,6 +280,8 @@ body {
   padding: 40px 30px;
   border: 2px solid #BFCBBD;
   margin: 20px auto;
+  background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVvoWCgBGAMmMQACQAAuK72AWHjK4wAAAAASUVORK5CYII=' );
+  /*background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVnoGCgBGAMmMQACQAA9CflgZrq8LsAAAAASUVORK5CYII=' );*/
 }
 .aigis-module.aigis-module--fullWidth .aigis-preview{
   width: auto;
@@ -313,14 +315,15 @@ body.aigis--codeclose .aigis-codeblock{
   margin: 0;
   border-radius: 2px;
 }
-.aigis-module__preview code[class*="language-"],
-.aigis-module__preview pre[class*="language-"] {
+.aigis-module__preview > pre[class*="language-"] {
   line-height: inherit;
   white-space: normal;
-  text-shadow: none;
   padding: 0;
   margin: 0;
   background: none;
+}
+.aigis-module__preview > pre[class*="language-"] > code[class*="language-"]{
+  text-shadow: none;
 }
 
 
@@ -386,17 +389,6 @@ body.aigis--codeclose .aigis-codeblock{
   margin-left: auto;
   margin-right: auto;
 }
-.aigis-module.aigis-module--fullWidth .sg-heading,
-.aigis-module.aigis-module--fullWidth .sg-hr,
-.aigis-module.aigis-module--fullWidth .sg-link,
-.aigis-module.aigis-module--fullWidth .sg-img,
-.aigis-module.aigis-module--fullWidth .sg-p,
-.aigis-module.aigis-module--fullWidth .sg-list,
-.aigis-module.aigis-module--fullWidth .sg-table,
-.aigis-module.aigis-module--fullWidth .sg-blockquote{
-  max-width: none;
-  padding: 0;
-}
 
 @media screen and (max-width: 767px) {
   .sg-heading,
@@ -407,16 +399,6 @@ body.aigis--codeclose .aigis-codeblock{
   .sg-list,
   .sg-table,
   .sg-blockquote{
-    padding: 0 20px;
-  }
-  .aigis-module.aigis-module--fullWidth .sg-heading,
-  .aigis-module.aigis-module--fullWidth .sg-hr,
-  .aigis-module.aigis-module--fullWidth .sg-link,
-  .aigis-module.aigis-module--fullWidth .sg-img,
-  .aigis-module.aigis-module--fullWidth .sg-p,
-  .aigis-module.aigis-module--fullWidth .sg-list,
-  .aigis-module.aigis-module--fullWidth .sg-table,
-  .aigis-module.aigis-module--fullWidth .sg-blockquote{
     padding: 0 20px;
   }
 }
