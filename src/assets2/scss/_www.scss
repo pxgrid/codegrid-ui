@@ -18,9 +18,10 @@
 ---
 name: Logo_3D
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 templateItem:
   - true
 ---
@@ -37,8 +38,8 @@ templateItem:
 
 three.min.js (r72)、Logo3D.jsを読み込み、`new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
 
-<script src="../../../js/three.min.js"></script>
-<script src="../../../js/Logo3D.js"></script>
+<script src="/examples/js/three.min.js"></script>
+<script src="/examples/js/Logo3D.js"></script>
 <script>
 var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 </script>
@@ -101,9 +102,9 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 ---
 name: features
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
 ---
 
 ```html
@@ -167,9 +168,10 @@ tag:
 ---
 name: howYouReceive
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -250,9 +252,10 @@ tag:
 ---
 name: bookInfo
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -311,9 +314,10 @@ tag:
 ---
 name: circulation
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -384,9 +388,10 @@ tag:
 ---
 name: pickedup
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -449,9 +454,10 @@ section.CG2-pickedup{
 ---
 name: categoryIntro
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -513,9 +519,10 @@ tag:
 ---
 name: customerQuotes
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -653,7 +660,60 @@ section.CG2-customerQuotes{
     }
 
 
+/* ==========================================================================
+   CG2-term
+   ========================================================================== */
+/*
+---
+name: term
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
 
+```html
+<div class="CG2-term">
+  <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+  </dl>
+</div>
+```
 
+*/
+.CG2-term{
+  dl{}
+  dt{
+    font-weight: bold;
+  }
+  dd{
+    margin: 0 0 15px;
+  }
+}
 
+/* ==========================================================================
+   CG2-lastUpdate
+   ========================================================================== */
+/*
+---
+name: lastUpdate
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
 
+```html
+<div class="CG2-lastUpdate">Last Update: 20xx-08-01</div>
+```
+
+*/
+.CG2-lastUpdate{
+  margin-top: 80px;
+  @include max-screen( $breakpoint-middle ) {
+    margin-top: 40px;
+  }
+}

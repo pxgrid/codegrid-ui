@@ -677,33 +677,179 @@ tag:
   - icon
 ---
 
+pxg
 ```html
-<span class="CG2-icon-pxg"></span>
-<span class="CG2-icon-top"></span>
-<span class="CG2-icon-right"></span>
-<span class="CG2-icon-down"></span>
-<span class="CG2-icon-left"></span>
-<span class="CG2-icon-hamburger"></span>
-<span class="CG2-icon-list"></span>
-<span class="CG2-icon-setting"></span>
-<span class="CG2-icon-search"></span>
-<span class="CG2-icon-star"></span>
-<span class="CG2-icon-twitter"></span>
-<span class="CG2-icon-facebook"></span>
-<span class="CG2-icon-gplus"></span>
-<span class="CG2-icon-cat-elementary"></span>
-<span class="CG2-icon-cat-practice"></span>
-<span class="CG2-icon-cat-standards"></span>
-<span class="CG2-icon-cat-talk"></span>
-<span class="CG2-icon-cat-architecture"></span>
-<span class="CG2-icon-cat-report"></span>
-<span class="CG2-icon-cat-design"></span>
-<span class="CG2-icon-cat-future"></span>
-<span class="CG2-icon-cat-workstyle"></span>
-<span class="CG2-icon-cat-survey"></span>
-<span class="CG2-icon-cat-interview"></span>
-<span class="CG2-icon-cat-discussion"></span>
+<div style="font-size:32px;">
+  <span class="CG2-icon-pxg"></span>
+</div>
+```
 
+top
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-top"></span>
+</div>
+```
+
+right
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-right"></span>
+</div>
+```
+
+down
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-down"></span>
+</div>
+```
+
+left
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-left"></span>
+</div>
+```
+
+hamburger
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-hamburger"></span>
+</div>
+```
+
+list
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-list"></span>
+</div>
+```
+
+setting
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-setting"></span>
+</div>
+```
+
+search
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-search"></span>
+</div>
+```
+
+star
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-star"></span>
+</div>
+```
+
+twitter
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-twitter"></span>
+</div>
+```
+
+facebook
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-facebook"></span>
+</div>
+```
+
+gplus
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-gplus"></span>
+</div>
+```
+
+cat-elementary
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-elementary"></span>
+</div>
+```
+
+cat-practice
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-practice"></span>
+</div>
+```
+
+cat-standards
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-standards"></span>
+</div>
+```
+
+cat-talk
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-talk"></span>
+</div>
+```
+
+cat-architecture
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-architecture"></span>
+</div>
+```
+
+cat-report
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-report"></span>
+</div>
+```
+
+cat-design
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-design"></span>
+</div>
+```
+
+cat-future
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-future"></span>
+</div>
+```
+
+cat-workstyle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-workstyle"></span>
+</div>
+```
+
+cat-survey
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-survey"></span>
+</div>
+```
+
+cat-interview
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-interview"></span>
+</div>
+```
+
+cat-discussion
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-cat-discussion"></span>
+</div>
 ```
 
 */
@@ -877,7 +1023,6 @@ category:
   - Templates
 tag:
   - Template
-  - Template/Page_Header
 templateItem:
   - true
 ---
@@ -885,14 +1030,14 @@ templateItem:
 - `CG2-pageHeaderPlacer`を併用すると高さを確保することができる、高さ確保が不要なら`CG2-pageHeaderPlacer`を利用しない
 - 実際に利用するときには以下のコードから`style="position:relative;"`を**取り除いて使う**
 
-## ログイン前
+## WWW用
 
 ```html
 <div class="CG2-pageHeaderPlacer">
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
       <div class="CG2-pageHeader__nav">
         <ul>
@@ -914,14 +1059,14 @@ templateItem:
 </div>
 ```
 
-## ログイン後
+## APP用
 
 ```html
 <div class="CG2-pageHeaderPlacer">
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
@@ -935,6 +1080,20 @@ templateItem:
         </ul>
       </div>
       <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
+    </div>
+  </header>
+</div>
+```
+
+## 導線無し（フォーム途中など）
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader" style="position:relative;">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
     </div>
   </header>
 </div>
@@ -1096,7 +1255,6 @@ category:
   - Templates
 tag:
   - Template
-  - Template/Page_Footer
 templateItem:
   - true
 ---
@@ -1782,7 +1940,7 @@ templateItem:
 ---
 name: button
 category:
-  - Nav_Items
+  - Nav-items
 tag:
   - button
 ---
@@ -1871,7 +2029,7 @@ sizes
 ---
 name: buttonContainer
 category:
-  - Nav_Items
+  - Nav-items
 tag:
   - button
 ---
@@ -1914,7 +2072,7 @@ tag:
 ---
 name: toolButton
 category:
-  - Nav_Items
+  - Nav-items
 tag:
   - button
 ---
@@ -2105,69 +2263,16 @@ tag:
       margin: 30px -20px; } }
 
 /* ==========================================================================
-   CG2-term
-   ========================================================================== */
-/*
----
-name: term
-category:
-  - Blocks
-tag:
-  - block
----
-
-```html
-<div class="CG2-term">
-  <dl>
-    <dt>Coffee</dt>
-    <dd>Black hot drink</dd>
-    <dt>Milk</dt>
-    <dd>White cold drink</dd>
-  </dl>
-</div>
-```
-
-*/
-.CG2-term dt {
-  font-weight: bold; }
-
-.CG2-term dd {
-  margin: 0 0 15px; }
-
-/* ==========================================================================
-   CG2-lastUpdate
-   ========================================================================== */
-/*
----
-name: lastUpdate
-category:
-  - Blocks
-tag:
-  - block
----
-
-```html
-<div class="CG2-lastUpdate">Last Update: 20xx-08-01</div>
-```
-
-*/
-.CG2-lastUpdate {
-  margin-top: 80px; }
-  @media screen and (max-width: 767px) {
-    .CG2-lastUpdate {
-      margin-top: 40px; } }
-
-/* ==========================================================================
    CG2-customers
    ========================================================================== */
 /*
 ---
 name: customers
 category:
-  - Blocks
+  - Blocks/shared
 tag:
-  - block
-  - WWW_Item
+  - app-item
+  - www-item
 ---
 
 ```html
@@ -2239,10 +2344,10 @@ section.CG2-customers p {
 ---
 name: seriesWeekHeader
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
 ---
 
 ```html
@@ -2443,10 +2548,10 @@ span.CG2-seriesWeekHeader__text {
 ---
 name: seriesListHeader
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
 ---
 
 内部で別コンポーネント CG2-compactNav を利用
@@ -2568,10 +2673,10 @@ tag:
 ---
 name: compactNav
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
 ---
 
 別コンポーネント CG2-seriesListHeader 内で利用。利用方法は CG2-seriesListHeader を参照
@@ -2684,10 +2789,11 @@ tag:
 ---
 name: seriesList
 category:
-  - Blocks/article_list
+  - Blocks/shared
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
+  - www-item
 ---
 
 ## 通常
@@ -3144,10 +3250,10 @@ tag:
 ---
 name: seriesHeader
 category:
-  - Blocks/article_list
+  - Blocks/app
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
 templateItem:
   - true
 ---
@@ -3260,10 +3366,10 @@ templateItem:
 ---
 name: series
 category:
-  - Blocks/article_list
+  - Blocks/app
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
 ---
 
 ```html
@@ -3400,10 +3506,10 @@ tag:
 ---
 name: articleHeader
 category:
-  - Blocks/article_list
+  - Blocks/app
 tag:
-  - app_item
-  - app_item/articleList
+  - app-item
+  - app-item-articlelist
 ---
 
 ```html
@@ -3614,10 +3720,8 @@ tag:
 name: narrowLayout
 category:
   - Templates
-  - Blocks/article
 tag:
-  - app_item
-  - article
+  - app-item-article
 templateItem:
   - true
 ---
@@ -3695,10 +3799,9 @@ templateItem:
 ---
 name: articleTOC
 category:
-  - Blocks/article
+  - Blocks/app
 tag:
-  - app_item
-  - article
+  - app-item-article
 ---
 
 ```html
@@ -3838,10 +3941,10 @@ header.CG2-articleTOC__header {
 ---
 name: articleSeriesNav
 category:
-  - Blocks/article
+  - Blocks/app
 tag:
-  - app_item
-  - article
+  - app-item
+  - app-item-article
 ---
 
 記事ページ `.CG2-narrowLayout` のサイドバー内で利用する
@@ -3915,10 +4018,10 @@ tag:
 ---
 name: article
 category:
-  - Blocks/article
+  - Blocks/app
 tag:
-  - app_item
-  - article
+  - app-item
+  - app-item-article
 ---
 
 記事本文、markdownから変換されることを前提
@@ -4111,10 +4214,10 @@ article.CG2-article {
 ---
 name: articlePagination
 category:
-  - Blocks/article
+  - Blocks/app
 tag:
-  - app_item
-  - article
+  - app-item
+  - app-item-article
 ---
 
 ```html
@@ -4183,10 +4286,10 @@ tag:
 ---
 name: articleUtil
 category:
-  - Blocks/article
+  - Blocks/app
 tag:
-  - app_item
-  - article
+  - app-item
+  - app-item-article
 ---
 
 ```html
@@ -4234,10 +4337,10 @@ tag:
 ---
 name: livecode
 category:
-  - Blocks/article
+  - Blocks/app
 tag:
-  - app_item
-  - article
+  - app-item
+  - app-item-article
 ---
 
 ソースコードを埋め込むことができる
@@ -4368,9 +4471,9 @@ section.CG2-livecode h1 {
 ---
 name: profile
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
+  - app-item
 ---
 
 バイオグラフィー自体がメインのコンテンツ用
@@ -4488,9 +4591,10 @@ tag:
 ---
 name: profileSimple
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
+  - app-item
+  - app-item-article
 ---
 
 記事ページの下部等、バイオグラフィー自体がメインではないコンテンツ用
@@ -4578,9 +4682,9 @@ tag:
 ---
 name: authorList
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
+  - app-item
 ---
 
 ```html
@@ -4694,9 +4798,9 @@ tag:
 ---
 name: searchLayout
 category:
-  - Blocks
+  - Templates/app
 tag:
-  - app_item
+  - app-item
 templateItem:
   - true
 ---
@@ -4790,9 +4894,9 @@ templateItem:
 ---
 name: searchLayout
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
+  - app-item
 ---
 
 主に`CG2-searchLayout`内で利用する
@@ -5000,9 +5104,9 @@ tag:
 ---
 name: searchFailed
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
+  - app-item
 ---
 
 CG2-searchOption の CG2-searchLayout__result 内で利用する
@@ -5052,9 +5156,9 @@ CG2-searchOption の CG2-searchLayout__result 内で利用する
 ---
 name: settings
 category:
-  - Blocks
+  - Blocks/app
 tag:
-  - app_item
+  - app-item
 ---
 
 ```html
@@ -5235,8 +5339,8 @@ name: formProgress
 category:
   - Blocks/app
 tag:
-  - app_item
-  - app_form
+  - app-item
+  - app-form
 ---
 
 ```html
@@ -5295,8 +5399,8 @@ name: signupFrom
 category:
   - Blocks/app
 tag:
-  - app_item
-  - app_form
+  - app-item
+  - app-form
 ---
 
 ```html
@@ -5460,10 +5564,11 @@ tag:
 ---
 name: paymentTable
 category:
-  - Blocks/app
+  - Blocks/shared
 tag:
-  - app_item
-  - app_form
+  - app-item
+  - app-form
+  - www-item
 ---
 
 ```html
@@ -5680,9 +5785,10 @@ tag:
 ---
 name: Logo_3D
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 templateItem:
   - true
 ---
@@ -5699,8 +5805,8 @@ templateItem:
 
 three.min.js (r72)、Logo3D.jsを読み込み、`new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
 
-<script src="../../../js/three.min.js"></script>
-<script src="../../../js/Logo3D.js"></script>
+<script src="/examples/js/three.min.js"></script>
+<script src="/examples/js/Logo3D.js"></script>
 <script>
 var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 </script>
@@ -5763,9 +5869,9 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 ---
 name: features
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
 ---
 
 ```html
@@ -5822,9 +5928,10 @@ tag:
 ---
 name: howYouReceive
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -5895,9 +6002,10 @@ tag:
 ---
 name: bookInfo
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -5949,9 +6057,10 @@ tag:
 ---
 name: circulation
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -6014,9 +6123,10 @@ tag:
 ---
 name: pickedup
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -6078,9 +6188,10 @@ header.CG2-pickedup__header {
 ---
 name: categoryIntro
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -6136,9 +6247,10 @@ tag:
 ---
 name: customerQuotes
 category:
-  - WWW_Items
+  - Blocks/www
 tag:
-  - WWW_Item
+  - www-item
+  - www-top-item
 ---
 
 ```html
@@ -6272,3 +6384,56 @@ header.CG2-customerQuotes__header {
   display: table-cell;
   width: 40%;
   padding-left: 20px; }
+
+/* ==========================================================================
+   CG2-term
+   ========================================================================== */
+/*
+---
+name: term
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-term">
+  <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+  </dl>
+</div>
+```
+
+*/
+.CG2-term dt {
+  font-weight: bold; }
+
+.CG2-term dd {
+  margin: 0 0 15px; }
+
+/* ==========================================================================
+   CG2-lastUpdate
+   ========================================================================== */
+/*
+---
+name: lastUpdate
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-lastUpdate">Last Update: 20xx-08-01</div>
+```
+
+*/
+.CG2-lastUpdate {
+  margin-top: 80px; }
+  @media screen and (max-width: 767px) {
+    .CG2-lastUpdate {
+      margin-top: 40px; } }

@@ -6,12 +6,14 @@ category:
 tag:
   - icon
 ---
-
+<% _.each ( glyphs, function( glyph ) { %>
+<%= glyph.name %>
 ```html
-<% _.each ( glyphs, function( glyph ) { %><span class="<%= prefix %>-<%= glyph.name %>"></span>
-<% } ); %>
+<div style="font-size:32px;">
+  <span class="<%= prefix %>-<%= glyph.name %>"></span>
+</div>
 ```
-
+<% } ); %>
 */
 
 @font-face {
