@@ -2,7 +2,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   'use strict';
 
-  var $el = document.querySelector( '.CG2-searchOption' );
+  var $el = document.querySelector( '.CG2-searchOption__body' );
 
   if ( !$el ) { return; }
 
