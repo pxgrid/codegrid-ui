@@ -660,12 +660,109 @@ section.CG2-customerQuotes{
     }
 
 
+
+/* ==========================================================================
+   CG2-faq
+   ========================================================================== */
+/*
+---
+name: faq
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-faq">
+  <div class="CG2-faq__question">
+    PayPalアカウントやWebMoneyのほかに、銀行振込など別の支払い方法はありますか？
+  </div>
+  <div class="CG2-faq__answer">
+    <p>個人で購読される方は、PayPalアカウント、もしくはWebMoneyのお支払いのみ受け付けております。団体で購読される方は、請求書払いで銀行振込ができます。</p>
+    <aside class="CG2-faq__eg">
+      <h1>未払い購読料の扱い（例）</h1>
+      <ul>
+        <li>前月未払い : 864円</li>
+        <li>今月請求 : 1,728円（前回未払い864円＋今回購読料864円）</li>
+      </ul>
+    </aside>
+  </div>
+</div>
+```
+
+*/
+
+.CG2-faq{
+  font-size: 16px;
+  margin: 40px 0;
+  padding: 0 0 0 50px;
+  @include max-screen( $breakpoint-small ) {
+    font-size: 12px;
+    margin: 20px -10px;
+    padding-left: 38px;
+  }
+}
+  .CG2-faq__question{
+    font-weight: bold;
+    position: relative;
+    min-height: 20px;
+    padding: 10px 0;
+    @include max-screen( $breakpoint-small ) {
+      min-height: 16px;
+      padding-top: 6px;
+      padding-bottom: 6px;
+    }
+    &:before{
+      @include icon( 'question' );
+      color: #282828;
+      font-size: 40px;
+      line-height: 40px;
+      position: absolute;
+      top: 0;
+      left: -50px;
+      @include max-screen( $breakpoint-small ) {
+        font-size: 28px;
+        line-height: 28px;
+        left: -38px;
+      }
+    }
+  }
+  .CG2-faq__answer{
+    p{
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+    aside.CG2-faq__eg{
+      padding: 20px 20px 20px 50px;
+      margin: 20px 0 0 -50px;
+      margin-left: -50px;
+      background: #F0F0F0;
+      @include max-screen( $breakpoint-small ) {
+        padding: 10px 10px 10px 38px;
+        margin-left: -38px;
+      }
+      h1{
+        font-size: 100%;
+        font-weight: bold;
+        margin: 0;
+      }
+      ul{
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 30px;
+      }
+      li{}
+    }
+  }
+
+
 /* ==========================================================================
    CG2-publication
    ========================================================================== */
 /*
 ---
-name: term
+name: publication
 category:
   - Blocks/www
 tag:
@@ -702,30 +799,54 @@ section.CG2-publication{
     vertical-align: top;
     display: table-cell;
     padding-right: 30px;
+    max-width: 206px;
+    width: 20%;
+    @include max-screen( $breakpoint-small ) {
+      padding-right: 15px;
+    }
     img{
       display: block;
+      width: 100%;
+      height: auto;
     }
   }
   .CG2-publication__body{
     font-size: 16px;
     vertical-align: top;
     display: table-cell;
+    @include max-screen( $breakpoint-small ) {
+      font-size: 12px;
+    }
     p{}
   }
     .CG2-publication__heading{
       margin: 0 0 25px;
+      @include max-screen( $breakpoint-small ) {
+        margin-bottom: 15px;
+      }
       h1{
         font-size: 24px;
         font-weight: normal;
         margin: 0;
+        @include max-screen( $breakpoint-small ) {
+          font-size: 16px;
+        }
       }
     }
     .CG2-publication__headingSub{
       font-size: 14px;
       margin: -20px 0 25px;
+      @include max-screen( $breakpoint-small ) {
+        font-size: 10px;
+        margin-top: -15px;
+        margin-bottom: 15px;
+      }
     }
     .CG2-publication__buttonContainer{
       margin-top: 30px;
+      @include max-screen( $breakpoint-small ) {
+        margin-top: 10px;
+      }
     }
 
 

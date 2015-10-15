@@ -77,6 +77,13 @@ star
 </div>
 ```
 
+question
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-question"></span>
+</div>
+```
+
 twitter
 ```html
 <div style="font-size:32px;">
@@ -225,6 +232,7 @@ cat-discussion
 .CG2-icon-setting:before { content: "\E607"; }
 .CG2-icon-search:before { content: "\E608"; }
 .CG2-icon-star:before { content: "\E609"; }
+.CG2-icon-question:before { content: "\E610"; }
 .CG2-icon-twitter:before { content: "\E700"; }
 .CG2-icon-facebook:before { content: "\E701"; }
 .CG2-icon-gplus:before { content: "\E702"; }
@@ -262,6 +270,7 @@ $icons: (
   setting "\E607",
   search "\E608",
   star "\E609",
+  question "\E610",
   twitter "\E700",
   facebook "\E701",
   gplus "\E702",

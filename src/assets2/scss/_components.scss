@@ -243,6 +243,9 @@ tag:
   @include max-screen( $breakpoint-middle ) {
     padding: 0 10px 10px;
     margin: 20px -10px 30px;
+    &:first-child{
+      margin-top: 20px;
+    }
   }
 }
   .CG2-header1__heading{
