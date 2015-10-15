@@ -1,5 +1,6 @@
 name: CodeCrid CSS Style Guide
 source:
+  # - ./src/assets2/scss/_template.scss
   - ./src/assets2/scss/codegrid-ui.scss
 format: yaml
 dest: ./build/styleguide

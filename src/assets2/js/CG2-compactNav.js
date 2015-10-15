@@ -2,21 +2,31 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   'use strict';
 
-  var $el = document.querySelector( '.CG2-compactNav' );
+  var i, l;
+  var $navs = document.querySelectorAll( '.CG2-compactNav' );
 
-  if ( !$el ) { return; }
+  if ( $navs.length === 0 ) { return; }
   
-  var $current = $el.querySelector( '.CG2-compactNav__item--current a' );
-  var $trigger = $el.querySelector( '.CG2-compactNav__navOpener' );
-  var modifier = 'CG2-compactNav--show';
+  for ( i = 0, l = $navs.length; i < l; i = ( i + 1 )|0 ) {
 
-  $current.addEventListener( 'click', toggle );
-  $trigger.addEventListener( 'click', toggle );
+    ( function () {
 
-  function toggle ( e ) {
+      var $nav     = $navs[ i ];
+      var $current = $nav.querySelector( '.CG2-compactNav__item--current a' );
+      var $trigger = $nav.querySelector( '.CG2-compactNav__navOpener' );
+      var modifier = 'CG2-compactNav--show';
 
-    e.preventDefault();
-    $el.classList.toggle( modifier );
+      $current.addEventListener( 'click', toggle );
+      $trigger.addEventListener( 'click', toggle );
+
+      function toggle ( e ) {
+
+        e.preventDefault();
+        $nav.classList.toggle( modifier );
+
+      }
+
+    } )();
 
   }
 

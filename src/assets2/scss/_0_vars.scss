@@ -9,7 +9,12 @@ $fontSerif : "\30D2\30E9\30AE\30CE\660E\671D ProN W3", "HiraMinProN-W3", "\30D2\
 $fontCode : monospace;
 $fontZero : 'zeroWidth';
 
+
 $pageMaxWidth: 1200px;
 $breakpoint-base   : 980px - 1;
 $breakpoint-middle : 768px - 1;
 $breakpoint-small  : 640px - 1;
+
+
+$z-pageHeader: 20;
+$z-flyout: 10;

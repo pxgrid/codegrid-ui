@@ -1,3 +1,47 @@
+/* ==========================================================================
+   .aigis-icon
+   ========================================================================== */
+@font-face {
+  font-family: 'aigis-icon';
+  src:url('../fonts/icon.eot');
+  src:url('../fonts/icon.eot#iefix') format('embedded-opentype'),
+    url('../fonts/icon.ttf') format('truetype'),
+    url('../fonts/icon.woff') format('woff'),
+    url('../fonts/icon.svg#icon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="aigis-icon-"], [class*=" aigis-icon-"] {
+  font-family: 'aigis-icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.aigis-icon-caretdown:before  {content: "\e600"; }
+.aigis-icon-caretup:before    {content: "\e601"; }
+.aigis-icon-caretleft:before  {content: "\e602"; }
+.aigis-icon-caretright:before {content: "\e603"; }
+.aigis-icon-down:before        {content: "\e604"; }
+.aigis-icon-left:before        {content: "\e605"; }
+.aigis-icon-right:before       {content: "\e606"; }
+.aigis-icon-up:before          {content: "\e607"; }
+.aigis-icon-list:before        {content: "\e608"; }
+.aigis-icon-link:before        {content: "\e609"; }
+.aigis-icon-github:before      {content: "\e60a"; }
+.aigis-icon-git:before         {content: "\e60b"; }
+.aigis-icon-code:before        {content: "\e60c";}
+
+
+
 body {
   font-family: sans-serif;
   margin: 0;
@@ -7,20 +51,26 @@ body {
 /* ==========================================================================
    .aigis-toggle
    ========================================================================== */
-.aigis-toggle{
+.aigis-toggleNav,
+.aigis-toggleCode{
+  color: #556655;
+  font-size: 16px;
   cursor: pointer;
   position: fixed;
   z-index: 9999;
-  top: 4px;
-  left: 4px;
-  padding: 6px;
-  border: 1px solid #333;
+  top: 6px;
+  padding: 8px;
+  border: 1px solid #BFCBBD;
   border-radius: 2px;
   background: rgba( 255, 255, 255, 0.75 );
   transition: background .2s;
 }
-.aigis-toggle:hover,
-.aigis--navclose .aigis-toggle{
+.aigis-toggleNav  { left: 6px;}
+.aigis-toggleCode { left: 46px;}
+.aigis-toggleNav:hover,
+.aigis-toggleCode:hover,
+.aigis--navclose  .aigis-toggleNav,
+.aigis--codeclose .aigis-toggleCode{
   background: rgba( 255, 255, 255, 1 );
 }
 
@@ -40,7 +90,7 @@ body {
   width: 280px;
   padding: 70px 20px 0;
   border-right: 1px solid #999;
-  background-color: rgba( 230, 230, 230, 0.9 );
+  background-color: rgba( 230, 240, 230, 0.9 );
   transition: left .2s; }
 .aigis--navclose .aigis-sidemenu {
   left: 0;
@@ -59,12 +109,31 @@ body {
     font-weight: normal;
     line-height: 1em;
     padding: 6px 0 6px 10px;
-    border-left: 6px solid #333;
+    border-left: 6px solid #94A592;
     margin: 0 0 12px -20px; }
     .aigis-sidemenu__heading2 a {
       color: inherit;
       text-decoration: none; }
 
+  .aigis-tagList ul{
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    .aigis-tagList li{
+      display: inline-block;
+      margin: 0 5px 5px 0;
+    }
+      .aigis-tagList a{
+        color: #62775E;
+        font-size: 12px;
+        display: inline-block;
+        padding: 4px 10px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        background: #fff;
+      }
 /* Sub-section comment block
    ========================================================================== */
 .aigis-categoryList {
@@ -110,8 +179,8 @@ body {
 .aigis-categoryHeading{
   font-size: 32px;
   font-weight: normal;
-  padding: 0 30px;
-  margin: 60px 0 20px;
+  padding: 60px 30px 0;
+  margin: 0 0 20px;
 }
 
 /* Sub-section comment block
@@ -127,63 +196,136 @@ body {
     margin: 0;
   }
     .aigis-moduleList li{
-      font-size: 14px;
+      font-size: 16px;
       display: inline-block;
-      margin: 0 5px 5px 0;
+      margin: 0 24px 5px 0;
     }
       .aigis-moduleList a{
-        color: #08f;
-        display: inline-block;
-        padding: 4px 10px;
-        border: 1px solid #ccc;
-        border-radius: 3px;
+        color: #62775E;
+        text-decoration: none;
       }
+        .aigis-moduleList a:hover{
+          border-bottom: 1px solid #62775E;
+        }
+        .aigis-moduleList span{
+          margin-right: .3em;
+        }
 
 /* ==========================================================================
    .aigis-module
    ========================================================================== */
 .aigis-module{
-  padding: 0 30px;
-}
+  padding: 0 30px;}
   .aigis-module__heading {
+    color: #fff;
     font-size: 26px;
     font-weight: normal;
     line-height: 1.2;
     position: relative;
-    border-bottom: 1px solid #333;
-    margin: 0 0 20px; }
-    .aigis-module__heading:hover a {
+    margin: 30px -30px 20px;
+    padding: 10px 30px;
+    background: #BFCBBD; }
+    .aigis-module__heading a {
+      color: #556655;
+      font-size: 18px;
+      text-decoration: none;
+      position: absolute;
+      top: 50%;
+      left: 8px;
+      display: none;
     }
-      .aigis-module__heading:hover a:before {
-        content: "\00a7";
-        position: absolute;
-        right: 100%;
-        bottom: 5px;
-        font-size: 20px;
-        color: #000;
-        padding-right: 5px;
-        padding-left: 5px; }
+    .aigis-module__heading:hover a {
+      display: block;
+    }
+      .aigis-module__heading a span{
+         line-height: 0;
+      }
   .aigis-module__filepath {
     color: #ADADAD;
-    font-size: 16px;
+    font-size: 12px;
     text-align: right;
     display: block;
-    margin: -15px 0 20px; }
+    padding: 0 30px;
+    margin: -20px -30px 20px;
+    background: #EDF5EB; }
+  .aigis-module__preview{
+    margin: 0 -30px;
+  }
 
+/* .aigis-tags
+   ========================================================================== */
+  .aigis-tags ul{
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 5px;
+  }
+  .aigis-tags li{
+    display: inline-block;
+    color: #62775E;
+    font-size: 12px;
+    display: inline-block;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin: 0 5px 5px 0;
+    background: #fff;
+  }
 
 /* .aigis-preview
    ========================================================================== */
 .aigis-preview{
-  margin: 20px -30px;
+  box-sizing: border-box;
+  width: 1020px;
+  padding: 40px 30px;
+  border: 2px solid #BFCBBD;
+  margin: 20px auto;
+  background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVvoWCgBGAMmMQACQAAuK72AWHjK4wAAAAASUVORK5CYII=' );
+  /*background: url( 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAF0lEQVR4AWP4DwVnoGCgBGAMmMQACQAA9CflgZrq8LsAAAAASUVORK5CYII=' );*/
+}
+.aigis-module.aigis-module--fullWidth .aigis-preview{
+  width: auto;
+  padding: 40px 0;
+  border-left: none;
+  border-right: none;
+}
+@media screen and (max-width: 767px) {
+  .aigis-preview{
+    width: auto;
+    padding: 30px 20px;
+    border-left: none;
+    border-right: none;
+  }
+  .aigis-module.aigis-module--fullWidth .aigis-preview{
+    padding: 30px 0;
+  }
 }
 
 /* .aigis-codeblock
    ========================================================================== */
-.aigis-codeblock .editor{
+.aigis-codeblock{
+  margin: 20px 0;
+}
+body.aigis--codeclose .aigis-codeblock{
+  display: none;
+}
+.aigis-codeblock pre.editor{
   font-size: 14px;
   padding: 16px 20px;
+  margin: 0;
   border-radius: 2px;
 }
+.aigis-module__preview > pre[class*="language-"] {
+  line-height: inherit;
+  white-space: normal;
+  padding: 0;
+  margin: 0;
+  background: none;
+}
+.aigis-module__preview > pre[class*="language-"] > code[class*="language-"]{
+  text-shadow: none;
+}
+
 
 /* ==========================================================================
    .aigis-colorPalette
@@ -222,6 +364,41 @@ body {
   margin-top: 2rem;
   line-height: 1.75;
   color: #7a7a7a;
-  border-top: 1px solid #eee;
+  border-top: 1px solid #BFCBBD;
   text-align: center;
+}
+.aigis-footer a{
+  color: #62775E;
+}
+
+
+
+/* ==========================================================================
+   na
+   ========================================================================== */
+.sg-heading,
+.sg-hr,
+.sg-link,
+.sg-img,
+.sg-p,
+.sg-list,
+.sg-table,
+.sg-blockquote{
+  max-width: 1016px;
+  padding: 0 28px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (max-width: 767px) {
+  .sg-heading,
+  .sg-hr,
+  .sg-link,
+  .sg-img,
+  .sg-p,
+  .sg-list,
+  .sg-table,
+  .sg-blockquote{
+    padding: 0 20px;
+  }
 }

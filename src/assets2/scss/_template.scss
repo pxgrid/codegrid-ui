@@ -1,0 +1,968 @@
+
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+
+/* Sub-section comment block
+   ========================================================================== */
+
+/* Basic comment */
+
+
+
+/* ==========================================================================
+   pageHeaderPlacer
+   ========================================================================== */
+.CG2-pageHeaderPlacer{
+  height: 60px;
+  background: #000;
+}
+@include max-screen( $breakpoint-middle ) {
+  .CG2-pageHeaderPlacer{
+    height: 35px;
+  }
+}
+
+
+/* ==========================================================================
+   pageHeader
+   ========================================================================== */
+/*
+---
+name: Page Header
+category:
+  - Templates
+tag:
+  - Template
+templateItem:
+  - true
+---
+
+- `CG2-pageHeaderPlacer`を併用すると高さを確保することができる、高さ確保が不要なら`CG2-pageHeaderPlacer`を利用しない
+- 実際に利用するときには以下のコードから`style="position:relative;"`を**取り除いて使う**
+
+## WWW用
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader" style="position:relative;">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
+      </div>
+      <div class="CG2-pageHeader__nav">
+        <ul>
+          <li><a href="#">料金</a></li>
+          <li><a href="#">団体購読</a></li>
+          <li><a href="#">よくある質問</a></li>
+          <li><a href="#">書籍</a></li>
+        </ul>
+      </div>
+      <div class="CG2-pageHeader__buttons">
+        <ul>
+          <li><a class="CG2-button CG2-button--primary CG2-button--thin" href="#">購読する</a></li>
+          <li><a href="#">ログイン</a></li>
+        </ul>
+      </div>
+      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
+    </div>
+  </header>
+</div>
+```
+
+## APP用
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader" style="position:relative;">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
+      </div>
+      <div class="CG2-pageHeader__search">
+        <div class="CG2-pageHeader__searchInner">
+          <input>
+        </div>
+      </div>
+      <div class="CG2-pageHeader__buttons">
+        <ul>
+          <li><a class="CG2-button CG2-button--primary CG2-button--thin" href="#">購読する</a></li>
+          <li><a href="#">ログイン</a></li>
+        </ul>
+      </div>
+      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
+    </div>
+  </header>
+</div>
+```
+
+## 導線無し（フォーム途中など）
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader" style="position:relative;">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+    </div>
+  </header>
+</div>
+```
+
+*/
+
+.CG2-pageHeader{
+  @include clearfix();
+  position: fixed;
+  z-index: $z-pageHeader;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  padding: 0 40px;
+  background: rgba( 0, 0, 0, .8 );
+  @include max-screen( $breakpoint-middle ) {
+    height: 35px;
+    padding: 0 10px;
+    -webkit-transition: -webkit-transform .4s;
+            transition:         transform .4s;
+    html.js-drawer--show & {
+      -webkit-transform: translateX( -100% ) translateX( 50px );
+          -ms-transform: translateX( -100% ) translateX( 50px );
+              transform: translateX( -100% ) translateX( 50px );
+    }
+  }
+}
+  .CG2-pageHeader__inner{
+    position: relative;
+    max-width: $pageMaxWidth;
+    margin: 0 auto;
+  }
+    .CG2-pageHeader__logo{
+      position: absolute;
+      top: 16px;
+      left: 40px;
+      img{
+        display: block;
+      }
+      @include max-screen( $breakpoint-middle ) {
+        top: 10px;
+        left: 10px;
+        img{
+          width: 90px;
+          height: auto;
+        }
+      }
+    }
+    .CG2-pageHeader__nav{
+      text-align: center;
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      ul{
+        font-size: 0;
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 56px;
+          vertical-align: middle;
+        }
+      }
+      li{
+        font-size: 1rem;
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0 10px;
+      }
+      a{
+        color: #797979;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+    .CG2-pageHeader__search{
+      @extend %search;
+      position: absolute;
+      top: 11px;
+      left: 200px;
+      width: 280px;
+      border :1px solid #767676;
+      background: transparent;
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+    }
+      .CG2-pageHeader__searchInner{
+        @extend %searchInner;
+        input{
+        //   color: #FFF;
+        //   font-size: 14px;
+        //   box-sizing: border-box;
+        //   display: block;
+        //   border: none;
+        //   width: 100%;
+        //   height: 100%;
+          padding: 4px 10px 4px 30px;
+        //   background: transparent;
+        //   transition: all .2s;
+          &:hover,
+          &:focus{
+            background: #303030;
+          }
+        }
+      }
+    .CG2-pageHeader__buttons{
+      position: absolute;
+      top: 0;
+      right: 0;
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 56px;
+          vertical-align: middle;
+        }
+      }
+      li{
+        font-size: 14px;
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0 10px;
+      }
+      a:not(.CG2-button){
+        color: #797979;
+        font-size: 14px;
+        text-decoration: none;
+      }
+    }
+    .CG2-pageHeader__opener{
+      @include max-screen( $breakpoint-middle ) {
+        color: #FFF;
+        font-size: 20px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 35px;
+        height: 35px;
+        &:after{
+          @include icon( 'hamburger' );
+          line-height: 35px;
+        }
+      }
+    }
+
+/* ==========================================================================
+   pageFooter
+   ========================================================================== */
+/*
+---
+name: Page Footer
+category:
+  - Templates
+tag:
+  - Template
+templateItem:
+  - true
+---
+
+```html
+<footer class="CG2-pageFooter">
+  <div class="CG2-pageFooter__inner">
+    <div class="CG2-pageFooter__wwwNav">
+      <div class="CG2-pageFooter__logo">
+        <img src="http://img.pxgrid.net/128x32" alt="CodeGrid" width="128" height="32">
+      </div>
+      <ul>
+        <li><a href="#">CodeGridについて</a></li>
+        <li><a href="#">料金</a></li>
+        <li><a href="#">団体購読</a></li>
+        <li><a href="#">よくある質問</a></li>
+        <li><a href="#">書籍</a></li>
+        <li><a href="#">購読する</a></li>
+      </ul>
+    </div>
+
+    <div class="CG2-pageFooter__appNav">
+      <div class="CG2-pageFooter__appNavHeader">
+        <div class="CG2-pageFooter__appNavHeading">
+          <a href="#">アプリトップ</a>
+        </div>
+        <div class="CG2-pageFooter__appNavSearch">
+          <div class="CG2-pageFooter__appNavSearchInner">
+            <input>
+          </div>
+        </div>
+      </div>
+      <div class="CG2-pageFooter__appNavList">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">おすすめ記事一覧</a></li>
+          <li><a href="#">お気に入り登録記事一覧</a></li>
+          <li><a href="#">無料公開記事一覧</a></li>
+          <li><a href="#">シリーズ一覧</a></li>
+          <li><a href="#">著者一覧</a></li>
+        </ul>
+      </div>
+      <div class="CG2-pageFooter__appNavCategory">
+        <ul>
+          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-practice"></span>実践</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-architecture"></span>設計</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-future"></span>未来・次世代</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-workstyle"></span>仕事術</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-design"></span>デザイン</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-interview"></span>インタビュー</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディカッション</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="CG2-pageFooter__legalNav">
+      <ul>
+        <li><a href="#">公式Twitter</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+        <li><a href="#">利用規約</a></li>
+        <li><a href="#">プライバシーポリシー</a></li>
+        <li><a href="#">特定商取引法に基づく表示</a></li>
+      </ul>
+      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></a></div>
+    </div>
+  </div>
+<!-- /.CG2-pageFooter --></footer>
+```
+
+*/
+.CG2-pageFooter{
+  color: #767676;
+  font-size: 12px;
+  padding: 60px 0;
+  margin-top: 50px;
+  background: #191919;
+  @include max-screen( $breakpoint-middle ) {
+    padding: 30px 0;
+  }
+  a{
+    color: #767676;
+    text-decoration: none;
+    display: block;
+    transition: all .2s;
+    &:hover{
+      color: #FFF;
+    }
+  }
+}
+  .CG2-pageFooter__inner{
+    table-layout: fixed;
+    display: table;
+    width: 960px + 28 + 28;
+    margin: 0 auto;
+    @include max-screen( $breakpoint-middle ) {
+      display: block;
+      width: auto;
+    }
+  }
+    .CG2-pageFooter__wwwNav{
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      width: 20%;
+      padding: 40px 28px;
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+    }
+      .CG2-pageFooter__logo{
+        margin-bottom: 32px;
+        img{
+          display: block;
+        }
+        @include max-screen( $breakpoint-middle ) {
+          display: none;
+        }
+      }
+    .CG2-pageFooter__appNav{
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      width: 60%;
+      padding: 38px 58px;
+      border: 1px solid #282828;
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+    }
+    .CG2-pageFooter__legalNav{
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      width: 20%;
+      padding: 90px 28px 40px;
+      @include max-screen( $breakpoint-middle ) {
+        display: block;
+        width: auto;
+        padding: 0;
+      }
+    }
+//---
+    .CG2-pageFooter__wwwNav{
+      ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      li{
+        margin: 12px 0 0;
+      }
+      a{
+        &:before{
+          @include icon( 'right' );
+          margin: 0 .4em .1em 0;
+        }
+      }
+    }
+// .CG2-pageFooter__appNav
+.CG2-pageFooter__appNavHeader{
+  display: table;
+  width: 100%;
+  margin-bottom: 20px;
+}
+  .CG2-pageFooter__appNavHeading{
+    font-size: 20px;
+    line-height: 1.2;
+    vertical-align: middle;
+    display: table-cell;
+    width: 44.99%;
+    a{
+      &:before{
+        @include icon( 'right' );
+        margin: 0 .4em .1em 0;
+      }
+    }
+  }
+  .CG2-pageFooter__appNavSearch{
+    vertical-align: middle;
+    display: table-cell;
+    width: 54.99em;
+    background: #303030;
+  }
+    .CG2-pageFooter__appNavSearchInner{
+      position: relative;
+      &:before{
+        @include icon( 'search' );
+        color: #767676;
+        font-size: 12px;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        left: 10px;
+      }
+      input{
+        color: #FFF;
+        font-size: 14px;
+        box-sizing: border-box;
+        display: block;
+        border: none;
+        width: 100%;
+        height: 100%;
+        padding: .4em 10px .4em 30px;
+        background: #303030;
+      }
+    }
+.CG2-pageFooter__appNavList{
+  float: left;
+  width: 44.99%;
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  li{
+    margin: 12px 0 0;
+  }
+  a{
+    &:before{
+      @include icon( 'right' );
+      margin: 0 .4em .1em 0;
+    }
+  }
+}
+.CG2-pageFooter__appNavCategory{
+  float: left;
+  width: 54.99%;
+  ul{
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+  }
+  li{
+    margin: 12px 0 0;
+  }
+  a{}
+  span[class^="CG2-icon-cat"]{
+    font-size: 18px;
+    line-height: 0;
+    margin: 0 .4em 0 0;
+  }
+}
+
+//---
+.CG2-pageFooter__legalNav{
+  ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    @include max-screen( $breakpoint-middle ) {
+      display: none;
+    }
+  }
+  li{
+    margin: 12px 0 0;
+  }
+  a{}
+}
+.CG2-pageFooter__company{
+  margin: 12px 0 0;
+  img{
+    vertical-align: middle;
+    width: 64px;
+    height: 16px;
+    margin: -2px 0 0 5px;
+  }
+  @include max-screen( $breakpoint-middle ) {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 0;
+    a{
+      color: #fff;
+      display: table;
+      margin: 0 auto;
+    }
+    img{
+      display: block;
+      width: 100px;
+      height: 25px;
+      margin: 5px auto;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   CG2-drawer
+   ========================================================================== */
+/*
+---
+name: Drawer
+category:
+  - Templates
+tag:
+  - Template
+templateItem:
+  - true
+---
+
+- スモールスクリーン時のみ有効
+- CG2-pageHeader 内のトグルボタンで表示
+
+```html
+<div class="CG2-drawer">
+  <div class="CG2-drawer__panel">
+    <div class="CG2-drawer__panelViewport">
+      <div class="CG2-drawer__panelBody">
+
+        <div class="CG2-drawerBody">
+          <div class="CG2-drawerBody__nav">
+            <ul>
+              <li><a href="#">アプリトップ</a></li>
+              <li><a href="#">最新記事一覧</a></li>
+              <li><a href="#">おすすめ記事一覧</a></li>
+              <li><a href="#">お気に入り登録記事一覧</a></li>
+              <li><a href="#">無料記事一覧</a></li>
+              <li><a href="#">シリーズ一覧</a></li>
+              <li><a href="#">著者一覧</a></li>
+            </ul>
+          </div>
+          <div class="CG2-drawerBody__userNav">
+            <ul>
+              <li><a class="CG2-button CG2-button--primary CG2-button--fullWidth" href="#">購読する</a></li>
+              <li><a class="CG2-button CG2-button--fullWidth" href="#">ログイン</a></li>
+            </ul>
+          </div>
+          <div class="CG2-drawerBody__separator"></div>
+          <div class="CG2-drawerBody__search">
+            <div class="CG2-drawerBody__searchInner">
+              <input>
+            </div>
+          </div>
+          <div class="CG2-drawerBody__nav">
+            <ul>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-practice"></span>実践</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-architecture"></span>設計</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-future"></span>未来・次世代</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-workstyle"></span>仕事術</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-design"></span>デザイン</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-interview"></span>インタビュー</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-cat-discussion"></span>ディカッション</a></li>
+            </ul>
+          </div>
+          <div class="CG2-drawerBody__separator"></div>
+          <div class="CG2-drawerBody__nav">
+            <ul>
+              <li><a href="#">CodeGridについて</a></li>
+              <li><a href="#">料金</a></li>
+              <li><a href="#">団体購読</a></li>
+              <li><a href="#">よくある質問</a></li>
+              <li><a href="#">書籍</a></li>
+              <li><a href="#">購読する</a></li>
+              <li class="CG2-drawerBody__navItem--icon"><a href="#"><span class="CG2-icon-twitter"></span>公式Twitter</a></li>
+            </ul>
+          </div>
+          <div class="CG2-drawerBody__separator"></div>
+          <div class="CG2-drawerBody__nav">
+            <ul>
+              <li class="CG2-drawerBody__navItem--plane"><a href="#">お問い合わせ</a></li>
+              <li class="CG2-drawerBody__navItem--plane"><a href="#">利用規約</a></li>
+              <li class="CG2-drawerBody__navItem--plane"><a href="#">プライバシーポリシー</a></li>
+              <li class="CG2-drawerBody__navItem--plane"><a href="#">特定商法に基づく表示</a></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="CG2-drawer__bg"></div>
+</div>
+```
+
+*/
+$drawerLeft: 50px;
+
+@include min-screen( $breakpoint-middle ) {
+  html{
+    padding-right: 0 !important;
+  }
+}
+
+@include max-screen( $breakpoint-middle ) {
+  body {
+    box-sizing: content-box;
+    overflow-y: scroll;
+  }
+  html.js-drawer--show {
+    overflow: hidden;
+    height: 100%;
+  }
+  html.js-drawer--show body {
+    overflow: hidden;
+    max-height: 100%;
+  }
+}
+
+.CG2-drawer {
+  display: none;
+  @include max-screen( $breakpoint-middle ) {
+    display: block;
+  }
+}
+
+.CG2-drawer__panel {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  background: rgba( 0, 0, 0, 0 );
+  -webkit-transform: translate3d( ( -$drawerLeft ), 0, 0 );
+      -ms-transform: translateX( ( -$drawerLeft ) );
+          transform: translate3d( ( -$drawerLeft ), 0, 0 );
+  -webkit-transition: -webkit-transform .4s;
+          transition:         transform .4s;
+}
+.CG2-drawer__panel, x::-ms-fill {
+  transform: translateX( ( -$drawerLeft ) ); /* IE10, 11, avoid using GPU feature */
+}
+
+html:not( .js-drawer--show ) .CG2-drawer__panel {
+  -webkit-animation-name: zIndexOut;
+          animation-name: zIndexOut;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+html.js-drawer--show .CG2-drawer__panel {
+  margin-left: 0;
+  z-index: $z-pageHeader - 1;
+  -webkit-transform: translateX( -100% );
+      -ms-transform: translateX( -100% );
+          transform: translateX( -100% );
+}
+.CG2-drawer__panel:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: $drawerLeft;
+  background: #191919;
+}
+.CG2-drawer__panelViewport {
+  overflow: auto;
+  box-sizing: border-box;
+  position: relative;
+  // z-index: 1;
+  width: 100%;
+  height: 100%;
+  padding-left: $drawerLeft;
+  margin: 0 0 0 auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.CG2-drawer__panelBody {
+  box-sizing: border-box;
+  min-height: 100%;
+  box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0 );
+  -webkit-transition: box-shadow .4s;
+          transition: box-shadow .4s;
+}
+html.js-drawer--show .CG2-drawer__panelBody {
+  box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0.3 );
+}
+
+.CG2-drawer__bg {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba( 0, 0, 0, 0 );
+  -webkit-transition: background .4s;
+          transition: background .4s;
+}
+html:not( .js-drawer--show ) .CG2-drawer__bg {
+  -webkit-animation-name: bgOut;
+          animation-name: bgOut;
+  -webkit-animation-duration: .4s;
+          animation-duration: .4s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+}
+html.js-drawer--show .CG2-drawer__bg {
+  z-index: $z-pageHeader - 2;
+  background: rgba( 0, 0, 0, 0.3 );
+}
+
+
+@-webkit-keyframes bgOut {
+    0% { z-index:  $z-pageHeader - 2; }
+   99% { z-index:  $z-pageHeader - 2; }
+  100% { z-index: -1; }
+}
+
+@keyframes bgOut {
+    0% { z-index:  $z-pageHeader - 2; }
+   99% { z-index:  $z-pageHeader - 2; }
+  100% { z-index: -1; }
+}
+
+@-webkit-keyframes zIndexOut {
+    0% { z-index:  $z-pageHeader - 1; }
+   99% { z-index:  $z-pageHeader - 1; }
+  100% { z-index: -1; }
+}
+
+@keyframes zIndexOut {
+    0% { z-index:  $z-pageHeader - 1; }
+   99% { z-index:  $z-pageHeader - 1; }
+  100% { z-index: -1; }
+}
+
+
+/* ==========================================================================
+   CG2-drawerBody
+   ========================================================================== */
+.CG2-drawerBody{
+  font-size: 16px;
+  padding: 40px 20px 10px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+    li{
+      margin: 0;
+    }
+      a{}
+}
+.CG2-drawerBody__nav{
+  margin-bottom: 30px;
+  ul{
+    margin-left: 5px;
+  }
+    li{
+      margin-bottom: 8px;
+    }
+      a{
+        color: #757575;
+        text-decoration: none;
+        position: relative;
+        display: block;
+        padding-left: 26px;
+        &:before{
+          @include icon( 'right' );
+          font-size: 16px;
+          line-height: 0;
+          position: absolute;
+          top: 50%;
+          left: 3px;
+        }
+      }
+    li.CG2-drawerBody__navItem--icon{
+      a{
+        &:before{
+          content: none;
+        }
+        span[class^="CG2-icon"]{
+          position: static;
+          &:before{
+            font-size: 20px;
+            line-height: 0;
+            position: absolute;
+            left: -2px;
+            top: 50%;
+          }
+        }
+      }
+    }
+    li.CG2-drawerBody__navItem--plane{
+      a{
+        &:before{
+          content: none;
+        }
+      }
+    }
+}
+.CG2-drawerBody__userNav{
+  ul{}
+    li{
+      margin-top: 10px;
+    }
+      a.CG2-button{
+        font-size: 16px;
+        text-align: center;
+        padding-top: .6em;
+        padding-bottom: .6em;
+      }
+}
+.CG2-drawerBody__separator{
+  border-top: 1px solid #5c5c5c;
+  height: 0;
+  margin: 30px -15px;
+}
+
+.CG2-drawerBody__search{
+  @extend %search;
+  margin: 20px 0;
+  height: 40px;
+}
+.CG2-drawerBody__searchInner{
+  @extend %searchInner;
+  &:before{
+    font-size: 20px;
+  }
+  input{}
+}
+
+
+/* ==========================================================================
+   CG2-container
+   ========================================================================== */
+/*
+---
+name: Container
+category:
+  - Templates
+tag:
+  - Template
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-container">
+  <div class="CG2-container__inner">
+    コンテンツ配置/編集 領域
+  </div>
+</div>
+
+<div class="CG2-container">
+  <div class="CG2-container__inner">
+    コンテンツ配置/編集 領域
+  </div>
+</div>
+
+<div class="CG2-container">
+  <div class="CG2-container__inner">
+    コンテンツ配置/編集 領域
+  </div>
+</div>
+```
+
+*/
+.CG2-container,
+.CG2-container+.CG2-container+.CG2-container,
+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container,
+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container{
+  background: transparent;
+}
+.CG2-container+.CG2-container,
+.CG2-container+.CG2-container+.CG2-container+.CG2-container,
+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container{
+  background: #f0f0f0;
+}
+.CG2-container__inner{
+  box-sizing: border-box;
+  width: 1016px;
+  padding: 40px 28px;
+  margin: 0 auto;
+  @include max-screen( $breakpoint-middle ) {
+    width: auto;
+    padding: 10px 20px;
+  }
+}

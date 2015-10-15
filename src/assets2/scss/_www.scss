@@ -1,0 +1,719 @@
+
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+
+/* Sub-section comment block
+   ========================================================================== */
+
+/* Basic comment */
+
+
+
+
+/* ==========================================================================
+   CG2-logo3d
+   ========================================================================== */
+/*
+---
+name: Logo_3D
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-logo3d">
+  <div class="CG2-logo3d__inner">
+    <div class="CG2-logo3d__overlayText">
+      フロントエンドに<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">関わる人々のガイド
+    </div>
+  </div>
+</div>
+```
+
+three.min.js (r72)、Logo3D.jsを読み込み、`new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
+
+<script src="/examples/js/three.min.js"></script>
+<script src="/examples/js/Logo3D.js"></script>
+<script>
+var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
+</script>
+
+*/
+.CG2-logo3d{
+  position: relative;
+  margin: 0 auto;
+  background: #000;
+}
+  .CG2-logo3d__inner{
+    // height: 100vh;
+    // max-height: 600px;
+    // @include max-screen( $breakpoint-small ) {
+    //   max-height: 0;
+    // }
+    img,
+    canvas{
+      display: block;
+      margin: 0 auto;
+    }
+  }
+    .CG2-logo3d__overlayText{
+      color: #fff;
+      font-size: 32px;
+      font-family: $fontSerif;
+      text-align: center;
+      position: absolute;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      height: 120px;
+      padding: 30px 0 0;
+      background: rgba( 0, 0, 0, .8 );
+      @include max-screen( $breakpoint-small ) {
+        font-size: 20px;
+        line-height: 1.2;
+        height: auto;
+        padding: 10px 5px;
+      }
+      &:after{
+        @include icon( down );
+        font-size: 22px;
+        display: block;
+        text-align: center;
+        margin-top: 16px;
+        @include max-screen( $breakpoint-small ) {
+          font-size: 16px;
+          margin-top: 6px;
+        }
+      }
+    }
+
+
+
+/* ==========================================================================
+   CG2-features
+   ========================================================================== */
+/*
+---
+name: features
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-features">
+  <section class="CG2-features__item">
+    <h1>執筆陣は現役のフロントエンドエンジニア</h1>
+    <div class="CG2-features__itemBody">
+      <p>CodeGridで執筆しているのは、ピクセルグリッドのフロントエンドエンジニアたち。書籍執筆や講演の実績を持つエンジニアも多数在籍しています。だから、配信される記事では実際にプロジェクトで使った現場の実感から、本当に実務に必要な知識をお届けします。また、CodeGridは専任の編集者が編集のうえで配信しますので、記事の正確さ読みやすさにも自信があります。</p>
+    </div>
+  </section>
+  <section class="CG2-features__item">
+    <h1>基礎から最新トレンド技術まで</h1>
+    <div class="CG2-features__itemBody">
+      <p>忙しいと追うのを忘れがちになる新しい技術情報。エンジニア同士の会話でついていけなかったなんてことはありませんか？　CodeGridでは、最新トレンド技術もきちんと検証した上でしっかり解説します。もちろん「今さら聞けない」と思われがちな入門的な記事も配信。CodeGridを読んでいれば、基礎から最新トレンドまでフロントエンド界隈の情報をキャッチできます。</p>
+    </div>
+  </section>
+</div>
+```
+
+*/
+.CG2-features{
+  counter-reset: CG2features;
+  &:first-child{
+    margin-top: -40px;
+  }
+}
+  .CG2-features__item{
+    counter-increment: CG2features;
+    padding: 0 120px;
+    margin: 80px 0;
+    h1{
+      color: #282828;
+      font-size: 32px;
+      font-family: $fontSerif;
+      font-weight: normal;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+    p{}
+  }
+  .CG2-features__itemBody{
+    position: relative;
+    &:before{
+      content: counter( CG2features );
+      line-height: 1;
+      font-size: 60px;
+      font-family: $fontCode;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -120px;
+    }
+  }
+
+
+
+/* ==========================================================================
+   CG2-howYouReceive
+   ========================================================================== */
+/*
+---
+name: howYouReceive
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-howYouReceive">
+  <header class="CG2-howYouReceive__header">
+    <h1>CodeGridの配信形式は、Webアプリ × メールマガジン</h1>
+  </header>
+  <div class="CG2-howYouReceive__list">
+    <div class="CG2-howYouReceive__item">
+      <div class="CG2-howYouReceive__image">
+        <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+      </div>
+      <p>フロントエンドに特化した<br>300本以上の技術記事が読めるWebアプリ。<br><a href="#">Chromeアプリもご用意しています</a></p>
+    </div>
+    <div class="CG2-howYouReceive__item">
+      <div class="CG2-howYouReceive__image">
+        <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+      </div>
+      <p>毎週木曜日配信（月4回）。<br>最新記事が定期的に届くメールマガジン。<br><a href="#">サンプルへ</a></p>
+    </div>
+  </div>
+</section>
+```
+
+*/
+
+.CG2-howYouReceive{
+}
+  .CG2-howYouReceive__header{
+    text-align: center;
+    position: relative;
+    margin: 0 -28px 20px;
+    &:before{
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      border-top: 1px solid #000;
+    }
+    h1{
+      color: #282828;
+      font-size: 24px;
+      font-weight: normal;
+      position: relative;
+      display: inline-block;
+      padding: 0 40px;
+      margin: 0;
+      background: #FFF;
+    }
+  }
+  .CG2-howYouReceive__list{
+    display: table;
+    border-spacing: 2px 0;
+  }
+    .CG2-howYouReceive__item{
+      font-size: 14px;
+      display: table-cell;
+      p{;
+        text-align: center;
+      }
+    }
+      .CG2-howYouReceive__image{
+        img{
+          display: block;
+          width: 100%;
+          height: auto;
+        }
+      }
+
+
+/* ==========================================================================
+   CG2-bookInfo [www top]
+   ========================================================================== */
+/*
+---
+name: bookInfo
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-bookInfo">
+  <h1>CodeGridが書籍になりました</h1>
+  <div class="CG2-bookInfo__images">
+    <img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140"">
+    <img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140"">
+  </div>
+  <div class="CG2-bookInfo__text">
+    <p>書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。</p>
+    <a class="CG2-button" href="#">書籍について</a>
+  </div>
+</section>
+```
+
+*/
+
+.CG2-bookInfo{
+  h1{
+    color: #282828;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 30px;
+  }
+} 
+  .CG2-bookInfo__body{
+    display: table;
+  }
+    .CG2-bookInfo__images{
+      font-size: 0;
+      white-space: nowrap;
+      vertical-align: top;
+      display: table-cell;
+      padding-right: 25px;
+      img{
+        vertical-align: bottom;
+        margin-right: 10px;
+      }
+    }
+    .CG2-bookInfo__text{
+      vertical-align: top;
+      display: table-cell;
+      font-size: 14px;
+      p{
+        margin: 0 0 20px;
+      }
+    }
+
+
+/* ==========================================================================
+   CG2-circulation
+   ========================================================================== */
+/*
+---
+name: circulation
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<div class="CG2-circulation">
+  <div class="CG2-circulation__lastUpdate">（最新号 2015年5月21日発行）</div>
+  <div class="CG2-circulation__dataList">
+    <div class="CG2-circulation__data">
+      <div class="CG2-circulation__dataLabel">発行号数</div>
+      <div class="CG2-circulation__dataNumber">151</div>
+      <div class="CG2-circulation__dataUnit">号</div>
+    </div>
+    <div class="CG2-circulation__data">
+      <div class="CG2-circulation__dataLabel">特集</div>
+      <div class="CG2-circulation__dataNumber">70</div>
+      <div class="CG2-circulation__dataUnit">シリーズ</div>
+    </div>
+    <div class="CG2-circulation__data">
+      <div class="CG2-circulation__dataLabel">記事数</div>
+      <div class="CG2-circulation__dataNumber">321</div>
+      <div class="CG2-circulation__dataUnit">本</div>
+    </div>
+  </div>
+</div>
+```
+*/
+
+.CG2-circulation{
+  
+}
+  .CG2-circulation__lastUpdate{
+    font-family: $fontSerif;
+    float: right;
+  }
+  .CG2-circulation__dataList{
+    display: table;
+  }
+    .CG2-circulation__data{
+      display: table-cell;
+      font-size: 0;
+      padding-left: 50px;
+      &:first-child{
+        padding-left: 0;
+      }
+    }
+      .CG2-circulation__dataLabel{
+        font-size: 16px;
+        font-family: $fontSerif;
+      }
+      .CG2-circulation__dataNumber{
+        font-size: 64px;
+        font-family: $fontCode;
+        line-height: 1.2;
+        display: inline;
+      }
+      .CG2-circulation__dataUnit{
+        font-size: 32px;
+        font-family: $fontSerif;
+        line-height: 1.2;
+        display: inline;
+      }
+
+
+
+/* ==========================================================================
+   CG2-pickedup
+   ========================================================================== */
+/*
+---
+name: pickedup
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-pickedup">
+  <header class="CG2-pickedup__header">
+    <h1 class="CG2-pickedup__headerHeading">人気の特集</h1>
+    <div class="CG2-pickedup__headerSummary">多くの会員の皆様がお気に入りに登録した記事</div>
+    <div class="CG2-pickedup__headerExtra"><a href="#">人気の特集一覧へ</a></div>
+  </header>
+
+  <div class="CG2-seriesList">
+    CG2-seriesList を入れる
+  </div>
+
+</section>
+```
+*/
+section.CG2-pickedup{
+  margin: 80px 0;
+}
+  header.CG2-pickedup__header{
+    line-height: 1.2;
+    display: table;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+    .CG2-pickedup__headerHeading{
+      font-size: 32px;
+      font-family: $fontSerif;
+      font-weight: normal;
+      vertical-align: bottom;
+      display: table-cell;
+      width: 33%;
+      margin: 0;
+      padding-left: 28px;
+    }
+    .CG2-pickedup__headerSummary{
+      font-size: 16px;
+      white-space: nowrap;
+      vertical-align: bottom;
+      text-align: center;
+      display: table-cell;
+      width: 33%;
+    }
+    .CG2-pickedup__headerExtra{
+      font-size: 16px;
+      vertical-align: bottom;
+      text-align: right;
+      display: table-cell;
+      width: 33%;
+      padding-right: 28px;
+      a{
+        @include resetLink();
+      }
+    }
+/* ==========================================================================
+   CG2-categoryIntro
+   ========================================================================== */
+/*
+---
+name: categoryIntro
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<div class="CG2-categoryIntro">
+  <ul>
+    <li><span class="CG2-icon-cat-elementary"></span>入門</li>
+    <li><span class="CG2-icon-cat-practice"></span>実践</li>
+    <li><span class="CG2-icon-cat-standards"></span>仕様解説</li>
+    <li><span class="CG2-icon-cat-talk"></span>座談会</li>
+    <li><span class="CG2-icon-cat-architecture"></span>設計</li>
+    <li><span class="CG2-icon-cat-report"></span>レポート</li>
+    <li><span class="CG2-icon-cat-design"></span>デザイン</li>
+    <li><span class="CG2-icon-cat-future"></span>未来・次世代</li>
+    <li><span class="CG2-icon-cat-workstyle"></span>仕事術</li>
+    <li><span class="CG2-icon-cat-survey"></span>アンケート</li>
+    <li><span class="CG2-icon-cat-interview"></span>インタビュー</li>
+    <li><span class="CG2-icon-cat-discussion"></span>ディスカッション</li>
+  </ul>
+</div>
+```
+*/
+.CG2-categoryIntro{
+  ul{
+    font-size: 0;
+    text-align: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    &:after{
+      content: '';
+      display: block;
+      margin-top: -30px;
+    }
+  }
+  li{
+    font-size: 14px;
+    text-align: center;
+    display: inline-block;
+    width: 130px;
+    padding: 0;
+    margin: 0 0 30px;
+  }
+  span[class*="CG2-icon-cat"]{
+    font-size: 80px;
+    display: block;
+    margin-bottom: 10px;
+    position: static;
+    &:before{
+      display: block;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   CG2-customerQuotes
+   ========================================================================== */
+/*
+---
+name: customerQuotes
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-customerQuotes">
+  <header class="CG2-customerQuotes__header">
+    <h1>CodeGrid関連ツィート</h1>
+    <div class="CG2-customerQuotes__headerSub">
+      <a href="https://twitter.com/codegrid">@CodeGridで最新情報を配信しています <span class="CG2-icon-twitter"></span></a>
+    </div>
+  </header>
+  <div class="CG2-customerQuotes__body">
+    <div class="CG2-customerQuotes__list">
+      <ul>
+        <li>
+          <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
+        </li>
+        <li>
+          <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
+        </li>
+        <li>
+          <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
+        </li>
+      </ul>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="CG2-customerQuotes__timeline">
+      <a class="twitter-timeline" href="https://twitter.com/hashtag/codegrid" data-widget-id="628812249822408705">#codegrid のツイート</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    </div>
+  </div>
+</section>
+```
+
+JSで大きさを調整する必要あり
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script>
+// Twitter 埋め込みの横幅上限突破用
+$( window ).on( 'load', function () {
+
+  var css = '<style>.EmbeddedTweet { box-sizing: border-box;max-width: none !important; width: 100% !important; }</style>';
+
+  $( 'iframe[id^=twitter-widget-' ).each( function () {
+
+    var head = $( this ).contents().find( 'head' );
+    head.append( css );
+
+  } );
+
+} );
+</script>
+
+<pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+// Twitter 埋め込みの横幅上限突破用
+$( window ).on( &#039;load&#039;, function () {
+
+  var css = &#039;&lt;style&gt;.EmbeddedTweet { box-sizing: border-box;max-width: none !important; width: 100% !important; }&lt;/style&gt;&#039;;
+  
+  $( &#039;iframe[id^=twitter-widget-&#039; ).each( function () {
+
+    var head = $( this ).contents().find( &#039;head&#039; );
+    head.append( css );
+    
+    } );
+    
+  } );
+  
+&lt;/script&gt;</code></pre>
+*/
+
+section.CG2-customerQuotes{
+  @include clearfix();
+  padding-top: 20px;
+}
+  header.CG2-customerQuotes__header{
+    display: table;
+    width: calc( 100% + 48px );
+    border-bottom: 1px solid #5c5c5c;
+    margin: 0 -28px 30px;
+    h1{
+      font-size: 32px;
+      font-family: $fontSerif;
+      font-weight: normal;
+      line-height: 1.2;
+      vertical-align: middle;
+      display: table-cell;
+      padding: 0 0 30px 28px;
+      margin: 0;
+    }
+  }
+  .CG2-customerQuotes__headerSub{
+    font-size: 14px;
+    text-align: right;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 0 28px 30px 0;
+    a{
+      @include resetLink();
+    }
+  }
+  .CG2-customerQuotes__body{
+    display: table;
+    width: 100%;
+  }
+    .CG2-customerQuotes__list{
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      width: 60%;
+      padding-right: 20px;
+      ul{
+        line-height: normal;
+        padding: 0;
+        margin: 0;
+      }
+      li{
+        list-style: none;
+        margin: 0 0 20px;
+      }
+      iframe{
+        // twitter
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+      }
+    }
+    .CG2-customerQuotes__timeline{
+      vertical-align: top;
+      box-sizing: border-box;
+      display: table-cell;
+      width: 40%;
+      padding-left: 20px;
+    }
+
+
+/* ==========================================================================
+   CG2-term
+   ========================================================================== */
+/*
+---
+name: term
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-term">
+  <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+  </dl>
+</div>
+```
+
+*/
+.CG2-term{
+  dl{}
+  dt{
+    font-weight: bold;
+  }
+  dd{
+    margin: 0 0 15px;
+  }
+}
+
+/* ==========================================================================
+   CG2-lastUpdate
+   ========================================================================== */
+/*
+---
+name: lastUpdate
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-lastUpdate">Last Update: 20xx-08-01</div>
+```
+
+*/
+.CG2-lastUpdate{
+  margin-top: 80px;
+  @include max-screen( $breakpoint-middle ) {
+    margin-top: 40px;
+  }
+}
