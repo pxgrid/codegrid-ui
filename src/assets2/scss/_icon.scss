@@ -43,14 +43,14 @@
 .CG2-icon-facebook:before { content: "\E701"; }
 .CG2-icon-gplus:before { content: "\E702"; }
 .CG2-icon-cat-elementary:before { content: "\E800"; }
-.CG2-icon-cat-practice:before { content: "\E801"; }
+.CG2-icon-cat-mastering:before { content: "\E801"; }
 .CG2-icon-cat-standards:before { content: "\E803"; }
 .CG2-icon-cat-talk:before { content: "\E804"; }
 .CG2-icon-cat-architecture:before { content: "\E805"; }
 .CG2-icon-cat-report:before { content: "\E806"; }
 .CG2-icon-cat-design:before { content: "\E807"; }
 .CG2-icon-cat-future:before { content: "\E808"; }
-.CG2-icon-cat-workstyle:before { content: "\E809"; }
+.CG2-icon-cat-work-style:before { content: "\E809"; }
 .CG2-icon-cat-survey:before { content: "\E80A"; }
 .CG2-icon-cat-interview:before { content: "\E80B"; }
 .CG2-icon-cat-discussion:before { content: "\E80C"; }
@@ -80,18 +80,18 @@ $icons: (
   facebook "\E701",
   gplus "\E702",
   cat-elementary "\E800",
-  cat-practice "\E801",
+  cat-mastering "\E801",
   cat-standards "\E803",
   cat-talk "\E804",
   cat-architecture "\E805",
   cat-report "\E806",
   cat-design "\E807",
   cat-future "\E808",
-  cat-workstyle "\E809",
+  cat-work-style "\E809",
   cat-survey "\E80A",
   cat-interview "\E80B",
   cat-discussion "\E80C",
-  
+
 );
 
 @mixin icon ( $name ) {
