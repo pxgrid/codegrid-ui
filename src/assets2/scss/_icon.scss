@@ -105,10 +105,10 @@ cat-elementary
 </div>
 ```
 
-cat-practice
+cat-mastering
 ```html
 <div style="font-size:32px;">
-  <span class="CG2-icon-cat-practice"></span>
+  <span class="CG2-icon-cat-mastering"></span>
 </div>
 ```
 
@@ -154,10 +154,10 @@ cat-future
 </div>
 ```
 
-cat-workstyle
+cat-work-style
 ```html
 <div style="font-size:32px;">
-  <span class="CG2-icon-cat-workstyle"></span>
+  <span class="CG2-icon-cat-work-style"></span>
 </div>
 ```
 
@@ -277,7 +277,7 @@ $icons: (
   cat-survey "\E80A",
   cat-interview "\E80B",
   cat-discussion "\E80C",
-
+  
 );
 
 @mixin icon ( $name ) {

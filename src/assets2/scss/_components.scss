@@ -233,19 +233,25 @@ tag:
 ```
 
 */
-.CG2-header1{}
+.CG2-header1{
+  padding: 0 28px 30px;
+  border-bottom: 1px solid #282828;
+  margin: 60px -28px 30px;
+  &:first-child{
+    margin-top: 0;
+  }
+  @include max-screen( $breakpoint-middle ) {
+    padding: 0 10px 10px;
+    margin: 20px -10px 30px;
+  }
+}
   .CG2-header1__heading{
     color: #282828;
     font-size: 32px;
     font-family: $fontSerif;
     line-height: 1.2;
-    padding: 0 28px 30px;
-    border-bottom: 1px solid #282828;
-    margin: 0 -28px 30px;
     @include max-screen( $breakpoint-middle ) {
       font-size: 20px;
-      padding: 0 10px 10px;
-      margin: 20px -10px 30px;
     }
   }
 

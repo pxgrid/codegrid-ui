@@ -661,6 +661,76 @@ section.CG2-customerQuotes{
 
 
 /* ==========================================================================
+   CG2-publication
+   ========================================================================== */
+/*
+---
+name: term
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<section class="CG2-publication">
+  <div class="CG2-publication__image">
+    <img src="http://img.pxgrid.net/206x290" alt="" width="206" height="290">
+  </div>
+  <div class="CG2-publication__body">
+    <div class="CG2-publication__heading">
+      <h1>Web制作者のためのGit入門</h1>
+    </div>
+    <div class="CG2-publication__headingSub">
+      大杉 充 (著), 外村 和仁 (著), CodeGrid (編集)  2014/6/28
+    </div>
+    <p>本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。</p>
+    <div class="CG2-publication__buttonContainer">
+      <a class="CG2-button" href="#">Amazonで購入</a>
+    </div>
+  </div>
+</section>
+```
+
+*/
+section.CG2-publication{
+  display: table;
+  width: 100%;
+  margin: 40px 0;
+}
+  .CG2-publication__image{
+    vertical-align: top;
+    display: table-cell;
+    padding-right: 30px;
+    img{
+      display: block;
+    }
+  }
+  .CG2-publication__body{
+    font-size: 16px;
+    vertical-align: top;
+    display: table-cell;
+    p{}
+  }
+    .CG2-publication__heading{
+      margin: 0 0 25px;
+      h1{
+        font-size: 24px;
+        font-weight: normal;
+        margin: 0;
+      }
+    }
+    .CG2-publication__headingSub{
+      font-size: 14px;
+      margin: -20px 0 25px;
+    }
+    .CG2-publication__buttonContainer{
+      margin-top: 30px;
+    }
+
+
+
+/* ==========================================================================
    CG2-term
    ========================================================================== */
 /*
