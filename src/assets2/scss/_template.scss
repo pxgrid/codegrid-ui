@@ -149,7 +149,7 @@ templateItem:
       }
       @include max-screen( $breakpoint-middle ) {
         top: 10px;
-        left: 10px;
+        left: 0;
         img{
           width: 90px;
           height: auto;
@@ -255,15 +255,18 @@ templateItem:
       @include max-screen( $breakpoint-middle ) {
         color: #FFF;
         font-size: 20px;
+        text-align: center;
         cursor: pointer;
         position: absolute;
         top: 0;
-        right: 0;
-        width: 35px;
+        right: -10px;
+        width: 20px;
         height: 35px;
+        padding: 0 10px;
         &:after{
           @include icon( 'hamburger' );
           line-height: 35px;
+          display: block;
         }
       }
     }
@@ -361,6 +364,9 @@ templateItem:
   background: #191919;
   @include max-screen( $breakpoint-middle ) {
     padding: 30px 0;
+    .CG2-container + & {
+      margin-top: 0;
+    }
   }
   a{
     color: #767676;
@@ -963,6 +969,6 @@ templateItem:
   margin: 0 auto;
   @include max-screen( $breakpoint-middle ) {
     width: auto;
-    padding: 10px 20px;
+    padding: 30px 20px;
   }
 }

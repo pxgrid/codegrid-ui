@@ -129,12 +129,19 @@ tag:
   counter-reset: CG2features;
   &:first-child{
     margin-top: -40px;
+    // @include max-screen( $breakpoint-middle ) {
+    //   margin-top: 0;
+    // }
   }
 }
   .CG2-features__item{
     counter-increment: CG2features;
     padding: 0 120px;
     margin: 80px 0;
+    @include max-screen( $breakpoint-middle ) {
+      padding: 0;
+      margin: 40px 0;
+    }
     h1{
       color: #282828;
       font-size: 32px;
@@ -142,6 +149,23 @@ tag:
       font-weight: normal;
       text-align: center;
       margin: 0 0 30px;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 20px;
+        position: relative;
+        padding: 0 40px;
+        margin-bottom: 20px;
+        &:before{
+          content: counter( CG2features );
+          font-family: $fontCode;
+          font-size: 40px;
+          line-height: 0;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: 40px;
+        }
+      }
     }
     p{}
   }
@@ -156,6 +180,9 @@ tag:
       position: absolute;
       top: 0;
       left: -120px;
+      @include max-screen( $breakpoint-middle ) {
+        content: none;
+      }
     }
   }
 
@@ -204,6 +231,10 @@ tag:
     text-align: center;
     position: relative;
     margin: 0 -28px 20px;
+    @include max-screen( $breakpoint-middle ) {
+      margin-left: 0;
+      margin-right: 0;
+    }
     &:before{
       content: '';
       display: block;
@@ -213,6 +244,9 @@ tag:
       width: 100%;
       height: 0;
       border-top: 1px solid #000;
+      @include max-screen( $breakpoint-middle ) {
+        content: none;
+      }
     }
     h1{
       color: #282828;
@@ -223,20 +257,37 @@ tag:
       padding: 0 40px;
       margin: 0;
       background: #FFF;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 16px;
+        display: block;
+        padding: 0;
+        background: none;
+      }
     }
   }
   .CG2-howYouReceive__list{
     display: table;
     border-spacing: 2px 0;
+    @include max-screen( $breakpoint-middle ) {
+      display: block;
+    }
   }
     .CG2-howYouReceive__item{
       font-size: 14px;
       display: table-cell;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 12px;
+        display: block;
+        margin-bottom: 30px;
+      }
       p{;
         text-align: center;
       }
     }
       .CG2-howYouReceive__image{
+        @include max-screen( $breakpoint-middle ) {
+          margin: 0 -10px 20px;
+        }
         img{
           display: block;
           width: 100%;
@@ -281,10 +332,17 @@ tag:
     font-weight: normal;
     text-align: center;
     margin: 0 0 30px;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
   }
 } 
   .CG2-bookInfo__body{
     display: table;
+    @include max-screen( $breakpoint-middle ) {
+      display: block;
+    }
   }
     .CG2-bookInfo__images{
       font-size: 0;
@@ -292,15 +350,41 @@ tag:
       vertical-align: top;
       display: table-cell;
       padding-right: 25px;
-      img{
-        vertical-align: bottom;
-        margin-right: 10px;
+      @include max-screen( $breakpoint-middle ) {
+        display: block;
+        padding: 0;
       }
+      ul{
+        display: table;
+        padding: 0;
+        margin: 0;
+        @include max-screen( $breakpoint-middle ) {
+          margin: 0 auto 20px;
+        }
+      }
+        li{
+          display: table-cell;
+          list-style: none;
+          width: 1%;
+          padding-right: 10px;
+          margin: 0;
+          @include max-screen( $breakpoint-middle ) {
+            width: auto;
+            padding: 0 10px;
+            margin: 0;
+          }
+        }
+          img{
+            display: block;
+          }
     }
     .CG2-bookInfo__text{
       vertical-align: top;
       display: table-cell;
       font-size: 14px;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 12px;
+      }
       p{
         margin: 0 0 20px;
       }
@@ -345,19 +429,33 @@ tag:
 */
 
 .CG2-circulation{
-  
+  @include max-screen( $breakpoint-middle ) {
+    display: table;
+    width: 100%;
+  }
 }
   .CG2-circulation__lastUpdate{
     font-family: $fontSerif;
     float: right;
+    @include max-screen( $breakpoint-middle ) {
+      float: none;
+      display: table-footer-group;
+    }
   }
   .CG2-circulation__dataList{
     display: table;
+    @include max-screen( $breakpoint-middle ) {
+      display: table-header-group;
+    }
   }
     .CG2-circulation__data{
       display: table-cell;
       font-size: 0;
       padding-left: 50px;
+      @include max-screen( $breakpoint-middle ) {
+        display: inline-block;
+        padding: 0 20px 0 0;
+      }
       &:first-child{
         padding-left: 0;
       }
@@ -365,18 +463,27 @@ tag:
       .CG2-circulation__dataLabel{
         font-size: 16px;
         font-family: $fontSerif;
+        @include max-screen( $breakpoint-middle ) {
+          font-size: 12px;
+        }
       }
       .CG2-circulation__dataNumber{
         font-size: 64px;
         font-family: $fontCode;
         line-height: 1.2;
         display: inline;
+        @include max-screen( $breakpoint-middle ) {
+          font-size: 40px;
+        }
       }
       .CG2-circulation__dataUnit{
         font-size: 32px;
         font-family: $fontSerif;
         line-height: 1.2;
         display: inline;
+        @include max-screen( $breakpoint-middle ) {
+          font-size: 20px;
+        }
       }
 
 
@@ -409,40 +516,92 @@ tag:
 </section>
 ```
 */
+
+
 section.CG2-pickedup{
   margin: 80px 0;
+  @include max-screen( $breakpoint-middle ) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
 }
   header.CG2-pickedup__header{
     line-height: 1.2;
     display: table;
     width: 100%;
     margin-bottom: 30px;
+    @include max-screen( $breakpoint-middle ) {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      // -webkit-flex-direction: row;
+      // -ms-flex-direction: row;
+      // flex-direction: row;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between;
+    }
   }
     .CG2-pickedup__headerHeading{
       font-size: 32px;
       font-family: $fontSerif;
       font-weight: normal;
       vertical-align: bottom;
+      box-sizing: border-box;
       display: table-cell;
       width: 33%;
       margin: 0;
       padding-left: 28px;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 20px;
+        -webkit-flex: 0 1 60%;
+        -ms-flex: 0 1 60%;
+        flex: 0 1 60%;
+        display: block;
+        padding-left: 0;
+      }
     }
     .CG2-pickedup__headerSummary{
       font-size: 16px;
       white-space: nowrap;
       vertical-align: bottom;
       text-align: center;
+      box-sizing: border-box;
       display: table-cell;
       width: 33%;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 12px;
+        white-space: normal;
+        text-align: left;
+        -webkit-flex: 0 1 100%;
+        -ms-flex: 0 1 100%;
+        flex: 0 1 100%;
+        -webkit-order: 1;
+        -ms-flex-order: 1;
+        order: 1;
+        display: block;
+        margin-top: 15px;
+      }
     }
     .CG2-pickedup__headerExtra{
       font-size: 16px;
       vertical-align: bottom;
       text-align: right;
+      box-sizing: border-box;
       display: table-cell;
       width: 33%;
       padding-right: 28px;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 12px;
+        -webkit-flex: 0 1 40%;
+        -ms-flex: 0 1 40%;
+        flex: 0 1 40%;
+        display: block;
+        padding-right: 0;
+      }
       a{
         @include resetLink();
       }
@@ -481,11 +640,16 @@ tag:
 */
 .CG2-categoryIntro{
   ul{
+    color: #282828;
     font-size: 0;
     text-align: center;
     list-style: none;
     padding: 0;
     margin: 0;
+    @include max-screen( $breakpoint-middle ) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
     &:after{
       content: '';
       display: block;
@@ -495,16 +659,24 @@ tag:
   li{
     font-size: 14px;
     text-align: center;
+    vertical-align: top;
     display: inline-block;
     width: 130px;
     padding: 0;
     margin: 0 0 30px;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 10px;
+      width: 25%;
+    }
   }
   span[class*="CG2-icon-cat"]{
     font-size: 80px;
     display: block;
     margin-bottom: 10px;
     position: static;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 50px;
+    }
     &:before{
       display: block;
     }
@@ -597,12 +769,19 @@ $( window ).on( &#039;load&#039;, function () {
 section.CG2-customerQuotes{
   @include clearfix();
   padding-top: 20px;
+  margin: 0 -10px;
 }
   header.CG2-customerQuotes__header{
     display: table;
     width: calc( 100% + 48px );
     border-bottom: 1px solid #5c5c5c;
     margin: 0 -28px 30px;
+    @include max-screen( $breakpoint-middle ) {
+      display: block;
+      width: auto;
+      margin: 0 0 10px;
+      padding: 0 10px 5px;
+    }
     h1{
       font-size: 32px;
       font-family: $fontSerif;
@@ -612,6 +791,11 @@ section.CG2-customerQuotes{
       display: table-cell;
       padding: 0 0 30px 28px;
       margin: 0;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 20px;
+        display: block;
+        padding: 0;
+      }
     }
   }
   .CG2-customerQuotes__headerSub{
@@ -620,6 +804,12 @@ section.CG2-customerQuotes{
     vertical-align: middle;
     display: table-cell;
     padding: 0 28px 30px 0;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 12px;
+      display: block;
+      padding: 0;
+      display: none;
+    }
     a{
       @include resetLink();
     }
@@ -627,6 +817,10 @@ section.CG2-customerQuotes{
   .CG2-customerQuotes__body{
     display: table;
     width: 100%;
+    @include max-screen( $breakpoint-middle ) {
+      display: block;
+      width: auto;
+    }
   }
     .CG2-customerQuotes__list{
       vertical-align: top;
@@ -634,6 +828,11 @@ section.CG2-customerQuotes{
       display: table-cell;
       width: 60%;
       padding-right: 20px;
+      @include max-screen( $breakpoint-middle ) {
+        display: block;
+        width: auto;
+        padding-right: 0;
+      }
       ul{
         line-height: normal;
         padding: 0;
@@ -642,6 +841,9 @@ section.CG2-customerQuotes{
       li{
         list-style: none;
         margin: 0 0 20px;
+        @include max-screen( $breakpoint-middle ) {
+          margin-bottom: 10px;
+        }
       }
       iframe{
         // twitter
@@ -657,6 +859,21 @@ section.CG2-customerQuotes{
       display: table-cell;
       width: 40%;
       padding-left: 20px;
+      @include max-screen( $breakpoint-middle ) {
+        display: block;
+        width: auto;
+        padding-left: 0;
+      }
+      iframe{
+        // twitter
+        display: block !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        @include max-screen( $breakpoint-middle ) {
+          height: 300px !important;
+        }
+      }
     }
 
 
@@ -697,7 +914,7 @@ tag:
   font-size: 16px;
   margin: 40px 0;
   padding: 0 0 0 50px;
-  @include max-screen( $breakpoint-small ) {
+  @include max-screen( $breakpoint-middle ) {
     font-size: 12px;
     margin: 20px -10px;
     padding-left: 38px;
@@ -708,7 +925,7 @@ tag:
     position: relative;
     min-height: 20px;
     padding: 10px 0;
-    @include max-screen( $breakpoint-small ) {
+    @include max-screen( $breakpoint-middle ) {
       min-height: 16px;
       padding-top: 6px;
       padding-bottom: 6px;
@@ -721,7 +938,7 @@ tag:
       position: absolute;
       top: 0;
       left: -50px;
-      @include max-screen( $breakpoint-small ) {
+      @include max-screen( $breakpoint-middle ) {
         font-size: 28px;
         line-height: 28px;
         left: -38px;
@@ -738,7 +955,7 @@ tag:
       margin: 20px 0 0 -50px;
       margin-left: -50px;
       background: #F0F0F0;
-      @include max-screen( $breakpoint-small ) {
+      @include max-screen( $breakpoint-middle ) {
         padding: 10px 10px 10px 38px;
         margin-left: -38px;
       }
@@ -801,7 +1018,7 @@ section.CG2-publication{
     padding-right: 30px;
     max-width: 206px;
     width: 20%;
-    @include max-screen( $breakpoint-small ) {
+    @include max-screen( $breakpoint-middle ) {
       padding-right: 15px;
     }
     img{
@@ -814,21 +1031,21 @@ section.CG2-publication{
     font-size: 16px;
     vertical-align: top;
     display: table-cell;
-    @include max-screen( $breakpoint-small ) {
+    @include max-screen( $breakpoint-middle ) {
       font-size: 12px;
     }
     p{}
   }
     .CG2-publication__heading{
       margin: 0 0 25px;
-      @include max-screen( $breakpoint-small ) {
+      @include max-screen( $breakpoint-middle ) {
         margin-bottom: 15px;
       }
       h1{
         font-size: 24px;
         font-weight: normal;
         margin: 0;
-        @include max-screen( $breakpoint-small ) {
+        @include max-screen( $breakpoint-middle ) {
           font-size: 16px;
         }
       }
@@ -836,7 +1053,7 @@ section.CG2-publication{
     .CG2-publication__headingSub{
       font-size: 14px;
       margin: -20px 0 25px;
-      @include max-screen( $breakpoint-small ) {
+      @include max-screen( $breakpoint-middle ) {
         font-size: 10px;
         margin-top: -15px;
         margin-bottom: 15px;
@@ -844,7 +1061,7 @@ section.CG2-publication{
     }
     .CG2-publication__buttonContainer{
       margin-top: 30px;
-      @include max-screen( $breakpoint-small ) {
+      @include max-screen( $breakpoint-middle ) {
         margin-top: 10px;
       }
     }

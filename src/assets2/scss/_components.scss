@@ -159,6 +159,16 @@ tag:
   li{
     font-size: 1rem;
     display: inline-block;
+    @include max-screen( $breakpoint-middle ) {
+      display: block;
+    }
+  }
+  .CG2-button{
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 16px;
+      padding: .4em 10px;
+      width: 100%;
+    }
   }
 }
 
@@ -345,8 +355,7 @@ tag:
   }
   @include max-screen( $breakpoint-middle ) {
     font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 20px;
+    margin: 50px -10px 20px;
   }
 }
 
@@ -376,7 +385,7 @@ tag:
   margin: 80px -28px;
   @include max-screen( $breakpoint-middle ) {
     border-color: #D8D8D8;
-    margin: 30px -20px;
+    margin: 50px -10px;
   }
 }
 
