@@ -668,6 +668,13 @@ a {
 a:hover, a:active {
   transition: color 0s; }
 
+iframe[name="google_conversion_frame"] {
+  position: absolute;
+  top: 0;
+  left: -100px;
+  width: 1px;
+  height: 1px; }
+
 /*
 ---
 name: Icon
@@ -5860,6 +5867,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
   font-size: 32px;
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   text-align: center;
+  cursor: pointer;
   position: absolute;
   right: 0;
   left: 0;

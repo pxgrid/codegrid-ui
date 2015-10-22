@@ -4,7 +4,6 @@ CG2.Logo3D = ( function () {
 
   'use strict';
 
-  var MIN_HEIGHT = 600;
   var BREAK_POINT = 768 - 1;
   var isSmallScreen = function () {
 
@@ -50,7 +49,7 @@ CG2.Logo3D = ( function () {
     this.containerElement = containerElement;
     this.scene  = new THREE.Scene();
     this.scene.fog = new THREE.Fog( 0x000000, 600, 1000 );
-    this.camera = new THREE.PerspectiveCamera( 60, this.width / this.height , .1, 1000 );
+    this.camera = new THREE.PerspectiveCamera( 60, this.width / this.height , 1, 10000 );
     this.camera.position.set( 0, 0, 600 );
     this.renderer = new THREE.WebGLRenderer();
     // this.renderer.setSize( this.width, this.height );
@@ -61,7 +60,7 @@ CG2.Logo3D = ( function () {
     this.mousePointer = new THREE.Vector2( 0, 0 );
     this.balance = new THREE.Vector2( 0, 0 );
     this.letterMeshes = [];
-    this.isNoWrap = false;
+    this.isNoWrap = true;
 
     var grid = new THREE.Points( Logo3D.gridGeometry, Logo3D.gridMaterial );
     this.scene.add( grid );
@@ -82,7 +81,6 @@ CG2.Logo3D = ( function () {
 
     this.setSize();
     this.onscroll();
-    this.linebrake( true );
 
     if ( this.isVisible() ) { this.play(); }
 
@@ -104,7 +102,7 @@ CG2.Logo3D = ( function () {
     linebrake: function ( state ) {
 
       if (
-         state && !this.isNoWrap
+         state && !this.isNoWrap ||
         !state &&  this.isNoWrap
       ) {
 
@@ -138,7 +136,6 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 5 ].geometry.applyMatrix( m );
         this.letterMeshes[ 6 ].geometry.applyMatrix( m );
         this.letterMeshes[ 7 ].geometry.applyMatrix( m );
-        this.letterMeshes[ 8 ].geometry.applyMatrix( m );
 
         this.isNoWrap = false;
 
@@ -166,9 +163,8 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 5 ].geometry.applyMatrix( m );
         this.letterMeshes[ 6 ].geometry.applyMatrix( m );
         this.letterMeshes[ 7 ].geometry.applyMatrix( m );
-        this.letterMeshes[ 8 ].geometry.applyMatrix( m );
 
-        this.isNoWrap = false;
+        this.isNoWrap = true;
 
       }
 
@@ -571,7 +567,7 @@ CG2.Logo3D = ( function () {
 
   Logo3D.gridMaterial.uniforms.size.value = 100;
   Logo3D.gridMaterial.uniforms.scale.value = 0.8 * 10;
-  Logo3D.gridMaterial.uniforms.psColor.value.setRGB( 0.12, 0.12, 0.12 );
+  Logo3D.gridMaterial.uniforms.psColor.value.setRGB( 0.15, 0.15, 0.15 );
 
 
 ///////////////////////////////
@@ -779,26 +775,46 @@ CG2.Logo3D = ( function () {
 
   };
 
+  var _5_6 = 5 / 6;
+
   function onresize ( event ) {
+
+    var aspect;
+    var cameraZ = 600;
 
     if ( !isSmallScreen() ) {
 
-      this.height = Math.min( document.documentElement.clientHeight, MIN_HEIGHT );
       this.width  = Math.max( document.documentElement.clientWidth, this.height * ( this.aspect.x / this.aspect.y ) );
+      this.height = document.documentElement.clientHeight;
+      this.linebrake( false );
+      aspect = this.width / this.height;
 
     } else {
 
-      this.height = document.documentElement.clientHeight;
       this.width  = document.documentElement.clientWidth;
+      this.height = document.documentElement.clientHeight;
+      this.linebrake( true );
+      aspect = this.width / this.height;
+
+      if ( aspect <= _5_6 ) {
+
+        cameraZ = ( 2 - aspect ) * ( 2 - aspect ) * 600;
+
+      }
+
 
     }
 
     this.renderer.setSize( this.width, this.height );
-    this.camera.aspect = this.width / this.height;
+    this.camera.aspect = aspect;
     this.camera.updateProjectionMatrix();
-    console.log( this.width );
+    
     this.containerElement.style.width  = this.width  + 'px';
     this.containerElement.style.height = this.height + 'px';
+
+    this.scene.fog.near = cameraZ;
+    this.scene.fog.far  = cameraZ + 400;
+    this.camera.position.z = cameraZ;
 
   };
 
@@ -821,3 +837,45 @@ CG2.Logo3D = ( function () {
   return Logo3D;
 
 } )();
+
+
+( function () {
+
+  var header    = document.querySelector( '.CG2-pageHeader' );
+  var logo3d    = document.querySelector( '.CG2-logo3d' );
+  var clickable = logo3d.querySelector( '.CG2-logo3d__overlayText' );
+
+  var cubicOut = function ( t ) {
+
+    var f = t - 1.0;
+    return f * f * f + 1.0;
+
+  }
+
+  var scroll = function () {
+
+    var top  = ( document.documentElement && document.documentElement.scrollTop )  || document.body.scrollTop;
+    var left = ( document.documentElement && document.documentElement.scrollLeft ) || document.body.scrollLeft;
+    var headerH = header.clientHeight;
+    var y = logo3d.clientHeight;
+    var distanceY = y - headerH - top;
+    var progress = 0;
+
+    ( function animation () {
+
+      if  ( 1 <= progress ) { return; }
+
+      requestAnimationFrame( animation );
+
+      window.scrollTo( left, top + distanceY * cubicOut( progress ) );
+
+      progress += 0.03;
+
+    } )();
+
+  }
+
+  clickable.addEventListener( 'click', scroll );
+
+} )();
+

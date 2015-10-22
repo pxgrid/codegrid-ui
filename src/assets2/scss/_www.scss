@@ -64,6 +64,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
       font-size: 32px;
       font-family: $fontSerif;
       text-align: center;
+      cursor: pointer;
       position: absolute;
       right: 0;
       left: 0;
