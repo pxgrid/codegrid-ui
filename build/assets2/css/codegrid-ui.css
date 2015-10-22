@@ -747,6 +747,13 @@ star
 </div>
 ```
 
+question
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-question"></span>
+</div>
+```
+
 twitter
 ```html
 <div style="font-size:32px;">
@@ -775,10 +782,10 @@ cat-elementary
 </div>
 ```
 
-cat-practice
+cat-mastering
 ```html
 <div style="font-size:32px;">
-  <span class="CG2-icon-cat-practice"></span>
+  <span class="CG2-icon-cat-mastering"></span>
 </div>
 ```
 
@@ -824,10 +831,10 @@ cat-future
 </div>
 ```
 
-cat-workstyle
+cat-work-style
 ```html
 <div style="font-size:32px;">
-  <span class="CG2-icon-cat-workstyle"></span>
+  <span class="CG2-icon-cat-work-style"></span>
 </div>
 ```
 
@@ -907,6 +914,9 @@ cat-discussion
 .CG2-icon-star:before {
   content: "\E609"; }
 
+.CG2-icon-question:before {
+  content: "\E610"; }
+
 .CG2-icon-twitter:before {
   content: "\E700"; }
 
@@ -919,7 +929,7 @@ cat-discussion
 .CG2-icon-cat-elementary:before {
   content: "\E800"; }
 
-.CG2-icon-cat-practice:before {
+.CG2-icon-cat-mastering:before {
   content: "\E801"; }
 
 .CG2-icon-cat-standards:before {
@@ -940,7 +950,7 @@ cat-discussion
 .CG2-icon-cat-future:before {
   content: "\E808"; }
 
-.CG2-icon-cat-workstyle:before {
+.CG2-icon-cat-work-style:before {
   content: "\E809"; }
 
 .CG2-icon-cat-survey:before {
@@ -1142,7 +1152,7 @@ templateItem:
   @media screen and (max-width: 767px) {
     .CG2-pageHeader__logo {
       top: 10px;
-      left: 10px; }
+      left: 0; }
       .CG2-pageHeader__logo img {
         width: 90px;
         height: auto; } }
@@ -1224,12 +1234,14 @@ templateItem:
   .CG2-pageHeader__opener {
     color: #FFF;
     font-size: 20px;
+    text-align: center;
     cursor: pointer;
     position: absolute;
     top: 0;
-    right: 0;
-    width: 35px;
-    height: 35px; }
+    right: -10px;
+    width: 20px;
+    height: 35px;
+    padding: 0 10px; }
     .CG2-pageHeader__opener:after {
       content: "";
       font-family: "codegrid-icon";
@@ -1243,7 +1255,8 @@ templateItem:
       display: inline-block;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      line-height: 35px; } }
+      line-height: 35px;
+      display: block; } }
 
 /* ==========================================================================
    pageFooter
@@ -1338,7 +1351,9 @@ templateItem:
   background: #191919; }
   @media screen and (max-width: 767px) {
     .CG2-pageFooter {
-      padding: 30px 0; } }
+      padding: 30px 0; }
+      .CG2-container + .CG2-pageFooter {
+        margin-top: 0; } }
   .CG2-pageFooter a {
     color: #767676;
     text-decoration: none;
@@ -1925,7 +1940,7 @@ templateItem:
   @media screen and (max-width: 767px) {
     .CG2-container__inner {
       width: auto;
-      padding: 10px 20px; } }
+      padding: 30px 20px; } }
 
 /* ==========================================================================
    Section comment block
@@ -2064,6 +2079,14 @@ tag:
   .CG2-buttonContainer li {
     font-size: 1rem;
     display: inline-block; }
+    @media screen and (max-width: 767px) {
+      .CG2-buttonContainer li {
+        display: block; } }
+  @media screen and (max-width: 767px) {
+    .CG2-buttonContainer .CG2-button {
+      font-size: 16px;
+      padding: 0.4em 10px;
+      width: 100%; } }
 
 /* ==========================================================================
    toolButton
@@ -2135,19 +2158,27 @@ tag:
 ```
 
 */
+.CG2-header1 {
+  padding: 0 28px 30px;
+  border-bottom: 1px solid #282828;
+  margin: 60px -28px 30px; }
+  .CG2-header1:first-child {
+    margin-top: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-header1 {
+      padding: 0 10px 10px;
+      margin: 20px -10px 30px; }
+      .CG2-header1:first-child {
+        margin-top: 20px; } }
+
 .CG2-header1__heading {
   color: #282828;
   font-size: 32px;
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-  line-height: 1.2;
-  padding: 0 28px 30px;
-  border-bottom: 1px solid #282828;
-  margin: 0 -28px 30px; }
+  line-height: 1.2; }
   @media screen and (max-width: 767px) {
     .CG2-header1__heading {
-      font-size: 20px;
-      padding: 0 10px 10px;
-      margin: 20px -10px 30px; } }
+      font-size: 20px; } }
 
 /* ==========================================================================
    header2
@@ -2230,8 +2261,7 @@ tag:
   @media screen and (max-width: 767px) {
     .CG2-leadText {
       font-size: 20px;
-      margin-top: 50px;
-      margin-bottom: 20px; } }
+      margin: 50px -10px 20px; } }
 
 /* ==========================================================================
    holizontalLine
@@ -2260,7 +2290,7 @@ tag:
   @media screen and (max-width: 767px) {
     .CG2-holizontalLine {
       border-color: #D8D8D8;
-      margin: 30px -20px; } }
+      margin: 50px -10px; } }
 
 /* ==========================================================================
    CG2-customers
@@ -5817,10 +5847,13 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
   margin: 0 auto;
   background: #000; }
 
-.CG2-logo3d__inner img,
-.CG2-logo3d__inner canvas {
-  display: block;
-  margin: 0 auto; }
+.CG2-logo3d__inner {
+  height: 100vh;
+  background: #000; }
+  .CG2-logo3d__inner img,
+  .CG2-logo3d__inner canvas {
+    display: block;
+    margin: 0 auto; }
 
 .CG2-logo3d__overlayText {
   color: #fff;
@@ -5901,6 +5934,10 @@ tag:
   counter-increment: CG2features;
   padding: 0 120px;
   margin: 80px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-features__item {
+      padding: 0;
+      margin: 40px 0; } }
   .CG2-features__item h1 {
     color: #282828;
     font-size: 32px;
@@ -5908,6 +5945,22 @@ tag:
     font-weight: normal;
     text-align: center;
     margin: 0 0 30px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__item h1 {
+        font-size: 20px;
+        position: relative;
+        padding: 0 40px;
+        margin-bottom: 20px; }
+        .CG2-features__item h1:before {
+          content: counter(CG2features);
+          font-family: monospace;
+          font-size: 40px;
+          line-height: 0;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: 40px; } }
 
 .CG2-features__itemBody {
   position: relative; }
@@ -5920,6 +5973,9 @@ tag:
     position: absolute;
     top: 0;
     left: -120px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__itemBody:before {
+        content: none; } }
 
 /* ==========================================================================
    CG2-howYouReceive
@@ -5961,6 +6017,10 @@ tag:
   text-align: center;
   position: relative;
   margin: 0 -28px 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-howYouReceive__header {
+      margin-left: 0;
+      margin-right: 0; } }
   .CG2-howYouReceive__header:before {
     content: '';
     display: block;
@@ -5970,6 +6030,9 @@ tag:
     width: 100%;
     height: 0;
     border-top: 1px solid #000; }
+    @media screen and (max-width: 767px) {
+      .CG2-howYouReceive__header:before {
+        content: none; } }
   .CG2-howYouReceive__header h1 {
     color: #282828;
     font-size: 24px;
@@ -5979,16 +6042,34 @@ tag:
     padding: 0 40px;
     margin: 0;
     background: #FFF; }
+    @media screen and (max-width: 767px) {
+      .CG2-howYouReceive__header h1 {
+        font-size: 16px;
+        display: block;
+        padding: 0;
+        background: none; } }
 
 .CG2-howYouReceive__list {
   display: table;
   border-spacing: 2px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-howYouReceive__list {
+      display: block; } }
 
 .CG2-howYouReceive__item {
   font-size: 14px;
   display: table-cell; }
+  @media screen and (max-width: 767px) {
+    .CG2-howYouReceive__item {
+      font-size: 12px;
+      display: block;
+      margin-bottom: 30px; } }
   .CG2-howYouReceive__item p {
     text-align: center; }
+
+@media screen and (max-width: 767px) {
+  .CG2-howYouReceive__image {
+    margin: 0 -10px 20px; } }
 
 .CG2-howYouReceive__image img {
   display: block;
@@ -6029,9 +6110,16 @@ tag:
   font-weight: normal;
   text-align: center;
   margin: 0 0 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo h1 {
+      font-size: 16px;
+      margin-bottom: 20px; } }
 
 .CG2-bookInfo__body {
   display: table; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo__body {
+      display: block; } }
 
 .CG2-bookInfo__images {
   font-size: 0;
@@ -6039,14 +6127,38 @@ tag:
   vertical-align: top;
   display: table-cell;
   padding-right: 25px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo__images {
+      display: block;
+      padding: 0; } }
+  .CG2-bookInfo__images ul {
+    display: table;
+    padding: 0;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .CG2-bookInfo__images ul {
+        margin: 0 auto 20px; } }
+  .CG2-bookInfo__images li {
+    display: table-cell;
+    list-style: none;
+    width: 1%;
+    padding-right: 10px;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .CG2-bookInfo__images li {
+        width: auto;
+        padding: 0 10px;
+        margin: 0; } }
   .CG2-bookInfo__images img {
-    vertical-align: bottom;
-    margin-right: 10px; }
+    display: block; }
 
 .CG2-bookInfo__text {
   vertical-align: top;
   display: table-cell;
   font-size: 14px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo__text {
+      font-size: 12px; } }
   .CG2-bookInfo__text p {
     margin: 0 0 20px; }
 
@@ -6086,35 +6198,60 @@ tag:
 </div>
 ```
 */
+@media screen and (max-width: 767px) {
+  .CG2-circulation {
+    display: table;
+    width: 100%; } }
+
 .CG2-circulation__lastUpdate {
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   float: right; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__lastUpdate {
+      float: none;
+      display: table-footer-group; } }
 
 .CG2-circulation__dataList {
   display: table; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataList {
+      display: table-header-group; } }
 
 .CG2-circulation__data {
   display: table-cell;
   font-size: 0;
   padding-left: 50px; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__data {
+      display: inline-block;
+      padding: 0 20px 0 0; } }
   .CG2-circulation__data:first-child {
     padding-left: 0; }
 
 .CG2-circulation__dataLabel {
   font-size: 16px;
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataLabel {
+      font-size: 12px; } }
 
 .CG2-circulation__dataNumber {
   font-size: 64px;
   font-family: monospace;
   line-height: 1.2;
   display: inline; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataNumber {
+      font-size: 40px; } }
 
 .CG2-circulation__dataUnit {
   font-size: 32px;
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   line-height: 1.2;
   display: inline; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataUnit {
+      font-size: 20px; } }
 
 /* ==========================================================================
    CG2-pickedup
@@ -6146,38 +6283,85 @@ tag:
 */
 section.CG2-pickedup {
   margin: 80px 0; }
+  @media screen and (max-width: 767px) {
+    section.CG2-pickedup {
+      margin-top: 40px;
+      margin-bottom: 40px; } }
 
 header.CG2-pickedup__header {
   line-height: 1.2;
   display: table;
   width: 100%;
   margin-bottom: 30px; }
+  @media screen and (max-width: 767px) {
+    header.CG2-pickedup__header {
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+      justify-content: space-between; } }
 
 .CG2-pickedup__headerHeading {
   font-size: 32px;
   font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-weight: normal;
   vertical-align: bottom;
+  box-sizing: border-box;
   display: table-cell;
   width: 33%;
   margin: 0;
   padding-left: 28px; }
+  @media screen and (max-width: 767px) {
+    .CG2-pickedup__headerHeading {
+      font-size: 20px;
+      -webkit-flex: 0 1 60%;
+      -ms-flex: 0 1 60%;
+      flex: 0 1 60%;
+      display: block;
+      padding-left: 0; } }
 
 .CG2-pickedup__headerSummary {
   font-size: 16px;
   white-space: nowrap;
   vertical-align: bottom;
   text-align: center;
+  box-sizing: border-box;
   display: table-cell;
   width: 33%; }
+  @media screen and (max-width: 767px) {
+    .CG2-pickedup__headerSummary {
+      font-size: 12px;
+      white-space: normal;
+      text-align: left;
+      -webkit-flex: 0 1 100%;
+      -ms-flex: 0 1 100%;
+      flex: 0 1 100%;
+      -webkit-order: 1;
+      -ms-flex-order: 1;
+      order: 1;
+      display: block;
+      margin-top: 15px; } }
 
 .CG2-pickedup__headerExtra {
   font-size: 16px;
   vertical-align: bottom;
   text-align: right;
+  box-sizing: border-box;
   display: table-cell;
   width: 33%;
   padding-right: 28px; }
+  @media screen and (max-width: 767px) {
+    .CG2-pickedup__headerExtra {
+      font-size: 12px;
+      -webkit-flex: 0 1 40%;
+      -ms-flex: 0 1 40%;
+      flex: 0 1 40%;
+      display: block;
+      padding-right: 0; } }
   .CG2-pickedup__headerExtra a {
     color: inherit; }
 
@@ -6214,11 +6398,16 @@ tag:
 ```
 */
 .CG2-categoryIntro ul {
+  color: #282828;
   font-size: 0;
   text-align: center;
   list-style: none;
   padding: 0;
   margin: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-categoryIntro ul {
+      margin-left: -10px;
+      margin-right: -10px; } }
   .CG2-categoryIntro ul:after {
     content: '';
     display: block;
@@ -6227,16 +6416,24 @@ tag:
 .CG2-categoryIntro li {
   font-size: 14px;
   text-align: center;
+  vertical-align: top;
   display: inline-block;
   width: 130px;
   padding: 0;
   margin: 0 0 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-categoryIntro li {
+      font-size: 10px;
+      width: 25%; } }
 
 .CG2-categoryIntro span[class*="CG2-icon-cat"] {
   font-size: 80px;
   display: block;
   margin-bottom: 10px;
   position: static; }
+  @media screen and (max-width: 767px) {
+    .CG2-categoryIntro span[class*="CG2-icon-cat"] {
+      font-size: 50px; } }
   .CG2-categoryIntro span[class*="CG2-icon-cat"]:before {
     display: block; }
 
@@ -6323,7 +6520,8 @@ $( window ).on( &#039;load&#039;, function () {
 */
 section.CG2-customerQuotes {
   *zoom: 1;
-  padding-top: 20px; }
+  padding-top: 20px;
+  margin: 0 -10px; }
   section.CG2-customerQuotes:before,
   section.CG2-customerQuotes:after {
     content: "";
@@ -6336,6 +6534,12 @@ header.CG2-customerQuotes__header {
   width: calc( 100% + 48px);
   border-bottom: 1px solid #5c5c5c;
   margin: 0 -28px 30px; }
+  @media screen and (max-width: 767px) {
+    header.CG2-customerQuotes__header {
+      display: block;
+      width: auto;
+      margin: 0 0 10px;
+      padding: 0 10px 5px; } }
   header.CG2-customerQuotes__header h1 {
     font-size: 32px;
     font-family: "ヒラギノ明朝 ProN W3", "HiraMinProN-W3", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
@@ -6345,6 +6549,11 @@ header.CG2-customerQuotes__header {
     display: table-cell;
     padding: 0 0 30px 28px;
     margin: 0; }
+    @media screen and (max-width: 767px) {
+      header.CG2-customerQuotes__header h1 {
+        font-size: 20px;
+        display: block;
+        padding: 0; } }
 
 .CG2-customerQuotes__headerSub {
   font-size: 14px;
@@ -6352,12 +6561,22 @@ header.CG2-customerQuotes__header {
   vertical-align: middle;
   display: table-cell;
   padding: 0 28px 30px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__headerSub {
+      font-size: 12px;
+      display: block;
+      padding: 0;
+      display: none; } }
   .CG2-customerQuotes__headerSub a {
     color: inherit; }
 
 .CG2-customerQuotes__body {
   display: table;
   width: 100%; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__body {
+      display: block;
+      width: auto; } }
 
 .CG2-customerQuotes__list {
   vertical-align: top;
@@ -6365,6 +6584,11 @@ header.CG2-customerQuotes__header {
   display: table-cell;
   width: 60%;
   padding-right: 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__list {
+      display: block;
+      width: auto;
+      padding-right: 0; } }
   .CG2-customerQuotes__list ul {
     line-height: normal;
     padding: 0;
@@ -6372,6 +6596,9 @@ header.CG2-customerQuotes__header {
   .CG2-customerQuotes__list li {
     list-style: none;
     margin: 0 0 20px; }
+    @media screen and (max-width: 767px) {
+      .CG2-customerQuotes__list li {
+        margin-bottom: 10px; } }
   .CG2-customerQuotes__list iframe {
     display: block !important;
     width: 100% !important;
@@ -6384,6 +6611,205 @@ header.CG2-customerQuotes__header {
   display: table-cell;
   width: 40%;
   padding-left: 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__timeline {
+      display: block;
+      width: auto;
+      padding-left: 0; } }
+  .CG2-customerQuotes__timeline iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important; }
+    @media screen and (max-width: 767px) {
+      .CG2-customerQuotes__timeline iframe {
+        height: 300px !important; } }
+
+/* ==========================================================================
+   CG2-faq
+   ========================================================================== */
+/*
+---
+name: faq
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-faq">
+  <div class="CG2-faq__question">
+    PayPalアカウントやWebMoneyのほかに、銀行振込など別の支払い方法はありますか？
+  </div>
+  <div class="CG2-faq__answer">
+    <p>個人で購読される方は、PayPalアカウント、もしくはWebMoneyのお支払いのみ受け付けております。団体で購読される方は、請求書払いで銀行振込ができます。</p>
+    <aside class="CG2-faq__eg">
+      <h1>未払い購読料の扱い（例）</h1>
+      <ul>
+        <li>前月未払い : 864円</li>
+        <li>今月請求 : 1,728円（前回未払い864円＋今回購読料864円）</li>
+      </ul>
+    </aside>
+  </div>
+</div>
+```
+
+*/
+.CG2-faq {
+  font-size: 16px;
+  margin: 40px 0;
+  padding: 0 0 0 50px; }
+  @media screen and (max-width: 767px) {
+    .CG2-faq {
+      font-size: 12px;
+      margin: 20px -10px;
+      padding-left: 38px; } }
+
+.CG2-faq__question {
+  font-weight: bold;
+  position: relative;
+  min-height: 20px;
+  padding: 10px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-faq__question {
+      min-height: 16px;
+      padding-top: 6px;
+      padding-bottom: 6px; } }
+  .CG2-faq__question:before {
+    content: "";
+    font-family: "codegrid-icon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #282828;
+    font-size: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    left: -50px; }
+    @media screen and (max-width: 767px) {
+      .CG2-faq__question:before {
+        font-size: 28px;
+        line-height: 28px;
+        left: -38px; } }
+
+.CG2-faq__answer p {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.CG2-faq__answer aside.CG2-faq__eg {
+  padding: 20px 20px 20px 50px;
+  margin: 20px 0 0 -50px;
+  margin-left: -50px;
+  background: #F0F0F0; }
+  @media screen and (max-width: 767px) {
+    .CG2-faq__answer aside.CG2-faq__eg {
+      padding: 10px 10px 10px 38px;
+      margin-left: -38px; } }
+  .CG2-faq__answer aside.CG2-faq__eg h1 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: 0; }
+  .CG2-faq__answer aside.CG2-faq__eg ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 30px; }
+
+/* ==========================================================================
+   CG2-publication
+   ========================================================================== */
+/*
+---
+name: publication
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<section class="CG2-publication">
+  <div class="CG2-publication__image">
+    <img src="http://img.pxgrid.net/206x290" alt="" width="206" height="290">
+  </div>
+  <div class="CG2-publication__body">
+    <div class="CG2-publication__heading">
+      <h1>Web制作者のためのGit入門</h1>
+    </div>
+    <div class="CG2-publication__headingSub">
+      大杉 充 (著), 外村 和仁 (著), CodeGrid (編集)  2014/6/28
+    </div>
+    <p>本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。</p>
+    <div class="CG2-publication__buttonContainer">
+      <a class="CG2-button" href="#">Amazonで購入</a>
+    </div>
+  </div>
+</section>
+```
+
+*/
+section.CG2-publication {
+  display: table;
+  width: 100%;
+  margin: 40px 0; }
+
+.CG2-publication__image {
+  vertical-align: top;
+  display: table-cell;
+  padding-right: 30px;
+  max-width: 206px;
+  width: 20%; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__image {
+      padding-right: 15px; } }
+  .CG2-publication__image img {
+    display: block;
+    width: 100%;
+    height: auto; }
+
+.CG2-publication__body {
+  font-size: 16px;
+  vertical-align: top;
+  display: table-cell; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__body {
+      font-size: 12px; } }
+
+.CG2-publication__heading {
+  margin: 0 0 25px; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__heading {
+      margin-bottom: 15px; } }
+  .CG2-publication__heading h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .CG2-publication__heading h1 {
+        font-size: 16px; } }
+
+.CG2-publication__headingSub {
+  font-size: 14px;
+  margin: -20px 0 25px; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__headingSub {
+      font-size: 10px;
+      margin-top: -15px;
+      margin-bottom: 15px; } }
+
+.CG2-publication__buttonContainer {
+  margin-top: 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__buttonContainer {
+      margin-top: 10px; } }
 
 /* ==========================================================================
    CG2-term
