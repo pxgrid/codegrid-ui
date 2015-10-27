@@ -197,13 +197,24 @@ tag:
   li{
     font-size: 1rem;
     display: inline-block;
+    margin: 0 8px;
     @include max-screen( $breakpoint-middle ) {
       display: block;
+    }
+  }
+  &.CG2-buttonContainer--pullLeft li{
+    margin: 0 16px 0 0;
+  }
+  @include max-screen( $breakpoint-middle ) {
+    li,
+    &.CG2-buttonContainer--pullLeft li{
+      margin: 0 0 5px;
     }
   }
   .CG2-button{
     @include max-screen( $breakpoint-middle ) {
       font-size: 16px;
+      text-align: center;
       padding: .4em 10px;
       width: 100%;
     }
