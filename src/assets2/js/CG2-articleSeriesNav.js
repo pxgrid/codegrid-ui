@@ -123,7 +123,9 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   Array.prototype.forEach.call( $clone.querySelectorAll( 'li' ) , function( $li ) {
 
-    $li.innerText = replace( $li.innerText );
+    var $leaf = $li.querySelector( 'a' ) || $li;
+
+    $leaf.innerText = replace( $leaf.innerText );
 
   } );
 
