@@ -5,6 +5,9 @@ general:
   branches:
     only:
       - master
+dependencies:
+  post:
+    - npm rebuild node-sass
 test:
   override:
     - echo 'no test!'

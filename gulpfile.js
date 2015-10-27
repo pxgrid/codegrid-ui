@@ -182,7 +182,7 @@ gulp.task( 'build', function( callback ) {
 
 } );
 
-gulp.task('deploy', ['build'], function() {
+gulp.task('deploy', function() {
   var publisher = awspublish.create({
     "params": {
       "Bucket": "ui.codegrid.net"
