@@ -1,3 +1,14 @@
+@font-face {
+  font-family: "codegrid-num";
+  src: url('../font/codegrid-num.eot');
+  src: url('../font/codegrid-num.eot?#iefix') format('embedded-opentype'),
+    url('../font/codegrid-num.woff') format('woff'),
+    url('../font/codegrid-num.ttf') format('truetype'),
+    url('../font/codegrid-num.svg#codegrid-num') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @import "vendor/_normalize";
 @import "vendor/_media-queries";
 @import "vendor/_prism";

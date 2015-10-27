@@ -125,6 +125,21 @@ gulp.task( 'iconfont', function () {
 } );
 
 
+gulp.task( 'numfont', function () {
+
+  var fontName = 'codegrid-num';
+
+  return gulp.src( [ './src/assets2/font/codegrid-num/*.svg' ] )
+  .pipe( iconfont( {
+    fontName: fontName,
+    fontHeight: 256,
+    descent: 24
+  } ) )
+  .pipe( gulp.dest( './build/assets2/font/' ) );
+
+} );
+
+
 gulp.task( 'guide', function () {
 
   return gulp.src( './aigis_config.yml' )
@@ -156,13 +171,13 @@ gulp.task( 'watch', function () {
 
 gulp.task( 'default', function( callback ) {
 
-  runSequence( 'browser-sync', 'iconfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass', 'watch', callback );
+  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'watch', callback );
 
 } );
 
 gulp.task( 'build', function( callback ) {
 
-  runSequence( 'clean', 'iconfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass', 'guide', callback );
+  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'guide', callback );
 
 } );
 
