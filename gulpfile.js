@@ -17,6 +17,7 @@ var rename       = require( 'gulp-rename' );
 var sass         = require( 'gulp-sass' );
 var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
+var awspublish   = require('gulp-awspublish');
 
 var runSequence  = require( 'run-sequence' ).use( gulp );
 
@@ -165,3 +166,15 @@ gulp.task( 'build', function( callback ) {
 
 } );
 
+gulp.task('deploy', ['build'], function() {
+  var publisher = awspublish.create({
+    "params": {
+      "Bucket": "ui.codegrid.net"
+    },
+    "endpoint": "s3-ap-northeast-1.amazonaws.com"
+  });
+  gulp.src('./build/**/*')
+    .pipe(publisher.publish())
+    .pipe(publisher.sync())
+    .pipe(awspublish.reporter());
+})
