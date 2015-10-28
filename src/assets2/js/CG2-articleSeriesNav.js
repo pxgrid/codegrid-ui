@@ -63,60 +63,21 @@ window.addEventListener( 'DOMContentLoaded', function () {
     '\u32BF'  // (50)
   ];
 
-  var replace = function ( text ) {
+  var _replaceTargetRe = /([0-9]+)/g;
 
-    return text.replace( /50/g, lookup[ 50 ] )
-               .replace( /49/g, lookup[ 49 ] )
-               .replace( /48/g, lookup[ 48 ] )
-               .replace( /47/g, lookup[ 47 ] )
-               .replace( /46/g, lookup[ 46 ] )
-               .replace( /45/g, lookup[ 45 ] )
-               .replace( /44/g, lookup[ 44 ] )
-               .replace( /43/g, lookup[ 43 ] )
-               .replace( /42/g, lookup[ 42 ] )
-               .replace( /41/g, lookup[ 41 ] )
-               .replace( /40/g, lookup[ 40 ] )
-               .replace( /39/g, lookup[ 39 ] )
-               .replace( /38/g, lookup[ 38 ] )
-               .replace( /37/g, lookup[ 37 ] )
-               .replace( /36/g, lookup[ 36 ] )
-               .replace( /35/g, lookup[ 35 ] )
-               .replace( /34/g, lookup[ 34 ] )
-               .replace( /33/g, lookup[ 33 ] )
-               .replace( /32/g, lookup[ 32 ] )
-               .replace( /31/g, lookup[ 31 ] )
-               .replace( /30/g, lookup[ 30 ] )
-               .replace( /29/g, lookup[ 29 ] )
-               .replace( /28/g, lookup[ 28 ] )
-               .replace( /27/g, lookup[ 27 ] )
-               .replace( /26/g, lookup[ 26 ] )
-               .replace( /25/g, lookup[ 25 ] )
-               .replace( /24/g, lookup[ 24 ] )
-               .replace( /23/g, lookup[ 23 ] )
-               .replace( /22/g, lookup[ 22 ] )
-               .replace( /21/g, lookup[ 21 ] )
-               .replace( /20/g, lookup[ 20 ] )
-               .replace( /19/g, lookup[ 19 ] )
-               .replace( /18/g, lookup[ 18 ] )
-               .replace( /17/g, lookup[ 17 ] )
-               .replace( /16/g, lookup[ 16 ] )
-               .replace( /15/g, lookup[ 15 ] )
-               .replace( /14/g, lookup[ 14 ] )
-               .replace( /13/g, lookup[ 13 ] )
-               .replace( /12/g, lookup[ 12 ] )
-               .replace( /11/g, lookup[ 11 ] )
-               .replace( /10/g, lookup[ 10 ] )
-               .replace( /9/g, lookup[ 9 ] )
-               .replace( /8/g, lookup[ 8 ] )
-               .replace( /7/g, lookup[ 7 ] )
-               .replace( /6/g, lookup[ 6 ] )
-               .replace( /5/g, lookup[ 5 ] )
-               .replace( /4/g, lookup[ 4 ] )
-               .replace( /3/g, lookup[ 3 ] )
-               .replace( /2/g, lookup[ 2 ] )
-               .replace( /1/g, lookup[ 1 ] )
-               .replace( /0/g, lookup[ 0 ] );
-  }
+  var _replaceFunc = function(str, ptn1) {
+
+    var num = ptn1|0;
+
+    return lookup[num] || num;
+
+  };
+
+  var replace = function( text ) {
+
+    return text.replace(_replaceTargetRe, _replaceFunc);
+
+  };
 
   var $inner = document.querySelector( '.CG2-articleSeriesNav__inner' );
   var $clone = $inner.cloneNode( true );
