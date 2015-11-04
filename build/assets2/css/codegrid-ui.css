@@ -650,7 +650,7 @@ pre.line-numbers > code {
   color: #fff; }
 
 html {
-  color: #505050;
+  color: #242424;
   font-family: sans-serif;
   font-size: 16px;
   line-height: 1.6;
@@ -1248,7 +1248,7 @@ templateItem:
     cursor: pointer;
     position: absolute;
     top: 0;
-    right: -10px;
+    right: 0;
     width: 20px;
     height: 35px;
     padding: 0 10px; }
@@ -2171,7 +2171,8 @@ tag:
   height: 18px;
   padding: 11px;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.2); }
+  background: rgba(255, 255, 255, 0.2);
+  transition: all .3s; }
   @media screen and (max-width: 767px) {
     .CG2-toolButton {
       width: 12px;
@@ -2195,6 +2196,9 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-toolButton:after {
         font-size: 12px; } }
+  a .CG2-toolButton:hover {
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.4); }
 
 /* ==========================================================================
    header1
@@ -2231,7 +2235,7 @@ tag:
 .CG2-header1__heading {
   color: #282828;
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   line-height: 1.2; }
   @media screen and (max-width: 767px) {
     .CG2-header1__heading {
@@ -2307,7 +2311,7 @@ tag:
 */
 .CG2-leadText {
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   line-height: 1.4;
   text-align: center;
   margin: 80px 0 40px; }
@@ -2580,7 +2584,7 @@ tag:
     position: relative; }
 
 span.CG2-seriesWeekHeader__label {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   display: block;
   font-size: 16px;
   vertical-align: baseline; }
@@ -2590,9 +2594,11 @@ span.CG2-seriesWeekHeader__number {
   font-size: 32px;
   vertical-align: baseline;
   margin: 0 .1em; }
+  span.CG2-seriesWeekHeader__label + span.CG2-seriesWeekHeader__number {
+    margin-left: 0; }
 
 span.CG2-seriesWeekHeader__text {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-size: 16px;
   vertical-align: baseline; }
 
@@ -2693,14 +2699,14 @@ tag:
   margin-right: -300px; }
 
 .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__label {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
 
 .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__number {
   font-family: monospace;
   line-height: 1; }
 
 .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__unit {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
 
 .CG2-seriesListHeader {
   font-size: 0;
@@ -2801,7 +2807,7 @@ tag:
         margin: -1px;
         background: #FFF; } }
   .CG2-compactNav li {
-    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
     text-align: center;
     vertical-align: middle;
     display: table-cell;
@@ -3068,7 +3074,10 @@ tag:
   width: calc( 50% - 4px);
   padding: 30px 28px;
   margin: 2px;
-  background: #000; }
+  background: #000;
+  transition: all .3s; }
+  .CG2-seriesList__item:hover {
+    background: #333; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__item {
       width: auto;
@@ -3092,7 +3101,7 @@ tag:
       display: block; } }
 
 .CG2-seriesList__itemCategory {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   vertical-align: middle;
   display: table-cell;
   width: 40px; }
@@ -3108,6 +3117,9 @@ tag:
         text-align: center;
         display: block;
         width: auto; } }
+  .CG2-seriesList__itemCategory a {
+    color: inherit;
+    transition: all .3s; }
   .CG2-seriesList__itemCategory [class^="CG2-icon-cat"] {
     font-size: 40px;
     line-height: 1;
@@ -3125,9 +3137,9 @@ tag:
         margin-bottom: 5px; } }
 
 .CG2-seriesList__itemTitle {
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.4;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   text-align: center;
   vertical-align: middle;
   display: table-cell; }
@@ -3141,12 +3153,15 @@ tag:
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemTitle {
         display: block;
         font-size: 20px; } }
+  .CG2-seriesList__itemTitle a {
+    color: inherit; }
 
 .CG2-seriesList__itemUtil {
   text-align: right;
   vertical-align: middle;
   display: table-cell;
-  width: 40px; }
+  width: 40px;
+  padding-left: 10px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__itemUtil {
       vertical-align: top; } }
@@ -3170,9 +3185,13 @@ tag:
   left: -10px;
   background-position: 50% 50%;
   background-size: cover;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  opacity: 0.6; }
+  -webkit-filter: blur(24px);
+  filter: blur(24px);
+  transform: scale(1.2, 1.2);
+  opacity: .64;
+  -webkit-transition: all .4s;
+  -ms-transition: all .4s;
+  transition: all .4s; }
 
 .CG2-seriesList__articles {
   position: relative;
@@ -3242,10 +3261,14 @@ tag:
   display: table-cell;
   width: 60px;
   padding: 15px 0; }
+  .CG2-seriesList__articleOrder:first-child {
+    padding-left: 20px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__articleOrder {
       font-size: 14px;
-      width: 54px; } }
+      width: 54px; }
+      .CG2-seriesList__articleOrder:first-child {
+        padding-left: 10px; } }
   .CG2-seriesList__item--fullWidth .CG2-seriesList__articleOrder {
     font-size: 18px;
     padding-top: 24px;
@@ -3400,7 +3423,7 @@ templateItem:
       font-size: 32px; } }
 
 .CG2-seriesHeader__categoryName {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   margin-top: 3px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesHeader__categoryName {
@@ -3414,7 +3437,7 @@ templateItem:
       min-height: 60px; } }
 
 .CG2-seriesHeader__title {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-size: 48px;
   line-height: 1.2; }
   @media screen and (max-width: 767px) {
@@ -3422,7 +3445,7 @@ templateItem:
       font-size: 20px; } }
 
 .CG2-seriesHeader__length {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   margin-top: 30px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesHeader__length {
@@ -3440,11 +3463,12 @@ templateItem:
   left: -10px;
   right: -10px;
   bottom: -10px;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  opacity: 0.6;
+  -webkit-filter: blur(24px);
+  filter: blur(24px);
+  opacity: .64;
   background-position: 50% 50%;
-  background-size: cover; }
+  background-size: cover;
+  transform: scale(1.2, 1.2); }
 
 /* ==========================================================================
    CG2-series
@@ -3540,6 +3564,8 @@ tag:
   vertical-align: middle;
   display: table-cell;
   padding: 20px 0; }
+  .CG2-series__itemTitle:first-child {
+    padding-left: 10px; }
   @media screen and (max-width: 767px) {
     .CG2-series__itemTitle {
       font-size: 14px;
@@ -3716,11 +3742,11 @@ tag:
 
 .CG2-articleHeader__series {
   font-size: 24px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
 
 .CG2-articleHeader__title {
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   line-height: 1.4;
   margin-bottom: 20px; }
   @media screen and (max-width: 767px) {
@@ -3793,11 +3819,12 @@ tag:
   left: -10px;
   right: -10px;
   bottom: -10px;
-  -webkit-filter: blur(10px);
-  filter: blur(10px);
-  opacity: 0.6;
+  -webkit-filter: blur(24px);
+  filter: blur(24px);
+  opacity: .64;
   background-position: 50% 50%;
-  background-size: cover; }
+  background-size: cover;
+  transform: scale(1.2, 1.2); }
 
 /* ==========================================================================
    CG2-narrowLayout
@@ -3928,7 +3955,7 @@ header.CG2-articleTOC__header {
   margin-bottom: 1em; }
   header.CG2-articleTOC__header h1 {
     font-size: 28px;
-    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
     font-weight: normal;
     margin: 0; }
   @media screen and (max-width: 767px) {
@@ -4079,7 +4106,7 @@ tag:
     writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
-    height: 320px;
+    max-height: 500px;
     padding: 0;
     margin: 0 auto 20px; }
   .CG2-articleSeriesNav__inner li {
@@ -4087,7 +4114,7 @@ tag:
     -ms-text-overflow: ellipsis;
     text-overflow: ellipsis;
     overflow: hidden;
-    height: 320px;
+    max-height: 500px;
     padding: 0;
     margin: 0; }
     .CG2-articleSeriesNav__inner li.CG2-articleSeriesNav__item--current a {
@@ -4191,7 +4218,7 @@ article.CG2-article {
       padding: 0 10px; } }
   article.CG2-article > h2 {
     font-size: 28px;
-    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
     font-weight: normal;
     line-height: 1.2;
     padding-bottom: .5em;
@@ -5074,7 +5101,7 @@ tag:
 
 .CG2-searchOption__headerLabel {
   font-size: 16px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
   @media screen and (max-width: 767px) {
     .CG2-searchOption__headerLabel {
       display: none; } }
@@ -5090,7 +5117,7 @@ tag:
 
 .CG2-searchOption__headerUnit {
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   display: inline-block; }
   @media screen and (max-width: 767px) {
     .CG2-searchOption__headerUnit {
@@ -5135,7 +5162,7 @@ tag:
 
 .CG2-searchOption__headingMain {
   font-size: 14px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   vertical-align: bottom;
   display: table-cell; }
 
@@ -5411,6 +5438,17 @@ tag:
   height: 8em;
   padding: 4px; }
 
+.CG2-settings__buttonContainer ul {
+  font-size: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+.CG2-settings__buttonContainer li {
+  font-size: 1rem;
+  display: inline-block;
+  margin: 0 8px 8px 0; }
+
 /* ==========================================================================
    CG2-formProgress
    ========================================================================== */
@@ -5535,7 +5573,7 @@ tag:
 ```
 */
 .CG2-signupFrom__lead {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-size: 32px;
   text-align: center;
   margin-bottom: 30px; }
@@ -5909,7 +5947,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 .CG2-logo3d__overlayText {
   color: #fff;
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   text-align: center;
   cursor: pointer;
   position: absolute;
@@ -5993,7 +6031,7 @@ tag:
   .CG2-features__item h1 {
     color: #282828;
     font-size: 32px;
-    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
     font-weight: normal;
     text-align: center;
     margin: 0 0 30px; }
@@ -6256,7 +6294,7 @@ tag:
     width: 100%; } }
 
 .CG2-circulation__lastUpdate {
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   float: right; }
   @media screen and (max-width: 767px) {
     .CG2-circulation__lastUpdate {
@@ -6282,7 +6320,7 @@ tag:
 
 .CG2-circulation__dataLabel {
   font-size: 16px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
   @media screen and (max-width: 767px) {
     .CG2-circulation__dataLabel {
       font-size: 12px; } }
@@ -6298,7 +6336,7 @@ tag:
 
 .CG2-circulation__dataUnit {
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   line-height: 1.2;
   display: inline; }
   @media screen and (max-width: 767px) {
@@ -6359,7 +6397,7 @@ header.CG2-pickedup__header {
 
 .CG2-pickedup__headerHeading {
   font-size: 32px;
-  font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-weight: normal;
   vertical-align: bottom;
   box-sizing: border-box;
@@ -6593,7 +6631,7 @@ header.CG2-customerQuotes__header {
       padding: 0 10px 5px; } }
   header.CG2-customerQuotes__header h1 {
     font-size: 32px;
-    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
     font-weight: normal;
     line-height: 1.2;
     vertical-align: middle;
