@@ -249,6 +249,7 @@ tag:
   padding: 11px;
   border-radius: 3px;
   background: rgba( 255, 255, 255, 0.2 );
+  transition: all .3s;
   @include max-screen( $breakpoint-middle ) {
     width: 12px;
     height: 12px;
@@ -261,6 +262,10 @@ tag:
     @include max-screen( $breakpoint-middle ) {
       font-size: 12px;
     }
+  }
+  a &:hover{
+    text-shadow: 0 0 6px rgba( 0, 0, 0, .2 );
+    background: rgba( 255, 255, 255, .4 );
   }
 }
 
@@ -680,6 +685,9 @@ tag:
         font-size: 32px;
         vertical-align: baseline;
         margin: 0 .1em;
+        span.CG2-seriesWeekHeader__label + & {
+          margin-left: 0;
+        }
       }
       span.CG2-seriesWeekHeader__text{
         font-family: $fontSerif;
@@ -1197,6 +1205,10 @@ tag:
     margin: 2px;
     // background: #ccc;
     background: #000;
+    transition: all .3s;
+    &:hover{
+      background: #333;
+    }
     @include max-screen( $breakpoint-middle ) {
       width: auto;
       padding: 8px 8px 24px;
@@ -1240,6 +1252,13 @@ tag:
             width: auto;
           }
         }
+        a{
+          color: inherit;
+          transition: all .3s;
+          &:hover{
+            
+          }
+        }
         [class^="CG2-icon-cat"]{
           font-size: 40px;
           line-height: 1;
@@ -1260,7 +1279,7 @@ tag:
         }
       }
       .CG2-seriesList__itemTitle{
-        font-size: 24px;
+        font-size: 22px;
         line-height: 1.4;
         font-family: $fontSerif;
         text-align: center;
@@ -1277,12 +1296,19 @@ tag:
             font-size: 20px;
           }
         }
+        a{
+          color: inherit;
+          &:hover{
+            
+          }
+        }
       }
       .CG2-seriesList__itemUtil{
         text-align: right;
         vertical-align: middle;
         display: table-cell;
         width: 40px;
+        padding-left: 10px;
         @include max-screen( $breakpoint-middle ) {
           vertical-align: top;
         }
@@ -1307,15 +1333,13 @@ tag:
     left: -10px;
     background-position: 50% 50%;
     background-size: cover;
-    -webkit-filter: blur( 3px );
-    filter: blur( 3px );
-    opacity: 0.6;
+    -webkit-filter: blur( 24px );
+    filter: blur( 24px );
+    transform: scale( 1.2, 1.2 );
+    opacity: .64;
     -webkit-transition: all .4s;
         -ms-transition: all .4s;
             transition: all .4s;
-    .CG2-seriesList__item:hover &{
-      transform: scale( 1.02 );
-    }
   }
   .CG2-seriesList__articles{
     position: relative;
@@ -1604,11 +1628,12 @@ templateItem:
     left: -10px;
     right: -10px;
     bottom: -10px;
-    -webkit-filter: blur( 10px );
-    filter: blur( 10px );
-    opacity: 0.6;
+    -webkit-filter: blur( 24px );
+    filter: blur( 24px );
+    opacity: .64;
     background-position: 50% 50%;
     background-size: cover;
+    transform: scale( 1.2, 1.2 );
   }
 
 /* ==========================================================================
@@ -1697,6 +1722,9 @@ tag:
         vertical-align: middle;
         display: table-cell;
         padding: 20px 0;
+        &:first-child{
+          padding-left: 10px;
+        }
         @include max-screen( $breakpoint-middle ) {
           font-size: 14px;
           padding-top: 15px;
@@ -1966,11 +1994,12 @@ tag:
     left: -10px;
     right: -10px;
     bottom: -10px;
-    -webkit-filter: blur( 10px );
-    filter: blur( 10px );
-    opacity: 0.6;
+    -webkit-filter: blur( 24px );
+    filter: blur( 24px );
+    opacity: .64;
     background-position: 50% 50%;
     background-size: cover;
+    transform: scale( 1.2, 1.2 );
   }
 
 
@@ -2262,7 +2291,7 @@ tag:
     writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
-    height: 320px;
+    max-height: 500px;
     padding: 0;
     margin: 0 auto 20px;
   }
@@ -2271,7 +2300,7 @@ tag:
     -ms-text-overflow: ellipsis;
         text-overflow: ellipsis;
     overflow: hidden;
-    height: 320px;
+    max-height: 500px;
     padding: 0;
     margin: 0;
     &.CG2-articleSeriesNav__item--current a{
@@ -3651,6 +3680,11 @@ tag:
             }
           }
 
+    .CG2-settings__buttonContainer{
+      // TODO
+      ul{}
+        li{}
+    }
 
 
 /* ==========================================================================
