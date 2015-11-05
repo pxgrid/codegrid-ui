@@ -72,11 +72,16 @@ gulp.task( 'copy-static', function () {
 gulp.task( 'js', function () {
 
   return gulp.src( [
+          './src/assets2/js/vendor/EventDispatcher.js',
           './src/assets2/js/vendor/prism.js',
+          './src/assets2/js/CGUI.js',
           './src/assets2/js/CG2-drawer.js',
           './src/assets2/js/CG2-compactNav.js',
           './src/assets2/js/CG2-searchOption.js',
-          './src/assets2/js/CG2-articleSeriesNav.js'
+          './src/assets2/js/CG2-articleSeriesNav.js',
+          './src/assets2/js/CG2-livecode.js',
+          './src/assets2/js/old-jade-click-to-play.js',
+          './src/assets2/js/old-jade-prism.js'
          ] )
          .pipe( plumber() )
          .pipe( concat( 'codegrid-ui.js' ) )
