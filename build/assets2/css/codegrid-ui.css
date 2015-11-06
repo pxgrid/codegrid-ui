@@ -4259,10 +4259,10 @@ article.CG2-article {
     margin: 0;
     padding: 0 0 0 30px; }
   article.CG2-article li {
-    margin: 2em 0; }
+    margin: 1em 0; }
     @media screen and (max-width: 767px) {
       article.CG2-article li {
-        margin: 1em 0; } }
+        margin: .5em 0; } }
   article.CG2-article table {
     margin: 2em 0; }
     article.CG2-article table th, article.CG2-article table td {
@@ -4320,6 +4320,50 @@ article.CG2-article {
       margin: 0; }
     article.CG2-article aside p {
       margin: 0; }
+
+/* 旧Jade 用
+   ========================================================================== */
+article.CG2-article dl {
+  margin: 2em 0; }
+
+article.CG2-article dt {
+  font-weight: bold; }
+
+article.CG2-article dd {
+  margin: 0 0 0.8em 2em; }
+
+article.CG2-article blockquote {
+  color: #777;
+  padding: 0 15px;
+  border-left: 4px solid #ddd;
+  margin: 2em 0; }
+
+article.CG2-article pre.code {
+  font-family: Consolas,Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 1em;
+  border: 1px solid #DBDBDB;
+  background: #f5f2f0; }
+
+article.CG2-article .ImgBox {
+  margin: 2em 0; }
+
+article.CG2-article .ImgBox-title {
+  font-weight: bold;
+  border-bottom: 1px dotted #ccc;
+  margin: 0.5em 0 3px; }
+
+article.CG2-article .ImgBox-comment {
+  color: #777;
+  font-size: 14px; }
+
+article.CG2-article .ImgBox-body {
+  margin: 3px 0; }
+  article.CG2-article .ImgBox-body img {
+    display: block;
+    max-width: 100%;
+    height: auto; }
 
 /* ==========================================================================
    CG2-articlePagination
@@ -4510,13 +4554,18 @@ tag:
 ```
 
 */
-section.CG2-livecode h1 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0 0 .5em; }
-  @media screen and (max-width: 767px) {
-    section.CG2-livecode h1 {
-      font-size: 14px; } }
+section.CG2-livecode {
+  margin: 2em 0; }
+  section.CG2-livecode h1 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 .5em; }
+    @media screen and (max-width: 767px) {
+      section.CG2-livecode h1 {
+        font-size: 14px; } }
+  section.CG2-livecode p {
+    font-size: 12px;
+    margin: 0 0 .5em; }
 
 .CG2-livecode__header {
   display: table;
@@ -4529,7 +4578,8 @@ section.CG2-livecode h1 {
     @media screen and (max-width: 767px) {
       .CG2-livecode__header .CG2-livecode__label {
         font-size: 10px;
-        padding: 5px 10px; } }
+        padding: 5px 10px;
+        border-right: 1px solid #DBDBDB; } }
   .CG2-livecode__header .CG2-livecode__nav {
     vertical-align: middle;
     display: table-cell; }
@@ -4538,28 +4588,50 @@ section.CG2-livecode h1 {
         font-size: 10px; } }
     .CG2-livecode__header .CG2-livecode__nav ul {
       display: table;
+      padding: 0;
       margin: 0 0 0 auto; }
+      @media screen and (max-width: 767px) {
+        .CG2-livecode__header .CG2-livecode__nav ul {
+          display: block; } }
     .CG2-livecode__header .CG2-livecode__nav li {
       font-size: 10px;
       font-weight: bold;
       vertical-align: middle;
       display: table-cell;
       padding: 10px;
-      border-left: 1px solid #DBDBDB; }
+      border-left: 1px solid #DBDBDB;
+      margin: 0; }
+      @media screen and (max-width: 767px) {
+        .CG2-livecode__header .CG2-livecode__nav li {
+          display: block;
+          border-left: none;
+          padding: 8px 16px;
+          border-top: 1px solid #DBDBDB; }
+          .CG2-livecode__header .CG2-livecode__nav li:first-child {
+            border-top: none; } }
     .CG2-livecode__header .CG2-livecode__nav a {
       color: inherit;
       text-decoration: none;
       display: block;
-      padding: 10px;
-      margin: -10px; }
+      padding: 8px  16px;
+      margin: -8px -16px; }
       .CG2-livecode__header .CG2-livecode__nav a span[class^="CG2-icon-"] {
         font-size: 20px;
         position: static;
         margin: 0 5px 0 0; }
+      .CG2-livecode__header .CG2-livecode__nav a[data-livecode-play] {
+        position: relative; }
+        .CG2-livecode__header .CG2-livecode__nav a[data-livecode-play]:before {
+          position: absolute;
+          content: 'サンプルを再生する';
+          background: #EEE; }
+          .CG2-livecode.CG2-livecode--isRunning .CG2-livecode__header .CG2-livecode__nav a[data-livecode-play]:before {
+            content: 'サンプルを停止する'; }
 
 .CG2-livecode__body {
   -webkit-overflow-scrolling: touch;
   overflow: auto;
+  position: relative;
   border: 1px solid #DBDBDB; }
   .CG2-livecode__body iframe {
     vertical-align: bottom;
@@ -4568,6 +4640,7 @@ section.CG2-livecode h1 {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
+    min-height: 300px;
     border: none;
     background: #FFF; }
   .CG2-livecode__body pre[class*="language-"] {
@@ -4576,6 +4649,29 @@ section.CG2-livecode h1 {
     .CG2-livecode__body pre[class*="language-"] code {
       padding: 0;
       background: transparent; }
+
+.CG2-livecode__clickToPlay {
+  overflow: hidden;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background: #777;
+  -webkit-transition: all .3s;
+  transition: all .3s; }
+  .CG2-livecode.CG2-livecode--isRunning .CG2-livecode__clickToPlay {
+    bottom: 100%; }
+  .CG2-livecode__clickToPlay:after {
+    content: 'クリックして再生する';
+    color: #FFF;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    width: 100%; }
 
 /* ==========================================================================
    CG2-profile
