@@ -1210,16 +1210,12 @@ tag:
     }
   }
     .CG2-seriesList__item{
+      @include blurry-parent();
       color: #fff;
       box-sizing: border-box;
-      overflow: hidden;
-      position: relative;
-      z-index: 1;
       width: calc( 50% - 4px );
       padding: 30px 28px;
       margin: 2px;
-      // background: #ccc;
-      background: #000;
       transition: all .3s;
       &:hover{
         background: #333;
@@ -1347,19 +1343,7 @@ tag:
           }
         }
     .CG2-seriesList__coverImage{
-      pointer-events: none;
-      position: absolute;
-      z-index: -1;
-      top: -10px;
-      right: -10px;
-      bottom: -10px;
-      left: -10px;
-      background-position: 50% 50%;
-      background-size: cover;
-      -webkit-filter: blur( 24px );
-      filter: blur( 24px );
-      transform: scale( 1.2, 1.2 );
-      opacity: .64;
+      @include blurry();
       -webkit-transition: all .4s;
           -ms-transition: all .4s;
               transition: all .4s;
@@ -1577,11 +1561,8 @@ templateItem:
 
 */
 .CG2-seriesHeader{
+  @include blurry-parent();
   color: #fff;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  background: #000;
 }
   .CG2-seriesHeader__inner{
     box-sizing: border-box;
@@ -1644,19 +1625,7 @@ templateItem:
           }
 
   .CG2-seriesHeader__bg{
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    -webkit-filter: blur( 24px );
-    filter: blur( 24px );
-    opacity: .64;
-    background-position: 50% 50%;
-    background-size: cover;
-    transform: scale( 1.2, 1.2 );
+    @include blurry();
   }
 
 /* ==========================================================================
@@ -1864,10 +1833,8 @@ tag:
 */
 
 .CG2-articleHeader{
+  @include blurry-parent();
   color: #fff;
-  position: relative;
-  overflow: hidden;
-  background: #000;
 }
   .CG2-articleHeader__inner{
     position: relative;
@@ -2011,18 +1978,7 @@ tag:
       }
   }
   .CG2-articleHeader__bg{
-    pointer-events: none;
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    -webkit-filter: blur( 24px );
-    filter: blur( 24px );
-    opacity: .64;
-    background-position: 50% 50%;
-    background-size: cover;
-    transform: scale( 1.2, 1.2 );
+    @include blurry();
   }
 
 

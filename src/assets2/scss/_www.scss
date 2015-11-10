@@ -682,6 +682,18 @@ tag:
       display: block;
     }
   }
+  span.CG2-icon-cat-elementary   { color: $catColor-elementary;  }
+  span.CG2-icon-cat-mastering    { color: $catColor-mastering;   }
+  span.CG2-icon-cat-standards    { color: $catColor-standards;   }
+  span.CG2-icon-cat-talk         { color: $catColor-talk;        }
+  span.CG2-icon-cat-architecture { color: $catColor-architecture;}
+  span.CG2-icon-cat-report       { color: $catColor-report;      }
+  span.CG2-icon-cat-design       { color: $catColor-design;      }
+  span.CG2-icon-cat-future       { color: $catColor-future;      }
+  span.CG2-icon-cat-work-style   { color: $catColor-work-style;  }
+  span.CG2-icon-cat-survey       { color: $catColor-survey;      }
+  span.CG2-icon-cat-interview    { color: $catColor-interview;   }
+  span.CG2-icon-cat-discussion   { color: $catColor-discussion;  }
 }
 
 
@@ -875,6 +887,248 @@ section.CG2-customerQuotes{
           height: 300px !important;
         }
       }
+    }
+
+
+/* ==========================================================================
+   CG2-bannerHeader
+   ========================================================================== */
+/*
+---
+name: bannerHeader
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-bannerHeader">
+  <div class="CG2-bannerHeader__inner">
+    <h1>チームのフロントエンド開発力を<br>根底からアップしよう</h1>
+    <p>団体購読とは、購読管理者の方に複数の購読者を取りまとめていただき、毎月、購読者全員の購読料を一括した請求書を発行し、まとめてお支払いいただくシステムです。</p>
+  </div>
+  <div class="CG2-bannerHeader__bg" style="background-image: url( '/build/img/_01.jpg' )"></div>
+</div>
+```
+
+*/
+
+
+.CG2-bannerHeader{
+  @include blurry-parent();
+  color: #fff;
+  padding: 130px 0;
+}
+  .CG2-bannerHeader__inner{
+    max-width: 740px;
+    margin: 0 auto;
+    h1{
+      font-family: $fontSerif;
+      font-size: 32px;
+      font-weight: normal;
+      text-align: center;
+      margin: 0 0 30px;
+    }
+    p{
+      line-height: 2;
+      text-align: center;
+      margin: 20px 0;
+    }
+  }
+  .CG2-bannerHeader__bg{
+    @include blurry();
+  }
+
+
+/* ==========================================================================
+   CG2-form
+   ========================================================================== */
+/*
+---
+name: form
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<section class="CG2-form">
+  <form>
+    <div class="CG2-form__header">
+      <h1>団体購読のお申込み</h1>
+    </div>
+    <p class="CG2--alignCenter">購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
+    <div class="CG2-form__table">
+      <table>
+        <tr>
+          <th>
+            会社名・団体名
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <input type="text" placeholder="例）株式会社 ピクセルグリッド">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            管理者のメールアドレス
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <input type="text" placeholder="例）codegrid@pxgrid.com">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <p><button class="CG2-button CG2-button--primary CG2-button--large">送信</button></p>
+    <div class="CG2-form__legal">
+      Powered by Google ドキュメント | 不正行為の報告 - 利用規約 - 追加規約
+    </div>
+    <div class="CG2-form__notice">
+      もし送信できない場合はこちらをお試しください
+    </div>
+  </form>
+</section>
+```
+
+*/
+
+section.CG2-form{
+  padding: 50px;
+  margin: 80px -28px;
+  background: #f0f0f0;
+  form{
+    margin: 0;
+  }
+  p{}
+}
+    .CG2-form__header{
+      h1{
+        font-size: 32px;
+        font-family: $fontSerif;
+        font-weight: normal;
+        text-align: center;
+        margin: 0 0 30px;
+      }
+    }
+    .CG2-form__table{
+      table{
+        width: 100%;
+      }
+        th{
+          text-align: left;
+          vertical-align: middle;
+          padding: 8px;
+        }
+        td{
+          padding: 8px;
+        }
+          input[type="text"],
+          input[type="url"],
+          input[type="email"]{
+            box-sizing: border-box;
+            width: 100%;
+            padding: 8px 14px;
+            border: 1px solid #c8c8c8;
+            border-radius: 3px;
+          }
+    }
+      span.CG2-form__required{
+        color: #ff0000;
+        font-size: 12px;
+        font-weight: normal;
+        line-height: 22px;
+        margin-left: 10px;
+        float: right;
+      }
+    .CG2-form__legal{
+      font-size: 12px;
+      text-align: center;
+      margin: 15px 0;
+      a{
+        color: inherit;
+      }
+    }
+    .CG2-form__notice{
+      font-size: 12px;
+      text-align: center;
+      margin: 15px 0;
+    }
+
+/* ==========================================================================
+   CG2-faq
+   ========================================================================== */
+/*
+---
+name: faq
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-flowExplanation">
+  <section class="CG2-flowExplanation__item">
+    <div class="CG2-flowExplanation__image">
+      <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
+    </div>
+    <div class="CG2-flowExplanation__text">
+      <h1>お申込頂くと、管理者様へ団体管理画面へのリンクが送信されます</h1>
+      <p>補足などがはいります。補足などがはいります。補足などがはいります。補足などがはいります。</p>
+    </div>
+  </section>
+
+  <section class="CG2-flowExplanation__item">
+    <div class="CG2-flowExplanation__image">
+      <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
+    </div>
+    <div class="CG2-flowExplanation__text">
+      <h1>管理画面にて、パスワードの設定をお願いします</h1>
+      <p>補足などがはいります。補足などがはいります。補足などがはいります。補足などがはいります。</p>
+    </div>
+  </section>
+</div>
+```
+
+*/
+.CG2-flowExplanation{
+  margin: 40px 0;
+  counter-reset: CG2flowExplanation;
+}
+  section.CG2-flowExplanation__item{
+    counter-increment: CG2flowExplanation;
+    display: table;
+    width: 100%;
+    margin: 50px 0;
+  }
+    .CG2-flowExplanation__image{
+      vertical-align: top;
+      display: table-cell;
+      img{}
+    }
+    .CG2-flowExplanation__text{
+      vertical-align: top;
+      display: table-cell;
+      padding-left: 66px;
+      h1{
+        font-size: 24px;
+        font-weight: normal;
+        margin: 0 0 20px;
+        &:before{
+          content: counter( CG2flowExplanation );
+          font-size: 32px;
+          font-family: $fontCode;
+          line-height: 1;
+          vertical-align: middle;
+          display: inline-block;
+          width: 1.2em;
+          margin-left: -1.2em;
+        }
+      }
+      p{}
     }
 
 

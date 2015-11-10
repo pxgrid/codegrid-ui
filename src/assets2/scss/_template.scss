@@ -384,6 +384,9 @@ templateItem:
     display: table;
     width: 1016px + 28 + 28;
     margin: 0 auto;
+    @include max-screen( 1072px ) {
+      width: auto;
+    }
     @include max-screen( $breakpoint-middle ) {
       display: block;
       width: auto;
