@@ -51,8 +51,11 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
   background: #000;
 }
   .CG2-logo3d__inner{
-    height: 100vh;
+    height: calc( 100vh - 120px );
     background: #000;
+    @include max-screen( $breakpoint-small ) {
+      height: calc( 100vh - 30px );
+    }
     img,
     canvas{
       display: block;

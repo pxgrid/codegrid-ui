@@ -624,7 +624,7 @@ tag:
         @include icon( 'left' );
         font-size: 20px;
         position: absolute;
-        bottom: .1em;
+        bottom: .25em;
         left: 0;
         @include max-screen( $breakpoint-middle ) {
           font-size: 14px;
@@ -647,7 +647,7 @@ tag:
         @include icon( 'right' );
         font-size: 20px;
         position: absolute;
-        bottom: .1em;
+        bottom: .25em;
         right: 0;
         @include max-screen( $breakpoint-middle ) {
           font-size: 14px;
@@ -1012,68 +1012,72 @@ tag:
 
 ```html
 <div class="CG2-seriesList">
+  <div class="CG2-seriesList__inner">
 
-  <div class="CG2-seriesList__item">
-    <div class="CG2-seriesList__itemHeader">
-      <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span></div>
-      <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
-      <div class="CG2-seriesList__itemUtil">
-        <div class="CG2-toolButton"></div>
+    <div class="CG2-seriesList__item">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span></div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">Web Fonts 自由自在</div>
+        </div>
+        <div class="CG2-seriesList__itemUtil">
+          <div class="CG2-toolButton"></div>
+        </div>
+      </div>
+      <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article">
+          <a href="#">
+            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleOrder">第3回</div>
+            <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
+            <div class="CG2-seriesList__articleDate">4/16</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="#">
+            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleOrder">第2回</div>
+            <div class="CG2-seriesList__articleTitle">gulpで生成を自動化</div>
+            <div class="CG2-seriesList__articleDate">4/9</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="#">
+            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleOrder">第1回</div>
+            <div class="CG2-seriesList__articleTitle">Webアプリの利用</div>
+            <div class="CG2-seriesList__articleDate">4/2</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <div class="CG2-seriesList__author">
+          <div class="CG2-seriesList__authorPic">
+            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          </div>
+          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        </div>
+        <div class="CG2-seriesList__author">
+          <div class="CG2-seriesList__authorPic">
+            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          </div>
+          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        </div>
+        <div class="CG2-seriesList__author">
+          <div class="CG2-seriesList__authorPic">
+            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          </div>
+          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        </div>
       </div>
     </div>
-    <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
-    <div class="CG2-seriesList__articles">
-      <div class="CG2-seriesList__article">
-        <a href="#">
-          <div class="CG2-seriesList__articleStar"></div>
-          <div class="CG2-seriesList__articleOrder">第3回</div>
-          <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
-          <div class="CG2-seriesList__articleDate">4/16</div>
-        </a>
-      </div>
-      <div class="CG2-seriesList__article">
-        <a href="#">
-          <div class="CG2-seriesList__articleStar"></div>
-          <div class="CG2-seriesList__articleOrder">第2回</div>
-          <div class="CG2-seriesList__articleTitle">gulpで生成を自動化</div>
-          <div class="CG2-seriesList__articleDate">4/9</div>
-        </a>
-      </div>
-      <div class="CG2-seriesList__article">
-        <a href="#">
-          <div class="CG2-seriesList__articleStar"></div>
-          <div class="CG2-seriesList__articleOrder">第1回</div>
-          <div class="CG2-seriesList__articleTitle">Webアプリの利用</div>
-          <div class="CG2-seriesList__articleDate">4/2</div>
-        </a>
-      </div>
-    </div>
-    <div class="CG2-seriesList__authors">
-      <div class="CG2-seriesList__author">
-        <div class="CG2-seriesList__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-        </div>
-        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-      </div>
-      <div class="CG2-seriesList__author">
-        <div class="CG2-seriesList__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-        </div>
-        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-      </div>
-      <div class="CG2-seriesList__author">
-        <div class="CG2-seriesList__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-        </div>
-        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-      </div>
-    </div>
-  </div>
+    
+    <!-- .CG2-seriesList__item 繰り返し -->
+
+    <div class="CG2-seriesList__itemMore">more</div>
   
-  <!-- .CG2-seriesList__item 繰り返し -->
-
-  <div class="CG2-seriesList__itemMore">more</div>
-
+  </div>
 </div>
 
 ```
@@ -1082,52 +1086,54 @@ tag:
 
 ```html
 <div class="CG2-seriesList">
+  <div class="CG2-seriesList__inner">
 
-  <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
-    <div class="CG2-seriesList__itemHeader">
-      <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span>実践</div>
-      <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
-      <div class="CG2-seriesList__itemUtil">
-        <div class="CG2-toolButton"></div>
+    <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span>実践</div>
+        <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
+        <div class="CG2-seriesList__itemUtil">
+          <div class="CG2-toolButton"></div>
+        </div>
+      </div>
+      <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article">
+          <a href="#">
+            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleOrder">第3回</div>
+            <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
+            <div class="CG2-seriesList__articleDate">4/16</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <div class="CG2-seriesList__author">
+          <div class="CG2-seriesList__authorPic">
+            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          </div>
+          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        </div>
+        <div class="CG2-seriesList__author">
+          <div class="CG2-seriesList__authorPic">
+            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          </div>
+          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        </div>
+        <div class="CG2-seriesList__author">
+          <div class="CG2-seriesList__authorPic">
+            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          </div>
+          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        </div>
       </div>
     </div>
-    <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
-    <div class="CG2-seriesList__articles">
-      <div class="CG2-seriesList__article">
-        <a href="#">
-          <div class="CG2-seriesList__articleStar"></div>
-          <div class="CG2-seriesList__articleOrder">第3回</div>
-          <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
-          <div class="CG2-seriesList__articleDate">4/16</div>
-        </a>
-      </div>
-    </div>
-    <div class="CG2-seriesList__authors">
-      <div class="CG2-seriesList__author">
-        <div class="CG2-seriesList__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-        </div>
-        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-      </div>
-      <div class="CG2-seriesList__author">
-        <div class="CG2-seriesList__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-        </div>
-        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-      </div>
-      <div class="CG2-seriesList__author">
-        <div class="CG2-seriesList__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-        </div>
-        <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-      </div>
-    </div>
+
+    <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
+
+    <div class="CG2-seriesList__itemMore">more</div>
+  
   </div>
-
-  <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
-
-  <div class="CG2-seriesList__itemMore">more</div>
-
 </div>
 ```
 
@@ -1177,11 +1183,11 @@ tag:
 
 
 .CG2-seriesList{
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -28px;
+  margin: 0 calc( -50vw + 50% + 8px );
+  @include max-screen( 1072px ) {
+    margin: 0 calc( -536px + 50% + 12px );
+  }
   @include max-screen( $breakpoint-middle ) {
-    display: block;
     margin-left: -18px;
     margin-right: -18px;
   }
@@ -1194,317 +1200,334 @@ tag:
     }
   }
 }
-  .CG2-seriesList__item{
-    color: #fff;
-    box-sizing: border-box;
-    overflow: hidden;
-    position: relative;
-    z-index: 1;
-    width: calc( 50% - 4px );
-    padding: 30px 28px;
-    margin: 2px;
-    // background: #ccc;
-    background: #000;
-    transition: all .3s;
-    &:hover{
-      background: #333;
-    }
+  .CG2-seriesList__inner{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
     @include max-screen( $breakpoint-middle ) {
-      width: auto;
-      padding: 8px 8px 24px;
-      margin: 0 0 2px;
-    }
-    &.CG2-seriesList__item--fullWidth{
-      width: calc( 100% - 4px );
-      @include max-screen( $breakpoint-middle ) {
-        width: auto;
-      }
+      display: block;
     }
   }
-    .CG2-seriesList__itemHeader{
-      display: table;
-      width: 100%;
-      margin-bottom: 30px;
-      @include max-screen( $breakpoint-middle ) {
-        margin-bottom: 20px;
+    .CG2-seriesList__item{
+      color: #fff;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative;
+      z-index: 1;
+      width: calc( 50% - 4px );
+      padding: 30px 28px;
+      margin: 2px;
+      // background: #ccc;
+      background: #000;
+      transition: all .3s;
+      &:hover{
+        background: #333;
       }
-      .CG2-seriesList__item--fullWidth &{
+      @include max-screen( $breakpoint-middle ) {
+        width: auto;
+        padding: 8px 8px 24px;
+        margin: 0 0 2px;
+      }
+      &.CG2-seriesList__item--fullWidth{
+        width: calc( 100% - 4px );
         @include max-screen( $breakpoint-middle ) {
-          display: block;
+          width: auto;
         }
       }
     }
-      .CG2-seriesList__itemCategory{
-        font-family: $fontSerif;
-        vertical-align: middle;
-        display: table-cell;
-        width: 40px;
+      .CG2-seriesList__itemHeader{
+        display: table;
+        width: 100%;
+        margin: -18px 0 12px;
         @include max-screen( $breakpoint-middle ) {
-          vertical-align: top;
-          width: 26px;
+          margin: 0 0 20px;
         }
         .CG2-seriesList__item--fullWidth &{
-          width: 150px;
+          margin: 0 0 30px;
           @include max-screen( $breakpoint-middle ) {
-            font-size: 10px;
-            text-align: center;
             display: block;
-            width: auto;
           }
         }
-        a{
-          color: inherit;
-          transition: all .3s;
-          &:hover{
-            
-          }
-        }
-        [class^="CG2-icon-cat"]{
-          font-size: 40px;
-          line-height: 1;
-          position: static;
-          margin-right: 15px;
+      }
+        .CG2-seriesList__itemCategory{
+          font-family: $fontSerif;
+          vertical-align: middle;
+          display: table-cell;
+          width: 40px;
           @include max-screen( $breakpoint-middle ) {
-            font-size: 26px;
+            vertical-align: top;
+            width: 26px;
           }
           .CG2-seriesList__item--fullWidth &{
+            width: 150px;
             @include max-screen( $breakpoint-middle ) {
-              font-size: 30px;
+              font-size: 10px;
+              text-align: center;
               display: block;
-              padding-top: 20px;
-              margin-right: 0;
-              margin-bottom: 5px;
+              width: auto;
+            }
+          }
+          a{
+            color: inherit;
+            transition: all .3s;
+            &:hover{
+              
+            }
+          }
+          [class^="CG2-icon-cat"]{
+            font-size: 40px;
+            line-height: 1;
+            position: static;
+            margin-right: 15px;
+            @include max-screen( $breakpoint-middle ) {
+              font-size: 26px;
+            }
+            .CG2-seriesList__item--fullWidth &{
+              @include max-screen( $breakpoint-middle ) {
+                font-size: 30px;
+                display: block;
+                padding-top: 20px;
+                margin-right: 0;
+                margin-bottom: 5px;
+              }
             }
           }
         }
-      }
-      .CG2-seriesList__itemTitle{
-        font-size: 22px;
-        line-height: 1.4;
-        font-family: $fontSerif;
-        text-align: center;
-        vertical-align: middle;
-        display: table-cell;
-        @include max-screen( $breakpoint-middle ) {
-          padding-top: 14px;
-          font-size: 20px;
-        }
-        .CG2-seriesList__item--fullWidth &{
-          font-size: 30px;
+        .CG2-seriesList__itemTitle{
+          font-size: 22px;
+          line-height: 1.4;
+          font-family: $fontSerif;
+          text-align: center;
+          vertical-align: middle;
+          display: table-cell;
+          height: 2.8em;
           @include max-screen( $breakpoint-middle ) {
-            display: block;
             font-size: 20px;
+            height: auto;
+            padding-top: 14px;
           }
-        }
-        a{
-          color: inherit;
-          &:hover{
-            
+          .CG2-seriesList__item--fullWidth &{
+            font-size: 30px;
+            height: auto;
+            @include max-screen( $breakpoint-middle ) {
+              display: block;
+              font-size: 20px;
+            }
           }
+          .CG2-seriesList__itemTitleInner{
+            text-align: left;
+            display: inline-block;
+          }
+            a{
+              color: inherit;
+              &:hover{
+                
+              }
+            }
         }
-      }
-      .CG2-seriesList__itemUtil{
-        text-align: right;
-        vertical-align: middle;
-        display: table-cell;
-        width: 40px;
-        padding-left: 10px;
-        @include max-screen( $breakpoint-middle ) {
-          vertical-align: top;
-        }
-        .CG2-seriesList__item--fullWidth &{
-          width: 150px;
+        .CG2-seriesList__itemUtil{
+          text-align: right;
+          vertical-align: middle;
+          display: table-cell;
+          width: 40px;
+          padding-left: 10px;
           @include max-screen( $breakpoint-middle ) {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: block;
-            width: auto;
+            vertical-align: top;
+          }
+          .CG2-seriesList__item--fullWidth &{
+            width: 150px;
+            @include max-screen( $breakpoint-middle ) {
+              position: absolute;
+              top: 10px;
+              right: 10px;
+              display: block;
+              width: auto;
+            }
           }
         }
-      }
-  .CG2-seriesList__coverImage{
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
-    top: -10px;
-    right: -10px;
-    bottom: -10px;
-    left: -10px;
-    background-position: 50% 50%;
-    background-size: cover;
-    -webkit-filter: blur( 24px );
-    filter: blur( 24px );
-    transform: scale( 1.2, 1.2 );
-    opacity: .64;
-    -webkit-transition: all .4s;
-        -ms-transition: all .4s;
-            transition: all .4s;
-  }
-  .CG2-seriesList__articles{
-    position: relative;
-    z-index: 1;
-    margin-bottom: 15px;
-    box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
-  }
-    .CG2-seriesList__article{
-      font-size: 16px;
-      display: table;
-      line-height: 1.2;
-      width: 100%;
-      border-top: 1px solid #fff;
-      border-bottom: 1px solid #fff;
-      margin-bottom: -1px;
-      background: rgba( 255, 255, 255, 0.05 );
-      &:first-child{
-        box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
-        background: rgba( 255, 255, 255, 0.2 );
-      }
-      a{
-        @include resetLink();
-        text-decoration: none;
-        display: table-row;
-        transition: background .2s;
-        &:hover{
+    .CG2-seriesList__coverImage{
+      pointer-events: none;
+      position: absolute;
+      z-index: -1;
+      top: -10px;
+      right: -10px;
+      bottom: -10px;
+      left: -10px;
+      background-position: 50% 50%;
+      background-size: cover;
+      -webkit-filter: blur( 24px );
+      filter: blur( 24px );
+      transform: scale( 1.2, 1.2 );
+      opacity: .64;
+      -webkit-transition: all .4s;
+          -ms-transition: all .4s;
+              transition: all .4s;
+    }
+    .CG2-seriesList__articles{
+      position: relative;
+      z-index: 1;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
+    }
+      .CG2-seriesList__article{
+        font-size: 16px;
+        display: table;
+        line-height: 1.2;
+        width: 100%;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        margin-bottom: -1px;
+        background: rgba( 255, 255, 255, 0.05 );
+        &:first-child{
+          box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
           background: rgba( 255, 255, 255, 0.2 );
         }
-      }
-    }
-      .CG2-seriesList__articleStar{
-        opacity: 0.25;
-        vertical-align: middle;
-        text-align: center;
-        display: table-cell;
-        width: 56px;
-        padding: 15px 0;
-        .CG2-seriesList__item--fullWidth &{
-          padding-top: 24px;
-          padding-bottom: 24px;
-          @include max-screen( $breakpoint-middle ) {
-            padding-top: 15px;
-            padding-bottom: 15px;
+        a{
+          @include resetLink();
+          text-decoration: none;
+          display: table-row;
+          transition: background .2s;
+          &:hover{
+            background: rgba( 255, 255, 255, 0.2 );
           }
         }
-        &:after{
-          @include icon( star );
-          font-size: 24px;
-          display: block;
-        }
-        @include max-screen( $breakpoint-middle ) {
-          width: 36px;
+      }
+        .CG2-seriesList__articleStar{
+          opacity: 0.25;
+          vertical-align: middle;
+          text-align: center;
+          display: table-cell;
+          width: 56px;
+          padding: 15px 0;
+          .CG2-seriesList__item--fullWidth &{
+            padding-top: 24px;
+            padding-bottom: 24px;
+            @include max-screen( $breakpoint-middle ) {
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
+          }
           &:after{
-            font-size: 18px;
+            @include icon( star );
+            font-size: 24px;
+            display: block;
+          }
+          @include max-screen( $breakpoint-middle ) {
+            width: 36px;
+            &:after{
+              font-size: 18px;
+            }
           }
         }
-      }
-      .CG2-seriesList__articleOrder{
-        font-size: 16px;
-        vertical-align: middle;
-        white-space: nowrap;
-        display: table-cell;
-        width: 60px;
-        padding: 15px 0;
-        &:first-child{
-          padding-left: 20px;
-        }
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-          width: 54px;
+        .CG2-seriesList__articleOrder{
+          font-size: 16px;
+          vertical-align: middle;
+          white-space: nowrap;
+          display: table-cell;
+          width: 60px;
+          padding: 15px 0;
           &:first-child{
-            padding-left: 10px;
+            padding-left: 20px;
           }
-        }
-        .CG2-seriesList__item--fullWidth &{
-          font-size: 18px;
-          padding-top: 24px;
-          padding-bottom: 24px;
           @include max-screen( $breakpoint-middle ) {
             font-size: 14px;
             width: 54px;
-            padding-top: 15px;
-            padding-bottom: 15px;
+            &:first-child{
+              padding-left: 10px;
+            }
+          }
+          .CG2-seriesList__item--fullWidth &{
+            font-size: 18px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            @include max-screen( $breakpoint-middle ) {
+              font-size: 14px;
+              width: 54px;
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
           }
         }
-      }
-      .CG2-seriesList__articleTitle{
-        font-size: 16px;
-        vertical-align: middle;
-        display: table-cell;
-        padding: 15px 0;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-        }
-        .CG2-seriesList__item--fullWidth &{
-          font-size: 18px;
-          padding-top: 24px;
-          padding-bottom: 24px;
+        .CG2-seriesList__articleTitle{
+          font-size: 16px;
+          vertical-align: middle;
+          display: table-cell;
+          padding: 15px 0;
           @include max-screen( $breakpoint-middle ) {
             font-size: 14px;
-            padding-top: 15px;
-            padding-bottom: 15px;
           }
-        }
-      }
-      .CG2-seriesList__articleDate{
-        font-size: 12px;
-        vertical-align: middle;
-        text-align: right;
-        display: table-cell;
-        white-space: nowrap;
-        padding: 15px 20px 15px 5px;
-        .CG2-seriesList__item--fullWidth &{
-          padding-top: 24px;
-          padding-bottom: 24px;
-          @include max-screen( $breakpoint-middle ) {
-            padding-top: 15px;
-            padding-bottom: 15px;
-          }
-        }
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 10px;
-          padding-right: 10px;
-        }
-      }
-  .CG2-seriesList__authors{
-    position: relative;
-    z-index: 1;
-  }
-    .CG2-seriesList__author{
-      @extend %author;
-    }
-      .CG2-seriesList__authorPic{
-        @extend %authorPic;
-      }
-      .CG2-seriesList__authorName{
-        @extend %authorName;
-        .CG2-seriesList__item--fullWidth &{
-          font-size: 16px;
-        }
-        @include max-screen( $breakpoint-middle ) {
           .CG2-seriesList__item--fullWidth &{
-            font-size: 10px;
+            font-size: 18px;
+            padding-top: 24px;
+            padding-bottom: 24px;
+            @include max-screen( $breakpoint-middle ) {
+              font-size: 14px;
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
           }
         }
+        .CG2-seriesList__articleDate{
+          font-size: 12px;
+          vertical-align: middle;
+          text-align: right;
+          display: table-cell;
+          white-space: nowrap;
+          padding: 15px 20px 15px 5px;
+          .CG2-seriesList__item--fullWidth &{
+            padding-top: 24px;
+            padding-bottom: 24px;
+            @include max-screen( $breakpoint-middle ) {
+              padding-top: 15px;
+              padding-bottom: 15px;
+            }
+          }
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 10px;
+            padding-right: 10px;
+          }
+        }
+    .CG2-seriesList__authors{
+      position: relative;
+      z-index: 1;
+    }
+      .CG2-seriesList__author{
+        @extend %author;
       }
-    .CG2-seriesList__authorPicList{
-      @extend %authorPicList;
-    }
+        .CG2-seriesList__authorPic{
+          @extend %authorPic;
+        }
+        .CG2-seriesList__authorName{
+          @extend %authorName;
+          .CG2-seriesList__item--fullWidth &{
+            font-size: 16px;
+          }
+          @include max-screen( $breakpoint-middle ) {
+            .CG2-seriesList__item--fullWidth &{
+              font-size: 10px;
+            }
+          }
+        }
+      .CG2-seriesList__authorPicList{
+        @extend %authorPicList;
+      }
 
-  .CG2-seriesList__itemMore{
-    font-family: $fontCode;
-    font-size: 28px;
-    text-align: center;
-    cursor: pointer;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 20px;
-    border-bottom: 1px solid #D8D8D8;
-    &:after{
-      @include icon( down );
-      font-size: 20px;
-      margin-left: 4px;
+    .CG2-seriesList__itemMore{
+      font-family: $fontCode;
+      font-size: 28px;
+      text-align: center;
+      cursor: pointer;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 20px;
+      border-bottom: 1px solid #D8D8D8;
+      &:after{
+        @include icon( down );
+        font-size: 20px;
+        margin-left: 4px;
+      }
     }
-  }
 
 
 
@@ -2126,13 +2149,14 @@ section.CG2-articleTOC{
   }
 }
   header.CG2-articleTOC__header{
-    padding-bottom: .6em;
+    padding-bottom: 8px;
     border-bottom: 1px solid #d8d8d8;
     margin-bottom: 1em;
     h1{
       font-size: 28px;
       font-family: $fontSerif;
       font-weight: normal;
+      min-height: 44px;
       margin: 0;
     }
     @include max-screen( $breakpoint-middle ) {
@@ -2140,6 +2164,7 @@ section.CG2-articleTOC{
       margin-bottom: 20px;
       h1{
         font-size: 18px;
+        min-height: 0;
       }
     }
   }
@@ -2266,7 +2291,7 @@ tag:
 
 .CG2-articleSeriesNav{
   font-family: $fontVertical;
-  padding-top: 3.6em;
+  padding-top: 92px;
   letter-spacing: 0.2em;
   box-sizing: border-box;
   // position: relative;
