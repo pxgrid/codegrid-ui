@@ -1058,11 +1058,11 @@ section.CG2-form{
     }
 
 /* ==========================================================================
-   CG2-faq
+   CG2-flowExplanation
    ========================================================================== */
 /*
 ---
-name: faq
+name: flowExplanation
 category:
   - Blocks/www
 tag:
@@ -1226,6 +1226,42 @@ tag:
       }
       li{}
     }
+  }
+
+
+/* ==========================================================================
+   CG2-additionalInfoLink
+   ========================================================================== */
+/*
+---
+name: additionalInfoLink
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-additionalInfoLink">
+  <div class="CG2-additionalInfoLink__text">団体購読では、請求書払いにも対応しています</div>
+  <div class="CG2-additionalInfoLink__link"><a class="CG2-button" href="#">団体購読について</a></div>
+</div>
+```
+
+*/
+.CG2-additionalInfoLink{
+  width: 100%;
+  display: table;
+}
+  .CG2-additionalInfoLink__text{
+    font-size: 24px;
+    vertical-align: middle;
+    display: table-cell;
+  }
+  .CG2-additionalInfoLink__link{
+    text-align: right;
+    vertical-align: middle;
+    display: table-cell;
   }
 
 

@@ -391,16 +391,20 @@ tag:
 ---
 
 ```html
-<div class="CG2-LeadText">LeadText</div>
+<div class="CG2-leadText">LeadText</div>
 ```
 
 */
+
 .CG2-leadText{
   font-size: 32px;
   font-family: $fontSerif;
   line-height: 1.4;
   text-align: center;
   margin: 80px 0 40px;
+  .CG2-header1 + &{
+    margin-top: 50px;
+  }
   .CG2-container__inner > &:first-child{
     margin-top: 20px;
   }
@@ -4149,7 +4153,7 @@ tag:
   td{
     font-weight: normal;
     vertical-align: middle;
-    padding: 10px 40px;
+    padding: 15px 40px;
     border: 1px solid #d8d8d8;
     @include max-screen( $breakpoint-middle ) {
       vertical-align: top;

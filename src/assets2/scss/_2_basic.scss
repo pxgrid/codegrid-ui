@@ -42,26 +42,26 @@
 
 /* modifier: display
    ========================================================================== */
-.CG2--disableLargeScreen{display:none;}
+:root .CG2--disableLargeScreen{display:none;}
 
 @media screen and ( max-width: $breakpoint-middle ) and ( min-width: $breakpoint-small + 1 )  {
-  .CG2--disableLargeScreen {display: block;}
-  .CG2--disableMiddleScreen {display: none !important;}
-  .CG2--disableSmallScreen  {display: block;}
+  :root .CG2--disableLargeScreen {display: block;}
+  :root .CG2--disableMiddleScreen {display: none !important;}
+  :root .CG2--disableSmallScreen  {display: block;}
 
-  br.CG2--disableLargeScreen  {display: inline;}
-  br.CG2--disableMiddleScreen {display: none !important;}
-  br.CG2--disableSmallScreen  {display: inline;}
+  :root br.CG2--disableLargeScreen  {display: inline;}
+  :root br.CG2--disableMiddleScreen {display: none !important;}
+  :root br.CG2--disableSmallScreen  {display: inline;}
 }
 
 @include max-screen( $breakpoint-small ) {
-  .CG2--disableLargeScreen {display: block;}
-  .CG2--disableMiddleScreen {display: block;}
-  .CG2--disableSmallScreen  {display: none !important;}
+  :root .CG2--disableLargeScreen {display: block;}
+  :root .CG2--disableMiddleScreen {display: block;}
+  :root .CG2--disableSmallScreen  {display: none !important;}
 
-  br.CG2--disableLargeScreen  {display: inline;}
-  br.CG2--disableMiddleScreen {display: inline;}
-  br.CG2--disableSmallScreen  {display: none !important;}
+  :root br.CG2--disableLargeScreen  {display: inline;}
+  :root br.CG2--disableMiddleScreen {display: inline;}
+  :root br.CG2--disableSmallScreen  {display: none !important;}
 }
 
 /* ==========================================================================
@@ -75,7 +75,7 @@ html{
   color: #242424;
   font-family: $fontSansSerif;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #191919;
