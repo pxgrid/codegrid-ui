@@ -11,11 +11,11 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' );
 
   // initialize tabs click event
-  for ( i = 0, l = $tabs.length; i < l; i ++ ) {
+  Array.prototype.forEach.call( $tabs, function ( $tab ) {
 
-    $tabs[ i ].addEventListener( 'click', onClickTab );
+    $tab.addEventListener( 'click', onClickTab );
 
-  }
+  } );
 
   function onClickTab ( e ) {
 
@@ -43,21 +43,16 @@ window.addEventListener( 'DOMContentLoaded', function () {
     var i, l;
     var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' + selector );
 
-    for ( i = 0, l = $tabs.length; i < l; i ++ ) {
+    Array.prototype.forEach.call( $tabs, function ( $tab ) {
 
-      ( function () {
+      var $li  = closest( $tab, 'li' );
+      var $ul  = closest( $li,  'ul' );
 
-        var $tab = $tabs[ i ];
-        var $li  = closest( $tab, 'li' );
-        var $ul  = closest( $li,  'ul' );
+      if ( $li.classList.contains( CLASS_NAME_CURRENT_TAB ) ) { return }
 
-        if ( $li.classList.contains( CLASS_NAME_CURRENT_TAB ) ) { return }
+      activateTab( $li, $ul );
 
-        activateTab( $li, $ul );
-
-      } )();
-
-    }
+    } );
 
   }
 
