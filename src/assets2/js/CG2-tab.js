@@ -4,16 +4,16 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   var CLASS_NAME_CURRENT_TAB = 'CG2-compactNav__item--current';
   var SELECTOR_CURRENT_TAB = '.' + CLASS_NAME_CURRENT_TAB;
-  var CLASS_NAME_CURRENT_PANE = 'CG2-tabContent__pane--current';
-  var SELECTOR_CURRENT_PANE = '.' + CLASS_NAME_CURRENT_PANE;
+  var ATTR_NAME_CURRENT_PANE = 'data-cg2-tab-pane';
+  var SELECTOR_CURRENT_PANE = '[' + ATTR_NAME_CURRENT_PANE + '="current"]';
 
   var i, l;
-  var $tabs = document.querySelectorAll( '[data-cg2-tab]' );
+  var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' );
 
   // initialize tabs click event
-  for ( i = 0, l = $tabs.length; i < l; i++ ) {
+  for ( i = 0, l = $tabs.length; i < l; i ++ ) {
 
-    $tabs[i].addEventListener( 'click', onClickTab );
+    $tabs[ i ].addEventListener( 'click', onClickTab );
 
   }
 
@@ -21,9 +21,9 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     e.preventDefault();
 
-    var $this = e.target;
-    var $li = closest( $this, 'li' );
-    var $ul = closest( $li, 'ul' );
+    var $this   = e.target;
+    var $li     = closest( $this, 'li' );
+    var $ul     = closest( $li,   'ul' );
     var $target = null;
     var selector = $this.getAttribute( 'href' );
 
@@ -32,23 +32,24 @@ window.addEventListener( 'DOMContentLoaded', function () {
     $target = document.querySelector( selector );
 
     activateTab( $li, $ul );
-    activatePane( $target, closest( $target, '.CG2-tabContent' ) );
-    syncTab( '[href="' + $this.getAttribute('href') + '"]' );
+    activatePane( $target, closest( $target, '[data-cg2-tab-content]' ) );
+    syncTab( '[href="' + $this.getAttribute( 'href' ) + '"]' );
+
   }
 
   // sync current status for other tab set
-  function syncTab (selector) {
+  function syncTab ( selector ) {
 
     var i, l;
-    var $tabs = document.querySelectorAll( '[data-cg2-tab]' + selector );
+    var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' + selector );
 
-    for ( i = 0, l = $tabs.length; i < l; i++ ) {
+    for ( i = 0, l = $tabs.length; i < l; i ++ ) {
 
       ( function () {
 
-        var $tab = $tabs[i];
-        var $li = closest( $tab, 'li' );
-        var $ul = closest( $li, 'ul' );
+        var $tab = $tabs[ i ];
+        var $li  = closest( $tab, 'li' );
+        var $ul  = closest( $li,  'ul' );
 
         if ( $li.classList.contains( CLASS_NAME_CURRENT_TAB ) ) { return }
 
@@ -75,13 +76,13 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     var $active = container.querySelector( SELECTOR_CURRENT_PANE );
 
-    $active.classList.remove( CLASS_NAME_CURRENT_PANE );
-    element.classList.add( CLASS_NAME_CURRENT_PANE );
+    $active.setAttribute( ATTR_NAME_CURRENT_PANE, '' );
+    element.setAttribute( ATTR_NAME_CURRENT_PANE, 'current' );
 
   }
 
   // get closest parent node by selector
-  function closest (element, selector) {
+  function closest ( element, selector ) {
 
     var parent = null;
 
@@ -89,7 +90,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
       parent = element.parentElement;
 
-      if ( parent !== null && parent.matches(selector) ) {
+      if ( parent !== null && parent.matches( selector ) ) {
 
         return parent;
 
