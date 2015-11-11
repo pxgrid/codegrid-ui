@@ -2120,10 +2120,21 @@ tag:
     <li><a class="CG2-button" href="#">button 2</a></li>
   </ul>
 </div>
-<!-- 左寄せ -->
+```
+左寄せ
+```html
 <div class="CG2-buttonContainer CG2-buttonContainer--pullLeft">
   <ul>
     <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+```
+ラージスクリーン時full width
+```html
+<div class="CG2-buttonContainer">
+  <ul>
+    <li class="CG2-buttonContainer__item--full"><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
     <li><a class="CG2-button" href="#">button 2</a></li>
   </ul>
 </div>
@@ -2144,6 +2155,9 @@ tag:
     font-size: 1rem;
     display: inline-block;
     margin: 0 8px; }
+    .CG2-buttonContainer li.CG2-buttonContainer__item--full {
+      display: block;
+      margin: 0 0 8px; }
     @media screen and (max-width: 767px) {
       .CG2-buttonContainer li {
         display: block; } }
@@ -2708,6 +2722,40 @@ tag:
 
   </div>
 </div>
+
+タブ切り替え（表示toggle）の挙動の付与
+
+- `data-cg2-tab-button`を明示する
+- コンテンツ部は`[data-cg2-tab-content]`でグループ化した`[data-cg2-tab-pane]`を用意する
+  
+```html
+<div class="CG2-seriesListHeader">
+  <div class="CG2-seriesListHeader__nav">
+
+    <div class="CG2-compactNav">
+      <ul>
+        <li class="CG2-compactNav__item--current"><a href="#itemA" data-cg2-tab-button>項目A</a></li>
+        <li><a href="#itemB" data-cg2-tab-button>項目B</a></li>
+      </ul>
+      <div class="CG2-compactNav__navOpener"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<div data-cg2-tab-content>
+
+  <div id="itemA" data-cg2-tab-pane="current">
+    項目Aのコンテンツ
+  </div>
+
+  <div id="itemB" data-cg2-tab-pane>
+    項目Bのコンテンツ
+  </div>
+
+</div>
+
 ```
 
 */
@@ -2778,6 +2826,12 @@ tag:
       display: table-cell;
       width: 160px;
       text-align: right; } }
+
+[data-cg2-tab-pane] {
+  display: none; }
+
+[data-cg2-tab-pane="current"] {
+  display: block; }
 
 /* ==========================================================================
    CG2-compactNav
@@ -7045,7 +7099,7 @@ section.CG2-form {
   .CG2-form__header p {
     text-align: center;
     margin: 16px 0 0; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-form__header {
       margin-bottom: 16px; }
       .CG2-form__header h1 {
@@ -7074,7 +7128,7 @@ section.CG2-form {
   border: 1px solid #c8c8c8;
   border-radius: 3px; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 639px) {
   .CG2-form__table table, .CG2-form__table tbody, .CG2-form__table tr {
     *zoom: 1;
     display: block; }
@@ -7106,7 +7160,7 @@ span.CG2-form__required {
   line-height: 22px;
   margin-left: 10px;
   float: right; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     span.CG2-form__required {
       float: none;
       margin-left: 0; } }
@@ -7117,7 +7171,7 @@ span.CG2-form__required {
   margin: 15px 0; }
   .CG2-form__legal a {
     color: inherit; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-form__legal {
       font-size: 8px;
       text-align: left;
@@ -7127,7 +7181,7 @@ span.CG2-form__required {
   font-size: 12px;
   text-align: center;
   margin: 15px 0; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-form__notice {
       font-size: 8px;
       text-align: left;
@@ -7173,7 +7227,7 @@ tag:
 .CG2-flowExplanation {
   margin: 40px 0;
   counter-reset: CG2flowExplanation; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-flowExplanation {
       margin: 30px 0; } }
 
@@ -7182,10 +7236,30 @@ section.CG2-flowExplanation__item {
   display: table;
   width: 100%;
   margin: 50px 0; }
+  @media screen and (max-width: 639px) {
+    section.CG2-flowExplanation__item {
+      display: block;
+      margin: 30px 0; } }
 
 .CG2-flowExplanation__image {
   vertical-align: top;
   display: table-cell; }
+  .CG2-flowExplanation__image img {
+    display: block;
+    border: 1px solid #d8d8d8; }
+  @media screen and (max-width: 767px) {
+    .CG2-flowExplanation__image {
+      width: 40%; }
+      .CG2-flowExplanation__image img {
+        max-width: 100%;
+        height: auto; } }
+  @media screen and (max-width: 639px) {
+    .CG2-flowExplanation__image {
+      display: block;
+      width: auto;
+      margin: 0 0 10px; }
+      .CG2-flowExplanation__image img {
+        margin: 0 auto; } }
 
 .CG2-flowExplanation__text {
   vertical-align: top;
@@ -7199,11 +7273,26 @@ section.CG2-flowExplanation__item {
       content: counter(CG2flowExplanation);
       font-size: 32px;
       font-family: monospace;
-      line-height: 1;
+      line-height: 24px;
       vertical-align: middle;
       display: inline-block;
       width: 1.2em;
       margin-left: -1.2em; }
+  @media screen and (max-width: 639px) {
+    .CG2-flowExplanation__text {
+      padding-left: 35px; }
+      .CG2-flowExplanation__text h1 {
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0 0 10px; }
+        .CG2-flowExplanation__text h1:before {
+          font-size: 24px;
+          font-weight: normal;
+          line-height: 12px;
+          width: 26px;
+          margin-left: -26px; }
+      .CG2-flowExplanation__text p {
+        font-size: 12px; } }
 
 /* ==========================================================================
    CG2-faq
