@@ -718,6 +718,40 @@ tag:
 
   </div>
 </div>
+
+タブ切り替え（表示toggle）の挙動の付与
+
+- `data-cg2-tab-button`を明示する
+- コンテンツ部は`[data-cg2-tab-content]`でグループ化した`[data-cg2-tab-pane]`を用意する
+  
+```html
+<div class="CG2-seriesListHeader">
+  <div class="CG2-seriesListHeader__nav">
+
+    <div class="CG2-compactNav">
+      <ul>
+        <li class="CG2-compactNav__item--current"><a href="#itemA" data-cg2-tab-button>項目A</a></li>
+        <li><a href="#itemB" data-cg2-tab-button>項目B</a></li>
+      </ul>
+      <div class="CG2-compactNav__navOpener"></div>
+    </div>
+
+  </div>
+</div>
+
+
+<div data-cg2-tab-content>
+
+  <div id="itemA" data-cg2-tab-pane="current">
+    項目Aのコンテンツ
+  </div>
+
+  <div id="itemB" data-cg2-tab-pane>
+    項目Bのコンテンツ
+  </div>
+
+</div>
+
 ```
 
 */
@@ -818,6 +852,9 @@ tag:
     }
   }
 
+
+[data-cg2-tab-pane] { display: none; }
+[data-cg2-tab-pane="current"] { display: block; }
 
 
 /* ==========================================================================
