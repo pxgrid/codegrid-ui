@@ -1436,8 +1436,9 @@ tag:
           @include resetLink();
           text-decoration: none;
           display: table-row;
-          transition: background .2s;
+          transition: background .5s;
           &:hover{
+            transition: background .2s;
             background: rgba( 255, 255, 255, 0.2 );
           }
         }
@@ -1540,9 +1541,30 @@ tag:
     .CG2-seriesList__authors{
       position: relative;
       z-index: 1;
+      a{
+        color: inherit;
+        text-decoration: none;
+        display: table;
+      }
     }
       .CG2-seriesList__author{
         @extend %author;
+        position: relative;
+      }
+      a .CG2-seriesList__author:before{
+        content: '';
+        display: block;
+        position: absolute;
+        top: -2px;
+        right: -2px;
+        bottom: -2px;
+        left: -2px;
+        background: rgba( 255, 255, 255, 0 );
+        transition: all .5s;
+      }
+      a:hover .CG2-seriesList__author:before{
+        background: rgba( 255, 255, 255, 0.2 );
+        transition: all .2s;
       }
         .CG2-seriesList__authorPic{
           @extend %authorPic;
@@ -1825,6 +1847,11 @@ tag:
     }
     .CG2-series__authors{
       padding: 0 56px;
+      a{
+        color: inherit;
+        text-decoration: none;
+        display: table;
+      }
       @include max-screen( $breakpoint-middle ) {
         padding-left: 10px;
         padding-right: 10px;
