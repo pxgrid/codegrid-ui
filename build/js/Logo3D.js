@@ -776,6 +776,7 @@ CG2.Logo3D = ( function () {
   };
 
   var _5_6 = 5 / 6;
+  var _3_1 = 3 / 1;
 
   function onresize ( event ) {
 
@@ -784,21 +785,27 @@ CG2.Logo3D = ( function () {
 
     if ( !isSmallScreen() ) {
 
-      this.width  = Math.max( document.documentElement.clientWidth, this.height * ( this.aspect.x / this.aspect.y ) );
-      this.height = document.documentElement.clientHeight;
+      this.width  = Math.max( document.documentElement.clientWidth, 1052 );
+      this.height = document.documentElement.clientHeight - 120;
       this.linebrake( false );
       aspect = this.width / this.height;
+
+      if ( aspect <= _3_1 ) {
+
+        cameraZ = ( aspect * 1.1 ) * cameraZ;
+
+      }
 
     } else {
 
       this.width  = document.documentElement.clientWidth;
-      this.height = document.documentElement.clientHeight;
+      this.height = document.documentElement.clientHeight - 30;
       this.linebrake( true );
       aspect = this.width / this.height;
 
       if ( aspect <= _5_6 ) {
 
-        cameraZ = ( 2 - aspect ) * ( 2 - aspect ) * 600;
+        cameraZ = ( 2 - aspect ) * ( 2 - aspect ) * cameraZ;
 
       }
 
@@ -878,4 +885,3 @@ CG2.Logo3D = ( function () {
   clickable.addEventListener( 'click', scroll );
 
 } )();
-

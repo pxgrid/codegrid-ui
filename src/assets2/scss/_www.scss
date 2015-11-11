@@ -919,6 +919,9 @@ tag:
   @include blurry-parent();
   color: #fff;
   padding: 130px 0;
+  @include max-screen( $breakpoint-middle ) {
+    padding: 60px 15px;
+  }
 }
   .CG2-bannerHeader__inner{
     max-width: 740px;
@@ -934,6 +937,19 @@ tag:
       line-height: 2;
       text-align: center;
       margin: 20px 0;
+    }
+    & > *:last-child{
+      margin-bottom: 0;
+    }
+    @include max-screen( $breakpoint-middle ) {
+      max-width: none;
+      h1{
+        font-size: 20px;
+        margin-bottom: 20px;
+      }
+      p{
+        font-size: 12px;
+      }
     }
   }
   .CG2-bannerHeader__bg{
@@ -958,6 +974,7 @@ tag:
   <form>
     <div class="CG2-form__header">
       <h1>団体購読のお申込み</h1>
+      <p>購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
     </div>
     <p class="CG2--alignCenter">購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
     <div class="CG2-form__table">
@@ -1003,14 +1020,34 @@ section.CG2-form{
     margin: 0;
   }
   p{}
+  @include max-screen( $breakpoint-middle ) {
+    padding: 25px 20px;
+    margin: 40px -20px;
+  }
 }
     .CG2-form__header{
+      margin: 0 0 30px;
       h1{
         font-size: 32px;
         font-family: $fontSerif;
         font-weight: normal;
+        line-height: 1.6;
         text-align: center;
-        margin: 0 0 30px;
+        margin: 0 0 20px;
+      }
+      p{
+        text-align: center;
+        margin: 16px 0 0;
+      }
+      @include max-screen( $breakpoint-middle ) {
+        margin-bottom: 16px;
+        h1{
+          font-size: 20px;
+          margin-bottom: 16px;
+        }
+        p{
+          text-align: left;
+        }
       }
     }
     .CG2-form__table{
@@ -1034,6 +1071,21 @@ section.CG2-form{
             border: 1px solid #c8c8c8;
             border-radius: 3px;
           }
+      @include max-screen( $breakpoint-middle ) {
+        @include tableToBlock();
+        th,
+        td{
+          padding: 0;
+          width: 100%;
+        }
+        th{margin-bottom: 6px;}
+        td{margin-bottom: 10px;}
+          input[type="text"],
+          input[type="url"],
+          input[type="email"]{
+            font-size: 16px;
+          }
+      }
     }
       span.CG2-form__required{
         color: #ff0000;
@@ -1042,6 +1094,10 @@ section.CG2-form{
         line-height: 22px;
         margin-left: 10px;
         float: right;
+        @include max-screen( $breakpoint-middle ) {
+          float: none;
+          margin-left: 0;
+        }
       }
     .CG2-form__legal{
       font-size: 12px;
@@ -1050,11 +1106,21 @@ section.CG2-form{
       a{
         color: inherit;
       }
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 8px;
+        text-align: left;
+        margin: 5px;
+      }
     }
     .CG2-form__notice{
       font-size: 12px;
       text-align: center;
       margin: 15px 0;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 8px;
+        text-align: left;
+        margin: 5px;
+      }
     }
 
 /* ==========================================================================
@@ -1097,6 +1163,9 @@ tag:
 .CG2-flowExplanation{
   margin: 40px 0;
   counter-reset: CG2flowExplanation;
+  @include max-screen( $breakpoint-middle ) {
+    margin: 30px 0;
+  }
 }
   section.CG2-flowExplanation__item{
     counter-increment: CG2flowExplanation;
@@ -1250,18 +1319,37 @@ tag:
 
 */
 .CG2-additionalInfoLink{
-  width: 100%;
   display: table;
+  width: 100%;
+  @include max-screen( $breakpoint-small ) {
+    display: block;
+    width: auto;
+  }
 }
   .CG2-additionalInfoLink__text{
     font-size: 24px;
     vertical-align: middle;
     display: table-cell;
+    @include max-screen( $breakpoint-small ) {
+      font-size: 16px;
+      text-align: center;
+      display: block;
+    }
   }
   .CG2-additionalInfoLink__link{
     text-align: right;
     vertical-align: middle;
     display: table-cell;
+    @include max-screen( $breakpoint-small ) {
+      text-align: center;
+      display: block;
+      margin: 1em 0 0;
+      .CG2-button{
+        font-size: 18px;
+        display: block;
+        padding: .3em;
+      }
+    }
   }
 
 

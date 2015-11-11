@@ -95,6 +95,12 @@ progress
     width: 60%;
     margin-left: auto;
     margin-right: auto;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 18px;
+      padding-top: .3em;
+      padding-bottom: .3em;
+      width: auto;
+    }
   }
   &.CG2-button--fullWidth{
     display: block;
@@ -505,6 +511,9 @@ section.CG2-customers{
       font-size: 12px;
       text-align: left;
     }
+  }
+  & > *:first-child{
+    margin-top: 0;
   }
 }
 .CG2-customers__logos{
@@ -4115,9 +4124,9 @@ tag:
           <div class="CG2-paymentTable__valueList">
             <ul>
               <li>
-                <div class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</div>
-                <div class="CG2-paymentTable__value">30</div>
-                <div class="CG2-paymentTable__valueUnit">日</div>
+                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
+                <span class="CG2-paymentTable__value">30</span>
+                <span class="CG2-paymentTable__valueUnit">日</span>
               </li>
             </ul>
           </div>
@@ -4126,9 +4135,8 @@ tag:
           <div class="CG2-paymentTable__valueList">
             <ul>
               <li>
-                <div class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</div>
-                <div class="CG2-paymentTable__value">0</div>
-                <div class="CG2-paymentTable__valueUnit">日</div>
+                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
+                <span class="CG2-paymentTable__valueText">なし</span>
               </li>
             </ul>
           </div>

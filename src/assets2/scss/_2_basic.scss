@@ -49,18 +49,24 @@
   :root .CG2--disableMiddleScreen {display: none !important;}
   :root .CG2--disableSmallScreen  {display: block;}
 
+  :root span.CG2--disableLargeScreen,
   :root br.CG2--disableLargeScreen  {display: inline;}
+  :root span.CG2--disableMiddleScreen,
   :root br.CG2--disableMiddleScreen {display: none !important;}
+  :root span.CG2--disableSmallScreen,
   :root br.CG2--disableSmallScreen  {display: inline;}
 }
 
 @include max-screen( $breakpoint-small ) {
-  :root .CG2--disableLargeScreen {display: block;}
+  :root .CG2--disableLargeScreen  {display: block;}
   :root .CG2--disableMiddleScreen {display: block;}
   :root .CG2--disableSmallScreen  {display: none !important;}
 
+  :root span.CG2--disableLargeScreen,
   :root br.CG2--disableLargeScreen  {display: inline;}
+  :root span.CG2--disableMiddleScreen,
   :root br.CG2--disableMiddleScreen {display: inline;}
+  :root span.CG2--disableSmallScreen,
   :root br.CG2--disableSmallScreen  {display: none !important;}
 }
 
