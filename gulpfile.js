@@ -17,7 +17,7 @@ var rename       = require( 'gulp-rename' );
 var sass         = require( 'gulp-sass' );
 var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
-var awspublish   = require('gulp-awspublish');
+var awspublish   = require( 'gulp-awspublish' );
 
 var runSequence  = require( 'run-sequence' ).use( gulp );
 
@@ -77,6 +77,7 @@ gulp.task( 'js', function () {
           './src/assets2/js/CGUI.js',
           './src/assets2/js/CG2-drawer.js',
           './src/assets2/js/CG2-compactNav.js',
+          './src/assets2/js/CG2-tab.js',
           './src/assets2/js/CG2-searchOption.js',
           './src/assets2/js/CG2-articleSeriesNav.js',
           './src/assets2/js/CG2-livecode.js',
