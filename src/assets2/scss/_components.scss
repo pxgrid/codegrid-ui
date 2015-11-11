@@ -178,10 +178,21 @@ tag:
     <li><a class="CG2-button" href="#">button 2</a></li>
   </ul>
 </div>
-<!-- 左寄せ -->
+```
+左寄せ
+```html
 <div class="CG2-buttonContainer CG2-buttonContainer--pullLeft">
   <ul>
     <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+```
+ラージスクリーン時full width
+```html
+<div class="CG2-buttonContainer">
+  <ul>
+    <li class="CG2-buttonContainer__item--full"><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
     <li><a class="CG2-button" href="#">button 2</a></li>
   </ul>
 </div>
@@ -204,6 +215,10 @@ tag:
     font-size: 1rem;
     display: inline-block;
     margin: 0 8px;
+    &.CG2-buttonContainer__item--full{
+      display: block;
+      margin: 0 0 8px;
+    }
     @include max-screen( $breakpoint-middle ) {
       display: block;
     }

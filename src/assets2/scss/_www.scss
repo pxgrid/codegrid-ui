@@ -1039,7 +1039,7 @@ section.CG2-form{
         text-align: center;
         margin: 16px 0 0;
       }
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         margin-bottom: 16px;
         h1{
           font-size: 20px;
@@ -1071,7 +1071,7 @@ section.CG2-form{
             border: 1px solid #c8c8c8;
             border-radius: 3px;
           }
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         @include tableToBlock();
         th,
         td{
@@ -1094,7 +1094,7 @@ section.CG2-form{
         line-height: 22px;
         margin-left: 10px;
         float: right;
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-small ) {
           float: none;
           margin-left: 0;
         }
@@ -1106,7 +1106,7 @@ section.CG2-form{
       a{
         color: inherit;
       }
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         font-size: 8px;
         text-align: left;
         margin: 5px;
@@ -1116,7 +1116,7 @@ section.CG2-form{
       font-size: 12px;
       text-align: center;
       margin: 15px 0;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         font-size: 8px;
         text-align: left;
         margin: 5px;
@@ -1163,7 +1163,7 @@ tag:
 .CG2-flowExplanation{
   margin: 40px 0;
   counter-reset: CG2flowExplanation;
-  @include max-screen( $breakpoint-middle ) {
+  @include max-screen( $breakpoint-small ) {
     margin: 30px 0;
   }
 }
@@ -1172,11 +1172,33 @@ tag:
     display: table;
     width: 100%;
     margin: 50px 0;
+    @include max-screen( $breakpoint-small ) {
+      display: block;
+      margin: 30px 0;
+    }
   }
     .CG2-flowExplanation__image{
       vertical-align: top;
       display: table-cell;
-      img{}
+      img{
+        display: block;
+        border: 1px solid #d8d8d8;
+      }
+      @include max-screen( $breakpoint-middle ) {
+        width: 40%;
+        img{
+          max-width: 100%;
+          height: auto;
+        }
+      }
+      @include max-screen( $breakpoint-small ) {
+        display: block;
+        width: auto;
+        margin: 0 0 10px;
+        img{
+          margin: 0 auto;
+        }
+      }
     }
     .CG2-flowExplanation__text{
       vertical-align: top;
@@ -1190,7 +1212,7 @@ tag:
           content: counter( CG2flowExplanation );
           font-size: 32px;
           font-family: $fontCode;
-          line-height: 1;
+          line-height: 24px;
           vertical-align: middle;
           display: inline-block;
           width: 1.2em;
@@ -1198,6 +1220,24 @@ tag:
         }
       }
       p{}
+      @include max-screen( $breakpoint-small ) {
+        padding-left: 35px;
+        h1{
+          font-size: 12px;
+          font-weight: bold;
+          margin: 0 0 10px;
+          &:before{
+            font-size: 24px;
+            font-weight: normal;
+            line-height: 12px;
+            width: 26px;
+            margin-left: -26px;
+          }
+        }
+        p{
+          font-size: 12px;
+        }
+      }
     }
 
 
