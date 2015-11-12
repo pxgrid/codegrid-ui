@@ -1005,6 +1005,7 @@ tag:
         border-left: none;
       }
       @include max-screen( $breakpoint-middle ) {
+        font-family: $fontSansSerif;
         display: block;
         text-align: left;
         display: none;

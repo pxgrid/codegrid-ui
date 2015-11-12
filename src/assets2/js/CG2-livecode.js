@@ -42,7 +42,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   Array.prototype.forEach.call( $elAll, attach );
   
-  CGUI.vent.addEventListener( 'livecode-converted', function ( e ) {
+  CG2.vent.addEventListener( 'livecode-converted', function ( e ) {
 
     var deferredplay = e.element.getAttribute( 'data-livecode-deferredplay' ) !== null;
 

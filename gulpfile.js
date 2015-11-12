@@ -74,7 +74,7 @@ gulp.task( 'js', function () {
   return gulp.src( [
           './src/assets2/js/vendor/EventDispatcher.js',
           './src/assets2/js/vendor/prism.js',
-          './src/assets2/js/CGUI.js',
+          './src/assets2/js/CG2.js',
           './src/assets2/js/CG2-drawer.js',
           './src/assets2/js/CG2-compactNav.js',
           './src/assets2/js/CG2-tab.js',

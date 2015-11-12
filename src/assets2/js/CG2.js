@@ -1,6 +1,6 @@
-var CGUI = {};
+var CG2 = {};
 
-CGUI.vent = new EventDispatcher();
+CG2.vent = new EventDispatcher();
 
 ;( function () {
 
@@ -15,21 +15,21 @@ CGUI.vent = new EventDispatcher();
 
   var onresize = function () {
 
-    var _screenType = CGUI.screenType;
+    var _screenType = CG2.screenType;
 
     for ( var i in BREAK_POINT ) {
 
       if ( window.matchMedia( '(max-width: ' + BREAK_POINT[ i ] + 'px)' ).matches ) {
 
-        CGUI.screenType = i;
+        CG2.screenType = i;
 
       }
 
     }
 
-    if ( CGUI.screenType !== _screenType ) {
+    if ( CG2.screenType !== _screenType ) {
 
-      CGUI.vent.dispatchEvent( { type: 'onmediachange', screenType: CGUI.screenType } );
+      CG2.vent.dispatchEvent( { type: 'onmediachange', screenType: CG2.screenType } );
 
     }
 

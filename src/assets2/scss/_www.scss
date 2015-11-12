@@ -36,12 +36,12 @@ templateItem:
 </div>
 ```
 
-three.min.js (r72)、Logo3D.jsを読み込み、`new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
+three.min.js (r72)、Logo3D.jsを読み込み、`new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
 
 <script src="/examples/js/three.min.js"></script>
 <script src="/examples/js/Logo3D.js"></script>
 <script>
-var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
+var logo3d = new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 </script>
 
 */

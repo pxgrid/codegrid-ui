@@ -175,7 +175,7 @@
       $div.innerHTML = html;
       var $livecore = $div.querySelector( '.CG2-livecode' );
       $el.parentNode.replaceChild( $livecore, $el );
-      CGUI.vent.dispatchEvent( { type: 'livecode-converted', element: $livecore } );
+      CG2.vent.dispatchEvent( { type: 'livecode-converted', element: $livecore } );
 
     } );
 
