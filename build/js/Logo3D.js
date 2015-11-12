@@ -1,4 +1,4 @@
-var CG2 = {};
+var CG2 = CG2 || {};
 
 CG2.Logo3D = ( function () {
 
@@ -776,7 +776,6 @@ CG2.Logo3D = ( function () {
   };
 
   var _5_6 = 5 / 6;
-  var _3_1 = 3 / 1;
 
   function onresize ( event ) {
 
@@ -789,12 +788,6 @@ CG2.Logo3D = ( function () {
       this.height = document.documentElement.clientHeight - 120;
       this.linebrake( false );
       aspect = this.width / this.height;
-
-      if ( aspect <= _3_1 ) {
-
-        cameraZ = ( aspect * 1.1 ) * cameraZ;
-
-      }
 
     } else {
 
@@ -873,9 +866,7 @@ CG2.Logo3D = ( function () {
       if  ( 1 <= progress ) { return; }
 
       requestAnimationFrame( animation );
-
       window.scrollTo( left, top + distanceY * cubicOut( progress ) );
-
       progress += 0.03;
 
     } )();

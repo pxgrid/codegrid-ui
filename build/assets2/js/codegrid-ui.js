@@ -128,9 +128,9 @@ Prism.languages.yaml={scalar:{pattern:/([\-:]\s*(![^\s]+)?[ \t]*[|>])[ \t]*(?:(\
 Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var a,n=e.code.match(/\n(?!$)/g).length+1,l=new Array(n+1);l=l.join("<span></span>"),a=document.createElement("span"),a.className="line-numbers-rows",a.innerHTML=l,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(a)}}});;
 !function(){if(self.Prism){var i=/\b([a-z]{3,7}:\/\/|tel:)[\w\-+%~/.:#=?&amp;]+/,n=/\b\S+@[\w.]+[a-z]{2}/,t=/\[([^\]]+)]\(([^)]+)\)/,e=["comment","url","attr-value","string"];for(var a in Prism.languages){var r=Prism.languages[a];Prism.languages.DFS(r,function(a,r,l){e.indexOf(l)>-1&&"Array"!==Prism.util.type(r)&&(r.pattern||(r=this[a]={pattern:r}),r.inside=r.inside||{},"comment"==l&&(r.inside["md-link"]=t),"attr-value"==l?Prism.languages.insertBefore("inside","punctuation",{"url-link":i},r):r.inside["url-link"]=i,r.inside["email-link"]=n)}),r["url-link"]=i,r["email-link"]=n}Prism.hooks.add("wrap",function(i){if(/-link$/.test(i.type)){i.tag="a";var n=i.content;if("email-link"==i.type&&0!=n.indexOf("mailto:"))n="mailto:"+n;else if("md-link"==i.type){var e=i.content.match(t);n=e[2],i.content=e[1]}i.attributes.href=n}})}}();;
 
-var CGUI = {};
+var CG2 = {};
 
-CGUI.vent = new EventDispatcher();
+CG2.vent = new EventDispatcher();
 
 ;( function () {
 
@@ -145,21 +145,21 @@ CGUI.vent = new EventDispatcher();
 
   var onresize = function () {
 
-    var _screenType = CGUI.screenType;
+    var _screenType = CG2.screenType;
 
     for ( var i in BREAK_POINT ) {
 
       if ( window.matchMedia( '(max-width: ' + BREAK_POINT[ i ] + 'px)' ).matches ) {
 
-        CGUI.screenType = i;
+        CG2.screenType = i;
 
       }
 
     }
 
-    if ( CGUI.screenType !== _screenType ) {
+    if ( CG2.screenType !== _screenType ) {
 
-      CGUI.vent.dispatchEvent( { type: 'onmediachange', screenType: CGUI.screenType } );
+      CG2.vent.dispatchEvent( { type: 'onmediachange', screenType: CG2.screenType } );
 
     }
 
@@ -303,7 +303,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
       function toggle ( e ) {
 
-        // if ( CGUI.screenType === 'small' ) { return; }
+        if ( CG2.screenType !== 'middle' ) { return; }
 
         e.preventDefault();
         $nav.classList.toggle( modifier );
@@ -590,7 +590,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   Array.prototype.forEach.call( $elAll, attach );
   
-  CGUI.vent.addEventListener( 'livecode-converted', function ( e ) {
+  CG2.vent.addEventListener( 'livecode-converted', function ( e ) {
 
     var deferredplay = e.element.getAttribute( 'data-livecode-deferredplay' ) !== null;
 
@@ -777,7 +777,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
       $div.innerHTML = html;
       var $livecore = $div.querySelector( '.CG2-livecode' );
       $el.parentNode.replaceChild( $livecore, $el );
-      CGUI.vent.dispatchEvent( { type: 'livecode-converted', element: $livecore } );
+      CG2.vent.dispatchEvent( { type: 'livecode-converted', element: $livecore } );
 
     } );
 
