@@ -1875,7 +1875,82 @@ tag:
 
 
 
+/* ==========================================================================
+   CG2-categoryHeader
+   ========================================================================== */
+/*
+---
+name: categoryHeader
+category:
+  - Blocks/app
+tag:
+  - app-item
+---
 
+```html
+<div class="CG2-categoryHeader">
+  <div class="CG2-categoryHeader__inner">
+    <div class="CG2-categoryHeader__icon">
+      <span class="CG2-icon-cat-future CG2-icon--colored"></span>
+    </div>
+    <div class="CG2-categoryHeader__text">
+      <h1>未来・次世代</h1>
+      <p>カテゴリー説明テキスト。カテゴリー説明テキスト。カテゴリー説明テキスト。カテゴリー説明テキスト。カテゴリー説明テキスト。カテゴリー説明テキスト。</p>
+    </div>
+  </div>
+</div>
+```
+
+*/
+
+.CG2-categoryHeader {
+  margin: 30px 0 60px;
+  @include max-screen( $breakpoint-middle ) {
+    margin: 0 0 30px 0;
+  }
+}
+  .CG2-categoryHeader__inner{
+    display: table;
+    width: 100%;
+  }
+    .CG2-categoryHeader__icon{
+      text-align: center;
+      vertical-align: middle;
+      display: table-cell;
+      width: 180px;
+      @include max-screen( $breakpoint-middle ) {
+        text-align: left;
+        width: 70px;
+      }
+    }
+    .CG2-categoryHeader__text{
+      display: table-cell;
+      vertical-align: middle;
+      h1{
+        font-size: 24px;
+        line-height: 1.2;
+        margin: 0 0 15px;
+        @include max-screen( $breakpoint-middle ) {
+          font-size: 16px;
+          margin-bottom: 10px;
+        }
+      }
+      p{
+        margin: 10px 0;
+      }
+      & > *:last-child{
+        margin-bottom: 0;
+      }
+    }
+
+.CG2-categoryHeader {
+  span[class*="CG2-icon-cat"]{
+    font-size: 120px;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 50px;
+    }
+  }
+}
 
 /* ==========================================================================
    CG2-articleHeader

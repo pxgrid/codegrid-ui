@@ -11,6 +11,7 @@ tag:
 ```html
 <div style="font-size:32px;">
   <span class="<%= prefix %>-<%= glyph.name %>"></span>
+  <% if ( /cat-/.test( glyph.name ) ) { %><span class="<%= prefix %>-<%= glyph.name %> CG2-icon--colored"></span><% } %>
 </div>
 ```
 <% } ); %>
@@ -63,6 +64,19 @@ $icons: (
   <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %> "\<%= glyph.codepoint.toString( 16 ).toUpperCase() %>",
   <% } ); %>
 );
+
+span.CG2-icon--colored.CG2-icon-cat-elementary   { color: #f4db00; }
+span.CG2-icon--colored.CG2-icon-cat-mastering    { color: #9cc500; }
+span.CG2-icon--colored.CG2-icon-cat-standards    { color: #009b26; }
+span.CG2-icon--colored.CG2-icon-cat-talk         { color: #009b9b; }
+span.CG2-icon--colored.CG2-icon-cat-architecture { color: #009be7; }
+span.CG2-icon--colored.CG2-icon-cat-report       { color: #006bb5; }
+span.CG2-icon--colored.CG2-icon-cat-design       { color: #000872; }
+span.CG2-icon--colored.CG2-icon-cat-future       { color: #f89c00; }
+span.CG2-icon--colored.CG2-icon-cat-work-style   { color: #ef0000; }
+span.CG2-icon--colored.CG2-icon-cat-survey       { color: #ee0155; }
+span.CG2-icon--colored.CG2-icon-cat-interview    { color: #ef007e; }
+span.CG2-icon--colored.CG2-icon-cat-discussion   { color: #9c0178; }
 
 @mixin icon ( $name ) {
   content: getValue( $icons, $name );
