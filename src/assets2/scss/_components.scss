@@ -1118,30 +1118,36 @@ tag:
         </div>
       </div>
       <div class="CG2-seriesList__authors">
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
+        </a>
       </div>
     </div>
     
     <!-- .CG2-seriesList__item 繰り返し -->
 
-    <div class="CG2-seriesList__itemMore">more</div>
+    <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
   
   </div>
 </div>
@@ -1174,30 +1180,36 @@ tag:
         </div>
       </div>
       <div class="CG2-seriesList__authors">
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
+        </a>
       </div>
     </div>
 
     <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
 
-    <div class="CG2-seriesList__itemMore">more</div>
+    <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
   
   </div>
 </div>
@@ -1586,18 +1598,47 @@ tag:
       }
 
     .CG2-seriesList__itemMore{
-      font-family: $fontCode;
-      font-size: 28px;
-      text-align: center;
-      cursor: pointer;
-      box-sizing: border-box;
       width: 100%;
-      padding: 20px;
-      border-bottom: 1px solid #D8D8D8;
-      &:after{
-        @include icon( down );
-        font-size: 20px;
-        margin-left: 4px;
+      a{
+        color: inherit;
+        font-family: $fontCode;
+        font-size: 28px;
+        text-decoration: none;
+        text-align: center;
+        cursor: pointer;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        padding: 20px;
+        border-bottom: 1px solid #D8D8D8;
+        &:hover{
+        }
+        &:before{
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          bottom: 0;
+          left: -100%;
+          margin-left: -60px;
+          width: 100%;
+          padding: 0 20px;
+          transform: skewX( 20deg );
+          background: #ddd;
+          transition: all .3s;
+        }
+        &:hover:before{
+          left: 0;
+          margin-left: -20px;
+        }
+        &:after{
+          @include icon( down );
+          font-size: 20px;
+          margin-left: 4px;
+        }
       }
     }
 
