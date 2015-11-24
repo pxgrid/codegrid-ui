@@ -2192,6 +2192,26 @@ tag:
 
 
 
+// @media print {
+
+.CG2-articleHeader{
+  color: #000;
+  background: #fff;
+  border-bottom: 1px solid #000;
+}
+  .CG2-articleHeader__inner{
+    width: auto;
+    padding: 20px 190px;
+  }
+  .CG2-articleHeader__pagenation{
+    display: none;
+  }
+  .CG2-articleHeader__bg{
+    display: none;
+  }
+
+
+// }
 
 /* ==========================================================================
    CG2-narrowLayout
@@ -2268,6 +2288,21 @@ templateItem:
     }
   }
 
+
+// @media print {
+.CG2-narrowLayout{
+  display: block;
+  width: auto;
+}
+  .CG2-narrowLayout__main{
+    float: none;
+    width: auto;
+    padding: 0 20px;
+  }
+  .CG2-narrowLayout__sub{
+    display: none;
+  }
+// }
 
 /* ==========================================================================
    CG2-articleTOC
@@ -2414,6 +2449,19 @@ section.CG2-articleTOC{
       }
     }
 
+
+// @media print {
+  .CG2-articleTOC__body{
+    display: block;
+    width: auto;
+  }
+    .CG2-articleTOC__list{
+      display: block;
+    }
+    .CG2-articleTOC__util{
+      display: none;
+    }
+// }
 
 /* ==========================================================================
    CG2-articleSeriesNav
@@ -2726,6 +2774,89 @@ article.CG2-article{
   }
 }
 
+// @media print {
+
+article.CG2-article{
+  line-height: 1.6;
+
+  p{
+    margin: 1em 0;
+  }
+  table{
+    margin: 2em 0;
+    th, td{
+      padding: .3em 10px;
+      border: 1px solid #d8d8d8;
+    }
+    th{
+      background: #eee;
+    }
+    td{}
+  }
+  figure{
+    margin: 2em 0;
+    img{
+      box-sizing: border-box;
+      display: block;
+      border: 1px solid #d8d8d8;
+    }
+    @include max-screen( $breakpoint-middle ) {
+      margin: 1.6em -10px;
+      img{
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+  code{
+    padding: 2px;
+    background: #f4f4f4;
+  }
+  section.CG2-article__rel{
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #d8d8d8;
+    padding: 19px;
+    @include max-screen( $breakpoint-middle ) {
+      padding: 14px;
+    }
+    h1{
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 12px;
+        margin-bottom: 3px;
+      }
+    }
+    ul{
+      margin: 0;
+      padding: 0 0 0 20px;
+    }
+    li{
+      margin: 0;
+    }
+  }
+  aside{
+    color: #787878;
+    font-size: 14px;
+    margin: 2em 0;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 10px;
+      margin: 1.6em 0;
+    }
+    h1{
+      font-size: 100%;
+      font-weight: bold;
+      margin: 0;
+    }
+    p{
+      margin: 0;
+    }
+  }
+}
+
+// }
 
 /* 旧Jade 用
    ========================================================================== */

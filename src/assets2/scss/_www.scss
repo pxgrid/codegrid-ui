@@ -623,18 +623,18 @@ tag:
 ```html
 <div class="CG2-categoryIntro">
   <ul>
-    <li><span class="CG2-icon-cat-elementary"></span>入門</li>
-    <li><span class="CG2-icon-cat-practice"></span>実践</li>
-    <li><span class="CG2-icon-cat-standards"></span>仕様解説</li>
-    <li><span class="CG2-icon-cat-talk"></span>座談会</li>
-    <li><span class="CG2-icon-cat-architecture"></span>設計</li>
-    <li><span class="CG2-icon-cat-report"></span>レポート</li>
-    <li><span class="CG2-icon-cat-design"></span>デザイン</li>
-    <li><span class="CG2-icon-cat-future"></span>未来・次世代</li>
-    <li><span class="CG2-icon-cat-workstyle"></span>仕事術</li>
-    <li><span class="CG2-icon-cat-survey"></span>アンケート</li>
-    <li><span class="CG2-icon-cat-interview"></span>インタビュー</li>
-    <li><span class="CG2-icon-cat-discussion"></span>ディスカッション</li>
+    <li><span class="CG2-icon-cat-elementary CG2-icon--colored"></span>入門</li>
+    <li><span class="CG2-icon-cat-mastering CG2-icon--colored"></span>実践</li>
+    <li><span class="CG2-icon-cat-standards CG2-icon--colored"></span>仕様解説</li>
+    <li><span class="CG2-icon-cat-talk CG2-icon--colored"></span>座談会</li>
+    <li><span class="CG2-icon-cat-architecture CG2-icon--colored"></span>設計</li>
+    <li><span class="CG2-icon-cat-report CG2-icon--colored"></span>レポート</li>
+    <li><span class="CG2-icon-cat-design CG2-icon--colored"></span>デザイン</li>
+    <li><span class="CG2-icon-cat-future CG2-icon--colored"></span>未来・次世代</li>
+    <li><span class="CG2-icon-cat-work-style CG2-icon--colored"></span>仕事術</li>
+    <li><span class="CG2-icon-cat-survey CG2-icon--colored"></span>アンケート</li>
+    <li><span class="CG2-icon-cat-interview CG2-icon--colored"></span>インタビュー</li>
+    <li><span class="CG2-icon-cat-discussion CG2-icon--colored"></span>ディスカッション</li>
   </ul>
 </div>
 ```
@@ -835,12 +835,11 @@ section.CG2-customerQuotes{
         padding-right: 0;
       }
       ul{
-        line-height: normal;
+        list-style: none;
         padding: 0;
         margin: 0;
       }
       li{
-        list-style: none;
         margin: 0 0 20px;
         @include max-screen( $breakpoint-middle ) {
           margin-bottom: 10px;
@@ -1340,7 +1339,9 @@ tag:
 
 ```html
 <div class="CG2-additionalInfoLink">
-  <div class="CG2-additionalInfoLink__text">団体購読では、請求書払いにも対応しています</div>
+  <div class="CG2-additionalInfoLink__text">
+    団体購読では、請求書払いにも対応しています<span class="CG2-additionalInfoLink__sub">小さい文字</span>
+  </div>
   <div class="CG2-additionalInfoLink__link"><a class="CG2-button" href="#">団体購読について</a></div>
 </div>
 ```
@@ -1349,6 +1350,9 @@ tag:
 .CG2-additionalInfoLink{
   display: table;
   width: 100%;
+  .CG2-additionalInfoLink+&{
+    margin-top: 30px;
+  }
   @include max-screen( $breakpoint-small ) {
     display: block;
     width: auto;
@@ -1356,6 +1360,7 @@ tag:
 }
   .CG2-additionalInfoLink__text{
     font-size: 24px;
+    line-height: 1.2;
     vertical-align: middle;
     display: table-cell;
     @include max-screen( $breakpoint-small ) {
@@ -1363,6 +1368,9 @@ tag:
       text-align: center;
       display: block;
     }
+  }
+  .CG2-additionalInfoLink__sub{
+    font-size: 14px;
   }
   .CG2-additionalInfoLink__link{
     text-align: right;
@@ -1407,7 +1415,9 @@ tag:
     </div>
     <p>本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。</p>
     <div class="CG2-publication__buttonContainer">
-      <a class="CG2-button" href="#">Amazonで購入</a>
+      <ul>
+        <li><a class="CG2-button" href="#">Amazonで購入</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -1468,8 +1478,21 @@ section.CG2-publication{
     }
     .CG2-publication__buttonContainer{
       margin-top: 30px;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         margin-top: 10px;
+      }
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      li{
+        display: inline-block;
+        margin: 0 20px 0 0;
+        @include max-screen( $breakpoint-small ) {
+          display: block;
+          margin-bottom: 10px;
+        }
       }
     }
 
