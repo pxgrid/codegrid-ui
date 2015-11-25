@@ -507,7 +507,6 @@ tag:
   <header class="CG2-pickedup__header">
     <h1 class="CG2-pickedup__headerHeading">人気の特集</h1>
     <div class="CG2-pickedup__headerSummary">多くの会員の皆様がお気に入りに登録した記事</div>
-    <div class="CG2-pickedup__headerExtra"><a href="#">人気の特集一覧へ</a></div>
   </header>
 
   <div class="CG2-seriesList">
@@ -528,85 +527,26 @@ section.CG2-pickedup{
 }
   header.CG2-pickedup__header{
     line-height: 1.2;
-    display: table;
-    width: 100%;
+    text-align: center;
     margin-bottom: 30px;
-    @include max-screen( $breakpoint-middle ) {
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      // -webkit-flex-direction: row;
-      // -ms-flex-direction: row;
-      // flex-direction: row;
-      -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-      justify-content: space-between;
-    }
   }
     .CG2-pickedup__headerHeading{
       font-size: 32px;
       font-family: $fontSerif;
-      font-weight: normal;
-      vertical-align: bottom;
-      box-sizing: border-box;
-      display: table-cell;
-      width: 33%;
-      margin: 0;
-      padding-left: 28px;
-      @include max-screen( $breakpoint-middle ) {
+      font-weight: bold;
+      margin-bottom: 15px;
+      @include max-screen( $breakpoint-small ) {
         font-size: 20px;
-        -webkit-flex: 0 1 60%;
-        -ms-flex: 0 1 60%;
-        flex: 0 1 60%;
-        display: block;
-        padding-left: 0;
       }
     }
     .CG2-pickedup__headerSummary{
       font-size: 16px;
-      white-space: nowrap;
-      vertical-align: bottom;
-      text-align: center;
-      box-sizing: border-box;
-      display: table-cell;
-      width: 33%;
+      display: inline-block;
       @include max-screen( $breakpoint-middle ) {
         font-size: 12px;
-        white-space: normal;
-        text-align: left;
-        -webkit-flex: 0 1 100%;
-        -ms-flex: 0 1 100%;
-        flex: 0 1 100%;
-        -webkit-order: 1;
-        -ms-flex-order: 1;
-        order: 1;
-        display: block;
-        margin-top: 15px;
       }
     }
-    .CG2-pickedup__headerExtra{
-      font-size: 16px;
-      vertical-align: bottom;
-      text-align: right;
-      box-sizing: border-box;
-      display: table-cell;
-      width: 33%;
-      padding-right: 28px;
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 12px;
-        -webkit-flex: 0 1 40%;
-        -ms-flex: 0 1 40%;
-        flex: 0 1 40%;
-        display: block;
-        padding-right: 0;
-      }
-      a{
-        @include resetLink();
-      }
-    }
+
 /* ==========================================================================
    CG2-categoryIntro
    ========================================================================== */
