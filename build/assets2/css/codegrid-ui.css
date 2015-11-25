@@ -1260,9 +1260,14 @@ templateItem:
     padding: 0;
     margin: 0 10px; }
   .CG2-pageHeader__nav a {
-    color: #797979;
+    color: #949494;
     font-size: 14px;
-    text-decoration: none; }
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin: -10px; }
+    .CG2-pageHeader__nav a:hover {
+      color: #fff; }
 
 .CG2-pageHeader__search {
   position: absolute;
@@ -1306,7 +1311,12 @@ templateItem:
   .CG2-pageHeader__buttons a:not(.CG2-button) {
     color: #797979;
     font-size: 14px;
-    text-decoration: none; }
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    margin: -10px; }
+    .CG2-pageHeader__buttons a:not(.CG2-button):hover {
+      color: #FFF; }
 
 @media screen and (max-width: 767px) {
   .CG2-pageHeader__opener {
@@ -6854,7 +6864,6 @@ tag:
   <header class="CG2-pickedup__header">
     <h1 class="CG2-pickedup__headerHeading">人気の特集</h1>
     <div class="CG2-pickedup__headerSummary">多くの会員の皆様がお気に入りに登録した記事</div>
-    <div class="CG2-pickedup__headerExtra"><a href="#">人気の特集一覧へ</a></div>
   </header>
 
   <div class="CG2-seriesList">
@@ -6873,80 +6882,24 @@ section.CG2-pickedup {
 
 header.CG2-pickedup__header {
   line-height: 1.2;
-  display: table;
-  width: 100%;
+  text-align: center;
   margin-bottom: 30px; }
-  @media screen and (max-width: 767px) {
-    header.CG2-pickedup__header {
-      display: -ms-flexbox;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-wrap: wrap;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      -webkit-justify-content: space-between;
-      -ms-flex-pack: justify;
-      justify-content: space-between; } }
 
 .CG2-pickedup__headerHeading {
   font-size: 32px;
   font-family: "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-  font-weight: normal;
-  vertical-align: bottom;
-  box-sizing: border-box;
-  display: table-cell;
-  width: 33%;
-  margin: 0;
-  padding-left: 28px; }
-  @media screen and (max-width: 767px) {
+  font-weight: bold;
+  margin-bottom: 15px; }
+  @media screen and (max-width: 639px) {
     .CG2-pickedup__headerHeading {
-      font-size: 20px;
-      -webkit-flex: 0 1 60%;
-      -ms-flex: 0 1 60%;
-      flex: 0 1 60%;
-      display: block;
-      padding-left: 0; } }
+      font-size: 20px; } }
 
 .CG2-pickedup__headerSummary {
   font-size: 16px;
-  white-space: nowrap;
-  vertical-align: bottom;
-  text-align: center;
-  box-sizing: border-box;
-  display: table-cell;
-  width: 33%; }
+  display: inline-block; }
   @media screen and (max-width: 767px) {
     .CG2-pickedup__headerSummary {
-      font-size: 12px;
-      white-space: normal;
-      text-align: left;
-      -webkit-flex: 0 1 100%;
-      -ms-flex: 0 1 100%;
-      flex: 0 1 100%;
-      -webkit-order: 1;
-      -ms-flex-order: 1;
-      order: 1;
-      display: block;
-      margin-top: 15px; } }
-
-.CG2-pickedup__headerExtra {
-  font-size: 16px;
-  vertical-align: bottom;
-  text-align: right;
-  box-sizing: border-box;
-  display: table-cell;
-  width: 33%;
-  padding-right: 28px; }
-  @media screen and (max-width: 767px) {
-    .CG2-pickedup__headerExtra {
-      font-size: 12px;
-      -webkit-flex: 0 1 40%;
-      -ms-flex: 0 1 40%;
-      flex: 0 1 40%;
-      display: block;
-      padding-right: 0; } }
-  .CG2-pickedup__headerExtra a {
-    color: inherit; }
+      font-size: 12px; } }
 
 /* ==========================================================================
    CG2-categoryIntro
@@ -7594,9 +7547,10 @@ tag:
 
 .CG2-faq__question {
   font-weight: bold;
+  line-height: 1.5;
   position: relative;
-  min-height: 20px;
-  padding: 10px 0; }
+  min-height: 24px;
+  padding: 8px 0; }
   @media screen and (max-width: 767px) {
     .CG2-faq__question {
       min-height: 16px;

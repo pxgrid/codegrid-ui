@@ -184,9 +184,15 @@ templateItem:
         margin: 0 10px;
       }
       a{
-        color: #797979;
+        color: #949494;
         font-size: 14px;
         text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        margin: -10px;
+        &:hover{
+          color: #fff;
+        }
       }
     }
     .CG2-pageHeader__search{
@@ -250,6 +256,12 @@ templateItem:
         color: #797979;
         font-size: 14px;
         text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        margin: -10px;
+        &:hover{
+          color: #FFF;
+        }
       }
     }
     .CG2-pageHeader__opener{
