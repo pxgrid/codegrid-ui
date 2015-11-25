@@ -3,7 +3,8 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="レイヤー_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
 	 y="0px" width="256px" height="256px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve">
-<path d="M79.7,145.7h96.6v-66H79.7V145.7z"/>
-<path d="M128,0C57.3,0,0,57.3,0,128s57.3,128,128,128s128-57.3,128-128S198.7,0,128,0z M70,70h116v85.3H70V70z M53.7,187.6
-	l15.2-25.8h118.2l15.2,25.8H53.7z"/>
+<path d="M83.195,140.814h89.588V83.206H83.195V140.814z"/>
+<path d="M128,0C57.308,0,0,57.305,0,127.997C0,198.691,57.308,256,128,256c70.692,0,128-57.309,128-128.003
+	C256,57.305,198.692,0,128,0z M70.397,70.404h115.184v83.212H70.397V70.404z M54.399,188.821l15.998-28.804h115.184l15.998,28.804
+	H54.399z"/>
 </svg>
