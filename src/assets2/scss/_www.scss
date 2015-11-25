@@ -1273,9 +1273,10 @@ tag:
 }
   .CG2-faq__question{
     font-weight: bold;
+    line-height: 1.5; //16(font-size) * 1.5(line-height) = 24(height)
     position: relative;
-    min-height: 20px;
-    padding: 10px 0;
+    min-height: 24px;
+    padding: 8px 0;
     @include max-screen( $breakpoint-middle ) {
       min-height: 16px;
       padding-top: 6px;
