@@ -3070,30 +3070,36 @@ tag:
         </div>
       </div>
       <div class="CG2-seriesList__authors">
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
+        </a>
       </div>
     </div>
     
     <!-- .CG2-seriesList__item 繰り返し -->
 
-    <div class="CG2-seriesList__itemMore">more</div>
+    <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
   
   </div>
 </div>
@@ -3126,30 +3132,36 @@ tag:
         </div>
       </div>
       <div class="CG2-seriesList__authors">
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
-        <div class="CG2-seriesList__author">
-          <div class="CG2-seriesList__authorPic">
-            <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </a>
+        <a href="#">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
           </div>
-          <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-        </div>
+        </a>
       </div>
     </div>
 
     <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
 
-    <div class="CG2-seriesList__itemMore">more</div>
+    <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
   
   </div>
 </div>
@@ -3512,29 +3524,53 @@ a:hover .CG2-seriesList__author:before {
     font-size: 10px; } }
 
 .CG2-seriesList__itemMore {
-  font-family: monospace;
-  font-size: 28px;
-  text-align: center;
-  cursor: pointer;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 20px;
-  border-bottom: 1px solid #D8D8D8; }
-  .CG2-seriesList__itemMore:after {
-    content: "";
-    font-family: "codegrid-icon";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 20px;
-    margin-left: 4px; }
+  width: 100%; }
+  .CG2-seriesList__itemMore a {
+    color: inherit;
+    font-family: monospace;
+    font-size: 28px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #D8D8D8; }
+    .CG2-seriesList__itemMore a:before {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+      margin-left: -60px;
+      width: 100%;
+      padding: 0 20px;
+      transform: skewX(20deg);
+      background: #ddd;
+      transition: all .3s; }
+    .CG2-seriesList__itemMore a:hover:before {
+      left: 0;
+      margin-left: -20px; }
+    .CG2-seriesList__itemMore a:after {
+      content: "";
+      font-family: "codegrid-icon";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 20px;
+      margin-left: 4px; }
 
 /* ==========================================================================
    CG2-seriesHeader
@@ -4084,6 +4120,21 @@ tag:
   transform: scale(1.2, 1.2);
   opacity: .64; }
 
+.CG2-articleHeader {
+  color: #000;
+  background: #fff;
+  border-bottom: 1px solid #000; }
+
+.CG2-articleHeader__inner {
+  width: auto;
+  padding: 20px 190px; }
+
+.CG2-articleHeader__pagenation {
+  display: none; }
+
+.CG2-articleHeader__bg {
+  display: none; }
+
 /* ==========================================================================
    CG2-narrowLayout
    ========================================================================== */
@@ -4162,6 +4213,18 @@ templateItem:
       float: none;
       width: auto;
       margin-right: 0; } }
+
+.CG2-narrowLayout {
+  display: block;
+  width: auto; }
+
+.CG2-narrowLayout__main {
+  float: none;
+  width: auto;
+  padding: 0 20px; }
+
+.CG2-narrowLayout__sub {
+  display: none; }
 
 /* ==========================================================================
    CG2-articleTOC
@@ -4306,6 +4369,16 @@ header.CG2-articleTOC__header {
         .CG2-articleTOC__util .CG2-button [class^="CG2-icon-"] {
           font-size: 12px;
           margin-right: 3px; } }
+
+.CG2-articleTOC__body {
+  display: block;
+  width: auto; }
+
+.CG2-articleTOC__list {
+  display: block; }
+
+.CG2-articleTOC__util {
+  display: none; }
 
 /* ==========================================================================
    CG2-articleSeriesNav
@@ -4523,6 +4596,68 @@ article.CG2-article {
     @media screen and (max-width: 767px) {
       article.CG2-article li {
         margin: .5em 0; } }
+  article.CG2-article table {
+    margin: 2em 0; }
+    article.CG2-article table th, article.CG2-article table td {
+      padding: .3em 10px;
+      border: 1px solid #d8d8d8; }
+    article.CG2-article table th {
+      background: #eee; }
+  article.CG2-article figure {
+    margin: 2em 0; }
+    article.CG2-article figure img {
+      box-sizing: border-box;
+      display: block;
+      border: 1px solid #d8d8d8; }
+    @media screen and (max-width: 767px) {
+      article.CG2-article figure {
+        margin: 1.6em -10px; }
+        article.CG2-article figure img {
+          max-width: 100%;
+          height: auto; } }
+  article.CG2-article code {
+    padding: 2px;
+    background: #f4f4f4; }
+  article.CG2-article section.CG2-article__rel {
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #d8d8d8;
+    padding: 19px; }
+    @media screen and (max-width: 767px) {
+      article.CG2-article section.CG2-article__rel {
+        padding: 14px; } }
+    article.CG2-article section.CG2-article__rel h1 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0; }
+      @media screen and (max-width: 767px) {
+        article.CG2-article section.CG2-article__rel h1 {
+          font-size: 12px;
+          margin-bottom: 3px; } }
+    article.CG2-article section.CG2-article__rel ul {
+      margin: 0;
+      padding: 0 0 0 20px; }
+    article.CG2-article section.CG2-article__rel li {
+      margin: 0; }
+  article.CG2-article aside {
+    color: #787878;
+    font-size: 14px;
+    margin: 2em 0; }
+    @media screen and (max-width: 767px) {
+      article.CG2-article aside {
+        font-size: 10px;
+        margin: 1.6em 0; } }
+    article.CG2-article aside h1 {
+      font-size: 100%;
+      font-weight: bold;
+      margin: 0; }
+    article.CG2-article aside p {
+      margin: 0; }
+
+article.CG2-article {
+  line-height: 1.6; }
+  article.CG2-article p {
+    margin: 1em 0; }
   article.CG2-article table {
     margin: 2em 0; }
     article.CG2-article table th, article.CG2-article table td {
@@ -6829,18 +6964,18 @@ tag:
 ```html
 <div class="CG2-categoryIntro">
   <ul>
-    <li><span class="CG2-icon-cat-elementary"></span>入門</li>
-    <li><span class="CG2-icon-cat-practice"></span>実践</li>
-    <li><span class="CG2-icon-cat-standards"></span>仕様解説</li>
-    <li><span class="CG2-icon-cat-talk"></span>座談会</li>
-    <li><span class="CG2-icon-cat-architecture"></span>設計</li>
-    <li><span class="CG2-icon-cat-report"></span>レポート</li>
-    <li><span class="CG2-icon-cat-design"></span>デザイン</li>
-    <li><span class="CG2-icon-cat-future"></span>未来・次世代</li>
-    <li><span class="CG2-icon-cat-workstyle"></span>仕事術</li>
-    <li><span class="CG2-icon-cat-survey"></span>アンケート</li>
-    <li><span class="CG2-icon-cat-interview"></span>インタビュー</li>
-    <li><span class="CG2-icon-cat-discussion"></span>ディスカッション</li>
+    <li><span class="CG2-icon-cat-elementary CG2-icon--colored"></span>入門</li>
+    <li><span class="CG2-icon-cat-mastering CG2-icon--colored"></span>実践</li>
+    <li><span class="CG2-icon-cat-standards CG2-icon--colored"></span>仕様解説</li>
+    <li><span class="CG2-icon-cat-talk CG2-icon--colored"></span>座談会</li>
+    <li><span class="CG2-icon-cat-architecture CG2-icon--colored"></span>設計</li>
+    <li><span class="CG2-icon-cat-report CG2-icon--colored"></span>レポート</li>
+    <li><span class="CG2-icon-cat-design CG2-icon--colored"></span>デザイン</li>
+    <li><span class="CG2-icon-cat-future CG2-icon--colored"></span>未来・次世代</li>
+    <li><span class="CG2-icon-cat-work-style CG2-icon--colored"></span>仕事術</li>
+    <li><span class="CG2-icon-cat-survey CG2-icon--colored"></span>アンケート</li>
+    <li><span class="CG2-icon-cat-interview CG2-icon--colored"></span>インタビュー</li>
+    <li><span class="CG2-icon-cat-discussion CG2-icon--colored"></span>ディスカッション</li>
   </ul>
 </div>
 ```
@@ -7037,11 +7172,10 @@ header.CG2-customerQuotes__header {
       width: auto;
       padding-right: 0; } }
   .CG2-customerQuotes__list ul {
-    line-height: normal;
+    list-style: none;
     padding: 0;
     margin: 0; }
   .CG2-customerQuotes__list li {
-    list-style: none;
     margin: 0 0 20px; }
     @media screen and (max-width: 767px) {
       .CG2-customerQuotes__list li {
@@ -7529,7 +7663,9 @@ tag:
 
 ```html
 <div class="CG2-additionalInfoLink">
-  <div class="CG2-additionalInfoLink__text">団体購読では、請求書払いにも対応しています</div>
+  <div class="CG2-additionalInfoLink__text">
+    団体購読では、請求書払いにも対応しています<span class="CG2-additionalInfoLink__sub">小さい文字</span>
+  </div>
   <div class="CG2-additionalInfoLink__link"><a class="CG2-button" href="#">団体購読について</a></div>
 </div>
 ```
@@ -7538,6 +7674,8 @@ tag:
 .CG2-additionalInfoLink {
   display: table;
   width: 100%; }
+  .CG2-additionalInfoLink + .CG2-additionalInfoLink {
+    margin-top: 30px; }
   @media screen and (max-width: 639px) {
     .CG2-additionalInfoLink {
       display: block;
@@ -7545,6 +7683,7 @@ tag:
 
 .CG2-additionalInfoLink__text {
   font-size: 24px;
+  line-height: 1.2;
   vertical-align: middle;
   display: table-cell; }
   @media screen and (max-width: 639px) {
@@ -7552,6 +7691,9 @@ tag:
       font-size: 16px;
       text-align: center;
       display: block; } }
+
+.CG2-additionalInfoLink__sub {
+  font-size: 14px; }
 
 .CG2-additionalInfoLink__link {
   text-align: right;
@@ -7593,7 +7735,9 @@ tag:
     </div>
     <p>本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。</p>
     <div class="CG2-publication__buttonContainer">
-      <a class="CG2-button" href="#">Amazonで購入</a>
+      <ul>
+        <li><a class="CG2-button" href="#">Amazonで購入</a></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -7651,9 +7795,20 @@ section.CG2-publication {
 
 .CG2-publication__buttonContainer {
   margin-top: 30px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-publication__buttonContainer {
       margin-top: 10px; } }
+  .CG2-publication__buttonContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .CG2-publication__buttonContainer li {
+    display: inline-block;
+    margin: 0 20px 0 0; }
+    @media screen and (max-width: 639px) {
+      .CG2-publication__buttonContainer li {
+        display: block;
+        margin-bottom: 10px; } }
 
 /* ==========================================================================
    CG2-term
