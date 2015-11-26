@@ -1092,7 +1092,7 @@ tag:
       </div>
       <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
       <div class="CG2-seriesList__articles">
-        <div class="CG2-seriesList__article">
+        <div class="CG2-seriesList__article CG2-seriesList__article--unread">
           <a href="#">
             <div class="CG2-seriesList__articleStar"></div>
             <div class="CG2-seriesList__articleOrder">第3回</div>
@@ -1441,7 +1441,7 @@ tag:
         border-bottom: 1px solid #fff;
         margin-bottom: -1px;
         background: rgba( 255, 255, 255, 0.05 );
-        &:first-child{
+        &.CG2-seriesList__article--unread{
           box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
           background: rgba( 255, 255, 255, 0.2 );
         }
