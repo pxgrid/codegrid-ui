@@ -7188,7 +7188,9 @@ tag:
   z-index: 1;
   background: #000;
   color: #fff;
-  padding: 130px 0; }
+  padding: 130px 0;
+  background-position: 50% 50%;
+  background-size: cover; }
   @media screen and (max-width: 767px) {
     .CG2-bannerHeader {
       padding: 60px 15px; } }

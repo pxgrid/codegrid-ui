@@ -846,6 +846,8 @@ tag:
   @include blurry-parent();
   color: #fff;
   padding: 130px 0;
+  background-position: 50% 50%;
+  background-size: cover;
   @include max-screen( $breakpoint-middle ) {
     padding: 60px 15px;
   }
