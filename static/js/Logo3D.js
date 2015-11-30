@@ -61,6 +61,7 @@ CG2.Logo3D = ( function () {
     this.balance = new THREE.Vector2( 0, 0 );
     this.letterMeshes = [];
     this.isNoWrap = true;
+    this.noise = CG2.makePNoise1D( 32, 512 );
 
     var grid = new THREE.Points( Logo3D.gridGeometry, Logo3D.gridMaterial );
     this.scene.add( grid );
@@ -68,7 +69,8 @@ CG2.Logo3D = ( function () {
     for ( var i = 0, l = Logo3D.logoGeometries.length; i < l; i ++ ) {
 
       var mesh = new THREE.Line( Logo3D.logoGeometries[ i ], Logo3D.lineMaterial );
-      mesh.position.y = 50;
+      mesh.renderOrder = 1;
+      mesh.position.y  = 50;
       this.scene.add( mesh );
       this.letterMeshes.push( mesh );
 
@@ -127,7 +129,7 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 3 ].geometry.applyMatrix( m );
 
         m.set(
-          1, 0, 0, -290 - 70,
+          1, 0, 0, -290 - 70 + 40,
           0, 1, 0, -100,
           0, 0, 1,    0,
           0, 0, 0,    1
@@ -228,10 +230,14 @@ CG2.Logo3D = ( function () {
         var viewNormal = cameraPosition.applyMatrix4( viewMatrixInverse ).normalize();
         intensity = 1 - Math.abs( viewNormal.z );
 
+        var noise = Math.max( this.noise[ ( ( elapsed * 50 )|0 ) % this.noise.length ], 0.05 ) - 0.05;
+
 
         Logo3D.lineMaterial.uniforms.time.value = elapsed;
         Logo3D.gridMaterial.uniforms.time.value = elapsed;
         Logo3D.lineMaterial.uniforms.intensity.value = intensity;
+
+        Logo3D.lineMaterial.uniforms.intensity2.value = noise;
 
         this.renderer.render( this.scene, this.camera );
 
@@ -267,10 +273,10 @@ CG2.Logo3D = ( function () {
     [ [ 350, 0 ], [ 350, 180 ], [ 280, 180 ], [ 280, 70 ], [ 350, 70 ] ],  // d
     [ [ 400, 120 ], [ 490, 120 ], [ 490, 70 ], [ 400, 70 ], [ 400, 180 ], [ 490, 180 ] ], // e
 
-    [ [ 670 - 20, 0 ], [580 - 20, 0 ], [ 580 - 20, 180 ], [ 670 - 20, 180 ], [ 670 - 20, 80 ] ], //G
-    [ [ 760, 70 ], [720, 70 ], [ 720, 180 ] ], //r
-    [ [ 800, 70 ], [800, 180 ] ], //i
-    [ [ 920, 0 ], [920, 180 ], [850, 180 ], [ 850, 70 ], [ 920, 70 ] ]//d
+    [ [ 670 - 40, 0 ], [580 - 40, 0 ], [ 580 - 40, 180 ], [ 670 - 40, 180 ], [ 670 - 40, 80 ] ], //G
+    [ [ 760 - 40, 70 ], [720 - 40, 70 ], [ 720 - 40, 180 ] ], //r
+    [ [ 800 - 40, 70 ], [800 - 40, 180 ] ], //i
+    [ [ 920 - 40, 0 ], [920 - 40, 180 ], [850 - 40, 180 ], [ 850 - 40, 70 ], [ 920 - 40, 70 ] ]//d
   ];
 
 
@@ -285,6 +291,7 @@ CG2.Logo3D = ( function () {
       'attribute float randomSeeds;',
       'uniform float time;',
       'uniform float intensity;',
+      'uniform float intensity2;',
 
       'void main() {',
 
@@ -292,7 +299,7 @@ CG2.Logo3D = ( function () {
 
         'if ( randomSeeds != 0.0 ) {',
 
-          'waveFactor = sin( randomSeeds + time * 10. ) * intensity * 4.0;',
+          'waveFactor = sin( randomSeeds + time * 10. ) * intensity2 * 20.0;',
 
         '}',
 
@@ -323,13 +330,14 @@ CG2.Logo3D = ( function () {
       THREE.UniformsLib[ 'fog' ],
       {
         time: { type: 'f', value: 0 },
-        intensity: { type: 'f', value: 0 }
+        intensity: { type: 'f', value: 0 },
+        intensity2: { type: 'f', value: 0 }
       }
     ] ),
-
     defines: {},
     fog: true,
-    linewidth: 2.0
+    depthTest: false
+    // linewidth: 2.0
   } );
 
   Logo3D.lineMaterial.uniforms.diffuse.value.setRGB( 0.5, 0.5, 0.5 );
@@ -385,7 +393,7 @@ CG2.Logo3D = ( function () {
 
   Logo3D.gridMaterial.uniforms.size.value = 100;
   Logo3D.gridMaterial.uniforms.scale.value = 0.8 * 10;
-  Logo3D.gridMaterial.uniforms.psColor.value.setRGB( 0.15, 0.15, 0.15 );
+  Logo3D.gridMaterial.uniforms.psColor.value.setRGB( 0.20, 0.20, 0.20 );
 
 
 ///////////////////////////////
