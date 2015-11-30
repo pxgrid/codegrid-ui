@@ -8,6 +8,7 @@ var reload       = browserSync.reload;
 var gulp         = require( 'gulp' );
 var aigis        = require( 'gulp-aigis' );
 var autoprefixer = require( 'gulp-autoprefixer' );
+var cmq          = require('gulp-combine-media-queries');
 var concat       = require( 'gulp-concat' );
 var consolidate  = require( 'gulp-consolidate' );
 var iconfont     = require( 'gulp-iconfont' );
@@ -20,6 +21,15 @@ var watch        = require( 'gulp-watch' );
 var awspublish   = require( 'gulp-awspublish' );
 
 var runSequence  = require( 'run-sequence' ).use( gulp );
+
+
+var AUTOPREFIXER_BROWSERS = [
+  'ie >= 9',
+  'safari >= 7',
+  'ios >= 7',
+  'android >= 4'
+];
+
 
 gulp.task( 'browser-sync', function () {
 
@@ -98,6 +108,8 @@ gulp.task( 'sass', function () {
 
   return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
          .pipe( sass( { bundleExec: true } ) )
+         .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
+         .pipe( cmq( { log: true } ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
          .pipe( rename( { extname: '.min.css' } ) )
          .pipe( minifyCSS() )
