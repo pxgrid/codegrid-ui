@@ -362,13 +362,16 @@ tag:
 ```
 
 */
-.CG2-header2{}
-  .CG2-header2__heading{
-    font-size: 24px;
+.CG2-header2{
     margin: 60px 0 15px;
     @include max-screen( $breakpoint-middle ) {
-      font-size: 16px;
       margin: 30px 0 10px;
+    }
+  }
+  .CG2-header2__heading{
+    font-size: 24px;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 16px;
     }
   }
 

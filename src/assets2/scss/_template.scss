@@ -11,6 +11,24 @@
 
 
 /* ==========================================================================
+   offsetting an in-page anchor to adjust for fixed header
+   http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors
+   ========================================================================== */
+:target:before {
+  content: '';
+  overflow: auto;
+  position: static;
+  display: block;
+  width: 1px;
+  height: 56px; /* fixed header height*/
+  margin: -56px 0 0; /* negative fixed header height */
+  @include max-screen( $breakpoint-middle ) {
+    height: 35px;
+    margin-top: -35px;
+  }
+}
+
+/* ==========================================================================
    pageHeaderPlacer
    ========================================================================== */
 .CG2-pageHeaderPlacer{
