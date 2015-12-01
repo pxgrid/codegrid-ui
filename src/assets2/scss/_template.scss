@@ -14,7 +14,7 @@
    pageHeaderPlacer
    ========================================================================== */
 .CG2-pageHeaderPlacer{
-  height: 60px;
+  height: 56px;
   background: #000;
 }
 @include max-screen( $breakpoint-middle ) {
@@ -92,6 +92,33 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
+  </header>
+</div>
+```
+
+
+## APP用 ログイン後
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <img src="../build/assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      <div class="CG2-pageHeader__search">
+        <div class="CG2-pageHeader__searchInner">
+          <input>
+        </div>
+      </div>
+      <div class="CG2-pageHeader__user">
+        <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
+        <div class="CG2-pageHeader__userAvatar">
+          <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+        </div>
+      </div>
+    </div>
+    <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
   </header>
 </div>
 ```
@@ -278,6 +305,56 @@ templateItem:
         }
       }
     }
+    .CG2-pageHeader__user{
+      display: table;
+      table-layout: fixed;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 280px;
+      @include max-screen( $breakpoint-middle ) {
+        height: 35px;
+        right: 30px;
+      }
+      @include max-screen( $breakpoint-small ) {
+        table-layout: fixed;
+        width: 160px;
+      }
+    }
+      .CG2-pageHeader__userName{
+        color: #797979;
+        font-size: 14px;
+        text-align: right;
+        white-space: nowrap;
+        vertical-align: middle;
+        box-sizing: border-box;
+        display: table-cell;
+        padding-right: 20px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include max-screen( $breakpoint-middle ) {
+          font-size: 12px;
+          padding-right: 10px;
+        }
+      }
+      .CG2-pageHeader__userAvatar{
+        vertical-align: middle;
+        box-sizing: border-box;
+        display: table-cell;
+        width: 56px;
+        img{
+          display: block;
+          width: 56px;
+          height: 56px;
+        }
+        @include max-screen( $breakpoint-middle ) {
+          width: 20px;
+          img{
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
     .CG2-pageHeader__opener{
       @include max-screen( $breakpoint-middle ) {
         color: #FFF;
