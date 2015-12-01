@@ -109,9 +109,9 @@ gulp.task( 'sass', function () {
   return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
          .pipe( sass( { bundleExec: true } ) )
          .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
-         .pipe( cmq( { log: true } ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
          .pipe( rename( { extname: '.min.css' } ) )
+         .pipe( cmq( { log: true } ) )
          .pipe( minifyCSS() )
          .pipe( gulp.dest( './build/assets2/css/' ) );
 
