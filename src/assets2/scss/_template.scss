@@ -133,6 +133,11 @@ templateItem:
               transform: translateX( -100% ) translateX( 50px );
     }
   }
+  @include print () {
+    position: relative;
+    height: 0;
+    border-bottom: 56px solid #191919;
+  }
 }
   .CG2-pageHeader__inner{
     position: relative;
@@ -194,6 +199,9 @@ templateItem:
           color: #fff;
         }
       }
+      @include print () {
+        display: none;
+      }
     }
     .CG2-pageHeader__search{
       @extend %search;
@@ -204,6 +212,9 @@ templateItem:
       border :1px solid #767676;
       background: transparent;
       @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      @include print () {
         display: none;
       }
     }
@@ -231,6 +242,9 @@ templateItem:
       top: 0;
       right: 28px;
       @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      @include print () {
         display: none;
       }
       ul{
@@ -381,6 +395,19 @@ templateItem:
       margin-top: 0;
     }
   }
+  @include print () {
+    position: relative;
+    z-index: 1;
+    &:after{
+      content: '';
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-bottom: 180px solid #191919;
+    }
+  }
   a{
     color: #767676;
     text-decoration: none;
@@ -403,6 +430,10 @@ templateItem:
       display: block;
       width: auto;
     }
+    @include print () {
+      display: block;
+      width: auto;
+    }
   }
     .CG2-pageFooter__wwwNav{
       vertical-align: top;
@@ -413,6 +444,9 @@ templateItem:
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
+      @include print () {
+        display: none;
+      }
     }
       .CG2-pageFooter__logo{
         margin-bottom: 32px;
@@ -420,6 +454,9 @@ templateItem:
           display: block;
         }
         @include max-screen( $breakpoint-middle ) {
+          display: none;
+        }
+        @include print () {
           display: none;
         }
       }
@@ -433,6 +470,9 @@ templateItem:
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
+      @include print () {
+        display: none;
+      }
     }
     .CG2-pageFooter__legalNav{
       vertical-align: top;
@@ -441,6 +481,11 @@ templateItem:
       width: 20%;
       padding: 90px 28px 40px;
       @include max-screen( $breakpoint-middle ) {
+        display: block;
+        width: auto;
+        padding: 0;
+      }
+      @include print () {
         display: block;
         width: auto;
         padding: 0;
@@ -561,6 +606,9 @@ templateItem:
     @include max-screen( $breakpoint-middle ) {
       display: none;
     }
+    @include print () {
+      display: none;
+    }
   }
   li{
     margin: 12px 0 0;
@@ -576,6 +624,22 @@ templateItem:
     margin: -2px 0 0 5px;
   }
   @include max-screen( $breakpoint-middle ) {
+    font-size: 10px;
+    text-align: center;
+    margin-top: 0;
+    a{
+      color: #fff;
+      display: table;
+      margin: 0 auto;
+    }
+    img{
+      display: block;
+      width: 100px;
+      height: 25px;
+      margin: 5px auto;
+    }
+  }
+  @include print () {
     font-size: 10px;
     text-align: center;
     margin-top: 0;

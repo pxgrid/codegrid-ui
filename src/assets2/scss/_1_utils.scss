@@ -73,3 +73,12 @@
   transform: scale( 1.2, 1.2 );
   opacity: .64;
 }
+
+// print query
+// ========================================================================== */
+
+@mixin print () {
+  @media print {
+    @content;
+  }
+}

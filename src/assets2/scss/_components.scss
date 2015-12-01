@@ -1269,6 +1269,10 @@ tag:
     margin-left: -18px;
     margin-right: -18px;
   }
+  @include print() {
+    margin-left: 0;
+    margin-right: 0;
+  }
   .CG2-searchLayout &{
     margin-left: 0;
     margin-right: 0;
@@ -2192,7 +2196,7 @@ tag:
 
 
 
-// @media print {
+@include print () {
 
 .CG2-articleHeader{
   color: #000;
@@ -2210,8 +2214,7 @@ tag:
     display: none;
   }
 
-
-// }
+}
 
 /* ==========================================================================
    CG2-narrowLayout
@@ -2289,7 +2292,7 @@ templateItem:
   }
 
 
-// @media print {
+@include print () {
 .CG2-narrowLayout{
   display: block;
   width: auto;
@@ -2302,7 +2305,7 @@ templateItem:
   .CG2-narrowLayout__sub{
     display: none;
   }
-// }
+}
 
 /* ==========================================================================
    CG2-articleTOC
@@ -2450,7 +2453,7 @@ section.CG2-articleTOC{
     }
 
 
-// @media print {
+@include print () {
   .CG2-articleTOC__body{
     display: block;
     width: auto;
@@ -2461,7 +2464,7 @@ section.CG2-articleTOC{
     .CG2-articleTOC__util{
       display: none;
     }
-// }
+}
 
 /* ==========================================================================
    CG2-articleSeriesNav
@@ -2774,7 +2777,7 @@ article.CG2-article{
   }
 }
 
-// @media print {
+@include print () {
 
 article.CG2-article{
   line-height: 1.6;
@@ -2856,7 +2859,7 @@ article.CG2-article{
   }
 }
 
-// }
+}
 
 /* 旧Jade 用
    ========================================================================== */
@@ -2970,6 +2973,11 @@ tag:
   }
 }
 
+@include print () {
+.CG2-articlePagination{
+  display: none;
+}
+}
 
 /* ==========================================================================
    CG2-articleUtil
@@ -3020,6 +3028,12 @@ tag:
         }
       }
     }
+}
+
+@include print () {
+  .CG2-articleUtil{
+    display: none;
+  }
 }
 
 /* ==========================================================================
