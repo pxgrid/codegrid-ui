@@ -762,6 +762,22 @@ star
 </div>
 ```
 
+lock
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-lock"></span>
+  
+</div>
+```
+
+unlock
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-unlock"></span>
+  
+</div>
+```
+
 question
 ```html
 <div style="font-size:32px;">
@@ -916,82 +932,91 @@ cat-discussion
   top: -0.1em; }
 
 .CG2-icon-pxg:before {
-  content: "\E600"; }
+  content: "\"; }
 
 .CG2-icon-top:before {
-  content: "\E601"; }
+  content: "\"; }
 
 .CG2-icon-right:before {
-  content: "\E602"; }
+  content: "\"; }
 
 .CG2-icon-down:before {
-  content: "\E603"; }
+  content: "\"; }
 
 .CG2-icon-left:before {
-  content: "\E604"; }
+  content: "\"; }
 
 .CG2-icon-hamburger:before {
-  content: "\E605"; }
+  content: "\"; }
 
 .CG2-icon-list:before {
-  content: "\E606"; }
+  content: "\"; }
 
 .CG2-icon-setting:before {
-  content: "\E607"; }
+  content: "\"; }
 
 .CG2-icon-search:before {
-  content: "\E608"; }
+  content: "\"; }
 
 .CG2-icon-star:before {
-  content: "\E609"; }
+  content: "\"; }
+
+.CG2-icon-lock:before {
+  content: "\"; }
+
+.CG2-icon-unlock:before {
+  content: "\"; }
 
 .CG2-icon-question:before {
-  content: "\E610"; }
+  content: "\"; }
 
 .CG2-icon-twitter:before {
-  content: "\E700"; }
+  content: "\"; }
 
 .CG2-icon-facebook:before {
-  content: "\E701"; }
+  content: "\"; }
 
 .CG2-icon-gplus:before {
-  content: "\E702"; }
+  content: "\"; }
 
 .CG2-icon-cat-elementary:before {
-  content: "\E800"; }
+  content: "\"; }
 
 .CG2-icon-cat-mastering:before {
-  content: "\E801"; }
+  content: "\"; }
 
 .CG2-icon-cat-standards:before {
-  content: "\E803"; }
+  content: "\"; }
 
 .CG2-icon-cat-talk:before {
-  content: "\E804"; }
+  content: "\"; }
 
 .CG2-icon-cat-architecture:before {
-  content: "\E805"; }
+  content: "\"; }
 
 .CG2-icon-cat-report:before {
-  content: "\E806"; }
+  content: "\"; }
 
 .CG2-icon-cat-design:before {
-  content: "\E807"; }
+  content: "\"; }
 
 .CG2-icon-cat-future:before {
-  content: "\E808"; }
+  content: "\"; }
 
 .CG2-icon-cat-work-style:before {
-  content: "\E809"; }
+  content: "\"; }
 
 .CG2-icon-cat-survey:before {
-  content: "\E80A"; }
+  content: "\"; }
 
 .CG2-icon-cat-interview:before {
-  content: "\E80B"; }
+  content: "\"; }
 
 .CG2-icon-cat-discussion:before {
-  content: "\E80C"; }
+  content: "\"; }
+
+span.CG2-icon--colored.CG2-icon-unlock {
+  color: #f8a000; }
 
 span.CG2-icon--colored.CG2-icon-cat-elementary {
   color: #f4db00; }
@@ -1081,7 +1106,7 @@ span.CG2-icon--colored.CG2-icon-cat-discussion {
    pageHeaderPlacer
    ========================================================================== */
 .CG2-pageHeaderPlacer {
-  height: 60px;
+  height: 56px;
   background: #000; }
 
 @media screen and (max-width: 767px) {
@@ -1156,6 +1181,33 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
+  </header>
+</div>
+```
+
+
+## APP用 ログイン後
+
+```html
+<div class="CG2-pageHeaderPlacer">
+  <header class="CG2-pageHeader">
+    <div class="CG2-pageHeader__inner">
+      <div class="CG2-pageHeader__logo">
+        <img src="../build/assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      <div class="CG2-pageHeader__search">
+        <div class="CG2-pageHeader__searchInner">
+          <input>
+        </div>
+      </div>
+      <div class="CG2-pageHeader__user">
+        <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
+        <div class="CG2-pageHeader__userAvatar">
+          <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+        </div>
+      </div>
+    </div>
+    <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
   </header>
 </div>
 ```
@@ -1318,6 +1370,54 @@ templateItem:
     margin: -10px; }
     .CG2-pageHeader__buttons a:not(.CG2-button):hover {
       color: #FFF; }
+
+.CG2-pageHeader__user {
+  display: table;
+  table-layout: fixed;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 280px; }
+  @media screen and (max-width: 767px) {
+    .CG2-pageHeader__user {
+      height: 35px;
+      right: 30px; } }
+  @media screen and (max-width: 639px) {
+    .CG2-pageHeader__user {
+      table-layout: fixed;
+      width: 160px; } }
+
+.CG2-pageHeader__userName {
+  color: #797979;
+  font-size: 14px;
+  text-align: right;
+  white-space: nowrap;
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: table-cell;
+  padding-right: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+  @media screen and (max-width: 767px) {
+    .CG2-pageHeader__userName {
+      font-size: 12px;
+      padding-right: 10px; } }
+
+.CG2-pageHeader__userAvatar {
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: table-cell;
+  width: 56px; }
+  .CG2-pageHeader__userAvatar img {
+    display: block;
+    width: 56px;
+    height: 56px; }
+  @media screen and (max-width: 767px) {
+    .CG2-pageHeader__userAvatar {
+      width: 20px; }
+      .CG2-pageHeader__userAvatar img {
+        width: 20px;
+        height: 20px; } }
 
 @media screen and (max-width: 767px) {
   .CG2-pageHeader__opener {
@@ -3788,14 +3888,47 @@ tag:
   - app-item-articlelist
 ---
 
+- 未読時は`CG2-series__item--unread`を追加する
+- 有料記事のアイコンは`<span class="CG2-icon-lock"></span>`を利用する。このとき`CG2-icon--colored`は不要
+
+
 ```html
 
 <div class="CG2-series">
   <div class="CG2-series__item">
     <div class="CG2-series__itemHeader">
       <div class="CG2-series__itemStar"></div>
-      <div class="CG2-series__itemTitle"><a href="#">第1回 Vue.jsとは</a></div>
-      <div class="CG2-series__itemPubdate">2015/04/23</div>
+      <a href="#">
+        <div class="CG2-series__itemIcon">
+          <span class="CG2-icon-unlock CG2-icon--colored"></span>
+        </div>
+        <div class="CG2-series__itemTitle">第1回 Vue.jsとは</div>
+        <div class="CG2-series__itemPubdate">2015/04/23</div>
+      </a>
+    </div>
+    <div class="CG2-series__itemBody">
+      <p>双方向データバインディングに特化したVue.jsは、シンプルで学習コストも低いといわれます。第1回目はVue.jsがフレームワークとして、どんな強みをもっているのか、その特徴をコードから概観します。</p>
+    </div>
+    <div class="CG2-series__authors">
+      <div class="CG2-series__author">
+        <div class="CG2-series__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-series__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="CG2-series__item CG2-series__item--unread">
+    <div class="CG2-series__itemHeader">
+      <div class="CG2-series__itemStar"></div>
+      <a href="#">
+        <div class="CG2-series__itemIcon">
+          <span class="CG2-icon-unlock CG2-icon--colored"></span>
+        </div>
+        <div class="CG2-series__itemTitle">第1回 Vue.jsとは</div>
+        <div class="CG2-series__itemPubdate">2015/04/23</div>
+      </a>
     </div>
     <div class="CG2-series__itemBody">
       <p>双方向データバインディングに特化したVue.jsは、シンプルで学習コストも低いといわれます。第1回目はVue.jsがフレームワークとして、どんな強みをもっているのか、その特徴をコードから概観します。</p>
@@ -3828,10 +3961,16 @@ tag:
     margin-top: 20px; }
 
 .CG2-series__itemHeader {
+  position: relative;
+  z-index: 1;
   display: table;
+  width: 100%;
   border-top: 1px solid #d8d8d8;
   border-bottom: 1px solid #d8d8d8;
   margin-bottom: 20px; }
+  .CG2-series__item--unread .CG2-series__itemHeader {
+    color: #787878;
+    background: #fafafa; }
 
 .CG2-series__itemStar {
   display: table-cell;
@@ -3863,6 +4002,42 @@ tag:
         font-size: 16px;
         text-align: center; } }
 
+.CG2-series__itemHeader a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  display: table-cell; }
+  .CG2-series__itemHeader a:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    left: 0;
+    -webkit-transition: all .3s;
+    transition: all .3s; }
+  .CG2-series__itemHeader a:hover {
+    color: #10a040; }
+    .CG2-series__itemHeader a:hover:after {
+      background: #feffb3;
+      right: 0; }
+
+.CG2-series__itemIcon {
+  font-size: 24px;
+  display: table-cell;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 55px;
+  padding: 20px 0 20px 15px; }
+  .CG2-series__itemStar + a > .CG2-series__itemIcon:first-child {
+    width: 40px;
+    padding-left: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-series__itemIcon {
+      width: 30px;
+      padding: 15px 0; } }
+
 .CG2-series__itemTitle {
   font-size: 20px;
   font-weight: bold;
@@ -3876,18 +4051,6 @@ tag:
       font-size: 14px;
       padding-top: 15px;
       padding-bottom: 15px; } }
-  .CG2-series__itemTitle a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    padding: 20px 0;
-    margin: -20px 0; }
-    @media screen and (max-width: 767px) {
-      .CG2-series__itemTitle a {
-        padding-top: 15px;
-        padding-bottom: 15px;
-        margin-top: -15px;
-        margin-bottom: -15px; } }
 
 .CG2-series__itemPubdate {
   font-size: 12px;
@@ -3895,7 +4058,7 @@ tag:
   vertical-align: middle;
   display: table-cell;
   width: 1%;
-  padding: 20px 0 20px 5px; }
+  padding: 20px 20px 20px 5px; }
   @media screen and (max-width: 767px) {
     .CG2-series__itemPubdate {
       font-size: 8px;
