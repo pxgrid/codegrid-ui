@@ -1774,14 +1774,47 @@ tag:
   - app-item-articlelist
 ---
 
+- 未読時は`CG2-series__item--unread`を追加する
+- 有料記事のアイコンは`<span class="CG2-icon-lock"></span>`を利用する。このとき`CG2-icon--colored`は不要
+
+
 ```html
 
 <div class="CG2-series">
   <div class="CG2-series__item">
     <div class="CG2-series__itemHeader">
       <div class="CG2-series__itemStar"></div>
-      <div class="CG2-series__itemTitle"><a href="#">第1回 Vue.jsとは</a></div>
-      <div class="CG2-series__itemPubdate">2015/04/23</div>
+      <a href="#">
+        <div class="CG2-series__itemIcon">
+          <span class="CG2-icon-unlock CG2-icon--colored"></span>
+        </div>
+        <div class="CG2-series__itemTitle"><a href="#">第1回 Vue.jsとは</a></div>
+        <div class="CG2-series__itemPubdate">2015/04/23</div>
+      </a>
+    </div>
+    <div class="CG2-series__itemBody">
+      <p>双方向データバインディングに特化したVue.jsは、シンプルで学習コストも低いといわれます。第1回目はVue.jsがフレームワークとして、どんな強みをもっているのか、その特徴をコードから概観します。</p>
+    </div>
+    <div class="CG2-series__authors">
+      <div class="CG2-series__author">
+        <div class="CG2-series__authorPic">
+          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+        </div>
+        <div class="CG2-series__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="CG2-series__item CG2-series__item--unread">
+    <div class="CG2-series__itemHeader">
+      <div class="CG2-series__itemStar"></div>
+      <a href="#">
+        <div class="CG2-series__itemIcon">
+          <span class="CG2-icon-unlock CG2-icon--colored"></span>
+        </div>
+        <div class="CG2-series__itemTitle"><a href="#">第1回 Vue.jsとは</a></div>
+        <div class="CG2-series__itemPubdate">2015/04/23</div>
+      </a>
     </div>
     <div class="CG2-series__itemBody">
       <p>双方向データバインディングに特化したVue.jsは、シンプルで学習コストも低いといわれます。第1回目はVue.jsがフレームワークとして、どんな強みをもっているのか、その特徴をコードから概観します。</p>
@@ -1816,10 +1849,17 @@ tag:
     }
   }
     .CG2-series__itemHeader{
+      position: relative;
+      z-index: 1;
       display: table;
+      width: 100%;
       border-top: 1px solid #d8d8d8;
       border-bottom: 1px solid #d8d8d8;
       margin-bottom: 20px;
+      .CG2-series__item--unread &{
+        color: #787878;
+        background: #fafafa;
+      }
     }
       .CG2-series__itemStar{
         display: table-cell;
@@ -1841,47 +1881,83 @@ tag:
           }
         }
       }
-      .CG2-series__itemTitle{
-        font-size: 20px;
-        font-weight: bold;
-        vertical-align: middle;
+      .CG2-series__itemHeader a{
+        @include resetLink();
+        text-decoration: none;
+        cursor: pointer;
         display: table-cell;
-        padding: 20px 0;
-        &:first-child{
-          padding-left: 10px;
+        &:after{
+          content: '';
+          position: absolute;
+          z-index: -1;
+          top: 0;
+          bottom: 0;
+          right: 100%;
+          left: 0;
+          transition: all .3s;
         }
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-          padding-top: 15px;
-          padding-bottom: 15px;
-        }
-        a{
-          @include resetLink();
-          text-decoration: none;
-          display: block;
-          padding: 20px 0;
-          margin: -20px 0;
-          @include max-screen( $breakpoint-middle ) {
-            padding-top: 15px;
-            padding-bottom: 15px;
-            margin-top: -15px;
-            margin-bottom: -15px;
+        &:hover{
+          color: #10a040;
+          &:after{
+            background: #feffb3;
+            right: 0;
+            // transition: all 0s;
           }
         }
       }
-      .CG2-series__itemPubdate{
-        font-size: 12px;
-        white-space: nowrap;
-        vertical-align: middle;
-        display: table-cell;
-        width: 1%;
-        padding: 20px 0 20px 5px;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 8px;
-          padding-top: 15px;
-          padding-bottom: 15px;
+        .CG2-series__itemIcon{
+          font-size: 24px;
+          display: table-cell;
+          vertical-align: middle;
+          box-sizing: border-box;
+          width: 55px;
+          padding: 20px 0 20px 15px;
+          .CG2-series__itemStar + a > &:first-child{
+            width: 40px;
+            padding-left: 0;
+          }
+          @include max-screen( $breakpoint-middle ) {
+            width: 30px;
+            padding: 15px 0;
+          }
+          // &:after{
+          //   @include icon( star );
+          //   font-size: 24px;
+          //   display: block;
+          //   @include max-screen( $breakpoint-middle ) {
+          //     font-size: 16px;
+          //     text-align: center;
+          //   }
+          // }
         }
-      }
+        .CG2-series__itemTitle{
+          font-size: 20px;
+          font-weight: bold;
+          vertical-align: middle;
+          display: table-cell;
+          padding: 20px 0;
+          &:first-child{
+            padding-left: 10px;
+          }
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 14px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+        }
+        .CG2-series__itemPubdate{
+          font-size: 12px;
+          white-space: nowrap;
+          vertical-align: middle;
+          display: table-cell;
+          width: 1%;
+          padding: 20px 20px 20px 5px;
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 8px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+        }
     .CG2-series__itemBody{
       padding: 0 56px;
       margin: 20px 0;

@@ -127,11 +127,11 @@ gulp.task( 'iconfont', function () {
     fontName: fontName,
     appendCodepoints: true
   } ) )
-  .on( 'codepoints', function( codepoints, options ) {
+  .on( 'glyphs', function( glyphs, options ) {
 
     gulp.src( './src/assets2/font/codegrid-icon/_icon.scss' )
     .pipe( consolidate( 'underscore', {
-      glyphs: codepoints,
+      glyphs: glyphs,
       fontName: fontName,
       fontPath: '../font/',
       prefix: 'CG2-icon'

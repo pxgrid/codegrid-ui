@@ -48,7 +48,7 @@ tag:
   top: -0.1em;
 }
 
-<% _.each ( glyphs, function( glyph ) { %>.<%= prefix %>-<%= glyph.name %>:before { content: "\<%= glyph.codepoint.toString( 16 ).toUpperCase() %>"; }
+<% _.each ( glyphs, function( glyph ) { %>.<%= prefix %>-<%= glyph.name %>:before { content: "\<%= glyph.unicode.toString( 16 ).toUpperCase() %>"; }
 <% } ); %>
 
 @function getValue ( $assoc, $key ) {
@@ -61,10 +61,11 @@ tag:
 }
 
 $icons: (
-  <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %> "\<%= glyph.codepoint.toString( 16 ).toUpperCase() %>",
+  <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %> "\<%= glyph.unicode.toString( 16 ).toUpperCase() %>",
   <% } ); %>
 );
 
+span.CG2-icon--colored.CG2-icon-unlock           { color: #f8a000; }
 span.CG2-icon--colored.CG2-icon-cat-elementary   { color: #f4db00; }
 span.CG2-icon--colored.CG2-icon-cat-mastering    { color: #9cc500; }
 span.CG2-icon--colored.CG2-icon-cat-standards    { color: #009b26; }
