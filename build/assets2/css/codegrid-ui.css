@@ -1212,7 +1212,7 @@ templateItem:
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <img src="../build/assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
