@@ -130,9 +130,18 @@ templateItem:
         </div>
       </div>
       <div class="CG2-pageHeader__user">
-        <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
-        <div class="CG2-pageHeader__userAvatar">
-          <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+        <div class="CG2-pageHeader__userHeader">
+          <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
+          <div class="CG2-pageHeader__userAvatar">
+            <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+          </div>
+          <div class="CG2-pageHeader__userOpener"></div>
+        </div>
+        <div class="CG2-pageHeader__userMenu">
+          <ul>
+            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
+            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -324,55 +333,95 @@ templateItem:
       }
     }
     .CG2-pageHeader__user{
-      display: table;
-      table-layout: fixed;
       position: absolute;
       top: 0;
       right: 0;
-      width: 280px;
       @include max-screen( $breakpoint-middle ) {
-        height: 35px;
-        right: 30px;
-      }
-      @include max-screen( $breakpoint-small ) {
-        table-layout: fixed;
-        width: 160px;
+        display: none;
       }
     }
-      .CG2-pageHeader__userName{
-        color: #797979;
-        font-size: 14px;
-        text-align: right;
-        white-space: nowrap;
-        vertical-align: middle;
-        box-sizing: border-box;
-        display: table-cell;
-        padding-right: 20px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 12px;
-          padding-right: 10px;
-        }
+      .CG2-pageHeader__userHeader{
+        display: table;
+        table-layout: fixed;
+        width: 280px;
+        height: 56px;
+        cursor: pointer;
       }
-      .CG2-pageHeader__userAvatar{
-        vertical-align: middle;
-        box-sizing: border-box;
-        display: table-cell;
-        width: 56px;
-        img{
-          display: block;
-          width: 56px;
-          height: 56px;
+        .CG2-pageHeader__userName{
+          color: #797979;
+          font-size: 14px;
+          text-align: right;
+          white-space: nowrap;
+          vertical-align: middle;
+          box-sizing: border-box;
+          display: table-cell;
+          padding-right: 20px;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
-        @include max-screen( $breakpoint-middle ) {
-          width: 20px;
+        .CG2-pageHeader__userAvatar{
+          vertical-align: middle;
+          box-sizing: border-box;
+          display: table-cell;
+          width: 56px;
           img{
-            width: 20px;
-            height: 20px;
+            display: block;
+            width: 56px;
+            height: 56px;
           }
         }
-      }
+        .CG2-pageHeader__userOpener{
+          color: #ddd;
+          text-align: center;
+          display: table-cell;
+          vertical-align: middle;
+          width: 20px;
+          &:after{
+            @include icon( down );
+            position: relative;
+            top: 0;
+            transition: all .2s;
+            .CG2-pageHeader__userHeader:hover &{
+              color: #FFF;
+              top: 2px;
+            }
+          }
+        }
+        .CG2-pageHeader__userMenu{
+          box-sizing: border-box;
+          position: absolute;
+          display: none;
+          width: 100%;
+          padding: 10px;
+          border: 1px solid rgba(0,0,0,0.15);
+          margin-top: 2px;
+          border-radius: 2px;
+          box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+          background: #fff;
+          &.CG2-pageHeader__userMenu--show{
+            display: block;
+          }
+          &:before{
+            content: "";
+            position: absolute;
+            top: -14px;
+            right: 38px;
+            display: block;
+            border: 7px solid transparent;
+            border-bottom-color: #fff;
+          }
+          ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+          }
+          li{
+            margin: 0;
+            &+li{
+              margin-top: 10px;
+            }
+          }
+        }
     .CG2-pageHeader__opener{
       @include max-screen( $breakpoint-middle ) {
         color: #FFF;
@@ -775,6 +824,13 @@ templateItem:
   <div class="CG2-drawer__panel">
     <div class="CG2-drawer__panelViewport">
       <div class="CG2-drawer__panelBody">
+      
+        <div class="CG2-drawerBody__user">
+          <div class="CG2-drawerBody__userAvatar">
+            <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+          </div>
+          <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
+        </div>
 
         <div class="CG2-drawerBody">
           <div class="CG2-drawerBody__nav">
@@ -1011,6 +1067,33 @@ html.js-drawer--show .CG2-drawer__bg {
     }
       a{}
 }
+
+.CG2-drawerBody__user{
+  color: #757575;
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+  margin: -20px 0 20px;
+}
+  .CG2-drawerBody__userAvatar{
+    vertical-align: middle;
+    box-sizing: border-box;
+    display: table-cell;
+    padding-right: 12px;
+    width: 44px;
+    img{
+      display: block;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  .CG2-drawerBody__userName{
+    @include wordbreak();
+    font-size: 12px;
+    vertical-align: middle;
+    display: table-cell;
+  }
+
 .CG2-drawerBody__nav{
   margin-bottom: 30px;
   ul{
