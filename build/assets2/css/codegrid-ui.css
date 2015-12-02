@@ -1220,9 +1220,18 @@ templateItem:
         </div>
       </div>
       <div class="CG2-pageHeader__user">
-        <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
-        <div class="CG2-pageHeader__userAvatar">
-          <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+        <div class="CG2-pageHeader__userHeader">
+          <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
+          <div class="CG2-pageHeader__userAvatar">
+            <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+          </div>
+          <div class="CG2-pageHeader__userOpener"></div>
+        </div>
+        <div class="CG2-pageHeader__userMenu">
+          <ul>
+            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
+            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -1391,20 +1400,19 @@ templateItem:
       color: #FFF; }
 
 .CG2-pageHeader__user {
-  display: table;
-  table-layout: fixed;
   position: absolute;
   top: 0;
-  right: 0;
-  width: 280px; }
+  right: 0; }
   @media screen and (max-width: 767px) {
     .CG2-pageHeader__user {
-      height: 35px;
-      right: 30px; } }
-  @media screen and (max-width: 639px) {
-    .CG2-pageHeader__user {
-      table-layout: fixed;
-      width: 160px; } }
+      display: none; } }
+
+.CG2-pageHeader__userHeader {
+  display: table;
+  table-layout: fixed;
+  width: 280px;
+  height: 56px;
+  cursor: pointer; }
 
 .CG2-pageHeader__userName {
   color: #797979;
@@ -1417,10 +1425,6 @@ templateItem:
   padding-right: 20px;
   overflow: hidden;
   text-overflow: ellipsis; }
-  @media screen and (max-width: 767px) {
-    .CG2-pageHeader__userName {
-      font-size: 12px;
-      padding-right: 10px; } }
 
 .CG2-pageHeader__userAvatar {
   vertical-align: middle;
@@ -1431,12 +1435,63 @@ templateItem:
     display: block;
     width: 56px;
     height: 56px; }
-  @media screen and (max-width: 767px) {
-    .CG2-pageHeader__userAvatar {
-      width: 20px; }
-      .CG2-pageHeader__userAvatar img {
-        width: 20px;
-        height: 20px; } }
+
+.CG2-pageHeader__userOpener {
+  color: #ddd;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  width: 20px; }
+  .CG2-pageHeader__userOpener:after {
+    content: "";
+    font-family: "codegrid-icon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    top: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s; }
+    .CG2-pageHeader__userHeader:hover .CG2-pageHeader__userOpener:after {
+      color: #FFF;
+      top: 2px; }
+
+.CG2-pageHeader__userMenu {
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  margin-top: 2px;
+  border-radius: 2px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.15);
+  background: #fff; }
+  .CG2-pageHeader__userMenu.CG2-pageHeader__userMenu--show {
+    display: block; }
+  .CG2-pageHeader__userMenu:before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    right: 38px;
+    display: block;
+    border: 7px solid transparent;
+    border-bottom-color: #fff; }
+  .CG2-pageHeader__userMenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .CG2-pageHeader__userMenu li {
+    margin: 0; }
+    .CG2-pageHeader__userMenu li + li {
+      margin-top: 10px; }
 
 @media screen and (max-width: 767px) {
   .CG2-pageHeader__opener {
@@ -1854,6 +1909,13 @@ templateItem:
   <div class="CG2-drawer__panel">
     <div class="CG2-drawer__panelViewport">
       <div class="CG2-drawer__panelBody">
+      
+        <div class="CG2-drawerBody__user">
+          <div class="CG2-drawerBody__userAvatar">
+            <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+          </div>
+          <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
+        </div>
 
         <div class="CG2-drawerBody">
           <div class="CG2-drawerBody__nav">
@@ -2082,6 +2144,35 @@ html.js-drawer--show .CG2-drawer__bg {
     margin: 0; }
   .CG2-drawerBody li {
     margin: 0; }
+
+.CG2-drawerBody__user {
+  color: #757575;
+  table-layout: fixed;
+  display: table;
+  width: 100%;
+  margin: -20px 0 20px; }
+
+.CG2-drawerBody__userAvatar {
+  vertical-align: middle;
+  box-sizing: border-box;
+  display: table-cell;
+  padding-right: 12px;
+  width: 44px; }
+  .CG2-drawerBody__userAvatar img {
+    display: block;
+    width: 32px;
+    height: 32px; }
+
+.CG2-drawerBody__userName {
+  white-space: normal;
+  word-break: break-word;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
+  font-size: 12px;
+  vertical-align: middle;
+  display: table-cell; }
 
 .CG2-drawerBody__nav {
   margin-bottom: 30px; }

@@ -231,14 +231,6 @@ cat-discussion
 </div>
 ```
 
-gear
-```html
-<div style="font-size:32px;">
-  <span class="CG2-icon-gear"></span>
-  
-</div>
-```
-
 */
 
 @font-face {
@@ -300,7 +292,6 @@ gear
 .CG2-icon-cat-survey:before { content: "\"; }
 .CG2-icon-cat-interview:before { content: "\"; }
 .CG2-icon-cat-discussion:before { content: "\"; }
-.CG2-icon-gear:before { content: "\"; }
 
 
 @function getValue ( $assoc, $key ) {
@@ -341,7 +332,6 @@ $icons: (
   cat-survey "\",
   cat-interview "\",
   cat-discussion "\",
-  gear "\",
   
 );
 
