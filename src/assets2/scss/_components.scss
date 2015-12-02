@@ -1077,6 +1077,9 @@ tag:
   - www-item
 ---
 
+- 未読記事には`CG2-seriesList__article--unread`追加する
+- 有料時のカギアイコンは`<span class="CG2-icon-lock"></span>`を使う。`CG2-icon--colored`は付与しない
+
 ## 通常
 
 ```html
@@ -1097,7 +1100,9 @@ tag:
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article CG2-seriesList__article--unread">
           <a href="#">
-            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleIcon">
+              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+            </div>
             <div class="CG2-seriesList__articleOrder">第3回</div>
             <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
             <div class="CG2-seriesList__articleDate">4/16</div>
@@ -1105,7 +1110,9 @@ tag:
         </div>
         <div class="CG2-seriesList__article">
           <a href="#">
-            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleIcon">
+              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+            </div>
             <div class="CG2-seriesList__articleOrder">第2回</div>
             <div class="CG2-seriesList__articleTitle">gulpで生成を自動化</div>
             <div class="CG2-seriesList__articleDate">4/9</div>
@@ -1113,7 +1120,9 @@ tag:
         </div>
         <div class="CG2-seriesList__article">
           <a href="#">
-            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleIcon">
+              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+            </div>
             <div class="CG2-seriesList__articleOrder">第1回</div>
             <div class="CG2-seriesList__articleTitle">Webアプリの利用</div>
             <div class="CG2-seriesList__articleDate">4/2</div>
@@ -1175,7 +1184,9 @@ tag:
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article">
           <a href="#">
-            <div class="CG2-seriesList__articleStar"></div>
+            <div class="CG2-seriesList__articleIcon">
+              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+            </div>
             <div class="CG2-seriesList__articleOrder">第3回</div>
             <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
             <div class="CG2-seriesList__articleDate">4/16</div>
@@ -1376,7 +1387,8 @@ tag:
           }
         }
         .CG2-seriesList__itemTitle{
-          font-size: 22px;
+          font-size: 25px;
+          font-weight: bold;
           line-height: 1.4;
           font-family: $fontSerif;
           text-align: center;
@@ -1385,6 +1397,7 @@ tag:
           height: 2.8em;
           @include max-screen( $breakpoint-middle ) {
             font-size: 20px;
+            font-weight: normal;
             height: auto;
             padding-top: 14px;
           }
@@ -1463,30 +1476,50 @@ tag:
           }
         }
       }
-        .CG2-seriesList__articleStar{
-          opacity: 0.25;
-          vertical-align: middle;
-          text-align: center;
+        // .CG2-seriesList__articleStar{
+        //   opacity: 0.25;
+        //   vertical-align: middle;
+        //   text-align: center;
+        //   display: table-cell;
+        //   width: 56px;
+        //   padding: 15px 0;
+        //   .CG2-seriesList__item--fullWidth &{
+        //     padding-top: 24px;
+        //     padding-bottom: 24px;
+        //     @include max-screen( $breakpoint-middle ) {
+        //       padding-top: 15px;
+        //       padding-bottom: 15px;
+        //     }
+        //   }
+        //   &:after{
+        //     @include icon( star );
+        //     font-size: 24px;
+        //     position: relative;
+        //     top: -0.1em;
+        //     display: block;
+        //   }
+        //   @include max-screen( $breakpoint-middle ) {
+        //     width: 36px;
+        //     &:after{
+        //       font-size: 18px;
+        //     }
+        //   }
+        // }
+        .CG2-seriesList__articleIcon{
+          font-size: 16px;
           display: table-cell;
-          width: 56px;
-          padding: 15px 0;
+          vertical-align: middle;
+          box-sizing: border-box;
+          width: 1px;
+          padding: 0 15px;
           .CG2-seriesList__item--fullWidth &{
-            padding-top: 24px;
-            padding-bottom: 24px;
-            @include max-screen( $breakpoint-middle ) {
-              padding-top: 15px;
-              padding-bottom: 15px;
-            }
-          }
-          &:after{
-            @include icon( star );
-            font-size: 24px;
-            display: block;
+            font-size: 18px;
           }
           @include max-screen( $breakpoint-middle ) {
-            width: 36px;
-            &:after{
-              font-size: 18px;
+            font-size: 14px;
+            padding: 0 10px;
+            .CG2-seriesList__item--fullWidth &{
+              font-size: 14px;
             }
           }
         }
@@ -1786,7 +1819,6 @@ tag:
 <div class="CG2-series">
   <div class="CG2-series__item">
     <div class="CG2-series__itemHeader">
-      <div class="CG2-series__itemStar"></div>
       <a href="#">
         <div class="CG2-series__itemIcon">
           <span class="CG2-icon-unlock CG2-icon--colored"></span>
@@ -1810,7 +1842,6 @@ tag:
 
   <div class="CG2-series__item CG2-series__item--unread">
     <div class="CG2-series__itemHeader">
-      <div class="CG2-series__itemStar"></div>
       <a href="#">
         <div class="CG2-series__itemIcon">
           <span class="CG2-icon-unlock CG2-icon--colored"></span>
@@ -1864,26 +1895,26 @@ tag:
         background: #fafafa;
       }
     }
-      .CG2-series__itemStar{
-        display: table-cell;
-        vertical-align: middle;
-        box-sizing: border-box;
-        width: 56px;
-        padding: 20px 0 20px 15px;
-        @include max-screen( $breakpoint-middle ) {
-          width: 30px;
-          padding: 15px 0;
-        }
-        &:after{
-          @include icon( star );
-          font-size: 24px;
-          display: block;
-          @include max-screen( $breakpoint-middle ) {
-            font-size: 16px;
-            text-align: center;
-          }
-        }
-      }
+      // .CG2-series__itemStar{
+      //   display: table-cell;
+      //   vertical-align: middle;
+      //   box-sizing: border-box;
+      //   width: 56px;
+      //   padding: 20px 0 20px 15px;
+      //   @include max-screen( $breakpoint-middle ) {
+      //     width: 30px;
+      //     padding: 15px 0;
+      //   }
+      //   &:after{
+      //     @include icon( star );
+      //     font-size: 24px;
+      //     display: block;
+      //     @include max-screen( $breakpoint-middle ) {
+      //       font-size: 16px;
+      //       text-align: center;
+      //     }
+      //   }
+      // }
       .CG2-series__itemHeader a{
         @include resetLink();
         text-decoration: none;
@@ -1913,25 +1944,16 @@ tag:
           display: table-cell;
           vertical-align: middle;
           box-sizing: border-box;
-          width: 55px;
-          padding: 20px 0 20px 15px;
-          .CG2-series__itemStar + a > &:first-child{
-            width: 40px;
-            padding-left: 0;
-          }
-          @include max-screen( $breakpoint-middle ) {
-            width: 30px;
-            padding: 15px 0;
-          }
-          // &:after{
-          //   @include icon( star );
-          //   font-size: 24px;
-          //   display: block;
-          //   @include max-screen( $breakpoint-middle ) {
-          //     font-size: 16px;
-          //     text-align: center;
-          //   }
+          width: 1px;
+          padding: 0 10px 0 15px;
+          // .CG2-series__itemStar + a > &:first-child{
+          //   width: 40px;
+          //   padding-left: 0;
           // }
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 16px;
+            padding: 0 10px 0 15px;
+          }
         }
         .CG2-series__itemTitle{
           font-size: 20px;
@@ -2807,6 +2829,9 @@ article.CG2-article{
         height: auto;
       }
     }
+  }
+  pre{
+    line-height: 1.6;
   }
   code{
     padding: 2px;
