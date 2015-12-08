@@ -73,9 +73,9 @@
 /* ==========================================================================
    general style
    ========================================================================== */
-::-webkit-selection {background: rgba( 174, 217, 17, .7 ); color: #fff; }
-::-moz-selection    {background: rgba( 174, 217, 17, .7 ); color: #fff; }
-::selection         {background: rgba( 174, 217, 17, .7 ); color: #fff; }
+::-webkit-selection {background: rgba( 174, 217, 17, .7 ); text-shadow: none; }
+::-moz-selection    {background: rgba( 174, 217, 17, .7 ); text-shadow: none; }
+::selection         {background: rgba( 174, 217, 17, .7 ); text-shadow: none; }
 
 html{
   color: #242424;
