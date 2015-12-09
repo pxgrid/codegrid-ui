@@ -299,7 +299,7 @@ CG2.Logo3D = ( function () {
 
         'if ( randomSeeds != 0.0 ) {',
 
-          'waveFactor = sin( randomSeeds + time * 10. ) * intensity2 * 20.0;',
+          'waveFactor = sin( randomSeeds + time * 30. ) * intensity2 * 20.0;',
 
         '}',
 

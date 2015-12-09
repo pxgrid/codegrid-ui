@@ -178,6 +178,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var $head = document.querySelector( '.CG2-pageHeader__userHeader' );
   var $nav  = document.querySelector( '.CG2-pageHeader__userMenu' );
 
+  if ( !$head ) { return; }
+
   var navToggle = function () {
 
     $nav.classList.toggle( modifier );
