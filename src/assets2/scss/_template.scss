@@ -526,6 +526,18 @@ templateItem:
 <!-- /.CG2-pageFooter --></footer>
 ```
 
+## 導線無し（フォーム途中など）
+
+```html
+<footer class="CG2-pageFooter CG2-pageFooter--simple">
+  <div class="CG2-pageFooter__inner">
+    <div class="CG2-pageFooter__legalNav">
+      <div class="CG2-pageFooter__company">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></div>
+    </div>
+  </div>
+<!-- /.CG2-pageFooter --></footer>
+```
+
 */
 .CG2-pageFooter{
   color: #767676;
@@ -533,6 +545,9 @@ templateItem:
   padding: 60px 0;
   margin-top: 50px;
   background: #191919;
+  &.CG2-pageFooter--simple{
+    padding: 30px 0;
+  }
   @include max-screen( $breakpoint-middle ) {
     padding: 30px 0;
     .CG2-container + & {
@@ -624,15 +639,26 @@ templateItem:
       display: table-cell;
       width: 20%;
       padding: 90px 28px 40px;
-      @include max-screen( $breakpoint-middle ) {
+      .CG2-pageFooter--simple &{
         display: block;
         width: auto;
-        padding: 0;
+        padding: 30px 28px 50px;
+      }
+      @include max-screen( $breakpoint-middle ) {
+        &,
+        .CG2-pageFooter--simple &{
+          display: block;
+          width: auto;
+          padding: 0;
+        }
       }
       @include print () {
-        display: block;
-        width: auto;
-        padding: 0;
+        &,
+        .CG2-pageFooter--simple &{
+          display: block;
+          width: auto;
+          padding: 0;
+        }
       }
     }
 //---
@@ -767,36 +793,53 @@ templateItem:
     height: 16px;
     margin: -2px 0 0 5px;
   }
-  @include max-screen( $breakpoint-middle ) {
-    font-size: 10px;
+  .CG2-pageFooter--simple &{
+    font-size: 12px;
     text-align: center;
     margin-top: 0;
-    a{
-      color: #fff;
-      display: table;
-      margin: 0 auto;
-    }
     img{
       display: block;
-      width: 100px;
-      height: 25px;
+      width: 120px;
+      height: 30px;
       margin: 5px auto;
     }
   }
-  @include print () {
-    font-size: 10px;
-    text-align: center;
-    margin-top: 0;
-    a{
-      color: #fff;
-      display: table;
-      margin: 0 auto;
+  @include max-screen( $breakpoint-middle ) {
+    &,
+    .CG2-pageFooter--simple &{
+      font-size: 10px;
+      text-align: center;
+      margin-top: 0;
+      a{
+        color: #fff;
+        display: table;
+        margin: 0 auto;
+      }
+      img{
+        display: block;
+        width: 100px;
+        height: 25px;
+        margin: 5px auto;
+      }
     }
-    img{
-      display: block;
-      width: 100px;
-      height: 25px;
-      margin: 5px auto;
+  }
+  @include print () {
+    &,
+    .CG2-pageFooter--simple &{
+      font-size: 10px;
+      text-align: center;
+      margin-top: 0;
+      a{
+        color: #fff;
+        display: table;
+        margin: 0 auto;
+      }
+      img{
+        display: block;
+        width: 100px;
+        height: 25px;
+        margin: 5px auto;
+      }
     }
   }
 }
