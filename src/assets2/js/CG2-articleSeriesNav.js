@@ -86,7 +86,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     var $leaf = $li.querySelector( 'a' ) || $li;
 
-    $leaf.innerText = replace( $leaf.innerText );
+    $leaf.textContent = replace( $leaf.textContent );
 
   } );
 
