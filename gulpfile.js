@@ -8,7 +8,7 @@ var reload       = browserSync.reload;
 var gulp         = require( 'gulp' );
 var aigis        = require( 'gulp-aigis' );
 var autoprefixer = require( 'gulp-autoprefixer' );
-var cmq          = require('gulp-combine-media-queries');
+var mmq          = require( 'gulp-merge-media-queries' );
 var concat       = require( 'gulp-concat' );
 var consolidate  = require( 'gulp-consolidate' );
 var iconfont     = require( 'gulp-iconfont' );
@@ -112,7 +112,7 @@ gulp.task( 'sass', function () {
          .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
          .pipe( rename( { extname: '.min.css' } ) )
-         .pipe( cmq( { log: true } ) )
+         .pipe( mmq( { log: true } ) )
          .pipe( minifyCSS() )
          .pipe( gulp.dest( './build/assets2/css/' ) );
 

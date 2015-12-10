@@ -1605,6 +1605,18 @@ templateItem:
 <!-- /.CG2-pageFooter --></footer>
 ```
 
+## 導線無し（フォーム途中など）
+
+```html
+<footer class="CG2-pageFooter CG2-pageFooter--simple">
+  <div class="CG2-pageFooter__inner">
+    <div class="CG2-pageFooter__legalNav">
+      <div class="CG2-pageFooter__company">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></div>
+    </div>
+  </div>
+<!-- /.CG2-pageFooter --></footer>
+```
+
 */
 .CG2-pageFooter {
   color: #767676;
@@ -1612,6 +1624,8 @@ templateItem:
   padding: 60px 0;
   margin-top: 50px;
   background: #191919; }
+  .CG2-pageFooter.CG2-pageFooter--simple {
+    padding: 30px 0; }
   @media screen and (max-width: 767px) {
     .CG2-pageFooter {
       padding: 30px 0; }
@@ -1643,7 +1657,7 @@ templateItem:
   display: table;
   width: 1072px;
   margin: 0 auto; }
-  @media screen and (max-width: 1072px) {
+  @media screen and (max-width: 1100px) {
     .CG2-pageFooter__inner {
       width: auto; } }
   @media screen and (max-width: 767px) {
@@ -1699,13 +1713,19 @@ templateItem:
   display: table-cell;
   width: 20%;
   padding: 90px 28px 40px; }
+  .CG2-pageFooter--simple .CG2-pageFooter__legalNav {
+    display: block;
+    width: auto;
+    padding: 30px 28px 50px; }
   @media screen and (max-width: 767px) {
-    .CG2-pageFooter__legalNav {
+    .CG2-pageFooter__legalNav,
+    .CG2-pageFooter--simple .CG2-pageFooter__legalNav {
       display: block;
       width: auto;
       padding: 0; } }
   @media print {
-    .CG2-pageFooter__legalNav {
+    .CG2-pageFooter__legalNav,
+    .CG2-pageFooter--simple .CG2-pageFooter__legalNav {
       display: block;
       width: auto;
       padding: 0; } }
@@ -1858,30 +1878,45 @@ templateItem:
     width: 64px;
     height: 16px;
     margin: -2px 0 0 5px; }
+  .CG2-pageFooter--simple .CG2-pageFooter__company {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0; }
+    .CG2-pageFooter--simple .CG2-pageFooter__company img {
+      display: block;
+      width: 120px;
+      height: 30px;
+      margin: 5px auto; }
   @media screen and (max-width: 767px) {
-    .CG2-pageFooter__company {
+    .CG2-pageFooter__company,
+    .CG2-pageFooter--simple .CG2-pageFooter__company {
       font-size: 10px;
       text-align: center;
       margin-top: 0; }
-      .CG2-pageFooter__company a {
+      .CG2-pageFooter__company a,
+      .CG2-pageFooter--simple .CG2-pageFooter__company a {
         color: #fff;
         display: table;
         margin: 0 auto; }
-      .CG2-pageFooter__company img {
+      .CG2-pageFooter__company img,
+      .CG2-pageFooter--simple .CG2-pageFooter__company img {
         display: block;
         width: 100px;
         height: 25px;
         margin: 5px auto; } }
   @media print {
-    .CG2-pageFooter__company {
+    .CG2-pageFooter__company,
+    .CG2-pageFooter--simple .CG2-pageFooter__company {
       font-size: 10px;
       text-align: center;
       margin-top: 0; }
-      .CG2-pageFooter__company a {
+      .CG2-pageFooter__company a,
+      .CG2-pageFooter--simple .CG2-pageFooter__company a {
         color: #fff;
         display: table;
         margin: 0 auto; }
-      .CG2-pageFooter__company img {
+      .CG2-pageFooter__company img,
+      .CG2-pageFooter--simple .CG2-pageFooter__company img {
         display: block;
         width: 100px;
         height: 25px;
@@ -4966,11 +5001,17 @@ article.CG2-article {
         article.CG2-article section.CG2-article__rel h1 {
           font-size: 12px;
           margin-bottom: 3px; } }
+    article.CG2-article section.CG2-article__rel p {
+      margin: 1em 0; }
     article.CG2-article section.CG2-article__rel ul {
       margin: 0;
       padding: 0 0 0 20px; }
     article.CG2-article section.CG2-article__rel li {
       margin: 0; }
+    article.CG2-article section.CG2-article__rel > *:first-child {
+      margin-top: 0; }
+    article.CG2-article section.CG2-article__rel > *:last-child {
+      margin-bottom: 0; }
   article.CG2-article aside {
     color: #787878;
     font-size: 14px;
@@ -4985,6 +5026,10 @@ article.CG2-article {
       margin: 0; }
     article.CG2-article aside p {
       margin: 0; }
+    article.CG2-article aside > *:first-child {
+      margin-top: 0; }
+    article.CG2-article aside > *:last-child {
+      margin-bottom: 0; }
 
 @media print {
   article.CG2-article {
@@ -5003,7 +5048,24 @@ article.CG2-article {
       article.CG2-article figure img {
         box-sizing: border-box;
         display: block;
-        border: 1px solid #d8d8d8; } }
+        border: 1px solid #d8d8d8; }
+    article.CG2-article code {
+      padding: 2px;
+      background: #f4f4f4; }
+    article.CG2-article section.CG2-article__rel {
+      font-size: 14px;
+      line-height: 1.6;
+      border: 1px solid #d8d8d8;
+      padding: 19px; }
+      article.CG2-article section.CG2-article__rel h1 {
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0; }
+      article.CG2-article section.CG2-article__rel ul {
+        margin: 0;
+        padding: 0 0 0 20px; }
+      article.CG2-article section.CG2-article__rel li {
+        margin: 0; } }
 
 /* 旧Jade 用
    ========================================================================== */
@@ -5048,6 +5110,59 @@ article.CG2-article .ImgBox-body {
     display: block;
     max-width: 100%;
     height: auto; }
+
+article.CG2-article .Column {
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid #d8d8d8;
+  padding: 19px; }
+  @media screen and (max-width: 767px) {
+    article.CG2-article .Column {
+      padding: 14px; } }
+  article.CG2-article .Column p {
+    margin: 1em 0; }
+  article.CG2-article .Column ul {
+    margin: 0;
+    padding: 0 0 0 20px; }
+  article.CG2-article .Column li {
+    margin: 0; }
+
+article.CG2-article .Column-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0; }
+  @media screen and (max-width: 767px) {
+    article.CG2-article .Column-title {
+      font-size: 12px;
+      margin-bottom: 3px; } }
+
+article.CG2-article .Column-body > *:first-child {
+  margin-top: 0; }
+
+article.CG2-article .Column-body > *:last-child {
+  margin-bottom: 0; }
+
+article.CG2-article .Note {
+  color: #787878;
+  font-size: 14px;
+  margin: 2em 0; }
+  @media screen and (max-width: 767px) {
+    article.CG2-article .Note {
+      font-size: 10px;
+      margin: 1.6em 0; } }
+  article.CG2-article .Note p {
+    margin: 0; }
+
+article.CG2-article .Note-title {
+  font-size: 100%;
+  font-weight: bold;
+  margin: 0; }
+
+article.CG2-article .Note-body > *:first-child {
+  margin-top: 0; }
+
+article.CG2-article .Note-body > *:last-child {
+  margin-bottom: 0; }
 
 /* ==========================================================================
    CG2-articlePagination
