@@ -64,6 +64,23 @@ sizes
   <a class="CG2-button CG2-button--fullWidth" href="#">button</a>
 </p>
 ```
+
+disabled
+```html
+<p>
+  <a class="CG2-button CG2-button--disabled" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--primary CG2-button--disabled" href="#">primary button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--action CG2-button--disabled" href="#">action button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--setting CG2-button--disabled" href="#">setting button</a>
+</p>
+```
+
 progress
 ```html
 <p>
@@ -78,10 +95,17 @@ progress
   box-sizing: border-box;
   position: relative;
   display: inline-block;
-  border-radius: 2px;
-  border: none;
+  border: 1px solid #707070;
   padding: 0.6em 1.8em;
+  border-radius: 2px;
   background: #707070;
+  box-shadow: 0 0 0 rgba( 0, 0, 0, 0.1 );
+  transition: all .2s;
+  &:hover:not( .CG2-button--disabled ):not( .CG2-button--progress ){
+    box-shadow: 0 0 3px #707070;
+    background: lighten( #707070, 10% );
+    transition: all .2s;
+  }
   @include max-screen( $breakpoint-middle ) {
     font-size: 12px;
   }
@@ -117,13 +141,33 @@ progress
   //   background: #10a040;
   // }
   &.CG2-button--primary{
+    border-color: #10a040;
     background: #10a040;
+    &:hover:not( .CG2-button--disabled ):not( .CG2-button--progress ){
+      box-shadow: 0 0 3px #10a040;
+      background: lighten( #10a040, 10% );
+    }
   }
   &.CG2-button--action{
+    border-color: #282828;
     background: #282828;
+    &:hover:not( .CG2-button--disabled ):not( .CG2-button--progress ){
+      box-shadow: 0 0 3px #282828;
+      background: lighten( #282828, 10% );
+    }
   }
   &.CG2-button--setting{
+    border-color: #767676;
     background: #767676;
+    &:hover:not( .CG2-button--disabled ):not( .CG2-button--progress ){
+      box-shadow: 0 0 3px #767676;
+      background: lighten( #767676, 10% );
+    }
+  }
+  &.CG2-button--disabled{
+    cursor: not-allowed;
+    border-color: #999;
+    background: #D8D8D8;
   }
   &.CG2-button--progress{
     color: transparent;
