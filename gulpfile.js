@@ -108,6 +108,7 @@ gulp.task( 'js', function () {
 gulp.task( 'sass', function () {
 
   return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
+         .pipe( plumber() )
          .pipe( sass( { bundleExec: true } ) )
          .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
