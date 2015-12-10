@@ -73,9 +73,9 @@
 /* ==========================================================================
    general style
    ========================================================================== */
-::-webkit-selection {background: rgba( 174, 217, 17, .7 ); text-shadow: none; }
-::-moz-selection    {background: rgba( 174, 217, 17, .7 ); text-shadow: none; }
-::selection         {background: rgba( 174, 217, 17, .7 ); text-shadow: none; }
+::-webkit-selection {background: rgba( 174, 217, 17, .6 ); text-shadow: none; }
+::-moz-selection    {background: rgba( 174, 217, 17, .6 ); text-shadow: none; }
+::selection         {background: rgba( 174, 217, 17, .6 ); text-shadow: none; }
 
 html{
   color: #242424;
@@ -92,7 +92,7 @@ html{
 
 body{
   margin:0;
-  background: #fff;
+  background: #FFF;
   min-width: 1052px;
   @include max-screen( $breakpoint-middle ) {
     min-width: 0;

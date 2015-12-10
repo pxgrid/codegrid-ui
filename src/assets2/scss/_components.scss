@@ -89,21 +89,21 @@ progress
 ```
 */
 .CG2-button{
-  color: #fff;
+  color: #FFF;
   font-size: 14px;
   text-decoration: none;
   box-sizing: border-box;
   position: relative;
   display: inline-block;
-  border: 1px solid #707070;
+  border: 1px solid #777;
   padding: 0.6em 1.8em;
   border-radius: 2px;
-  background: #707070;
+  background: #777;
   box-shadow: 0 0 0 rgba( 0, 0, 0, 0.1 );
   transition: all .2s;
   &:hover:not( .CG2-button--disabled ):not( .CG2-button--progress ){
-    box-shadow: 0 0 3px #707070;
-    background: lighten( #707070, 10% );
+    box-shadow: 0 0 3px #777;
+    background: lighten( #777, 10% );
     transition: all .2s;
   }
   @include max-screen( $breakpoint-middle ) {
@@ -157,17 +157,17 @@ progress
     }
   }
   &.CG2-button--setting{
-    border-color: #767676;
-    background: #767676;
+    border-color: #777;
+    background: #777;
     &:hover:not( .CG2-button--disabled ):not( .CG2-button--progress ){
-      box-shadow: 0 0 3px #767676;
-      background: lighten( #767676, 10% );
+      box-shadow: 0 0 3px #777;
+      background: lighten( #777, 10% );
     }
   }
   &.CG2-button--disabled{
     cursor: not-allowed;
     border-color: #999;
-    background: #D8D8D8;
+    background: #DBDBDB;
   }
   &.CG2-button--progress{
     color: transparent;
@@ -307,7 +307,7 @@ tag:
 */
 
 .CG2-toolButton{
-  color: #fff;
+  color: #FFF;
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -510,7 +510,7 @@ tag:
   border-top: 1px solid #5c5c5c;
   margin: 80px -28px;
   @include max-screen( $breakpoint-middle ) {
-    border-color: #D8D8D8;
+    border-color: #DBDBDB;
     margin: 50px -10px;
   }
 }
@@ -581,7 +581,7 @@ section.CG2-customers{
 .CG2-customers__logos{
   text-align: center;
   padding: 10px 30px;
-  background: #fff;
+  background: #FFF;
   @include max-screen( $breakpoint-middle ) {
     padding: 10px;
   }
@@ -1019,7 +1019,7 @@ tag:
     display: inline-block;
     width: 120px;
     padding-right: 30px;
-    border: 1px solid #D8D8D8;
+    border: 1px solid #DBDBDB;
     border-radius: 3px;
     height: 2.2em;
   }
@@ -1034,7 +1034,7 @@ tag:
       position: absolute;
       display: block;
       width: 120px;
-      border: 1px solid #D8D8D8;
+      border: 1px solid #DBDBDB;
       border-radius: 3px;
       margin: -1px;
       background: #FFF;
@@ -1046,7 +1046,7 @@ tag:
       vertical-align: middle;
       display: table-cell;
       padding: 2px 40px;
-      border-left: 1px solid #D8D8D8;
+      border-left: 1px solid #DBDBDB;
       margin: 0;
       &:first-child{
         border-left: none;
@@ -1063,7 +1063,7 @@ tag:
         }
       }
       &.CG2-compactNav__item--current{
-        color: #fff;
+        color: #FFF;
         display: block;
         background: #282828;
         @include max-screen( $breakpoint-middle ) {
@@ -1351,7 +1351,7 @@ tag:
   }
     .CG2-seriesList__item{
       @include blurry-parent();
-      color: #fff;
+      color: #FFF;
       box-sizing: border-box;
       width: calc( 50% - 4px );
       padding: 30px 28px;
@@ -1501,10 +1501,10 @@ tag:
         display: table;
         line-height: 1.2;
         width: 100%;
-        border-top: 1px solid #fff;
-        border-bottom: 1px solid #fff;
+        border-top: 1px solid #FFF;
+        border-bottom: 1px solid #FFF;
         margin-bottom: -1px;
-        background: rgba( 255, 255, 255, 0.05 );
+        background: rgba( 255, 255, 255, 0.1 );
         &.CG2-seriesList__article--unread{
           box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
           background: rgba( 255, 255, 255, 0.2 );
@@ -1697,7 +1697,7 @@ tag:
         display: block;
         width: 100%;
         padding: 20px;
-        border-bottom: 1px solid #D8D8D8;
+        border-bottom: 1px solid #DBDBDB;
         &:hover{
         }
         &:before{
@@ -1711,7 +1711,7 @@ tag:
           width: 100%;
           padding: 0 20px;
           transform: skewX( 20deg );
-          background: #ddd;
+          background: #EEE;
           transition: all .3s;
         }
         &:hover:before{
@@ -1775,7 +1775,7 @@ templateItem:
 */
 .CG2-seriesHeader{
   @include blurry-parent();
-  color: #fff;
+  color: #FFF;
 }
   .CG2-seriesHeader__inner{
     box-sizing: border-box;
@@ -1931,12 +1931,12 @@ tag:
       z-index: 1;
       display: table;
       width: 100%;
-      border-top: 1px solid #d8d8d8;
-      border-bottom: 1px solid #d8d8d8;
+      border-top: 1px solid #DBDBDB;
+      border-bottom: 1px solid #DBDBDB;
       margin-bottom: 20px;
       .CG2-series__item--unread &{
-        color: #787878;
-        background: #fafafa;
+        color: #777;
+        background: #EEE;
       }
     }
       // .CG2-series__itemStar{
@@ -2192,7 +2192,7 @@ tag:
 
 .CG2-articleHeader{
   @include blurry-parent();
-  color: #fff;
+  color: #FFF;
 }
   .CG2-articleHeader__inner{
     position: relative;
@@ -2345,7 +2345,7 @@ tag:
 
 .CG2-articleHeader{
   color: #000;
-  background: #fff;
+  background: #FFF;
   border-bottom: 1px solid #000;
 }
   .CG2-articleHeader__inner{
@@ -2498,7 +2498,7 @@ section.CG2-articleTOC{
 }
   header.CG2-articleTOC__header{
     padding-bottom: 8px;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #DBDBDB;
     margin-bottom: 1em;
     h1{
       font-size: 28px;
@@ -2669,7 +2669,7 @@ tag:
   // top: 0;
   width: 150px;
   padding-top: 40px;
-  border-top: 1px solid #d8d8d8;
+  border-top: 1px solid #DBDBDB;
   ul{
     -webkit-writing-mode: vertical-rl;
     -moz-writing-mode: vertical-rl;
@@ -2786,7 +2786,7 @@ tag:
 article.CG2-article{
   font-size: 16px;
   line-height: 1.8;
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #DBDBDB;
   padding-bottom: 30px;
   margin-bottom: 20px;
   @include max-screen( $breakpoint-middle ) {
@@ -2799,7 +2799,7 @@ article.CG2-article{
     font-weight: normal;
     line-height: 1.2;
     padding-bottom: .5em;
-    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #DBDBDB;
     margin: 2.5em 0 1.5em;
     &:first-child{
       margin-top: 0;
@@ -2852,10 +2852,10 @@ article.CG2-article{
     margin: 2em 0;
     th, td{
       padding: .3em 10px;
-      border: 1px solid #d8d8d8;
+      border: 1px solid #DBDBDB;
     }
     th{
-      background: #eee;
+      background: #EEE;
     }
     td{}
   }
@@ -2864,7 +2864,7 @@ article.CG2-article{
     img{
       box-sizing: border-box;
       display: block;
-      border: 1px solid #d8d8d8;
+      border: 1px solid #DBDBDB;
     }
     @include max-screen( $breakpoint-middle ) {
       margin: 1.6em -10px;
@@ -2879,12 +2879,12 @@ article.CG2-article{
   }
   code{
     padding: 2px;
-    background: #f4f4f4;
+    background: #f5f2f0;
   }
   section.CG2-article__rel{
     font-size: 14px;
     line-height: 1.6;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #DBDBDB;
     padding: 19px;
     @include max-screen( $breakpoint-middle ) {
       padding: 14px;
@@ -2916,7 +2916,7 @@ article.CG2-article{
     }
   }
   aside{
-    color: #787878;
+    color: #777;
     font-size: 14px;
     margin: 2em 0;
     @include max-screen( $breakpoint-middle ) {
@@ -2952,10 +2952,10 @@ article.CG2-article{
     margin: 2em 0;
     th, td{
       padding: .3em 10px;
-      border: 1px solid #d8d8d8;
+      border: 1px solid #DBDBDB;
     }
     th{
-      background: #eee;
+      background: #EEE;
     }
     td{}
   }
@@ -2964,17 +2964,17 @@ article.CG2-article{
     img{
       box-sizing: border-box;
       display: block;
-      border: 1px solid #d8d8d8;
+      border: 1px solid #DBDBDB;
     }
   }
   code{
     padding: 2px;
-    background: #f4f4f4;
+    background: #f5f2f0;
   }
   section.CG2-article__rel{
     font-size: 14px;
     line-height: 1.6;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #DBDBDB;
     padding: 19px;
     h1{
       font-size: 14px;
@@ -3010,7 +3010,7 @@ article.CG2-article{
   blockquote{
     color: #777;
     padding: 0 15px;
-    border-left: 4px solid #ddd;
+    border-left: 4px solid #EEE;
     margin: 2em 0;
   }
 
@@ -3048,7 +3048,7 @@ article.CG2-article{
   .Column{
     font-size: 14px;
     line-height: 1.6;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #DBDBDB;
     padding: 19px;
     @include max-screen( $breakpoint-middle ) {
       padding: 14px;
@@ -3084,7 +3084,7 @@ article.CG2-article{
 
 
   .Note{
-    color: #787878;
+    color: #777;
     font-size: 14px;
     margin: 2em 0;
     @include max-screen( $breakpoint-middle ) {
@@ -3726,7 +3726,7 @@ tag:
     width: calc( 33% - 40px );
     min-height: 88px;
     padding: 20px 20px 30px 90px;
-    border-top: 1px solid #d8d8d8;
+    border-top: 1px solid #DBDBDB;
     margin: 0 20px;
     @include max-screen( $breakpoint-middle ) {
       width: auto;
@@ -3773,7 +3773,7 @@ tag:
       }
     }
     .CG2-authorList__title{
-      color: #797979;
+      color: #777;
       font-size: 12px;
       line-height: 1.2;
       margin-bottom: 15px;
@@ -3782,7 +3782,7 @@ tag:
       }
     }
     .CG2-authorList__numOfPosts{
-      color: #797979;
+      color: #777;
       font-size: 12px;
       line-height: 1.2;
     }
@@ -4014,10 +4014,10 @@ tag:
         text-align: center;
         width: 22px;
         height: 22px;
-        border: 1px solid #D8D8D8;
+        border: 1px solid #DBDBDB;
         border-radius: 2px;
         margin-left: 10px;
-        background: #ececec;
+        background: #EEE;
       }
     }
   .CG2-searchOption__body{
@@ -4061,8 +4061,8 @@ tag:
     .CG2-searchOption__list{
       font-size: 14px;
       padding: 16px 28px;
-      border-top: 1px solid #d8d8d8;
-      border-bottom: 1px solid #d8d8d8;
+      border-top: 1px solid #DBDBDB;
+      border-bottom: 1px solid #DBDBDB;
       margin: 0 -28px;
       @include max-screen( $breakpoint-middle ) {
         font-size: 16px;
@@ -4127,7 +4127,7 @@ CG2-searchOption の CG2-searchLayout__result 内で利用する
     }
   }
   .CG2-searchFailed__search{
-    border: 1px solid #d8d8d8;
+    border: 1px solid #DBDBDB;
     @extend %searchInner;
     &:before{
       font-size: 16px;
@@ -4142,7 +4142,7 @@ CG2-searchOption の CG2-searchLayout__result 内で利用する
       padding: 0.5em 10px 0.5em 42px;
       &:hover,
       &:focus{
-        background: #fff;
+        background: #FFF;
       }
     }
   }
@@ -4241,7 +4241,7 @@ tag:
       }
     }
       .CG2-settings__heading{
-        border-bottom: 1px solid #d8d8d8;
+        border-bottom: 1px solid #DBDBDB;
         padding: 0 28px 5px;
         margin: 50px -28px 24px;
         @include max-screen( $breakpoint-middle ) {
@@ -4387,7 +4387,7 @@ tag:
       text-align: center;
       display: table-cell;
       padding: 0 0 10px;
-      border-bottom: 1px solid #d8d8d8;
+      border-bottom: 1px solid #DBDBDB;
       @include max-screen( $breakpoint-middle ) {
         text-align: left;
         display: none;
@@ -4572,7 +4572,7 @@ tag:
         padding: 10px 30px;
         border-radius: 2px;
         margin: 20px auto;
-        background: #e0e0e0;
+        background: #EEE;
         @include max-screen( $breakpoint-middle ) {
           font-size: 16px;
           text-align: center;
@@ -4700,7 +4700,7 @@ tag:
     font-weight: normal;
     vertical-align: middle;
     padding: 15px 40px;
-    border: 1px solid #d8d8d8;
+    border: 1px solid #DBDBDB;
     @include max-screen( $breakpoint-middle ) {
       vertical-align: top;
       width: 50%;

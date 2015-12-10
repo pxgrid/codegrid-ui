@@ -243,14 +243,14 @@ templateItem:
         margin: 0 10px;
       }
       a{
-        color: #949494;
+        color: #999;
         font-size: 14px;
         text-decoration: none;
         display: inline-block;
         padding: 10px;
         margin: -10px;
         &:hover{
-          color: #fff;
+          color: #FFF;
         }
       }
       @include print () {
@@ -263,7 +263,7 @@ templateItem:
       top: 11px;
       left: 180px;
       width: 280px;
-      border :1px solid #767676;
+      border :1px solid #777;
       background: transparent;
       @include max-screen( $breakpoint-middle ) {
         display: none;
@@ -321,7 +321,7 @@ templateItem:
         margin: 0 10px;
       }
       a:not(.CG2-button){
-        color: #797979;
+        color: #777;
         font-size: 14px;
         text-decoration: none;
         display: inline-block;
@@ -348,7 +348,7 @@ templateItem:
         cursor: pointer;
       }
         .CG2-pageHeader__userName{
-          color: #797979;
+          color: #777;
           font-size: 14px;
           text-align: right;
           white-space: nowrap;
@@ -371,7 +371,7 @@ templateItem:
           }
         }
         .CG2-pageHeader__userOpener{
-          color: #ddd;
+          color: #EEE;
           text-align: center;
           display: table-cell;
           vertical-align: middle;
@@ -393,11 +393,11 @@ templateItem:
           display: none;
           width: 100%;
           padding: 10px;
-          border: 1px solid rgba(0,0,0,0.15);
+          border: 1px solid rgba(0,0,0,0.1);
           margin-top: 2px;
           border-radius: 2px;
-          box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-          background: #fff;
+          box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+          background: #FFF;
           &.CG2-pageHeader__userMenu--show{
             display: block;
           }
@@ -408,7 +408,7 @@ templateItem:
             right: 38px;
             display: block;
             border: 7px solid transparent;
-            border-bottom-color: #fff;
+            border-bottom-color: #FFF;
           }
           ul{
             list-style: none;
@@ -540,7 +540,7 @@ templateItem:
 
 */
 .CG2-pageFooter{
-  color: #767676;
+  color: #777;
   font-size: 12px;
   padding: 60px 0;
   margin-top: 50px;
@@ -568,7 +568,7 @@ templateItem:
     }
   }
   a{
-    color: #767676;
+    color: #777;
     text-decoration: none;
     display: block;
     transition: all .2s;
@@ -707,7 +707,7 @@ templateItem:
       position: relative;
       &:before{
         @include icon( 'search' );
-        color: #767676;
+        color: #777;
         font-size: 12px;
         line-height: 0;
         position: absolute;
@@ -811,7 +811,7 @@ templateItem:
       text-align: center;
       margin-top: 0;
       a{
-        color: #fff;
+        color: #FFF;
         display: table;
         margin: 0 auto;
       }
@@ -830,7 +830,7 @@ templateItem:
       text-align: center;
       margin-top: 0;
       a{
-        color: #fff;
+        color: #FFF;
         display: table;
         margin: 0 auto;
       }
@@ -1113,7 +1113,7 @@ html.js-drawer--show .CG2-drawer__bg {
 }
 
 .CG2-drawerBody__user{
-  color: #757575;
+  color: #777;
   table-layout: fixed;
   display: table;
   width: 100%;
@@ -1147,7 +1147,7 @@ html.js-drawer--show .CG2-drawer__bg {
       margin-bottom: 8px;
     }
       a{
-        color: #757575;
+        color: #777;
         text-decoration: none;
         position: relative;
         display: block;
@@ -1262,7 +1262,7 @@ templateItem:
 .CG2-container+.CG2-container,
 .CG2-container+.CG2-container+.CG2-container+.CG2-container,
 .CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container{
-  background: #f0f0f0;
+  background: #EEE;
 }
 .CG2-container__inner{
   box-sizing: border-box;

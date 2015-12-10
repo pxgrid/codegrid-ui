@@ -27,7 +27,7 @@
     position: relative;
     &:before{
       @include icon( 'search' );
-      color: #767676;
+      color: #777;
       font-size: 12px;
       line-height: 0;
       position: absolute;
