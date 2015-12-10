@@ -2453,6 +2453,101 @@ templateItem:
 }
 
 /* ==========================================================================
+   CG2-articleBeforeLogin
+   ========================================================================== */
+/*
+---
+name: articleBeforeLogin
+category:
+  - Blocks/app
+tag:
+  - app-item-article
+---
+
+```html
+<div class="CG2-articleBeforeLogin">
+  <div class="CG2-articleBeforeLogin__lead">この記事を読むには<br>購読の手続きが必要です</div>
+  <div class="CG2-articleBeforeLogin__sub"></div>
+  <div class="CG2-articleBeforeLogin__buttonContainer">
+    <ul>
+      <li><a class="CG2-button CG2-button--primary" href="#">購読の手続きへ</a></li>
+      <li><a class="CG2-button" href="#">購読済みの方はログイン</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+*/
+.CG2-articleBeforeLogin{
+  margin: 80px 0;
+  @include max-screen( $breakpoint-small ) {
+    margin: 40px 0;
+  }
+  & > *:first-child{
+    margin-top: 0;
+  }
+  & > *:last-child{
+    margin-bottom: 0;
+  }
+}
+  .CG2-articleBeforeLogin__lead{
+    font-family: $fontSerif;
+    font-size: 32px;
+    text-align: center;
+    margin: 40px 0;
+    @include max-screen( $breakpoint-small ) {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+  }
+  .CG2-articleBeforeLogin__sub{
+    text-align: center;
+    margin: 40px 0;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 16px;
+    }
+    @include max-screen( $breakpoint-small ) {
+      font-size: 14px;
+      margin: 20px 0;
+    }
+  }
+  .CG2-articleBeforeLogin__buttonContainer{
+    margin: 40px 0;
+    @include max-screen( $breakpoint-small ) {
+      margin: 40px 0;
+    }
+    ul{
+      font-size: 0;
+      list-style: none;
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+    li{
+      font-size: 1rem;
+      display: inline-block;
+      margin: 0 8px;
+      @include max-screen( $breakpoint-small ) {
+        display: block;
+      }
+    }
+    @include max-screen( $breakpoint-small ) {
+      li{
+        margin: 0 0 5px;
+      }
+    }
+    .CG2-button{
+      font-size: 20px;
+      @include max-screen( $breakpoint-small ) {
+        font-size: 16px;
+        text-align: center;
+        padding: .4em 10px;
+        width: 100%;
+      }
+    }
+  }
+
+/* ==========================================================================
    CG2-articleTOC
    ========================================================================== */
 /*
