@@ -189,27 +189,30 @@ gulp.task( 'watch', function () {
 
 } );
 
-gulp.task( 'default', function( callback ) {
+gulp.task( 'default', function ( callback ) {
 
   runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'watch', callback );
 
 } );
 
-gulp.task( 'build', function( callback ) {
+gulp.task( 'build', function ( callback ) {
 
   runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'guide', callback );
 
 } );
 
-gulp.task('deploy', function() {
-  var publisher = awspublish.create({
+gulp.task( 'deploy', function () {
+
+  var publisher = awspublish.create( {
     "params": {
       "Bucket": "ui.codegrid.net"
     },
     "endpoint": "s3-ap-northeast-1.amazonaws.com"
-  });
-  gulp.src('./build/**/*')
-    .pipe(publisher.publish())
-    .pipe(publisher.sync())
-    .pipe(awspublish.reporter());
-})
+  } );
+
+  gulp.src( './build/**/*' )
+    .pipe( publisher.publish() )
+    .pipe( publisher.sync() )
+    .pipe( awspublish.reporter() );
+
+} );
