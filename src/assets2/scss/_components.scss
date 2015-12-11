@@ -2526,7 +2526,7 @@ tag:
     li{
       font-size: 1rem;
       display: inline-block;
-      margin: 0 8px;
+      margin: 0 8px 5px;
       @include max-screen( $breakpoint-small ) {
         display: block;
       }
@@ -2537,9 +2537,8 @@ tag:
       }
     }
     .CG2-button{
-      font-size: 20px;
+      font-size: 16px;
       @include max-screen( $breakpoint-small ) {
-        font-size: 16px;
         text-align: center;
         padding: .4em 10px;
         width: 100%;
