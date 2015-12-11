@@ -4701,7 +4701,7 @@ tag:
   .CG2-articleBeforeLogin__buttonContainer li {
     font-size: 1rem;
     display: inline-block;
-    margin: 0 8px; }
+    margin: 0 8px 5px; }
     @media screen and (max-width: 639px) {
       .CG2-articleBeforeLogin__buttonContainer li {
         display: block; } }
@@ -4709,10 +4709,9 @@ tag:
     .CG2-articleBeforeLogin__buttonContainer li {
       margin: 0 0 5px; } }
   .CG2-articleBeforeLogin__buttonContainer .CG2-button {
-    font-size: 20px; }
+    font-size: 16px; }
     @media screen and (max-width: 639px) {
       .CG2-articleBeforeLogin__buttonContainer .CG2-button {
-        font-size: 16px;
         text-align: center;
         padding: .4em 10px;
         width: 100%; } }
