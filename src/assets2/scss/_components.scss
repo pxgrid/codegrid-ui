@@ -3322,16 +3322,16 @@ tag:
         }
       }
     }
-
-.CG2-articleUtil__socialItems{
-  overflow: hidden;
-}
-.CG2-articleUtil__socialItem{
-  margin-top: 5px;
-  &.CG2-articleUtil__socialItem--twitter{}
-  &.CG2-articleUtil__socialItem--facebook{}
-  iframe{
-    max-width: 100%;
+  .CG2-articleUtil__socialItems{
+    overflow: hidden;
+  }
+  .CG2-articleUtil__socialItem{
+    margin-top: 5px;
+    &.CG2-articleUtil__socialItem--twitter{}
+    &.CG2-articleUtil__socialItem--facebook{}
+    iframe{
+      max-width: 100%;
+    }
   }
 }
 

@@ -1016,7 +1016,7 @@ cat-discussion
   content: "\"; }
 
 span.CG2-icon--colored.CG2-icon-unlock {
-  color: #f89c00; }
+  color: #f8a000; }
 
 span.CG2-icon--colored.CG2-icon-cat-elementary {
   color: #f4db00; }
@@ -5384,9 +5384,11 @@ tag:
 ```html
 <div class="CG2-articleUtil">
   <ul>
-    <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-facebook"></span><span class="CG2-icon-twitter"></span><span class="CG2-icon-gplus"></span> シェアする</button></li>
+    <li><button class="CG2-button CG2-button--action" data-socialitems-append><span class="CG2-icon-facebook"></span><span class="CG2-icon-twitter"></span><span class="CG2-icon-gplus"></span> シェアする</button></li>
     <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-star"></span> お気に入りに登録</button></li>
   </ul>
+  <div class="CG2-articleUtil__socialItems"></div>
+  <script src="https://platform.twitter.com/widgets.js" async></script>
 </div>
 ```
 
@@ -5417,6 +5419,12 @@ tag:
       .CG2-articleUtil .CG2-button [class^="CG2-icon-"] {
         font-size: 12px;
         margin-right: 3px; } }
+  .CG2-articleUtil .CG2-articleUtil__socialItems {
+    overflow: hidden; }
+  .CG2-articleUtil .CG2-articleUtil__socialItem {
+    margin-top: 5px; }
+    .CG2-articleUtil .CG2-articleUtil__socialItem iframe {
+      max-width: 100%; }
 
 @media print {
   .CG2-articleUtil {
