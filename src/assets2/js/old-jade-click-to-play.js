@@ -133,6 +133,7 @@
           'data-livecode-src="<%= iframeSrc %>" ',
           'width="<%= iframeWidth %>" ',
           'height="<%= iframeHeight %>" ',
+          'style="<%= iframeStyle %>" ',
           'allowfullscreen="allowfullscreen" ',
         '></iframe>',
         '<% if ( isDeferredPlay ) { %>',
@@ -160,6 +161,7 @@
       var iframeSrc      = $iframe.getAttribute( 'src' );
       var iframeWidth    = $iframe.getAttribute( 'width' );
       var iframeHeight   = $iframe.getAttribute( 'height' );
+      var iframeStyle    = $iframe.getAttribute( 'style' );
       var isDeferredPlay = $iframe.getAttribute( 'data-trigger' ) === 'data-trigger';
 
       var data = {
@@ -168,6 +170,7 @@
         iframeSrc      : iframeSrc,
         iframeWidth    : iframeWidth,
         iframeHeight   : iframeHeight,
+        iframeStyle    : iframeStyle,
         isDeferredPlay : isDeferredPlay
       }
 

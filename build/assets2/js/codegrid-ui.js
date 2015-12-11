@@ -797,6 +797,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
           'data-livecode-src="<%= iframeSrc %>" ',
           'width="<%= iframeWidth %>" ',
           'height="<%= iframeHeight %>" ',
+          'style="<%= iframeStyle %>" ',
           'allowfullscreen="allowfullscreen" ',
         '></iframe>',
         '<% if ( isDeferredPlay ) { %>',
@@ -824,6 +825,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
       var iframeSrc      = $iframe.getAttribute( 'src' );
       var iframeWidth    = $iframe.getAttribute( 'width' );
       var iframeHeight   = $iframe.getAttribute( 'height' );
+      var iframeStyle    = $iframe.getAttribute( 'style' );
       var isDeferredPlay = $iframe.getAttribute( 'data-trigger' ) === 'data-trigger';
 
       var data = {
@@ -832,6 +834,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
         iframeSrc      : iframeSrc,
         iframeWidth    : iframeWidth,
         iframeHeight   : iframeHeight,
+        iframeStyle    : iframeStyle,
         isDeferredPlay : isDeferredPlay
       }
 
