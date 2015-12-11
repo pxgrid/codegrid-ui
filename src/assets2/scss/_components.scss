@@ -3287,9 +3287,11 @@ tag:
 ```html
 <div class="CG2-articleUtil">
   <ul>
-    <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-facebook"></span><span class="CG2-icon-twitter"></span><span class="CG2-icon-gplus"></span> シェアする</button></li>
+    <li><button class="CG2-button CG2-button--action" data-socialitems-append><span class="CG2-icon-facebook"></span><span class="CG2-icon-twitter"></span><span class="CG2-icon-gplus"></span> シェアする</button></li>
     <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-star"></span> お気に入りに登録</button></li>
   </ul>
+  <div class="CG2-articleUtil__socialItems"></div>
+  <script src="https://platform.twitter.com/widgets.js" async></script>
 </div>
 ```
 
@@ -3320,6 +3322,17 @@ tag:
         }
       }
     }
+
+.CG2-articleUtil__socialItems{
+  overflow: hidden;
+}
+.CG2-articleUtil__socialItem{
+  margin-top: 5px;
+  &.CG2-articleUtil__socialItem--twitter{}
+  &.CG2-articleUtil__socialItem--facebook{}
+  iframe{
+    max-width: 100%;
+  }
 }
 
 @include print () {
