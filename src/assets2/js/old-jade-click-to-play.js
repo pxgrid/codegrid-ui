@@ -131,6 +131,7 @@
         '<iframe ',
           '<% if ( !isDeferredPlay ) { %> src="<%= iframeSrc %>" <% } %> ',
           'data-livecode-src="<%= iframeSrc %>" ',
+          'class="<%= iframeClass %>"',
           'width="<%= iframeWidth %>" ',
           'height="<%= iframeHeight %>" ',
           'style="<%= iframeStyle %>" ',
@@ -153,11 +154,16 @@
 
     Array.prototype.forEach.call( $elAll, function( $el ) {
 
+      var className = $iframe.getAttribute( 'class' );
+      var modifierS = 'CG2-livecode__frame--small';
+      var modifierL = 'CG2-livecode__frame--large';
+
       var $iframe        = $el.querySelector( 'iframe' );
       var $title         = $el.querySelector( 'div.Demo-title' );
       var $text          = $el.querySelector( 'div.Demo-comment' );
       var title          = $title ? $title.innerHTML : '';
       var text           = $text  ? $text.innerHTML  : '';
+      var iframeClass    = /sizeS/.test( className ) ? modifierS : /sizeL/.test( className ) ? modifierL : '';
       var iframeSrc      = $iframe.getAttribute( 'src' );
       var iframeWidth    = $iframe.getAttribute( 'width' );
       var iframeHeight   = $iframe.getAttribute( 'height' );
@@ -167,6 +173,7 @@
       var data = {
         title          : title,
         text           : text,
+        iframeClass    : iframeClass,
         iframeSrc      : iframeSrc,
         iframeWidth    : iframeWidth,
         iframeHeight   : iframeHeight,
