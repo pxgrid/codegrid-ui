@@ -3393,12 +3393,14 @@ tag:
 
     <div class="CG2-seriesList__item">
       <div class="CG2-seriesList__itemHeader">
-        <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span></div>
+        <div class="CG2-seriesList__itemCategory">
+          <a href="#"><span class="CG2-icon-cat-architecture"></span></a>
+        </div>
         <div class="CG2-seriesList__itemTitle">
           <div class="CG2-seriesList__itemTitleInner">Web Fonts 自由自在</div>
         </div>
         <div class="CG2-seriesList__itemUtil">
-          <div class="CG2-toolButton"></div>
+          <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
       <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
@@ -3479,10 +3481,12 @@ tag:
 
     <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
       <div class="CG2-seriesList__itemHeader">
-        <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span>実践</div>
+        <div class="CG2-seriesList__itemCategory">
+          <a href="#"><span class="CG2-icon-cat-architecture"></span>実践</a>
+        </div>
         <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
         <div class="CG2-seriesList__itemUtil">
-          <div class="CG2-toolButton"></div>
+          <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
       <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
@@ -3641,7 +3645,7 @@ tag:
     margin: 0 0 30px; }
     @media screen and (max-width: 767px) {
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemHeader {
-        display: block; } }
+        margin: 0 0 20px; } }
 
 .CG2-seriesList__itemCategory {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
@@ -3650,35 +3654,37 @@ tag:
   width: 40px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__itemCategory {
+      font-size: 0;
       vertical-align: top;
       width: 26px; } }
   .CG2-seriesList__item--fullWidth .CG2-seriesList__itemCategory {
     width: 150px; }
     @media screen and (max-width: 767px) {
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemCategory {
-        font-size: 10px;
         text-align: center;
-        display: block;
-        width: auto; } }
+        vertical-align: top;
+        width: 26px; } }
   .CG2-seriesList__itemCategory a {
     color: inherit;
-    -webkit-transition: all .3s;
-    transition: all .3s; }
+    text-decoration: none;
+    -webkit-transition: all .2s;
+    transition: all .2s; }
   .CG2-seriesList__itemCategory [class^="CG2-icon-cat"] {
     font-size: 40px;
     line-height: 1;
     position: static;
-    margin-right: 15px; }
+    margin-right: 15px;
+    -webkit-transition: all .2s;
+    transition: all .2s; }
     @media screen and (max-width: 767px) {
       .CG2-seriesList__itemCategory [class^="CG2-icon-cat"] {
         font-size: 26px; } }
-    @media screen and (max-width: 767px) {
-      .CG2-seriesList__item--fullWidth .CG2-seriesList__itemCategory [class^="CG2-icon-cat"] {
-        font-size: 30px;
-        display: block;
-        padding-top: 20px;
-        margin-right: 0;
-        margin-bottom: 5px; } }
+  .CG2-seriesList__itemCategory a:hover [class^="CG2-icon-cat"] {
+    -webkit-transform: scale(1.1, 1.1);
+        -ms-transform: scale(1.1, 1.1);
+            transform: scale(1.1, 1.1);
+    opacity: 0.9;
+    text-shadow: 0 0 3px #777; }
 
 .CG2-seriesList__itemTitle {
   font-size: 25px;
@@ -3700,7 +3706,6 @@ tag:
     height: auto; }
     @media screen and (max-width: 767px) {
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemTitle {
-        display: block;
         font-size: 20px; } }
   .CG2-seriesList__itemTitle .CG2-seriesList__itemTitleInner {
     text-align: left;
@@ -3721,11 +3726,7 @@ tag:
     width: 150px; }
     @media screen and (max-width: 767px) {
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemUtil {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: block;
-        width: auto; } }
+        width: 40px; } }
 
 .CG2-seriesList__coverImage {
   pointer-events: none;
@@ -3796,14 +3797,14 @@ tag:
   vertical-align: middle;
   white-space: nowrap;
   display: table-cell;
-  width: 60px;
-  padding: 15px 0; }
+  width: 1%;
+  padding: 15px 15px 15px 0; }
   .CG2-seriesList__articleOrder:first-child {
     padding-left: 20px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__articleOrder {
       font-size: 14px;
-      width: 54px; }
+      padding-right: 10px; }
       .CG2-seriesList__articleOrder:first-child {
         padding-left: 10px; } }
   .CG2-seriesList__item--fullWidth .CG2-seriesList__articleOrder {
@@ -3813,7 +3814,6 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-seriesList__item--fullWidth .CG2-seriesList__articleOrder {
         font-size: 14px;
-        width: 54px;
         padding-top: 15px;
         padding-bottom: 15px; } }
 
@@ -5582,9 +5582,13 @@ section.CG2-livecode {
     box-sizing: border-box;
     width: 100%;
     max-width: 100%;
-    min-height: 300px;
+    min-height: 390px;
     border: none;
     background: #FFF; }
+    .CG2-livecode__body iframe.CG2-livecode__frame--small {
+      min-height: 190px; }
+    .CG2-livecode__body iframe.CG2-livecode__frame--large {
+      min-height: 590px; }
   .CG2-livecode__body pre[class*="language-"] {
     margin: 0;
     resize: vertical; }
