@@ -1481,10 +1481,9 @@ tag:
           }
         }
     .CG2-seriesList__coverImage{
-      @include blurry();
-      -webkit-transition: all .4s;
-          -ms-transition: all .4s;
-              transition: all .4s;
+      &.CG2-seriesList__coverImage--blurry{
+        @include blurry();
+      }
     }
     .CG2-seriesList__articles{
       position: relative;
@@ -1804,7 +1803,9 @@ templateItem:
           }
 
   .CG2-seriesHeader__bg{
-    @include blurry();
+    &.CG2-seriesHeader__bg--blurry{
+      @include blurry();
+    }
   }
 
 /* ==========================================================================
@@ -2302,7 +2303,9 @@ tag:
       }
   }
   .CG2-articleHeader__bg{
-    @include blurry();
+    &.CG2-articleHeader__bg--blurry{
+      @include blurry();
+    }
   }
 
 
