@@ -5173,6 +5173,9 @@ article.CG2-article {
       article.CG2-article figure img {
         box-sizing: border-box;
         display: block;
+        max-width: 100%;
+        width: auto;
+        height: auto;
         border: 1px solid #DBDBDB; }
     article.CG2-article code {
       padding: 2px;
@@ -5232,8 +5235,10 @@ article.CG2-article .ImgBox-comment {
 article.CG2-article .ImgBox-body {
   margin: 3px 0; }
   article.CG2-article .ImgBox-body img {
+    box-sizing: border-box;
     display: block;
     max-width: 100%;
+    width: auto;
     height: auto; }
 
 article.CG2-article .Column {
