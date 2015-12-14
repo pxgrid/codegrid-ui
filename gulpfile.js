@@ -89,7 +89,6 @@ gulp.task( 'js', function () {
           './src/assets2/js/CG2-drawer.js',
           './src/assets2/js/CG2-compactNav.js',
           './src/assets2/js/CG2-tab.js',
-          './src/assets2/js/CG2-searchOption.js',
           './src/assets2/js/CG2-articleSeriesNav.js',
           './src/assets2/js/CG2-livecode.js',
           './src/assets2/js/CG2-articleUtil.js',

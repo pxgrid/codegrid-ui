@@ -850,8 +850,10 @@ tag:
 
   </div>
 </div>
+```
 
 タブ切り替え（表示toggle）の挙動の付与
+（JSとの連携、以下で挙動確認可能）
 
 - `data-cg2-tab-button`を明示する
 - コンテンツ部は`[data-cg2-tab-content]`でグループ化した`[data-cg2-tab-pane]`を用意する
@@ -883,7 +885,6 @@ tag:
   </div>
 
 </div>
-
 ```
 
 */
@@ -1004,6 +1005,18 @@ tag:
 
 別コンポーネント CG2-seriesListHeader 内で利用。利用方法は CG2-seriesListHeader を参照
 
+```html
+<div class="CG2-compactNav">
+  <ul>
+    <li class="CG2-compactNav__item--current"><a href="#">最新順</a></li>
+    <li><a href="#">おすすめ順</a></li>
+    <li><a href="#">お気に入り</a></li>
+    <li><a href="#">無料公開</a></li>
+  </ul>
+  <div class="CG2-compactNav__navOpener"></div>
+</div>
+```
+
 */
 
 
@@ -1075,6 +1088,7 @@ tag:
       a{
         @include resetLink();
         text-decoration: none;
+        position: relative;
         display: block;
         padding: 2px 40px;
         margin: -2px -40px;
@@ -1083,6 +1097,28 @@ tag:
           margin: 0 -10px;
         }
       }
+    li:not( .CG2-compactNav__item--current ) a{
+      &:after{
+        content: '';
+        position: absolute;
+        left: 50%;
+        right: 50%;
+        bottom: 0;
+        display: block;
+        height: 2px;
+        background: #282828;
+        transition: all .2s;
+      }
+      &:hover:after{
+        left: 0;
+        right: 0;
+      }
+      @include max-screen( $breakpoint-middle ) {
+        &:after{
+          content: none;
+        }
+      }
+    }
   .CG2-compactNav__navOpener{
     @include max-screen( $breakpoint-middle ) {
       line-height: 2.2em;
@@ -1142,7 +1178,7 @@ tag:
           <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
-      <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+      <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article CG2-seriesList__article--unread">
           <a href="#">
@@ -1228,7 +1264,7 @@ tag:
           <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
-      <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+      <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article">
           <a href="#">
@@ -1334,14 +1370,6 @@ tag:
   @include print() {
     margin-left: 0;
     margin-right: 0;
-  }
-  .CG2-searchLayout &{
-    margin-left: 0;
-    margin-right: 0;
-    @include max-screen( $breakpoint-middle ) {
-      margin-left: -18px;
-      margin-right: -18px;
-    }
   }
 }
   .CG2-seriesList__inner{
@@ -1481,8 +1509,9 @@ tag:
           }
         }
     .CG2-seriesList__coverImage{
+      @include blurry();
       &.CG2-seriesList__coverImage--blurry{
-        @include blurry();
+        @include blurry--blurry();
       }
     }
     .CG2-seriesList__articles{
@@ -1733,7 +1762,7 @@ templateItem:
       </div>
     </div>
   </div>
-  <div class="CG2-seriesHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
+  <div class="CG2-seriesHeader__bg CG2-seriesHeader__bg--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
 </div>
 ```
 
@@ -1803,8 +1832,9 @@ templateItem:
           }
 
   .CG2-seriesHeader__bg{
+    @include blurry();
     &.CG2-seriesHeader__bg--blurry{
-      @include blurry();
+      @include blurry--blurry();
     }
   }
 
@@ -2151,7 +2181,7 @@ tag:
     </div>
 
   </div>
-  <div class="CG2-articleHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
+  <div class="CG2-articleHeader__bg CG2-articleHeader__bg--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
 </div>
 ```
 
@@ -2303,8 +2333,9 @@ tag:
       }
   }
   .CG2-articleHeader__bg{
+    @include blurry();
     &.CG2-articleHeader__bg--blurry{
-      @include blurry();
+      @include blurry--blurry();
     }
   }
 
@@ -3876,308 +3907,6 @@ tag:
       line-height: 1.2;
     }
 
-/* ==========================================================================
-   CG2-searchLayout
-   ========================================================================== */
-/*
----
-name: searchLayout
-category:
-  - Templates/app
-tag:
-  - app-item
-templateItem:
-  - true
----
-
-サイドバー内で`CG2-searchOption`を利用する
-
-```html
-
-<div class="CG2-searchLayout">
-  <div class="CG2-searchLayout__option">
-
-    <div class="CG2-searchOption">
-      <div class="CG2-searchOption__header">
-        <div class="CG2-searchOption__headerMain">
-          <div class="CG2-searchOption__headerLabel">記事数</div>
-          <div class="CG2-searchOption__headerValue">5</div>
-          <div class="CG2-searchOption__headerUnit">本</div>
-        </div>
-        <div class="CG2-searchOption__headerSub">
-          <div class="CG2-searchOption__opener">絞り込む</div>
-        </div>
-      </div>
-      <div class="CG2-searchOption__body">
-        <div class="CG2-searchOption__heading">
-          <div class="CG2-searchOption__headingMain">
-            検索結果の絞り込み
-          </div>
-          <div class="CG2-searchOption__headingSub">
-            <div class="CG2-searchOption__button">閉じる</div>
-          </div>
-        </div>
-        <div class="CG2-searchOption__list">
-          <ul>
-            <li><label><input type="radio" name="state" checked>すべて</label></li>
-            <li><label><input type="radio" name="state">未読</label></li>
-            <li><label><input type="radio" name="state">既読</label></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="CG2-searchLayout__result">
-
-    検索結果など領域
-
-  </div>
-</div>
-```
-
-*/
-.CG2-searchLayout{
-  @include clearfix();
-  width: 1016px;
-  margin: 0 auto;
-  @include max-screen( $breakpoint-middle ) {
-    width: auto;
-    padding: 0;
-  }
-}
-  .CG2-searchLayout__result{
-    width: 568px;
-    padding: 0 224px;
-    @include max-screen( $breakpoint-middle ) {
-      float: none;
-      width: auto;
-      padding: 0 20px;
-    }
-  }
-  .CG2-searchLayout__option{
-    float: left;
-    width: 192px;
-    margin-right: -192px;
-    @include max-screen( $breakpoint-middle ) {
-      float: none;
-      width: auto;
-      padding: 0 2px;
-      margin-right: 0;
-    }
-  }
-
-/* ==========================================================================
-   CG2-searchOption
-   ========================================================================== */
-/*
----
-name: searchLayout
-category:
-  - Blocks/app
-tag:
-  - app-item
----
-
-主に`CG2-searchLayout`内で利用する
-
-```html
-<div class="CG2-searchOption">
-  <div class="CG2-searchOption__header">
-    <div class="CG2-searchOption__headerMain">
-      <div class="CG2-searchOption__headerLabel">記事数</div>
-      <div class="CG2-searchOption__headerValue">5</div>
-      <div class="CG2-searchOption__headerUnit">本</div>
-    </div>
-    <div class="CG2-searchOption__headerSub">
-      <div class="CG2-searchOption__opener">絞り込む</div>
-    </div>
-  </div>
-  <div class="CG2-searchOption__body">
-    <div class="CG2-searchOption__heading">
-      <div class="CG2-searchOption__headingMain">
-        検索結果の絞り込み
-      </div>
-      <div class="CG2-searchOption__headingSub">
-        <div class="CG2-searchOption__button">閉じる</div>
-      </div>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="state" checked>すべて</label></li>
-        <li><label><input type="radio" name="state">未読</label></li>
-        <li><label><input type="radio" name="state">既読</label></li>
-      </ul>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="favorite" checked>すべて</label></li>
-        <li><label><input type="radio" name="favorite">お気に入り</label></li>
-      </ul>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="paid" checked>すべて</label></li>
-        <li><label><input type="radio" name="paid">お気に入り</label></li>
-      </ul>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="category" checked>すべて</label></li>
-        <li><label><input type="radio" name="category">入門</label></li>
-        <li><label><input type="radio" name="category">実践</label></li>
-        <li><label><input type="radio" name="category">仕様解説</label></li>
-        <li><label><input type="radio" name="category">座談会</label></li>
-        <li><label><input type="radio" name="category">設計</label></li>
-        <li><label><input type="radio" name="category">レポート</label></li>
-        <li><label><input type="radio" name="category">未来・次世代</label></li>
-        <li><label><input type="radio" name="category">仕事術</label></li>
-        <li><label><input type="radio" name="category">アンケート</label></li>
-        <li><label><input type="radio" name="category">デザイン</label></li>
-        <li><label><input type="radio" name="category">インタビュー</label></li>
-        <li><label><input type="radio" name="category">ディカッション</label></li>
-      </ul>
-    </div>
-  </div>
-</div>
-```
-
-*/
-.CG2-searchOption{
-  padding: 0 28px;
-}
-  .CG2-searchOption__header{
-    margin: 0 0 30px;
-    @include max-screen( $breakpoint-middle ) {
-      display: table;
-      width: 100%;
-      margin-bottom: 10px;
-      .CG2-searchOption--show &{
-        display: none;
-      }
-    }
-  }
-    .CG2-searchOption__headerMain{
-      @include max-screen( $breakpoint-middle ) {
-        display: table-cell;
-      }
-    }
-    .CG2-searchOption__headerSub{
-      display: none;
-      @include max-screen( $breakpoint-middle ) {
-        display: table-cell;
-        text-align: right;
-      }
-    }
-    .CG2-searchOption__headerLabel{
-      font-size: 16px;
-      font-family: $fontSerif;
-      @include max-screen( $breakpoint-middle ) {
-        display: none;
-      }
-    }
-    .CG2-searchOption__headerValue{
-      font-size: 72px;
-      line-height: 1;
-      display: inline-block;
-      font-family: $fontCode;
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 42px;
-      }
-    }
-    .CG2-searchOption__headerUnit{
-      font-size: 32px;
-      font-family: $fontSerif;
-      display: inline-block;
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 22px;
-      }
-    }
-    .CG2-searchOption__opener{
-      cursor: pointer;
-      display: inline-block;
-      &:after{
-        @include icon( 'setting' );
-        font-size: 12px;
-        line-height: 22px;
-        text-align: center;
-        width: 22px;
-        height: 22px;
-        border: 1px solid #DBDBDB;
-        border-radius: 2px;
-        margin-left: 10px;
-        background: #EEE;
-      }
-    }
-  .CG2-searchOption__body{
-    @include max-screen( $breakpoint-middle ) {
-      display: none;
-      .CG2-searchOption--show &{
-        display: block;
-      }
-    }
-  }
-
-    .CG2-searchOption__heading{
-      display: table;
-      width: 100%;
-      margin: 15px 0 15px;
-    }
-      .CG2-searchOption__headingMain{
-        font-size: 14px;
-        font-family: $fontSerif;
-        vertical-align: bottom;
-        display: table-cell;
-      }
-        .CG2-searchOption__headingSub{
-          display: none;
-          text-align: right;
-          vertical-align: bottom;
-          @include max-screen( $breakpoint-middle ) {
-            display: table-cell;
-          }
-        }
-          .CG2-searchOption__button{
-            color: #FFF;
-            font-size: 10px;
-            line-height: 1;
-            cursor: pointer;
-            display: inline-block;
-            padding: 6px 10px;
-            background: #000;
-          }
-
-    .CG2-searchOption__list{
-      font-size: 14px;
-      padding: 16px 28px;
-      border-top: 1px solid #DBDBDB;
-      border-bottom: 1px solid #DBDBDB;
-      margin: 0 -28px;
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 16px;
-      }
-      .CG2-searchOption__list + &{
-        margin-top: -1px;
-      }
-      ul{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
-        li{
-          margin: 6px 0;
-        }
-          label{
-            cursor: pointer;
-            display: block;
-          }
-            input{
-              vertical-align: middle;
-              position: relative;
-              top: -0.1em;
-              margin-right: 8px;
-            }
-    }
 
 /* ==========================================================================
    CG2-searchFailed
@@ -4192,6 +3921,7 @@ tag:
 ---
 
 CG2-searchOption の CG2-searchLayout__result 内で利用する
+未使用につき、不要の可能性あり
 
 ```html
 <div class="CG2-searchFailed">

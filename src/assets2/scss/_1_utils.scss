@@ -68,10 +68,11 @@
   left: -10px;
   background-position: 50% 50%;
   background-size: cover;
-  -webkit-filter: blur( 24px );
-  filter: blur( 24px );
   transform: scale( 1.2, 1.2 );
   opacity: .64;
+}
+@mixin blurry--blurry () {
+  filter: blur( 24px );
 }
 
 // print query

@@ -21,7 +21,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
       function toggle ( e ) {
 
-        if ( CG2.screenType !== 'middle' ) { return; }
+        if ( CG2.screenType === 'large' ) { return; }
 
         e.preventDefault();
         $nav.classList.toggle( modifier );

@@ -38,11 +38,11 @@ templateItem:
 
 three.min.js (r72)、Logo3D.jsを読み込み、`new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
 
-<script src="/examples/js/three.min.js"></script>
-<script src="/examples/js/makePNoise1D.js"></script>
-<script src="/examples/js/Logo3D.js"></script>
+<script src="/static/js/three.min.js"></script>
+<script src="/static/js/makePNoise1D.js"></script>
+<script src="/static/js/Logo3D.js"></script>
 <script>
-var logo3d = new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
+var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 </script>
 
 */
@@ -664,48 +664,69 @@ tag:
     </div>
     <div class="CG2-customerQuotes__timeline">
       <a class="twitter-timeline" href="https://twitter.com/hashtag/codegrid" data-widget-id="628812249822408705">#codegrid のツイート</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>
     </div>
   </div>
 </section>
 ```
 
-JSで大きさを調整する必要あり
+JSでtwitterのiframe内にstyleを挿入してmax-widthを打ち消す大きさを調整する必要がある
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
-// Twitter 埋め込みの横幅上限突破用
-$( window ).on( 'load', function () {
+window.addEventListener( 'load', function () {
+  
+  var i,l;
+  var css = [
+    '.EmbeddedTweet, .timeline {',
+      'box-sizing: border-box;',
+      'max-width: none !important;',
+      'width: 100% !important;',
+    '}',
+    '.sandboxroot.env-narrow p{',
+      'font-size: 12px;',
+    '}'
+  ].join( '' );
+  var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
+  
+  for ( i = 0|0, l = iframe.length|0; i < l; i = ( i + 1 )|0 ) {
 
-  var css = '<style>.EmbeddedTweet { box-sizing: border-box;max-width: none !important; width: 100% !important; }</style>';
-
-  $( 'iframe[id^=twitter-widget-' ).each( function () {
-
-    var head = $( this ).contents().find( 'head' );
-    head.append( css );
-
-  } );
+    var doc  = iframe[ i ].contentWindow.document;
+    var head  = doc.querySelector( 'head' );
+    var style = doc.createElement( 'style' );
+    style.innerText = css;
+    head.appendChild( style );
+    
+  }
 
 } );
 </script>
 
-<pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-// Twitter 埋め込みの横幅上限突破用
-$( window ).on( &#039;load&#039;, function () {
+<pre><code>window.addEventListener( 'load', function () {
 
-  var css = &#039;&lt;style&gt;.EmbeddedTweet { box-sizing: border-box;max-width: none !important; width: 100% !important; }&lt;/style&gt;&#039;;
+  var i,l;
+  var css = [
+    '.EmbeddedTweet, .timeline {',
+      'box-sizing: border-box;',
+      'max-width: none !important;',
+      'width: 100% !important;',
+    '}',
+    '.sandboxroot.env-narrow p{',
+      'font-size: 12px;',
+    '}'
+  ].join( '' );
+  var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
   
-  $( &#039;iframe[id^=twitter-widget-&#039; ).each( function () {
+  for ( i = 0|0, l = iframe.length|0; i &lt; l; i = ( i + 1 )|0 ) {
 
-    var head = $( this ).contents().find( &#039;head&#039; );
-    head.append( css );
+    var doc  = iframe[ i ].contentWindow.document;
+    var head  = doc.querySelector( 'head' );
+    var style = doc.createElement( 'style' );
+    style.innerText = css;
+    head.appendChild( style );
     
-    } );
-    
-  } );
-  
-&lt;/script&gt;</code></pre>
+  }
+
+} );</code></pre>
 */
 
 section.CG2-customerQuotes{
