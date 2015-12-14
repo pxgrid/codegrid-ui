@@ -3027,6 +3027,9 @@ article.CG2-article{
     img{
       box-sizing: border-box;
       display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
       border: 1px solid #DBDBDB;
     }
   }
@@ -3101,8 +3104,10 @@ article.CG2-article{
     .ImgBox-body{
       margin: 3px 0;
       img{
+        box-sizing: border-box;
         display: block;
         max-width: 100%;
+        width: auto;
         height: auto;
       }
     }
