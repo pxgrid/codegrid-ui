@@ -5474,6 +5474,13 @@ tag:
 
 動く demo として、iframe を埋め込むことができる
 
+iframeには、
+
+- CG2-livecode__frame--small
+- CG2-livecode__frame--large
+  
+を追加クラスとして明示することも可能。その場合それぞれ、iframeの高さが190px、590pxとなる。
+
 ```html
 <section class="CG2-livecode">
   <h1>埋め込みデモのタイトル</h1>
