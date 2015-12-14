@@ -154,13 +154,14 @@
 
     Array.prototype.forEach.call( $elAll, function( $el ) {
 
+      var $iframe = $el.querySelector( 'iframe' );
+      var $title  = $el.querySelector( 'div.Demo-title' );
+      var $text   = $el.querySelector( 'div.Demo-comment' );
+
       var className = $iframe.getAttribute( 'class' );
       var modifierS = 'CG2-livecode__frame--small';
       var modifierL = 'CG2-livecode__frame--large';
 
-      var $iframe        = $el.querySelector( 'iframe' );
-      var $title         = $el.querySelector( 'div.Demo-title' );
-      var $text          = $el.querySelector( 'div.Demo-comment' );
       var title          = $title ? $title.innerHTML : '';
       var text           = $text  ? $text.innerHTML  : '';
       var iframeClass    = /sizeS/.test( className ) ? modifierS : /sizeL/.test( className ) ? modifierL : '';
