@@ -1406,16 +1406,14 @@ tag:
           }
           a{
             color: inherit;
-            transition: all .3s;
-            &:hover{
-              
-            }
+            transition: all .2s;
           }
           [class^="CG2-icon-cat"]{
             font-size: 40px;
             line-height: 1;
             position: static;
             margin-right: 15px;
+            transition: all .2s;
             @include max-screen( $breakpoint-middle ) {
               font-size: 26px;
             }
@@ -1428,6 +1426,11 @@ tag:
                 margin-bottom: 5px;
               }
             }
+          }
+          a:hover [class^="CG2-icon-cat"]{
+            transform: scale( 1.1, 1.1 );
+            opacity: 0.9;
+            text-shadow: 0 0 3px #777;
           }
         }
         .CG2-seriesList__itemTitle{
