@@ -1132,12 +1132,14 @@ tag:
 
     <div class="CG2-seriesList__item">
       <div class="CG2-seriesList__itemHeader">
-        <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span></div>
+        <div class="CG2-seriesList__itemCategory">
+          <a href="#"><span class="CG2-icon-cat-architecture"></span></a>
+        </div>
         <div class="CG2-seriesList__itemTitle">
           <div class="CG2-seriesList__itemTitleInner">Web Fonts 自由自在</div>
         </div>
         <div class="CG2-seriesList__itemUtil">
-          <div class="CG2-toolButton"></div>
+          <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
       <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
@@ -1218,10 +1220,12 @@ tag:
 
     <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
       <div class="CG2-seriesList__itemHeader">
-        <div class="CG2-seriesList__itemCategory"><span class="CG2-icon-cat-architecture"></span>実践</div>
+        <div class="CG2-seriesList__itemCategory">
+          <a href="#"><span class="CG2-icon-cat-architecture"></span>実践</a>
+        </div>
         <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
         <div class="CG2-seriesList__itemUtil">
-          <div class="CG2-toolButton"></div>
+          <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
       <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
@@ -3467,10 +3471,11 @@ section.CG2-livecode{
       box-sizing: border-box;
       width: 100%;
       max-width: 100%;
-      min-height: 300px;
+      min-height: 390px;
       border: none;
       background: #FFF;
-      &.CG2-livecode__frame--small{}
+      &.CG2-livecode__frame--small{min-height: 190px;}
+      &.CG2-livecode__frame--large{min-height: 590px;}
     }
     pre[class*="language-"] {
       margin: 0;
