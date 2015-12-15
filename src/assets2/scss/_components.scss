@@ -771,7 +771,7 @@ tag:
       }
     .CG2-seriesWeekHeader__current{
       span.CG2-seriesWeekHeader__label{ font-size: 20px; }
-      span.CG2-seriesWeekHeader__number{ font-size: 72px; }
+      span.CG2-seriesWeekHeader__number{ font-size: 64px; }
       span.CG2-seriesWeekHeader__text{ font-size: 32px; }
     }
     @include max-screen( $breakpoint-middle ) {
