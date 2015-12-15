@@ -611,14 +611,14 @@ CG2.Logo3D = ( function () {
     if ( !isSmallScreen() ) {
 
       this.width  = Math.max( document.documentElement.clientWidth, 1052 );
-      this.height = document.documentElement.clientHeight - 120;
+      this.height = window.innerHeight - 120;
       this.linebrake( false );
       aspect = this.width / this.height;
 
     } else {
 
       this.width  = document.documentElement.clientWidth;
-      this.height = document.documentElement.clientHeight - 30;
+      this.height = window.innerHeight - 30;
       this.linebrake( true );
       aspect = this.width / this.height;
 

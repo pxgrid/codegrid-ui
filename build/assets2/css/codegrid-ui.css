@@ -1234,8 +1234,8 @@ templateItem:
           </ul>
         </div>
       </div>
+      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
-    <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
   </header>
 </div>
 ```
@@ -3140,8 +3140,10 @@ tag:
 
   </div>
 </div>
+```
 
 タブ切り替え（表示toggle）の挙動の付与
+（JSとの連携、以下で挙動確認可能）
 
 - `data-cg2-tab-button`を明示する
 - コンテンツ部は`[data-cg2-tab-content]`でグループ化した`[data-cg2-tab-pane]`を用意する
@@ -3173,7 +3175,6 @@ tag:
   </div>
 
 </div>
-
 ```
 
 */
@@ -3266,6 +3267,18 @@ tag:
 
 別コンポーネント CG2-seriesListHeader 内で利用。利用方法は CG2-seriesListHeader を参照
 
+```html
+<div class="CG2-compactNav">
+  <ul>
+    <li class="CG2-compactNav__item--current"><a href="#">最新順</a></li>
+    <li><a href="#">おすすめ順</a></li>
+    <li><a href="#">お気に入り</a></li>
+    <li><a href="#">無料公開</a></li>
+  </ul>
+  <div class="CG2-compactNav__navOpener"></div>
+</div>
+```
+
 */
 .CG2-compactNav {
   font-family: sans-serif;
@@ -3329,6 +3342,7 @@ tag:
   .CG2-compactNav a {
     color: inherit;
     text-decoration: none;
+    position: relative;
     display: block;
     padding: 2px 40px;
     margin: -2px -40px; }
@@ -3336,6 +3350,23 @@ tag:
       .CG2-compactNav a {
         padding: 0 10px;
         margin: 0 -10px; } }
+  .CG2-compactNav li:not(.CG2-compactNav__item--current) a:after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    display: block;
+    height: 2px;
+    background: #282828;
+    -webkit-transition: all .2s;
+    transition: all .2s; }
+  .CG2-compactNav li:not(.CG2-compactNav__item--current) a:hover:after {
+    left: 0;
+    right: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-compactNav li:not(.CG2-compactNav__item--current) a:after {
+      content: none; } }
   @media screen and (max-width: 767px) {
     .CG2-compactNav .CG2-compactNav__navOpener {
       line-height: 2.2em;
@@ -3403,7 +3434,7 @@ tag:
           <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
-      <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+      <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article CG2-seriesList__article--unread">
           <a href="#">
@@ -3489,7 +3520,7 @@ tag:
           <a href="#"><div class="CG2-toolButton"></div></a>
         </div>
       </div>
-      <div class="CG2-seriesList__coverImage" style="background-image: url( '../../../img/_01.jpg' )"></div>
+      <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article">
           <a href="#">
@@ -3546,23 +3577,24 @@ tag:
 .CG2-seriesList__authorPic, .CG2-series__authorPic {
   vertical-align: middle;
   display: table-cell;
-  padding-right: 15px; }
+  padding-right: 5px; }
   .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
     display: block; }
   @media screen and (max-width: 767px) {
-    .CG2-seriesList__authorPic, .CG2-series__authorPic {
-      padding-right: 8px; }
-      .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
-        width: 28px;
-        height: 28px; } }
+    .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
+      width: 28px;
+      height: 28px; } }
 
 .CG2-seriesList__authorName, .CG2-series__authorName {
   font-size: 12px;
   vertical-align: middle;
-  display: table-cell; }
+  display: table-cell;
+  padding: 5px 10px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__authorName, .CG2-series__authorName {
-      font-size: 10px; } }
+      font-size: 10px;
+      padding-left: 5px;
+      padding-right: 5px; } }
 
 .CG2-seriesList__authorPicList ul, .CG2-series__authorPicList ul {
   font-size: 0;
@@ -3587,13 +3619,6 @@ tag:
     .CG2-seriesList {
       margin-left: 0;
       margin-right: 0; } }
-  .CG2-searchLayout .CG2-seriesList {
-    margin-left: 0;
-    margin-right: 0; }
-    @media screen and (max-width: 767px) {
-      .CG2-searchLayout .CG2-seriesList {
-        margin-left: -18px;
-        margin-right: -18px; } }
 
 .CG2-seriesList__inner {
   display: -webkit-box;
@@ -3728,7 +3753,7 @@ tag:
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemUtil {
         width: 40px; } }
 
-.CG2-seriesList__coverImage.CG2-seriesList__coverImage--blurry {
+.CG2-seriesList__coverImage {
   pointer-events: none;
   position: absolute;
   z-index: -1;
@@ -3738,12 +3763,13 @@ tag:
   left: -10px;
   background-position: 50% 50%;
   background-size: cover;
-  -webkit-filter: blur(24px);
-  filter: blur(24px);
   -webkit-transform: scale(1.2, 1.2);
       -ms-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
   opacity: .64; }
+  .CG2-seriesList__coverImage.CG2-seriesList__coverImage--blurry {
+    -webkit-filter: blur(24px);
+            filter: blur(24px); }
 
 .CG2-seriesList__articles {
   position: relative;
@@ -3972,7 +3998,7 @@ templateItem:
       </div>
     </div>
   </div>
-  <div class="CG2-seriesHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
+  <div class="CG2-seriesHeader__bg CG2-seriesHeader__bg--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
 </div>
 ```
 
@@ -4041,7 +4067,7 @@ templateItem:
 .CG2-seriesHeader__value {
   margin: 0 0.6em; }
 
-.CG2-seriesHeader__bg.CG2-seriesHeader__bg--blurry {
+.CG2-seriesHeader__bg {
   pointer-events: none;
   position: absolute;
   z-index: -1;
@@ -4051,12 +4077,13 @@ templateItem:
   left: -10px;
   background-position: 50% 50%;
   background-size: cover;
-  -webkit-filter: blur(24px);
-  filter: blur(24px);
   -webkit-transform: scale(1.2, 1.2);
       -ms-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
   opacity: .64; }
+  .CG2-seriesHeader__bg.CG2-seriesHeader__bg--blurry {
+    -webkit-filter: blur(24px);
+            filter: blur(24px); }
 
 /* ==========================================================================
    CG2-series
@@ -4343,7 +4370,7 @@ tag:
     </div>
 
   </div>
-  <div class="CG2-articleHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
+  <div class="CG2-articleHeader__bg CG2-articleHeader__bg--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
 </div>
 ```
 
@@ -4508,7 +4535,7 @@ tag:
         -moz-osx-font-smoothing: grayscale;
         margin: 0 0 .1em .4em; }
 
-.CG2-articleHeader__bg.CG2-articleHeader__bg--blurry {
+.CG2-articleHeader__bg {
   pointer-events: none;
   position: absolute;
   z-index: -1;
@@ -4518,12 +4545,13 @@ tag:
   left: -10px;
   background-position: 50% 50%;
   background-size: cover;
-  -webkit-filter: blur(24px);
-  filter: blur(24px);
   -webkit-transform: scale(1.2, 1.2);
       -ms-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
   opacity: .64; }
+  .CG2-articleHeader__bg.CG2-articleHeader__bg--blurry {
+    -webkit-filter: blur(24px);
+            filter: blur(24px); }
 
 @media print {
   .CG2-articleHeader {
@@ -5968,311 +5996,6 @@ tag:
   line-height: 1.2; }
 
 /* ==========================================================================
-   CG2-searchLayout
-   ========================================================================== */
-/*
----
-name: searchLayout
-category:
-  - Templates/app
-tag:
-  - app-item
-templateItem:
-  - true
----
-
-サイドバー内で`CG2-searchOption`を利用する
-
-```html
-
-<div class="CG2-searchLayout">
-  <div class="CG2-searchLayout__option">
-
-    <div class="CG2-searchOption">
-      <div class="CG2-searchOption__header">
-        <div class="CG2-searchOption__headerMain">
-          <div class="CG2-searchOption__headerLabel">記事数</div>
-          <div class="CG2-searchOption__headerValue">5</div>
-          <div class="CG2-searchOption__headerUnit">本</div>
-        </div>
-        <div class="CG2-searchOption__headerSub">
-          <div class="CG2-searchOption__opener">絞り込む</div>
-        </div>
-      </div>
-      <div class="CG2-searchOption__body">
-        <div class="CG2-searchOption__heading">
-          <div class="CG2-searchOption__headingMain">
-            検索結果の絞り込み
-          </div>
-          <div class="CG2-searchOption__headingSub">
-            <div class="CG2-searchOption__button">閉じる</div>
-          </div>
-        </div>
-        <div class="CG2-searchOption__list">
-          <ul>
-            <li><label><input type="radio" name="state" checked>すべて</label></li>
-            <li><label><input type="radio" name="state">未読</label></li>
-            <li><label><input type="radio" name="state">既読</label></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-  </div>
-  <div class="CG2-searchLayout__result">
-
-    検索結果など領域
-
-  </div>
-</div>
-```
-
-*/
-.CG2-searchLayout {
-  *zoom: 1;
-  width: 1016px;
-  margin: 0 auto; }
-  .CG2-searchLayout:before, .CG2-searchLayout:after {
-    content: "";
-    display: table; }
-  .CG2-searchLayout:after {
-    clear: both; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchLayout {
-      width: auto;
-      padding: 0; } }
-
-.CG2-searchLayout__result {
-  width: 568px;
-  padding: 0 224px; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchLayout__result {
-      float: none;
-      width: auto;
-      padding: 0 20px; } }
-
-.CG2-searchLayout__option {
-  float: left;
-  width: 192px;
-  margin-right: -192px; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchLayout__option {
-      float: none;
-      width: auto;
-      padding: 0 2px;
-      margin-right: 0; } }
-
-/* ==========================================================================
-   CG2-searchOption
-   ========================================================================== */
-/*
----
-name: searchLayout
-category:
-  - Blocks/app
-tag:
-  - app-item
----
-
-主に`CG2-searchLayout`内で利用する
-
-```html
-<div class="CG2-searchOption">
-  <div class="CG2-searchOption__header">
-    <div class="CG2-searchOption__headerMain">
-      <div class="CG2-searchOption__headerLabel">記事数</div>
-      <div class="CG2-searchOption__headerValue">5</div>
-      <div class="CG2-searchOption__headerUnit">本</div>
-    </div>
-    <div class="CG2-searchOption__headerSub">
-      <div class="CG2-searchOption__opener">絞り込む</div>
-    </div>
-  </div>
-  <div class="CG2-searchOption__body">
-    <div class="CG2-searchOption__heading">
-      <div class="CG2-searchOption__headingMain">
-        検索結果の絞り込み
-      </div>
-      <div class="CG2-searchOption__headingSub">
-        <div class="CG2-searchOption__button">閉じる</div>
-      </div>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="state" checked>すべて</label></li>
-        <li><label><input type="radio" name="state">未読</label></li>
-        <li><label><input type="radio" name="state">既読</label></li>
-      </ul>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="favorite" checked>すべて</label></li>
-        <li><label><input type="radio" name="favorite">お気に入り</label></li>
-      </ul>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="paid" checked>すべて</label></li>
-        <li><label><input type="radio" name="paid">お気に入り</label></li>
-      </ul>
-    </div>
-    <div class="CG2-searchOption__list">
-      <ul>
-        <li><label><input type="radio" name="category" checked>すべて</label></li>
-        <li><label><input type="radio" name="category">入門</label></li>
-        <li><label><input type="radio" name="category">実践</label></li>
-        <li><label><input type="radio" name="category">仕様解説</label></li>
-        <li><label><input type="radio" name="category">座談会</label></li>
-        <li><label><input type="radio" name="category">設計</label></li>
-        <li><label><input type="radio" name="category">レポート</label></li>
-        <li><label><input type="radio" name="category">未来・次世代</label></li>
-        <li><label><input type="radio" name="category">仕事術</label></li>
-        <li><label><input type="radio" name="category">アンケート</label></li>
-        <li><label><input type="radio" name="category">デザイン</label></li>
-        <li><label><input type="radio" name="category">インタビュー</label></li>
-        <li><label><input type="radio" name="category">ディカッション</label></li>
-      </ul>
-    </div>
-  </div>
-</div>
-```
-
-*/
-.CG2-searchOption {
-  padding: 0 28px; }
-
-.CG2-searchOption__header {
-  margin: 0 0 30px; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__header {
-      display: table;
-      width: 100%;
-      margin-bottom: 10px; }
-      .CG2-searchOption--show .CG2-searchOption__header {
-        display: none; } }
-
-@media screen and (max-width: 767px) {
-  .CG2-searchOption__headerMain {
-    display: table-cell; } }
-
-.CG2-searchOption__headerSub {
-  display: none; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__headerSub {
-      display: table-cell;
-      text-align: right; } }
-
-.CG2-searchOption__headerLabel {
-  font-size: 16px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__headerLabel {
-      display: none; } }
-
-.CG2-searchOption__headerValue {
-  font-size: 72px;
-  line-height: 1;
-  display: inline-block;
-  font-family: monospace; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__headerValue {
-      font-size: 42px; } }
-
-.CG2-searchOption__headerUnit {
-  font-size: 32px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-  display: inline-block; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__headerUnit {
-      font-size: 22px; } }
-
-.CG2-searchOption__opener {
-  cursor: pointer;
-  display: inline-block; }
-  .CG2-searchOption__opener:after {
-    content: "";
-    font-family: "codegrid-icon";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
-    line-height: 22px;
-    text-align: center;
-    width: 22px;
-    height: 22px;
-    border: 1px solid #DBDBDB;
-    border-radius: 2px;
-    margin-left: 10px;
-    background: #EEE; }
-
-@media screen and (max-width: 767px) {
-  .CG2-searchOption__body {
-    display: none; }
-    .CG2-searchOption--show .CG2-searchOption__body {
-      display: block; } }
-
-.CG2-searchOption__heading {
-  display: table;
-  width: 100%;
-  margin: 15px 0 15px; }
-
-.CG2-searchOption__headingMain {
-  font-size: 14px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-  vertical-align: bottom;
-  display: table-cell; }
-
-.CG2-searchOption__headingSub {
-  display: none;
-  text-align: right;
-  vertical-align: bottom; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__headingSub {
-      display: table-cell; } }
-
-.CG2-searchOption__button {
-  color: #FFF;
-  font-size: 10px;
-  line-height: 1;
-  cursor: pointer;
-  display: inline-block;
-  padding: 6px 10px;
-  background: #000; }
-
-.CG2-searchOption__list {
-  font-size: 14px;
-  padding: 16px 28px;
-  border-top: 1px solid #DBDBDB;
-  border-bottom: 1px solid #DBDBDB;
-  margin: 0 -28px; }
-  @media screen and (max-width: 767px) {
-    .CG2-searchOption__list {
-      font-size: 16px; } }
-  .CG2-searchOption__list + .CG2-searchOption__list {
-    margin-top: -1px; }
-  .CG2-searchOption__list ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; }
-  .CG2-searchOption__list li {
-    margin: 6px 0; }
-  .CG2-searchOption__list label {
-    cursor: pointer;
-    display: block; }
-  .CG2-searchOption__list input {
-    vertical-align: middle;
-    position: relative;
-    top: -0.1em;
-    margin-right: 8px; }
-
-/* ==========================================================================
    CG2-searchFailed
    ========================================================================== */
 /*
@@ -6285,6 +6008,7 @@ tag:
 ---
 
 CG2-searchOption の CG2-searchLayout__result 内で利用する
+未使用につき、不要の可能性あり
 
 ```html
 <div class="CG2-searchFailed">
@@ -6988,11 +6712,11 @@ templateItem:
 
 three.min.js (r72)、Logo3D.jsを読み込み、`new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
 
-<script src="/examples/js/three.min.js"></script>
-<script src="/examples/js/makePNoise1D.js"></script>
-<script src="/examples/js/Logo3D.js"></script>
+<script src="/static/js/three.min.js"></script>
+<script src="/static/js/makePNoise1D.js"></script>
+<script src="/static/js/Logo3D.js"></script>
 <script>
-var logo3d = new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
+var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 </script>
 
 */
@@ -7250,13 +6974,17 @@ tag:
 ```html
 <section class="CG2-bookInfo">
   <h1>CodeGridが書籍になりました</h1>
-  <div class="CG2-bookInfo__images">
-    <img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140"">
-    <img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140"">
-  </div>
-  <div class="CG2-bookInfo__text">
-    <p>書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。</p>
-    <a class="CG2-button" href="#">書籍について</a>
+  <div class="CG2-bookInfo__body">
+    <div class="CG2-bookInfo__images">
+      <ul>
+        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+      </ul>
+    </div>
+    <div class="CG2-bookInfo__text">
+      <p>書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。</p>
+      <a class="CG2-button" href="#">書籍について</a>
+    </div>
   </div>
 </section>
 ```
@@ -7576,48 +7304,69 @@ tag:
     </div>
     <div class="CG2-customerQuotes__timeline">
       <a class="twitter-timeline" href="https://twitter.com/hashtag/codegrid" data-widget-id="628812249822408705">#codegrid のツイート</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>
     </div>
   </div>
 </section>
 ```
 
-JSで大きさを調整する必要あり
+JSでtwitterのiframe内にstyleを挿入してmax-widthを打ち消す大きさを調整する必要がある
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script>
-// Twitter 埋め込みの横幅上限突破用
-$( window ).on( 'load', function () {
+window.addEventListener( 'load', function () {
+  
+  var i,l;
+  var css = [
+    '.EmbeddedTweet, .timeline {',
+      'box-sizing: border-box;',
+      'max-width: none !important;',
+      'width: 100% !important;',
+    '}',
+    '.sandboxroot.env-narrow p{',
+      'font-size: 12px;',
+    '}'
+  ].join( '' );
+  var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
+  
+  for ( i = 0|0, l = iframe.length|0; i < l; i = ( i + 1 )|0 ) {
 
-  var css = '<style>.EmbeddedTweet { box-sizing: border-box;max-width: none !important; width: 100% !important; }</style>';
-
-  $( 'iframe[id^=twitter-widget-' ).each( function () {
-
-    var head = $( this ).contents().find( 'head' );
-    head.append( css );
-
-  } );
+    var doc  = iframe[ i ].contentWindow.document;
+    var head  = doc.querySelector( 'head' );
+    var style = doc.createElement( 'style' );
+    style.innerText = css;
+    head.appendChild( style );
+    
+  }
 
 } );
 </script>
 
-<pre><code>&lt;script src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-// Twitter 埋め込みの横幅上限突破用
-$( window ).on( &#039;load&#039;, function () {
+<pre><code>window.addEventListener( 'load', function () {
 
-  var css = &#039;&lt;style&gt;.EmbeddedTweet { box-sizing: border-box;max-width: none !important; width: 100% !important; }&lt;/style&gt;&#039;;
+  var i,l;
+  var css = [
+    '.EmbeddedTweet, .timeline {',
+      'box-sizing: border-box;',
+      'max-width: none !important;',
+      'width: 100% !important;',
+    '}',
+    '.sandboxroot.env-narrow p{',
+      'font-size: 12px;',
+    '}'
+  ].join( '' );
+  var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
   
-  $( &#039;iframe[id^=twitter-widget-&#039; ).each( function () {
+  for ( i = 0|0, l = iframe.length|0; i &lt; l; i = ( i + 1 )|0 ) {
 
-    var head = $( this ).contents().find( &#039;head&#039; );
-    head.append( css );
+    var doc  = iframe[ i ].contentWindow.document;
+    var head  = doc.querySelector( 'head' );
+    var style = doc.createElement( 'style' );
+    style.innerText = css;
+    head.appendChild( style );
     
-    } );
-    
-  } );
-  
-&lt;/script&gt;</code></pre>
+  }
+
+} );</code></pre>
 */
 section.CG2-customerQuotes {
   *zoom: 1;
@@ -7734,6 +7483,8 @@ category:
   - Blocks/www
 tag:
   - www-item
+templateItem:
+  - true
 ---
 
 ```html
@@ -7794,8 +7545,6 @@ tag:
   left: -10px;
   background-position: 50% 50%;
   background-size: cover;
-  -webkit-filter: blur(24px);
-  filter: blur(24px);
   -webkit-transform: scale(1.2, 1.2);
       -ms-transform: scale(1.2, 1.2);
           transform: scale(1.2, 1.2);
@@ -7823,6 +7572,8 @@ tag:
     <p class="CG2--alignCenter">購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
     <div class="CG2-form__table">
       <table>
+        <col width="30%">
+        <col width="70%">
         <tr>
           <th>
             会社名・団体名
