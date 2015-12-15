@@ -314,13 +314,17 @@ tag:
 ```html
 <section class="CG2-bookInfo">
   <h1>CodeGridが書籍になりました</h1>
-  <div class="CG2-bookInfo__images">
-    <img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140"">
-    <img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140"">
-  </div>
-  <div class="CG2-bookInfo__text">
-    <p>書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。</p>
-    <a class="CG2-button" href="#">書籍について</a>
+  <div class="CG2-bookInfo__body">
+    <div class="CG2-bookInfo__images">
+      <ul>
+        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+      </ul>
+    </div>
+    <div class="CG2-bookInfo__text">
+      <p>書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。</p>
+      <a class="CG2-button" href="#">書籍について</a>
+    </div>
   </div>
 </section>
 ```
@@ -849,6 +853,8 @@ category:
   - Blocks/www
 tag:
   - www-item
+templateItem:
+  - true
 ---
 
 ```html
