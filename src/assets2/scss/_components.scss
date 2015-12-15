@@ -1324,12 +1324,11 @@ tag:
   %authorPic{
     vertical-align: middle;
     display: table-cell;
-    padding-right: 15px;
+    padding-right: 5px;
     img{
       display: block;
     }
     @include max-screen( $breakpoint-middle ) {
-      padding-right: 8px;
       img{
         width: 28px;
         height: 28px;
@@ -1340,8 +1339,11 @@ tag:
     font-size: 12px;
     vertical-align: middle;
     display: table-cell;
+    padding: 5px 10px;
     @include max-screen( $breakpoint-middle ) {
       font-size: 10px;
+      padding-left: 5px;
+      padding-right: 5px;
     }
   }
 %authorPicList{
