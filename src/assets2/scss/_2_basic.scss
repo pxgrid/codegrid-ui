@@ -31,6 +31,10 @@
   background: orange;
 }
 
+#__bs_notify__{
+  pointer-events: none;
+}
+
 /* modifier: align
    ========================================================================== */
 .CG2--alignLeft   {text-align:left !important; }
