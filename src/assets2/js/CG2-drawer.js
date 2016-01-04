@@ -109,6 +109,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   }
 
+  $win.addEventListener( 'keyup', keyup );
 
   //
 
@@ -152,6 +153,16 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     }
 
+  }
+
+  function keyup ( event ) {
+
+    if ( event.keyCode === 27 ) {
+
+      navClose();
+
+    }
+    
   }
 
   function dragstart ( event ) {
