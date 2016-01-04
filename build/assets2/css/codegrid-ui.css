@@ -562,10 +562,13 @@ pre.line-numbers > code {
 .DEBUG {
   color: #FFF;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   padding: 5px;
   margin: 1em 0;
   background: orange; }
+
+#__bs_notify__ {
+  pointer-events: none; }
 
 /* modifier: align
    ========================================================================== */
@@ -639,7 +642,7 @@ pre.line-numbers > code {
 
 html {
   color: #242424;
-  font-family: sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 16px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -2019,8 +2022,9 @@ templateItem:
       </div>
 
     </div>
+    <div class="CG2-drawer__panelLeft" data-drawer-hide></div>
   </div>
-  <div class="CG2-drawer__bg"></div>
+  <div class="CG2-drawer__bg" data-drawer-close></div>
 </div>
 ```
 
@@ -2082,6 +2086,18 @@ html.js-drawer--show .CG2-drawer__panel {
   -ms-transform: translateX(-100%);
   transform: translateX(-100%); }
 
+html.js-drawer--dragging,
+html.js-drawer--dragging * {
+  cursor: -webkit-grabbing;
+  cursor: grabbing; }
+
+html:not(.js-drawer--dragging) .CG2-drawer__panel {
+  -webkit-transition: -webkit-transform .4s, margin .1s;
+  -webkit-transition: margin .1s, -webkit-transform .4s;
+  transition: margin .1s, -webkit-transform .4s;
+  transition: transform .4s, margin .1s;
+  transition: transform .4s, margin .1s, -webkit-transform .4s; }
+
 .CG2-drawer__panel:before {
   content: '';
   position: absolute;
@@ -2111,6 +2127,13 @@ html.js-drawer--show .CG2-drawer__panel {
 html.js-drawer--show .CG2-drawer__panelBody {
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.3); }
 
+.CG2-drawer__panelLeft {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  background: transparent; }
+
 .CG2-drawer__bg {
   position: fixed;
   z-index: -1;
@@ -2121,18 +2144,16 @@ html.js-drawer--show .CG2-drawer__panelBody {
   background: transparent;
   -webkit-transition: background .4s;
   transition: background .4s; }
-
-html:not(.js-drawer--show) .CG2-drawer__bg {
-  -webkit-animation-name: bgOut;
-  animation-name: bgOut;
-  -webkit-animation-duration: .4s;
-  animation-duration: .4s;
-  -webkit-animation-iteration-count: 1;
-  animation-iteration-count: 1; }
-
-html.js-drawer--show .CG2-drawer__bg {
-  z-index: 18;
-  background: rgba(0, 0, 0, 0.3); }
+  html:not(.js-drawer--show) .CG2-drawer__bg {
+    -webkit-animation-name: bgOut;
+    animation-name: bgOut;
+    -webkit-animation-duration: .4s;
+    animation-duration: .4s;
+    -webkit-animation-iteration-count: 1;
+    animation-iteration-count: 1; }
+  html.js-drawer--show .CG2-drawer__bg {
+    z-index: 18;
+    background: rgba(0, 0, 0, 0.3); }
 
 @-webkit-keyframes bgOut {
   0% {
@@ -3058,7 +3079,7 @@ span.CG2-seriesWeekHeader__text {
   font-size: 20px; }
 
 .CG2-seriesWeekHeader__current span.CG2-seriesWeekHeader__number {
-  font-size: 72px; }
+  font-size: 64px; }
 
 .CG2-seriesWeekHeader__current span.CG2-seriesWeekHeader__text {
   font-size: 32px; }
@@ -3208,7 +3229,7 @@ tag:
     margin-top: 20px; }
 
 .CG2-seriesListHeader__articleLength {
-  font-family: sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 1rem;
   margin-bottom: -.6em; }
   @media screen and (max-width: 767px) {
@@ -3235,7 +3256,7 @@ tag:
         font-size: 20px; } }
 
 .CG2-seriesListHeader__nav {
-  font-family: sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 1rem;
   vertical-align: bottom;
   display: inline-block;
@@ -3281,7 +3302,7 @@ tag:
 
 */
 .CG2-compactNav {
-  font-family: sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 1rem;
   vertical-align: bottom; }
   @media screen and (max-width: 767px) {
@@ -3323,7 +3344,7 @@ tag:
       border-left: none; }
     @media screen and (max-width: 767px) {
       .CG2-compactNav li {
-        font-family: sans-serif;
+        font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
         display: block;
         text-align: left;
         display: none;
@@ -6372,7 +6393,7 @@ tag:
       margin-bottom: 20px; } }
 
 .CG2-signupFrom__leadSub {
-  font-family: sans-serif;
+  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
   font-size: 16px; }
   @media screen and (max-width: 767px) {
     .CG2-signupFrom__leadSub {
@@ -6667,7 +6688,7 @@ tag:
   display: inline-block; }
   @media screen and (max-width: 767px) {
     .CG2-paymentTable__value {
-      font-family: sans-serif;
+      font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
       font-size: 100%;
       line-height: inherit; } }
 
