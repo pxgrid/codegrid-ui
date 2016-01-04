@@ -10,6 +10,18 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var i, l;
   var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' );
 
+  // elementMatches(element, selector)
+  // Element.matches for unsupported　browsers
+  var elementMatches = function() {
+		var proto = Element.prototype;
+		var matches = proto.matches = proto.matchesSelector ||
+        proto.mozMatchesSelector || proto.msMatchesSelector ||
+        proto.oMatchesSelector || proto.webkitMatchesSelector;
+		return function(element, selector) {
+			return matches.call(element, selector);
+		};
+	}();
+
   // initialize tabs click event
   Array.prototype.forEach.call( $tabs, function ( $tab ) {
 
@@ -85,7 +97,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
       parent = element.parentElement;
 
-      if ( parent !== null && parent.matches( selector ) ) {
+      if ( parent !== null && elementMatches( parent, selector ) ) {
 
         return parent;
 
