@@ -2906,6 +2906,9 @@ article.CG2-article{
   border-bottom: 1px solid #DBDBDB;
   padding-bottom: 30px;
   margin-bottom: 20px;
+  word-break: break-word; // Non standard for webkit
+  word-break: break-all;
+  hyphens: auto;
   @include max-screen( $breakpoint-middle ) {
     line-height: 2;
     padding: 0 10px;
