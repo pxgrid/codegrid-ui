@@ -2311,25 +2311,46 @@ tag:
       margin: 0;
     }
       li{
+        vertical-align: middle;
+        position: relative;
+        box-sizing: border-box;
         display: table-cell;
+        width: 50%;
         padding: 0 5px;
         margin: 0;
         a{
           @include resetLink();
           text-decoration: none;
+          text-align: left;
+          display: inline-block;
+          &:before{
+            position: absolute;
+            top: 50%;
+            transition: all .2s;
+          }
         }
         &.CG2-articleHeader__pagenationPrev{
           text-align: left;
+          padding: 0 .5em 0 1.2em;
           a:before{
             @include icon( 'left' );
-            margin: 0 .4em .1em 0;
+            line-height: 0;
+            left: 0;
+          }
+          a:hover:before{
+            left: -3px;
           }
         }
         &.CG2-articleHeader__pagenationNext{
           text-align: right;
-          a:after{
+          padding: 0 1.2em 0 .5em;
+          a:before{
             @include icon( 'right' );
-            margin: 0 0 .1em .4em;
+            line-height: 0;
+            right: 0;
+          }
+          a:hover:before{
+            right: -3px;
           }
         }
       }
@@ -3249,25 +3270,75 @@ tag:
     margin: 0;
   }
   li{
-    display: table-cell;
     vertical-align: middle;
-    &.CG2-articlePagination__prev{
-      a:before{
-        @include icon( 'left' );
-        margin: 0 .4em .1em 0;
+    position: relative;
+    box-sizing: border-box;
+    display: table-cell;
+    width: 50%;
+    @include max-screen( $breakpoint-small ) {
+      display: block;
+      width: auto;
+    }
+    &.CG2-articlePagination__prev a:before{
+      @include icon( 'left' );
+    }
+    &.CG2-articlePagination__next a:before{
+      @include icon( 'right' );
+    }
+    &.CG2-articlePagination__prev a:before,
+    &.CG2-articlePagination__next a:before{
+      line-height: 0;
+      position: absolute;
+      top: 50%;
+    }
+    @include min-screen( $breakpoint-small ) {
+      &.CG2-articlePagination__prev{
+        padding: 0 .5em 0 1.2em;
+        a{
+          margin-left: -1.2em;
+          padding-left: 1.2em;
+          &:before{
+            left: 0;
+          }
+          &:hover:before{
+            left: -3px;
+          }
+        }
+      }
+      &.CG2-articlePagination__next{
+        text-align: right;
+        padding: 0 1.2em 0 .5em;
+        a{
+          margin-right: -1.2em;
+          padding-right: 1.2em;
+          &:before{
+            right: 0;
+          }
+          &:hover:before{
+            right: -3px;
+          }
+        }
       }
     }
-    &.CG2-articlePagination__next{
-      text-align: right;
-      a:after{
-        @include icon( 'right' );
-        margin: 0 0 .1em .4em;
+    @include max-screen( $breakpoint-small ) {
+      padding-left: 1.2em;
+      a{
+        padding-left: 1.2em;
+        margin-left: -1.2em;
+        &:before{
+          left: 0;
+        }
       }
     }
   }
   a{
     @include resetLink();
     text-decoration: none;
+    text-align: left;
+    display: inline-block;
+    &:after,&:before{
+      transition: all .2s;
+    }
   }
 }
 
