@@ -68,11 +68,11 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   } )();
 
-  var isDragReady = false;
-  var isDragging  = false;
-  var isHidden    = true;
+  var isDragReady  = false;
+  var isDragging   = false;
+  var isHidden     = true;
+  var isTouchVScrolling = false;
 
-  var _pointerId = null;
   var _pointerId = null;
   var dragStartCoord = { x: 0|0, y: 0|0 };
   var $openEl, $closeEl, $toggleEl;
@@ -100,6 +100,15 @@ window.addEventListener( 'DOMContentLoaded', function () {
   } );
 
   $panel.addEventListener( _pointerstart, dragstart );
+
+  if ( ua.touch ) {
+
+    $panel.addEventListener( _pointerstart, handleTouchVScrollStart );
+    $panel.addEventListener( _pointermove,  handleTouchVScrollMove );
+    $panel.addEventListener( _pointerend,   handleTouchVScrollEnd );
+
+  }
+
 
   //
 
@@ -183,13 +192,12 @@ window.addEventListener( 'DOMContentLoaded', function () {
     isDragging  = false;
 
     $panel.addEventListener( _pointermove, dragmove );
-    $panel.addEventListener( _pointerend, dragend );
+    $panel.addEventListener( _pointerend,  dragend );
 
   }
 
   function dragmove ( event ) {
 
-    // var x;
     var eventCoord;
 
     if ( !ua.touch ) {
@@ -212,8 +220,6 @@ window.addEventListener( 'DOMContentLoaded', function () {
         dragStartCoord.y,
         eventCoord.x,
         eventCoord.y
-        // eventCoord.x,
-        // eventCoord.y
       );
 
       if ( triangle.z > DISTANCE_THRESHOLD ) {
@@ -297,10 +303,30 @@ window.addEventListener( 'DOMContentLoaded', function () {
     $html.className = $html.className.replace( re, '' );
 
     $panel.removeEventListener( _pointermove, dragmove );
-    $panel.removeEventListener( _pointerend, dragend );
+    $panel.removeEventListener( _pointerend,  dragend );
 
     isDragReady = false;
     isDragging  = false;
+
+  }
+
+  function handleTouchVScrollStart ( event ) {
+
+    isTouchVScrolling = true;
+
+  }
+
+  function handleTouchVScrollEnd ( event ) {
+
+    isTouchVScrolling = false;
+
+  }
+
+  function handleTouchVScrollMove ( event ) {
+
+    if ( !isTouchVScrolling ) { return; }
+
+    // console.log( event );
 
   }
 
@@ -347,7 +373,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   };
 
-  function getTriangleSide( x1, y1, x2, y2 ) {
+  function getTriangleSide ( x1, y1, x2, y2 ) {
 
     var x = Math.abs( x1 - x2 );
     var y = Math.abs( y1 - y2 );
@@ -361,12 +387,10 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   }
 
-  function getAngle( triangle ) {
+  function getAngle ( triangle ) {
 
     var cos = triangle.y / triangle.z;
     var radian = Math.acos( cos );
-
-    console.log( 180 / ( Math.PI / radian ) );
 
     return 180 / ( Math.PI / radian );
 

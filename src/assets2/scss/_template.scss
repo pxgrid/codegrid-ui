@@ -1012,6 +1012,12 @@ html.js-drawer--show .CG2-drawer__panel {
       -ms-transform: translateX( -100% );
           transform: translateX( -100% );
 }
+html.js-drawer--dragging,
+html.js-drawer--dragging * {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: grabbing;
+}
 html:not( .js-drawer--dragging ) .CG2-drawer__panel {
   -webkit-transition: -webkit-transform .4s, margin .1s;
           transition:         transform .4s, margin .1s;
