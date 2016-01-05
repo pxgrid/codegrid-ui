@@ -12,15 +12,22 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   // elementMatches(element, selector)
   // Element.matches for unsupported　browsers
-  var elementMatches = function() {
-		var proto = Element.prototype;
-		var matches = proto.matches = proto.matchesSelector ||
-        proto.mozMatchesSelector || proto.msMatchesSelector ||
-        proto.oMatchesSelector || proto.webkitMatchesSelector;
-		return function(element, selector) {
-			return matches.call(element, selector);
-		};
-	}();
+  var elementMatches = function () {
+
+    var proto = Element.prototype;
+    var matches = proto.matches = proto.matchesSelector    ||
+                                  proto.mozMatchesSelector ||
+                                  proto.msMatchesSelector  ||
+                                  proto.oMatchesSelector   ||
+                                  proto.webkitMatchesSelector;
+
+    return function( element, selector ) {
+
+      return matches.call( element, selector );
+
+    };
+
+  }();
 
   // initialize tabs click event
   Array.prototype.forEach.call( $tabs, function ( $tab ) {
