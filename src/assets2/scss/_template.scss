@@ -545,10 +545,14 @@ templateItem:
   padding: 60px 0;
   margin-top: 50px;
   background: #191919;
+  @include max-screen( $breakpoint-base ) {
+    padding-left: 28px;
+    padding-right: 28px;
+  }
   &.CG2-pageFooter--simple{
     padding: 30px 0;
   }
-  @include max-screen( $breakpoint-middle ) {
+  @include max-screen( $breakpoint-small ) {
     padding: 30px 0;
     .CG2-container + & {
       margin-top: 0;
@@ -585,7 +589,10 @@ templateItem:
     @include max-screen( 1100px ) {
       width: auto;
     }
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-base ) {
+      display: block;
+    }
+    @include max-screen( $breakpoint-small ) {
       display: block;
       width: auto;
     }
@@ -600,7 +607,13 @@ templateItem:
       display: table-cell;
       width: 20%;
       padding: 40px 28px;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-base ) {
+        display: table;
+        width: 100%;
+        padding: 0;
+        margin: 0 0 20px;
+      }
+      @include max-screen( $breakpoint-small ) {
         display: none;
       }
       @include print () {
@@ -612,7 +625,12 @@ templateItem:
         img{
           display: block;
         }
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-base ) {
+          display: table-cell;
+          width: 1%;
+          padding-right: 28px;
+        }
+        @include max-screen( $breakpoint-small ) {
           display: none;
         }
         @include print () {
@@ -626,7 +644,14 @@ templateItem:
       width: 60%;
       padding: 38px 58px;
       border: 1px solid #282828;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-base ) {
+        @include clearfix();
+        display: block;
+        width: auto;
+        padding: 20px;
+        margin: 20px 0;
+      }
+      @include max-screen( $breakpoint-small ) {
         display: none;
       }
       @include print () {
@@ -644,7 +669,13 @@ templateItem:
         width: auto;
         padding: 30px 28px 50px;
       }
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-base ) {
+        display: block;
+        width: auto;
+        padding: 0;
+        margin: 20px 0;
+      }
+      @include max-screen( $breakpoint-base ) {
         &,
         .CG2-pageFooter--simple &{
           display: block;
@@ -667,9 +698,17 @@ templateItem:
         list-style: none;
         margin: 0;
         padding: 0;
+        @include max-screen( $breakpoint-base ) {
+          vertical-align: middle;
+          display: table-cell;
+        }
       }
       li{
         margin: 12px 0 0;
+        @include max-screen( $breakpoint-base ) {
+          display: inline-block;
+          margin: 4px 16px 4px 0;
+        }
       }
       a{
         &:before{
@@ -773,7 +812,10 @@ templateItem:
     list-style: none;
     margin: 0;
     padding: 0;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-base ) {
+      text-align: center;
+    }
+    @include max-screen( $breakpoint-small ) {
       display: none;
     }
     @include print () {
@@ -782,6 +824,10 @@ templateItem:
   }
   li{
     margin: 12px 0 0;
+    @include max-screen( $breakpoint-base ) {
+      display: inline-block;
+      margin: 5px 10px 5px 0;
+    }
   }
   a{}
 }
@@ -804,7 +850,10 @@ templateItem:
       margin: 5px auto;
     }
   }
-  @include max-screen( $breakpoint-middle ) {
+  @include max-screen( $breakpoint-base ) {
+    text-align: center;
+  }
+  @include max-screen( $breakpoint-small ) {
     &,
     .CG2-pageFooter--simple &{
       font-size: 10px;
@@ -1285,7 +1334,7 @@ templateItem:
 }
 .CG2-container__inner{
   box-sizing: border-box;
-  width: 1016px;
+  max-width: 1016px;
   padding: 40px 28px;
   margin: 0 auto;
   @include max-screen( $breakpoint-middle ) {

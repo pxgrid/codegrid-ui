@@ -888,24 +888,6 @@ tag:
 ```
 
 */
-%CG2-seriesListHeader__articleLength{
-  white-space: nowrap;
-  vertical-align: bottom;
-  display: inline-block;
-  width: 300px;
-  margin-right: -300px;
-}
-%CG2-seriesListHeader__label{
-  font-family: $fontSerif;
-}
-%CG2-seriesListHeader__number{
-  font-family: $fontCode;
-  line-height: 1;
-}
-%CG2-seriesListHeader__unit{
-  font-family: $fontSerif;
-}
-
 
 .CG2-seriesListHeader{
   font-size: 0;
@@ -921,54 +903,48 @@ tag:
   }
 }
   .CG2-seriesListHeader__articleLength{
-    @extend %CG2-seriesListHeader__articleLength;
     font-family: $fontSansSerif;
     font-size: 1rem;
+    white-space: nowrap;
+    vertical-align: bottom;
+    display: inline-block;
+    width: 300px;
+    margin-right: -300px;
     margin-bottom: -.6em;
+    @include max-screen( $breakpoint-base ) {
+      margin-bottom: -.3em;
+    }
     @include max-screen( $breakpoint-middle ) {
       display: table-cell;
       width: auto;
       margin-right: 0;
     }
     span.CG2-seriesListHeader__label{
-      @extend %CG2-seriesListHeader__label;
       font-size: 16px;
+      font-family: $fontSerif;
       display: block;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-base ) {
         font-size: 12px;
       }
     }
     span.CG2-seriesListHeader__number{
-      @extend %CG2-seriesListHeader__number;
       font-size: 72px;
+      font-family: $fontCode;
+      line-height: 1;
       display: inline-block;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-base ) {
         font-size: 42px;
       }
     }
     span.CG2-seriesListHeader__unit{
-      @extend %CG2-seriesListHeader__unit;
       font-size: 32px;
-      @include max-screen( $breakpoint-middle ) {
+      font-family: $fontSerif;
+      line-height: 1;
+      @include max-screen( $breakpoint-base ) {
         font-size: 20px;
       }
     }
   }
-  // .CG2-seriesListHeader__articleLengthNarrow{
-  //   @extend %CG2-seriesListHeader__articleLength;
-  //   span.CG2-seriesListHeader__label{
-  //     @extend %CG2-seriesListHeader__label;
-  //     vertical-align: middle;
-  //   }
-  //   span.CG2-seriesListHeader__number{
-  //     @extend %CG2-seriesListHeader__number;
-  //     vertical-align: middle;
-  //   }
-  //   span.CG2-seriesListHeader__unit{
-  //     @extend %CG2-seriesListHeader__unit;
-  //     vertical-align: middle;
-  //   }
-  // }
   
 
 
@@ -1024,6 +1000,9 @@ tag:
   font-family: $fontSansSerif;
   font-size: 1rem;
   vertical-align: bottom;
+  @include max-screen( $breakpoint-base ) {
+    font-size: 0.9rem;
+  }
   @include max-screen( $breakpoint-middle ) {
     line-height: 2.2em;
     vertical-align: middle;
@@ -1064,6 +1043,10 @@ tag:
       &:first-child{
         border-left: none;
       }
+      @include max-screen( $breakpoint-base ) {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
       @include max-screen( $breakpoint-middle ) {
         font-family: $fontSansSerif;
         display: block;
@@ -1092,6 +1075,12 @@ tag:
         display: block;
         padding: 2px 40px;
         margin: -2px -40px;
+        @include max-screen( $breakpoint-base ) {
+          padding-left: 20px;
+          padding-right: 20px;
+          margin-left: -20px;
+          margin-right: -20px;
+        }
         @include max-screen( $breakpoint-middle ) {
           padding: 0 10px;
           margin: 0 -10px;
@@ -1362,9 +1351,9 @@ tag:
 
 .CG2-seriesList{
   margin: 0 calc( -50vw + 50% + 8px );
-  @include max-screen( 1072px ) {
-    margin: 0 calc( -536px + 50% + 12px );
-  }
+  // @include max-screen( 1072px ) {
+  //   margin: 0 calc( -536px + 50% + 12px );
+  // }
   @include max-screen( $breakpoint-middle ) {
     margin-left: -18px;
     margin-right: -18px;
@@ -1775,7 +1764,7 @@ templateItem:
 }
   .CG2-seriesHeader__inner{
     box-sizing: border-box;
-    width: 1016px;
+    max-width: 1016px;
     padding: 50px 0;
     margin: 0 auto;
     @include max-screen( $breakpoint-middle ) {
@@ -3924,6 +3913,9 @@ tag:
     padding: 20px 20px 30px 90px;
     border-top: 1px solid #DBDBDB;
     margin: 0 20px;
+    @include max-screen( $breakpoint-base ) {
+      width: calc( 49.9% - 40px );
+    }
     @include max-screen( $breakpoint-middle ) {
       width: auto;
       min-height: 104px;
@@ -4114,14 +4106,21 @@ tag:
 
 .CG2-settings{
   margin: 0 -40px;
+  @include max-screen( 1054px ) {
+    margin: 0 -20px;
+  }
   @include max-screen( $breakpoint-middle ) {
     margin: 0;
   }
 }
   .CG2-settings__inner{
     border-spacing: 40px 0;
+    table-layout: fixed;
     display: table;
     width: 100%;
+    @include max-screen( $breakpoint-base ) {
+      border-spacing: 20px 0;
+    }
     @include max-screen( $breakpoint-middle ) {
       display: block;
       width: auto;
@@ -4130,6 +4129,10 @@ tag:
     .CG2-settings__col{
       display: table-cell;
       padding: 0 28px;
+      @include max-screen( $breakpoint-base ) {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
       @include max-screen( $breakpoint-middle ) {
         display: block;
         padding: 0;
@@ -4139,6 +4142,12 @@ tag:
         border-bottom: 1px solid #DBDBDB;
         padding: 0 28px 5px;
         margin: 50px -28px 24px;
+        @include max-screen( $breakpoint-base ) {
+          padding-left: 14px;
+          padding-right: 14px;
+          margin-left: -14px;
+          margin-right: -14px;
+        }
         @include max-screen( $breakpoint-middle ) {
           font-size: 16px;
           margin: 30px -10px 24px;
@@ -4159,7 +4168,7 @@ tag:
       }
       .CG2-settings__field{
         margin: 24px 0;
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-base ) {
           margin: 10px 0;
         }
       }
@@ -4167,14 +4176,14 @@ tag:
           table{
             border-spacing: 0;
           }
-          @include max-screen( $breakpoint-middle ) {
+          @include max-screen( $breakpoint-base ) {
             @include tableToBlock();
           }
           th{
             font-size: 10px;
             font-weight: normal;
             vertical-align: middle;
-            @include max-screen( $breakpoint-middle ) {
+            @include max-screen( $breakpoint-base ) {
               display: block;
               font-size: 12px;
             }
@@ -4186,7 +4195,7 @@ tag:
             @include wordbreak();
             vertical-align: middle;
             padding-left: 10px;
-            @include max-screen( $breakpoint-middle ) {
+            @include max-screen( $breakpoint-base ) {
               font-size: 16px;
               padding-left: 0;
             }
@@ -4213,6 +4222,7 @@ tag:
             }
             textarea{
               font-size: inherit;
+              box-sizing: border-box;
               width: 100%;
               height: 8em;
               padding: 4px;
@@ -4260,6 +4270,11 @@ tag:
 .CG2-formProgress{
   font-size: 20px;
   margin: 0 -40px 60px;
+  @include max-screen( 1054px ) {
+    font-size: 16px;
+    margin-left: -20px;
+    margin-right: -20px;
+  }
   @include max-screen( $breakpoint-middle ) {
     font-size: 16px;
     margin: 10px 0 20px;
@@ -4272,6 +4287,9 @@ tag:
     width: 100%;
     padding: 0;
     margin: 0;
+    @include max-screen( $breakpoint-base ) {
+      border-spacing: 20px 0;
+    }
     @include max-screen( $breakpoint-middle ) {
       display: block;
       width: auto;
@@ -4584,7 +4602,7 @@ tag:
 .CG2-paymentTable{
   table{
     margin: 40px auto;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-small ) {
       table-layout: fixed;
       margin-top: 20px;
       margin-bottom: 30px;
@@ -4596,7 +4614,7 @@ tag:
     vertical-align: middle;
     padding: 15px 40px;
     border: 1px solid #DBDBDB;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-small ) {
       vertical-align: top;
       width: 50%;
       padding: 20px 10px;
@@ -4610,7 +4628,7 @@ tag:
   tbody td{}
   th:first-child,
   td:first-child{
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-small ) {
       display: none;
     }
   }
@@ -4630,7 +4648,7 @@ tag:
     line-height: normal;
     padding: 0;
     margin: 0 -30px;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-small ) {
       display: block;
       margin: 0;
     }
@@ -4638,7 +4656,7 @@ tag:
     li{
       display: table-cell;
       margin: 0;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         display: block;
         margin-bottom: 20px;
         &:last-child{
@@ -4656,7 +4674,7 @@ tag:
         line-height: 1;
         vertical-align: bottom;
         display: inline-block;
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-small ) {
           font-size: 28px;
         }
       }
@@ -4679,7 +4697,7 @@ tag:
     line-height: normal;
     padding: 0;
     margin: 0 -30px;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-small ) {
       display: block;
       margin: 0;
     }
@@ -4687,14 +4705,14 @@ tag:
     li{
       display: table-cell;
       margin: 0;
-      @include max-screen( $breakpoint-middle ) {
+      @include max-screen( $breakpoint-small ) {
         display: block;
       }
     }
 }
       .CG2-paymentTable__valueText{
         display: inline-block;
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-small ) {
         }
       }
       .CG2-paymentTable__value{
@@ -4703,7 +4721,7 @@ tag:
         line-height: 1;
         vertical-align: bottom;
         display: inline-block;
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-small ) {
           font-family: $fontSansSerif;
           font-size: 100%;
           line-height: inherit;
@@ -4713,7 +4731,7 @@ tag:
         font-size: 16px;
         vertical-align: bottom;
         display: inline-block;
-        @include max-screen( $breakpoint-middle ) {
+        @include max-screen( $breakpoint-small ) {
           font-size: 100%;
         }
       }

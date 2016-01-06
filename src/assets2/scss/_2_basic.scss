@@ -97,7 +97,6 @@ html{
 body{
   margin:0;
   background: #FFF;
-  min-width: 1052px;
   @include max-screen( $breakpoint-middle ) {
     min-width: 0;
   }
