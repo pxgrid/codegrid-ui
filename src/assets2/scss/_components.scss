@@ -2186,9 +2186,13 @@ tag:
     position: relative;
     z-index: 1;
     box-sizing: border-box;
-    width: 1016px;
+    max-width: 1016px;
     padding: 40px 190px;
     margin: 0 auto;
+    @include max-screen( $breakpoint-base ) {
+      padding-left: ( 190 / 1016 ) * 100%;
+      padding-right: ( 190 / 1016 ) * 100%;
+    }
     @include max-screen( $breakpoint-middle ) {
       width: auto;
       padding: 20px;
@@ -2418,10 +2422,10 @@ templateItem:
 */
 .CG2-narrowLayout{
   @include clearfix();
-  width: 1016px;
+  max-width: 1016px;
   margin: 0 auto;
-  @include max-screen( $breakpoint-middle ) {
-    width: auto;
+  @include max-screen( $breakpoint-base ) {
+    max-width: 636px;
     padding: 0 10px;
   }
 }
@@ -2430,9 +2434,8 @@ templateItem:
     box-sizing: border-box;
     width: 100%;
     padding: 0 190px;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-base ) {
       float: none;
-      width: auto;
       padding: 0;
     }
   }
@@ -2441,7 +2444,7 @@ templateItem:
     box-sizing: border-box;
     width: 150px;
     margin-right: -100%;
-    @include max-screen( $breakpoint-middle ) {
+    @include max-screen( $breakpoint-base ) {
       float: none;
       width: auto;
       margin-right: 0;
@@ -2710,6 +2713,7 @@ section.CG2-articleTOC{
     width: auto;
   }
     .CG2-articleTOC__list{
+      font-size: 18px;
       display: block;
     }
     .CG2-articleTOC__util{
@@ -2761,21 +2765,26 @@ tag:
   padding-top: 92px;
   letter-spacing: 0.2em;
   box-sizing: border-box;
-  // position: relative;
-  // width: 1016px;
   margin: 0 auto;
+  @include max-screen( $breakpoint-base ) {
+    padding-top: 0;
+    letter-spacing: 0;
+    margin: 60px 0;
+  }
   @include max-screen( $breakpoint-middle ) {
     display: none;
   }
 }
 .CG2-articleSeriesNav__inner{
   line-height: 1.6;
-  // position: absolute;
-  // left: 0;
-  // top: 0;
   width: 150px;
   padding-top: 40px;
   border-top: 1px solid #DBDBDB;
+  @include max-screen( $breakpoint-base ) {
+    width: auto;
+    padding-top: 0;
+    border-top: none;
+  }
   ul{
     -webkit-writing-mode: vertical-rl;
     -moz-writing-mode: vertical-rl;
@@ -2783,9 +2792,16 @@ tag:
     writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
-    max-height: 500px;
     padding: 0;
     margin: 0 auto 20px;
+    @include max-screen( $breakpoint-base ) {
+      -webkit-writing-mode: horizontal-tb;
+      -moz-writing-mode: horizontal-tb;
+      writing-mode: lr-tb; // IE
+      writing-mode: horizontal-tb;
+      width: auto;
+      margin: 0;
+    }
   }
   li{
     white-space: nowrap;
@@ -2795,9 +2811,16 @@ tag:
     max-height: 500px;
     padding: 0;
     margin: 0;
+    @include max-screen( $breakpoint-base ) {
+      max-height: none;
+      margin: 6px 0;
+    }
     &.CG2-articleSeriesNav__item--current a{
       color: #FFF;
       background: #000;
+      @include max-screen( $breakpoint-base ) {
+        display: block;
+      }
     }
   }
   a{
@@ -3052,8 +3075,8 @@ article.CG2-article{
 @include print () {
 
 article.CG2-article{
+  font-size: 18px;
   line-height: 1.6;
-
   p{
     margin: 1em 0;
   }
