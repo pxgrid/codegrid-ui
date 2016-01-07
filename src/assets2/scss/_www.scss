@@ -740,7 +740,7 @@ section.CG2-customerQuotes{
 }
   header.CG2-customerQuotes__header{
     display: table;
-    width: calc( 100% + 48px );
+    width: calc( 100% + 46px );
     border-bottom: 1px solid #5c5c5c;
     margin: 0 -28px 30px;
     @include max-screen( $breakpoint-middle ) {
