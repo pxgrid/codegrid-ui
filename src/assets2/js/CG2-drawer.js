@@ -81,6 +81,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var $closeEls  = document.querySelectorAll( '[data-drawer-hide]' );
   var $toggleEls = document.querySelectorAll( '[data-drawer-toggle]' );
 
+  if ( !$panel ) { return; }
+
   Array.prototype.forEach.call( $openEls, function( $openEl ) {
 
     $openEl.addEventListener( 'click', navOpen );

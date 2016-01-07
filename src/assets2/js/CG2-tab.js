@@ -10,6 +10,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var i, l;
   var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' );
 
+  if ( $tabs.length === 0 ) { return; }
+
   // elementMatches(element, selector)
   // Element.matches for unsupported　browsers
   var elementMatches = function () {

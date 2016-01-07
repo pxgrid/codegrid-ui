@@ -5,6 +5,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
   // Prism
   var $elAll = document.querySelectorAll( 'pre.code' );
 
+  if ( $elAll.length === 0 ) { return; }
+
   // http://prismjs.com/extending.html#api
   Array.prototype.forEach.call( $elAll, function( $el ) {
 

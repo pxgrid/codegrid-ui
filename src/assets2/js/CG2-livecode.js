@@ -2,8 +2,10 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   'use strict';
 
-  var $elAll   = document.querySelectorAll( '.CG2-livecode[data-livecode-deferredplay]:not( [data-livecode-from-oldjade] )' );
   var modifire = 'CG2-livecode--isRunning';
+  var $elAll   = document.querySelectorAll( '.CG2-livecode[data-livecode-deferredplay]:not( [data-livecode-from-oldjade] )' );
+
+  if ( $elAll.length === 0 ) { return; }
 
   var attach   = function( $el ) {
 

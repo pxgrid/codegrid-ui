@@ -152,6 +152,8 @@
 
     var $elAll = document.querySelectorAll( 'div.Demo' );
 
+    if ( $elAll.length === 0 ) { return; }
+
     Array.prototype.forEach.call( $elAll, function( $el ) {
 
       var $iframe = $el.querySelector( 'iframe' );
