@@ -273,6 +273,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var $closeEls  = document.querySelectorAll( '[data-drawer-hide]' );
   var $toggleEls = document.querySelectorAll( '[data-drawer-toggle]' );
 
+  if ( !$panel ) { return; }
+
   Array.prototype.forEach.call( $openEls, function( $openEl ) {
 
     $openEl.addEventListener( 'click', navOpen );
@@ -650,6 +652,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var i, l;
   var $tabs = document.querySelectorAll( '[data-cg2-tab-button]' );
 
+  if ( $tabs.length === 0 ) { return; }
+
   // elementMatches(element, selector)
   // Element.matches for unsupported　browsers
   var elementMatches = function () {
@@ -860,8 +864,10 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   'use strict';
 
-  var $elAll   = document.querySelectorAll( '.CG2-livecode[data-livecode-deferredplay]:not( [data-livecode-from-oldjade] )' );
   var modifire = 'CG2-livecode--isRunning';
+  var $elAll   = document.querySelectorAll( '.CG2-livecode[data-livecode-deferredplay]:not( [data-livecode-from-oldjade] )' );
+
+  if ( $elAll.length === 0 ) { return; }
 
   var attach   = function( $el ) {
 
@@ -1064,6 +1070,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     var $elAll = document.querySelectorAll( 'div.Demo' );
 
+    if ( $elAll.length === 0 ) { return; }
+
     Array.prototype.forEach.call( $elAll, function( $el ) {
 
       var $iframe = $el.querySelector( 'iframe' );
@@ -1112,6 +1120,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   // Prism
   var $elAll = document.querySelectorAll( 'pre.code' );
+
+  if ( $elAll.length === 0 ) { return; }
 
   // http://prismjs.com/extending.html#api
   Array.prototype.forEach.call( $elAll, function( $el ) {

@@ -610,7 +610,7 @@ CG2.Logo3D = ( function () {
 
     if ( !isSmallScreen() ) {
 
-      this.width  = Math.max( document.documentElement.clientWidth, 1052 );
+      this.width  = document.documentElement.clientWidth;
       this.height = window.innerHeight - 120;
       this.linebrake( false );
       aspect = this.width / this.height;

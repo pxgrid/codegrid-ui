@@ -562,7 +562,7 @@ pre.line-numbers > code {
 .DEBUG {
   color: #FFF;
   font-size: 16px;
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   padding: 5px;
   margin: 1em 0;
   background: orange; }
@@ -642,7 +642,7 @@ pre.line-numbers > code {
 
 html {
   color: #242424;
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 16px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -654,8 +654,7 @@ html {
 
 body {
   margin: 0;
-  background: #FFF;
-  min-width: 1052px; }
+  background: #FFF; }
   @media screen and (max-width: 767px) {
     body {
       min-width: 0; } }
@@ -1627,9 +1626,13 @@ templateItem:
   padding: 60px 0;
   margin-top: 50px;
   background: #191919; }
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter {
+      padding-left: 28px;
+      padding-right: 28px; } }
   .CG2-pageFooter.CG2-pageFooter--simple {
     padding: 30px 0; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter {
       padding: 30px 0; }
       .CG2-container + .CG2-pageFooter {
@@ -1663,7 +1666,10 @@ templateItem:
   @media screen and (max-width: 1100px) {
     .CG2-pageFooter__inner {
       width: auto; } }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__inner {
+      display: block; } }
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter__inner {
       display: block;
       width: auto; } }
@@ -1678,7 +1684,13 @@ templateItem:
   display: table-cell;
   width: 20%;
   padding: 40px 28px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__wwwNav {
+      display: table;
+      width: 100%;
+      padding: 0;
+      margin: 0 0 20px; } }
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter__wwwNav {
       display: none; } }
   @media print {
@@ -1689,7 +1701,12 @@ templateItem:
   margin-bottom: 32px; }
   .CG2-pageFooter__logo img {
     display: block; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__logo {
+      display: table-cell;
+      width: 1%;
+      padding-right: 28px; } }
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter__logo {
       display: none; } }
   @media print {
@@ -1703,7 +1720,19 @@ templateItem:
   width: 60%;
   padding: 38px 58px;
   border: 1px solid #282828; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__appNav {
+      *zoom: 1;
+      display: block;
+      width: auto;
+      padding: 20px;
+      margin: 20px 0; }
+      .CG2-pageFooter__appNav:before, .CG2-pageFooter__appNav:after {
+        content: "";
+        display: table; }
+      .CG2-pageFooter__appNav:after {
+        clear: both; } }
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter__appNav {
       display: none; } }
   @media print {
@@ -1720,7 +1749,13 @@ templateItem:
     display: block;
     width: auto;
     padding: 30px 28px 50px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__legalNav {
+      display: block;
+      width: auto;
+      padding: 0;
+      margin: 20px 0; } }
+  @media screen and (max-width: 979px) {
     .CG2-pageFooter__legalNav,
     .CG2-pageFooter--simple .CG2-pageFooter__legalNav {
       display: block;
@@ -1737,9 +1772,17 @@ templateItem:
   list-style: none;
   margin: 0;
   padding: 0; }
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__wwwNav ul {
+      vertical-align: middle;
+      display: table-cell; } }
 
 .CG2-pageFooter__wwwNav li {
   margin: 12px 0 0; }
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__wwwNav li {
+      display: inline-block;
+      margin: 4px 16px 4px 0; } }
 
 .CG2-pageFooter__wwwNav a:before {
   content: "";
@@ -1864,7 +1907,10 @@ templateItem:
   list-style: none;
   margin: 0;
   padding: 0; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__legalNav ul {
+      text-align: center; } }
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter__legalNav ul {
       display: none; } }
   @media print {
@@ -1873,6 +1919,10 @@ templateItem:
 
 .CG2-pageFooter__legalNav li {
   margin: 12px 0 0; }
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__legalNav li {
+      display: inline-block;
+      margin: 5px 10px 5px 0; } }
 
 .CG2-pageFooter__company {
   margin: 12px 0 0; }
@@ -1890,7 +1940,10 @@ templateItem:
       width: 120px;
       height: 30px;
       margin: 5px auto; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
+    .CG2-pageFooter__company {
+      text-align: center; } }
+  @media screen and (max-width: 639px) {
     .CG2-pageFooter__company,
     .CG2-pageFooter--simple .CG2-pageFooter__company {
       font-size: 10px;
@@ -2343,7 +2396,7 @@ templateItem:
 
 .CG2-container__inner {
   box-sizing: border-box;
-  width: 1016px;
+  max-width: 1016px;
   padding: 40px 28px;
   margin: 0 auto; }
   @media screen and (max-width: 767px) {
@@ -3063,7 +3116,7 @@ span.CG2-seriesWeekHeader__label {
   vertical-align: baseline; }
 
 span.CG2-seriesWeekHeader__number {
-  font-family: monospace;
+  font-family: "Lucida Console", Monaco, monospace;
   font-size: 32px;
   vertical-align: baseline;
   margin: 0 .1em; }
@@ -3199,23 +3252,6 @@ tag:
 ```
 
 */
-.CG2-seriesListHeader__articleLength {
-  white-space: nowrap;
-  vertical-align: bottom;
-  display: inline-block;
-  width: 300px;
-  margin-right: -300px; }
-
-.CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__label {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
-
-.CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__number {
-  font-family: monospace;
-  line-height: 1; }
-
-.CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__unit {
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
-
 .CG2-seriesListHeader {
   font-size: 0;
   font-family: "zeroWidth";
@@ -3229,9 +3265,17 @@ tag:
     margin-top: 20px; }
 
 .CG2-seriesListHeader__articleLength {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 1rem;
+  white-space: nowrap;
+  vertical-align: bottom;
+  display: inline-block;
+  width: 300px;
+  margin-right: -300px;
   margin-bottom: -.6em; }
+  @media screen and (max-width: 979px) {
+    .CG2-seriesListHeader__articleLength {
+      margin-bottom: -.3em; } }
   @media screen and (max-width: 767px) {
     .CG2-seriesListHeader__articleLength {
       display: table-cell;
@@ -3239,24 +3283,29 @@ tag:
       margin-right: 0; } }
   .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__label {
     font-size: 16px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
     display: block; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 979px) {
       .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__label {
         font-size: 12px; } }
   .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__number {
     font-size: 72px;
+    font-family: "Lucida Console", Monaco, monospace;
+    line-height: 1;
     display: inline-block; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 979px) {
       .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__number {
         font-size: 42px; } }
   .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__unit {
-    font-size: 32px; }
-    @media screen and (max-width: 767px) {
+    font-size: 32px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    line-height: 1; }
+    @media screen and (max-width: 979px) {
       .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__unit {
         font-size: 20px; } }
 
 .CG2-seriesListHeader__nav {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 1rem;
   vertical-align: bottom;
   display: inline-block;
@@ -3302,9 +3351,12 @@ tag:
 
 */
 .CG2-compactNav {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 1rem;
   vertical-align: bottom; }
+  @media screen and (max-width: 979px) {
+    .CG2-compactNav {
+      font-size: 0.9rem; } }
   @media screen and (max-width: 767px) {
     .CG2-compactNav {
       line-height: 2.2em;
@@ -3342,9 +3394,13 @@ tag:
     margin: 0; }
     .CG2-compactNav li:first-child {
       border-left: none; }
+    @media screen and (max-width: 979px) {
+      .CG2-compactNav li {
+        padding-left: 20px;
+        padding-right: 20px; } }
     @media screen and (max-width: 767px) {
       .CG2-compactNav li {
-        font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+        font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
         display: block;
         text-align: left;
         display: none;
@@ -3367,6 +3423,12 @@ tag:
     display: block;
     padding: 2px 40px;
     margin: -2px -40px; }
+    @media screen and (max-width: 979px) {
+      .CG2-compactNav a {
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px; } }
     @media screen and (max-width: 767px) {
       .CG2-compactNav a {
         padding: 0 10px;
@@ -3629,9 +3691,6 @@ tag:
 
 .CG2-seriesList {
   margin: 0 calc( -50vw + 50% + 8px); }
-  @media screen and (max-width: 1072px) {
-    .CG2-seriesList {
-      margin: 0 calc( -536px + 50% + 12px); } }
   @media screen and (max-width: 767px) {
     .CG2-seriesList {
       margin-left: -18px;
@@ -3938,7 +3997,7 @@ a:hover .CG2-seriesList__author:before {
   width: 100%; }
   .CG2-seriesList__itemMore a {
     color: inherit;
-    font-family: monospace;
+    font-family: "Lucida Console", Monaco, monospace;
     font-size: 28px;
     text-decoration: none;
     text-align: center;
@@ -4033,7 +4092,7 @@ templateItem:
 
 .CG2-seriesHeader__inner {
   box-sizing: border-box;
-  width: 1016px;
+  max-width: 1016px;
   padding: 50px 0;
   margin: 0 auto; }
   @media screen and (max-width: 767px) {
@@ -4407,9 +4466,13 @@ tag:
   position: relative;
   z-index: 1;
   box-sizing: border-box;
-  width: 1016px;
+  max-width: 1016px;
   padding: 40px 190px;
   margin: 0 auto; }
+  @media screen and (max-width: 979px) {
+    .CG2-articleHeader__inner {
+      padding-left: 18.70079%;
+      padding-right: 18.70079%; } }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__inner {
       width: auto;
@@ -4651,16 +4714,16 @@ templateItem:
 */
 .CG2-narrowLayout {
   *zoom: 1;
-  width: 1016px;
+  max-width: 1016px;
   margin: 0 auto; }
   .CG2-narrowLayout:before, .CG2-narrowLayout:after {
     content: "";
     display: table; }
   .CG2-narrowLayout:after {
     clear: both; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
     .CG2-narrowLayout {
-      width: auto;
+      max-width: 636px;
       padding: 0 10px; } }
 
 .CG2-narrowLayout__main {
@@ -4668,10 +4731,9 @@ templateItem:
   box-sizing: border-box;
   width: 100%;
   padding: 0 190px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
     .CG2-narrowLayout__main {
       float: none;
-      width: auto;
       padding: 0; } }
 
 .CG2-narrowLayout__sub {
@@ -4679,7 +4741,7 @@ templateItem:
   box-sizing: border-box;
   width: 150px;
   margin-right: -100%; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
     .CG2-narrowLayout__sub {
       float: none;
       width: auto;
@@ -4931,6 +4993,7 @@ header.CG2-articleTOC__header {
     display: block;
     width: auto; }
   .CG2-articleTOC__list {
+    font-size: 18px;
     display: block; }
   .CG2-articleTOC__util {
     display: none; } }
@@ -4973,11 +5036,16 @@ tag:
 
 */
 .CG2-articleSeriesNav {
-  font-family: "codegrid-num", sans-serif;
+  font-family: "codegrid-num", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   padding-top: 92px;
   letter-spacing: 0.2em;
   box-sizing: border-box;
   margin: 0 auto; }
+  @media screen and (max-width: 979px) {
+    .CG2-articleSeriesNav {
+      padding-top: 0;
+      letter-spacing: 0;
+      margin: 60px 0; } }
   @media screen and (max-width: 767px) {
     .CG2-articleSeriesNav {
       display: none; } }
@@ -4987,6 +5055,11 @@ tag:
   width: 150px;
   padding-top: 40px;
   border-top: 1px solid #DBDBDB; }
+  @media screen and (max-width: 979px) {
+    .CG2-articleSeriesNav__inner {
+      width: auto;
+      padding-top: 0;
+      border-top: none; } }
   .CG2-articleSeriesNav__inner ul {
     -webkit-writing-mode: vertical-rl;
     -moz-writing-mode: vertical-rl;
@@ -4997,9 +5070,19 @@ tag:
             writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
-    max-height: 500px;
     padding: 0;
     margin: 0 auto 20px; }
+    @media screen and (max-width: 979px) {
+      .CG2-articleSeriesNav__inner ul {
+        -webkit-writing-mode: horizontal-tb;
+        -moz-writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: lr-tb;
+        -webkit-writing-mode: horizontal-tb;
+            -ms-writing-mode: lr-tb;
+                writing-mode: horizontal-tb;
+        width: auto;
+        margin: 0; } }
   .CG2-articleSeriesNav__inner li {
     white-space: nowrap;
     -ms-text-overflow: ellipsis;
@@ -5008,9 +5091,16 @@ tag:
     max-height: 500px;
     padding: 0;
     margin: 0; }
+    @media screen and (max-width: 979px) {
+      .CG2-articleSeriesNav__inner li {
+        max-height: none;
+        margin: 6px 0; } }
     .CG2-articleSeriesNav__inner li.CG2-articleSeriesNav__item--current a {
       color: #FFF;
       background: #000; }
+      @media screen and (max-width: 979px) {
+        .CG2-articleSeriesNav__inner li.CG2-articleSeriesNav__item--current a {
+          display: block; } }
   .CG2-articleSeriesNav__inner a {
     color: inherit;
     text-decoration: none;
@@ -5231,6 +5321,7 @@ article.CG2-article {
 
 @media print {
   article.CG2-article {
+    font-size: 18px;
     line-height: 1.6; }
     article.CG2-article p {
       margin: 1em 0; }
@@ -6025,6 +6116,9 @@ tag:
   padding: 20px 20px 30px 90px;
   border-top: 1px solid #DBDBDB;
   margin: 0 20px; }
+  @media screen and (max-width: 979px) {
+    .CG2-authorList__item {
+      width: calc( 49.9% - 40px); } }
   @media screen and (max-width: 767px) {
     .CG2-authorList__item {
       width: auto;
@@ -6203,14 +6297,21 @@ tag:
 */
 .CG2-settings {
   margin: 0 -40px; }
+  @media screen and (max-width: 1054px) {
+    .CG2-settings {
+      margin: 0 -20px; } }
   @media screen and (max-width: 767px) {
     .CG2-settings {
       margin: 0; } }
 
 .CG2-settings__inner {
   border-spacing: 40px 0;
+  table-layout: fixed;
   display: table;
   width: 100%; }
+  @media screen and (max-width: 979px) {
+    .CG2-settings__inner {
+      border-spacing: 20px 0; } }
   @media screen and (max-width: 767px) {
     .CG2-settings__inner {
       display: block;
@@ -6219,6 +6320,10 @@ tag:
 .CG2-settings__col {
   display: table-cell;
   padding: 0 28px; }
+  @media screen and (max-width: 979px) {
+    .CG2-settings__col {
+      padding-left: 14px;
+      padding-right: 14px; } }
   @media screen and (max-width: 767px) {
     .CG2-settings__col {
       display: block;
@@ -6228,6 +6333,12 @@ tag:
   border-bottom: 1px solid #DBDBDB;
   padding: 0 28px 5px;
   margin: 50px -28px 24px; }
+  @media screen and (max-width: 979px) {
+    .CG2-settings__heading {
+      padding-left: 14px;
+      padding-right: 14px;
+      margin-left: -14px;
+      margin-right: -14px; } }
   @media screen and (max-width: 767px) {
     .CG2-settings__heading {
       font-size: 16px;
@@ -6245,14 +6356,14 @@ tag:
 
 .CG2-settings__field {
   margin: 24px 0; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
     .CG2-settings__field {
       margin: 10px 0; } }
 
 .CG2-settings__fieldHGroup table {
   border-spacing: 0; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 979px) {
   .CG2-settings__fieldHGroup table, .CG2-settings__fieldHGroup tbody, .CG2-settings__fieldHGroup tr {
     *zoom: 1;
     display: block; }
@@ -6269,7 +6380,7 @@ tag:
   font-size: 10px;
   font-weight: normal;
   vertical-align: middle; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
     .CG2-settings__fieldHGroup th {
       display: block;
       font-size: 12px; } }
@@ -6285,7 +6396,7 @@ tag:
           hyphens: auto;
   vertical-align: middle;
   padding-left: 10px; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 979px) {
     .CG2-settings__fieldHGroup td {
       font-size: 16px;
       padding-left: 0; } }
@@ -6309,6 +6420,7 @@ tag:
 
 .CG2-settings__fieldData textarea {
   font-size: inherit;
+  box-sizing: border-box;
   width: 100%;
   height: 8em;
   padding: 4px; }
@@ -6350,6 +6462,11 @@ tag:
 .CG2-formProgress {
   font-size: 20px;
   margin: 0 -40px 60px; }
+  @media screen and (max-width: 1054px) {
+    .CG2-formProgress {
+      font-size: 16px;
+      margin-left: -20px;
+      margin-right: -20px; } }
   @media screen and (max-width: 767px) {
     .CG2-formProgress {
       font-size: 16px;
@@ -6362,6 +6479,9 @@ tag:
     width: 100%;
     padding: 0;
     margin: 0; }
+    @media screen and (max-width: 979px) {
+      .CG2-formProgress ol {
+        border-spacing: 20px 0; } }
     @media screen and (max-width: 767px) {
       .CG2-formProgress ol {
         display: block;
@@ -6458,7 +6578,7 @@ tag:
       margin-bottom: 20px; } }
 
 .CG2-signupFrom__leadSub {
-  font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 16px; }
   @media screen and (max-width: 767px) {
     .CG2-signupFrom__leadSub {
@@ -6645,7 +6765,7 @@ tag:
 */
 .CG2-paymentTable table {
   margin: 40px auto; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-paymentTable table {
       table-layout: fixed;
       margin-top: 20px;
@@ -6657,7 +6777,7 @@ tag:
   vertical-align: middle;
   padding: 15px 40px;
   border: 1px solid #DBDBDB; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-paymentTable th,
     .CG2-paymentTable td {
       vertical-align: top;
@@ -6668,7 +6788,7 @@ tag:
 .CG2-paymentTable thead td {
   border: none; }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 639px) {
   .CG2-paymentTable th:first-child,
   .CG2-paymentTable td:first-child {
     display: none; } }
@@ -6686,14 +6806,14 @@ tag:
     line-height: normal;
     padding: 0;
     margin: 0 -30px; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 639px) {
       .CG2-paymentTable__priceList ul {
         display: block;
         margin: 0; } }
   .CG2-paymentTable__priceList li {
     display: table-cell;
     margin: 0; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 639px) {
       .CG2-paymentTable__priceList li {
         display: block;
         margin-bottom: 20px; }
@@ -6705,11 +6825,11 @@ tag:
 
 .CG2-paymentTable__priceValue {
   font-size: 32px;
-  font-family: monospace;
+  font-family: "Lucida Console", Monaco, monospace;
   line-height: 1;
   vertical-align: bottom;
   display: inline-block; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-paymentTable__priceValue {
       font-size: 28px; } }
 
@@ -6731,14 +6851,14 @@ tag:
     line-height: normal;
     padding: 0;
     margin: 0 -30px; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 639px) {
       .CG2-paymentTable__valueList ul {
         display: block;
         margin: 0; } }
   .CG2-paymentTable__valueList li {
     display: table-cell;
     margin: 0; }
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 639px) {
       .CG2-paymentTable__valueList li {
         display: block; } }
 
@@ -6747,13 +6867,13 @@ tag:
 
 .CG2-paymentTable__value {
   font-size: 32px;
-  font-family: monospace;
+  font-family: "Lucida Console", Monaco, monospace;
   line-height: 1;
   vertical-align: bottom;
   display: inline-block; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-paymentTable__value {
-      font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
       font-size: 100%;
       line-height: inherit; } }
 
@@ -6761,7 +6881,7 @@ tag:
   font-size: 16px;
   vertical-align: bottom;
   display: inline-block; }
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 639px) {
     .CG2-paymentTable__valueUnit {
       font-size: 100%; } }
 
@@ -6921,7 +7041,7 @@ tag:
         margin-bottom: 20px; }
         .CG2-features__item h1:before {
           content: counter(CG2features);
-          font-family: monospace;
+          font-family: "Lucida Console", Monaco, monospace;
           font-size: 40px;
           line-height: 0;
           position: absolute;
@@ -6936,7 +7056,7 @@ tag:
     content: counter(CG2features);
     line-height: 1;
     font-size: 60px;
-    font-family: monospace;
+    font-family: "Lucida Console", Monaco, monospace;
     display: block;
     position: absolute;
     top: 0;
@@ -7209,7 +7329,7 @@ tag:
 
 .CG2-circulation__dataNumber {
   font-size: 64px;
-  font-family: monospace;
+  font-family: "Lucida Console", Monaco, monospace;
   line-height: 1.2;
   display: inline; }
   @media screen and (max-width: 767px) {
@@ -7888,7 +8008,7 @@ section.CG2-flowExplanation__item {
     .CG2-flowExplanation__text h1:before {
       content: counter(CG2flowExplanation);
       font-size: 32px;
-      font-family: monospace;
+      font-family: "Lucida Console", Monaco, monospace;
       line-height: 24px;
       vertical-align: middle;
       display: inline-block;
