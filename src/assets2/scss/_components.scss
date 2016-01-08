@@ -2787,18 +2787,18 @@ tag:
   }
   ul{
     -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
-    writing-mode: tb-rl; // IE
-    writing-mode: vertical-rl;
+       -moz-writing-mode: vertical-rl;
+            writing-mode: tb-rl; // IE
+            writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
     padding: 0;
     margin: 0 auto 20px;
     @include max-screen( $breakpoint-base ) {
       -webkit-writing-mode: horizontal-tb;
-      -moz-writing-mode: horizontal-tb;
-      writing-mode: lr-tb; // IE
-      writing-mode: horizontal-tb;
+         -moz-writing-mode: horizontal-tb;
+              writing-mode: lr-tb; // IE
+              writing-mode: horizontal-tb;
       width: auto;
       margin: 0;
     }
@@ -2821,6 +2821,14 @@ tag:
       @include max-screen( $breakpoint-base ) {
         display: block;
       }
+    }
+  }
+  abbr{
+    -webkit-text-orientation: upright;
+            text-orientation: upright;
+    @include max-screen( $breakpoint-base ) {
+      -webkit-text-orientation: mixed;
+              text-orientation: mixed;
     }
   }
   a{
