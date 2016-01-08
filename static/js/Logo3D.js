@@ -117,7 +117,7 @@ CG2.Logo3D = ( function () {
       if ( state ) {
 
         m.set(
-          1, 0, 0, 290 - 70,
+          1, 0, 0, 290 - 90,
           0, 1, 0, 100,
           0, 0, 1,   0,
           0, 0, 0,   1
@@ -129,7 +129,7 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 3 ].geometry.applyMatrix( m );
 
         m.set(
-          1, 0, 0, -290 - 70 + 40,
+          1, 0, 0, -290 - 90 + 40,
           0, 1, 0, -100,
           0, 0, 1,    0,
           0, 0, 0,    1
@@ -144,7 +144,7 @@ CG2.Logo3D = ( function () {
       } else {
         
         m.set(
-          1, 0, 0, -290 + 70,
+          1, 0, 0, -290 + 90,
           0, 1, 0, -100,
           0, 0, 1,    0,
           0, 0, 0,    1
@@ -156,7 +156,7 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 3 ].geometry.applyMatrix( m );
 
         m.set(
-          1, 0, 0,  290 + 70,
+          1, 0, 0,  290 + 90 - 40,
           0, 1, 0,  100,
           0, 0, 1,    0,
           0, 0, 0,    1
@@ -612,14 +612,12 @@ CG2.Logo3D = ( function () {
 
       this.width  = document.documentElement.clientWidth;
       this.height = window.innerHeight - 120;
-      this.linebrake( false );
       aspect = this.width / this.height;
 
     } else {
 
       this.width  = document.documentElement.clientWidth;
       this.height = window.innerHeight - 30;
-      this.linebrake( true );
       aspect = this.width / this.height;
 
       if ( aspect <= _5_6 ) {
@@ -628,8 +626,10 @@ CG2.Logo3D = ( function () {
 
       }
 
-
     }
+
+    var needsLineBrake = aspect <= 1.4;
+    this.linebrake( needsLineBrake );
 
     this.renderer.setSize( this.width, this.height );
     this.camera.aspect = aspect;
