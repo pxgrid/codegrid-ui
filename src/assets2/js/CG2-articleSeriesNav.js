@@ -84,7 +84,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   var replaceAbbrWord = function ( text ) {
 
-    return text.replace( /\b([A-Z]+)\b/, '<abbr>$1</abbr>' );
+    return text.replace( /\b([A-Z]+)\b/g, '<abbr>$1</abbr>' );
 
   }
 
