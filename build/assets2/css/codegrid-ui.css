@@ -2848,6 +2848,42 @@ tag:
       margin: 50px -10px 20px; } }
 
 /* ==========================================================================
+   shortCentered
+   ========================================================================== */
+/*
+---
+name: shortCentered
+category:
+  - Headings_and_Contexts
+tag:
+  - context
+---
+
+```html
+<div class="CG2-shortCentered">
+  <div class="CG2-shortCentered__inner">
+    短い時はセンタリング
+  </div>
+</div>
+
+
+<div class="CG2-shortCentered">
+  <div class="CG2-shortCentered__inner">
+    長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ
+  </div>
+</div>
+```
+
+*/
+.CG2-shortCentered {
+  text-align: center;
+  margin: 20px 0; }
+
+.CG2-shortCentered__inner {
+  text-align: left;
+  display: inline-block; }
+
+/* ==========================================================================
    holizontalLine
    ========================================================================== */
 /*
@@ -5101,6 +5137,13 @@ tag:
       @media screen and (max-width: 979px) {
         .CG2-articleSeriesNav__inner li.CG2-articleSeriesNav__item--current a {
           display: block; } }
+  .CG2-articleSeriesNav__inner abbr {
+    -webkit-text-orientation: upright;
+    text-orientation: upright; }
+    @media screen and (max-width: 979px) {
+      .CG2-articleSeriesNav__inner abbr {
+        -webkit-text-orientation: mixed;
+        text-orientation: mixed; } }
   .CG2-articleSeriesNav__inner a {
     color: inherit;
     text-decoration: none;
@@ -7586,7 +7629,7 @@ section.CG2-customerQuotes {
 
 header.CG2-customerQuotes__header {
   display: table;
-  width: calc( 100% + 48px);
+  width: calc( 100% + 46px);
   border-bottom: 1px solid #5c5c5c;
   margin: 0 -28px 30px; }
   @media screen and (max-width: 767px) {

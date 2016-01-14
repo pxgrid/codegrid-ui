@@ -829,21 +829,30 @@ window.addEventListener( 'DOMContentLoaded', function () {
     '\u32BF'  // (50)
   ];
 
-  var _replaceTargetRe = /([0-9]+)/g;
+  var replaceNumber = function () {
 
-  var _replaceFunc = function(str, ptn1) {
+    var _replaceTargetRe = /([0-9]+)/g;
+    var _replaceFunc = function ( str, ptn1 ) {
 
-    var num = ptn1|0;
+      var num = ptn1|0;
 
-    return lookup[num] || num;
+      return lookup[num] || num;
 
-  };
+    };
 
-  var replace = function( text ) {
+    return function ( text ) {
 
-    return text.replace(_replaceTargetRe, _replaceFunc);
+      return text.replace( _replaceTargetRe, _replaceFunc );
 
-  };
+    }
+
+  }();
+
+  var replaceAbbrWord = function ( text ) {
+
+    return text.replace( /\b([A-Z]+)\b/g, '<abbr>$1</abbr>' );
+
+  }
 
   var $inner = document.querySelector( '.CG2-articleSeriesNav__inner' );
   var $clone = $inner.cloneNode( true );
@@ -852,7 +861,8 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     var $leaf = $li.querySelector( 'a' ) || $li;
 
-    $leaf.textContent = replace( $leaf.textContent );
+    $leaf.innerHTML = replaceNumber( $leaf.textContent );
+    $leaf.innerHTML = replaceAbbrWord( $leaf.textContent );
 
   } );
 
