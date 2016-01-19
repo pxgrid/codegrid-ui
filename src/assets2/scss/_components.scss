@@ -2846,10 +2846,11 @@ tag:
     }
   }
   li{
+    line-height: 1;
     white-space: nowrap;
-    -ms-text-overflow: ellipsis;
-        text-overflow: ellipsis;
+    text-overflow: ellipsis;
     overflow: hidden;
+    width: 19.9%;
     max-height: 500px;
     padding: 0;
     margin: 0;
@@ -2876,7 +2877,16 @@ tag:
   a{
     @include resetLink();
     text-decoration: none;
-    padding: 2px;
+    overflow-y: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-height: 100%;
+    padding: 0 2px;
+    transition: .3s all;
+    &:hover{
+      background: #eee;
+      transition: none;
+    }
   }
 }
 
