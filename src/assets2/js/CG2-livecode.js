@@ -5,8 +5,6 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var modifier = 'CG2-livecode--isRunning';
   var $elAll   = document.querySelectorAll( '.CG2-livecode[data-livecode-deferredplay]:not( [data-livecode-from-oldjade] )' );
 
-  if ( $elAll.length === 0 ) { return; }
-
   var attach   = function( $el ) {
 
     var isRunning = false;
@@ -42,7 +40,11 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   }
 
-  Array.prototype.forEach.call( $elAll, attach );
+  if ( $elAll.length !== 0 ) {
+
+    Array.prototype.forEach.call( $elAll, attach );
+    
+  }
   
   CG2.vent.addEventListener( 'livecode-converted', function ( e ) {
 
