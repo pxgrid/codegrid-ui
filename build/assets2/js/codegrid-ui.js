@@ -1095,7 +1095,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
       var title          = $title ? $title.innerHTML : '';
       var text           = $text  ? $text.innerHTML  : '';
       var iframeClass    = /sizeS/.test( className ) ? modifierS : /sizeL/.test( className ) ? modifierL : '';
-      var iframeSrc      = $iframe.getAttribute( 'src' );
+      var iframeSrc      = $iframe.getAttribute( 'src' ) || $iframe.getAttribute( 'data-src' );
       var iframeWidth    = $iframe.getAttribute( 'width' );
       var iframeHeight   = $iframe.getAttribute( 'height' );
       var iframeStyle    = $iframe.getAttribute( 'style' );
