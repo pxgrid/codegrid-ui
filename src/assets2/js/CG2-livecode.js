@@ -2,7 +2,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   'use strict';
 
-  var modifire = 'CG2-livecode--isRunning';
+  var modifier = 'CG2-livecode--isRunning';
   var $elAll   = document.querySelectorAll( '.CG2-livecode[data-livecode-deferredplay]:not( [data-livecode-from-oldjade] )' );
 
   var attach   = function( $el ) {
@@ -19,13 +19,13 @@ window.addEventListener( 'DOMContentLoaded', function () {
       if ( isRunning ) {
 
         $iframe.removeAttribute( 'src' );
-        $el.classList.remove( modifire );
+        $el.classList.remove( modifier );
         isRunning = false;
 
       } else {
 
         $iframe.setAttribute( 'src', src );
-        $el.classList.add( modifire );
+        $el.classList.add( modifier );
         isRunning = true;
 
       }
