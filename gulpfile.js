@@ -5,14 +5,16 @@ var del          = require( 'del' );
 var browserSync  = require( 'browser-sync' ).create();
 var reload       = browserSync.reload;
 
+var postcss      = require( 'gulp-postcss' );
+var autoprefixer = require( 'autoprefixer' );
+var mqpacker     = require( 'css-mqpacker' );
+var csswring     = require( 'csswring' );
+
 var gulp         = require( 'gulp' );
 var aigis        = require( 'gulp-aigis' );
-var autoprefixer = require( 'gulp-autoprefixer' );
-var mmq          = require( 'gulp-merge-media-queries' );
 var concat       = require( 'gulp-concat' );
 var consolidate  = require( 'gulp-consolidate' );
 var iconfont     = require( 'gulp-iconfont' );
-var minifyCSS    = require( 'gulp-minify-css' );
 var plumber      = require( 'gulp-plumber' );
 var rename       = require( 'gulp-rename' );
 var sass         = require( 'gulp-sass' );
@@ -23,12 +25,14 @@ var awspublish   = require( 'gulp-awspublish' );
 var runSequence  = require( 'run-sequence' ).use( gulp );
 
 
-var AUTOPREFIXER_BROWSERS = [
-  'ie >= 9',
-  'safari >= 7',
-  'ios >= 7',
-  'android >= 4'
-];
+var AUTOPREFIXER_BROWSERS = {
+  browsers: [
+    'ie >= 9',
+    'safari >= 7',
+    'ios >= 7',
+    'android >= 4'
+  ]
+};
 
 
 gulp.task( 'browser-sync', function () {
@@ -106,14 +110,18 @@ gulp.task( 'js', function () {
 
 gulp.task( 'sass', function () {
 
+  var processors = [
+    autoprefixer( AUTOPREFIXER_BROWSERS ),
+    mqpacker,
+    csswring
+  ];
+
   return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
          .pipe( plumber() )
-         .pipe( sass( { bundleExec: true } ) )
-         .pipe( autoprefixer( AUTOPREFIXER_BROWSERS ) )
+         .pipe( sass() )
          .pipe( gulp.dest( './build/assets2/css/' ) )
          .pipe( rename( { extname: '.min.css' } ) )
-         .pipe( mmq( { log: true } ) )
-         .pipe( minifyCSS() )
+         .pipe( postcss( processors ) )
          .pipe( gulp.dest( './build/assets2/css/' ) );
 
 } );
