@@ -4826,3 +4826,44 @@ tag:
       }
 
 
+/* ==========================================================================
+   CG2-paymentLine
+   ========================================================================== */
+/*
+---
+name: paymentLine
+category:
+  - Blocks/shared
+tag:
+  - app-item
+  - www-item
+---
+
+```html
+<div class="CG2-paymentLine">
+  <span class="CG2-paymentLine__label">月額</span>
+  <span class="CG2-paymentLine__value">800</span>
+  <span class="CG2-paymentLine__unit">円</span>
+  <span class="CG2-paymentLine__extra">（税込み864円）</span>
+</div>
+```
+*/
+
+.CG2-paymentLine{
+  text-align: center;
+}
+  .CG2-paymentLine__label{
+    font-family: $fontSerif;
+    font-size: 24px;
+  }
+  .CG2-paymentLine__value{
+    font-family: $fontCode;
+    font-size: 32px;
+  }
+  .CG2-paymentLine__unit{
+    font-family: $fontSerif;
+    font-size: 24px;
+  }
+  .CG2-paymentLine__extra{
+    font-size: 14px;
+  }

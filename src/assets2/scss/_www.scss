@@ -1528,3 +1528,54 @@ tag:
     margin-top: 40px;
   }
 }
+
+
+
+/* ==========================================================================
+   CG2-imageContainer
+   ========================================================================== */
+/*
+---
+name: imageContainer
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-imageContainer">
+  <div class="CG2-imageContainer__image">
+    <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+  </div>
+</div>
+```
+
+*/
+.CG2-imageContainer{
+  font-size: 0;
+  margin: 40px 0;
+  text-align: center;
+  &:before,
+  &:after{
+    content: '';
+    display: block;
+    height: 1px;
+  }
+  &:before{
+    margin-bottom: -10px;
+  }
+  &:after{
+    margin-top: -10px;
+  }
+}
+
+.CG2-imageContainer__image{
+  vertical-align: middle;
+  display: inline-block;
+  margin: 10px 30px;
+  img{
+    max-width: 100%;
+    height: auto;
+  }
+}
