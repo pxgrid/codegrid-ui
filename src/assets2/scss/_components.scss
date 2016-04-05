@@ -3228,8 +3228,13 @@ article.CG2-article{
 
   .ImgBox{
     margin: 2em 0;
-  }
+  } 
+    // .Imgbox h1: 独自md変換による新記法
+    // .ImgBox-title: はjade用
+    //
+    .Imgbox h1,
     .ImgBox-title{
+      font-size: 100%;
       font-weight: bold;
       border-bottom: 1px dotted #ccc;
       margin: 0.5em 0 3px;
@@ -3240,13 +3245,18 @@ article.CG2-article{
     }
     .ImgBox-body{
       margin: 3px 0;
-      img{
-        box-sizing: border-box;
-        display: block;
-        max-width: 100%;
-        width: auto;
-        height: auto;
-      }
+    }
+    .Imgbox img{
+      box-sizing: border-box;
+      display: block;
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      border: 1px solid #ccc;
+    }
+    .Imgbox p img{
+      margin-top: -2em;
+      margin-top: calc( -2em + 3px );
     }
 
 
@@ -3268,7 +3278,8 @@ article.CG2-article{
     li{
       margin: 0;
     }
-  }
+  } 
+    .Column h1,
     .Column-title{
       font-size: 14px;
       font-weight: bold;
@@ -3299,7 +3310,8 @@ article.CG2-article{
     p{
       margin: 0;
     }
-  }
+  } 
+    .Note h1,
     .Note-title{
       font-size: 100%;
       font-weight: bold;

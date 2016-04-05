@@ -157,6 +157,9 @@
     Array.prototype.forEach.call( $elAll, function( $el ) {
 
       var $iframe = $el.querySelector( 'iframe' );
+
+      if ( !$iframe ) { return; }
+
       var $title  = $el.querySelector( 'div.Demo-title' );
       var $text   = $el.querySelector( 'div.Demo-comment' );
 

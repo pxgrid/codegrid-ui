@@ -88,6 +88,7 @@ gulp.task( 'js', function () {
   return gulp.src( [
           './src/assets2/js/vendor/EventDispatcher.js',
           './src/assets2/js/vendor/prism.js',
+          './src/assets2/js/prism.extend.js',
           './src/assets2/js/CG2.js',
           './src/assets2/js/CG2-pageHeader.js',
           './src/assets2/js/CG2-drawer.js',
