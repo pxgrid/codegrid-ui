@@ -5209,8 +5209,8 @@ article.CG2-article {
   border-bottom: 1px solid #DBDBDB;
   padding-bottom: 30px;
   margin-bottom: 20px;
-  word-break: break-word;
-  word-break: break-all;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
   hyphens: auto; }
   @media screen and (max-width: 767px) {
     article.CG2-article {
@@ -5264,7 +5264,9 @@ article.CG2-article {
       article.CG2-article li {
         margin: .5em 0; } }
   article.CG2-article table {
-    margin: 2em 0; }
+    margin: 2em 0;
+    word-break: break-word;
+    word-break: break-all; }
     article.CG2-article table th, article.CG2-article table td {
       padding: .3em 10px;
       border: 1px solid #DBDBDB; }
@@ -5283,8 +5285,10 @@ article.CG2-article {
           max-width: 100%;
           height: auto; } }
   article.CG2-article pre {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     line-height: 1.6; }
   article.CG2-article code {
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: 2px;
     background: #f5f2f0; }
   article.CG2-article section.CG2-article__rel {
@@ -5401,7 +5405,9 @@ article.CG2-article pre.code {
 article.CG2-article .ImgBox {
   margin: 2em 0; }
 
+article.CG2-article .ImgBox h1,
 article.CG2-article .ImgBox-title {
+  font-size: 100%;
   font-weight: bold;
   border-bottom: 1px dotted #ccc;
   margin: 0.5em 0 3px; }
@@ -5412,12 +5418,18 @@ article.CG2-article .ImgBox-comment {
 
 article.CG2-article .ImgBox-body {
   margin: 3px 0; }
-  article.CG2-article .ImgBox-body img {
-    box-sizing: border-box;
-    display: block;
-    max-width: 100%;
-    width: auto;
-    height: auto; }
+
+article.CG2-article .ImgBox img {
+  box-sizing: border-box;
+  display: block;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  border: 1px solid #ccc; }
+
+article.CG2-article .ImgBox p img {
+  margin-top: -2em;
+  margin-top: calc( -2em + 3px); }
 
 article.CG2-article .Column {
   font-size: 14px;
@@ -5435,11 +5447,13 @@ article.CG2-article .Column {
   article.CG2-article .Column li {
     margin: 0; }
 
+article.CG2-article .Column h1,
 article.CG2-article .Column-title {
   font-size: 14px;
   font-weight: bold;
   margin: 0; }
   @media screen and (max-width: 767px) {
+    article.CG2-article .Column h1,
     article.CG2-article .Column-title {
       font-size: 12px;
       margin-bottom: 3px; } }
@@ -5461,6 +5475,7 @@ article.CG2-article .Note {
   article.CG2-article .Note p {
     margin: 0; }
 
+article.CG2-article .Note h1,
 article.CG2-article .Note-title {
   font-size: 100%;
   font-weight: bold;
