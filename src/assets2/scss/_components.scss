@@ -2984,8 +2984,8 @@ article.CG2-article{
   border-bottom: 1px solid #DBDBDB;
   padding-bottom: 30px;
   margin-bottom: 20px;
-  word-break: break-word; // Non standard for webkit
-  word-break: break-all;
+  word-wrap : break-word;
+  overflow-wrap : break-word;
   hyphens: auto;
   @include max-screen( $breakpoint-middle ) {
     line-height: 2;
@@ -3047,7 +3047,16 @@ article.CG2-article{
     }
   }
   table{
+    // table-layout : fixed;
+    // width: 100%
+    // max-width: 100%;
     margin: 2em 0;
+    // `width: 100%` + `table-layout : fixed;`
+    // ではない　table (shrink to fit) の中では
+    // `break-all` しかない
+    //
+    word-break: break-word; // Non standard for webkit
+    word-break: break-all;
     th, td{
       padding: .3em 10px;
       border: 1px solid #DBDBDB;
@@ -3055,7 +3064,8 @@ article.CG2-article{
     th{
       background: #EEE;
     }
-    td{}
+    td{
+    }
   }
   figure{
     margin: 2em 0;
@@ -3229,10 +3239,10 @@ article.CG2-article{
   .ImgBox{
     margin: 2em 0;
   } 
-    // .Imgbox h1: 独自md変換による新記法
+    // .ImgBox h1: 独自md変換による新記法
     // .ImgBox-title: はjade用
     //
-    .Imgbox h1,
+    .ImgBox h1,
     .ImgBox-title{
       font-size: 100%;
       font-weight: bold;
@@ -3246,7 +3256,7 @@ article.CG2-article{
     .ImgBox-body{
       margin: 3px 0;
     }
-    .Imgbox img{
+    .ImgBox img{
       box-sizing: border-box;
       display: block;
       max-width: 100%;
@@ -3254,7 +3264,7 @@ article.CG2-article{
       height: auto;
       border: 1px solid #ccc;
     }
-    .Imgbox p img{
+    .ImgBox p img{
       margin-top: -2em;
       margin-top: calc( -2em + 3px );
     }
