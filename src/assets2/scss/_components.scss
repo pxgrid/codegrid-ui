@@ -1203,7 +1203,9 @@ tag:
           <a href="#"><span class="CG2-icon-cat-architecture"></span></a>
         </div>
         <div class="CG2-seriesList__itemTitle">
-          <div class="CG2-seriesList__itemTitleInner">Web Fonts 自由自在</div>
+          <a href="javascript:alert( 'シリーズ一覧へ' );">
+            <div class="CG2-seriesList__itemTitleText">Web Fonts 自由自在</div>
+          </a>
         </div>
         <div class="CG2-seriesList__itemUtil">
           <a href="#"><div class="CG2-toolButton"></div></a>
@@ -1514,16 +1516,32 @@ tag:
             //   font-size: 20px;
             }
           }
-          .CG2-seriesList__itemTitleInner{
-            text-align: left;
-            display: inline-block;
-          }
             a{
               color: inherit;
-              &:hover{
-                
-              }
+              text-decoration: none;
+              display: block;
             }
+              .CG2-seriesList__itemTitleText{
+                text-align: left;
+                display: inline-block;
+                position: relative;
+                &:after{
+                  content: '';
+                  opacity: 0;
+                  position: absolute;
+                  bottom: -3px;
+                  left: 0;
+                  right: 0;
+                  display: block;
+                  height: 1px;
+                  background: #fff;
+                  transition: all .6s;
+                }
+              }
+              a:hover .CG2-seriesList__itemTitleText:after{
+                bottom: 0;
+                opacity: 1;
+              }
         }
         .CG2-seriesList__itemUtil{
           text-align: right;
@@ -2197,7 +2215,11 @@ tag:
 
     <div class="CG2-articleHeader__main">
       <div class="CG2-articleHeader__mainInner">
-        <div class="CG2-articleHeader__series">そこが知りたい、 Flexible Box</div>
+        <div class="CG2-articleHeader__series">
+          <a href="javascript:alert( 'シリーズ一覧へ' );">
+            そこが知りたい、 Flexible Box
+          </a>
+        </div>
         <div class="CG2-articleHeader__title">第2回 仕様を知る 2</div>
         <div class="CG2-articleHeader__abstract">
           <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
@@ -2312,6 +2334,28 @@ tag:
       .CG2-articleHeader__series{
         font-size: 24px;
         font-family: $fontSerif;
+        a{
+          color: inherit;
+          text-decoration: inherit;
+          display: inline-block;
+          position: relative;
+          &:after{
+            content: '';
+            opacity: 0;
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            display: block;
+            height: 1px;
+            background: #FFF;
+            transition: all .6s;
+          }
+          &:hover:after{
+            bottom: 0;
+            opacity: 1;
+          }
+        }
       }
       .CG2-articleHeader__title{
         font-size: 32px;
@@ -3721,8 +3765,7 @@ section.CG2-livecode{
     display: flex;
     align-items: center;
     background: #777;
-    -webkit-transition: all .3s;
-            transition: all .3s;
+    transition: all .3s;
     @at-root .CG2-livecode.CG2-livecode--isRunning &{
       bottom: 100%;
     }
