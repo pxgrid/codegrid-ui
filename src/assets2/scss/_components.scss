@@ -1423,10 +1423,6 @@ tag:
       width: calc( 50% - 4px );
       padding: 30px 28px;
       margin: 2px;
-      transition: all .3s;
-      &:hover{
-        background: #333;
-      }
       @include max-screen( $breakpoint-middle ) {
         width: auto;
         padding: 8px 8px 24px;
@@ -1561,6 +1557,10 @@ tag:
         }
     .CG2-seriesList__coverImage{
       @include blurry();
+      transition: transform 1s;
+      .CG2-seriesList__item:hover &{
+        transform: scale( 1.4, 1.4 );
+      }
       &.CG2-seriesList__coverImage--blurry{
         @include blurry--blurry();
       }
@@ -1579,8 +1579,9 @@ tag:
         border-top: 1px solid #FFF;
         border-bottom: 1px solid #FFF;
         margin-bottom: -1px;
-        background: rgba( 255, 255, 255, 0.1 );
+        background: rgba( 255, 255, 255, 0 );
         &.CG2-seriesList__article--unread{
+          font-weight: bold;
           box-shadow: 0 0 10px rgba( 0, 0, 0, 0.1 );
           background: rgba( 255, 255, 255, 0.2 );
         }
@@ -1975,6 +1976,7 @@ tag:
     }
   }
     .CG2-series__itemHeader{
+      color: #787878; // === rgba(120,120,120,1);
       position: relative;
       z-index: 1;
       display: table;
@@ -1983,8 +1985,7 @@ tag:
       border-bottom: 1px solid #DBDBDB;
       margin-bottom: 20px;
       .CG2-series__item--unread &{
-        color: #777;
-        background: #EEE;
+        color: inherit;
       }
     }
       // .CG2-series__itemStar{
@@ -2023,11 +2024,9 @@ tag:
           transition: all .3s;
         }
         &:hover{
-          color: #10a040;
           &:after{
-            background: #feffb3;
+            background: #EEE;
             right: 0;
-            // transition: all 0s;
           }
         }
       }
@@ -2049,10 +2048,12 @@ tag:
         }
         .CG2-series__itemTitle{
           font-size: 20px;
-          font-weight: bold;
           vertical-align: middle;
           display: table-cell;
           padding: 20px 0;
+          .CG2-series__item--unread &{
+            font-weight: bold;
+          }
           &:first-child{
             padding-left: 10px;
           }
