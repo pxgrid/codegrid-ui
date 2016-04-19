@@ -1281,7 +1281,8 @@ templateItem:
   left: 0;
   width: 100%;
   height: 56px;
-  background: rgba(0, 0, 0, 0.8); }
+  background: rgba(0, 0, 0, 0.8);
+  transform: translate3d(0, 0, 0); }
   .CG2-pageHeader:before, .CG2-pageHeader:after {
     content: "";
     display: table; }
@@ -3545,7 +3546,9 @@ tag:
           <a href="#"><span class="CG2-icon-cat-architecture"></span></a>
         </div>
         <div class="CG2-seriesList__itemTitle">
-          <div class="CG2-seriesList__itemTitleInner">Web Fonts 自由自在</div>
+          <a href="javascript:alert( 'シリーズ一覧へ' );">
+            <div class="CG2-seriesList__itemTitleText">Web Fonts 自由自在</div>
+          </a>
         </div>
         <div class="CG2-seriesList__itemUtil">
           <a href="#"><div class="CG2-toolButton"></div></a>
@@ -3752,10 +3755,7 @@ tag:
   box-sizing: border-box;
   width: calc( 50% - 4px);
   padding: 30px 28px;
-  margin: 2px;
-  transition: all .3s; }
-  .CG2-seriesList__item:hover {
-    background: #333; }
+  margin: 2px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesList__item {
       width: auto;
@@ -3836,11 +3836,28 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-seriesList__item--fullWidth .CG2-seriesList__itemTitle {
         font-size: 20px; } }
-  .CG2-seriesList__itemTitle .CG2-seriesList__itemTitleInner {
-    text-align: left;
-    display: inline-block; }
   .CG2-seriesList__itemTitle a {
-    color: inherit; }
+    color: inherit;
+    text-decoration: none;
+    display: block; }
+  .CG2-seriesList__itemTitle .CG2-seriesList__itemTitleText {
+    text-align: left;
+    display: inline-block;
+    position: relative; }
+    .CG2-seriesList__itemTitle .CG2-seriesList__itemTitleText:after {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 1px;
+      background: #fff;
+      transition: all .6s; }
+  .CG2-seriesList__itemTitle a:hover .CG2-seriesList__itemTitleText:after {
+    bottom: 0;
+    opacity: 1; }
 
 .CG2-seriesList__itemUtil {
   text-align: right;
@@ -3868,7 +3885,10 @@ tag:
   background-position: 50% 50%;
   background-size: cover;
   transform: scale(1.2, 1.2);
-  opacity: .64; }
+  opacity: .64;
+  transition: transform 1s; }
+  .CG2-seriesList__item:hover .CG2-seriesList__coverImage {
+    transform: scale(1.4, 1.4); }
   .CG2-seriesList__coverImage.CG2-seriesList__coverImage--blurry {
     filter: blur(24px); }
 
@@ -3886,8 +3906,9 @@ tag:
   border-top: 1px solid #FFF;
   border-bottom: 1px solid #FFF;
   margin-bottom: -1px;
-  background: rgba(255, 255, 255, 0.1); }
+  background: rgba(255, 255, 255, 0); }
   .CG2-seriesList__article.CG2-seriesList__article--unread {
+    font-weight: bold;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.2); }
   .CG2-seriesList__article a {
@@ -4260,6 +4281,7 @@ tag:
     margin-top: 20px; }
 
 .CG2-series__itemHeader {
+  color: #787878;
   position: relative;
   z-index: 1;
   display: table;
@@ -4268,8 +4290,7 @@ tag:
   border-bottom: 1px solid #DBDBDB;
   margin-bottom: 20px; }
   .CG2-series__item--unread .CG2-series__itemHeader {
-    color: #777;
-    background: #EEE; }
+    color: inherit; }
 
 .CG2-series__itemHeader a {
   color: inherit;
@@ -4285,11 +4306,9 @@ tag:
     right: 100%;
     left: 0;
     transition: all .3s; }
-  .CG2-series__itemHeader a:hover {
-    color: #10a040; }
-    .CG2-series__itemHeader a:hover:after {
-      background: #feffb3;
-      right: 0; }
+  .CG2-series__itemHeader a:hover:after {
+    background: #EEE;
+    right: 0; }
 
 .CG2-series__itemIcon {
   font-size: 24px;
@@ -4305,10 +4324,11 @@ tag:
 
 .CG2-series__itemTitle {
   font-size: 20px;
-  font-weight: bold;
   vertical-align: middle;
   display: table-cell;
   padding: 20px 0; }
+  .CG2-series__item--unread .CG2-series__itemTitle {
+    font-weight: bold; }
   .CG2-series__itemTitle:first-child {
     padding-left: 10px; }
   @media screen and (max-width: 767px) {
@@ -4443,7 +4463,11 @@ tag:
 
     <div class="CG2-articleHeader__main">
       <div class="CG2-articleHeader__mainInner">
-        <div class="CG2-articleHeader__series">そこが知りたい、 Flexible Box</div>
+        <div class="CG2-articleHeader__series">
+          <a href="javascript:alert( 'シリーズ一覧へ' );">
+            そこが知りたい、 Flexible Box
+          </a>
+        </div>
         <div class="CG2-articleHeader__title">第2回 仕様を知る 2</div>
         <div class="CG2-articleHeader__abstract">
           <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
@@ -4554,6 +4578,25 @@ tag:
 .CG2-articleHeader__series {
   font-size: 24px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  .CG2-articleHeader__series a {
+    color: inherit;
+    text-decoration: inherit;
+    display: inline-block;
+    position: relative; }
+    .CG2-articleHeader__series a:after {
+      content: '';
+      opacity: 0;
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 1px;
+      background: #FFF;
+      transition: all .6s; }
+    .CG2-articleHeader__series a:hover:after {
+      bottom: 0;
+      opacity: 1; }
 
 .CG2-articleHeader__title {
   font-size: 32px;
@@ -5850,7 +5893,6 @@ section.CG2-livecode {
   display: flex;
   align-items: center;
   background: #777;
-  -webkit-transition: all .3s;
   transition: all .3s; }
   .CG2-livecode.CG2-livecode--isRunning .CG2-livecode__clickToPlay {
     bottom: 100%; }
