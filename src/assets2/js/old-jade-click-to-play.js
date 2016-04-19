@@ -107,7 +107,7 @@
   // -------------------------
 
   var template = _.template( [
-    '<section class="CG2-livecode" <% if ( isDeferredPlay ) { %>data-livecode-deferredplay<% } %> data-livecode-from-oldjade>',
+    '<section class="CG2-livecode" <% if ( isDeferredPlay ) { %>data-livecode-deferred<% } %> data-livecode-from-oldjade>',
       '<h1><%= title %></h1>',
       '<p><%= text %></p>',
       '<header class="CG2-livecode__header">',
@@ -130,7 +130,7 @@
       '<div class="CG2-livecode__body">',
         '<iframe ',
           '<% if ( !isDeferredPlay ) { %> src="<%= iframeSrc %>" <% } %> ',
-          'data-livecode-src="<%= iframeSrc %>" ',
+          'data-src="<%= iframeSrc %>" ',
           'class="<%= iframeClass %>"',
           'width="<%= iframeWidth %>" ',
           'height="<%= iframeHeight %>" ',
