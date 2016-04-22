@@ -2260,6 +2260,7 @@ tag:
     }
     @include max-screen( $breakpoint-middle ) {
       width: auto;
+      max-width: 656px;
       padding: 20px;
     }
   }
