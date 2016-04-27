@@ -584,6 +584,18 @@ pre.line-numbers > code {
 #__bs_notify__ {
   pointer-events: none; }
 
+@media screen and (max-width: 979px) {
+  _x {
+    _x: 0; } }
+
+@media screen and (max-width: 767px) {
+  _x {
+    _x: 0; } }
+
+@media screen and (max-width: 639px) {
+  _x {
+    _x: 0; } }
+
 /* modifier: align
    ========================================================================== */
 .CG2--alignLeft {
@@ -4510,6 +4522,7 @@ tag:
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__inner {
       width: auto;
+      max-width: 656px;
       padding: 20px; } }
 
 .CG2-articleHeader__category {
