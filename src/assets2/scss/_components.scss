@@ -3287,7 +3287,6 @@ article.CG2-article{
   } 
     // .ImgBox h1: 独自md変換による新記法
     // .ImgBox-title: はjade用
-    //
     .ImgBox h1,
     .ImgBox-title{
       font-size: 100%;
@@ -3295,9 +3294,12 @@ article.CG2-article{
       border-bottom: 1px dotted #ccc;
       margin: 0.5em 0 3px;
     }
-    .ImgBox-comment{
+    .ImgBox p,     // 独自md変換による新記法
+    .ImgBox-comment// 旧 jade用
+    {
       color: #777;
       font-size: 14px;
+      margin: 0;
     }
     .ImgBox-body{
       margin: 3px 0;
