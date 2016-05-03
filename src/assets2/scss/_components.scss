@@ -899,7 +899,7 @@ tag:
 
 - `data-cg2-tab-button`を明示する
 - コンテンツ部は`[data-cg2-tab-content]`でグループ化した`[data-cg2-tab-pane]`を用意する
-  
+
 ```html
 <div class="CG2-seriesListHeader">
   <div class="CG2-seriesListHeader__nav">
@@ -987,7 +987,7 @@ tag:
       }
     }
   }
-  
+
 
 
   .CG2-seriesListHeader__nav{
@@ -1271,11 +1271,11 @@ tag:
         </a>
       </div>
     </div>
-    
+
     <!-- .CG2-seriesList__item 繰り返し -->
 
     <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
-  
+
   </div>
 </div>
 
@@ -1341,7 +1341,7 @@ tag:
     <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
 
     <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
-  
+
   </div>
 </div>
 ```
@@ -2488,7 +2488,7 @@ templateItem:
     目次など
   </div>
   <div class="CG2-narrowLayout__sub">
-    
+
     <div class="CG2-articleSeriesNav">
       <div class="CG2-articleSeriesNav__inner">
         <ul>
@@ -2964,11 +2964,11 @@ tag:
   <h2>h2みだし</h2>
 
   <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
-  
+
   <h3>h3みだし</h3>
 
   <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
-  
+
   <h4>h4みだし</h4>
 
   <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
@@ -3106,6 +3106,9 @@ article.CG2-article{
     th, td{
       padding: .3em 10px;
       border: 1px solid #DBDBDB;
+      &:first-child {
+        white-space: nowrap;
+      }
     }
     th{
       background: #EEE;
@@ -3265,7 +3268,7 @@ article.CG2-article{
   dd{
     margin: 0 0 0.8em 2em;
   }
-  
+
   blockquote{
     color: #777;
     padding: 0 15px;
@@ -3284,7 +3287,7 @@ article.CG2-article{
 
   .ImgBox{
     margin: 2em 0;
-  } 
+  }
     // .ImgBox h1: 独自md変換による新記法
     // .ImgBox-title: はjade用
     .ImgBox h1,
@@ -3336,7 +3339,7 @@ article.CG2-article{
     li{
       margin: 0;
     }
-  } 
+  }
     .Column h1,
     .Column-title{
       font-size: 14px;
@@ -3368,7 +3371,7 @@ article.CG2-article{
     p{
       margin: 0;
     }
-  } 
+  }
     .Note h1,
     .Note-title{
       font-size: 100%;
@@ -3620,7 +3623,7 @@ iframeには、
 
 - CG2-livecode__frame--small
 - CG2-livecode__frame--large
-  
+
 を追加クラスとして明示することも可能。その場合それぞれ、iframeの高さが190px、590pxとなる。
 
 ```html
@@ -4025,7 +4028,7 @@ tag:
 ```html
 <div class="CG2-authorList">
   <div class="CG2-authorList__inner">
-  
+
     <div class="CG2-authorList__item">
       <a href="#">
         <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/80x80" alt="" width="80" height="80"></div>
