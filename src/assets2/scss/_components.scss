@@ -3097,18 +3097,18 @@ article.CG2-article{
     // width: 100%
     // max-width: 100%;
     margin: 2em 0;
-    // `width: 100%` + `table-layout : fixed;`
-    // ではない　table (shrink to fit) の中では
-    // `break-all` しかない
-    //
-    word-break: break-word; // Non standard for webkit
-    word-break: break-all;
+    word-wrap : normal;
+    overflow-wrap : normal;
+    @include max-screen( $breakpoint-middle ) {
+      // `width: 100%` + `table-layout : fixed;`
+      // ではない　table (shrink to fit) の中では
+      // `break-all` しかない
+      word-break: break-word; // Non standard for webkit
+      word-break: break-all;
+    }
     th, td{
       padding: .3em 10px;
       border: 1px solid #DBDBDB;
-      &:first-child {
-        white-space: nowrap;
-      }
     }
     th{
       background: #EEE;
