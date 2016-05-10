@@ -3097,18 +3097,27 @@ article.CG2-article{
     // width: 100%
     // max-width: 100%;
     margin: 2em 0;
-    word-wrap : normal;
-    overflow-wrap : normal;
-    @include max-screen( $breakpoint-middle ) {
+    th, td{
       // `width: 100%` + `table-layout : fixed;`
       // ではない　table (shrink to fit) の中では
       // `break-all` しかない
+      word-wrap : break-word; // Non standard for IE
       word-break: break-word; // Non standard for webkit
       word-break: break-all;
-    }
-    th, td{
+      overflow-wrap : break-word;
       padding: .3em 10px;
       border: 1px solid #DBDBDB;
+      &:first-child{
+        word-wrap : normal; // Non standard for IE
+        word-break: normal; // Non standard for webkit
+        overflow-wrap : normal;
+        @include max-screen( $breakpoint-middle ) {
+          word-wrap : break-word; // Non standard for IE
+          word-break: break-word; // Non standard for webkit
+          word-break: break-all;
+          overflow-wrap : break-word;
+        }
+      }
     }
     th{
       background: #EEE;
