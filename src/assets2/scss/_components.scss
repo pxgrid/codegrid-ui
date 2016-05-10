@@ -3282,6 +3282,19 @@ article.CG2-article{
     background: #f5f2f0;
   }
 
+  // 旧jade記法からの変換
+  // <div class="ImgBox">
+  //   <div class="ImgBox-title">ラベル</div>
+  //   <div class="ImgBox-comment">キャプション</div>
+  //   <div class="ImgBox-body"><img src="xxx.jpg" width="256" height="128"></div>
+  // </div>
+
+  // CGMD記法からの変換
+  // <div class="ImgBox">
+  //   <h1>ラベル</h1>
+  //   <p>キャプション</p>
+  //   <p><img src="xxx.jpg" width="256" height="128"></p>
+  // </div>
   .ImgBox{
     margin: 2em 0;
   } 
@@ -3299,6 +3312,7 @@ article.CG2-article{
     {
       color: #777;
       font-size: 14px;
+      line-height: 1.8;
       margin: 0;
     }
     .ImgBox-body{
@@ -3311,10 +3325,7 @@ article.CG2-article{
       width: auto;
       height: auto;
       border: 1px solid #ccc;
-    }
-    .ImgBox p img{
-      margin-top: -2em;
-      margin-top: calc( -2em + 3px );
+      margin: 5px 0;
     }
 
 
