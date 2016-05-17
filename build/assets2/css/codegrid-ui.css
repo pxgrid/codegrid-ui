@@ -5355,6 +5355,8 @@ article.CG2-article {
   article.CG2-article pre {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     line-height: 1.6; }
+    article.CG2-article pre code {
+      display: block; }
   article.CG2-article code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: 2px;
