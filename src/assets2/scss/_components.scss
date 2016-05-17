@@ -3143,6 +3143,9 @@ article.CG2-article{
   pre{
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     line-height: 1.6;
+    code{
+      display: block;
+    }
   }
   code{
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
