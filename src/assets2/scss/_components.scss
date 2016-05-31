@@ -1837,7 +1837,7 @@ templateItem:
   .CG2-seriesHeader__inner{
     box-sizing: border-box;
     max-width: 1016px;
-    padding: 50px 0;
+    padding: 50px 0 40px;
     margin: 0 auto;
     @include max-screen( $breakpoint-middle ) {
       width: auto;
@@ -1869,7 +1869,7 @@ templateItem:
     .CG2-seriesHeader__main{}
       .CG2-seriesHeader__mainInner{
         text-align: center;
-        min-height: 150px;
+        min-height: 120px;
         @include max-screen( $breakpoint-middle ) {
           min-height: 60px;
         }
@@ -1893,6 +1893,43 @@ templateItem:
           .CG2-seriesHeader__value{
             margin: 0 0.6em;
           }
+    .CG2-seriesHeader__utils{
+      box-sizing: border-box;
+      max-width: 1016px;
+      padding: 0 28px;
+      margin: 0 auto;
+      @include max-screen( $breakpoint-middle ) {
+        padding: 0 10px;
+      }
+      a{
+        color: inherit;
+      }
+    }
+    .CG2-seriesHeader__utilFav{
+      font-size: 14px;
+      line-height: 1.2;
+      display: inline-block;
+      padding: 6px 8px;
+      border: 1px solid #fff;
+      border-radius: 2px;
+      background: rgba( 255, 255, 255, 0 );
+      transition: all .3s;
+      @include max-screen( $breakpoint-middle ) {
+        font-size: 12px;
+        padding: 4px 6px;
+      }
+      &:hover{
+        background: rgba( 255, 255, 255, 0.2 );
+      }
+      span[class^="CG2"]{
+        opacity: .5;
+        margin: 0 4px 0 0;
+        transition: all .3s;
+      }
+      &:hover span[class^="CG2"]{
+        opacity: 1;
+      }
+    }
 
   .CG2-seriesHeader__bg{
     @include blurry();
