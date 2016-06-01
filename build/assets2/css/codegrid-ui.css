@@ -2606,7 +2606,7 @@ progress
    ========================================================================== */
 /*
 ---
-name: transparencyButton
+name: transparentButton
 category:
   - Nav-items
 tag:
@@ -2616,10 +2616,10 @@ work with both a and button tags
 ```html
 <div style="background: rgba( 0, 0, 0, .5 );">
   <p>
-    <a class="CG2-transparencyButton" href="#">button:a element</a>
+    <a class="CG2-transparentButton" href="#">button:a element</a>
   </p>
   <p>
-    <button class="CG2-transparencyButton" href="#">button: button element</button>
+    <button class="CG2-transparentButton" href="#">button: button element</button>
   </p>
 </div>
 ```
@@ -2628,26 +2628,26 @@ disabled
 ```html
 <div style="background: rgba( 0, 0, 0, .5 );">
   <p>
-    <a class="CG2-transparencyButton CG2-transparencyButton--disabled" href="#">button</a>
+    <a class="CG2-transparentButton CG2-transparentButton--disabled" href="#">button</a>
   </p>
 </div>
 ```
 
 fav
 
-.CG2-transparencyButton__favText内にテキストを入れて管理する
+.CG2-transparentButton__favText内にテキストを入れて管理する
 ```html
 <div style="background: rgba( 0, 0, 0, .5 );">
   <p>
-    <button class="CG2-transparencyButton"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
+    <button class="CG2-transparentButton"><span class="CG2-icon-star"></span><span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span></button>
   </p>
   <p>
-    <button class="CG2-transparencyButton CG2-transparencyButton--favAdded"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
+    <button class="CG2-transparentButton CG2-transparentButton--favAdded"><span class="CG2-icon-star"></span><span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span></button>
   </p>
 </div>
 ```
 */
-.CG2-transparencyButton {
+.CG2-transparentButton {
   color: #fff;
   font-size: 14px;
   line-height: 1.2;
@@ -2659,37 +2659,37 @@ fav
   background: rgba(255, 255, 255, 0);
   transition: all .3s; }
   @media screen and (max-width: 767px) {
-    .CG2-transparencyButton {
+    .CG2-transparentButton {
       font-size: 12px;
       padding: 4px 8px; } }
-  .CG2-transparencyButton:hover {
+  .CG2-transparentButton:hover {
     background: rgba(255, 255, 255, 0.2); }
-  .CG2-transparencyButton span[class^="CG2-icon"] {
+  .CG2-transparentButton span[class^="CG2-icon"] {
     opacity: .5;
     margin: 0 4px 0 0;
     transition: all .3s; }
-  .CG2-transparencyButton:hover span[class^="CG2-icon"] {
+  .CG2-transparentButton:hover span[class^="CG2-icon"] {
     opacity: 1; }
-  .CG2-transparencyButton.CG2-transparencyButton--disabled {
+  .CG2-transparentButton.CG2-transparentButton--disabled {
     color: #ccc;
     cursor: not-allowed;
     border-color: #ccc;
     background: rgba(255, 255, 255, 0.2); }
-    .CG2-transparencyButton.CG2-transparencyButton--disabled span[class^="CG2-icon"] {
+    .CG2-transparentButton.CG2-transparentButton--disabled span[class^="CG2-icon"] {
       opacity: 1; }
-  .CG2-transparencyButton.CG2-transparencyButton--favAdded span[class^="CG2-icon"] {
+  .CG2-transparentButton.CG2-transparentButton--favAdded span[class^="CG2-icon"] {
     color: yellow;
     opacity: 1; }
-  .CG2-transparencyButton.CG2-transparencyButton--favAdded span.CG2-transparencyButton__favText {
+  .CG2-transparentButton.CG2-transparentButton--favAdded span.CG2-transparentButton__favText {
     color: transparent;
     font-size: 0;
     line-height: 0; }
-    .CG2-transparencyButton.CG2-transparencyButton--favAdded span.CG2-transparencyButton__favText:after {
+    .CG2-transparentButton.CG2-transparentButton--favAdded span.CG2-transparentButton__favText:after {
       color: #fff;
       font-size: 14px;
       content: 'このシリーズのお気に入り解除'; }
       @media screen and (max-width: 767px) {
-        .CG2-transparencyButton.CG2-transparencyButton--favAdded span.CG2-transparencyButton__favText:after {
+        .CG2-transparentButton.CG2-transparentButton--favAdded span.CG2-transparentButton__favText:after {
           font-size: 12px; } }
 
 /* ==========================================================================
@@ -4220,7 +4220,7 @@ templateItem:
       </div>
     </div>
     <div class="CG2-seriesHeader__utils">
-      <button class="CG2-transparencyButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button>
+      <button class="CG2-transparentButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button>
     </div>
   </div>
   <div class="CG2-seriesHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
@@ -4604,9 +4604,9 @@ tag:
 
     <div class="CG2-articleHeader__utils">
       <ul>
-        <li><a href="#" class="CG2-transparencyButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a></li>
-        <li><button class="CG2-transparencyButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button></li>
-        <li><button class="CG2-transparencyButton">未読にする</button></li>
+        <li><a href="#" class="CG2-transparentButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a></li>
+        <li><button class="CG2-transparentButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button></li>
+        <li><button class="CG2-transparentButton">未読にする</button></li>
       </ul>
     </div>
 
