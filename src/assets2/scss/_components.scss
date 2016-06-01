@@ -203,6 +203,109 @@ progress
   100% { transform :rotate( 360deg ); }
 }
 
+
+/* ==========================================================================
+   buttonContainer
+   ========================================================================== */
+/*
+---
+name: transparencyButton
+category:
+  - Nav-items
+tag:
+  - button
+---
+work with both a and button tags
+```html
+<div style="background: rgba( 0, 0, 0, .5 );">
+  <p>
+    <a class="CG2-transparencyButton" href="#">button:a element</a>
+  </p>
+  <p>
+    <button class="CG2-transparencyButton" href="#">button: button element</button>
+  </p>
+</div>
+```
+
+disabled
+```html
+<div style="background: rgba( 0, 0, 0, .5 );">
+  <p>
+    <a class="CG2-transparencyButton CG2-transparencyButton--disabled" href="#">button</a>
+  </p>
+</div>
+```
+
+fav
+
+.CG2-transparencyButton__favText内にテキストを入れて管理する
+```html
+<div style="background: rgba( 0, 0, 0, .5 );">
+  <p>
+    <button class="CG2-transparencyButton"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
+  </p>
+  <p>
+    <button class="CG2-transparencyButton CG2-transparencyButton--favAdded"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
+  </p>
+</div>
+```
+*/
+.CG2-transparencyButton{
+  color: #fff;
+  font-size: 14px;
+  line-height: 1.2;
+  text-decoration: none;
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  background: rgba( 255, 255, 255, 0 );
+  transition: all .3s;
+  @include max-screen( $breakpoint-middle ) {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  &:hover{
+    background: rgba( 255, 255, 255, 0.2 );
+  }
+  span[class^="CG2-icon"]{
+    opacity: .5;
+    margin: 0 4px 0 0;
+    transition: all .3s;
+  }
+  &:hover span[class^="CG2-icon"]{
+    opacity: 1;
+  }
+  &.CG2-transparencyButton--disabled{
+    color: #ccc;
+    cursor: not-allowed;
+    border-color: #ccc;
+    background: rgba( 255, 255, 255, 0.2 );
+    span[class^="CG2-icon"]{
+      opacity: 1;
+    }
+  }
+  &.CG2-transparencyButton--favAdded{
+    span[class^="CG2-icon"]{
+      color: yellow;
+      opacity: 1;
+    }
+    span.CG2-transparencyButton__favText{
+      color: rgba( 0, 0, 0, 0 );
+      font-size: 0;
+      line-height: 0;
+      &:after{
+        color: #fff;
+        font-size: 14px;
+        content:'このシリーズのお気に入り解除';
+        @include max-screen( $breakpoint-middle ) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
 /* ==========================================================================
    buttonContainer
    ========================================================================== */
@@ -285,60 +388,6 @@ tag:
     }
   }
 }
-
-/* ==========================================================================
-   toolButton
-   ========================================================================== */
-/*
----
-name: toolButton
-category:
-  - Nav-items
-tag:
-  - button
----
-
-```html
-<div style="padding: 10px; background:#000;">
-  <div class="CG2-toolButton"></div>
-</div>
-```
-
-*/
-
-.CG2-toolButton{
-  color: #FFF;
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  padding: 11px;
-  border-radius: 3px;
-  background: rgba( 255, 255, 255, 0.2 );
-  transition: all .3s;
-  @include max-screen( $breakpoint-middle ) {
-    width: 12px;
-    height: 12px;
-    padding: 8px;
-  }
-  &:after{
-    @include icon( 'list' );
-    font-size: 18px;
-    display: block;
-    @include max-screen( $breakpoint-middle ) {
-      font-size: 12px;
-    }
-  }
-  a &:hover{
-    text-shadow: 0 0 6px rgba( 0, 0, 0, .2 );
-    background: rgba( 255, 255, 255, .4 );
-  }
-}
-
-
-
-
-
-
 
 
 
@@ -1208,7 +1257,10 @@ tag:
           </a>
         </div>
         <div class="CG2-seriesList__itemUtil">
-          <a href="#"><div class="CG2-toolButton"></div></a>
+          <ul>
+            <li><a href="#"><span class="CG2-icon-list"></span></a></li>
+            <li><button class="CG2-seriesList__itemUtilButton--favAdded" onclick="javascript:alert('added to fav list');"><span class="CG2-icon-star"></span></button></li>
+          </ul>
         </div>
       </div>
       <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
@@ -1294,7 +1346,10 @@ tag:
         </div>
         <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
         <div class="CG2-seriesList__itemUtil">
-          <a href="#"><div class="CG2-toolButton"></div></a>
+          <ul>
+            <li><a href="#"><span class="CG2-icon-list"></span></a></li>
+            <li><button class="CG2-seriesList__itemUtilButton--favAdded" onclick="javascript:alert('added to fav list');"><span class="CG2-icon-star"></span></button></li>
+          </ul>
         </div>
       </div>
       <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
@@ -1440,12 +1495,12 @@ tag:
         width: 100%;
         margin: -18px 0 12px;
         @include max-screen( $breakpoint-middle ) {
-          margin: 0 0 20px;
+          margin: 14px 0 20px;
         }
         .CG2-seriesList__item--fullWidth &{
           margin: 0 0 30px;
           @include max-screen( $breakpoint-middle ) {
-            margin: 0 0 20px;
+            margin: 14px 0 20px;
           }
         }
       }
@@ -1501,7 +1556,7 @@ tag:
             font-size: 20px;
             font-weight: normal;
             height: auto;
-            padding-top: 14px;
+            // padding-top: 14px;
           }
           .CG2-seriesList__item--fullWidth &{
             font-size: 30px;
@@ -1554,7 +1609,73 @@ tag:
               width: 40px;
             }
           }
+          ul{
+            font-size: 0;
+            list-style: none;
+            display: inline-table;
+            padding: 0;
+          }
+          li{
+            text-align: center;
+            display: table-cell;
+            width: 18px;
+            height: 18px;
+            margin: 0;
+            padding: 8px;
+            background: rgba( 255, 255, 255, 0.2 );
+            @include max-screen( $breakpoint-middle ) {
+              width: 14px;
+              height: 14px;
+            }
+            &:first-child{
+              &, a{
+                border-top-left-radius: 3px;
+                border-bottom-left-radius: 3px;
+              }
+            }
+            &:last-child{
+              &, a{
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+              }
+            }
+          }
+          a,
+          button{
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            padding: 8px;
+            margin: -8px;
+            border: none;
+            background: rgba( 255, 255, 255, 0 );
+            transition: all .3s;
+            &:hover{
+              text-decoration: none;
+              background: rgba( 255, 255, 255, 0.2 );
+              span[class^="CG2-icon"]{
+                opacity: 1;
+              }
+            }
+          }
+          span[class^="CG2-icon"]{
+            font-size: 18px;
+            line-height: 18px;
+            opacity: .5;
+            position: static;
+            display: block;
+            @include max-screen( $breakpoint-middle ) {
+              font-size: 14px;
+              line-height: 14px;
+            }
+          }
         }
+    button.CG2-seriesList__itemUtilButton--favAdded{
+      span[class^="CG2-icon"]{
+        color: yellow;
+        opacity: 1;
+      }
+    }
     .CG2-seriesList__coverImage{
       @include blurry();
       transition: transform 1s;
@@ -1813,8 +1934,11 @@ templateItem:
         </div>
       </div>
     </div>
+    <div class="CG2-seriesHeader__utils">
+      <button class="CG2-transparencyButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button>
+    </div>
   </div>
-  <div class="CG2-seriesHeader__bg CG2-seriesHeader__bg--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
+  <div class="CG2-seriesHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
 </div>
 ```
 
@@ -1826,7 +1950,7 @@ templateItem:
   .CG2-seriesHeader__inner{
     box-sizing: border-box;
     max-width: 1016px;
-    padding: 50px 0;
+    padding: 50px 0 40px;
     margin: 0 auto;
     @include max-screen( $breakpoint-middle ) {
       width: auto;
@@ -1858,7 +1982,7 @@ templateItem:
     .CG2-seriesHeader__main{}
       .CG2-seriesHeader__mainInner{
         text-align: center;
-        min-height: 150px;
+        min-height: 120px;
         @include max-screen( $breakpoint-middle ) {
           min-height: 60px;
         }
@@ -1882,7 +2006,15 @@ templateItem:
           .CG2-seriesHeader__value{
             margin: 0 0.6em;
           }
-
+    .CG2-seriesHeader__utils{
+      box-sizing: border-box;
+      max-width: 1016px;
+      padding: 0 28px;
+      margin: 0 auto;
+      @include max-screen( $breakpoint-middle ) {
+        padding: 0 10px;
+      }
+    }
   .CG2-seriesHeader__bg{
     @include blurry();
     &.CG2-seriesHeader__bg--blurry{
@@ -2231,13 +2363,21 @@ tag:
 
     <div class="CG2-articleHeader__pagenation">
       <ul>
-        <li class="CG2-articleHeader__pagenationPrev"><a href="#">第1回 仕様を知る 1</a></li>
-        <li class="CG2-articleHeader__pagenationNext"><a href="#">第3回 Flexboxを実践する 1</a></li>
+        <li class="CG2-articleHeader__pagenationPrev"><a href="#">前回</a></li>
+        <li class="CG2-articleHeader__pagenationNext"><a href="#">次回</a></li>
+      </ul>
+    </div>
+
+    <div class="CG2-articleHeader__utils">
+      <ul>
+        <li><a href="#" class="CG2-transparencyButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a></li>
+        <li><button class="CG2-transparencyButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button></li>
+        <li><button class="CG2-transparencyButton">未読にする</button></li>
       </ul>
     </div>
 
   </div>
-  <div class="CG2-articleHeader__bg CG2-articleHeader__bg--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
+  <div class="CG2-articleHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
 </div>
 ```
 
@@ -2381,29 +2521,39 @@ tag:
 
   .CG2-articleHeader__pagenation{
     padding-top: 20px;
+    margin: 0 -140px;
     @include max-screen( $breakpoint-middle ) {
       display: none;
     }
     ul{
       list-style: none;
-      display: table;
-      width: 100%;
       padding: 0;
       margin: 0;
     }
       li{
         vertical-align: middle;
-        position: relative;
         box-sizing: border-box;
-        display: table-cell;
-        width: 50%;
-        padding: 0 5px;
+        display: inline-block;
         margin: 0;
         a{
-          @include resetLink();
+          color: inherit;
+          font-size: 14px;
+          line-height: 1.2;
           text-decoration: none;
-          text-align: left;
+          position: relative;
           display: inline-block;
+          padding: 6px 8px;
+          border: 1px solid #fff;
+          border-radius: 2px;
+          background: rgba( 255, 255, 255, 0 );
+          transition: all .3s;
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 12px;
+            padding: 4px 6px;
+          }
+          &:hover{
+            background: rgba( 255, 255, 255, 0.2 );
+          }
           &:before{
             position: absolute;
             top: 50%;
@@ -2411,31 +2561,58 @@ tag:
           }
         }
         &.CG2-articleHeader__pagenationPrev{
-          text-align: left;
-          padding: 0 .5em 0 1.2em;
-          a:before{
-            @include icon( 'left' );
-            line-height: 0;
-            left: 0;
-          }
-          a:hover:before{
-            left: -3px;
+          float: left;
+          a{
+            padding-right: 12px;
+            padding-left: calc( 1.2em + 8px );
+            &:before{
+              @include icon( 'left' );
+              line-height: 0;
+              left: 8px;
+            }
+            &:hover:before{
+              left: 5px;
+            }
           }
         }
         &.CG2-articleHeader__pagenationNext{
-          text-align: right;
-          padding: 0 1.2em 0 .5em;
-          a:before{
-            @include icon( 'right' );
-            line-height: 0;
-            right: 0;
-          }
-          a:hover:before{
-            right: -3px;
+          float: right;
+          a{
+            padding-right: calc( 1.2em + 8px );
+            padding-left: 12px;
+            &:before{
+              @include icon( 'right' );
+              line-height: 0;
+              right: 8px;
+            }
+            &:hover:before{
+              right: 5px;
+            }
           }
         }
       }
   }
+  .CG2-articleHeader__utils{
+    @include max-screen( $breakpoint-middle ) {
+      margin-top: 10px;
+    }
+    ul{
+      font-size: 0;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    li{
+      font-size: 1rem;
+      display: inline-block;
+      margin: 0 10px 10px 0;
+      @include max-screen( $breakpoint-middle ) {
+        margin: 0 5px 5px 0;
+      }
+    }
+  }
+  .CG2-articleHeader__utilButton{}
+
   .CG2-articleHeader__bg{
     @include blurry();
     &.CG2-articleHeader__bg--blurry{
@@ -2675,12 +2852,6 @@ tag:
         <li><a href="#">まとめ</a></li>
       </ul>
     </div>
-    <div class="CG2-articleTOC__util">
-      <ul>
-        <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-star"></span> お気に入りに登録</button></li>
-        <li><button class="CG2-button">未読にする</button></li>
-      </ul>
-    </div>
   </div>
 </section>
 ```
@@ -2753,46 +2924,6 @@ section.CG2-articleTOC{
         }
       }
     }
-    .CG2-articleTOC__util{
-      vertical-align: top;
-      display: table-cell;
-      width: 1%;
-      white-space: nowrap;
-      @include max-screen( $breakpoint-middle ) {
-        display: block;
-        width: auto;
-        margin-top: 15px;
-      }
-      ul{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 0;
-        }
-      }
-      li{
-        margin: 0 0 5px;
-        @include max-screen( $breakpoint-middle ) {
-          display: inline-block;
-          margin: 0 2px 0 0;
-        }
-      }
-      .CG2-button{
-        width: 100%;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 10px;
-          display: inline-block;
-          width: auto;
-          padding: 0.2em 1.5em;
-          border-radius: 1px;
-          [class^="CG2-icon-"]{
-            font-size: 12px;
-            margin-right: 3px;
-          }
-        }
-      }
-    }
 
 
 @include print () {
@@ -2803,9 +2934,6 @@ section.CG2-articleTOC{
     .CG2-articleTOC__list{
       font-size: 18px;
       display: block;
-    }
-    .CG2-articleTOC__util{
-      display: none;
     }
 }
 
