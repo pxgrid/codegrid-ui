@@ -217,31 +217,37 @@ tag:
 ---
 work with both a and button tags
 ```html
-<p>
-  <a class="transparencyButton" href="#">button:a element</a>
-</p>
-<p>
-  <button class="transparencyButton" href="#">button: button element</button>
-</p>
+<div style="background: rgba( 0, 0, 0, .5 );">
+  <p>
+    <a class="CG2-transparencyButton" href="#">button:a element</a>
+  </p>
+  <p>
+    <button class="CG2-transparencyButton" href="#">button: button element</button>
+  </p>
+</div>
 ```
 
 disabled
 ```html
-<p>
-  <a class="transparencyButton transparencyButton--disabled" href="#">button</a>
-</p>
+<div style="background: rgba( 0, 0, 0, .5 );">
+  <p>
+    <a class="CG2-transparencyButton CG2-transparencyButton--disabled" href="#">button</a>
+  </p>
+</div>
 ```
 
 fav
 
 .CG2-transparencyButton__favText内にテキストを入れて管理する
 ```html
-<p>
-  <button class="CG2-transparencyButton"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
-</p>
-<p>
-  <button class="CG2-transparencyButton CG2-transparencyButton--favAdded"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
-</p>
+<div style="background: rgba( 0, 0, 0, .5 );">
+  <p>
+    <button class="CG2-transparencyButton"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
+  </p>
+  <p>
+    <button class="CG2-transparencyButton CG2-transparencyButton--favAdded"><span class="CG2-icon-star"></span><span class="CG2-transparencyButton__favText">このシリーズをお気に入りに登録</span></button>
+  </p>
+</div>
 ```
 */
 .CG2-transparencyButton{
