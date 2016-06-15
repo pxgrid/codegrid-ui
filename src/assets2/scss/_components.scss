@@ -3483,15 +3483,15 @@ article.CG2-article{
     @include max-screen( $breakpoint-middle ) {
       padding: 14px;
     }
-    p{
+    & > p{
       margin: 1em 0;
     }
-    ul{
+    & > ul{
       margin: 0;
       padding: 0 0 0 20px;
-    }
-    li{
-      margin: 0;
+      li{
+        margin: 0;
+      }
     }
   }
     .Column h1,
