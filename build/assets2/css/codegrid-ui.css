@@ -5614,13 +5614,13 @@ article.CG2-article .Column {
   @media screen and (max-width: 767px) {
     article.CG2-article .Column {
       padding: 14px; } }
-  article.CG2-article .Column p {
+  article.CG2-article .Column > p {
     margin: 1em 0; }
-  article.CG2-article .Column ul {
+  article.CG2-article .Column > ul {
     margin: 0;
     padding: 0 0 0 20px; }
-  article.CG2-article .Column li {
-    margin: 0; }
+    article.CG2-article .Column > ul li {
+      margin: 0; }
 
 article.CG2-article .Column h1,
 article.CG2-article .Column-title {
