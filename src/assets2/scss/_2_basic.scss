@@ -92,7 +92,8 @@ html{
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #191919;
+  //1px の #191919。スクロールバーの色に影響を与えないように画像で指定。
+  background: url( "data:image/gif;base64,R0lGODlhAQABAPAAABkZGQAAACwAAAAAAQABAAACAkQBADs=" );
   @include max-screen( $breakpoint-middle ) {
     font-size: 12px;
   }
