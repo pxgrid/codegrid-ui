@@ -677,7 +677,7 @@ html {
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #191919; }
+  background: url("data:image/gif;base64,R0lGODlhAQABAPAAABkZGQAAACwAAAAAAQABAAACAkQBADs="); }
   @media screen and (max-width: 767px) {
     html {
       font-size: 12px; } }
