@@ -377,6 +377,7 @@ templateItem:
           display: table-cell;
           vertical-align: middle;
           width: 20px;
+          padding: 0 6px;
           &:after{
             @include icon( down );
             position: relative;
