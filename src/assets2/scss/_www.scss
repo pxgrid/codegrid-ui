@@ -122,6 +122,9 @@ tag:
     <div class="CG2-features__itemBody">
       <p>忙しいと追うのを忘れがちになる新しい技術情報。エンジニア同士の会話でついていけなかったなんてことはありませんか？　CodeGridでは、最新トレンド技術もきちんと検証した上でしっかり解説します。もちろん「今さら聞けない」と思われがちな入門的な記事も配信。CodeGridを読んでいれば、基礎から最新トレンドまでフロントエンド界隈の情報をキャッチできます。</p>
     </div>
+    <div class="CG2-features__embedded">
+      //twitterの埋め込みコード など
+    </div>
   </section>
 </div>
 ```
@@ -185,6 +188,13 @@ tag:
       @include max-screen( $breakpoint-middle ) {
         content: none;
       }
+    }
+  }
+  .CG2-features__embedded{
+    twitterwidget,
+    iframe{
+      display: block;
+      margin: auto;
     }
   }
 
