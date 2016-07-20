@@ -111,6 +111,22 @@ question
 </div>
 ```
 
+exclamation-circle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-exclamation-circle"></span>
+  
+</div>
+```
+
+exclamation-triangle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-exclamation-triangle"></span>
+  
+</div>
+```
+
 twitter
 ```html
 <div style="font-size:32px;">
@@ -277,6 +293,8 @@ cat-discussion
 .CG2-icon-lock:before { content: "\"; }
 .CG2-icon-unlock:before { content: "\"; }
 .CG2-icon-question:before { content: "\"; }
+.CG2-icon-exclamation-circle:before { content: "\"; }
+.CG2-icon-exclamation-triangle:before { content: "\"; }
 .CG2-icon-twitter:before { content: "\"; }
 .CG2-icon-facebook:before { content: "\"; }
 .CG2-icon-gplus:before { content: "\"; }
@@ -317,6 +335,8 @@ $icons: (
   lock "\",
   unlock "\",
   question "\",
+  exclamation-circle "\",
+  exclamation-triangle "\",
   twitter "\",
   facebook "\",
   gplus "\",
