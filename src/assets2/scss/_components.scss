@@ -2365,6 +2365,27 @@ tag:
           <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
         </div>
         <div class="CG2-articleHeader__pubDate">2015年 5月14日発行</div>
+        
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="#">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="#">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -2477,7 +2498,7 @@ tag:
   }
     .CG2-articleHeader__mainInner{
       display: table-cell;
-      vertical-align: middle;
+      vertical-align: top;
     }
 
       .CG2-articleHeader__series{
@@ -2509,14 +2530,19 @@ tag:
       .CG2-articleHeader__title{
         font-size: 32px;
         font-family: $fontSerif;
+        font-weight: 600;
         line-height: 1.4;
-        margin-bottom: 20px;
+        margin-bottom: 16px;
         @include max-screen( $breakpoint-middle ) {
           font-size: 18px;
         }
       }
       .CG2-articleHeader__abstract{
-        p{}
+        line-height: 1.6;
+        p{
+          margin-top: .5em;
+          margin-bottom: .5em;
+        }
         @include max-screen( $breakpoint-middle ) {
           font-size: 12px;
         }
@@ -2525,6 +2551,71 @@ tag:
         font-size: 12px;
         opacity: 0.5;
       }
+
+      .CG2-articleHeader__authors{
+        font-size: 0;
+        margin: 12px 0;
+      }
+        .CG2-articleHeader__author{
+          font-size: 1rem;
+          display: inline-table;
+          margin-right: 10px;
+          & > a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            display: table;
+            width: 100%;
+            &:before{
+              content: '';
+              display: block;
+              position: absolute;
+              top: -2px;
+              right: -2px;
+              bottom: -2px;
+              left: -2px;
+              background: rgba( 255, 255, 255, 0 );
+              transition: all .5s;
+            }
+            &:hover:before {
+              background: rgba( 255, 255, 255, .2 );
+              transition: all .2s;
+            }
+          }
+        }
+          .CG2-articleHeader__authorImage{
+            vertical-align: middle;
+            display: table-cell;
+            padding-right: 8px;
+            img{
+              display: block;
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .CG2-articleHeader__authorName{
+            font-size: 12px;
+            vertical-align: middle;
+            display: table-cell;
+            padding-right: 6px;
+          }
+          .CG2-articleHeader__authorTitle{
+            font-size: 12px;
+            vertical-align: middle;
+            display: table-cell;
+            padding-left: 6px;
+            position: relative;
+            &:before{
+              content: '';
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              height: 1.4em;
+              border-left: 1px solid #fff;
+              margin: auto;
+            }
+          }
 
   .CG2-articleHeader__pagenation{
     padding-top: 20px;
