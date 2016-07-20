@@ -2415,7 +2415,7 @@ tag:
 
   .CG2-articleHeader__category{
     position: absolute;
-    top: 40px;
+    top: calc( 40px + 0.5em );
     left: 50px;
     width: 50px;
     @include max-screen( $breakpoint-middle ) {
@@ -2648,6 +2648,81 @@ tag:
   }
 
 }
+
+
+
+/* ==========================================================================
+   CG2-narrowLayout
+   ========================================================================== */
+/*
+---
+name: articleNotice
+category:
+  - Templates
+tag:
+  - app-item-article
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level1">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-triangle"></span>
+    多くが古い情報の可能性があり、現在は推奨されない記事です
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level2">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-circle"></span>
+    一部古い情報の可能性があります
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level3">
+  <div class="CG2-articleNotice__head">
+    古い記事ですが、現在も使える情報です
+  </div>
+</div>
+```
+
+*/
+
+.CG2-articleNotice{
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  padding: 16px;
+  background-color: #14C850;
+  &.CG2-articleNotice--level1{
+    background-color: #F03C3C;
+  }
+  &.CG2-articleNotice--level2{
+    background-color: #f0b428;
+  }
+  @include max-screen( $breakpoint-small ) {
+    font-size: 14px;
+  }
+}
+  .CG2-articleNotice__head{
+    span[class^="CG2-icon-"]{
+      font-size: 28px;
+      line-height: 0;
+      margin-right: 10px;
+      @include max-screen( $breakpoint-small ) {
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+
 
 /* ==========================================================================
    CG2-narrowLayout
