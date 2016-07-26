@@ -4743,7 +4743,7 @@ tag:
 .CG2-articleHeader__main {
   display: table;
   width: 100%;
-  height: 300px; }
+  height: 260px; }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__main {
       height: auto; } }
@@ -4754,7 +4754,8 @@ tag:
 
 .CG2-articleHeader__series {
   font-size: 24px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.4; }
   .CG2-articleHeader__series a {
     color: inherit;
     text-decoration: inherit;
@@ -4780,7 +4781,7 @@ tag:
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 16px; }
+  margin-bottom: 22px; }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__title {
       font-size: 18px; } }
