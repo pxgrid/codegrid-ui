@@ -6015,6 +6015,7 @@ tag:
   .CG2-articleUtil .CG2-articleUtil__socialItem {
     margin-top: 5px; }
     .CG2-articleUtil .CG2-articleUtil__socialItem iframe {
+      width: 100%;
       max-width: 100%; }
 
 @media print {
