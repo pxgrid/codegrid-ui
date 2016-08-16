@@ -1027,6 +1027,10 @@ $drawerLeft: 50px;
   display: none;
   @include max-screen( $breakpoint-middle ) {
     display: block;
+    pointer-events: none;
+    html.js-drawer--show &{
+      pointer-events: auto;
+    }
   }
 }
 
