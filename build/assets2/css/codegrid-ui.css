@@ -362,7 +362,7 @@ td,
 th {
   padding: 0; }
 
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+coffeescript+git+handlebars+jade+less+markdown+ruby+sass+scss+stylus+typescript+yaml&plugins=line-highlight+line-numbers+autolinker */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+coffeescript+ruby+git+handlebars+http+jade+json+less+markdown+jsx+sass+scss+stylus+typescript+yaml&plugins=line-numbers+autolinker */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -371,13 +371,14 @@ th {
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
+  background: none;
   text-shadow: 0 1px white;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  word-wrap: normal;
   line-height: 1.5;
   -moz-tab-size: 4;
   -o-tab-size: 4;
@@ -415,7 +416,8 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: .1em;
-  border-radius: .3em; }
+  border-radius: .3em;
+  white-space: normal; }
 
 .token.comment,
 .token.prolog,
@@ -476,48 +478,6 @@ pre[class*="language-"] {
 
 .token.entity {
   cursor: help; }
-
-pre[data-line] {
-  position: relative;
-  padding: 1em 0 1em 3em; }
-
-.line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  /* Same as .prism’s padding-top */
-  background: rgba(153, 122, 102, 0.08);
-  background: -moz-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  background: -o-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  background: linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre; }
-
-.line-highlight:before,
-.line-highlight[data-end]:after {
-  content: attr(data-start);
-  position: absolute;
-  top: .4em;
-  left: .6em;
-  min-width: 1em;
-  padding: 0 .5em;
-  background-color: rgba(153, 122, 102, 0.4);
-  color: #f5f2f0;
-  font: bold 65%/1.5 sans-serif;
-  text-align: center;
-  vertical-align: .3em;
-  border-radius: 999px;
-  text-shadow: none;
-  box-shadow: 0 1px white; }
-
-.line-highlight[data-end]:after {
-  content: attr(data-end);
-  top: auto;
-  bottom: .4em; }
 
 pre.line-numbers {
   position: relative;
@@ -2149,7 +2109,10 @@ templateItem:
   display: none; }
   @media screen and (max-width: 767px) {
     .CG2-drawer {
-      display: block; } }
+      display: block;
+      pointer-events: none; }
+      html.js-drawer--show .CG2-drawer {
+        pointer-events: auto; } }
 
 .CG2-drawer__panel {
   position: fixed;
