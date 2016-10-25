@@ -1685,7 +1685,7 @@ tag:
     }
     .CG2-seriesList__coverImage{
       @include blurry();
-      transition: transform 1s;
+      transition: transform 4s;
       .CG2-seriesList__item:hover &{
         transform: scale( 1.4, 1.4 );
       }
@@ -3284,38 +3284,47 @@ tag:
     <li>リストりすと</li>
     <li>リストりすと</li>
   </ol>
-
-  <table>
-    <tbody>
-      <tr>
-        <th>見出しセル</th>
-        <th>見出しセル</th>
-        <th>見出しセル</th>
-      </tr>
-      <tr>
-        <td>データセル</td>
-        <td>データセル</td>
-        <td>データセル</td>
-      </tr>
-      <tr>
-        <td>データセル</td>
-        <td>データセル</td>
-        <td>データセル</td>
-      </tr>
-    </tbody></table>
+  
+  <div class="CG2-article__table">
     <table>
-      <tbody><tr>
-        <th>見出しセル</th>
-        <td>データセル</td>
-        <td>データセル</td>
-      </tr>
-      <tr>
-        <th>見出しセル</th>
-        <td>データセル</td>
-        <td>データセル</td>
-      </tr>
-    </tbody>
-  </table>
+      <thead>
+        <tr>
+          <th>見出しセル</th>
+          <th>見出しセル</th>
+          <th>見出しセル</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>データセル</td>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+        <tr>
+          <td>データセル</td>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="CG2-article__table">
+    <table>
+      <tbody>
+        <tr>
+          <th>見出しセル</th>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+        <tr>
+          <th>見出しセル</th>
+          <td>データセル</td>
+          <td>データセル</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <aside>
     <h1>*注：Autoprefixer</h1>
@@ -3394,38 +3403,21 @@ article.CG2-article{
       margin: .5em 0;
     }
   }
-  table{
-    // table-layout : fixed;
-    // width: 100%
-    // max-width: 100%;
+  .CG2-article__table{
+    overflow-x: auto;
     margin: 2em 0;
+    code{
+      white-space: nowrap;
+    }
+    table{}
     th, td{
-      // `width: 100%` + `table-layout : fixed;`
-      // ではない　table (shrink to fit) の中では
-      // `break-all` しかない
-      word-wrap : break-word; // Non standard for IE
-      word-break: break-word; // Non standard for webkit
-      word-break: break-all;
-      overflow-wrap : break-word;
       padding: .3em 10px;
       border: 1px solid #DBDBDB;
-      &:first-child{
-        word-wrap : normal; // Non standard for IE
-        word-break: normal; // Non standard for webkit
-        overflow-wrap : normal;
-        @include max-screen( $breakpoint-middle ) {
-          word-wrap : break-word; // Non standard for IE
-          word-break: break-word; // Non standard for webkit
-          word-break: break-all;
-          overflow-wrap : break-word;
-        }
-      }
     }
     th{
       background: #EEE;
     }
-    td{
-    }
+    td{}
   }
   figure{
     margin: 2em 0;
@@ -3442,6 +3434,7 @@ article.CG2-article{
       }
     }
   }
+
   pre{
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     line-height: 1.6;
