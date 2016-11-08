@@ -97,6 +97,12 @@ templateItem:
       <div class="CG2-pageHeader__logo">
         <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
+      </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
           <input>
@@ -122,7 +128,13 @@ templateItem:
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
+        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
@@ -138,13 +150,14 @@ templateItem:
           <div class="CG2-pageHeader__userOpener"></div>
         </div>
         <div class="CG2-pageHeader__userMenu">
-          <ul>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
-          </ul>
+          <div class="CG2-pageHeader__userMenuInner">
+            <ul>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
   </header>
 </div>
@@ -165,6 +178,60 @@ templateItem:
 ```
 
 */
+
+@keyframes wf1-pageHeader-onmounted {
+  0% {
+    overflow: hidden;
+    height: 0;
+  }
+  99% {
+    overflow: hidden;
+    height: 0;
+  }
+  100% {
+    overflow: visible;
+    height: auto;
+  }
+}
+@keyframes wf1-pageHeader-elastic-in {
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    height: auto;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes wf1-pageHeader-elastic-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  99% {
+    visibility: visible;
+    height: auto;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transform: scale(0);
+  }
+}
+
 
 .CG2-pageHeader{
   @include clearfix();
@@ -196,21 +263,19 @@ templateItem:
 }
   .CG2-pageHeader__inner{
     position: relative;
-    // max-width: 1016px;
+    display: flex;
+    align-items: center;
     max-width: 1100px;
+    height: 100%;
     padding: 0 28px;
     margin: 0 auto;
   }
     .CG2-pageHeader__logo{
-      position: absolute;
-      top: 16px;
-      left: 28px;
+      margin: 0 30px 0 0;
       img{
         display: block;
       }
       @include max-screen( $breakpoint-middle ) {
-        top: 10px;
-        left: 0;
         img{
           width: 90px;
           height: auto;
@@ -219,6 +284,47 @@ templateItem:
     }
     .CG2-pageHeader__nav{
       text-align: center;
+      margin: 0 auto;
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      ul{
+        font-size: 0;
+        list-style: none;
+        display: inline-block;
+        padding: 0;
+        margin: 0;
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 56px;
+          vertical-align: middle;
+        }
+      }
+      li{
+        font-size: 1rem;
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0 10px;
+      }
+      a{
+        color: #999;
+        font-size: 14px;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        margin: -10px;
+        &:hover{
+          color: #FFF;
+        }
+      }
+      @include print () {
+        display: none;
+      }
+    }
+    .CG2-pageHeader__appNav{
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -260,10 +366,9 @@ templateItem:
     }
     .CG2-pageHeader__search{
       @extend %search;
-      position: absolute;
-      top: 11px;
-      left: 180px;
       width: 280px;
+      height: 32px;
+      margin: 0 0 0 auto;
       border :1px solid #777;
       background: transparent;
       @include max-screen( $breakpoint-middle ) {
@@ -276,16 +381,7 @@ templateItem:
       .CG2-pageHeader__searchInner{
         @extend %searchInner;
         input{
-        //   color: #FFF;
-        //   font-size: 14px;
-        //   box-sizing: border-box;
-        //   display: block;
-        //   border: none;
-        //   width: 100%;
-        //   height: 100%;
           padding: 4px 10px 4px 30px;
-        //   background: transparent;
-        //   transition: all .2s;
           &:hover,
           &:focus{
             background: #303030;
@@ -293,9 +389,7 @@ templateItem:
         }
       }
     .CG2-pageHeader__buttons{
-      position: absolute;
-      top: 0;
-      right: 28px;
+      margin: 0 0 0 30px;
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -334,9 +428,8 @@ templateItem:
       }
     }
     .CG2-pageHeader__user{
-      position: absolute;
-      top: 0;
-      right: 0;
+      position: relative;
+      margin: 0 0 0 30px;
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -390,40 +483,57 @@ templateItem:
           }
         }
         .CG2-pageHeader__userMenu{
-          box-sizing: border-box;
+          overflow: hidden;
           position: absolute;
-          display: none;
+          // display: none;
           width: 100%;
-          padding: 10px;
-          border: 1px solid rgba(0,0,0,0.1);
+          height: 0;
           margin-top: 2px;
-          border-radius: 2px;
-          box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-          background: #FFF;
+          animation-name: wf1-pageHeader-onmounted;
+          animation-fill-mode: forwards;
+          animation-duration: .3s;
           &.CG2-pageHeader__userMenu--show{
-            display: block;
-          }
-          &:before{
-            content: "";
-            position: absolute;
-            top: -14px;
-            right: 38px;
-            display: block;
-            border: 7px solid transparent;
-            border-bottom-color: #FFF;
-          }
-          ul{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
-          li{
-            margin: 0;
-            &+li{
-              margin-top: 10px;
+            overflow: visible;
+            height: auto;
+            .CG2-pageHeader__userMenuInner{
+              visibility: visible;
+              animation-name: wf1-pageHeader-elastic-in;
             }
           }
         }
+          .CG2-pageHeader__userMenuInner{
+            visibility: hidden;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 2px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            background: #FFF;
+            transform-origin: 150px 0;
+            animation-name: wf1-pageHeader-elastic-out;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+            &:before{
+              content: "";
+              position: absolute;
+              top: -14px;
+              right: 38px;
+              display: block;
+              border: 7px solid transparent;
+              border-bottom-color: #FFF;
+            }
+            ul{
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            li{
+              margin: 0;
+              &+li{
+                margin-top: 10px;
+              }
+            }
+          }
     .CG2-pageHeader__opener{
       @include max-screen( $breakpoint-middle ) {
         color: #FFF;
