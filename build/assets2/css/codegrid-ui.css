@@ -7382,7 +7382,7 @@ tag:
     <div class="CG2-features__itemBody">
       <p>忙しいと追うのを忘れがちになる新しい技術情報。エンジニア同士の会話でついていけなかったなんてことはありませんか？　CodeGridでは、最新トレンド技術もきちんと検証した上でしっかり解説します。もちろん「今さら聞けない」と思われがちな入門的な記事も配信。CodeGridを読んでいれば、基礎から最新トレンドまでフロントエンド界隈の情報をキャッチできます。</p>
     </div>
-    <div class="CG2-features__embedded">
+    <div class="CG2-features__embeddedTweets">
       //twitterの埋め込みコード など
     </div>
   </section>
@@ -7442,10 +7442,21 @@ tag:
       .CG2-features__itemBody:before {
         content: none; } }
 
-.CG2-features__embedded twitterwidget,
-.CG2-features__embedded iframe {
-  display: block;
-  margin: auto; }
+.CG2-features__embeddedTweets {
+  display: flex;
+  margin: 20px -5px; }
+  @media screen and (max-width: 767px) {
+    .CG2-features__embeddedTweets {
+      display: block; } }
+  .CG2-features__embeddedTweets twitterwidget,
+  .CG2-features__embeddedTweets iframe {
+    width: 50%;
+    margin: 10px 5px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__embeddedTweets twitterwidget,
+      .CG2-features__embeddedTweets iframe {
+        width: 100%;
+        margin: 10px auto; } }
 
 /* ==========================================================================
    CG2-howYouReceive
