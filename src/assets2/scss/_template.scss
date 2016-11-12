@@ -331,7 +331,6 @@ templateItem:
       ul{
         font-size: 0;
         list-style: none;
-        display: inline-block;
         padding: 0;
         margin: 0;
         &:before{
@@ -340,18 +339,23 @@ templateItem:
           width: 0;
           height: 56px;
           vertical-align: middle;
+          @include max-screen( $pageMaxWidth ) {
+            content: none;
+          }
         }
       }
       li{
-        font-size: 1rem;
+        font-size: .875rem;
         vertical-align: middle;
         display: inline-block;
         padding: 0;
         margin: 0 10px;
+        @include max-screen( $pageMaxWidth ) {
+          font-size: .75rem;
+        }
       }
       a{
         color: #999;
-        font-size: 14px;
         text-decoration: none;
         display: inline-block;
         padding: 10px;
@@ -430,6 +434,9 @@ templateItem:
     .CG2-pageHeader__user{
       position: relative;
       margin: 0 0 0 30px;
+      @include max-screen( $breakpoint-base ) {
+        margin-left: 20px;
+      }
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }

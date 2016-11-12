@@ -103,7 +103,8 @@ progress
   background: #777;
   box-shadow: 0 0 0 rgba( 0, 0, 0, 0.1 );
   transition: all .2s;
-  &:hover:not( [disabled] ):not( [aria-disabled="true"] ):not( .CG2-button--progress ){
+  &:hover:not( [disabled] ):not( [aria-disabled="true"] ):not( .CG2-button--progress ),
+  &:focus:not( [disabled] ):not( [aria-disabled="true"] ):not( .CG2-button--progress ){
     box-shadow: 0 0 3px #777;
     background: lighten( #777, 10% );
     transition: all .2s;
@@ -145,7 +146,8 @@ progress
   &.CG2-button--primary{
     border-color: #10a040;
     background: #10a040;
-    &:hover:not( [disabled] ):not( [aria-disabled="true"] ){
+    &:hover:not( [disabled] ):not( [aria-disabled="true"] ),
+    &:focus:not( [disabled] ):not( [aria-disabled="true"] ){
       box-shadow: 0 0 3px #10a040;
       background: lighten( #10a040, 10% );
     }
@@ -153,7 +155,8 @@ progress
   &.CG2-button--action{
     border-color: #282828;
     background: #282828;
-    &:hover:not( [disabled] ):not( [aria-disabled="true"] ){
+    &:hover:not( [disabled] ):not( [aria-disabled="true"] ),
+    &:focus:not( [disabled] ):not( [aria-disabled="true"] ){
       box-shadow: 0 0 3px #282828;
       background: lighten( #282828, 10% );
     }
@@ -161,7 +164,8 @@ progress
   &.CG2-button--setting{
     border-color: #777;
     background: #777;
-    &:hover:not( [disabled] ):not( [aria-disabled="true"] ){
+    &:hover:not( [disabled] ):not( [aria-disabled="true"] ),
+    &:focus:not( [disabled] ):not( [aria-disabled="true"] ){
       box-shadow: 0 0 3px #777;
       background: lighten( #777, 10% );
     }
@@ -187,12 +191,10 @@ progress
       margin: auto;
       display: block;
       width: auto;
-      -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
       background: url( '../img/CG2-button/loading.svg' ) no-repeat 50% 50%;
       background-size: 100% 100%;
-      -webkit-animation: button--loading 1s linear infinite;
-              animation: button--loading 1s linear infinite;
+      transform-origin: 50% 50%;
+      animation: button--loading 1s linear infinite;
     }
   }
 }
@@ -271,7 +273,8 @@ fav
     font-size: 12px;
     padding: 4px 8px;
   }
-  &:hover{
+  &:hover,
+  &:focus{
     background: rgba( 255, 255, 255, 0.2 );
   }
   span[class^="CG2-icon"]{
@@ -279,7 +282,8 @@ fav
     margin: 0 4px 0 0;
     transition: all .3s;
   }
-  &:hover span[class^="CG2-icon"]{
+  &:hover span[class^="CG2-icon"],
+  &:focus span[class^="CG2-icon"]{
     opacity: 1;
   }
   &[disabled],
@@ -792,16 +796,22 @@ tag:
         @include max-screen( $breakpoint-middle ) {
           padding-left: 16px;
         }
-      }
-      a:before{
-        @include icon( 'left' );
-        font-size: 20px;
-        position: absolute;
-        bottom: .25em;
-        left: 0;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-          bottom: 0;
+        &::before{
+          @include icon( 'left' );
+          font-size: 20px;
+          position: absolute;
+          bottom: .25em;
+          left: 0;
+          transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 14px;
+            bottom: 0;
+          }
+        }
+        &:hover::before,
+        &:focus::before{
+          transform: translateX( -4px ) scale( 1.2 );
+          transition-duration: .4s;
         }
       }
     }
@@ -815,16 +825,22 @@ tag:
         @include max-screen( $breakpoint-middle ) {
           padding-right: 16px;
         }
-      }
-      a:after{
-        @include icon( 'right' );
-        font-size: 20px;
-        position: absolute;
-        bottom: .25em;
-        right: 0;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-          bottom: 0;
+        &::after{
+          @include icon( 'right' );
+          font-size: 20px;
+          position: absolute;
+          bottom: .25em;
+          right: 0;
+          transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 14px;
+            bottom: 0;
+          }
+        }
+        &:hover::after,
+        &:focus::after{
+          transform: translateX( 4px ) scale( 1.2 );
+          transition-duration: .4s;
         }
       }
     }
@@ -1194,9 +1210,10 @@ tag:
         display: block;
         height: 2px;
         background: #424242;
-        transition: all .2s;
+        transition: all .4s cubic-bezier(.3, 1.4, .6, 1 );
       }
-      &:hover:after{
+      &:hover:after,
+      &:focus:after{
         left: 0;
         right: 0;
       }
@@ -1535,18 +1552,19 @@ tag:
             transition: all .2s;
           }
           [class^="CG2-icon-cat"]{
+            @include anim-spin-out();
             font-size: 40px;
             line-height: 1;
             position: static;
             margin-right: 15px;
-            transition: all .2s;
+            transition: all .8s;
             @include max-screen( $breakpoint-middle ) {
               font-size: 26px;
             }
           }
-          a:hover [class^="CG2-icon-cat"]{
-            transform: scale( 1.1, 1.1 );
-            opacity: 0.9;
+          a:hover [class^="CG2-icon-cat"],
+          a:focus [class^="CG2-icon-cat"]{
+            @include anim-spin-in();
             text-shadow: 0 0 3px #777;
           }
         }
@@ -1593,12 +1611,15 @@ tag:
                   display: block;
                   height: 1px;
                   background: #fff;
-                  transition: all .6s;
+                  transform: scaleX( 0 );
+                  transition: all .6s cubic-bezier(.3, 1.4, .6, 1 );
                 }
               }
-              a:hover .CG2-seriesList__itemTitleText:after{
+              a:hover .CG2-seriesList__itemTitleText:after,
+              a:focus .CG2-seriesList__itemTitleText:after{
                 bottom: 0;
                 opacity: 1;
+                transform: scaleX( 1 );
               }
         }
         .CG2-seriesList__itemUtil{
@@ -1657,7 +1678,8 @@ tag:
             border: none;
             background: rgba( 255, 255, 255, 0 );
             transition: all .3s;
-            &:hover{
+            &:hover,
+            &:focus{
               text-decoration: none;
               background: rgba( 255, 255, 255, 0.2 );
               span[class^="CG2-icon"]{
@@ -1686,7 +1708,8 @@ tag:
     .CG2-seriesList__coverImage{
       @include blurry();
       transition: transform 1s;
-      .CG2-seriesList__item:hover &{
+      .CG2-seriesList__item:hover &,
+      .CG2-seriesList__item:focus &{
         transform: scale( 1.4, 1.4 );
       }
       &.CG2-seriesList__coverImage--blurry{
@@ -1718,7 +1741,8 @@ tag:
           text-decoration: none;
           display: table-row;
           transition: background .5s;
-          &:hover{
+          &:hover,
+          &:focus{
             transition: background .2s;
             background: rgba( 255, 255, 255, 0.2 );
           }
@@ -1833,7 +1857,8 @@ tag:
         background: rgba( 255, 255, 255, 0 );
         transition: all .5s;
       }
-      a:hover .CG2-seriesList__author:before{
+      a:hover .CG2-seriesList__author:before,
+      a:focus .CG2-seriesList__author:before{
         background: rgba( 255, 255, 255, 0.2 );
         transition: all .2s;
       }
@@ -1872,7 +1897,8 @@ tag:
         width: 100%;
         padding: 20px;
         border-bottom: 1px solid #DBDBDB;
-        &:hover{
+        &:hover,
+        &:focus{
         }
         &:before{
           content: '';
@@ -1888,7 +1914,8 @@ tag:
           background: #EEE;
           transition: all .3s;
         }
-        &:hover:before{
+        &:hover:before,
+        &:focus:before{
           left: 0;
           margin-left: -20px;
         }
@@ -2162,7 +2189,8 @@ tag:
           left: 0;
           transition: all .3s;
         }
-        &:hover{
+        &:hover,
+        &:focus{
           &:after{
             background: #EEE;
             right: 0;
@@ -2522,7 +2550,8 @@ tag:
             background: #FFF;
             transition: all .6s;
           }
-          &:hover:after{
+          &:hover:after,
+          &:focus:after{
             bottom: 0;
             opacity: 1;
           }
@@ -2578,7 +2607,8 @@ tag:
               background: rgba( 255, 255, 255, 0 );
               transition: all .5s;
             }
-            &:hover:before {
+            &:hover:before,
+            &:focus:before {
               background: rgba( 255, 255, 255, .2 );
               transition: all .2s;
             }
@@ -2650,7 +2680,8 @@ tag:
             font-size: 12px;
             padding: 4px 6px;
           }
-          &:hover{
+          &:hover,
+          &:focus{
             background: rgba( 255, 255, 255, 0.2 );
           }
           &:before{
@@ -2669,7 +2700,8 @@ tag:
               line-height: 0;
               left: 8px;
             }
-            &:hover:before{
+            &:hover:before,
+            &:focus:before{
               left: 5px;
             }
           }
@@ -2684,7 +2716,8 @@ tag:
               line-height: 0;
               right: 8px;
             }
-            &:hover:before{
+            &:hover:before,
+            &:focus:before{
               right: 5px;
             }
           }
@@ -3092,9 +3125,14 @@ section.CG2-articleTOC{
       a{
         @include resetLink();
         text-decoration: none;
-        &:before{
+        &::before{
           @include icon( 'down' );
           margin: 0 .4em 0 0;
+          transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+        }
+        &:hover::before{
+          transform: translateY( 2px );
+          transition-duration: .4s;
         }
       }
     }
@@ -3237,7 +3275,8 @@ tag:
       overflow-y: visible;
       padding: 4px;
     }
-    &:hover{
+    &:hover,
+    &:focus{
       background: #eee;
       transition: none;
     }
@@ -3784,7 +3823,8 @@ tag:
           &:before{
             left: 0;
           }
-          &:hover:before{
+          &:hover:before,
+          &:focus:before{
             left: -3px;
           }
         }
@@ -3798,7 +3838,8 @@ tag:
           &:before{
             right: 0;
           }
-          &:hover:before{
+          &:hover:before,
+          &:focus:before{
             right: -3px;
           }
         }
@@ -4042,23 +4083,28 @@ section.CG2-livecode{
             @include resetLink();
             text-decoration: none;
             display: block;
-            padding: 8px  16px;
-            margin: -8px -16px;
-            span[class^="CG2-icon-"]{
-              font-size: 20px;
-              position: static;
-              margin: 0 5px 0 0;
-            }
+            padding: 10px;
+            margin: -10px;
+            transition: background-color .2s;
             &[data-livecode-play]{
               position: relative;
               &:before{
                 position: absolute;
                 content: 'サンプルを再生する';
                 background: #EEE;
+                transition: background-color .2s;
                 @at-root .CG2-livecode.CG2-livecode--isRunning &{
                   content: 'サンプルを停止する';
                 }
               }
+            }
+            &:hover, &:hover::before{
+              background-color: #DBDBDB;
+            }
+            span[class^="CG2-icon-"]{
+              font-size: 20px;
+              position: static;
+              margin: 0 5px 0 0;
             }
           }
     }
