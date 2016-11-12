@@ -481,11 +481,12 @@ templateItem:
           &:after{
             @include icon( down );
             position: relative;
-            top: 0;
-            transition: all .2s;
-            .CG2-pageHeader__userHeader:hover &{
+            transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+            .CG2-pageHeader__userHeader:hover &,
+            .CG2-pageHeader__userHeader:focus &{
               color: #FFF;
-              top: 2px;
+              transform: translateY( 2px );
+              transition-duration: .4s;
             }
           }
         }

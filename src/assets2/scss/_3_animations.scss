@@ -35,35 +35,23 @@
 }
 
 
-/* spin
+/* scale
    ========================================================================== */
 
-@keyframes anim-spin-in {
+@keyframes anim-scaleup {
   0% {
     transform: none;
   }
-  100% {
-    transform: rotateY( 360deg ) scale( 1.1 );
-  }
-}
-
-@keyframes anim-spin-out {
-  0% {
-    transform: scale( 1.1 );
+  40% {
+    transform: scale( 1.05 );
   }
   100% {
     transform: none;
   }
 }
 
-@mixin anim-spin-in () {
-  animation-duration: .4s;
-  animation-name: anim-spin-in;
-  animation-fill-mode: forwards;
-}
-
-@mixin anim-spin-out () {
-  animation-duration: .8s;
-  animation-name: anim-spin-out;
+@mixin anim-scaleup () {
+  animation-duration: .6s;
+  animation-name: anim-scaleup;
   animation-fill-mode: forwards;
 }
