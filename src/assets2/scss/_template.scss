@@ -385,6 +385,7 @@ templateItem:
       .CG2-pageHeader__searchInner{
         @extend %searchInner;
         input{
+          line-height: 22px;
           padding: 4px 10px 4px 30px;
           &:hover,
           &:focus{
@@ -913,7 +914,7 @@ templateItem:
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
   }
   li{
     margin: 12px 0 0;
@@ -1045,7 +1046,7 @@ templateItem:
             </div>
             <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
           </div>
-          
+
           <div class="CG2-drawerBody__nav">
             <ul>
               <li><a href="#">アプリトップ</a></li>
