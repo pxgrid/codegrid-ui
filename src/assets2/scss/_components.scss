@@ -1439,9 +1439,7 @@ tag:
     padding-right: 5px;
     img{
       display: block;
-    }
-    @include max-screen( $breakpoint-middle ) {
-      img{
+      @include max-screen( $breakpoint-middle ) {
         width: 28px;
         height: 28px;
       }
@@ -1469,6 +1467,13 @@ tag:
     display: inline-block;
     margin: 0 1px 1px 0;
   }
+    img{
+      display: block;
+      @include max-screen( $breakpoint-middle ) {
+        width: 28px;
+        height: 28px;
+      }
+    }
 }
 
 
