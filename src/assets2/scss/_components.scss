@@ -2603,11 +2603,12 @@ tag:
 
       .CG2-articleHeader__authors{
         font-size: 0;
-        margin: 12px 0;
+        margin: 10px 0;
       }
         .CG2-articleHeader__author{
           font-size: 1rem;
           display: inline-table;
+          margin: 3px 10px 3px 0;
           margin-right: 10px;
           & > a {
             color: inherit;

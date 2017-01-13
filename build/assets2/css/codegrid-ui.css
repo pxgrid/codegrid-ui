@@ -1494,6 +1494,7 @@ templateItem:
       display: none; } }
 
 .CG2-pageHeader__searchInner input {
+  line-height: 22px;
   padding: 4px 10px 4px 30px; }
   .CG2-pageHeader__searchInner input:hover, .CG2-pageHeader__searchInner input:focus {
     background: #303030; }
@@ -2158,7 +2159,7 @@ templateItem:
             </div>
             <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
           </div>
-          
+
           <div class="CG2-drawerBody__nav">
             <ul>
               <li><a href="#">アプリトップ</a></li>
@@ -3893,10 +3894,10 @@ tag:
   padding-right: 5px; }
   .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
     display: block; }
-  @media screen and (max-width: 767px) {
-    .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
-      width: 28px;
-      height: 28px; } }
+    @media screen and (max-width: 767px) {
+      .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
+        width: 28px;
+        height: 28px; } }
 
 .CG2-seriesList__authorName, .CG2-series__authorName {
   font-size: 12px;
@@ -3918,6 +3919,13 @@ tag:
 .CG2-seriesList__authorPicList li, .CG2-series__authorPicList li {
   display: inline-block;
   margin: 0 1px 1px 0; }
+
+.CG2-seriesList__authorPicList img, .CG2-series__authorPicList img {
+  display: block; }
+  @media screen and (max-width: 767px) {
+    .CG2-seriesList__authorPicList img, .CG2-series__authorPicList img {
+      width: 28px;
+      height: 28px; } }
 
 .CG2-seriesList {
   margin: 0 calc( -50vw + 50% + 8px); }
@@ -4935,11 +4943,12 @@ tag:
 
 .CG2-articleHeader__authors {
   font-size: 0;
-  margin: 12px 0; }
+  margin: 10px 0; }
 
 .CG2-articleHeader__author {
   font-size: 1rem;
   display: inline-table;
+  margin: 3px 10px 3px 0;
   margin-right: 10px; }
   .CG2-articleHeader__author > a {
     color: inherit;
