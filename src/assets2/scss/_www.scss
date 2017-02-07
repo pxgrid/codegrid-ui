@@ -975,6 +975,30 @@ tag:
             <input type="text" placeholder="例）codegrid@pxgrid.com">
           </td>
         </tr>
+        <tr>
+          <th>
+            お問い合わせ事項
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <select>
+              <option value="" class="CG2-form__placeholder">お問い合わせ事項, お問い合わせの内容をお選びください。</option>
+              <option value="記事内容について">記事内容について</option>
+              <option value="CodeGridの利用全般について">CodeGridの利用全般について</option>
+              <option value="課金について">課金について</option>
+              <option value="その他">その他</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            お問い合わせ内容
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <textarea placeholder="記事内容についてのお問い合わせは、必ず該当記事のURLを明記してください。" cols="50" rows="6"></textarea>
+          </td>
+        </tr>
       </table>
     </div>
     <p><button class="CG2-button CG2-button--primary CG2-button--large">送信</button></p>
@@ -1042,12 +1066,21 @@ section.CG2-form{
         }
           input[type="text"],
           input[type="url"],
-          input[type="email"]{
+          input[type="email"],
+          select,
+          textarea{
             box-sizing: border-box;
             width: 100%;
             padding: 8px 14px;
             border: 1px solid #ccc;
             border-radius: 3px;
+          }
+          select{
+            -webkit-appearance: initial;
+            background-color: #fff;
+          }
+          option.CG2-form__placeholder{
+            color: #a9a9a9;
           }
       @include max-screen( $breakpoint-small ) {
         @include tableToBlock();
