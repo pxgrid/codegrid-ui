@@ -1080,7 +1080,7 @@ section.CG2-form{
             -moz-appearance: initial;
             background-color: #fff;
           }
-          option.CG2-form__placeholder{
+          select.CG2-form__placeholder{
             color: #a9a9a9;
           }
       @include max-screen( $breakpoint-small ) {
