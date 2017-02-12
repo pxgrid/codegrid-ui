@@ -1088,7 +1088,7 @@ section.CG2-form{
             background-size: 14px 8px;
             background-position: right 14px top 18px;
             background-color: #fff;
-            @include max-screen( $breakpoint-small ) {
+            @include max-screen( $breakpoint-middle ) {
               background-position: right 14px top 15px;
             }
           }
