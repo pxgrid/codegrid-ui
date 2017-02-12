@@ -1076,9 +1076,21 @@ section.CG2-form{
             border-radius: 3px;
           }
           select{
-            -webkit-appearance: initial;
-            -moz-appearance: initial;
+            appearance: initial;
+            // FIXME: インラインSVG…
+            // 元ファイルは src/assets2/font/codegrid-icon/uE603-down.svg
+            // 以下をdata URLに。
+            // <svg width="26" height="14" viewBox="0 0 26 14" xmlns="http://www.w3.org/2000/svg">
+            //   <path fill="#777" d="M3 0L0 2.7 13 14 26 2.7 23 0 13 8.7"/>
+            // </svg>
+            background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjYiIGhlaWdodD0iMTQiIHZpZXdCb3g9IjAgMCAyNiAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBmaWxsPSIjNzc3IiBkPSJNMyAwTDAgMi43IDEzIDE0IDI2IDIuNyAyMyAwIDEzIDguNyIvPjwvc3ZnPg==);
+            background-repeat: no-repeat;
+            background-size: 14px 8px;
+            background-position: right 14px top 18px;
             background-color: #fff;
+            @include max-screen( $breakpoint-small ) {
+              background-position: right 14px top 15px;
+            }
           }
           select.CG2-form__placeholder{
             color: #a9a9a9;
