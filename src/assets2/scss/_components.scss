@@ -2515,6 +2515,7 @@ tag:
     }
     .CG2-articleHeader__categoryName{
       letter-spacing: 0.2em;
+      line-height: 50px;
       -webkit-writing-mode: vertical-rl;
       -moz-writing-mode: vertical-rl;
       -o-writing-mode: vertical-rl;
@@ -2524,6 +2525,7 @@ tag:
       @include max-screen( $breakpoint-middle ) {
         font-size: 12px;
         letter-spacing: 0;
+        line-height: normal;
         vertical-align: middle;
         -webkit-writing-mode: inherit;
         -moz-writing-mode: inherit;
