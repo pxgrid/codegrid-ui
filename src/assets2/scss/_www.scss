@@ -959,7 +959,7 @@ tag:
         <col width="70%">
         <tr>
           <th>
-            会社名・団体名
+            <label>会社名・団体名</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
@@ -968,7 +968,7 @@ tag:
         </tr>
         <tr>
           <th>
-            管理者のメールアドレス
+            <label>管理者のメールアドレス</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
@@ -977,22 +977,22 @@ tag:
         </tr>
         <tr>
           <th>
-            お問い合わせ事項
+            <label>お問い合わせ事項</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
             <select>
-              <option value="" class="CG2-form__placeholder">お問い合わせ事項, お問い合わせの内容をお選びください。</option>
-              <option value="記事内容について">記事内容について</option>
-              <option value="CodeGridの利用全般について">CodeGridの利用全般について</option>
-              <option value="課金について">課金について</option>
-              <option value="その他">その他</option>
+              <option value="" class="CG2-form__placeholder">お問い合わせ事項、お問い合わせの内容をお選びください。</option>
+              <option>記事内容について</option>
+              <option>CodeGridの利用全般について</option>
+              <option>課金について</option>
+              <option>その他</option>
             </select>
           </td>
         </tr>
         <tr>
           <th>
-            お問い合わせ内容
+            <label>お問い合わせ内容</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
@@ -1001,12 +1001,12 @@ tag:
         </tr>
       </table>
     </div>
-    <p><button class="CG2-button CG2-button--primary CG2-button--large">送信</button></p>
-    <div class="CG2-form__legal">
-      Powered by Google ドキュメント | 不正行為の報告 - 利用規約 - 追加規約
-    </div>
-    <div class="CG2-form__notice">
-      もし送信できない場合はこちらをお試しください
+    <div class="CG2-buttonContainer">
+      <ul>
+        <li class="CG2-buttonContainer__item--full">
+          <button class="CG2-button CG2-button--primary CG2-button--large" type="submit">送信</button>
+        </li>
+      </ul>
     </div>
   </form>
 </section>
