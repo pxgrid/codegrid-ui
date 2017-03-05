@@ -91,10 +91,12 @@ gulp.task( 'js', function () {
           './src/assets2/js/old-jade-prism.js'
          ] )
          .pipe( plumber() )
+         .pipe( sourcemaps.init() )
          .pipe( concat( 'codegrid-ui.js' ) )
          .pipe( gulp.dest( './build/assets2/js/' ) )
          .pipe( uglify() )
          .pipe( rename( { extname: '.min.js' } ) )
+         .pipe( sourcemaps.write('.') )
          .pipe( gulp.dest( './build/assets2/js/' ) );
 
 } );
