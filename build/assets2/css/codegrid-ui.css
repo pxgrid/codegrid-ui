@@ -4863,9 +4863,8 @@ tag:
 
 .CG2-articleHeader__categoryName {
   letter-spacing: 0.2em;
+  line-height: 50px;
   -webkit-writing-mode: vertical-rl;
-  -moz-writing-mode: vertical-rl;
-  -o-writing-mode: vertical-rl;
   writing-mode: tb-rl;
   writing-mode: vertical-rl;
   margin: auto; }
@@ -4873,10 +4872,9 @@ tag:
     .CG2-articleHeader__categoryName {
       font-size: 12px;
       letter-spacing: 0;
+      line-height: normal;
       vertical-align: middle;
       -webkit-writing-mode: inherit;
-      -moz-writing-mode: inherit;
-      -o-writing-mode: inherit;
       writing-mode: inherit;
       writing-mode: inherit;
       display: table-cell;
@@ -5548,7 +5546,6 @@ tag:
       border-top: none; } }
   .CG2-articleSeriesNav__inner ul {
     -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
     writing-mode: tb-rl;
     writing-mode: vertical-rl;
     list-style: none;
@@ -5558,7 +5555,6 @@ tag:
     @media screen and (max-width: 979px) {
       .CG2-articleSeriesNav__inner ul {
         -webkit-writing-mode: horizontal-tb;
-        -moz-writing-mode: horizontal-tb;
         writing-mode: lr-tb;
         writing-mode: horizontal-tb;
         width: auto;
