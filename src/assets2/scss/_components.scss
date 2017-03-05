@@ -2516,8 +2516,6 @@ tag:
     .CG2-articleHeader__categoryName{
       letter-spacing: 0.2em;
       -webkit-writing-mode: vertical-rl;
-      -moz-writing-mode: vertical-rl;
-      -o-writing-mode: vertical-rl;
       writing-mode: tb-rl; // IE
       writing-mode: vertical-rl;
       margin: auto;
@@ -2526,8 +2524,6 @@ tag:
         letter-spacing: 0;
         vertical-align: middle;
         -webkit-writing-mode: inherit;
-        -moz-writing-mode: inherit;
-        -o-writing-mode: inherit;
         writing-mode: inherit; // IE
         writing-mode: inherit;
         display: table-cell;
@@ -3235,7 +3231,6 @@ tag:
   }
   ul{
     -webkit-writing-mode: vertical-rl;
-       -moz-writing-mode: vertical-rl;
             writing-mode: tb-rl; // IE
             writing-mode: vertical-rl;
     list-style: none;
@@ -3244,7 +3239,6 @@ tag:
     margin: 0 auto 20px;
     @include max-screen( $breakpoint-base ) {
       -webkit-writing-mode: horizontal-tb;
-         -moz-writing-mode: horizontal-tb;
               writing-mode: lr-tb; // IE
               writing-mode: horizontal-tb;
       width: auto;
