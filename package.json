@@ -4,6 +4,7 @@
   "description": "CodeGrid UI",
   "main": "none",
   "scripts": {
+    "gulp": "gulp",
     "test": "exit 0",
     "deploy": "gulp deploy"
   },
