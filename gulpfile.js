@@ -18,21 +18,12 @@ var iconfont     = require( 'gulp-iconfont' );
 var plumber      = require( 'gulp-plumber' );
 var rename       = require( 'gulp-rename' );
 var sass         = require( 'gulp-sass' );
+var sourcemaps   = require( 'gulp-sourcemaps' );
 var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
 var awspublish   = require( 'gulp-awspublish' );
 
 var runSequence  = require( 'run-sequence' ).use( gulp );
-
-
-var AUTOPREFIXER_BROWSERS = {
-  browsers: [
-    'ie >= 9',
-    'safari >= 7',
-    'ios >= 7',
-    'android >= 4'
-  ]
-};
 
 
 gulp.task( 'browser-sync', function () {
@@ -100,10 +91,12 @@ gulp.task( 'js', function () {
           './src/assets2/js/old-jade-prism.js'
          ] )
          .pipe( plumber() )
+         .pipe( sourcemaps.init() )
          .pipe( concat( 'codegrid-ui.js' ) )
          .pipe( gulp.dest( './build/assets2/js/' ) )
          .pipe( uglify() )
          .pipe( rename( { extname: '.min.js' } ) )
+         .pipe( sourcemaps.write('.') )
          .pipe( gulp.dest( './build/assets2/js/' ) );
 
 } );
@@ -111,18 +104,18 @@ gulp.task( 'js', function () {
 
 gulp.task( 'sass', function () {
 
-  var processors = [
-    autoprefixer( AUTOPREFIXER_BROWSERS ),
-    mqpacker,
-    csswring
-  ];
-
   return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
          .pipe( plumber() )
+         .pipe( sourcemaps.init() )
          .pipe( sass() )
+         .pipe( postcss( [ autoprefixer() ] ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
+         .pipe( postcss( [
+           mqpacker(),
+           csswring(),
+           ] ) )
          .pipe( rename( { extname: '.min.css' } ) )
-         .pipe( postcss( processors ) )
+         .pipe( sourcemaps.write('.') )
          .pipe( gulp.dest( './build/assets2/css/' ) );
 
 } );
