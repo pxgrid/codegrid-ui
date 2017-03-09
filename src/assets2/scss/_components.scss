@@ -3741,7 +3741,9 @@ article.CG2-article{
         margin-bottom: 0;
       }
     }
-
+  pre + .Column {
+    margin-top: 2em;
+  }
 
   .Note{
     color: #777;
