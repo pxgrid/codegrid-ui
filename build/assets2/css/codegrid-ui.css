@@ -6118,6 +6118,8 @@ article.CG2-article .Column {
     padding: 0 0 0 20px; }
     article.CG2-article .Column > ul li {
       margin: 0; }
+  pre + article.CG2-article .Column {
+    margin-top: 2em; }
 
 article.CG2-article .Column h1,
 article.CG2-article .Column-title {
