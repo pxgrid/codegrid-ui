@@ -44,5 +44,11 @@
     "gulp-watch": "^4.3.5",
     "run-sequence": "^1.1.5",
     "underscore": "^1.8.3"
-  }
+  },
+  "browserslist": [
+    "ie >= 9",
+    "safari >= 7",
+    "ios >= 7",
+    "android >= 4"
+  ]
 }
