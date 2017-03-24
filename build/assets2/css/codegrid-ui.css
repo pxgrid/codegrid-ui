@@ -8565,7 +8565,7 @@ tag:
         <col width="70%">
         <tr>
           <th>
-            会社名・団体名
+            <label>会社名・団体名</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
@@ -8574,21 +8574,45 @@ tag:
         </tr>
         <tr>
           <th>
-            管理者のメールアドレス
+            <label>管理者のメールアドレス</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
             <input type="text" placeholder="例）codegrid@pxgrid.com">
           </td>
         </tr>
+        <tr>
+          <th>
+            <label>お問い合わせ事項</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <select>
+              <option value="" class="CG2-form__placeholder">お問い合わせ事項、お問い合わせの内容をお選びください。</option>
+              <option>記事内容について</option>
+              <option>CodeGridの利用全般について</option>
+              <option>課金について</option>
+              <option>その他</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label>お問い合わせ内容</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <textarea placeholder="記事内容についてのお問い合わせは、必ず該当記事のURLを明記してください。" cols="50" rows="6"></textarea>
+          </td>
+        </tr>
       </table>
     </div>
-    <p><button class="CG2-button CG2-button--primary CG2-button--large">送信</button></p>
-    <div class="CG2-form__legal">
-      Powered by Google ドキュメント | 不正行為の報告 - 利用規約 - 追加規約
-    </div>
-    <div class="CG2-form__notice">
-      もし送信できない場合はこちらをお試しください
+    <div class="CG2-buttonContainer">
+      <ul>
+        <li class="CG2-buttonContainer__item--full">
+          <button class="CG2-button CG2-button--primary CG2-button--large" type="submit">送信</button>
+        </li>
+      </ul>
     </div>
   </form>
 </section>
@@ -8640,12 +8664,41 @@ section.CG2-form {
 
 .CG2-form__table input[type="text"],
 .CG2-form__table input[type="url"],
-.CG2-form__table input[type="email"] {
+.CG2-form__table input[type="email"],
+.CG2-form__table select,
+.CG2-form__table textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 8px 14px;
   border: 1px solid #ccc;
   border-radius: 3px; }
+
+.CG2-form__table select {
+  -webkit-appearance: initial;
+          appearance: initial;
+  background-image: url(data:image/svg+xml,%3Csvg%20width=%2226%22%20height=%2214%22%20viewBox=%220%200%2026%2014%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20fill=%22%23777%22%20d=%22M3%200L0%202.7%2013%2014%2026%202.7%2023%200%2013%208.7%22/%3E%3C/svg%3E);
+  background-repeat: no-repeat;
+  background-size: 14px 8px;
+  background-position: right 14px top 18px;
+  background-color: #fff; }
+  @media screen and (max-width: 767px) {
+    .CG2-form__table select {
+      background-position: right 14px top 15px; } }
+
+.CG2-form__table ::-webkit-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table :-ms-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table ::placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table select.CG2-form__placeholder {
+  color: #767676; }
 
 @media screen and (max-width: 639px) {
   .CG2-form__table table, .CG2-form__table tbody, .CG2-form__table tr {
