@@ -1094,10 +1094,10 @@ section.CG2-form{
           }
           ::placeholder {
             opacity: 1; // for Firefox
-            color: #aaa;
+            color: #767676;
           }
           select.CG2-form__placeholder{
-            color: #aaa;
+            color: #767676;
           }
       @include max-screen( $breakpoint-small ) {
         @include tableToBlock();
