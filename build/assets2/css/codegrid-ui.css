@@ -5352,15 +5352,6 @@ templateItem:
 </div>
 ```
 
-```html
-<div class="CG2-articleNotice CG2-articleNotice--level4">
-  <div class="CG2-articleNotice__head">
-    <span class="CG2-icon-exclamation-circle"></span>
-    てすとてすとてすと
-  </div>
-</div>
-```
-
 */
 .CG2-articleNotice {
   color: #FFF;
@@ -5369,13 +5360,11 @@ templateItem:
   line-height: 1.4;
   text-align: center;
   padding: 16px;
-  background-color: #ccc; }
+  background-color: #14C850; }
   .CG2-articleNotice.CG2-articleNotice--level1 {
     background-color: #F03C3C; }
   .CG2-articleNotice.CG2-articleNotice--level2 {
     background-color: #f0b428; }
-  .CG2-articleNotice.CG2-articleNotice--level3 {
-    background-color: #14C850; }
   @media screen and (max-width: 639px) {
     .CG2-articleNotice {
       font-size: 14px; } }
