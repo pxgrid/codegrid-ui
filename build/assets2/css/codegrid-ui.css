@@ -1140,6 +1140,8 @@ span.CG2-icon--colored.CG2-icon-cat-discussion {
     position: absolute;
     top: 50%;
     left: 10px; }
+  .CG2-pageHeader__searchInner form, .CG2-drawerBody__searchInner form, .CG2-searchFailed__search form {
+    height: 100%; }
   .CG2-pageHeader__searchInner input, .CG2-drawerBody__searchInner input, .CG2-searchFailed__search input {
     color: #FFF;
     font-size: 16px;
@@ -1254,7 +1256,9 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__buttons">
@@ -1287,7 +1291,9 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__user">
@@ -1573,6 +1579,7 @@ templateItem:
 
 .CG2-pageHeader__searchInner input {
   line-height: 22px;
+  height: 30px;
   padding: 4px 10px 4px 30px; }
   .CG2-pageHeader__searchInner input:hover, .CG2-pageHeader__searchInner input:focus {
     background: #303030; }
@@ -1804,7 +1811,9 @@ templateItem:
         </div>
         <div class="CG2-pageFooter__appNavSearch">
           <div class="CG2-pageFooter__appNavSearchInner">
-            <input>
+            <form>
+              <input type="search">
+            </form>
           </div>
         </div>
       </div>
@@ -2273,7 +2282,9 @@ templateItem:
           <div class="CG2-drawerBody__separator"></div>
           <div class="CG2-drawerBody__search">
             <div class="CG2-drawerBody__searchInner">
-              <input>
+              <form>
+                <input type="search">
+              </form>
             </div>
           </div>
           <div class="CG2-drawerBody__nav">
@@ -2593,6 +2604,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
 
 .CG2-drawerBody__searchInner:before {
   font-size: 20px; }
+
+.CG2-drawerBody__searchInner input {
+  height: 40px; }
 
 /* ==========================================================================
    CG2-container
