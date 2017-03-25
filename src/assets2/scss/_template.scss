@@ -105,7 +105,9 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__buttons">
@@ -138,7 +140,9 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__user">
@@ -386,6 +390,7 @@ templateItem:
         @extend %searchInner;
         input{
           line-height: 22px;
+          height: 30px;
           padding: 4px 10px 4px 30px;
           &:hover,
           &:focus{
@@ -601,7 +606,9 @@ templateItem:
         </div>
         <div class="CG2-pageFooter__appNavSearch">
           <div class="CG2-pageFooter__appNavSearchInner">
-            <input>
+            <form>
+              <input type="search">
+            </form>
           </div>
         </div>
       </div>
@@ -1067,7 +1074,9 @@ templateItem:
           <div class="CG2-drawerBody__separator"></div>
           <div class="CG2-drawerBody__search">
             <div class="CG2-drawerBody__searchInner">
-              <input>
+              <form>
+                <input type="search">
+              </form>
             </div>
           </div>
           <div class="CG2-drawerBody__nav">
@@ -1407,7 +1416,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
   &:before{
     font-size: 20px;
   }
-  input{}
+  input{
+    height: 40px;
+  }
 }
 
 
