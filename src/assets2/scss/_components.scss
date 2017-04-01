@@ -1727,6 +1727,7 @@ tag:
     .CG2-seriesList__coverImage{
       @include blurry();
       transition: transform 1s;
+      will-change: opacity; // fixing Firefox causing artifacts on unhover
       .CG2-seriesList__item:hover &,
       .CG2-seriesList__item:focus &{
         transform: scale( 1.4, 1.4 );
