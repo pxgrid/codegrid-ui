@@ -273,6 +273,9 @@ templateItem:
     height: 100%;
     padding: 0 28px;
     margin: 0 auto;
+    @include max-screen( $breakpoint-middle ) {
+      padding: 0 28px 0 0;
+    }
   }
     .CG2-pageHeader__logo{
       margin: 0 30px 0 0;
