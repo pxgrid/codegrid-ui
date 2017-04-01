@@ -251,11 +251,8 @@ cat-discussion
 
 @font-face {
   font-family: "codegrid-icon";
-  src: url('../font/codegrid-icon.eot');
-  src: url('../font/codegrid-icon.eot?#iefix') format('embedded-opentype'),
-    url('../font/codegrid-icon.woff') format('woff'),
-    url('../font/codegrid-icon.ttf') format('truetype'),
-    url('../font/codegrid-icon.svg#codegrid-icon') format('svg');
+  src: url('../font/codegrid-icon.woff2') format('woff2'),
+       url('../font/codegrid-icon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

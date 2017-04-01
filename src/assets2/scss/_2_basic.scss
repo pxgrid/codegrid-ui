@@ -10,10 +10,7 @@
 
 @font-face {
   font-family: 'zeroWidth';
-  src:url('../font/zero-width.eot');
-  src:url('../font/zero-width.eot#iefix') format('embedded-opentype'),
-      url('../font/zero-width.woff') format('woff'),
-      url('../font/zero-width.ttf') format('truetype');
+  src: url('../font/zero-width.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

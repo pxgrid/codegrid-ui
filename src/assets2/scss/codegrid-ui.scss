@@ -1,10 +1,7 @@
 @font-face {
   font-family: "codegrid-num";
-  src: url('../font/codegrid-num.eot');
-  src: url('../font/codegrid-num.eot?#iefix') format('embedded-opentype'),
-    url('../font/codegrid-num.woff') format('woff'),
-    url('../font/codegrid-num.ttf') format('truetype'),
-    url('../font/codegrid-num.svg#codegrid-num') format('svg');
+  src: url('../font/codegrid-num.woff2') format('woff2'),
+       url('../font/codegrid-num.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

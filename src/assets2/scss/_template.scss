@@ -251,12 +251,9 @@ templateItem:
   @include max-screen( $breakpoint-middle ) {
     height: 35px;
     padding: 0 10px;
-    -webkit-transition: -webkit-transform .4s;
-            transition:         transform .4s;
+    transition: transform .4s;
     html.js-drawer--show & {
-      -webkit-transform: translateX( -100% ) translateX( 50px );
-          -ms-transform: translateX( -100% ) translateX( 50px );
-              transform: translateX( -100% ) translateX( 50px );
+      transform: translateX( -100% ) translateX( 50px );
     }
   }
   @include print () {
@@ -918,8 +915,6 @@ templateItem:
   float: left;
   width: 54.99%;
   ul{
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
     column-count: 2;
     list-style: none;
     margin: 0;
@@ -1173,30 +1168,22 @@ $drawerLeft: 50px;
   width: 100%;
   height: 100%;
   background: rgba( 0, 0, 0, 0 );
-  -webkit-transform: translate3d( ( -$drawerLeft ), 0, 0 );
-      -ms-transform: translateX( ( -$drawerLeft ) );
-          transform: translate3d( ( -$drawerLeft ), 0, 0 );
-  -webkit-transition: -webkit-transform .4s;
-          transition:         transform .4s;
+  transform: translate3d( ( -$drawerLeft ), 0, 0 );
+  transition: transform .4s;
 }
 .CG2-drawer__panel, x::-ms-fill {
   transform: translateX( ( -$drawerLeft ) ); /* IE10, 11, avoid using GPU feature */
 }
 
 html:not( .js-drawer--show ) .CG2-drawer__panel {
-  -webkit-animation-name: zIndexOut;
-          animation-name: zIndexOut;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-name: zIndexOut;
+  animation-duration: .4s;
+  animation-iteration-count: 1;
 }
 html.js-drawer--show .CG2-drawer__panel {
   margin-left: 0;
   z-index: $z-pageHeader - 1;
-  -webkit-transform: translateX( -100% );
-      -ms-transform: translateX( -100% );
-          transform: translateX( -100% );
+  transform: translateX( -100% );
 }
 html.js-drawer--dragging,
 html.js-drawer--dragging * {
@@ -1205,8 +1192,7 @@ html.js-drawer--dragging * {
   cursor: grabbing;
 }
 html:not( .js-drawer--dragging ) .CG2-drawer__panel {
-  -webkit-transition: -webkit-transform .4s, margin .1s;
-          transition:         transform .4s, margin .1s;
+  transition: transform .4s, margin .1s;
 }
 .CG2-drawer__panel:before {
   content: '';
@@ -1232,8 +1218,7 @@ html:not( .js-drawer--dragging ) .CG2-drawer__panel {
   box-sizing: border-box;
   min-height: 100%;
   box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0 );
-  -webkit-transition: box-shadow .4s;
-          transition: box-shadow .4s;
+  transition: box-shadow .4s;
 }
 html.js-drawer--show .CG2-drawer__panelBody {
   box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0.3 );
@@ -1256,15 +1241,11 @@ html.js-drawer--show .CG2-drawer__panelBody {
   bottom: 0;
   left: 0;
   background: rgba( 0, 0, 0, 0 );
-  -webkit-transition: background .4s;
-          transition: background .4s;
+    transition: background .4s;
   html:not( .js-drawer--show ) & {
-    -webkit-animation-name: bgOut;
-            animation-name: bgOut;
-    -webkit-animation-duration: .4s;
-            animation-duration: .4s;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+    animation-name: bgOut;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
   }
   html.js-drawer--show & {
     z-index: $z-pageHeader - 2;
@@ -1273,21 +1254,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
 }
 
 
-@-webkit-keyframes bgOut {
-    0% { z-index:  $z-pageHeader - 2; }
-   99% { z-index:  $z-pageHeader - 2; }
-  100% { z-index: -1; }
-}
-
 @keyframes bgOut {
     0% { z-index:  $z-pageHeader - 2; }
    99% { z-index:  $z-pageHeader - 2; }
-  100% { z-index: -1; }
-}
-
-@-webkit-keyframes zIndexOut {
-    0% { z-index:  $z-pageHeader - 1; }
-   99% { z-index:  $z-pageHeader - 1; }
   100% { z-index: -1; }
 }
 

@@ -46,10 +46,6 @@ gulp.task( 'clean', function () {
 gulp.task( 'copy-font', function () {
 
   return gulp.src( [
-          './src/assets2/font/zero-width.eot',
-          './src/assets2/font/zero-width.otf',
-          './src/assets2/font/zero-width.svg',
-          './src/assets2/font/zero-width.ttf',
           './src/assets2/font/zero-width.woff'
          ] )
          .pipe( gulp.dest( './build/assets2/font/' ) );
@@ -128,6 +124,7 @@ gulp.task( 'iconfont', function () {
   return gulp.src( [ './src/assets2/font/codegrid-icon/*.svg' ] )
   .pipe( iconfont( {
     fontName: fontName,
+    formats: ['woff', 'woff2'],
     appendCodepoints: true
   } ) )
   .on( 'glyphs', function( glyphs, options ) {
@@ -154,6 +151,7 @@ gulp.task( 'numfont', function () {
   return gulp.src( [ './src/assets2/font/codegrid-num/*.svg' ] )
   .pipe( iconfont( {
     fontName: fontName,
+    formats: ['woff', 'woff2'],
     fontHeight: 256,
     descent: 24
   } ) )
