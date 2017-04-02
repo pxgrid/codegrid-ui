@@ -18,7 +18,7 @@ name: CodeCrid CSS Style Guide
 
 # The directory containing the source files to parse recursively
 source:
-  - ./src/assets2/scss/codegrid-ui.scss
+  - ./src/assets2/scss
 # You may alternately specify multiple directories
 # source:
 #  - ./sass
@@ -50,7 +50,7 @@ template_engine: hbs
 template_dir: ./src/aigis-template/template_hbs
 
 # Aigis displays logs
-log: false
+log: true
 
 # When you don't want color palette page (color.html) you may set false
 color_palette: true
