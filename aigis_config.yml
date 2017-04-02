@@ -14,7 +14,7 @@
 
 # Aigis will run from same directory where this config file resides
 # All paths should be relative to there
-name: CodeCrid CSS Style Guide
+name: CodeGrid UI
 
 # The directory containing the source files to parse recursively
 source:
