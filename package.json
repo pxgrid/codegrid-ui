@@ -28,7 +28,7 @@
     "del": "^2.2.1",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.1",
-    "gulp-aigis": "^1.1.2",
+    "gulp-aigis": "^1.3.0",
     "gulp-awspublish": "^3.3.0",
     "gulp-concat": "^2.6.0",
     "gulp-consolidate": "^0.2.0",
