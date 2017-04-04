@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <link href="{{root}}aigis_assets/css/theme.css" rel="stylesheet">
+    <link href="{{root}}../assets2/css/codegrid-ui.css" rel="stylesheet">
+    <script src="{{root}}aigis_assets/js/toolbar.js"></script>
+  </head>
+<body>
+  <div class="aigis-toolbar">
+    <button type="button" class="aigis-toggleNav">
+      <span class="aigis-icon-list"></span>
+    </button>
+    <button type="button" class="aigis-toggleCode">
+      <span class="aigis-icon-code"></span>
+    </button>
+  </div>
+  <div class="aigis-container">
+    {{include "./sidemenu"}}
+    <div class="aigis-contents">
+      <div class="aigis-contents__body">
+        {{include "./components"}}
+        <footer class="aigis-footer">Last update at {{timestamp}}</footer>
+      </div>
+    </div>
+  </div>
+  <script src="{{root}}../assets2/js/codegrid-ui.js"></script>
+</body>
+</html>
