@@ -499,7 +499,6 @@ body {
 .aigis-container {
   box-sizing: border-box;
   width: auto;
-  min-width: 960px;
   margin-right: auto; }
 .aigis-container:after {
   content: "";
@@ -508,14 +507,10 @@ body {
 
 .aigis-contents {
   box-sizing: border-box;
-  padding-right: 10px;
-  padding-left: 280px;
-  margin: 0 auto;
-  font-size: 18px; }
+  margin: 0 auto; }
 .aigis-contents__body {
   color: #33331a;
-  max-width: 960px;
-  min-width: 600px;
+  max-width: 1200px;
   padding: 20px 20px;
   margin: 0 auto; }
 .aigis-contents__body > *:first-child {
