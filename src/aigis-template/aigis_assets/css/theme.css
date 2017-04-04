@@ -225,6 +225,7 @@ tag: latest
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 999;
   width: 280px;
   box-sizing: border-box;
   padding-top: 30px;
@@ -233,7 +234,7 @@ tag: latest
   overflow-x: scroll;
   height: 100%;
   transform: transformX(0);
-  transition: transform .2s;
+  transition: transform .2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 .aigis--navclose .aigis-sidemenu {
   transform: translateX(-280px)
@@ -474,7 +475,7 @@ body {
   font-size: 16px;
   cursor: pointer;
   position: fixed;
-  z-index: 9999;
+  z-index: 1000;
   top: 10px;
   left: 10px;
 }
