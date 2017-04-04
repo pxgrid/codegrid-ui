@@ -1,3 +1,41 @@
+/* ==========================================================================
+   .aigis-icon
+   ========================================================================== */
+@font-face {
+  font-family: 'aigis-icon';
+  src: url('../fonts/icon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="aigis-icon-"], [class*=" aigis-icon-"] {
+  font-family: 'aigis-icon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.aigis-icon-caretdown:before  { content: "\e600" }
+.aigis-icon-caretup:before    { content: "\e601" }
+.aigis-icon-caretleft:before  { content: "\e602" }
+.aigis-icon-caretright:before { content: "\e603" }
+.aigis-icon-down:before       { content: "\e604" }
+.aigis-icon-left:before       { content: "\e605" }
+.aigis-icon-right:before      { content: "\e606" }
+.aigis-icon-up:before         { content: "\e607" }
+.aigis-icon-list:before       { content: "\e608" }
+.aigis-icon-link:before       { content: "\e609" }
+.aigis-icon-github:before     { content: "\e60a" }
+.aigis-icon-git:before        { content: "\e60b" }
+.aigis-icon-code:before       { content: "\e60c" }
+
 /*
 ---
 name: Paragraph
@@ -143,6 +181,10 @@ tag: latest
   margin: 0 auto 3em;
   overflow: scroll; }
 
+.aigis--codeclose .aigis-module > pre {
+  display: none;
+}
+
 .aigis-preview {
   border: 1px solid #A0A0A0;
   border-radius: 3px;
@@ -185,10 +227,17 @@ tag: latest
   left: 0;
   width: 280px;
   box-sizing: border-box;
+  padding-top: 30px;
   background-color: #f9faf9;
   color: #33331a;
   overflow-x: scroll;
-  height: 100%; }
+  height: 100%;
+  transform: transformX(0);
+  transition: transform .2s;
+}
+.aigis--navclose .aigis-sidemenu {
+  transform: translateX(-280px)
+}
 .aigis-sidemenu__heading {
   font-size: 20px;
   margin: 12px 0;
@@ -413,9 +462,30 @@ tag: special
   vertical-align: middle;
   line-height: 40px; }
 
+
+/* layout */
 body {
   margin: 0;
   padding: 0;
+}
+
+.aigis-toolbar {
+  color: #556655;
+  font-size: 16px;
+  cursor: pointer;
+  position: fixed;
+  z-index: 9999;
+  top: 10px;
+  left: 10px;
+}
+
+.aigis-toggleNav,
+.aigis-toggleCode {
+  line-height: 1;
+  padding: 8px;
+  border: 1px solid #BFCBBD;
+  border-radius: 2px;
+  background: rgba( 255, 255, 255, 0.75 );
 }
 
 .aigis-module > ul code, .aigis-module > p code, .aigis-contents__body > ul code, .aigis-contents__body > p code, .aigis-contents__body > h2 code, .aigis-contents__body > h3 code {
