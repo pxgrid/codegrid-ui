@@ -1,0 +1,57 @@
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+
+/* Sub-section comment block
+   ========================================================================== */
+
+/* Basic comment */
+
+
+
+/* jump
+   ========================================================================== */
+
+@keyframes anim-jump {
+  0% {
+    transform: translateY( 0 ) scaleY( 1 );
+  }
+  20% {
+    transform: translateY( 2px ) scaleY( 0.6 );
+  }
+  60% {
+    transform: translateY( -5px ) scaleY( 1.1 );
+  }
+  100% {
+    transform: translateY( 0 ) scaleY( 1 );
+  }
+}
+
+
+@mixin anim-jump () {
+  animation-duration: .4s;
+  animation-name: anim-jump;
+  animation-fill-mode: forwards;
+}
+
+
+/* scale
+   ========================================================================== */
+
+@keyframes anim-scaleup {
+  0% {
+    transform: none;
+  }
+  40% {
+    transform: scale( 1.05 );
+  }
+  100% {
+    transform: none;
+  }
+}
+
+@mixin anim-scaleup () {
+  animation-duration: .6s;
+  animation-name: anim-scaleup;
+  animation-fill-mode: forwards;
+}

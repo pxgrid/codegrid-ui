@@ -19,11 +19,8 @@ tag:
 
 @font-face {
   font-family: "<%= fontName %>";
-  src: url('<%= fontPath %><%= fontName %>.eot');
-  src: url('<%= fontPath %><%= fontName %>.eot?#iefix') format('embedded-opentype'),
-    url('<%= fontPath %><%= fontName %>.woff') format('woff'),
-    url('<%= fontPath %><%= fontName %>.ttf') format('truetype'),
-    url('<%= fontPath %><%= fontName %>.svg#<%= fontName %>') format('svg');
+  src: url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
+       url('<%= fontPath %><%= fontName %>.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }

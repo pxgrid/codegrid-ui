@@ -97,9 +97,17 @@ templateItem:
       <div class="CG2-pageHeader__logo">
         <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
+      </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__buttons">
@@ -122,11 +130,19 @@ templateItem:
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
+        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__user">
@@ -138,13 +154,14 @@ templateItem:
           <div class="CG2-pageHeader__userOpener"></div>
         </div>
         <div class="CG2-pageHeader__userMenu">
-          <ul>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
-          </ul>
+          <div class="CG2-pageHeader__userMenuInner">
+            <ul>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
   </header>
 </div>
@@ -166,6 +183,60 @@ templateItem:
 
 */
 
+@keyframes wf1-pageHeader-onmounted {
+  0% {
+    overflow: hidden;
+    height: 0;
+  }
+  99% {
+    overflow: hidden;
+    height: 0;
+  }
+  100% {
+    overflow: visible;
+    height: auto;
+  }
+}
+@keyframes wf1-pageHeader-elastic-in {
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    height: auto;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes wf1-pageHeader-elastic-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  99% {
+    visibility: visible;
+    height: auto;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transform: scale(0);
+  }
+}
+
+
 .CG2-pageHeader{
   @include clearfix();
   position: fixed;
@@ -180,12 +251,9 @@ templateItem:
   @include max-screen( $breakpoint-middle ) {
     height: 35px;
     padding: 0 10px;
-    -webkit-transition: -webkit-transform .4s;
-            transition:         transform .4s;
+    transition: transform .4s;
     html.js-drawer--show & {
-      -webkit-transform: translateX( -100% ) translateX( 50px );
-          -ms-transform: translateX( -100% ) translateX( 50px );
-              transform: translateX( -100% ) translateX( 50px );
+      transform: translateX( -100% ) translateX( 50px );
     }
   }
   @include print () {
@@ -196,21 +264,22 @@ templateItem:
 }
   .CG2-pageHeader__inner{
     position: relative;
-    // max-width: 1016px;
+    display: flex;
+    align-items: center;
     max-width: 1100px;
+    height: 100%;
     padding: 0 28px;
     margin: 0 auto;
+    @include max-screen( $breakpoint-middle ) {
+      padding: 0 28px 0 0;
+    }
   }
     .CG2-pageHeader__logo{
-      position: absolute;
-      top: 16px;
-      left: 28px;
+      margin: 0 30px 0 0;
       img{
         display: block;
       }
       @include max-screen( $breakpoint-middle ) {
-        top: 10px;
-        left: 0;
         img{
           width: 90px;
           height: auto;
@@ -219,6 +288,7 @@ templateItem:
     }
     .CG2-pageHeader__nav{
       text-align: center;
+      margin: 0 auto;
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -258,12 +328,55 @@ templateItem:
         display: none;
       }
     }
+    .CG2-pageHeader__appNav{
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      ul{
+        font-size: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 56px;
+          vertical-align: middle;
+          @include max-screen( $pageMaxWidth ) {
+            content: none;
+          }
+        }
+      }
+      li{
+        font-size: .875rem;
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0 10px;
+        @include max-screen( $pageMaxWidth ) {
+          font-size: .75rem;
+        }
+      }
+      a{
+        color: #999;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        margin: -10px;
+        &:hover{
+          color: #FFF;
+        }
+      }
+      @include print () {
+        display: none;
+      }
+    }
     .CG2-pageHeader__search{
       @extend %search;
-      position: absolute;
-      top: 11px;
-      left: 180px;
       width: 280px;
+      height: 32px;
+      margin: 0 0 0 auto;
       border :1px solid #777;
       background: transparent;
       @include max-screen( $breakpoint-middle ) {
@@ -276,16 +389,9 @@ templateItem:
       .CG2-pageHeader__searchInner{
         @extend %searchInner;
         input{
-        //   color: #FFF;
-        //   font-size: 14px;
-        //   box-sizing: border-box;
-        //   display: block;
-        //   border: none;
-        //   width: 100%;
-        //   height: 100%;
+          line-height: 22px;
+          height: 30px;
           padding: 4px 10px 4px 30px;
-        //   background: transparent;
-        //   transition: all .2s;
           &:hover,
           &:focus{
             background: #303030;
@@ -293,9 +399,7 @@ templateItem:
         }
       }
     .CG2-pageHeader__buttons{
-      position: absolute;
-      top: 0;
-      right: 28px;
+      margin: 0 0 0 30px;
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -334,9 +438,11 @@ templateItem:
       }
     }
     .CG2-pageHeader__user{
-      position: absolute;
-      top: 0;
-      right: 0;
+      position: relative;
+      margin: 0 0 0 30px;
+      @include max-screen( $breakpoint-base ) {
+        margin-left: 20px;
+      }
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -381,49 +487,67 @@ templateItem:
           &:after{
             @include icon( down );
             position: relative;
-            top: 0;
-            transition: all .2s;
-            .CG2-pageHeader__userHeader:hover &{
+            transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+            .CG2-pageHeader__userHeader:hover &,
+            .CG2-pageHeader__userHeader:focus &{
               color: #FFF;
-              top: 2px;
+              transform: translateY( 2px );
+              transition-duration: .4s;
             }
           }
         }
         .CG2-pageHeader__userMenu{
-          box-sizing: border-box;
+          overflow: hidden;
           position: absolute;
-          display: none;
+          // display: none;
           width: 100%;
-          padding: 10px;
-          border: 1px solid rgba(0,0,0,0.1);
+          height: 0;
           margin-top: 2px;
-          border-radius: 2px;
-          box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-          background: #FFF;
+          animation-name: wf1-pageHeader-onmounted;
+          animation-fill-mode: forwards;
+          animation-duration: .3s;
           &.CG2-pageHeader__userMenu--show{
-            display: block;
-          }
-          &:before{
-            content: "";
-            position: absolute;
-            top: -14px;
-            right: 38px;
-            display: block;
-            border: 7px solid transparent;
-            border-bottom-color: #FFF;
-          }
-          ul{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
-          li{
-            margin: 0;
-            &+li{
-              margin-top: 10px;
+            overflow: visible;
+            height: auto;
+            .CG2-pageHeader__userMenuInner{
+              visibility: visible;
+              animation-name: wf1-pageHeader-elastic-in;
             }
           }
         }
+          .CG2-pageHeader__userMenuInner{
+            visibility: hidden;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 2px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+            background: #FFF;
+            transform-origin: 150px 0;
+            animation-name: wf1-pageHeader-elastic-out;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+            &:before{
+              content: "";
+              position: absolute;
+              top: -14px;
+              right: 38px;
+              display: block;
+              border: 7px solid transparent;
+              border-bottom-color: #FFF;
+            }
+            ul{
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            li{
+              margin: 0;
+              &+li{
+                margin-top: 10px;
+              }
+            }
+          }
     .CG2-pageHeader__opener{
       @include max-screen( $breakpoint-middle ) {
         color: #FFF;
@@ -482,7 +606,9 @@ templateItem:
         </div>
         <div class="CG2-pageFooter__appNavSearch">
           <div class="CG2-pageFooter__appNavSearchInner">
-            <input>
+            <form>
+              <input type="search">
+            </form>
           </div>
         </div>
       </div>
@@ -789,13 +915,11 @@ templateItem:
   float: left;
   width: 54.99%;
   ul{
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
     column-count: 2;
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
   }
   li{
     margin: 12px 0 0;
@@ -927,7 +1051,7 @@ templateItem:
             </div>
             <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
           </div>
-          
+
           <div class="CG2-drawerBody__nav">
             <ul>
               <li><a href="#">アプリトップ</a></li>
@@ -948,7 +1072,9 @@ templateItem:
           <div class="CG2-drawerBody__separator"></div>
           <div class="CG2-drawerBody__search">
             <div class="CG2-drawerBody__searchInner">
-              <input>
+              <form>
+                <input type="search">
+              </form>
             </div>
           </div>
           <div class="CG2-drawerBody__nav">
@@ -1027,6 +1153,10 @@ $drawerLeft: 50px;
   display: none;
   @include max-screen( $breakpoint-middle ) {
     display: block;
+    pointer-events: none;
+    html.js-drawer--show &{
+      pointer-events: auto;
+    }
   }
 }
 
@@ -1038,30 +1168,22 @@ $drawerLeft: 50px;
   width: 100%;
   height: 100%;
   background: rgba( 0, 0, 0, 0 );
-  -webkit-transform: translate3d( ( -$drawerLeft ), 0, 0 );
-      -ms-transform: translateX( ( -$drawerLeft ) );
-          transform: translate3d( ( -$drawerLeft ), 0, 0 );
-  -webkit-transition: -webkit-transform .4s;
-          transition:         transform .4s;
+  transform: translate3d( ( -$drawerLeft ), 0, 0 );
+  transition: transform .4s;
 }
 .CG2-drawer__panel, x::-ms-fill {
   transform: translateX( ( -$drawerLeft ) ); /* IE10, 11, avoid using GPU feature */
 }
 
 html:not( .js-drawer--show ) .CG2-drawer__panel {
-  -webkit-animation-name: zIndexOut;
-          animation-name: zIndexOut;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-name: zIndexOut;
+  animation-duration: .4s;
+  animation-iteration-count: 1;
 }
 html.js-drawer--show .CG2-drawer__panel {
   margin-left: 0;
   z-index: $z-pageHeader - 1;
-  -webkit-transform: translateX( -100% );
-      -ms-transform: translateX( -100% );
-          transform: translateX( -100% );
+  transform: translateX( -100% );
 }
 html.js-drawer--dragging,
 html.js-drawer--dragging * {
@@ -1070,8 +1192,7 @@ html.js-drawer--dragging * {
   cursor: grabbing;
 }
 html:not( .js-drawer--dragging ) .CG2-drawer__panel {
-  -webkit-transition: -webkit-transform .4s, margin .1s;
-          transition:         transform .4s, margin .1s;
+  transition: transform .4s, margin .1s;
 }
 .CG2-drawer__panel:before {
   content: '';
@@ -1097,8 +1218,7 @@ html:not( .js-drawer--dragging ) .CG2-drawer__panel {
   box-sizing: border-box;
   min-height: 100%;
   box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0 );
-  -webkit-transition: box-shadow .4s;
-          transition: box-shadow .4s;
+  transition: box-shadow .4s;
 }
 html.js-drawer--show .CG2-drawer__panelBody {
   box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0.3 );
@@ -1121,15 +1241,11 @@ html.js-drawer--show .CG2-drawer__panelBody {
   bottom: 0;
   left: 0;
   background: rgba( 0, 0, 0, 0 );
-  -webkit-transition: background .4s;
-          transition: background .4s;
+    transition: background .4s;
   html:not( .js-drawer--show ) & {
-    -webkit-animation-name: bgOut;
-            animation-name: bgOut;
-    -webkit-animation-duration: .4s;
-            animation-duration: .4s;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+    animation-name: bgOut;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
   }
   html.js-drawer--show & {
     z-index: $z-pageHeader - 2;
@@ -1138,21 +1254,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
 }
 
 
-@-webkit-keyframes bgOut {
-    0% { z-index:  $z-pageHeader - 2; }
-   99% { z-index:  $z-pageHeader - 2; }
-  100% { z-index: -1; }
-}
-
 @keyframes bgOut {
     0% { z-index:  $z-pageHeader - 2; }
    99% { z-index:  $z-pageHeader - 2; }
-  100% { z-index: -1; }
-}
-
-@-webkit-keyframes zIndexOut {
-    0% { z-index:  $z-pageHeader - 1; }
-   99% { z-index:  $z-pageHeader - 1; }
   100% { z-index: -1; }
 }
 
@@ -1284,7 +1388,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
   &:before{
     font-size: 20px;
   }
-  input{}
+  input{
+    height: 40px;
+  }
 }
 
 

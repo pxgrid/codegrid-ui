@@ -111,6 +111,22 @@ question
 </div>
 ```
 
+exclamation-circle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-exclamation-circle"></span>
+  
+</div>
+```
+
+exclamation-triangle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-exclamation-triangle"></span>
+  
+</div>
+```
+
 twitter
 ```html
 <div style="font-size:32px;">
@@ -235,11 +251,8 @@ cat-discussion
 
 @font-face {
   font-family: "codegrid-icon";
-  src: url('../font/codegrid-icon.eot');
-  src: url('../font/codegrid-icon.eot?#iefix') format('embedded-opentype'),
-    url('../font/codegrid-icon.woff') format('woff'),
-    url('../font/codegrid-icon.ttf') format('truetype'),
-    url('../font/codegrid-icon.svg#codegrid-icon') format('svg');
+  src: url('../font/codegrid-icon.woff2') format('woff2'),
+       url('../font/codegrid-icon.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -277,6 +290,8 @@ cat-discussion
 .CG2-icon-lock:before { content: "\"; }
 .CG2-icon-unlock:before { content: "\"; }
 .CG2-icon-question:before { content: "\"; }
+.CG2-icon-exclamation-circle:before { content: "\"; }
+.CG2-icon-exclamation-triangle:before { content: "\"; }
 .CG2-icon-twitter:before { content: "\"; }
 .CG2-icon-facebook:before { content: "\"; }
 .CG2-icon-gplus:before { content: "\"; }
@@ -317,6 +332,8 @@ $icons: (
   lock "\",
   unlock "\",
   question "\",
+  exclamation-circle "\",
+  exclamation-triangle "\",
   twitter "\",
   facebook "\",
   gplus "\",

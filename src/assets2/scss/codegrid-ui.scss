@@ -1,10 +1,7 @@
 @font-face {
   font-family: "codegrid-num";
-  src: url('../font/codegrid-num.eot');
-  src: url('../font/codegrid-num.eot?#iefix') format('embedded-opentype'),
-    url('../font/codegrid-num.woff') format('woff'),
-    url('../font/codegrid-num.ttf') format('truetype'),
-    url('../font/codegrid-num.svg#codegrid-num') format('svg');
+  src: url('../font/codegrid-num.woff2') format('woff2'),
+       url('../font/codegrid-num.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -15,6 +12,7 @@
 @import "0_vars";
 @import "1_utils";
 @import "2_basic";
+@import "3_animations";
 @import "icon";
 
 %search{
@@ -24,7 +22,10 @@
   border-radius: 3px;
 }
   %searchInner{
+    box-sizing: border-box;
     position: relative;
+    width: 100%;
+    height: 100%;
     &:before{
       @include icon( 'search' );
       color: #777;
@@ -33,6 +34,9 @@
       position: absolute;
       top: 50%;
       left: 10px;
+    }
+    form{
+      height: 100%; // for Blink
     }
     input{
       color: #FFF;

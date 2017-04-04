@@ -1,8 +1,7 @@
 @charset "UTF-8";
 @font-face {
   font-family: "codegrid-num";
-  src: url("../font/codegrid-num.eot");
-  src: url("../font/codegrid-num.eot?#iefix") format("embedded-opentype"), url("../font/codegrid-num.woff") format("woff"), url("../font/codegrid-num.ttf") format("truetype"), url("../font/codegrid-num.svg#codegrid-num") format("svg");
+  src: url("../font/codegrid-num.woff2") format("woff2"), url("../font/codegrid-num.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -175,7 +174,6 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -304,8 +302,6 @@ input[type="number"]::-webkit-outer-spin-button {
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
   /* 2 */
   box-sizing: content-box; }
 
@@ -362,7 +358,7 @@ td,
 th {
   padding: 0; }
 
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+coffeescript+git+handlebars+jade+less+markdown+ruby+sass+scss+stylus+typescript+yaml&plugins=line-highlight+line-numbers+autolinker */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+bash+coffeescript+ruby+git+handlebars+http+jade+json+less+markdown+jsx+sass+scss+stylus+typescript+yaml&plugins=line-numbers+autolinker */
 /**
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -371,26 +367,19 @@ th {
 code[class*="language-"],
 pre[class*="language-"] {
   color: black;
+  background: none;
   text-shadow: 0 1px white;
   font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  direction: ltr;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
+  word-wrap: normal;
   line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
   tab-size: 4;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none; }
-
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: #b3d4fc; }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
@@ -415,7 +404,8 @@ pre[class*="language-"] {
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: .1em;
-  border-radius: .3em; }
+  border-radius: .3em;
+  white-space: normal; }
 
 .token.comment,
 .token.prolog,
@@ -477,48 +467,6 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
-pre[data-line] {
-  position: relative;
-  padding: 1em 0 1em 3em; }
-
-.line-highlight {
-  position: absolute;
-  left: 0;
-  right: 0;
-  padding: inherit 0;
-  margin-top: 1em;
-  /* Same as .prism’s padding-top */
-  background: rgba(153, 122, 102, 0.08);
-  background: -moz-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  background: -webkit-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  background: -o-linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  background: linear-gradient(left, rgba(153, 122, 102, 0.1) 70%, rgba(153, 122, 102, 0));
-  pointer-events: none;
-  line-height: inherit;
-  white-space: pre; }
-
-.line-highlight:before,
-.line-highlight[data-end]:after {
-  content: attr(data-start);
-  position: absolute;
-  top: .4em;
-  left: .6em;
-  min-width: 1em;
-  padding: 0 .5em;
-  background-color: rgba(153, 122, 102, 0.4);
-  color: #f5f2f0;
-  font: bold 65%/1.5 sans-serif;
-  text-align: center;
-  vertical-align: .3em;
-  border-radius: 999px;
-  text-shadow: none;
-  box-shadow: 0 1px white; }
-
-.line-highlight[data-end]:after {
-  content: attr(data-end);
-  top: auto;
-  bottom: .4em; }
-
 pre.line-numbers {
   position: relative;
   padding-left: 3.8em;
@@ -538,7 +486,6 @@ pre.line-numbers > code {
   letter-spacing: -1px;
   border-right: 1px solid #999;
   -webkit-user-select: none;
-  -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
 
@@ -565,8 +512,7 @@ pre.line-numbers > code {
 /* Basic comment */
 @font-face {
   font-family: 'zeroWidth';
-  src: url("../font/zero-width.eot");
-  src: url("../font/zero-width.eot#iefix") format("embedded-opentype"), url("../font/zero-width.woff") format("woff"), url("../font/zero-width.ttf") format("truetype");
+  src: url("../font/zero-width.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -576,7 +522,7 @@ pre.line-numbers > code {
 .DEBUG {
   color: #FFF;
   font-size: 16px;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   padding: 5px;
   margin: 1em 0;
   background: orange; }
@@ -662,17 +608,13 @@ pre.line-numbers > code {
   background: rgba(174, 217, 17, 0.6);
   text-shadow: none; }
 
-::-moz-selection {
-  background: rgba(174, 217, 17, 0.6);
-  text-shadow: none; }
-
 ::selection {
   background: rgba(174, 217, 17, 0.6);
   text-shadow: none; }
 
 html {
   color: #242424;
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 16px;
   line-height: 1.8;
   -webkit-font-smoothing: antialiased;
@@ -702,6 +644,34 @@ iframe[name="google_conversion_frame"] {
   left: -100px;
   width: 1px;
   height: 1px; }
+
+/* ==========================================================================
+   Section comment block
+   ========================================================================== */
+/* Sub-section comment block
+   ========================================================================== */
+/* Basic comment */
+/* jump
+   ========================================================================== */
+@keyframes anim-jump {
+  0% {
+    transform: translateY(0) scaleY(1); }
+  20% {
+    transform: translateY(2px) scaleY(0.6); }
+  60% {
+    transform: translateY(-5px) scaleY(1.1); }
+  100% {
+    transform: translateY(0) scaleY(1); } }
+
+/* scale
+   ========================================================================== */
+@keyframes anim-scaleup {
+  0% {
+    transform: none; }
+  40% {
+    transform: scale(1.05); }
+  100% {
+    transform: none; } }
 
 /*
 ---
@@ -812,6 +782,22 @@ question
 ```html
 <div style="font-size:32px;">
   <span class="CG2-icon-question"></span>
+  
+</div>
+```
+
+exclamation-circle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-exclamation-circle"></span>
+  
+</div>
+```
+
+exclamation-triangle
+```html
+<div style="font-size:32px;">
+  <span class="CG2-icon-exclamation-triangle"></span>
   
 </div>
 ```
@@ -939,8 +925,7 @@ cat-discussion
 */
 @font-face {
   font-family: "codegrid-icon";
-  src: url("../font/codegrid-icon.eot");
-  src: url("../font/codegrid-icon.eot?#iefix") format("embedded-opentype"), url("../font/codegrid-icon.woff") format("woff"), url("../font/codegrid-icon.ttf") format("truetype"), url("../font/codegrid-icon.svg#codegrid-icon") format("svg");
+  src: url("../font/codegrid-icon.woff2") format("woff2"), url("../font/codegrid-icon.woff") format("woff");
   font-weight: normal;
   font-style: normal; }
 
@@ -999,6 +984,12 @@ cat-discussion
 
 .CG2-icon-question:before {
   content: "\"; }
+
+.CG2-icon-exclamation-circle:before {
+  content: "\"; }
+
+.CG2-icon-exclamation-triangle:before {
+  content: "\"; }
 
 .CG2-icon-twitter:before {
   content: "\"; }
@@ -1091,7 +1082,10 @@ span.CG2-icon--colored.CG2-icon-cat-discussion {
   border-radius: 3px; }
 
 .CG2-pageHeader__searchInner, .CG2-drawerBody__searchInner, .CG2-searchFailed__search {
-  position: relative; }
+  box-sizing: border-box;
+  position: relative;
+  width: 100%;
+  height: 100%; }
   .CG2-pageHeader__searchInner:before, .CG2-drawerBody__searchInner:before, .CG2-searchFailed__search:before {
     content: "";
     font-family: "codegrid-icon";
@@ -1111,6 +1105,8 @@ span.CG2-icon--colored.CG2-icon-cat-discussion {
     position: absolute;
     top: 50%;
     left: 10px; }
+  .CG2-pageHeader__searchInner form, .CG2-drawerBody__searchInner form, .CG2-searchFailed__search form {
+    height: 100%; }
   .CG2-pageHeader__searchInner input, .CG2-drawerBody__searchInner input, .CG2-searchFailed__search input {
     color: #FFF;
     font-size: 16px;
@@ -1216,9 +1212,17 @@ templateItem:
       <div class="CG2-pageHeader__logo">
         <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
+      </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__buttons">
@@ -1241,11 +1245,19 @@ templateItem:
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
+        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__user">
@@ -1257,13 +1269,14 @@ templateItem:
           <div class="CG2-pageHeader__userOpener"></div>
         </div>
         <div class="CG2-pageHeader__userMenu">
-          <ul>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
-          </ul>
+          <div class="CG2-pageHeader__userMenuInner">
+            <ul>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
   </header>
 </div>
@@ -1284,6 +1297,47 @@ templateItem:
 ```
 
 */
+@keyframes wf1-pageHeader-onmounted {
+  0% {
+    overflow: hidden;
+    height: 0; }
+  99% {
+    overflow: hidden;
+    height: 0; }
+  100% {
+    overflow: visible;
+    height: auto; } }
+
+@keyframes wf1-pageHeader-elastic-in {
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: scale(0); }
+  1% {
+    height: auto; }
+  60% {
+    transform: scale(1.1); }
+  100% {
+    opacity: 1;
+    transform: scale(1); } }
+
+@keyframes wf1-pageHeader-elastic-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transform: scale(1); }
+  40% {
+    transform: scale(1.1); }
+  99% {
+    visibility: visible;
+    height: auto; }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transform: scale(0); } }
+
 .CG2-pageHeader {
   *zoom: 1;
   position: fixed;
@@ -1304,11 +1358,8 @@ templateItem:
     .CG2-pageHeader {
       height: 35px;
       padding: 0 10px;
-      -webkit-transition: -webkit-transform .4s;
       transition: transform .4s; }
       html.js-drawer--show .CG2-pageHeader {
-        -webkit-transform: translateX(-100%) translateX(50px);
-        -ms-transform: translateX(-100%) translateX(50px);
         transform: translateX(-100%) translateX(50px); } }
   @media print {
     .CG2-pageHeader {
@@ -1318,26 +1369,28 @@ templateItem:
 
 .CG2-pageHeader__inner {
   position: relative;
+  display: flex;
+  align-items: center;
   max-width: 1100px;
+  height: 100%;
   padding: 0 28px;
   margin: 0 auto; }
+  @media screen and (max-width: 767px) {
+    .CG2-pageHeader__inner {
+      padding: 0 28px 0 0; } }
 
 .CG2-pageHeader__logo {
-  position: absolute;
-  top: 16px;
-  left: 28px; }
+  margin: 0 30px 0 0; }
   .CG2-pageHeader__logo img {
     display: block; }
   @media screen and (max-width: 767px) {
-    .CG2-pageHeader__logo {
-      top: 10px;
-      left: 0; }
-      .CG2-pageHeader__logo img {
-        width: 90px;
-        height: auto; } }
+    .CG2-pageHeader__logo img {
+      width: 90px;
+      height: auto; } }
 
 .CG2-pageHeader__nav {
-  text-align: center; }
+  text-align: center;
+  margin: 0 auto; }
   @media screen and (max-width: 767px) {
     .CG2-pageHeader__nav {
       display: none; } }
@@ -1372,11 +1425,52 @@ templateItem:
     .CG2-pageHeader__nav {
       display: none; } }
 
+@media screen and (max-width: 767px) {
+  .CG2-pageHeader__appNav {
+    display: none; } }
+
+.CG2-pageHeader__appNav ul {
+  font-size: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .CG2-pageHeader__appNav ul:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 56px;
+    vertical-align: middle; }
+    @media screen and (max-width: 1200px) {
+      .CG2-pageHeader__appNav ul:before {
+        content: none; } }
+
+.CG2-pageHeader__appNav li {
+  font-size: .875rem;
+  vertical-align: middle;
+  display: inline-block;
+  padding: 0;
+  margin: 0 10px; }
+  @media screen and (max-width: 1200px) {
+    .CG2-pageHeader__appNav li {
+      font-size: .75rem; } }
+
+.CG2-pageHeader__appNav a {
+  color: #999;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  margin: -10px; }
+  .CG2-pageHeader__appNav a:hover {
+    color: #FFF; }
+
+@media print {
+  .CG2-pageHeader__appNav {
+    display: none; } }
+
 .CG2-pageHeader__search {
-  position: absolute;
-  top: 11px;
-  left: 180px;
   width: 280px;
+  height: 32px;
+  margin: 0 0 0 auto;
   border: 1px solid #777;
   background: transparent; }
   @media screen and (max-width: 767px) {
@@ -1387,14 +1481,14 @@ templateItem:
       display: none; } }
 
 .CG2-pageHeader__searchInner input {
+  line-height: 22px;
+  height: 30px;
   padding: 4px 10px 4px 30px; }
   .CG2-pageHeader__searchInner input:hover, .CG2-pageHeader__searchInner input:focus {
     background: #303030; }
 
 .CG2-pageHeader__buttons {
-  position: absolute;
-  top: 0;
-  right: 28px; }
+  margin: 0 0 0 30px; }
   @media screen and (max-width: 767px) {
     .CG2-pageHeader__buttons {
       display: none; } }
@@ -1428,9 +1522,11 @@ templateItem:
       color: #FFF; }
 
 .CG2-pageHeader__user {
-  position: absolute;
-  top: 0;
-  right: 0; }
+  position: relative;
+  margin: 0 0 0 30px; }
+  @media screen and (max-width: 979px) {
+    .CG2-pageHeader__user {
+      margin-left: 20px; } }
   @media screen and (max-width: 767px) {
     .CG2-pageHeader__user {
       display: none; } }
@@ -1469,7 +1565,8 @@ templateItem:
   text-align: center;
   display: table-cell;
   vertical-align: middle;
-  width: 20px; }
+  width: 20px;
+  padding: 0 6px; }
   .CG2-pageHeader__userOpener:after {
     content: "";
     font-family: "codegrid-icon";
@@ -1484,26 +1581,42 @@ templateItem:
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     position: relative;
-    top: 0;
-    transition: all .2s; }
-    .CG2-pageHeader__userHeader:hover .CG2-pageHeader__userOpener:after {
+    transition: transform 0.4s cubic-bezier(0.3, 2, 0.6, 1); }
+    .CG2-pageHeader__userHeader:hover .CG2-pageHeader__userOpener:after,
+    .CG2-pageHeader__userHeader:focus .CG2-pageHeader__userOpener:after {
       color: #FFF;
-      top: 2px; }
+      transform: translateY(2px);
+      transition-duration: .4s; }
 
 .CG2-pageHeader__userMenu {
-  box-sizing: border-box;
+  overflow: hidden;
   position: absolute;
-  display: none;
   width: 100%;
+  height: 0;
+  margin-top: 2px;
+  animation-name: wf1-pageHeader-onmounted;
+  animation-fill-mode: forwards;
+  animation-duration: .3s; }
+  .CG2-pageHeader__userMenu.CG2-pageHeader__userMenu--show {
+    overflow: visible;
+    height: auto; }
+    .CG2-pageHeader__userMenu.CG2-pageHeader__userMenu--show .CG2-pageHeader__userMenuInner {
+      visibility: visible;
+      animation-name: wf1-pageHeader-elastic-in; }
+
+.CG2-pageHeader__userMenuInner {
+  visibility: hidden;
+  box-sizing: border-box;
   padding: 10px;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  margin-top: 2px;
   border-radius: 2px;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-  background: #FFF; }
-  .CG2-pageHeader__userMenu.CG2-pageHeader__userMenu--show {
-    display: block; }
-  .CG2-pageHeader__userMenu:before {
+  background: #FFF;
+  transform-origin: 150px 0;
+  animation-name: wf1-pageHeader-elastic-out;
+  animation-duration: .3s;
+  animation-fill-mode: forwards; }
+  .CG2-pageHeader__userMenuInner:before {
     content: "";
     position: absolute;
     top: -14px;
@@ -1511,13 +1624,13 @@ templateItem:
     display: block;
     border: 7px solid transparent;
     border-bottom-color: #FFF; }
-  .CG2-pageHeader__userMenu ul {
+  .CG2-pageHeader__userMenuInner ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-  .CG2-pageHeader__userMenu li {
+  .CG2-pageHeader__userMenuInner li {
     margin: 0; }
-    .CG2-pageHeader__userMenu li + li {
+    .CG2-pageHeader__userMenuInner li + li {
       margin-top: 10px; }
 
 @media screen and (max-width: 767px) {
@@ -1586,7 +1699,9 @@ templateItem:
         </div>
         <div class="CG2-pageFooter__appNavSearch">
           <div class="CG2-pageFooter__appNavSearchInner">
-            <input>
+            <form>
+              <input type="search">
+            </form>
           </div>
         </div>
       </div>
@@ -1915,8 +2030,6 @@ templateItem:
   float: left;
   width: 54.99%; }
   .CG2-pageFooter__appNavCategory ul {
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
     column-count: 2;
     list-style: none;
     margin: 0;
@@ -2034,7 +2147,7 @@ templateItem:
             </div>
             <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
           </div>
-          
+
           <div class="CG2-drawerBody__nav">
             <ul>
               <li><a href="#">アプリトップ</a></li>
@@ -2055,7 +2168,9 @@ templateItem:
           <div class="CG2-drawerBody__separator"></div>
           <div class="CG2-drawerBody__search">
             <div class="CG2-drawerBody__searchInner">
-              <input>
+              <form>
+                <input type="search">
+              </form>
             </div>
           </div>
           <div class="CG2-drawerBody__nav">
@@ -2126,7 +2241,10 @@ templateItem:
   display: none; }
   @media screen and (max-width: 767px) {
     .CG2-drawer {
-      display: block; } }
+      display: block;
+      pointer-events: none; }
+      html.js-drawer--show .CG2-drawer {
+        pointer-events: auto; } }
 
 .CG2-drawer__panel {
   position: fixed;
@@ -2136,10 +2254,7 @@ templateItem:
   width: 100%;
   height: 100%;
   background: transparent;
-  -webkit-transform: translate3d(-50px, 0, 0);
-  -ms-transform: translateX(-50px);
   transform: translate3d(-50px, 0, 0);
-  -webkit-transition: -webkit-transform .4s;
   transition: transform .4s; }
 
 .CG2-drawer__panel, x::-ms-fill {
@@ -2147,28 +2262,21 @@ templateItem:
   /* IE10, 11, avoid using GPU feature */ }
 
 html:not(.js-drawer--show) .CG2-drawer__panel {
-  -webkit-animation-name: zIndexOut;
   animation-name: zIndexOut;
-  -webkit-animation-duration: .4s;
   animation-duration: .4s;
-  -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1; }
 
 html.js-drawer--show .CG2-drawer__panel {
   margin-left: 0;
   z-index: 19;
-  -webkit-transform: translateX(-100%);
-  -ms-transform: translateX(-100%);
   transform: translateX(-100%); }
 
 html.js-drawer--dragging,
 html.js-drawer--dragging * {
   cursor: -webkit-grabbing;
-  cursor: -moz-grabbing;
   cursor: grabbing; }
 
 html:not(.js-drawer--dragging) .CG2-drawer__panel {
-  -webkit-transition: -webkit-transform .4s, margin .1s;
   transition: transform .4s, margin .1s; }
 
 .CG2-drawer__panel:before {
@@ -2194,7 +2302,6 @@ html:not(.js-drawer--dragging) .CG2-drawer__panel {
   box-sizing: border-box;
   min-height: 100%;
   box-shadow: -2px 2px 4px transparent;
-  -webkit-transition: box-shadow .4s;
   transition: box-shadow .4s; }
 
 html.js-drawer--show .CG2-drawer__panelBody {
@@ -2215,40 +2322,20 @@ html.js-drawer--show .CG2-drawer__panelBody {
   bottom: 0;
   left: 0;
   background: transparent;
-  -webkit-transition: background .4s;
   transition: background .4s; }
   html:not(.js-drawer--show) .CG2-drawer__bg {
-    -webkit-animation-name: bgOut;
     animation-name: bgOut;
-    -webkit-animation-duration: .4s;
     animation-duration: .4s;
-    -webkit-animation-iteration-count: 1;
     animation-iteration-count: 1; }
   html.js-drawer--show .CG2-drawer__bg {
     z-index: 18;
     background: rgba(0, 0, 0, 0.3); }
-
-@-webkit-keyframes bgOut {
-  0% {
-    z-index: 18; }
-  99% {
-    z-index: 18; }
-  100% {
-    z-index: -1; } }
 
 @keyframes bgOut {
   0% {
     z-index: 18; }
   99% {
     z-index: 18; }
-  100% {
-    z-index: -1; } }
-
-@-webkit-keyframes zIndexOut {
-  0% {
-    z-index: 19; }
-  99% {
-    z-index: 19; }
   100% {
     z-index: -1; } }
 
@@ -2297,7 +2384,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
   white-space: normal;
   word-break: break-word;
   word-break: break-all;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   font-size: 12px;
   vertical-align: middle;
   display: table-cell; }
@@ -2365,6 +2454,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
 
 .CG2-drawerBody__searchInner:before {
   font-size: 20px; }
+
+.CG2-drawerBody__searchInner input {
+  height: 40px; }
 
 /* ==========================================================================
    CG2-container
@@ -2517,7 +2609,7 @@ progress
   background: #777;
   box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
   transition: all .2s; }
-  .CG2-button:hover:not([disabled]):not([aria-disabled="true"]):not(.CG2-button--progress) {
+  .CG2-button:hover:not([disabled]):not([aria-disabled="true"]):not(.CG2-button--progress), .CG2-button:focus:not([disabled]):not([aria-disabled="true"]):not(.CG2-button--progress) {
     box-shadow: 0 0 3px #777;
     background: #919191;
     transition: all .2s; }
@@ -2550,19 +2642,19 @@ progress
   .CG2-button.CG2-button--primary {
     border-color: #10a040;
     background: #10a040; }
-    .CG2-button.CG2-button--primary:hover:not([disabled]):not([aria-disabled="true"]) {
+    .CG2-button.CG2-button--primary:hover:not([disabled]):not([aria-disabled="true"]), .CG2-button.CG2-button--primary:focus:not([disabled]):not([aria-disabled="true"]) {
       box-shadow: 0 0 3px #10a040;
       background: #15ce53; }
   .CG2-button.CG2-button--action {
     border-color: #282828;
     background: #282828; }
-    .CG2-button.CG2-button--action:hover:not([disabled]):not([aria-disabled="true"]) {
+    .CG2-button.CG2-button--action:hover:not([disabled]):not([aria-disabled="true"]), .CG2-button.CG2-button--action:focus:not([disabled]):not([aria-disabled="true"]) {
       box-shadow: 0 0 3px #282828;
       background: #424242; }
   .CG2-button.CG2-button--setting {
     border-color: #777;
     background: #777; }
-    .CG2-button.CG2-button--setting:hover:not([disabled]):not([aria-disabled="true"]) {
+    .CG2-button.CG2-button--setting:hover:not([disabled]):not([aria-disabled="true"]), .CG2-button.CG2-button--setting:focus:not([disabled]):not([aria-disabled="true"]) {
       box-shadow: 0 0 3px #777;
       background: #919191; }
   .CG2-button[disabled], .CG2-button[aria-disabled="true"] {
@@ -2584,18 +2676,10 @@ progress
       margin: auto;
       display: block;
       width: auto;
-      -webkit-transform-origin: 50% 50%;
-      transform-origin: 50% 50%;
       background: url("../img/CG2-button/loading.svg") no-repeat 50% 50%;
       background-size: 100% 100%;
-      -webkit-animation: button--loading 1s linear infinite;
+      transform-origin: 50% 50%;
       animation: button--loading 1s linear infinite; }
-
-@-webkit-keyframes button--loading {
-  0% {
-    -webkit-transform: rotate(0deg); }
-  100% {
-    -webkit-transform: rotate(360deg); } }
 
 @keyframes button--loading {
   0% {
@@ -2667,13 +2751,14 @@ fav
     .CG2-transparentButton {
       font-size: 12px;
       padding: 4px 8px; } }
-  .CG2-transparentButton:hover {
+  .CG2-transparentButton:hover, .CG2-transparentButton:focus {
     background: rgba(255, 255, 255, 0.2); }
   .CG2-transparentButton span[class^="CG2-icon"] {
     opacity: .5;
     margin: 0 4px 0 0;
     transition: all .3s; }
-  .CG2-transparentButton:hover span[class^="CG2-icon"] {
+  .CG2-transparentButton:hover span[class^="CG2-icon"],
+  .CG2-transparentButton:focus span[class^="CG2-icon"] {
     opacity: 1; }
   .CG2-transparentButton[disabled], .CG2-transparentButton[aria-disabled="true"] {
     color: #ccc;
@@ -3124,27 +3209,31 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-seriesWeekHeader__prev a {
         padding-left: 16px; } }
-  .CG2-seriesWeekHeader__prev a:before {
-    content: "";
-    font-family: "codegrid-icon";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 20px;
-    position: absolute;
-    bottom: .25em;
-    left: 0; }
-    @media screen and (max-width: 767px) {
-      .CG2-seriesWeekHeader__prev a:before {
-        font-size: 14px;
-        bottom: 0; } }
+    .CG2-seriesWeekHeader__prev a::before {
+      content: "";
+      font-family: "codegrid-icon";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 20px;
+      position: absolute;
+      bottom: .25em;
+      left: 0;
+      transition: transform 0.4s cubic-bezier(0.3, 2, 0.6, 1); }
+      @media screen and (max-width: 767px) {
+        .CG2-seriesWeekHeader__prev a::before {
+          font-size: 14px;
+          bottom: 0; } }
+    .CG2-seriesWeekHeader__prev a:hover::before, .CG2-seriesWeekHeader__prev a:focus::before {
+      transform: translateX(-4px) scale(1.2);
+      transition-duration: .4s; }
 
 .CG2-seriesWeekHeader__next {
   vertical-align: bottom;
@@ -3156,27 +3245,31 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-seriesWeekHeader__next a {
         padding-right: 16px; } }
-  .CG2-seriesWeekHeader__next a:after {
-    content: "";
-    font-family: "codegrid-icon";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-    display: inline-block;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-size: 20px;
-    position: absolute;
-    bottom: .25em;
-    right: 0; }
-    @media screen and (max-width: 767px) {
-      .CG2-seriesWeekHeader__next a:after {
-        font-size: 14px;
-        bottom: 0; } }
+    .CG2-seriesWeekHeader__next a::after {
+      content: "";
+      font-family: "codegrid-icon";
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      vertical-align: middle;
+      display: inline-block;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 20px;
+      position: absolute;
+      bottom: .25em;
+      right: 0;
+      transition: transform 0.4s cubic-bezier(0.3, 2, 0.6, 1); }
+      @media screen and (max-width: 767px) {
+        .CG2-seriesWeekHeader__next a::after {
+          font-size: 14px;
+          bottom: 0; } }
+    .CG2-seriesWeekHeader__next a:hover::after, .CG2-seriesWeekHeader__next a:focus::after {
+      transform: translateX(4px) scale(1.2);
+      transition-duration: .4s; }
 
 .CG2-seriesWeekHeader__current {
   vertical-align: bottom;
@@ -3354,7 +3447,7 @@ tag:
     margin-top: 20px; }
 
 .CG2-seriesListHeader__articleLength {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 1rem;
   white-space: nowrap;
   vertical-align: bottom;
@@ -3394,7 +3487,7 @@ tag:
         font-size: 20px; } }
 
 .CG2-seriesListHeader__nav {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 1rem;
   vertical-align: bottom;
   display: inline-block;
@@ -3440,7 +3533,7 @@ tag:
 
 */
 .CG2-compactNav {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 1rem;
   vertical-align: bottom; }
   @media screen and (max-width: 979px) {
@@ -3489,7 +3582,7 @@ tag:
         padding-right: 20px; } }
     @media screen and (max-width: 767px) {
       .CG2-compactNav li {
-        font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+        font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
         display: block;
         text-align: left;
         display: none;
@@ -3531,8 +3624,8 @@ tag:
     display: block;
     height: 2px;
     background: #424242;
-    transition: all .2s; }
-  .CG2-compactNav li:not(.CG2-compactNav__item--current) a:hover:after {
+    transition: all 0.4s cubic-bezier(0.3, 1.4, 0.6, 1); }
+  .CG2-compactNav li:not(.CG2-compactNav__item--current) a:hover:after, .CG2-compactNav li:not(.CG2-compactNav__item--current) a:focus:after {
     left: 0;
     right: 0; }
   @media screen and (max-width: 767px) {
@@ -3759,10 +3852,10 @@ tag:
   padding-right: 5px; }
   .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
     display: block; }
-  @media screen and (max-width: 767px) {
-    .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
-      width: 28px;
-      height: 28px; } }
+    @media screen and (max-width: 767px) {
+      .CG2-seriesList__authorPic img, .CG2-series__authorPic img {
+        width: 28px;
+        height: 28px; } }
 
 .CG2-seriesList__authorName, .CG2-series__authorName {
   font-size: 12px;
@@ -3784,6 +3877,13 @@ tag:
 .CG2-seriesList__authorPicList li, .CG2-series__authorPicList li {
   display: inline-block;
   margin: 0 1px 1px 0; }
+
+.CG2-seriesList__authorPicList img, .CG2-series__authorPicList img {
+  display: block; }
+  @media screen and (max-width: 767px) {
+    .CG2-seriesList__authorPicList img, .CG2-series__authorPicList img {
+      width: 28px;
+      height: 28px; } }
 
 .CG2-seriesList {
   margin: 0 calc( -50vw + 50% + 8px); }
@@ -3858,21 +3958,39 @@ tag:
         width: 26px; } }
   .CG2-seriesList__itemCategory a {
     color: inherit;
-    text-decoration: none;
-    transition: all .2s; }
+    text-decoration: none; }
   .CG2-seriesList__itemCategory [class^="CG2-icon-cat"] {
     font-size: 40px;
     line-height: 1;
-    position: static;
-    margin-right: 15px;
-    transition: all .2s; }
+    position: relative;
+    top: 0;
+    margin-right: 15px; }
     @media screen and (max-width: 767px) {
       .CG2-seriesList__itemCategory [class^="CG2-icon-cat"] {
         font-size: 26px; } }
-  .CG2-seriesList__itemCategory a:hover [class^="CG2-icon-cat"] {
-    transform: scale(1.1, 1.1);
-    opacity: 0.9;
-    text-shadow: 0 0 3px #777; }
+    .CG2-seriesList__itemCategory [class^="CG2-icon-cat"]::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: calc( 50% - 20px);
+      left: calc( 50% - 20px);
+      display: block;
+      width: 40px;
+      height: 40px;
+      border-radius: 20px;
+      background: #eee;
+      transform: scale(0);
+      transition: all 0s; }
+  .CG2-seriesList__itemCategory a:hover [class^="CG2-icon-cat"],
+  .CG2-seriesList__itemCategory a:focus [class^="CG2-icon-cat"] {
+    animation-duration: .6s;
+    animation-name: anim-scaleup;
+    animation-fill-mode: forwards; }
+    .CG2-seriesList__itemCategory a:hover [class^="CG2-icon-cat"]::after,
+    .CG2-seriesList__itemCategory a:focus [class^="CG2-icon-cat"]::after {
+      opacity: 0;
+      transform: scale(1.4);
+      transition-duration: .4s; }
 
 .CG2-seriesList__itemTitle {
   font-size: 25px;
@@ -3906,16 +4024,17 @@ tag:
       content: '';
       opacity: 0;
       position: absolute;
-      bottom: -3px;
       left: 0;
       right: 0;
       display: block;
       height: 1px;
       background: #fff;
-      transition: all .6s; }
-  .CG2-seriesList__itemTitle a:hover .CG2-seriesList__itemTitleText:after {
-    bottom: 0;
-    opacity: 1; }
+      transform: translateY(2px) scaleX(0.1);
+      transition: all 0.6s cubic-bezier(0.3, 1.4, 0.6, 1); }
+  .CG2-seriesList__itemTitle a:hover .CG2-seriesList__itemTitleText:after,
+  .CG2-seriesList__itemTitle a:focus .CG2-seriesList__itemTitleText:after {
+    opacity: 1;
+    transform: scaleX(1); }
 
 .CG2-seriesList__itemUtil {
   text-align: right;
@@ -3964,12 +4083,14 @@ tag:
     border: none;
     background: rgba(255, 255, 255, 0);
     transition: all .3s; }
-    .CG2-seriesList__itemUtil a:hover,
-    .CG2-seriesList__itemUtil button:hover {
+    .CG2-seriesList__itemUtil a:hover, .CG2-seriesList__itemUtil a:focus,
+    .CG2-seriesList__itemUtil button:hover,
+    .CG2-seriesList__itemUtil button:focus {
       text-decoration: none;
       background: rgba(255, 255, 255, 0.2); }
-      .CG2-seriesList__itemUtil a:hover span[class^="CG2-icon"],
-      .CG2-seriesList__itemUtil button:hover span[class^="CG2-icon"] {
+      .CG2-seriesList__itemUtil a:hover span[class^="CG2-icon"], .CG2-seriesList__itemUtil a:focus span[class^="CG2-icon"],
+      .CG2-seriesList__itemUtil button:hover span[class^="CG2-icon"],
+      .CG2-seriesList__itemUtil button:focus span[class^="CG2-icon"] {
         opacity: 1; }
   .CG2-seriesList__itemUtil span[class^="CG2-icon"] {
     font-size: 18px;
@@ -3998,8 +4119,10 @@ button.CG2-seriesList__itemUtilButton--favAdded span[class^="CG2-icon"] {
   background-size: cover;
   transform: scale(1.2, 1.2);
   opacity: .64;
-  transition: transform 1s; }
-  .CG2-seriesList__item:hover .CG2-seriesList__coverImage {
+  transition: transform 1s;
+  will-change: opacity; }
+  .CG2-seriesList__item:hover .CG2-seriesList__coverImage,
+  .CG2-seriesList__item:focus .CG2-seriesList__coverImage {
     transform: scale(1.4, 1.4); }
   .CG2-seriesList__coverImage.CG2-seriesList__coverImage--blurry {
     filter: blur(24px); }
@@ -4028,7 +4151,7 @@ button.CG2-seriesList__itemUtilButton--favAdded span[class^="CG2-icon"] {
     text-decoration: none;
     display: table-row;
     transition: background .5s; }
-    .CG2-seriesList__article a:hover {
+    .CG2-seriesList__article a:hover, .CG2-seriesList__article a:focus {
       transition: background .2s;
       background: rgba(255, 255, 255, 0.2); }
 
@@ -4132,7 +4255,8 @@ a .CG2-seriesList__author:before {
   background: rgba(255, 255, 255, 0);
   transition: all .5s; }
 
-a:hover .CG2-seriesList__author:before {
+a:hover .CG2-seriesList__author:before,
+a:focus .CG2-seriesList__author:before {
   background: rgba(255, 255, 255, 0.2);
   transition: all .2s; }
 
@@ -4173,7 +4297,7 @@ a:hover .CG2-seriesList__author:before {
       transform: skewX(20deg);
       background: #EEE;
       transition: all .3s; }
-    .CG2-seriesList__itemMore a:hover:before {
+    .CG2-seriesList__itemMore a:hover:before, .CG2-seriesList__itemMore a:focus:before {
       left: 0;
       margin-left: -20px; }
     .CG2-seriesList__itemMore a:after {
@@ -4430,7 +4554,7 @@ tag:
     right: 100%;
     left: 0;
     transition: all .3s; }
-  .CG2-series__itemHeader a:hover:after {
+  .CG2-series__itemHeader a:hover:after, .CG2-series__itemHeader a:focus:after {
     background: #EEE;
     right: 0; }
 
@@ -4597,6 +4721,27 @@ tag:
           <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
         </div>
         <div class="CG2-articleHeader__pubDate">2015年 5月14日発行</div>
+        
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="#">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="#">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -4647,7 +4792,7 @@ tag:
 
 .CG2-articleHeader__category {
   position: absolute;
-  top: 40px;
+  top: calc( 40px + 0.5em);
   left: 50px;
   width: 50px; }
   @media screen and (max-width: 767px) {
@@ -4677,21 +4822,21 @@ tag:
 
 .CG2-articleHeader__categoryName {
   letter-spacing: 0.2em;
+  line-height: 50px;
   -webkit-writing-mode: vertical-rl;
-  -moz-writing-mode: vertical-rl;
-  -o-writing-mode: vertical-rl;
-  writing-mode: tb-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: tb-rl;
   writing-mode: vertical-rl;
   margin: auto; }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__categoryName {
       font-size: 12px;
       letter-spacing: 0;
+      line-height: normal;
       vertical-align: middle;
       -webkit-writing-mode: inherit;
-      -moz-writing-mode: inherit;
-      -o-writing-mode: inherit;
-      writing-mode: inherit;
+      -ms-writing-mode: inherit;
+          writing-mode: inherit;
       writing-mode: inherit;
       display: table-cell;
       padding-left: 10px; } }
@@ -4699,18 +4844,19 @@ tag:
 .CG2-articleHeader__main {
   display: table;
   width: 100%;
-  height: 300px; }
+  height: 260px; }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__main {
       height: auto; } }
 
 .CG2-articleHeader__mainInner {
   display: table-cell;
-  vertical-align: middle; }
+  vertical-align: top; }
 
 .CG2-articleHeader__series {
   font-size: 24px;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.4; }
   .CG2-articleHeader__series a {
     color: inherit;
     text-decoration: inherit;
@@ -4727,26 +4873,92 @@ tag:
       height: 1px;
       background: #FFF;
       transition: all .6s; }
-    .CG2-articleHeader__series a:hover:after {
+    .CG2-articleHeader__series a:hover:after, .CG2-articleHeader__series a:focus:after {
       bottom: 0;
       opacity: 1; }
 
 .CG2-articleHeader__title {
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-weight: 600;
   line-height: 1.4;
-  margin-bottom: 20px; }
+  margin-bottom: 22px; }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__title {
       font-size: 18px; } }
 
-@media screen and (max-width: 767px) {
-  .CG2-articleHeader__abstract {
-    font-size: 12px; } }
+.CG2-articleHeader__abstract {
+  line-height: 1.6; }
+  .CG2-articleHeader__abstract p {
+    margin-top: .5em;
+    margin-bottom: .5em; }
+  @media screen and (max-width: 767px) {
+    .CG2-articleHeader__abstract {
+      font-size: 12px; } }
 
 .CG2-articleHeader__pubDate {
   font-size: 12px;
   opacity: 0.5; }
+
+.CG2-articleHeader__authors {
+  font-size: 0;
+  margin: 10px 0; }
+
+.CG2-articleHeader__author {
+  font-size: 1rem;
+  display: inline-table;
+  margin: 3px 10px 3px 0;
+  margin-right: 10px; }
+  .CG2-articleHeader__author > a {
+    color: inherit;
+    text-decoration: none;
+    position: relative;
+    display: table;
+    width: 100%; }
+    .CG2-articleHeader__author > a:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+      background: rgba(255, 255, 255, 0);
+      transition: all .5s; }
+    .CG2-articleHeader__author > a:hover:before, .CG2-articleHeader__author > a:focus:before {
+      background: rgba(255, 255, 255, 0.2);
+      transition: all .2s; }
+
+.CG2-articleHeader__authorImage {
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 8px; }
+  .CG2-articleHeader__authorImage img {
+    display: block;
+    width: 24px;
+    height: 24px; }
+
+.CG2-articleHeader__authorName {
+  font-size: 12px;
+  vertical-align: middle;
+  display: table-cell;
+  padding-right: 6px; }
+
+.CG2-articleHeader__authorTitle {
+  font-size: 12px;
+  vertical-align: middle;
+  display: table-cell;
+  padding-left: 6px;
+  position: relative; }
+  .CG2-articleHeader__authorTitle:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    height: 1.4em;
+    border-left: 1px solid #fff;
+    margin: auto; }
 
 .CG2-articleHeader__pagenation {
   padding-top: 20px;
@@ -4779,7 +4991,7 @@ tag:
         .CG2-articleHeader__pagenation li a {
           font-size: 12px;
           padding: 4px 6px; } }
-      .CG2-articleHeader__pagenation li a:hover {
+      .CG2-articleHeader__pagenation li a:hover, .CG2-articleHeader__pagenation li a:focus {
         background: rgba(255, 255, 255, 0.2); }
       .CG2-articleHeader__pagenation li a:before {
         position: absolute;
@@ -4805,7 +5017,7 @@ tag:
           -moz-osx-font-smoothing: grayscale;
           line-height: 0;
           left: 8px; }
-        .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationPrev a:hover:before {
+        .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationPrev a:hover:before, .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationPrev a:focus:before {
           left: 5px; }
     .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationNext {
       float: right; }
@@ -4827,7 +5039,7 @@ tag:
           -moz-osx-font-smoothing: grayscale;
           line-height: 0;
           right: 8px; }
-        .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationNext a:hover:before {
+        .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationNext a:hover:before, .CG2-articleHeader__pagenation li.CG2-articleHeader__pagenationNext a:focus:before {
           right: 5px; }
 
 @media screen and (max-width: 767px) {
@@ -4875,6 +5087,72 @@ tag:
     display: none; }
   .CG2-articleHeader__bg {
     display: none; } }
+
+/* ==========================================================================
+   CG2-articleNotice
+   ========================================================================== */
+/*
+---
+name: articleNotice
+category:
+  - Templates
+tag:
+  - app-item-article
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level1">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-triangle"></span>
+    多くが古い情報の可能性があり、現在は推奨されない記事です
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level2">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-circle"></span>
+    一部古い情報の可能性があります
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level3">
+  <div class="CG2-articleNotice__head">
+    古い記事ですが、現在も使える情報です
+  </div>
+</div>
+```
+
+*/
+.CG2-articleNotice {
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  padding: 16px;
+  background-color: #14C850; }
+  .CG2-articleNotice.CG2-articleNotice--level1 {
+    background-color: #F03C3C; }
+  .CG2-articleNotice.CG2-articleNotice--level2 {
+    background-color: #f0b428; }
+  @media screen and (max-width: 639px) {
+    .CG2-articleNotice {
+      font-size: 14px; } }
+
+.CG2-articleNotice__head span[class^="CG2-icon-"] {
+  font-size: 28px;
+  line-height: 0;
+  margin-right: 10px; }
+  @media screen and (max-width: 639px) {
+    .CG2-articleNotice__head span[class^="CG2-icon-"] {
+      font-size: 20px;
+      margin-right: 5px; } }
 
 /* ==========================================================================
    CG2-narrowLayout
@@ -5138,7 +5416,7 @@ header.CG2-articleTOC__header {
   .CG2-articleTOC__list a {
     color: inherit;
     text-decoration: none; }
-    .CG2-articleTOC__list a:before {
+    .CG2-articleTOC__list a::before {
       content: "";
       font-family: "codegrid-icon";
       speak: none;
@@ -5151,7 +5429,11 @@ header.CG2-articleTOC__header {
       display: inline-block;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
-      margin: 0 .4em 0 0; }
+      margin: 0 .4em 0 0;
+      transition: transform 0.4s cubic-bezier(0.3, 2, 0.6, 1); }
+    .CG2-articleTOC__list a:hover::before {
+      transform: translateY(2px);
+      transition-duration: .4s; }
 
 @media print {
   .CG2-articleTOC__body {
@@ -5225,8 +5507,8 @@ tag:
       border-top: none; } }
   .CG2-articleSeriesNav__inner ul {
     -webkit-writing-mode: vertical-rl;
-    -moz-writing-mode: vertical-rl;
-    writing-mode: tb-rl;
+    -ms-writing-mode: tb-rl;
+        writing-mode: tb-rl;
     writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
@@ -5235,8 +5517,8 @@ tag:
     @media screen and (max-width: 979px) {
       .CG2-articleSeriesNav__inner ul {
         -webkit-writing-mode: horizontal-tb;
-        -moz-writing-mode: horizontal-tb;
-        writing-mode: lr-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: lr-tb;
         writing-mode: horizontal-tb;
         width: auto;
         margin: 0; } }
@@ -5281,7 +5563,7 @@ tag:
         display: block;
         overflow-y: visible;
         padding: 4px; } }
-    .CG2-articleSeriesNav__inner a:hover {
+    .CG2-articleSeriesNav__inner a:hover, .CG2-articleSeriesNav__inner a:focus {
       background: #eee;
       transition: none; }
 
@@ -5374,7 +5656,9 @@ article.CG2-article {
   margin-bottom: 20px;
   word-wrap: break-word;
   overflow-wrap: break-word;
-  hyphens: auto; }
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
   @media screen and (max-width: 767px) {
     article.CG2-article {
       line-height: 2;
@@ -5644,6 +5928,9 @@ article.CG2-article .Column-body > *:first-child {
 article.CG2-article .Column-body > *:last-child {
   margin-bottom: 0; }
 
+article.CG2-article pre + .Column {
+  margin-top: 2em; }
+
 article.CG2-article .Note {
   color: #777;
   font-size: 14px;
@@ -5751,7 +6038,7 @@ tag:
           padding-left: 1.2em; }
           .CG2-articlePagination li.CG2-articlePagination__prev a:before {
             left: 0; }
-          .CG2-articlePagination li.CG2-articlePagination__prev a:hover:before {
+          .CG2-articlePagination li.CG2-articlePagination__prev a:hover:before, .CG2-articlePagination li.CG2-articlePagination__prev a:focus:before {
             left: -3px; }
       .CG2-articlePagination li.CG2-articlePagination__next {
         text-align: right;
@@ -5761,7 +6048,7 @@ tag:
           padding-right: 1.2em; }
           .CG2-articlePagination li.CG2-articlePagination__next a:before {
             right: 0; }
-          .CG2-articlePagination li.CG2-articlePagination__next a:hover:before {
+          .CG2-articlePagination li.CG2-articlePagination__next a:hover:before, .CG2-articlePagination li.CG2-articlePagination__next a:focus:before {
             right: -3px; } }
     @media screen and (max-width: 639px) {
       .CG2-articlePagination li {
@@ -5839,6 +6126,7 @@ tag:
   .CG2-articleUtil .CG2-articleUtil__socialItem {
     margin-top: 5px; }
     .CG2-articleUtil .CG2-articleUtil__socialItem iframe {
+      width: 100%;
       max-width: 100%; }
 
 @media print {
@@ -5978,20 +6266,24 @@ section.CG2-livecode {
       color: inherit;
       text-decoration: none;
       display: block;
-      padding: 8px  16px;
-      margin: -8px -16px; }
-      .CG2-livecode__header .CG2-livecode__nav a span[class^="CG2-icon-"] {
-        font-size: 20px;
-        position: static;
-        margin: 0 5px 0 0; }
+      padding: 10px;
+      margin: -10px;
+      transition: background-color .2s; }
       .CG2-livecode__header .CG2-livecode__nav a[data-livecode-play] {
         position: relative; }
         .CG2-livecode__header .CG2-livecode__nav a[data-livecode-play]:before {
           position: absolute;
           content: 'サンプルを再生する';
-          background: #EEE; }
+          background: #EEE;
+          transition: background-color .2s; }
           .CG2-livecode.CG2-livecode--isRunning .CG2-livecode__header .CG2-livecode__nav a[data-livecode-play]:before {
             content: 'サンプルを停止する'; }
+      .CG2-livecode__header .CG2-livecode__nav a:hover, .CG2-livecode__header .CG2-livecode__nav a:hover::before {
+        background-color: #DBDBDB; }
+      .CG2-livecode__header .CG2-livecode__nav a span[class^="CG2-icon-"] {
+        font-size: 20px;
+        position: static;
+        margin: 0 5px 0 0; }
 
 .CG2-livecode__body {
   -webkit-overflow-scrolling: touch;
@@ -6587,7 +6879,9 @@ tag:
   white-space: normal;
   word-break: break-word;
   word-break: break-all;
-  hyphens: auto;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto;
   vertical-align: middle;
   padding-left: 10px; }
   @media screen and (max-width: 979px) {
@@ -6772,7 +7066,7 @@ tag:
       margin-bottom: 20px; } }
 
 .CG2-signupFrom__leadSub {
-  font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-size: 16px; }
   @media screen and (max-width: 767px) {
     .CG2-signupFrom__leadSub {
@@ -6886,7 +7180,7 @@ tag:
       <tr>
         <th></th>
         <th><img src="/build/assets2/img/logos/paypal.svg" alt="PayPal" width="100" height="25"></th>
-        <th><img src="/build/assets2/img/logos/webmoney.svg" alt="WebMoney" width="120" height="30"></th>
+        <th><img src="/build/assets2/img/logos/webmoney.png" alt="WebMoney" width="156" height="30"></th>
       </tr>
     </thead>
     <tbody>
@@ -7067,7 +7361,7 @@ tag:
   display: inline-block; }
   @media screen and (max-width: 639px) {
     .CG2-paymentTable__value {
-      font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+      font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
       font-size: 100%;
       line-height: inherit; } }
 
@@ -7242,6 +7536,9 @@ tag:
     <div class="CG2-features__itemBody">
       <p>忙しいと追うのを忘れがちになる新しい技術情報。エンジニア同士の会話でついていけなかったなんてことはありませんか？　CodeGridでは、最新トレンド技術もきちんと検証した上でしっかり解説します。もちろん「今さら聞けない」と思われがちな入門的な記事も配信。CodeGridを読んでいれば、基礎から最新トレンドまでフロントエンド界隈の情報をキャッチできます。</p>
     </div>
+    <div class="CG2-features__embeddedTweets">
+      //twitterの埋め込みコード など
+    </div>
   </section>
 </div>
 ```
@@ -7298,6 +7595,22 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-features__itemBody:before {
         content: none; } }
+
+.CG2-features__embeddedTweets {
+  display: flex;
+  margin: 20px -5px; }
+  @media screen and (max-width: 767px) {
+    .CG2-features__embeddedTweets {
+      display: block; } }
+  .CG2-features__embeddedTweets twitterwidget,
+  .CG2-features__embeddedTweets iframe {
+    width: 50%;
+    margin: 10px 5px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__embeddedTweets twitterwidget,
+      .CG2-features__embeddedTweets iframe {
+        width: 100%;
+        margin: 10px auto; } }
 
 /* ==========================================================================
    CG2-howYouReceive
@@ -8014,7 +8327,7 @@ tag:
         <col width="70%">
         <tr>
           <th>
-            会社名・団体名
+            <label>会社名・団体名</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
@@ -8023,21 +8336,45 @@ tag:
         </tr>
         <tr>
           <th>
-            管理者のメールアドレス
+            <label>管理者のメールアドレス</label>
             <span class="CG2-form__required">（必須）</span>
           </th>
           <td>
             <input type="text" placeholder="例）codegrid@pxgrid.com">
           </td>
         </tr>
+        <tr>
+          <th>
+            <label>お問い合わせ事項</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <select>
+              <option value="" class="CG2-form__placeholder">お問い合わせ事項、お問い合わせの内容をお選びください。</option>
+              <option>記事内容について</option>
+              <option>CodeGridの利用全般について</option>
+              <option>課金について</option>
+              <option>その他</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label>お問い合わせ内容</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <textarea placeholder="記事内容についてのお問い合わせは、必ず該当記事のURLを明記してください。" cols="50" rows="6"></textarea>
+          </td>
+        </tr>
       </table>
     </div>
-    <p><button class="CG2-button CG2-button--primary CG2-button--large">送信</button></p>
-    <div class="CG2-form__legal">
-      Powered by Google ドキュメント | 不正行為の報告 - 利用規約 - 追加規約
-    </div>
-    <div class="CG2-form__notice">
-      もし送信できない場合はこちらをお試しください
+    <div class="CG2-buttonContainer">
+      <ul>
+        <li class="CG2-buttonContainer__item--full">
+          <button class="CG2-button CG2-button--primary CG2-button--large" type="submit">送信</button>
+        </li>
+      </ul>
     </div>
   </form>
 </section>
@@ -8089,12 +8426,41 @@ section.CG2-form {
 
 .CG2-form__table input[type="text"],
 .CG2-form__table input[type="url"],
-.CG2-form__table input[type="email"] {
+.CG2-form__table input[type="email"],
+.CG2-form__table select,
+.CG2-form__table textarea {
   box-sizing: border-box;
   width: 100%;
   padding: 8px 14px;
   border: 1px solid #ccc;
   border-radius: 3px; }
+
+.CG2-form__table select {
+  -webkit-appearance: initial;
+          appearance: initial;
+  background-image: url(data:image/svg+xml,%3Csvg%20width=%2226%22%20height=%2214%22%20viewBox=%220%200%2026%2014%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20fill=%22%23777%22%20d=%22M3%200L0%202.7%2013%2014%2026%202.7%2023%200%2013%208.7%22/%3E%3C/svg%3E);
+  background-repeat: no-repeat;
+  background-size: 14px 8px;
+  background-position: right 14px top 18px;
+  background-color: #fff; }
+  @media screen and (max-width: 767px) {
+    .CG2-form__table select {
+      background-position: right 14px top 15px; } }
+
+.CG2-form__table ::-webkit-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table :-ms-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table ::placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table select.CG2-form__placeholder {
+  color: #767676; }
 
 @media screen and (max-width: 639px) {
   .CG2-form__table table, .CG2-form__table tbody, .CG2-form__table tr {

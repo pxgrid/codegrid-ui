@@ -103,7 +103,8 @@ progress
   background: #777;
   box-shadow: 0 0 0 rgba( 0, 0, 0, 0.1 );
   transition: all .2s;
-  &:hover:not( [disabled] ):not( [aria-disabled="true"] ):not( .CG2-button--progress ){
+  &:hover:not( [disabled] ):not( [aria-disabled="true"] ):not( .CG2-button--progress ),
+  &:focus:not( [disabled] ):not( [aria-disabled="true"] ):not( .CG2-button--progress ){
     box-shadow: 0 0 3px #777;
     background: lighten( #777, 10% );
     transition: all .2s;
@@ -145,7 +146,8 @@ progress
   &.CG2-button--primary{
     border-color: #10a040;
     background: #10a040;
-    &:hover:not( [disabled] ):not( [aria-disabled="true"] ){
+    &:hover:not( [disabled] ):not( [aria-disabled="true"] ),
+    &:focus:not( [disabled] ):not( [aria-disabled="true"] ){
       box-shadow: 0 0 3px #10a040;
       background: lighten( #10a040, 10% );
     }
@@ -153,7 +155,8 @@ progress
   &.CG2-button--action{
     border-color: #282828;
     background: #282828;
-    &:hover:not( [disabled] ):not( [aria-disabled="true"] ){
+    &:hover:not( [disabled] ):not( [aria-disabled="true"] ),
+    &:focus:not( [disabled] ):not( [aria-disabled="true"] ){
       box-shadow: 0 0 3px #282828;
       background: lighten( #282828, 10% );
     }
@@ -161,7 +164,8 @@ progress
   &.CG2-button--setting{
     border-color: #777;
     background: #777;
-    &:hover:not( [disabled] ):not( [aria-disabled="true"] ){
+    &:hover:not( [disabled] ):not( [aria-disabled="true"] ),
+    &:focus:not( [disabled] ):not( [aria-disabled="true"] ){
       box-shadow: 0 0 3px #777;
       background: lighten( #777, 10% );
     }
@@ -187,20 +191,14 @@ progress
       margin: auto;
       display: block;
       width: auto;
-      -webkit-transform-origin: 50% 50%;
-              transform-origin: 50% 50%;
       background: url( '../img/CG2-button/loading.svg' ) no-repeat 50% 50%;
       background-size: 100% 100%;
-      -webkit-animation: button--loading 1s linear infinite;
-              animation: button--loading 1s linear infinite;
+      transform-origin: 50% 50%;
+      animation: button--loading 1s linear infinite;
     }
   }
 }
 
-@-webkit-keyframes button--loading {
-    0% { -webkit-transform: rotate(   0deg ); }
-  100% { -webkit-transform :rotate( 360deg ); }
-}
 @keyframes button--loading {
     0% { transform: rotate(   0deg ); }
   100% { transform :rotate( 360deg ); }
@@ -271,7 +269,8 @@ fav
     font-size: 12px;
     padding: 4px 8px;
   }
-  &:hover{
+  &:hover,
+  &:focus{
     background: rgba( 255, 255, 255, 0.2 );
   }
   span[class^="CG2-icon"]{
@@ -279,7 +278,8 @@ fav
     margin: 0 4px 0 0;
     transition: all .3s;
   }
-  &:hover span[class^="CG2-icon"]{
+  &:hover span[class^="CG2-icon"],
+  &:focus span[class^="CG2-icon"]{
     opacity: 1;
   }
   &[disabled],
@@ -792,16 +792,22 @@ tag:
         @include max-screen( $breakpoint-middle ) {
           padding-left: 16px;
         }
-      }
-      a:before{
-        @include icon( 'left' );
-        font-size: 20px;
-        position: absolute;
-        bottom: .25em;
-        left: 0;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-          bottom: 0;
+        &::before{
+          @include icon( 'left' );
+          font-size: 20px;
+          position: absolute;
+          bottom: .25em;
+          left: 0;
+          transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 14px;
+            bottom: 0;
+          }
+        }
+        &:hover::before,
+        &:focus::before{
+          transform: translateX( -4px ) scale( 1.2 );
+          transition-duration: .4s;
         }
       }
     }
@@ -815,16 +821,22 @@ tag:
         @include max-screen( $breakpoint-middle ) {
           padding-right: 16px;
         }
-      }
-      a:after{
-        @include icon( 'right' );
-        font-size: 20px;
-        position: absolute;
-        bottom: .25em;
-        right: 0;
-        @include max-screen( $breakpoint-middle ) {
-          font-size: 14px;
-          bottom: 0;
+        &::after{
+          @include icon( 'right' );
+          font-size: 20px;
+          position: absolute;
+          bottom: .25em;
+          right: 0;
+          transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+          @include max-screen( $breakpoint-middle ) {
+            font-size: 14px;
+            bottom: 0;
+          }
+        }
+        &:hover::after,
+        &:focus::after{
+          transform: translateX( 4px ) scale( 1.2 );
+          transition-duration: .4s;
         }
       }
     }
@@ -1194,9 +1206,10 @@ tag:
         display: block;
         height: 2px;
         background: #424242;
-        transition: all .2s;
+        transition: all .4s cubic-bezier(.3, 1.4, .6, 1 );
       }
-      &:hover:after{
+      &:hover:after,
+      &:focus:after{
         left: 0;
         right: 0;
       }
@@ -1422,9 +1435,7 @@ tag:
     padding-right: 5px;
     img{
       display: block;
-    }
-    @include max-screen( $breakpoint-middle ) {
-      img{
+      @include max-screen( $breakpoint-middle ) {
         width: 28px;
         height: 28px;
       }
@@ -1452,6 +1463,13 @@ tag:
     display: inline-block;
     margin: 0 1px 1px 0;
   }
+    img{
+      display: block;
+      @include max-screen( $breakpoint-middle ) {
+        width: 28px;
+        height: 28px;
+      }
+    }
 }
 
 
@@ -1532,22 +1550,39 @@ tag:
           a{
             color: inherit;
             text-decoration: none;
-            transition: all .2s;
           }
           [class^="CG2-icon-cat"]{
             font-size: 40px;
             line-height: 1;
-            position: static;
+            position: relative;
+            top: 0;
             margin-right: 15px;
-            transition: all .2s;
             @include max-screen( $breakpoint-middle ) {
               font-size: 26px;
             }
+            &::after{
+              content: "";
+              position: absolute;
+              z-index: -1;
+              top: calc( 50% - 20px );
+              left: calc( 50% - 20px );
+              display: block;
+              width: 40px;
+              height: 40px;
+              border-radius: 20px;
+              background: #eee;
+              transform: scale( 0 );
+              transition: all 0s;
+            }
           }
-          a:hover [class^="CG2-icon-cat"]{
-            transform: scale( 1.1, 1.1 );
-            opacity: 0.9;
-            text-shadow: 0 0 3px #777;
+          a:hover [class^="CG2-icon-cat"],
+          a:focus [class^="CG2-icon-cat"]{
+            @include anim-scaleup();
+            &::after{
+              opacity: 0;
+              transform: scale( 1.4 );
+              transition-duration: .4s;
+            }
           }
         }
         .CG2-seriesList__itemTitle{
@@ -1587,18 +1622,19 @@ tag:
                   content: '';
                   opacity: 0;
                   position: absolute;
-                  bottom: -3px;
                   left: 0;
                   right: 0;
                   display: block;
                   height: 1px;
                   background: #fff;
-                  transition: all .6s;
+                  transform: translateY( 2px ) scaleX( 0.1 );
+                  transition: all .6s cubic-bezier(.3, 1.4, .6, 1 );
                 }
               }
-              a:hover .CG2-seriesList__itemTitleText:after{
-                bottom: 0;
+              a:hover .CG2-seriesList__itemTitleText:after,
+              a:focus .CG2-seriesList__itemTitleText:after{
                 opacity: 1;
+                transform: scaleX( 1 );
               }
         }
         .CG2-seriesList__itemUtil{
@@ -1657,7 +1693,8 @@ tag:
             border: none;
             background: rgba( 255, 255, 255, 0 );
             transition: all .3s;
-            &:hover{
+            &:hover,
+            &:focus{
               text-decoration: none;
               background: rgba( 255, 255, 255, 0.2 );
               span[class^="CG2-icon"]{
@@ -1686,7 +1723,9 @@ tag:
     .CG2-seriesList__coverImage{
       @include blurry();
       transition: transform 1s;
-      .CG2-seriesList__item:hover &{
+      will-change: opacity; // fixing Firefox causing artifacts on unhover
+      .CG2-seriesList__item:hover &,
+      .CG2-seriesList__item:focus &{
         transform: scale( 1.4, 1.4 );
       }
       &.CG2-seriesList__coverImage--blurry{
@@ -1718,7 +1757,8 @@ tag:
           text-decoration: none;
           display: table-row;
           transition: background .5s;
-          &:hover{
+          &:hover,
+          &:focus{
             transition: background .2s;
             background: rgba( 255, 255, 255, 0.2 );
           }
@@ -1833,7 +1873,8 @@ tag:
         background: rgba( 255, 255, 255, 0 );
         transition: all .5s;
       }
-      a:hover .CG2-seriesList__author:before{
+      a:hover .CG2-seriesList__author:before,
+      a:focus .CG2-seriesList__author:before{
         background: rgba( 255, 255, 255, 0.2 );
         transition: all .2s;
       }
@@ -1872,7 +1913,8 @@ tag:
         width: 100%;
         padding: 20px;
         border-bottom: 1px solid #DBDBDB;
-        &:hover{
+        &:hover,
+        &:focus{
         }
         &:before{
           content: '';
@@ -1888,7 +1930,8 @@ tag:
           background: #EEE;
           transition: all .3s;
         }
-        &:hover:before{
+        &:hover:before,
+        &:focus:before{
           left: 0;
           margin-left: -20px;
         }
@@ -2162,7 +2205,8 @@ tag:
           left: 0;
           transition: all .3s;
         }
-        &:hover{
+        &:hover,
+        &:focus{
           &:after{
             background: #EEE;
             right: 0;
@@ -2365,6 +2409,27 @@ tag:
           <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
         </div>
         <div class="CG2-articleHeader__pubDate">2015年 5月14日発行</div>
+        
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="#">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="#">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -2415,7 +2480,7 @@ tag:
 
   .CG2-articleHeader__category{
     position: absolute;
-    top: 40px;
+    top: calc( 40px + 0.5em );
     left: 50px;
     width: 50px;
     @include max-screen( $breakpoint-middle ) {
@@ -2447,19 +2512,17 @@ tag:
     }
     .CG2-articleHeader__categoryName{
       letter-spacing: 0.2em;
+      line-height: 50px;
       -webkit-writing-mode: vertical-rl;
-      -moz-writing-mode: vertical-rl;
-      -o-writing-mode: vertical-rl;
       writing-mode: tb-rl; // IE
       writing-mode: vertical-rl;
       margin: auto;
       @include max-screen( $breakpoint-middle ) {
         font-size: 12px;
         letter-spacing: 0;
+        line-height: normal;
         vertical-align: middle;
         -webkit-writing-mode: inherit;
-        -moz-writing-mode: inherit;
-        -o-writing-mode: inherit;
         writing-mode: inherit; // IE
         writing-mode: inherit;
         display: table-cell;
@@ -2470,19 +2533,20 @@ tag:
   .CG2-articleHeader__main{
     display: table;
     width: 100%;
-    height: 300px;
+    height: 260px;
     @include max-screen( $breakpoint-middle ) {
       height: auto;
     }
   }
     .CG2-articleHeader__mainInner{
       display: table-cell;
-      vertical-align: middle;
+      vertical-align: top;
     }
 
       .CG2-articleHeader__series{
         font-size: 24px;
         font-family: $fontSerif;
+        line-height: 1.4;
         a{
           color: inherit;
           text-decoration: inherit;
@@ -2500,7 +2564,8 @@ tag:
             background: #FFF;
             transition: all .6s;
           }
-          &:hover:after{
+          &:hover:after,
+          &:focus:after{
             bottom: 0;
             opacity: 1;
           }
@@ -2509,14 +2574,19 @@ tag:
       .CG2-articleHeader__title{
         font-size: 32px;
         font-family: $fontSerif;
+        font-weight: 600;
         line-height: 1.4;
-        margin-bottom: 20px;
+        margin-bottom: 22px;
         @include max-screen( $breakpoint-middle ) {
           font-size: 18px;
         }
       }
       .CG2-articleHeader__abstract{
-        p{}
+        line-height: 1.6;
+        p{
+          margin-top: .5em;
+          margin-bottom: .5em;
+        }
         @include max-screen( $breakpoint-middle ) {
           font-size: 12px;
         }
@@ -2525,6 +2595,73 @@ tag:
         font-size: 12px;
         opacity: 0.5;
       }
+
+      .CG2-articleHeader__authors{
+        font-size: 0;
+        margin: 10px 0;
+      }
+        .CG2-articleHeader__author{
+          font-size: 1rem;
+          display: inline-table;
+          margin: 3px 10px 3px 0;
+          margin-right: 10px;
+          & > a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            display: table;
+            width: 100%;
+            &:before{
+              content: '';
+              display: block;
+              position: absolute;
+              top: -2px;
+              right: -2px;
+              bottom: -2px;
+              left: -2px;
+              background: rgba( 255, 255, 255, 0 );
+              transition: all .5s;
+            }
+            &:hover:before,
+            &:focus:before {
+              background: rgba( 255, 255, 255, .2 );
+              transition: all .2s;
+            }
+          }
+        }
+          .CG2-articleHeader__authorImage{
+            vertical-align: middle;
+            display: table-cell;
+            padding-right: 8px;
+            img{
+              display: block;
+              width: 24px;
+              height: 24px;
+            }
+          }
+          .CG2-articleHeader__authorName{
+            font-size: 12px;
+            vertical-align: middle;
+            display: table-cell;
+            padding-right: 6px;
+          }
+          .CG2-articleHeader__authorTitle{
+            font-size: 12px;
+            vertical-align: middle;
+            display: table-cell;
+            padding-left: 6px;
+            position: relative;
+            &:before{
+              content: '';
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              height: 1.4em;
+              border-left: 1px solid #fff;
+              margin: auto;
+            }
+          }
 
   .CG2-articleHeader__pagenation{
     padding-top: 20px;
@@ -2558,7 +2695,8 @@ tag:
             font-size: 12px;
             padding: 4px 6px;
           }
-          &:hover{
+          &:hover,
+          &:focus{
             background: rgba( 255, 255, 255, 0.2 );
           }
           &:before{
@@ -2577,7 +2715,8 @@ tag:
               line-height: 0;
               left: 8px;
             }
-            &:hover:before{
+            &:hover:before,
+            &:focus:before{
               left: 5px;
             }
           }
@@ -2592,7 +2731,8 @@ tag:
               line-height: 0;
               right: 8px;
             }
-            &:hover:before{
+            &:hover:before,
+            &:focus:before{
               right: 5px;
             }
           }
@@ -2648,6 +2788,81 @@ tag:
   }
 
 }
+
+
+
+/* ==========================================================================
+   CG2-articleNotice
+   ========================================================================== */
+/*
+---
+name: articleNotice
+category:
+  - Templates
+tag:
+  - app-item-article
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level1">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-triangle"></span>
+    多くが古い情報の可能性があり、現在は推奨されない記事です
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level2">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-circle"></span>
+    一部古い情報の可能性があります
+  </div>
+</div>
+```
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level3">
+  <div class="CG2-articleNotice__head">
+    古い記事ですが、現在も使える情報です
+  </div>
+</div>
+```
+
+*/
+
+.CG2-articleNotice{
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+  text-align: center;
+  padding: 16px;
+  background-color: #14C850;
+  &.CG2-articleNotice--level1{
+    background-color: #F03C3C;
+  }
+  &.CG2-articleNotice--level2{
+    background-color: #f0b428;
+  }
+  @include max-screen( $breakpoint-small ) {
+    font-size: 14px;
+  }
+}
+  .CG2-articleNotice__head{
+    span[class^="CG2-icon-"]{
+      font-size: 28px;
+      line-height: 0;
+      margin-right: 10px;
+      @include max-screen( $breakpoint-small ) {
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+
 
 /* ==========================================================================
    CG2-narrowLayout
@@ -2925,9 +3140,14 @@ section.CG2-articleTOC{
       a{
         @include resetLink();
         text-decoration: none;
-        &:before{
+        &::before{
           @include icon( 'down' );
           margin: 0 .4em 0 0;
+          transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+        }
+        &:hover::before{
+          transform: translateY( 2px );
+          transition-duration: .4s;
         }
       }
     }
@@ -3010,7 +3230,6 @@ tag:
   }
   ul{
     -webkit-writing-mode: vertical-rl;
-       -moz-writing-mode: vertical-rl;
             writing-mode: tb-rl; // IE
             writing-mode: vertical-rl;
     list-style: none;
@@ -3019,7 +3238,6 @@ tag:
     margin: 0 auto 20px;
     @include max-screen( $breakpoint-base ) {
       -webkit-writing-mode: horizontal-tb;
-         -moz-writing-mode: horizontal-tb;
               writing-mode: lr-tb; // IE
               writing-mode: horizontal-tb;
       width: auto;
@@ -3070,7 +3288,8 @@ tag:
       overflow-y: visible;
       padding: 4px;
     }
-    &:hover{
+    &:hover,
+    &:focus{
       background: #eee;
       transition: none;
     }
@@ -3519,7 +3738,9 @@ article.CG2-article{
         margin-bottom: 0;
       }
     }
-
+  pre + .Column {
+    margin-top: 2em;
+  }
 
   .Note{
     color: #777;
@@ -3617,7 +3838,8 @@ tag:
           &:before{
             left: 0;
           }
-          &:hover:before{
+          &:hover:before,
+          &:focus:before{
             left: -3px;
           }
         }
@@ -3631,7 +3853,8 @@ tag:
           &:before{
             right: 0;
           }
-          &:hover:before{
+          &:hover:before,
+          &:focus:before{
             right: -3px;
           }
         }
@@ -3724,6 +3947,7 @@ tag:
     &.CG2-articleUtil__socialItem--twitter{}
     &.CG2-articleUtil__socialItem--facebook{}
     iframe{
+      width: 100%;
       max-width: 100%;
     }
   }
@@ -3874,23 +4098,28 @@ section.CG2-livecode{
             @include resetLink();
             text-decoration: none;
             display: block;
-            padding: 8px  16px;
-            margin: -8px -16px;
-            span[class^="CG2-icon-"]{
-              font-size: 20px;
-              position: static;
-              margin: 0 5px 0 0;
-            }
+            padding: 10px;
+            margin: -10px;
+            transition: background-color .2s;
             &[data-livecode-play]{
               position: relative;
               &:before{
                 position: absolute;
                 content: 'サンプルを再生する';
                 background: #EEE;
+                transition: background-color .2s;
                 @at-root .CG2-livecode.CG2-livecode--isRunning &{
                   content: 'サンプルを停止する';
                 }
               }
+            }
+            &:hover, &:hover::before{
+              background-color: #DBDBDB;
+            }
+            span[class^="CG2-icon-"]{
+              font-size: 20px;
+              position: static;
+              margin: 0 5px 0 0;
             }
           }
     }
@@ -4851,7 +5080,7 @@ tag:
       <tr>
         <th></th>
         <th><img src="/build/assets2/img/logos/paypal.svg" alt="PayPal" width="100" height="25"></th>
-        <th><img src="/build/assets2/img/logos/webmoney.svg" alt="WebMoney" width="120" height="30"></th>
+        <th><img src="/build/assets2/img/logos/webmoney.png" alt="WebMoney" width="156" height="30"></th>
       </tr>
     </thead>
     <tbody>
