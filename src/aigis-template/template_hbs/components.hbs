@@ -11,7 +11,9 @@
 </nav>
 <div>
   {{#each components}}
-  <div class="aigis-module">
+
+  {{#unless this.config.templateItem}}<div class="aigis-module">{{/unless}}
+  {{#if     this.config.templateItem}}<div class="aigis-module aigis-module--fullWidth">{{/if}}
     <h2 class="aigis-module__heading" id="{{this.config.name}}">
       {{this.config.name}}
     </h2>

@@ -186,14 +186,17 @@ tag: latest
 }
 
 .aigis-preview {
-  border: 1px solid #A0A0A0;
-  border-radius: 3px;
   padding: 16px;
-  margin: 0;
-  margin-top: 10px; }
+  margin-top: 10px;
+}
+
+.aigis-module--fullWidth .aigis-preview {
+  margin: 0 calc(-50vw + 50%);
+}
 
 .aigis-preview + pre {
-  margin-top: 0; }
+  margin-top: 0 !important;
+}
 
 /*
 ---
