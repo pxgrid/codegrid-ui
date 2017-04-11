@@ -75,7 +75,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
       bottom: 0;
       height: 120px;
       padding: 30px 0 0;
-      background: rgba( 0, 0, 0, .8 );
+      background: rgba( 0, 0, 0, 0.8 );
       @include max-screen( $breakpoint-small ) {
         font-size: 20px;
         line-height: 1.2;

@@ -218,7 +218,7 @@ tag:
 ---
 work with both a and button tags
 ```html
-<div style="background: rgba( 0, 0, 0, .5 );">
+<div style="background: rgba( 0, 0, 0, 0.5 );">
   <p>
     <a class="CG2-transparentButton" href="#">button:a element</a>
   </p>
@@ -230,7 +230,7 @@ work with both a and button tags
 
 disabled
 ```html
-<div style="background: rgba( 0, 0, 0, .5 );">
+<div style="background: rgba( 0, 0, 0, 0.5 );">
   <p>
     <a class="CG2-transparentButton" aria-disabled="true" href="#">button</a>
   </p>
@@ -244,7 +244,7 @@ fav
 
 .CG2-transparentButton__favText内にテキストを入れて管理する
 ```html
-<div style="background: rgba( 0, 0, 0, .5 );">
+<div style="background: rgba( 0, 0, 0, 0.5 );">
   <p>
     <button class="CG2-transparentButton"><span class="CG2-icon-star"></span><span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span></button>
   </p>
@@ -2624,7 +2624,7 @@ tag:
             }
             &:hover:before,
             &:focus:before {
-              background: rgba( 255, 255, 255, .2 );
+              background: rgba( 255, 255, 255, 0.2 );
               transition: all .2s;
             }
           }

@@ -246,7 +246,7 @@ templateItem:
   left: 0;
   width: 100%;
   height: 56px;
-  background: rgba( 0, 0, 0, .8 );
+  background: rgba( 0, 0, 0, 0.8 );
   transform: translate3d( 0, 0, 0 );
   @include max-screen( $breakpoint-middle ) {
     height: 35px;
