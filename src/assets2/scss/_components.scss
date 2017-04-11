@@ -2805,6 +2805,8 @@ templateItem:
   - true
 ---
 
+アプリケーション内のメッセージを表示させたいときに使用。
+
 ## メッセージのみ
 
 ```html
@@ -2817,8 +2819,10 @@ templateItem:
 
 ## メッセージとアクション
 
+リンクなどの動線を入れたい場合は、`CG2-inAppNotificationBar--withAction`を付与する。
+
 ```html
-<div class="CG2-inAppNotificationBar">
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--withAction">
   <div class="CG2-inAppNotificationBar__message">
     <span class="CG2-icon-exclamation-circle"></span>
     現在、未購読状態です
@@ -2862,7 +2866,7 @@ templateItem:
   padding: 16px;
   display: flex;
   align-content: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #bbb;
   &.CG2-inAppNotificationBar--level1{
     background-color: #F03C3C;
@@ -2873,6 +2877,10 @@ templateItem:
   &.CG2-inAppNotificationBar--level3{
     background-color: #14C850;
   }
+  &.CG2-inAppNotificationBar--withAction{
+    justify-content: space-between;
+  }
+
   @include max-screen( $breakpoint-small ) {
     font-size: 14px;
   }
@@ -2886,13 +2894,8 @@ templateItem:
         margin-right: 5px;
       }
     }
-    &:only-child {
-      margin: 0 auto;
-    }
   }
-  .CG2-inAppNotificationBar__action{
-    display: block;
-  }
+  .CG2-inAppNotificationBar__action{}
 
 
 /* ==========================================================================
