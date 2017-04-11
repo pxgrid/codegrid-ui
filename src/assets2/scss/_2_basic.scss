@@ -15,27 +15,6 @@
   font-style: normal;
 }
 
-
-/* ==========================================================================
-   for styleguide
-   ========================================================================== */
-.DEBUG{
-  color: #fff;
-  font-size: 16px;
-  font-family: $fontSansSerif;
-  padding: 5px;
-  margin: 1em 0;
-  background: orange;
-}
-
-#__bs_notify__{
-  pointer-events: none;
-}
-
-@include max-screen( $breakpoint-base )   { _x { _x : 0 } }
-@include max-screen( $breakpoint-middle ) { _x { _x : 0 } }
-@include max-screen( $breakpoint-small )  { _x { _x : 0 } }
-
 /* modifier: align
    ========================================================================== */
 .CG2--alignLeft   {text-align:left !important; }
