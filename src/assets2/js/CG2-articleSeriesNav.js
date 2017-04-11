@@ -67,10 +67,10 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
     // ”1.5”が"1"と"5"に別れるのを防ぐために小数もマッチさせる
     var _replaceTargetRe = /([0-9]+\.?[0-9]*)/g;
-    var _replaceFunc = function ( str, ptn1 ) {
+    var _replaceFunc = function ( match, p1 ) {
 
       // Arrayもオブジェクトなので、数値にキャストせずずるく利用する
-      return lookup[ptn1] || ptn1;
+      return lookup[p1] || p1;
 
     };
 
