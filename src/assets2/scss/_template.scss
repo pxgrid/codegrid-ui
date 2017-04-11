@@ -1429,15 +1429,7 @@ templateItem:
 ```
 
 */
-.CG2-container,
-.CG2-container+.CG2-container+.CG2-container,
-.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container,
-.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container{
-  background: transparent;
-}
-.CG2-container+.CG2-container,
-.CG2-container+.CG2-container+.CG2-container+.CG2-container,
-.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container{
+.CG2-container:nth-child(){
   background: #EEE;
 }
 .CG2-container__inner{
