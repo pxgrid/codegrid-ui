@@ -849,7 +849,7 @@ templateItem:
 .CG2-pageFooter__appNavHeader{
   display: table;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
   .CG2-pageFooter__appNavHeading{
     font-size: 20px;
@@ -902,7 +902,7 @@ templateItem:
     padding: 0;
   }
   li{
-    margin: 12px 0 0;
+    margin: 0 0 12px;
   }
   a{
     &:before{
@@ -922,7 +922,7 @@ templateItem:
 
   }
   li{
-    margin: 12px 0 0;
+    margin: 0 0 12px;
   }
   a{}
   span[class^="CG2-icon-cat"]{
