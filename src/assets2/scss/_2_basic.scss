@@ -20,7 +20,7 @@
    for styleguide
    ========================================================================== */
 .DEBUG{
-  color: #FFF;
+  color: #fff;
   font-size: 16px;
   font-family: $fontSansSerif;
   padding: 5px;
@@ -98,7 +98,7 @@ html{
 
 body{
   margin:0;
-  background: #FFF;
+  background: #fff;
   @include max-screen( $breakpoint-middle ) {
     min-width: 0;
   }

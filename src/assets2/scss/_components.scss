@@ -91,7 +91,7 @@ progress
 ```
 */
 .CG2-button{
-  color: #FFF;
+  color: #fff;
   font-size: 14px;
   text-decoration: none;
   box-sizing: border-box;
@@ -174,7 +174,7 @@ progress
   &[aria-disabled="true"],{
     cursor: not-allowed;
     border-color: #999;
-    background: #DBDBDB;
+    background: #dbdbdb;
   }
   &.CG2-button--progress{
     color: transparent;
@@ -608,7 +608,7 @@ tag:
   border-top: 1px solid #5c5c5c;
   margin: 80px -28px;
   @include max-screen( $breakpoint-middle ) {
-    border-color: #DBDBDB;
+    border-color: #dbdbdb;
     margin: 50px -10px;
   }
 }
@@ -679,7 +679,7 @@ section.CG2-customers{
 .CG2-customers__logos{
   text-align: center;
   padding: 10px 30px;
-  background: #FFF;
+  background: #fff;
   @include max-screen( $breakpoint-middle ) {
     padding: 10px;
   }
@@ -1121,7 +1121,7 @@ tag:
     display: inline-block;
     width: 120px;
     padding-right: 30px;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     border-radius: 3px;
     height: 2.2em;
   }
@@ -1136,10 +1136,10 @@ tag:
       position: absolute;
       display: block;
       width: 120px;
-      border: 1px solid #DBDBDB;
+      border: 1px solid #dbdbdb;
       border-radius: 3px;
       margin: -1px;
-      background: #FFF;
+      background: #fff;
     }
   }
     li{
@@ -1148,7 +1148,7 @@ tag:
       vertical-align: middle;
       display: table-cell;
       padding: 2px 40px;
-      border-left: 1px solid #DBDBDB;
+      border-left: 1px solid #dbdbdb;
       margin: 0;
       &:first-child{
         border-left: none;
@@ -1169,7 +1169,7 @@ tag:
         }
       }
       &.CG2-compactNav__item--current{
-        color: #FFF;
+        color: #fff;
         display: block;
         background: #282828;
         @include max-screen( $breakpoint-middle ) {
@@ -1228,7 +1228,7 @@ tag:
       bottom: 0;
       width: 30px;
       height: 2.2em;
-      background: #EBEBEB;
+      background: #ebebeb;
       cursor: pointer;
       &:after{
         @include icon( 'hamburger' );
@@ -1498,7 +1498,7 @@ tag:
   }
     .CG2-seriesList__item{
       @include blurry-parent();
-      color: #FFF;
+      color: #fff;
       box-sizing: border-box;
       width: calc( 50% - 4px );
       padding: 30px 28px;
@@ -1743,8 +1743,8 @@ tag:
         display: table;
         line-height: 1.2;
         width: 100%;
-        border-top: 1px solid #FFF;
-        border-bottom: 1px solid #FFF;
+        border-top: 1px solid #fff;
+        border-bottom: 1px solid #fff;
         margin-bottom: -1px;
         background: rgba( 255, 255, 255, 0 );
         &.CG2-seriesList__article--unread{
@@ -1912,7 +1912,7 @@ tag:
         display: block;
         width: 100%;
         padding: 20px;
-        border-bottom: 1px solid #DBDBDB;
+        border-bottom: 1px solid #dbdbdb;
         &:hover,
         &:focus{
         }
@@ -1927,7 +1927,7 @@ tag:
           width: 100%;
           padding: 0 20px;
           transform: skewX( 20deg );
-          background: #EEE;
+          background: #eee;
           transition: all .3s;
         }
         &:hover:before,
@@ -1995,7 +1995,7 @@ templateItem:
 */
 .CG2-seriesHeader{
   @include blurry-parent();
-  color: #FFF;
+  color: #fff;
 }
   .CG2-seriesHeader__inner{
     box-sizing: border-box;
@@ -2163,8 +2163,8 @@ tag:
       z-index: 1;
       display: table;
       width: 100%;
-      border-top: 1px solid #DBDBDB;
-      border-bottom: 1px solid #DBDBDB;
+      border-top: 1px solid #dbdbdb;
+      border-bottom: 1px solid #dbdbdb;
       margin-bottom: 20px;
       .CG2-series__item--unread &{
         color: inherit;
@@ -2208,7 +2208,7 @@ tag:
         &:hover,
         &:focus{
           &:after{
-            background: #EEE;
+            background: #eee;
             right: 0;
           }
         }
@@ -2457,7 +2457,7 @@ tag:
 
 .CG2-articleHeader{
   @include blurry-parent();
-  color: #FFF;
+  color: #fff;
 }
   .CG2-articleHeader__inner{
     position: relative;
@@ -2561,7 +2561,7 @@ tag:
             right: 0;
             display: block;
             height: 1px;
-            background: #FFF;
+            background: #fff;
             transition: all .6s;
           }
           &:hover:after,
@@ -2773,7 +2773,7 @@ tag:
 
 .CG2-articleHeader{
   color: #000;
-  background: #FFF;
+  background: #fff;
   border-bottom: 1px solid #000;
 }
   .CG2-articleHeader__inner{
@@ -2834,15 +2834,15 @@ templateItem:
 */
 
 .CG2-articleNotice{
-  color: #FFF;
+  color: #fff;
   font-size: 16px;
   font-weight: bold;
   line-height: 1.4;
   text-align: center;
   padding: 16px;
-  background-color: #14C850;
+  background-color: #14c850;
   &.CG2-articleNotice--level1{
-    background-color: #F03C3C;
+    background-color: #f03c3c;
   }
   &.CG2-articleNotice--level2{
     background-color: #f0b428;
@@ -3089,7 +3089,7 @@ section.CG2-articleTOC{
 }
   header.CG2-articleTOC__header{
     padding-bottom: 8px;
-    border-bottom: 1px solid #DBDBDB;
+    border-bottom: 1px solid #dbdbdb;
     margin-bottom: 1em;
     h1{
       font-size: 28px;
@@ -3223,7 +3223,7 @@ tag:
   line-height: 1.6;
   width: 150px;
   padding-top: 40px;
-  border-top: 1px solid #DBDBDB;
+  border-top: 1px solid #dbdbdb;
   @include max-screen( $breakpoint-base ) {
     width: auto;
     padding-top: 0;
@@ -3263,7 +3263,7 @@ tag:
       margin: 6px 0;
     }
     &.CG2-articleSeriesNav__item--current a{
-      color: #FFF;
+      color: #fff;
       background: #000;
     }
   }
@@ -3382,7 +3382,7 @@ tag:
 article.CG2-article{
   font-size: 16px;
   line-height: 1.8;
-  border-bottom: 1px solid #DBDBDB;
+  border-bottom: 1px solid #dbdbdb;
   padding-bottom: 30px;
   margin-bottom: 20px;
   word-wrap : break-word;
@@ -3398,7 +3398,7 @@ article.CG2-article{
     font-weight: normal;
     line-height: 1.2;
     padding-bottom: .5em;
-    border-bottom: 1px solid #DBDBDB;
+    border-bottom: 1px solid #dbdbdb;
     margin: 2.5em 0 1.5em;
     &:first-child{
       margin-top: 0;
@@ -3461,7 +3461,7 @@ article.CG2-article{
       word-break: break-all;
       overflow-wrap : break-word;
       padding: .3em 10px;
-      border: 1px solid #DBDBDB;
+      border: 1px solid #dbdbdb;
       &:first-child{
         word-wrap : normal; // Non standard for IE
         word-break: normal; // Non standard for webkit
@@ -3475,7 +3475,7 @@ article.CG2-article{
       }
     }
     th{
-      background: #EEE;
+      background: #eee;
     }
     td{
     }
@@ -3485,7 +3485,7 @@ article.CG2-article{
     img{
       box-sizing: border-box;
       display: block;
-      border: 1px solid #DBDBDB;
+      border: 1px solid #dbdbdb;
     }
     @include max-screen( $breakpoint-middle ) {
       margin: 1.6em -10px;
@@ -3510,7 +3510,7 @@ article.CG2-article{
   section.CG2-article__rel{
     font-size: 14px;
     line-height: 1.6;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     padding: 19px;
     @include max-screen( $breakpoint-middle ) {
       padding: 14px;
@@ -3578,10 +3578,10 @@ article.CG2-article{
     margin: 2em 0;
     th, td{
       padding: .3em 10px;
-      border: 1px solid #DBDBDB;
+      border: 1px solid #dbdbdb;
     }
     th{
-      background: #EEE;
+      background: #eee;
     }
     td{}
   }
@@ -3593,7 +3593,7 @@ article.CG2-article{
       max-width: 100%;
       width: auto;
       height: auto;
-      border: 1px solid #DBDBDB;
+      border: 1px solid #dbdbdb;
     }
   }
   code{
@@ -3603,7 +3603,7 @@ article.CG2-article{
   section.CG2-article__rel{
     font-size: 14px;
     line-height: 1.6;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     padding: 19px;
     h1{
       font-size: 14px;
@@ -3639,7 +3639,7 @@ article.CG2-article{
   blockquote{
     color: #777;
     padding: 0 15px;
-    border-left: 4px solid #EEE;
+    border-left: 4px solid #eee;
     margin: 2em 0;
   }
 
@@ -3648,7 +3648,7 @@ article.CG2-article{
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     padding: 1em;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     background: #f5f2f0;
   }
 
@@ -3705,7 +3705,7 @@ article.CG2-article{
   .Column{
     font-size: 14px;
     line-height: 1.6;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     padding: 19px;
     @include max-screen( $breakpoint-middle ) {
       padding: 14px;
@@ -4052,7 +4052,7 @@ section.CG2-livecode{
   .CG2-livecode__header{
     display: table;
     width: 100%;
-    background: #EEE;
+    background: #eee;
     .CG2-livecode__label{
       vertical-align: middle;
       display: table-cell;
@@ -4060,7 +4060,7 @@ section.CG2-livecode{
       @include max-screen( $breakpoint-middle ) {
         font-size: 10px;
         padding: 5px 10px;
-        border-right: 1px solid #DBDBDB;
+        border-right: 1px solid #dbdbdb;
       }
     }
     .CG2-livecode__nav{
@@ -4083,13 +4083,13 @@ section.CG2-livecode{
           vertical-align: middle;
           display: table-cell;
           padding: 10px;
-          border-left: 1px solid #DBDBDB;
+          border-left: 1px solid #dbdbdb;
           margin: 0;
           @include max-screen( $breakpoint-middle ) {
             display: block;
             border-left: none;
             padding: 8px 16px;
-            border-top: 1px solid #DBDBDB;
+            border-top: 1px solid #dbdbdb;
             &:first-child{
               border-top: none;
             }
@@ -4107,7 +4107,7 @@ section.CG2-livecode{
               &:before{
                 position: absolute;
                 content: 'サンプルを再生する';
-                background: #EEE;
+                background: #eee;
                 transition: background-color .2s;
                 @at-root .CG2-livecode.CG2-livecode--isRunning &{
                   content: 'サンプルを停止する';
@@ -4115,7 +4115,7 @@ section.CG2-livecode{
               }
             }
             &:hover, &:hover::before{
-              background-color: #DBDBDB;
+              background-color: #dbdbdb;
             }
             span[class^="CG2-icon-"]{
               font-size: 20px;
@@ -4129,7 +4129,7 @@ section.CG2-livecode{
     -webkit-overflow-scrolling:touch;
     overflow: auto;
     position: relative;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     iframe{
       vertical-align: bottom;
       resize: vertical;
@@ -4139,7 +4139,7 @@ section.CG2-livecode{
       max-width: 100%;
       min-height: 390px;
       border: none;
-      background: #FFF;
+      background: #fff;
       &.CG2-livecode__frame--small{min-height: 190px;}
       &.CG2-livecode__frame--large{min-height: 590px;}
     }
@@ -4169,7 +4169,7 @@ section.CG2-livecode{
     }
     &:after{
       content: 'クリックして再生する';
-      color: #FFF;
+      color: #fff;
       font-size: 18px;
       text-align: center;
       display: block;
@@ -4465,7 +4465,7 @@ tag:
     width: calc( 33% - 40px );
     min-height: 88px;
     padding: 20px 20px 30px 90px;
-    border-top: 1px solid #DBDBDB;
+    border-top: 1px solid #dbdbdb;
     margin: 0 20px;
     @include max-screen( $breakpoint-base ) {
       width: calc( 49.9% - 40px );
@@ -4568,7 +4568,7 @@ CG2-searchOption の CG2-searchLayout__result 内で利用する
     }
   }
   .CG2-searchFailed__search{
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     @extend %searchInner;
     &:before{
       font-size: 16px;
@@ -4583,7 +4583,7 @@ CG2-searchOption の CG2-searchLayout__result 内で利用する
       padding: 0.5em 10px 0.5em 42px;
       &:hover,
       &:focus{
-        background: #FFF;
+        background: #fff;
       }
     }
   }
@@ -4693,7 +4693,7 @@ tag:
       }
     }
       .CG2-settings__heading{
-        border-bottom: 1px solid #DBDBDB;
+        border-bottom: 1px solid #dbdbdb;
         padding: 0 28px 5px;
         margin: 50px -28px 24px;
         @include max-screen( $breakpoint-base ) {
@@ -4854,7 +4854,7 @@ tag:
       text-align: center;
       display: table-cell;
       padding: 0 0 10px;
-      border-bottom: 1px solid #DBDBDB;
+      border-bottom: 1px solid #dbdbdb;
       @include max-screen( $breakpoint-middle ) {
         text-align: left;
         display: none;
@@ -5039,7 +5039,7 @@ tag:
         padding: 10px 30px;
         border-radius: 2px;
         margin: 20px auto;
-        background: #EEE;
+        background: #eee;
         @include max-screen( $breakpoint-middle ) {
           font-size: 16px;
           text-align: center;
@@ -5167,7 +5167,7 @@ tag:
     font-weight: normal;
     vertical-align: middle;
     padding: 15px 40px;
-    border: 1px solid #DBDBDB;
+    border: 1px solid #dbdbdb;
     @include max-screen( $breakpoint-small ) {
       vertical-align: top;
       width: 50%;

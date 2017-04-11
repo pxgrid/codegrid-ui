@@ -64,7 +64,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
     }
   }
     .CG2-logo3d__overlayText{
-      color: #FFF;
+      color: #fff;
       font-size: 32px;
       font-family: $fontSerif;
       text-align: center;
@@ -277,7 +277,7 @@ tag:
       display: inline-block;
       padding: 0 40px;
       margin: 0;
-      background: #FFF;
+      background: #fff;
       @include max-screen( $breakpoint-middle ) {
         font-size: 16px;
         display: block;
@@ -891,7 +891,7 @@ templateItem:
 
 .CG2-bannerHeader{
   @include blurry-parent();
-  color: #FFF;
+  color: #fff;
   padding: 130px 0;
   background-position: 50% 50%;
   background-size: cover;
@@ -1017,7 +1017,7 @@ tag:
 section.CG2-form{
   padding: 50px;
   margin: 80px -28px;
-  background: #EEE;
+  background: #eee;
   form{
     margin: 0;
   }
@@ -1210,7 +1210,7 @@ tag:
       display: table-cell;
       img{
         display: block;
-        border: 1px solid #DBDBDB;
+        border: 1px solid #dbdbdb;
       }
       @include max-screen( $breakpoint-middle ) {
         width: 40%;
@@ -1347,7 +1347,7 @@ tag:
       padding: 20px 20px 20px 50px;
       margin: 20px 0 0 -50px;
       margin-left: -50px;
-      background: #EEE;
+      background: #eee;
       @include max-screen( $breakpoint-middle ) {
         padding: 10px 10px 10px 38px;
         margin-left: -38px;

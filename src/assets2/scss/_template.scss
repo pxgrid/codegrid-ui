@@ -321,7 +321,7 @@ templateItem:
         padding: 10px;
         margin: -10px;
         &:hover{
-          color: #FFF;
+          color: #fff;
         }
       }
       @include print () {
@@ -365,7 +365,7 @@ templateItem:
         padding: 10px;
         margin: -10px;
         &:hover{
-          color: #FFF;
+          color: #fff;
         }
       }
       @include print () {
@@ -433,7 +433,7 @@ templateItem:
         padding: 10px;
         margin: -10px;
         &:hover{
-          color: #FFF;
+          color: #fff;
         }
       }
     }
@@ -478,7 +478,7 @@ templateItem:
           }
         }
         .CG2-pageHeader__userOpener{
-          color: #EEE;
+          color: #eee;
           text-align: center;
           display: table-cell;
           vertical-align: middle;
@@ -490,7 +490,7 @@ templateItem:
             transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
             .CG2-pageHeader__userHeader:hover &,
             .CG2-pageHeader__userHeader:focus &{
-              color: #FFF;
+              color: #fff;
               transform: translateY( 2px );
               transition-duration: .4s;
             }
@@ -522,7 +522,7 @@ templateItem:
             border: 1px solid rgba(0,0,0,0.1);
             border-radius: 2px;
             box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-            background: #FFF;
+            background: #fff;
             transform-origin: 150px 0;
             animation-name: wf1-pageHeader-elastic-out;
             animation-duration: .3s;
@@ -534,7 +534,7 @@ templateItem:
               right: 38px;
               display: block;
               border: 7px solid transparent;
-              border-bottom-color: #FFF;
+              border-bottom-color: #fff;
             }
             ul{
               list-style: none;
@@ -550,7 +550,7 @@ templateItem:
           }
     .CG2-pageHeader__opener{
       @include max-screen( $breakpoint-middle ) {
-        color: #FFF;
+        color: #fff;
         font-size: 20px;
         text-align: center;
         cursor: pointer;
@@ -705,7 +705,7 @@ templateItem:
     display: block;
     transition: all .2s;
     &:hover{
-      color: #FFF;
+      color: #fff;
     }
   }
 }
@@ -882,7 +882,7 @@ templateItem:
         left: 10px;
       }
       input{
-        color: #FFF;
+        color: #fff;
         font-size: 14px;
         box-sizing: border-box;
         display: block;
@@ -986,7 +986,7 @@ templateItem:
       text-align: center;
       margin-top: 0;
       a{
-        color: #FFF;
+        color: #fff;
         display: table;
         margin: 0 auto;
       }
@@ -1005,7 +1005,7 @@ templateItem:
       text-align: center;
       margin-top: 0;
       a{
-        color: #FFF;
+        color: #fff;
         display: table;
         margin: 0 auto;
       }
@@ -1430,7 +1430,7 @@ templateItem:
 
 */
 .CG2-container:nth-child(even){
-  background: #EEE;
+  background: #eee;
 }
 .CG2-container__inner{
   box-sizing: border-box;
