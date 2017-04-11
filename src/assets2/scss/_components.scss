@@ -294,7 +294,7 @@ fav
   }
   &.CG2-transparentButton--favAdded{
     span[class^="CG2-icon"]{
-      color: yellow;
+      color: #ff0;
       opacity: 1;
     }
     span.CG2-transparentButton__favText{
@@ -1716,7 +1716,7 @@ tag:
         }
     button.CG2-seriesList__itemUtilButton--favAdded{
       span[class^="CG2-icon"]{
-        color: yellow;
+        color: #ff0;
         opacity: 1;
       }
     }
