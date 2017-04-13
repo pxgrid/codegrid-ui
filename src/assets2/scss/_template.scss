@@ -624,18 +624,18 @@ templateItem:
       </div>
       <div class="CG2-pageFooter__appNavCategory">
         <ul>
-          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-practice"></span>実践</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
           <li><a href="#"><span class="CG2-icon-cat-architecture"></span>設計</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
           <li><a href="#"><span class="CG2-icon-cat-future"></span>未来・次世代</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-workstyle"></span>仕事術</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-mastering"></span>実践</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-work-style"></span>仕事術</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
           <li><a href="#"><span class="CG2-icon-cat-design"></span>デザイン</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディスカッション</a></li>
           <li><a href="#"><span class="CG2-icon-cat-interview"></span>インタビュー</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディカッション</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
         </ul>
       </div>
     </div>
@@ -849,7 +849,7 @@ templateItem:
 .CG2-pageFooter__appNavHeader{
   display: table;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
   .CG2-pageFooter__appNavHeading{
     font-size: 20px;
@@ -902,7 +902,7 @@ templateItem:
     padding: 0;
   }
   li{
-    margin: 12px 0 0;
+    margin: 0 0 12px;
   }
   a{
     &:before{
@@ -922,7 +922,7 @@ templateItem:
 
   }
   li{
-    margin: 12px 0 0;
+    margin: 0 0 12px;
   }
   a{}
   span[class^="CG2-icon-cat"]{
