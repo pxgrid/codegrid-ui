@@ -4660,7 +4660,7 @@ tag:
 
 .CG2-settings{
   margin: 0 -40px;
-  @include max-screen( 1054px ) {
+  @include screen(　$breakpoint-middle + 1, 1054px ) {
     margin: 0 -20px;
   }
   @include max-screen( $breakpoint-middle ) {
