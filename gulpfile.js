@@ -83,6 +83,7 @@ gulp.task( 'js', function () {
           './src/assets2/js/CG2-tab.js',
           './src/assets2/js/CG2-articleSeriesNav.js',
           './src/assets2/js/CG2-livecode.js',
+          './src/assets2/js/CG2-forms.js',
           './src/assets2/js/old-jade-click-to-play.js',
           './src/assets2/js/old-jade-prism.js'
          ] )
