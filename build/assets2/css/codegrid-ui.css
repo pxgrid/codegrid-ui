@@ -516,32 +516,6 @@ pre.line-numbers > code {
   font-weight: normal;
   font-style: normal; }
 
-/* ==========================================================================
-   for styleguide
-   ========================================================================== */
-.DEBUG {
-  color: #fff;
-  font-size: 16px;
-  font-family: Helvetica, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
-  padding: 5px;
-  margin: 1em 0;
-  background: orange; }
-
-#__bs_notify__ {
-  pointer-events: none; }
-
-@media screen and (max-width: 979px) {
-  _x {
-    _x: 0; } }
-
-@media screen and (max-width: 767px) {
-  _x {
-    _x: 0; } }
-
-@media screen and (max-width: 639px) {
-  _x {
-    _x: 0; } }
-
 /* modifier: align
    ========================================================================== */
 .CG2--alignLeft {
@@ -1717,18 +1691,18 @@ templateItem:
       </div>
       <div class="CG2-pageFooter__appNavCategory">
         <ul>
-          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-practice"></span>実践</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
           <li><a href="#"><span class="CG2-icon-cat-architecture"></span>設計</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
           <li><a href="#"><span class="CG2-icon-cat-future"></span>未来・次世代</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-workstyle"></span>仕事術</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-mastering"></span>実践</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-work-style"></span>仕事術</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
           <li><a href="#"><span class="CG2-icon-cat-design"></span>デザイン</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディスカッション</a></li>
           <li><a href="#"><span class="CG2-icon-cat-interview"></span>インタビュー</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディカッション</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
         </ul>
       </div>
     </div>
@@ -1941,7 +1915,7 @@ templateItem:
 .CG2-pageFooter__appNavHeader {
   display: table;
   width: 100%;
-  margin-bottom: 20px; }
+  margin-bottom: 32px; }
 
 .CG2-pageFooter__appNavHeading {
   font-size: 20px;
@@ -2010,7 +1984,7 @@ templateItem:
     margin: 0;
     padding: 0; }
   .CG2-pageFooter__appNavList li {
-    margin: 12px 0 0; }
+    margin: 0 0 12px; }
   .CG2-pageFooter__appNavList a:before {
     content: "";
     font-family: "codegrid-icon";
@@ -2035,7 +2009,7 @@ templateItem:
     margin: 0;
     padding: 0; }
   .CG2-pageFooter__appNavCategory li {
-    margin: 12px 0 0; }
+    margin: 0 0 12px; }
   .CG2-pageFooter__appNavCategory span[class^="CG2-icon-cat"] {
     font-size: 18px;
     line-height: 0;
@@ -6778,7 +6752,7 @@ tag:
 */
 .CG2-settings {
   margin: 0 -40px; }
-  @media screen and (max-width: 1054px) {
+  @media screen and (min-width: 　 768px) and (max-width: 1054px) {
     .CG2-settings {
       margin: 0 -20px; } }
   @media screen and (max-width: 767px) {
@@ -8452,7 +8426,7 @@ section.CG2-form {
   opacity: 1;
   color: #767676; }
 
-.CG2-form__table select.CG2-form__placeholder {
+.CG2-form__table select.CG2-form__placeholder_selected {
   color: #767676; }
 
 @media screen and (max-width: 639px) {

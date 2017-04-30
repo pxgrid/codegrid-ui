@@ -575,3 +575,18 @@ body {
 .aigis-contents__body > h3 {
   font-size: 24px;
 }
+
+/* for debugging, etc. */
+
+.DEBUG{
+  color: #fff;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 5px;
+  margin: 1em 0;
+  background: orange;
+}
+
+#__bs_notify__{
+  pointer-events: none;
+}
