@@ -1429,7 +1429,7 @@ templateItem:
 ```
 
 */
-.CG2-container:nth-child(even){
+.CG2-container:nth-child(){
   background: #eee;
 }
 .CG2-container__inner{
