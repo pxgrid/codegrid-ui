@@ -1096,7 +1096,7 @@ section.CG2-form{
             opacity: 1; // for Firefox
             color: #767676;
           }
-          select.CG2-form__placeholder{
+          select.CG2-form__placeholder_selected{
             color: #767676;
           }
       @include max-screen( $breakpoint-small ) {
