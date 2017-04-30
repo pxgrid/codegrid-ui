@@ -2467,7 +2467,15 @@ templateItem:
 ```
 
 */
-.CG2-container:nth-child(even) {
+.CG2-container,
+.CG2-container + .CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container {
+  background: transparent; }
+
+.CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container,
+.CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container + .CG2-container {
   background: #eee; }
 
 .CG2-container__inner {
