@@ -2792,6 +2792,113 @@ tag:
 
 
 /* ==========================================================================
+   CG2-inAppNotificationBar
+   ========================================================================== */
+/*
+---
+name: inAppNotificationBar
+category:
+  - Templates
+tag:
+  - app-item
+templateItem:
+  - true
+---
+
+アプリケーション内のメッセージを表示させたいときに使用。
+
+## メッセージのみ
+
+```html
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level2">
+  <div class="CG2-inAppNotificationBar__message">
+    ログアウトしました
+  </div>
+</div>
+```
+
+## メッセージとアクション
+
+リンクなどの動線を入れたい場合は、`CG2-inAppNotificationBar--withAction`を付与する。
+
+```html
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--withAction">
+  <div class="CG2-inAppNotificationBar__message">
+    <span class="CG2-icon-exclamation-circle"></span>
+    現在、未購読状態です
+  </div>
+  <div class="CG2-inAppNotificationBar__action">
+    <a class="CG2-transparentButton" href="#">設定へ</a>
+  </div>
+</div>
+```
+
+## カラーバリエーション
+
+```html
+<div class="CG2-inAppNotificationBar">
+  <div class="CG2-inAppNotificationBar__message">
+    レベルなし
+  </div>
+</div>
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level1">
+  <div class="CG2-inAppNotificationBar__message">
+    レベル1
+  </div>
+</div>
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level2">
+  <div class="CG2-inAppNotificationBar__message">
+    レベル2
+  </div>
+</div>
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level3">
+  <div class="CG2-inAppNotificationBar__message">
+    レベル3
+  </div>
+</div>
+```
+
+*/
+.CG2-inAppNotificationBar{
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 16px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: #bbb;
+  &.CG2-inAppNotificationBar--level1{
+    background-color: #F03C3C;
+  }
+  &.CG2-inAppNotificationBar--level2{
+    background-color: #f0b428;
+  }
+  &.CG2-inAppNotificationBar--level3{
+    background-color: #14C850;
+  }
+  &.CG2-inAppNotificationBar--withAction{
+    justify-content: space-between;
+  }
+
+  @include max-screen( $breakpoint-small ) {
+    font-size: 14px;
+  }
+}
+  .CG2-inAppNotificationBar__message{
+    span[class^="CG2-icon-"]{
+      font-size: 28px;
+      margin-right: 10px;
+      @include max-screen( $breakpoint-small ) {
+        font-size: 20px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .CG2-inAppNotificationBar__action{}
+
+
+/* ==========================================================================
    CG2-articleNotice
    ========================================================================== */
 /*
