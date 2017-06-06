@@ -5149,7 +5149,8 @@ templateItem:
     justify-content: space-between; }
   @media screen and (max-width: 639px) {
     .CG2-inAppNotificationBar {
-      font-size: 14px; } }
+      font-size: 14px;
+      padding: 10px; } }
 
 .CG2-inAppNotificationBar__message span[class^="CG2-icon-"] {
   font-size: 28px;
