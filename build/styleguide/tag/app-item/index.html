@@ -74,6 +74,9 @@
         <a href="#articleHeader">articleHeader</a>
       </li>
       <li class="aigis-moduleList__item">
+        <a href="#inAppNotificationBar">inAppNotificationBar</a>
+      </li>
+      <li class="aigis-moduleList__item">
         <a href="#articleSeriesNav">articleSeriesNav</a>
       </li>
       <li class="aigis-moduleList__item">
@@ -183,19 +186,31 @@
   <div class="CG2-seriesWeekHeader">
     <div class="CG2-seriesWeekHeader__inner">
         <div class="CG2-seriesWeekHeader__prev">
-            <div class="CG2-seriesWeekHeader__prevInner">
-                <a href="#"> <span class="CG2-seriesWeekHeader__label">前号</span> <span class="CG2-seriesWeekHeader__number">10</span> <span class="CG2-seriesWeekHeader__text">月</span> <span class="CG2-seriesWeekHeader__number">1</span> <span class="CG2-seriesWeekHeader__text">日発行</span>                    </a>
-            </div>
+            <div class="CG2-seriesWeekHeader__prevInner"> <a href="#">
+          <span class="CG2-seriesWeekHeader__label">前号</span>
+          <span class="CG2-seriesWeekHeader__number">10</span>
+          <span class="CG2-seriesWeekHeader__text">月</span>
+          <span class="CG2-seriesWeekHeader__number">1</span>
+          <span class="CG2-seriesWeekHeader__text">日発行</span>
+        </a> </div>
         </div>
         <div class="CG2-seriesWeekHeader__current">
-            <div class="CG2-seriesWeekHeader__currentInner">
-                <a href="#"> <span class="CG2-seriesWeekHeader__label">最新号</span> <span class="CG2-seriesWeekHeader__number">10</span> <span class="CG2-seriesWeekHeader__text">月</span> <span class="CG2-seriesWeekHeader__number">7</span> <span class="CG2-seriesWeekHeader__text">日発行</span>                    </a>
-            </div>
+            <div class="CG2-seriesWeekHeader__currentInner"> <a href="#">
+          <span class="CG2-seriesWeekHeader__label">最新号</span>
+          <span class="CG2-seriesWeekHeader__number">10</span>
+          <span class="CG2-seriesWeekHeader__text">月</span>
+          <span class="CG2-seriesWeekHeader__number">7</span>
+          <span class="CG2-seriesWeekHeader__text">日発行</span>
+        </a> </div>
         </div>
         <div class="CG2-seriesWeekHeader__next">
-            <div class="CG2-seriesWeekHeader__nextInner">
-                <a href="#"> <span class="CG2-seriesWeekHeader__label">次号予告</span> <span class="CG2-seriesWeekHeader__number">10</span> <span class="CG2-seriesWeekHeader__text">月</span> <span class="CG2-seriesWeekHeader__number">14</span> <span class="CG2-seriesWeekHeader__text">日発行</span>                    </a>
-            </div>
+            <div class="CG2-seriesWeekHeader__nextInner"> <a href="#">
+          <span class="CG2-seriesWeekHeader__label">次号予告</span>
+          <span class="CG2-seriesWeekHeader__number">10</span>
+          <span class="CG2-seriesWeekHeader__text">月</span>
+          <span class="CG2-seriesWeekHeader__number">14</span>
+          <span class="CG2-seriesWeekHeader__text">日発行</span>
+        </a> </div>
         </div>
     </div>
 </div></div>
@@ -1050,6 +1065,87 @@
 
   </div>
 
+  
+  <div class="aigis-module aigis-module--fullWidth">
+    <h2 class="aigis-module__heading" id="inAppNotificationBar">
+      inAppNotificationBar
+    </h2>
+    <div class="aigis-module__filepath">
+      /src/assets2/scss/_components.scss
+    </div>
+    <ul class="aigis-tags">
+        <li class="aigis-tags__item aigis-tags__item--app-item">app-item</li>
+    </ul>
+    <p>アプリケーション内のメッセージを表示させたいときに使用。</p>
+<h2 id="-">メッセージのみ</h2>
+<div class="aigis-preview">
+  <div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level2">
+    <div class="CG2-inAppNotificationBar__message"> ログアウトしました </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar CG2-inAppNotificationBar--level2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    ログアウトしました
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="-">メッセージとアクション</h2>
+<p>リンクなどの動線を入れたい場合は、<code>CG2-inAppNotificationBar--withAction</code>を付与する。</p>
+<div class="aigis-preview">
+  <div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--withAction">
+    <div class="CG2-inAppNotificationBar__message"> <span class="CG2-icon-exclamation-circle"></span> 現在、未購読状態です </div>
+    <div class="CG2-inAppNotificationBar__action"> <a class="CG2-transparentButton" href="#">設定へ</a> </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar CG2-inAppNotificationBar--withAction<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-icon-exclamation-circle<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    現在、未購読状態です
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__action<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-transparentButton<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>#<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>設定へ<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+<h2 id="-">カラーバリエーション</h2>
+<div class="aigis-preview">
+  <div class="CG2-inAppNotificationBar">
+    <div class="CG2-inAppNotificationBar__message"> レベルなし </div>
+</div>
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level1">
+    <div class="CG2-inAppNotificationBar__message"> レベル1 </div>
+</div>
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level2">
+    <div class="CG2-inAppNotificationBar__message"> レベル2 </div>
+</div>
+<div class="CG2-inAppNotificationBar CG2-inAppNotificationBar--level3">
+    <div class="CG2-inAppNotificationBar__message"> レベル3 </div>
+</div></div>
+
+<pre><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    レベルなし
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar CG2-inAppNotificationBar--level1<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    レベル1
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar CG2-inAppNotificationBar--level2<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    レベル2
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar CG2-inAppNotificationBar--level3<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>CG2-inAppNotificationBar__message<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    レベル3
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+</code></pre>
+
+  </div>
+
   <div class="aigis-module">
   
     <h2 class="aigis-module__heading" id="articleSeriesNav">
@@ -1322,12 +1418,12 @@
         <div class="CG2-livecode__label"> index.html </div>
         <div class="CG2-livecode__nav">
             <ul>
-                <li>
-                    <a href="#"> <span class="CG2-icon-tool"></span> 全文選択 </a>
-                </li>
-                <li>
-                    <a href="#"> <span class="CG2-icon-tool"></span> 新規タブで開く </a>
-                </li>
+                <li><a href="#">
+          <span class="CG2-icon-tool"></span> 全文選択
+        </a></li>
+                <li><a href="#">
+          <span class="CG2-icon-tool"></span> 新規タブで開く
+        </a></li>
             </ul>
         </div>
     </header>
@@ -1380,9 +1476,9 @@
                 <li><a href="#">
           ソースコード：flex-basis/2
         </a></li>
-                <li>
-                    <a href="#"> <span class="CG2-icon-tool"></span> 新規タブで開く </a>
-                </li>
+                <li><a href="#">
+          <span class="CG2-icon-tool"></span> 新規タブで開く
+        </a></li>
             </ul>
         </div>
     </header>
@@ -2043,7 +2139,7 @@
   </div>
 </div>
 
-        <footer class="aigis-footer">Last update at 2017/05/12 16:19</footer>
+        <footer class="aigis-footer">Last update at 2017/06/06 19:26</footer>
       </div>
     </div>
   </div>
