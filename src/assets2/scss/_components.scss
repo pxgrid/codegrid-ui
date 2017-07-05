@@ -2939,6 +2939,17 @@ templateItem:
 </div>
 ```
 
+## リンクあり
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level2">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-circle"></span>
+    新しいバージョンに対応した<a href="">シリーズ</a>があります。
+  </div>
+</div>
+```
+
 */
 
 .CG2-articleNotice{
@@ -2954,6 +2965,9 @@ templateItem:
   }
   &.CG2-articleNotice--level2{
     background-color: #f0b428;
+  }
+  a{
+    color: inherit;
   }
   @include max-screen( $breakpoint-small ) {
     font-size: 14px;
