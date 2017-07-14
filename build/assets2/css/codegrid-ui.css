@@ -5200,6 +5200,17 @@ templateItem:
 </div>
 ```
 
+## リンクあり
+
+```html
+<div class="CG2-articleNotice CG2-articleNotice--level2">
+  <div class="CG2-articleNotice__head">
+    <span class="CG2-icon-exclamation-circle"></span>
+    新しいバージョンに対応した<a href="">シリーズ</a>があります。
+  </div>
+</div>
+```
+
 */
 .CG2-articleNotice {
   color: #fff;
@@ -5213,6 +5224,8 @@ templateItem:
     background-color: #f03c3c; }
   .CG2-articleNotice.CG2-articleNotice--level2 {
     background-color: #f0b428; }
+  .CG2-articleNotice a {
+    color: inherit; }
   @media screen and (max-width: 639px) {
     .CG2-articleNotice {
       font-size: 14px; } }
