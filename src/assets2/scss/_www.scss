@@ -1076,7 +1076,6 @@ section.CG2-form{
             border-radius: 3px;
           }
           select{
-            appearance: initial;
             // FIXME: インラインSVG…
             // 元ファイルは src/assets2/font/codegrid-icon/uE603-down.svg
             // 以下をdata URLに。
@@ -1091,6 +1090,12 @@ section.CG2-form{
             @include max-screen( $breakpoint-middle ) {
               background-position: right 14px top 15px;
             }
+          }
+          select{
+            -webkit-appearance: initial;
+          }
+          select{
+            -moz-appearance: initial;
           }
           ::placeholder {
             opacity: 1; // for Firefox
