@@ -1117,7 +1117,9 @@ section.CG2-form{
         td{margin-bottom: 10px;}
           input[type="text"],
           input[type="url"],
-          input[type="email"]{
+          input[type="email"],
+          select,
+          textarea{
             font-size: 16px;
           }
       }
