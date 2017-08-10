@@ -8519,19 +8519,25 @@ section.CG2-form {
   width: 100%;
   padding: 8px 14px;
   border: 1px solid #ccc;
-  border-radius: 3px; }
+  border-radius: 3px;
+  line-height: 1.4; }
 
 .CG2-form__table select {
-  -webkit-appearance: initial;
-          appearance: initial;
   background-image: url(data:image/svg+xml,%3Csvg%20width=%2226%22%20height=%2214%22%20viewBox=%220%200%2026%2014%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20fill=%22%23777%22%20d=%22M3%200L0%202.7%2013%2014%2026%202.7%2023%200%2013%208.7%22/%3E%3C/svg%3E);
   background-repeat: no-repeat;
   background-size: 14px 8px;
-  background-position: right 14px top 18px;
-  background-color: #fff; }
+  background-position: right 14px center;
+  background-color: #fff;
+  padding-right: 40px; }
   @media screen and (max-width: 767px) {
     .CG2-form__table select {
-      background-position: right 14px top 15px; } }
+      background-position: right 14px center; } }
+
+.CG2-form__table select {
+  -webkit-appearance: initial; }
+
+.CG2-form__table select {
+  -moz-appearance: initial; }
 
 .CG2-form__table ::-webkit-input-placeholder {
   opacity: 1;
@@ -8570,7 +8576,9 @@ section.CG2-form {
     margin-bottom: 10px; }
   .CG2-form__table input[type="text"],
   .CG2-form__table input[type="url"],
-  .CG2-form__table input[type="email"] {
+  .CG2-form__table input[type="email"],
+  .CG2-form__table select,
+  .CG2-form__table textarea {
     font-size: 16px; } }
 
 span.CG2-form__required {
