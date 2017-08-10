@@ -1074,6 +1074,7 @@ section.CG2-form{
             padding: 8px 14px;
             border: 1px solid #ccc;
             border-radius: 3px;
+            line-height: 1.4; // FIXME: FirefoxとChromeの違いをなんとかしたい
           }
           select{
             // FIXME: インラインSVG…
@@ -1085,10 +1086,10 @@ section.CG2-form{
             background-image: url(data:image/svg+xml,%3Csvg%20width=%2226%22%20height=%2214%22%20viewBox=%220%200%2026%2014%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20fill=%22%23777%22%20d=%22M3%200L0%202.7%2013%2014%2026%202.7%2023%200%2013%208.7%22/%3E%3C/svg%3E);
             background-repeat: no-repeat;
             background-size: 14px 8px;
-            background-position: right 14px top 18px;
+            background-position: right 14px center;
             background-color: #fff;
             @include max-screen( $breakpoint-middle ) {
-              background-position: right 14px top 15px;
+              background-position: right 14px center;
             }
           }
           select{
