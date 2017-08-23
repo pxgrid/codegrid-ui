@@ -712,21 +712,14 @@ templateItem:
   .CG2-pageFooter__inner{
     table-layout: fixed;
     display: table;
-    width: 1016px + 28 + 28;
+    max-width: 1016px + 28 + 28;
+    width: auto;
     margin: 0 auto;
-    @include max-screen( 1100px ) {
-      width: auto;
-    }
     @include max-screen( $breakpoint-base ) {
       display: block;
     }
-    @include max-screen( $breakpoint-small ) {
-      display: block;
-      width: auto;
-    }
     @include print () {
       display: block;
-      width: auto;
     }
   }
     .CG2-pageFooter__wwwNav{
