@@ -5556,53 +5556,46 @@ tag:
 </div>
 ```
 */
-.CG2-formProgress{
-  font-size: 20px;
-  margin: 0 -40px 60px;
-  @include max-screen( 1054px ) {
-    font-size: 16px;
-    margin-left: -20px;
-    margin-right: -20px;
+.CG2-formProgress {
+  font-size: 16px;
+  margin: 10px 0 20px;
+  @include min-screen( $breakpoint-middle ) {
+    margin: 0 0 60px;
   }
-  @include max-screen( $breakpoint-middle ) {
-    font-size: 16px;
-    margin: 10px 0 20px;
+  @include min-screen( $breakpoint-base ) {
+    font-size: 18px;
   }
-  ol{
+  ol {
     list-style: none;
-    table-layout: fixed;
-    border-spacing: 40px 0;
-    display: table;
-    width: 100%;
     padding: 0;
     margin: 0;
-    @include max-screen( $breakpoint-base ) {
-      border-spacing: 20px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  li {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0 10px 5px;
+    margin: 0 -10px; // 単純にpadding: 0 0 5px;だとテキストと下線が横に揃うため
+    width: 100%;
+    @include min-screen( $breakpoint-middle ) {
+      text-align: center;
+      margin: 0;
+      padding: 0 0 5px;
+      width: calc(100% / 3 - 20px);
     }
-    @include max-screen( $breakpoint-middle ) {
-      display: block;
-      width: auto;
+    @include min-screen( $breakpoint-base ) {
+      padding: 0 0 10px;
+      width: calc(100% / 3 - 40px);
+    }
+    // 現在のステップではないものを目立たなくさせる
+    &:not(.CG2-formProgress__item--current) {
+      display: none;
+      opacity: 0.4;
+      @include min-screen( $breakpoint-middle ) {
+        display: block;
+      }
     }
   }
-    li{
-      opacity: 0.4;
-      text-align: center;
-      display: table-cell;
-      padding: 0 0 10px;
-      border-bottom: 1px solid #dbdbdb;
-      @include max-screen( $breakpoint-middle ) {
-        text-align: left;
-        display: none;
-        padding: 0 10px 5px;
-        margin: 0 -10px;
-      }
-      &.CG2-formProgress__item--current{
-        opacity: 1;
-        @include max-screen( $breakpoint-middle ) {
-          display: block;
-        }
-      }
-    }
 }
 
 
