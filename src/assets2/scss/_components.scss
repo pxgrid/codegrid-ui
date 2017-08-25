@@ -5345,24 +5345,36 @@ tag:
         <div class="CG2-settings__fieldHGroup">
           <table>
             <tr>
-              <th>ログインメールアドレス</th>
+              <th>Googleアカウント</th>
               <td>oyamada@pxgrid.com</td>
             </tr>
           </table>
         </div>
       </div>
       <div class="CG2-settings__buttonContainer">
-        <button class="CG2-button CG2-button--setting">ログアウト</button>
+        <ul>
+          <li>
+          <a class="CG2-button CG2-button--setting" href="">ログアウト</a>
+          </li>
+        </ul>
       </div>
-      <div class="CG2-settings__field">
-        <div class="CG2-settings__fieldVGroup">
-          <div class="CG2-settings__fieldHeader">メールマガジンを受信するメールアドレス</div>
-          <div class="CG2-settings__fieldData"><input type="email" value="oyamada@pxgrid.com"></div>
+      <form>
+        <div class="CG2-settings__field">
+          <div class="CG2-settings__fieldVGroup">
+            <div class="CG2-settings__fieldHeader">メールマガジンを受信するメールアドレス</div>
+            <div class="CG2-settings__fieldData">
+              <input type="email" value="oyamada@pxgrid.com">
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="CG2-settings__buttonContainer">
-        <button class="CG2-button CG2-button--setting">変更</button>
-      </div>
+        <div class="CG2-settings__buttonContainer">
+          <ul>
+            <li>
+              <button type="button" class="CG2-button CG2-button--setting">変更</button>
+            </li>
+          </ul>
+        </div>
+      </form>
     </div>
     <div class="CG2-settings__col">
       <div class="CG2-settings__heading">購読情報</div>
@@ -5370,22 +5382,87 @@ tag:
         <div class="CG2-settings__fieldHGroup">
           <table>
             <tr>
-              <th>決済方法</th>
-              <td>PayPal</td>
+              <td>現在、購読の手続きはされていません。</td>
             </tr>
           </table>
         </div>
       </div>
-      <div class="CG2-settings__heading">退会</div>
+      <div class="CG2-settings__buttonContainer">
+        <ul>
+          <li>
+            <a class="CG2-button CG2-button--setting">購読の手続きを開始する</a>
+          </li>
+        </ul>
+      </div>
+      <div class="CG2-settings__heading">購読情報</div>
       <div class="CG2-settings__field">
-        <div class="CG2-settings__fieldVGroup">
-          <div class="CG2-settings__fieldHeader">退会理由を教えて下さい（1000文字以内）</div>
-          <div class="CG2-settings__fieldData"><textarea maxlength="1000"></textarea></div>
+        <div class="CG2-settings__fieldHGroup">
+          <table>
+            <tr>
+              <th>無料購読期間</th>
+              <td>残り30日</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="CG2-settings__field">
+        <div class="CG2-settings__fieldHGroup">
+          <table>
+            <tr>
+              <th>決済方法</th>
+              <td>PAY.JP</td>
+            </tr>
+            <tr>
+              <th>カード情報</th>
+              <td>XXXX</td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="CG2-settings__buttonContainer">
-        <button class="CG2-button CG2-button--setting">CodeGridを退会し、購読を停止する</button>
+        <ul>
+          <li>
+            <a class="CG2-button CG2-button--setting">カード情報の更新</a>
+          </li>
+        </ul>
       </div>
+      <div class="CG2-settings__heading">購読情報</div>
+      <div class="CG2-settings__field">
+        <div class="CG2-settings__fieldHGroup">
+          <table>
+            <tr>
+              <th>決済方法</th>
+              <td>WebMoney</td>
+            </tr>
+            <tr>
+              <th>有効期限</th>
+              <td>201X年12月31日</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="CG2-settings__buttonContainer">
+        <ul>
+          <li>
+            <a class="CG2-button CG2-button--setting">1ヶ月延長</a>
+          </li>
+          <li>
+            <a class="CG2-button CG2-button--setting">1年延長</a>
+          </li>
+        </ul>
+      </div>
+      <div class="CG2-settings__heading">退会</div>
+      <form>
+        <div class="CG2-settings__field">
+          <div class="CG2-settings__fieldVGroup">
+            <div class="CG2-settings__fieldHeader">退会理由を教えて下さい（1000文字以内）</div>
+            <div class="CG2-settings__fieldData"><textarea maxlength="1000"></textarea></div>
+          </div>
+        </div>
+        <div class="CG2-settings__buttonContainer">
+          <button type="button" class="CG2-button CG2-button--setting">CodeGridを退会し、購読を停止する</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
