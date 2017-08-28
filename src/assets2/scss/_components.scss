@@ -4594,8 +4594,86 @@ tag:
   </div>
 </div>
 ```
-
 */
+// todo: contents_innerのpaddingをキャンセルするつらいやつ
+.CG2-authorList {}
+.CG2-authorList__inner {}
+
+// アイテムのレイアウト
+// todo: フォールバック
+@supports (display: grid) {
+  .CG2-authorList__inner {
+    display: grid;
+    grid-column-gap: 40px;
+
+    @include min-screen( $breakpoint-middle ) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include min-screen( $breakpoint-base ) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+// アイテムのスタイル
+.CG2-authorList__item {
+  border-top: 1px solid #dbdbdb;
+
+  a {
+    @include resetLink();
+    text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    padding-left: 92px; // 80px + 12px
+    min-height: 80px;
+    position: relative;
+
+    @include min-screen( $breakpoint-middle ) {
+      padding: 20px 12px 20px 92px;
+    }
+  }
+}
+
+.CG2-authorList__image {
+  position: absolute;
+  left: 0;
+  top: 12px;
+
+  @include min-screen( $breakpoint-middle ) {
+    left: 28px;
+    top: 20px;
+  }
+
+  img {
+    vertical-align: bottom;
+    width: 80px;
+    height: 80px;
+
+    @include min-screen( $breakpoint-middle ) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.CG2-authorList__name {
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.CG2-authorList__title {
+  font-size: 12px;
+  color: #777;
+
+  @include min-screen( $breakpoint-middle ) {
+    margin-bottom: 15px;
+  }
+}
+
+.CG2-authorList__numOfPosts {
+  font-size: 12px;
+  color: #777;
+}
 
 // .CG2-authorList{
 // }
