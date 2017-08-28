@@ -105,7 +105,7 @@ gulp.task( 'sass', function () {
          .pipe( plumber() )
          .pipe( sourcemaps.init() )
          .pipe( sass() )
-         .pipe( postcss( [ autoprefixer() ] ) )
+         .pipe( postcss( [ autoprefixer( { grid: false, supports: false } ) ] ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
          .pipe( postcss( [
            mqpacker(),
