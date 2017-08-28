@@ -3576,7 +3576,7 @@ article.CG2-article{
     margin: 2em 0;
     th, td{
       // `width: 100%` + `table-layout : fixed;`
-      // ではない　table (shrink to fit) の中では
+      // ではない table (shrink to fit) の中では
       // `break-all` しかない
       word-wrap : break-word; // Non standard for IE
       word-break: break-word; // Non standard for webkit
@@ -4782,7 +4782,7 @@ tag:
 
 .CG2-settings{
   margin: 0 -40px;
-  @include screen(　$breakpoint-middle + 1, 1054px ) {
+  @include screen( $breakpoint-middle + 1, 1054px ) {
     margin: 0 -20px;
   }
   @include max-screen( $breakpoint-middle ) {
