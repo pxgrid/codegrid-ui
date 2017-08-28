@@ -15,6 +15,11 @@
   font-style: normal;
 }
 
+/* mqpackerが意図した順番にソースを並び替えるためのおまじない */
+@include max-screen( $breakpoint-base )   { _x { _x : 0 } }
+@include max-screen( $breakpoint-middle ) { _x { _x : 0 } }
+@include max-screen( $breakpoint-small )  { _x { _x : 0 } }
+
 /* modifier: align
    ========================================================================== */
 .CG2--alignLeft   {text-align:left !important; }
