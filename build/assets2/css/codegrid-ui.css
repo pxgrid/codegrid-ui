@@ -516,6 +516,19 @@ pre.line-numbers > code {
   font-weight: normal;
   font-style: normal; }
 
+/* mqpackerが意図した順番にソースを並び替えるためのおまじない */
+@media screen and (max-width: 979px) {
+  _x {
+    _x: 0; } }
+
+@media screen and (max-width: 767px) {
+  _x {
+    _x: 0; } }
+
+@media screen and (max-width: 639px) {
+  _x {
+    _x: 0; } }
+
 /* modifier: align
    ========================================================================== */
 .CG2--alignLeft {
@@ -6871,7 +6884,7 @@ tag:
 */
 .CG2-settings {
   margin: 0 -40px; }
-  @media screen and (min-width: 　 768px) and (max-width: 1054px) {
+  @media screen and (min-width: 768px) and (max-width: 1054px) {
     .CG2-settings {
       margin: 0 -20px; } }
   @media screen and (max-width: 767px) {
