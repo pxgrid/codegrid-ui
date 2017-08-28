@@ -4599,18 +4599,15 @@ tag:
 .CG2-authorList__inner {}
 
 // アイテムのレイアウト
-// todo: フォールバック
-@supports (display: grid) {
-  .CG2-authorList__inner {
-    display: grid;
-    grid-column-gap: 40px;
+.CG2-authorList__inner {
+  display: grid;
+  grid-column-gap: 40px;
 
-    @include min-screen( $breakpoint-middle ) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include min-screen( $breakpoint-base ) {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  @include min-screen( $breakpoint-middle ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include min-screen( $breakpoint-base ) {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
