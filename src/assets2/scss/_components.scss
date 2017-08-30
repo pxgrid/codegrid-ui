@@ -3781,55 +3781,6 @@ article.CG2-article{
     background: #f5f2f0;
   }
 
-  // 旧jade記法からの変換
-  // <div class="ImgBox">
-  //   <div class="ImgBox-title">ラベル</div>
-  //   <div class="ImgBox-comment">キャプション</div>
-  //   <div class="ImgBox-body"><img src="xxx.jpg" width="256" height="128"></div>
-  // </div>
-
-  // CGMD記法からの変換
-  // <div class="ImgBox">
-  //   <h1>ラベル</h1>
-  //   <p>キャプション</p>
-  //   <p><img src="xxx.jpg" width="256" height="128"></p>
-  // </div>
-  .ImgBox{
-    margin: 2em 0;
-  } 
-    // .ImgBox h1 ~ hx: 独自md変換による新記法
-    // .ImgBox-title: はjade用
-    .ImgBox h1,
-    .ImgBox h2,
-    .ImgBox h3,
-    .ImgBox h4,
-    .ImgBox-title{
-      font-size: 100%;
-      font-weight: bold;
-      border-bottom: 1px dotted #ccc;
-      margin: 0.5em 0 3px;
-    }
-    .ImgBox p,     // 独自md変換による新記法
-    .ImgBox-comment// 旧 jade用
-    {
-      color: #777;
-      font-size: 14px;
-      line-height: 1.8;
-      margin: 0;
-    }
-    .ImgBox-body{
-      margin: 3px 0;
-    }
-    .ImgBox img{
-      box-sizing: border-box;
-      display: block;
-      max-width: 100%;
-      width: auto;
-      height: auto;
-      border: 1px solid #ccc;
-      margin: 5px 0;
-    }
-
 
   .Column{
     font-size: 14px;
@@ -3903,6 +3854,69 @@ article.CG2-article{
     }
 
 }
+
+
+/* ==========================================================================
+   ImgBox
+   ========================================================================== */
+/*
+---
+name: ImgBox
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<article class="CG2-article">
+
+  <div class="ImgBox">
+    <h1>ラベル</h1>
+    <p>キャプション</p>
+    <p><img src="http://img.pxgrid.net/1000x200"></p>
+  </div>
+
+</article>
+```
+*/
+article.CG2-article{
+  .ImgBox{
+    margin: 2em 0;
+  }
+  .ImgBox h1,
+  .ImgBox h2,
+  .ImgBox h3,
+  .ImgBox h4,
+  .ImgBox-title // jade用
+  {
+    font-size: 100%;
+    font-weight: bold;
+    border-bottom: 1px dotted #ccc;
+    margin: 0.5em 0 3px;
+  }
+  .ImgBox p,
+  .ImgBox-comment // jade用
+  {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+  }
+  .ImgBox-body{ // jade用
+    margin: 3px 0;
+  }
+  .ImgBox img{
+    box-sizing: border-box;
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    border: 1px solid #ccc;
+    margin: 5px 0;
+  }
+}
+
 
 /* ==========================================================================
    CG2-articlePagination
