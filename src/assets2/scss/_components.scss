@@ -3781,51 +3781,6 @@ article.CG2-article{
     background: #f5f2f0;
   }
 
-
-  .Column{
-    font-size: 14px;
-    line-height: 1.6;
-    border: 1px solid #dbdbdb;
-    padding: 19px;
-    @include max-screen( $breakpoint-middle ) {
-      padding: 14px;
-    }
-    & > p{
-      margin: 1em 0;
-    }
-    & > ul{
-      margin: 0;
-      padding: 0 0 0 20px;
-      li{
-        margin: 0;
-      }
-    }
-    img {
-      max-width: 100%;
-    }
-  }
-    .Column h1,
-    .Column-title{
-      font-size: 14px;
-      font-weight: bold;
-      margin: 0;
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 12px;
-        margin-bottom: 3px;
-      }
-    }
-    .Column-body{
-      & > *:first-child{
-        margin-top: 0;
-      }
-      & > *:last-child{
-        margin-bottom: 0;
-      }
-    }
-  pre + .Column {
-    margin-top: 2em;
-  }
-
   .Note{
     color: #777;
     font-size: 14px;
@@ -3914,6 +3869,80 @@ article.CG2-article{
     height: auto;
     border: 1px solid #ccc;
     margin: 5px 0;
+  }
+}
+
+
+/* ==========================================================================
+   Column
+   ========================================================================== */
+/*
+---
+name: Column
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<article class="CG2-article">
+
+  <div class="Column">
+    <h1>コラムタイトル</h1>
+    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
+    <p><img src="http://img.pxgrid.net/1000x200"></p>
+    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
+  </div>
+
+</article>
+```
+*/
+article.CG2-article{
+  .Column{
+    font-size: 14px;
+    line-height: 1.6;
+    border: 1px solid #dbdbdb;
+    padding: 19px;
+    @include max-screen( $breakpoint-middle ) {
+      padding: 14px;
+    }
+    & > p{
+      margin: 1em 0;
+    }
+    & > ul{
+      margin: 0;
+      padding: 0 0 0 20px;
+      li{
+        margin: 0;
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  .Column h1,
+  .Column-title // jade用
+  {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 12px;
+      margin-bottom: 3px;
+    }
+  }
+  .Column-body // jade用
+  {
+    & > *:first-child{
+      margin-top: 0;
+    }
+    & > *:last-child{
+      margin-bottom: 0;
+    }
+  }
+  pre + .Column {
+    margin-top: 2em;
   }
 }
 
