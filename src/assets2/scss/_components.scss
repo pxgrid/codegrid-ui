@@ -3781,33 +3781,6 @@ article.CG2-article{
     background: #f5f2f0;
   }
 
-  .Note{
-    color: #777;
-    font-size: 14px;
-    margin: 2em 0;
-    @include max-screen( $breakpoint-middle ) {
-      font-size: 10px;
-      margin: 1.6em 0;
-    }
-    p{
-      margin: 0;
-    }
-  }
-    .Note h1,
-    .Note-title{
-      font-size: 100%;
-      font-weight: bold;
-      margin: 0;
-    }
-    .Note-body{
-      & > *:first-child{
-        margin-top: 0;
-      }
-      & > *:last-child{
-        margin-bottom: 0;
-      }
-    }
-
 }
 
 
@@ -3946,6 +3919,63 @@ article.CG2-article{
   }
   pre + .Column {
     margin-top: 2em;
+  }
+}
+
+
+/* ==========================================================================
+   Note
+   ========================================================================== */
+/*
+---
+name: Note
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<article class="CG2-article">
+
+  <div class="Note">
+    <h1>*注：Autoprefixer</h1>
+    <p>Autoprefixerに関しては、次の記事を参照してください。<br><a href="">「ビルドツールアラカルト」</a>シリーズ</p>
+  </div>
+
+</article>
+```
+*/
+article.CG2-article{
+  .Note{
+    color: #777;
+    font-size: 14px;
+    margin: 2em 0;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 10px;
+      margin: 1.6em 0;
+    }
+    p{
+      margin: 0;
+    }
+  }
+  .Note h1,
+  .Note h2,
+  .Note h3,
+  .Note h4,
+  .Note-title // jade用
+  {
+    font-size: 100%;
+    font-weight: bold;
+    margin: 0;
+  }
+  .Note-body{ // jade用
+    & > *:first-child{
+      margin-top: 0;
+    }
+    & > *:last-child{
+      margin-bottom: 0;
+    }
   }
 }
 
