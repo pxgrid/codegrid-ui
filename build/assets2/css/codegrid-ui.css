@@ -1728,7 +1728,7 @@ templateItem:
         <li><a href="#">プライバシーポリシー</a></li>
         <li><a href="#">特定商取引法に基づく表示</a></li>
       </ul>
-      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></a></div>
+      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="PixelGrid" width="128" height="32"></a></div>
     </div>
   </div>
 <!-- /.CG2-pageFooter --></footer>
@@ -1740,7 +1740,7 @@ templateItem:
 <footer class="CG2-pageFooter CG2-pageFooter--simple">
   <div class="CG2-pageFooter__inner">
     <div class="CG2-pageFooter__legalNav">
-      <div class="CG2-pageFooter__company">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></div>
+      <div class="CG2-pageFooter__company">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="PixelGrid" width="128" height="32"></div>
     </div>
   </div>
 <!-- /.CG2-pageFooter --></footer>
@@ -5743,6 +5743,13 @@ tag:
     <p>Autoprefixerに関しては、次の記事を参照してください。<br><a href="#">「ビルドツールアラカルト」</a>シリーズ</p>
   </aside>
 
+  <div class="Column">
+    <h1>コラムタイトル</h1>
+    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
+    <p><img src="http://img.pxgrid.net/1000x200"></p>
+    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
+  </div>
+
 </article>
 ```
 
@@ -6009,6 +6016,8 @@ article.CG2-article .Column {
     padding: 0 0 0 20px; }
     article.CG2-article .Column > ul li {
       margin: 0; }
+  article.CG2-article .Column img {
+    max-width: 100%; }
 
 article.CG2-article .Column h1,
 article.CG2-article .Column-title {
