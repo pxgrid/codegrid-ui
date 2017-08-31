@@ -1,12 +1,15 @@
 // clearfix
 // ========================================================================== */
 @mixin clearfix () {
-  &:before,
-  &:after {
+  &:before, &:after {
     content: "";
-    display: table; }
-  &:after { clear: both; }
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
+
 
 // resetLink
 // ========================================================================== */
@@ -26,11 +29,11 @@
 // tableToBlock
 // ========================================================================== */
 @mixin tableToBlock () {
-  table, tbody, tr{
+  table, tbody, tr {
     @include clearfix();
     display: block;
   }
-  th, td{
+  th, td {
     float: left;
     clear: left;
   }
@@ -62,9 +65,9 @@
   filter: blur( 24px );
 }
 
+
 // print query
 // ========================================================================== */
-
 @mixin print () {
   @media print {
     @content;
