@@ -3478,11 +3478,6 @@ tag:
     </tbody>
   </table>
 
-  <aside>
-    <h1>*注：Autoprefixer</h1>
-    <p>Autoprefixerに関しては、次の記事を参照してください。<br><a href="#">「ビルドツールアラカルト」</a>シリーズ</p>
-  </aside>
-
 </article>
 ```
 
@@ -3631,29 +3626,6 @@ article.CG2-article{
       padding: 0 0 0 20px;
     }
     li{
-      margin: 0;
-    }
-    & > *:first-child{
-      margin-top: 0;
-    }
-    & > *:last-child{
-      margin-bottom: 0;
-    }
-  }
-  aside{
-    color: #777;
-    font-size: 14px;
-    margin: 2em 0;
-    @include max-screen( $breakpoint-middle ) {
-      font-size: 10px;
-      margin: 1.6em 0;
-    }
-    h1{
-      font-size: 100%;
-      font-weight: bold;
-      margin: 0;
-    }
-    p{
       margin: 0;
     }
     & > *:first-child{
@@ -3940,6 +3912,30 @@ article.CG2-article{
     margin: 0;
   }
   .Note-body{ // jade用
+    & > *:first-child{
+      margin-top: 0;
+    }
+    & > *:last-child{
+      margin-bottom: 0;
+    }
+  }
+  // 以下、使われてない可能性あり
+  aside{
+    color: #777;
+    font-size: 14px;
+    margin: 2em 0;
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 10px;
+      margin: 1.6em 0;
+    }
+    h1{
+      font-size: 100%;
+      font-weight: bold;
+      margin: 0;
+    }
+    p{
+      margin: 0;
+    }
     & > *:first-child{
       margin-top: 0;
     }
