@@ -3590,8 +3590,11 @@ article.CG2-article{
       }
     }
   }
-  pre{
+  pre, code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    background-color: #f5f2f0;
+  }
+  pre{
     line-height: 1.6;
     margin: 0.5em 0;
     padding: 1em;
@@ -3602,9 +3605,7 @@ article.CG2-article{
     }
   }
   code{
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     padding: 2px;
-    background: #f5f2f0;
   }
   section.CG2-article__rel{
     font-size: 14px;
