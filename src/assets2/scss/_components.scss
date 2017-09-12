@@ -2696,6 +2696,93 @@ tag:
 </div>
 ```
 
+
+## 未購読・購読済、著者1人・2人
+
+```html
+<div class="CG2-series">
+  <div class="CG2-series__item">
+    <div class="CG2-series__itemHeader">
+      <a href="">
+        <div class="CG2-series__itemIcon">
+          <div class="CG2-icon-lock"></div>
+        </div>
+        <div class="CG2-series__itemTitle">第2回 SVGデータの作成 1</div>
+        <div class="CG2-series__itemPubdate">2014年05月15日</div>
+      </a>
+    </div>
+    <div class="CG2-series__itemBody">
+      <p>Web媒体で使用するSVGデータの作成方法をAdobe Illustrator CCでのデータ作成、SVG書き出しを例に紹介します。まずは元データ作成時の環境設定、作成時の注意点などを解説します。</p>
+    </div>
+    <div class="CG2-series__authors">
+      <div class="CG2-series__author">
+        <div class="CG2-series__authorPic">
+          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a>
+        </div>
+        <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
+      </div>
+    </div>
+  </div>
+  <div class="CG2-series__item">
+    <div class="CG2-series__itemHeader">
+      <a href="">
+        <div class="CG2-series__itemTitle">第1回 SVGコードの基本</div>
+        <div class="CG2-series__itemPubdate">2014年05月08日</div>
+      </a>
+    </div>
+    <div class="CG2-series__itemBody">
+      <p>この記事ではまずSVGのコードとしての基本と、さまざまな実装方法を概観してみましょう。それぞれの特徴を捉えられると、実装方法の選択が適切にできます。</p>
+    </div>
+    <div class="CG2-series__authors">
+      <div class="CG2-series__author">
+        <div class="CG2-series__authorPic">
+          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a>
+        </div>
+        <div class="CG2-series__authorName">小山田 晃浩 | フロントエンド・エンジニア</div>
+      </div>
+      <div class="CG2-series__author">
+        <div class="CG2-series__authorPic">
+          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a>
+        </div>
+        <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+## 著者複数、未読
+
+```html
+<div class="CG2-series">
+  <div class="CG2-series__item CG2-series__item--unread">
+    <div class="CG2-series__itemHeader">
+      <a href="">
+        <div class="CG2-series__itemTitle">第1回 コミュニケーションツール</div>
+        <div class="CG2-series__itemPubdate">2013年10月10日</div>
+      </a>
+    </div>
+    <div class="CG2-series__itemBody">
+      <p>第1回はピクセルグリッドが日常の業務でのクライアントとのコミュニケーション方法やコミュニケーションツールがテーマです。</p>
+    </div>
+    <div class="CG2-series__authors">
+      <div class="CG2-series__authorPicList">
+        <ul>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="外村 奈津子" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
 */
 .CG2-series{}
   .CG2-series__item{
