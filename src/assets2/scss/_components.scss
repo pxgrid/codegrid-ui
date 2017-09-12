@@ -2612,7 +2612,7 @@ tag:
             font-weight: bold;
           }
           &:first-child{
-            padding-left: 10px;
+            padding-left: 20px;
           }
           @include max-screen( $breakpoint-middle ) {
             font-size: 14px;
