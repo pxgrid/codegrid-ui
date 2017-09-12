@@ -2446,6 +2446,99 @@ templateItem:
 </div>
 ```
 
+## 購読済
+
+```html
+<div class="CG2-seriesHeader">
+  <div class="CG2-seriesHeader__inner">
+    <div class="CG2-seriesHeader__category">
+      <div class="CG2-seriesHeader__categoryIcon">
+        <span class="CG2-icon-cat-architecture"></span>
+      </div>
+      <div class="CG2-seriesHeader__categoryName">設計</div>
+    </div>
+    <div class="CG2-seriesHeader__main">
+      <div class="CG2-seriesHeader__mainInner">
+        <div class="CG2-seriesHeader__title">jQuery初心者のためのJavaScript設計トレーニング</div>
+        <div class="CG2-seriesHeader__length">
+          全
+          <span class="CG2-seriesHeader__value">1</span>
+          回
+        </div>
+      </div>
+    </div>
+    <div class="CG2-seriesHeader__utils">
+      <button id="js-toggle-fav-series" type="button" aria-pressed="false" class="CG2-transparentButton">
+        <span aria-hidden="true" class="CG2-icon-star"></span>
+        <span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span>
+      </button>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2016-js-training-for-beginners/main-blur.jpg)" class="CG2-seriesHeader__bg"></div>
+</div>
+```
+
+## 購読済、お気に入り追加
+
+`CG2-seriesHeader__utils`内のボタンが変化する。
+
+```html
+<div class="CG2-seriesHeader">
+  <div class="CG2-seriesHeader__inner">
+    <div class="CG2-seriesHeader__category">
+      <div class="CG2-seriesHeader__categoryIcon">
+        <span class="CG2-icon-cat-architecture"></span>
+      </div>
+      <div class="CG2-seriesHeader__categoryName">デザイン</div>
+    </div>
+    <div class="CG2-seriesHeader__main">
+      <div class="CG2-seriesHeader__mainInner">
+        <div class="CG2-seriesHeader__title">きちんと学ぶユーザーインターフェース</div>
+        <div class="CG2-seriesHeader__length">
+          全
+          <span class="CG2-seriesHeader__value">4</span>
+          回
+        </div>
+      </div>
+    </div>
+    <div class="CG2-seriesHeader__utils">
+      <button id="js-toggle-fav-series" type="button" aria-pressed="true" class="CG2-transparentButton CG2-transparentButton--favAdded">
+        <span aria-hidden="true" class="CG2-icon-star"></span>
+        <span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span>
+      </button>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2017-mastering-ui/main-blur.jpg)" class="CG2-seriesHeader__bg"></div>
+</div>
+```
+
+## 未購読・非ログイン
+
+`CG2-seriesHeader__utils`がない。
+
+```html
+<div class="CG2-seriesHeader">
+  <div class="CG2-seriesHeader__inner">
+    <div class="CG2-seriesHeader__category">
+      <div class="CG2-seriesHeader__categoryIcon">
+        <span class="CG2-icon-cat-architecture"></span>
+      </div>
+      <div class="CG2-seriesHeader__categoryName">未来・次世代</div>
+    </div>
+    <div class="CG2-seriesHeader__main">
+      <div class="CG2-seriesHeader__mainInner">
+        <div class="CG2-seriesHeader__title">一歩先行くCSS</div>
+        <div class="CG2-seriesHeader__length">
+          全
+          <span class="CG2-seriesHeader__value">2</span>
+          回
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2016-future-css/main-blur.jpg)" class="CG2-seriesHeader__bg"></div>
+</div>
+```
 */
 .CG2-seriesHeader{
   @include blurry-parent();
