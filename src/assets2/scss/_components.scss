@@ -2827,6 +2827,172 @@ tag:
 </div>
 ```
 
+## 通常
+
+```html
+<div class="CG2-articleHeader">
+  <div class="CG2-articleHeader__inner">
+    <div class="CG2-articleHeader__category">
+      <div class="CG2-articleHeader__categoryIcon">
+        <span class="CG2-icon-cat-standards"></span>
+      </div>
+      <div class="CG2-articleHeader__categoryName">仕様解説</div>
+    </div>
+    <div class="CG2-articleHeader__main">
+      <div class="CG2-articleHeader__mainInner">
+        <div class="CG2-articleHeader__series">そこが知りたい、Flexible Box</div>
+        <div class="CG2-articleHeader__title">第2回 仕様を知る 2</div>
+        <div class="CG2-articleHeader__abstract">
+          <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
+        </div>
+        <div class="CG2-articleHeader__pubDate">2015年04月16日発行</div>
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="坂巻 翔大郎">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="CG2-articleHeader__pagenation">
+      <ul>
+        <li class="CG2-articleHeader__pagenationPrev"><a href="">前回</a></li>
+        <li class="CG2-articleHeader__pagenationNext"><a href="">次回</a></li>
+      </ul>
+    </div>
+    <div class="CG2-articleHeader__utils">
+      <ul>
+        <li>
+          <a href="" class="CG2-transparentButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a>
+        </li>
+        <li>
+          <button id="js-toggle-fav-series" type="button" aria-pressed="false" class="CG2-transparentButton">
+            <span aria-hidden="true" class="CG2-icon-star"></span>
+            <span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span>
+          </button>
+        </li>
+        <li>
+          <button id="js-unread" class="CG2-transparentButton">未読にする</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2015-css-flexiblebox/main-blur.jpg)" class="CG2-articleHeader__bg"></div>
+</div>
+```
+
+## 著者複数、前次回なし、お気に入り済、未読押下後
+
+```html
+<div data-page-id="entry-main" class="CG2-articleHeader">
+  <div class="CG2-articleHeader__inner">
+    <div class="CG2-articleHeader__category">
+      <div class="CG2-articleHeader__categoryIcon">
+        <span class="CG2-icon-cat-survey"></span>
+      </div>
+      <div class="CG2-articleHeader__categoryName">アンケート</div>
+    </div>
+    <div class="CG2-articleHeader__main">
+      <div class="CG2-articleHeader__mainInner">
+        <div class="CG2-articleHeader__series">ピクセルグリッド技術サーベイ 2015</div>
+        <div class="CG2-articleHeader__title">第1回 JavaScriptトランスパイラ編</div>
+        <div class="CG2-articleHeader__abstract">
+          <p>技術サーベイの第1回目は、 JavaScriptトランスパイラ編。最終的にJavaScriptとして書き出される3つの言語の使用経験を聞きました。どんな理由で使うのか、その将来性に迫ります。</p>
+        </div>
+        <div class="CG2-articleHeader__pubDate">2015年06月18日発行</div>
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="中村 享介"></div>
+              <div class="CG2-articleHeader__authorName">中村 享介</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="高津戸 壮"></div>
+              <div class="CG2-articleHeader__authorName">高津戸 壮</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="小山田 晃浩"></div>
+              <div class="CG2-articleHeader__authorName">小山田 晃浩</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="德田 和規"></div>
+              <div class="CG2-articleHeader__authorName">德田 和規</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="山田 順久"></div>
+              <div class="CG2-articleHeader__authorName">山田 順久</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="小原 司"></div>
+              <div class="CG2-articleHeader__authorName">小原 司</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="山田 敬美"></div>
+              <div class="CG2-articleHeader__authorName">山田 敬美</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="坂巻 翔大郎"></div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="中島 直博"></div>
+              <div class="CG2-articleHeader__authorName">中島 直博</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="宇野 陽太"></div>
+              <div class="CG2-articleHeader__authorName">宇野 陽太</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="CG2-articleHeader__pagenation">
+      <ul>
+      </ul>
+    </div>
+    <div class="CG2-articleHeader__utils">
+      <ul>
+        <li>
+          <a href="" class="CG2-transparentButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a>
+        </li>
+        <li>
+          <button id="js-toggle-fav-series" type="button" aria-pressed="false" class="CG2-transparentButton CG2-transparentButton--favAdded">
+            <span aria-hidden="true" class="CG2-icon-star"></span>
+            <span class="CG2-transparentButton__favText">このシリーズのお気に入り解除</span>
+          </button>
+        </li>
+        <li>
+          <button id="js-unread" class="CG2-transparentButton" disabled>未読にする</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2015-tech-survey/main-blur.jpg)" class="CG2-articleHeader__bg"></div>
+</div>
+```
 */
 
 .CG2-articleHeader{
