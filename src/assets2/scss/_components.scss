@@ -2018,9 +2018,9 @@ appトップの今週号や、各号のページで利用。
       .CG2-seriesList__item:focus &{
         transform: scale( 1.4, 1.4 );
       }
-      &.CG2-seriesList__coverImage--blurry{
-        @include blurry--blurry();
-      }
+      // &.CG2-seriesList__coverImage--blurry{
+      //   @include blurry--blurry();
+      // }
     }
     .CG2-seriesList__articles{
       position: relative;
@@ -2419,9 +2419,9 @@ templateItem:
     }
   .CG2-seriesHeader__bg{
     @include blurry();
-    &.CG2-seriesHeader__bg--blurry{
-      @include blurry--blurry();
-    }
+    // &.CG2-seriesHeader__bg--blurry{
+    //   @include blurry--blurry();
+    // }
   }
 
 /* ==========================================================================
@@ -3136,9 +3136,9 @@ tag:
 
   .CG2-articleHeader__bg{
     @include blurry();
-    &.CG2-articleHeader__bg--blurry{
-      @include blurry--blurry();
-    }
+    // &.CG2-articleHeader__bg--blurry{
+    //   @include blurry--blurry();
+    // }
   }
 
 

@@ -61,9 +61,9 @@
   transform: scale( 1.2, 1.2 );
   opacity: .64;
 }
-@mixin blurry--blurry () {
-  filter: blur( 24px );
-}
+// @mixin blurry--blurry () {
+//   filter: blur( 24px );
+// }
 
 
 // print query
