@@ -4912,6 +4912,11 @@ section.CG2-livecode{
       width: 100%;
     }
   }
+  // iPhoneでiframeが伸びてしまう問題の対処用
+  // iPhoneの場合、JavaScriptでiframeをこれで動的に包む
+  .CG2-livecode__body--inner {
+    height: 40vh;
+  }
 
 
 /* ==========================================================================
