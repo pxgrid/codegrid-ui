@@ -4738,14 +4738,15 @@ tag:
 
 ```
 
-動く demo として、iframe を埋め込むことができる
+## iframe埋め込み
 
-iframeには、
+作ったデモをiframeで埋め込める。
+以下の追加クラスで、高さの指定が可能。
 
 - CG2-livecode__frame--small
 - CG2-livecode__frame--large
 
-を追加クラスとして明示することも可能。その場合それぞれ、iframeの高さが190px、590pxとなる。
+なお、iPhoneの場合はiframeが伸びる仕様を回避するため、高さが固定される。
 
 ```html
 <section class="CG2-livecode">
@@ -4767,7 +4768,6 @@ iframeには、
   </div>
 </section>
 ```
-
 */
 section.CG2-livecode{
   margin: 2em 0;
@@ -4910,6 +4910,11 @@ section.CG2-livecode{
       display: block;
       width: 100%;
     }
+  }
+  // iPhoneでiframeが伸びてしまう問題の対処用
+  // iPhoneの場合、JavaScriptでiframeをこれで動的に包む
+  .CG2-livecode__body--inner {
+    height: 40vh;
   }
 
 
