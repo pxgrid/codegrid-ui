@@ -5157,7 +5157,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/80x80" alt="" width="80" height="80"></div>
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">代表取締役, フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
@@ -5166,103 +5166,108 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/80x80" alt="" width="80" height="80"></div>
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
     </div>
 
-    <div class="CG2-authorList__item">...</div>
-    <div class="CG2-authorList__item">...</div>
-    <div class="CG2-authorList__item">...</div>
+    <div class="CG2-authorList__item">
+      <a href="#">
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
+        <div class="CG2-authorList__numOfPosts">記事数24</div>
+      </a>
+    </div>
+
+    <div class="CG2-authorList__item">
+      <a href="#">
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
+        <div class="CG2-authorList__numOfPosts">記事数24</div>
+      </a>
+    </div>
+
+    <div class="CG2-authorList__item">
+      <a href="#">
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
+        <div class="CG2-authorList__numOfPosts">記事数24</div>
+      </a>
+    </div>
 
   </div>
 </div>
 ```
-
 */
+.CG2-authorList {}
+.CG2-authorList__inner {}
 
-.CG2-authorList{
+// アイテムのレイアウト
+.CG2-authorList__inner {
+  display: grid;
+  grid-column-gap: 40px;
+  @include min-screen( $breakpoint-middle ) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include min-screen( $breakpoint-base ) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
-  .CG2-authorList__inner{
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 -28px;
-    @include max-screen( $breakpoint-middle ) {
-      display: block;
-      margin: 0 -10px;
-    }
-  }
-  .CG2-authorList__item{
-    box-sizing: border-box;
+
+// アイテムのスタイル
+.CG2-authorList__item {
+  border-top: 1px solid #dbdbdb;
+  a {
+    @include resetLink();
+    text-decoration: none;
+    display: block;
+    padding: 12px 0 12px 92px; // 80px + 12px
+    min-height: 80px;
     position: relative;
-    width: calc( 33% - 40px );
-    min-height: 88px;
-    padding: 20px 20px 30px 90px;
-    border-top: 1px solid #dbdbdb;
-    margin: 0 20px;
-    @include max-screen( $breakpoint-base ) {
-      width: calc( 49.9% - 40px );
-    }
-    @include max-screen( $breakpoint-middle ) {
-      width: auto;
-      min-height: 104px;
-      padding: 12px 12px 12px 100px;
-      margin: 0;
-    }
-    a{
-      @include resetLink();
-      text-decoration: none;
-      display: block;
-      padding: 20px 20px 20px 90px;
-      margin: -20px -20px -20px -90px;
-      @include max-screen( $breakpoint-middle ) {
-        padding: 12px 12px 12px 100px;
-        margin: -12px -12px -12px -100px;
-      }
+    @include min-screen( $breakpoint-middle ) {
+      padding: 20px 12px 20px 92px;
     }
   }
-    .CG2-authorList__image{
-      position: absolute;
-      top: 20px;
-      left: 28px;
-      @include max-screen( $breakpoint-middle ) {
-        top: 12px;
-        left: 0;
-      }
-      img{
-        display: block;
-        width: 48px;
-        height: 48px;
-        @include max-screen( $breakpoint-middle ) {
-          width: 80px;
-          height: 80px;
-        }
-      }
+}
+.CG2-authorList__image {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  @include min-screen( $breakpoint-middle ) {
+    left: 28px;
+    top: 20px;
+  }
+  img {
+    vertical-align: bottom;
+    width: 80px;
+    height: 80px;
+    @include min-screen( $breakpoint-middle ) {
+      width: 48px;
+      height: 48px;
     }
-    .CG2-authorList__name{
-      font-weight: bold;
-      margin-bottom: 3px;
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 16px;
-        margin-bottom: 6px;
-      }
-    }
-    .CG2-authorList__title{
-      color: #777;
-      font-size: 12px;
-      line-height: 1.2;
-      margin-bottom: 15px;
-      @include max-screen( $breakpoint-middle ) {
-        margin-bottom: 8px;
-      }
-    }
-    .CG2-authorList__numOfPosts{
-      color: #777;
-      font-size: 12px;
-      line-height: 1.2;
-    }
+  }
+}
+.CG2-authorList__name {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+.CG2-authorList__title {
+  font-size: 12px;
+  color: #777;
+  @include min-screen( $breakpoint-middle ) {
+    margin-bottom: 15px;
+  }
+}
+.CG2-authorList__numOfPosts {
+  font-size: 12px;
+  color: #777;
+}
 
 
 /* ==========================================================================
