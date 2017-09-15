@@ -5615,6 +5615,127 @@ tag:
 //         }
 //     }
 
+.CG2-settings {}
+
+.CG2-settings__inner {
+  @include min-screen( $breakpoint-middle ) {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.CG2-settings__col {
+  @include min-screen( $breakpoint-middle ) {
+    width: calc(50% - 14px - 10px); // 延伸した下線の長さと、さらにプラスしたい隙間
+  }
+  @include min-screen( $breakpoint-base ) {
+    width: calc(50% - 28px - 20px); // 延伸した下線の長さと、さらにプラスしたい隙間
+  }
+}
+
+.CG2-settings__field {
+  margin: 10px 0;
+  @include min-screen( $breakpoint-base ) {
+    margin: 24px 0;
+  }
+}
+
+.CG2-settings__heading {
+  border-bottom: 1px solid #dbdbdb;
+
+  @include screen( 0, $breakpoint-middle ) {
+    padding: 0 10px;
+    margin: 30px -10px 24px;
+  }
+  @include screen( $breakpoint-middle, $breakpoint-base) {
+    padding: 0 14px;
+    margin: 50px -14px 24px;
+  }
+  @include min-screen( $breakpoint-base ) {
+    padding: 0 28px 5px;
+    margin: 50px -28px 24px;
+  }
+
+  // 細い幅の場合、一番上にくるもののmarginを消す
+  @include screen( 0, $breakpoint-middle ) {
+    .CG2-settings__col:first-child &:first-child {
+      margin-top: 0;
+    }
+  }
+  // 2カラムになったときにも最上部のmarginを消す
+  @include min-screen( $breakpoint-middle ) {
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+// 「ラベル：内容」といった形式のフィールド
+.CG2-settings__fieldHGroup {
+  table {
+    border-spacing: 0;
+  }
+  @include max-screen( $breakpoint-base ) {
+    @include tableToBlock();
+  }
+  th {
+    font-size: 12px;
+    font-weight: normal;
+    vertical-align: middle;
+    @include max-screen( $breakpoint-base ) {
+      display: block;
+    }
+    &:after {
+      content: '：';
+    }
+  }
+  td {
+    @include wordbreak();
+    vertical-align: middle;
+    padding-left: 10px;
+    @include max-screen( $breakpoint-base ) {
+      font-size: 16px;
+      padding-left: 0;
+    }
+  }
+}
+
+// 通常フローのフィールド
+.CG2-settings__fieldVGroup {}
+
+.CG2-settings__fieldHeader {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.CG2-settings__fieldData {
+  font-size: 16px;
+  input, textarea {
+    font-size: inherit;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px;
+  }
+  textarea {
+    height: 8em;
+  }
+}
+
+// アクションが必要なフィールドの直後にくる
+// ボタンは CG2-button を流用
+.CG2-settings__buttonContainer {
+  ul {
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0 8px 8px 0;
+  }
+}
 
 /* ==========================================================================
    CG2-formProgress
