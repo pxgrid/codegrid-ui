@@ -5467,8 +5467,14 @@ tag:
   </div>
 </div>
 ```
-
 */
+
+// * `settings__inner`直下には2つの`col`があり、その直下にセクションが入る
+// * 各セクションは`heading`と`field`、任意の`buttonContainer`からなる
+// * `field`内にはさらに項目の並びによって書き方が変わる
+//   * 「ラベル：項目」な場合は`fieldHGroup`
+//   * そうではない通常フローの場合は`fieldVGroup`
+//   * `fieldVGroup`には`fieldHeader`と`fieldData`が入る
 
 // .CG2-settings{
 //   margin: 0 -40px;
