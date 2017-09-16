@@ -3,50 +3,40 @@
 // ===========================================================================
 
 $icons: (
-  pxg "\",
-  top "\",
-  right "\",
-  down "\",
-  left "\",
-  hamburger "\",
-  list "\",
-  setting "\",
-  search "\",
-  star "\",
-  lock "\",
-  unlock "\",
-  question "\",
-  exclamation-circle "\",
-  exclamation-triangle "\",
-  twitter "\",
-  facebook "\",
-  gplus "\",
-  cat-elementary "\",
-  cat-mastering "\",
-  cat-standards "\",
-  cat-talk "\",
-  cat-architecture "\",
-  cat-report "\",
-  cat-design "\",
-  cat-future "\",
-  cat-work-style "\",
-  cat-survey "\",
-  cat-interview "\",
-  cat-discussion "\",
+  pxg: "\",
+  top: "\",
+  right: "\",
+  down: "\",
+  left: "\",
+  hamburger: "\",
+  list: "\",
+  setting: "\",
+  search: "\",
+  star: "\",
+  lock: "\",
+  unlock: "\",
+  question: "\",
+  exclamation-circle: "\",
+  exclamation-triangle: "\",
+  twitter: "\",
+  facebook: "\",
+  gplus: "\",
+  cat-elementary: "\",
+  cat-mastering: "\",
+  cat-standards: "\",
+  cat-talk: "\",
+  cat-architecture: "\",
+  cat-report: "\",
+  cat-design: "\",
+  cat-future: "\",
+  cat-work-style: "\",
+  cat-survey: "\",
+  cat-interview: "\",
+  cat-discussion: "\",
 );
 
-@function getValue ( $assoc, $key ) {
-  @each $pair in $assoc {
-    @if nth( $pair, 1 ) == $key {
-      @return nth( $pair, 2 );
-    }
-  }
-  @return null;
-}
-
-
 @mixin icon ( $name ) {
-  content: getValue( $icons, $name );
+  content: map-get( $icons, $name );
   font-family: "codegrid-icon";
   speak: none;
   font-style: normal;
