@@ -1,0 +1,394 @@
+/* ==========================================================================
+   CG2-customers
+   ========================================================================== */
+/*
+---
+name: customers
+category:
+  - Blocks/shared
+tag:
+  - app-item
+  - www-item
+---
+
+```html
+<section class="CG2-customers">
+  <h1>団体購読も承っております</h1>
+  <p>CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
+  <div class="CG2-customers__logos">
+    <ul>
+      <li><img src="http://img.pxgrid.net/109x66" alt="" width="109" height="66"></li>
+      <li><img src="http://img.pxgrid.net/158x79" alt="" width="158" height="79"></li>
+      <li><img src="http://img.pxgrid.net/158x61" alt="" width="158" height="61"></li>
+      <li><img src="http://img.pxgrid.net/140x80" alt="" width="140" height="80"></li>
+      <li><img src="http://img.pxgrid.net/196x58" alt="" width="196" height="58"></li>
+      <li><img src="http://img.pxgrid.net/176x69" alt="" width="176" height="69"></li>
+      <li><img src="http://img.pxgrid.net/216x65" alt="" width="216" height="65"></li>
+    </ul>
+  </div>
+</section>
+```
+*/
+.CG2-customers {
+  h1 {
+    color: #282828;
+    font-size: 24px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 20px;
+
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+  }
+
+  p {
+    text-align: center;
+
+    @include max-screen( $breakpoint-middle ) {
+      font-size: 12px;
+      text-align: left;
+    }
+  }
+
+  & > *:first-child {
+    margin-top: 0;
+  }
+}
+
+.CG2-customers__logos {
+  text-align: center;
+  padding: 10px 30px;
+  background: #fff;
+
+  @include max-screen( $breakpoint-middle ) {
+    padding: 10px;
+  }
+
+  ul {
+    font-size: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 10px 20px;
+
+    @include max-screen( $breakpoint-middle ) {
+      margin: 5px;
+    }
+  }
+
+  img {
+    vertical-align: bottom;
+
+    @include max-screen( $breakpoint-middle ) {
+      zoom: 0.45;
+    }
+  }
+}
+
+
+/* ==========================================================================
+   CG2-paymentTable
+   ========================================================================== */
+/*
+---
+name: paymentTable
+category:
+  - Blocks/shared
+tag:
+  - app-item
+  - app-form
+  - www-item
+---
+
+```html
+<div class="CG2-paymentTable">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th><img src="/build/assets2/img/logos/paypal.svg" alt="PayPal" width="100" height="25"></th>
+        <th><img src="/build/assets2/img/logos/webmoney.png" alt="WebMoney" width="156" height="30"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>購読料<br><span class="CG2-paymentTable__annotation">（税込金額）</span></th>
+        <td>
+          <div class="CG2-paymentTable__priceList">
+            <ul>
+              <li>
+                <div class="CG2-paymentTable__priceLabel">月額</div>
+                <div class="CG2-paymentTable__priceValue">800</div>
+                <div class="CG2-paymentTable__priceUnit">円</div>
+                <div class="CG2-paymentTable__priceAnnotation">（税込864円）</div>
+              </li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <div class="CG2-paymentTable__priceList">
+            <ul>
+              <li>
+                <div class="CG2-paymentTable__priceLabel">月払い</div>
+                <div class="CG2-paymentTable__priceValue">800</div>
+                <div class="CG2-paymentTable__priceUnit">円</div>
+                <div class="CG2-paymentTable__priceAnnotation">（税込864円）</div>
+              </li>
+              <li>
+                <div class="CG2-paymentTable__priceLabel">年払い</div>
+                <div class="CG2-paymentTable__priceValue">9,600</div>
+                <div class="CG2-paymentTable__priceUnit">円</div>
+                <div class="CG2-paymentTable__priceAnnotation">（税込10,368円）</div>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>購読料</th>
+        <td>自動継続</td>
+        <td>随時購入</td>
+      </tr>
+      <tr>
+        <th>無料購読期間</th>
+        <td>
+          <div class="CG2-paymentTable__valueList">
+            <ul>
+              <li>
+                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
+                <span class="CG2-paymentTable__value">30</span>
+                <span class="CG2-paymentTable__valueUnit">日</span>
+              </li>
+            </ul>
+          </div>
+        </td>
+        <td>
+          <div class="CG2-paymentTable__valueList">
+            <ul>
+              <li>
+                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
+                <span class="CG2-paymentTable__valueText">なし</span>
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+*/
+.CG2-paymentTable {
+  table {
+    margin: 40px auto;
+
+    @include max-screen( $breakpoint-small ) {
+      table-layout: fixed;
+      margin-top: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  th,
+  td {
+    font-weight: normal;
+    vertical-align: middle;
+    padding: 15px 40px;
+    border: 1px solid #dbdbdb;
+    @include max-screen( $breakpoint-small ) {
+      vertical-align: top;
+      width: 50%;
+      padding: 20px 10px;
+    }
+  }
+
+  thead th,
+  thead td {
+    border: none;
+  }
+
+  tbody th {}
+  tbody td {}
+
+  th:first-child,
+  td:first-child {
+    @include max-screen( $breakpoint-small ) {
+      display: none;
+    }
+  }
+}
+
+.CG2-paymentTable__annotation {
+  font-size: 12px;
+}
+
+.CG2-paymentTable__priceList {
+  text-align: left;
+  display: inline-block;
+
+  ul {
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    display: table;
+    line-height: normal;
+    padding: 0;
+    margin: 0 -30px;
+
+    @include max-screen( $breakpoint-small ) {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  li {
+    display: table-cell;
+    margin: 0;
+
+    @include max-screen( $breakpoint-small ) {
+      display: block;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.CG2-paymentTable__priceLabel {
+  font-size: 12px;
+}
+
+.CG2-paymentTable__priceValue {
+  font-size: 32px;
+  font-family: $fontCode;
+  line-height: 1;
+  vertical-align: bottom;
+  display: inline-block;
+
+  @include max-screen( $breakpoint-small ) {
+    font-size: 28px;
+  }
+}
+
+.CG2-paymentTable__priceUnit {
+  font-size: 16px;
+  vertical-align: bottom;
+  display: inline-block;
+}
+
+.CG2-paymentTable__priceAnnotation {
+  font-size: 12px;
+}
+
+.CG2-paymentTable__valueList {
+  text-align: left;
+  display: inline-block;
+
+  ul {
+    border-collapse: separate;
+    border-spacing: 30px 0;
+    display: table;
+    line-height: normal;
+    padding: 0;
+    margin: 0 -30px;
+
+    @include max-screen( $breakpoint-small ) {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  li {
+    display: table-cell;
+    margin: 0;
+    
+    @include max-screen( $breakpoint-small ) {
+      display: block;
+    }
+  }
+}
+
+.CG2-paymentTable__valueText {
+  display: inline-block;
+
+  @include max-screen( $breakpoint-small ) {
+  }
+}
+
+.CG2-paymentTable__value {
+  font-size: 32px;
+  font-family: $fontCode;
+  line-height: 1;
+  vertical-align: bottom;
+  display: inline-block;
+
+  @include max-screen( $breakpoint-small ) {
+    font-family: $fontSansSerif;
+    font-size: 100%;
+    line-height: inherit;
+  }
+}
+
+.CG2-paymentTable__valueUnit {
+  font-size: 16px;
+  vertical-align: bottom;
+  display: inline-block;
+  
+  @include max-screen( $breakpoint-small ) {
+    font-size: 100%;
+  }
+}
+
+
+/* ==========================================================================
+   CG2-paymentLine
+   ========================================================================== */
+/*
+---
+name: paymentLine
+category:
+  - Blocks/shared
+tag:
+  - app-item
+  - www-item
+---
+
+```html
+<div class="CG2-paymentLine">
+  <span class="CG2-paymentLine__label">月額</span>
+  <span class="CG2-paymentLine__value">800</span>
+  <span class="CG2-paymentLine__unit">円</span>
+  <span class="CG2-paymentLine__extra">（税込み864円）</span>
+</div>
+```
+*/
+.CG2-paymentLine {
+  text-align: center;
+}
+
+.CG2-paymentLine__label {
+  font-family: $fontSerif;
+  font-size: 24px;
+}
+
+.CG2-paymentLine__value {
+  font-family: $fontCode;
+  font-size: 32px;
+}
+
+.CG2-paymentLine__unit {
+  font-family: $fontSerif;
+  font-size: 24px;
+}
+
+.CG2-paymentLine__extra {
+  font-size: 14px;
+}
