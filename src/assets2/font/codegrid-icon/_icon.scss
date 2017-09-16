@@ -5,13 +5,13 @@
 
 /* アイコンフォント
    ========================================================================== */
-   @font-face {
-    font-family: "<%= fontName %>";
-    src: url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
-         url('<%= fontPath %><%= fontName %>.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-  }
+@font-face {
+  font-family: "<%= fontName %>";
+  src: url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
+        url('<%= fontPath %><%= fontName %>.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 /*
 ---

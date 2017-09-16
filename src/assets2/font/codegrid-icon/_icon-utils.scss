@@ -6,30 +6,30 @@
 
 /* アイコンの基礎スタイル
    ========================================================================== */
-   %codegrid-icon {
-    font-family: "codegrid-icon";
-    speak: none;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    vertical-align: middle;
-    display: inline-block;
-  
-    // Better Font Rendering
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  // アイコンを呼び出す
-  // ===========================================================================
-  $icons: (
-    <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %>: "\<%= glyph.unicode.toString( 16 ).toUpperCase() %>",
-    <% } ); %>
-  );
-  
-  @mixin icon ( $name ) {
-    content: map-get( $icons, $name );
-    @extend %codegrid-icon;
-  }
+%codegrid-icon {
+  font-family: "codegrid-icon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+
+  // Better Font Rendering
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// アイコンを呼び出す
+// ===========================================================================
+$icons: (
+  <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %>: "\<%= glyph.unicode.toString( 16 ).toUpperCase() %>",
+  <% } ); %>
+);
+
+@mixin icon ( $name ) {
+  content: map-get( $icons, $name );
+  @extend %codegrid-icon;
+}
