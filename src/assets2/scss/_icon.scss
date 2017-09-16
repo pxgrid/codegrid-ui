@@ -1,3 +1,5 @@
+@import "icon-util";
+
 /*
 ---
 name: Icon
@@ -308,50 +310,6 @@ cat-discussion
 .CG2-icon-cat-interview:before { content: "\"; }
 .CG2-icon-cat-discussion:before { content: "\"; }
 
-
-@function getValue ( $assoc, $key ) {
-  @each $pair in $assoc {
-    @if nth( $pair, 1 ) == $key {
-      @return nth( $pair, 2 );
-    }
-  }
-  @return null;
-}
-
-$icons: (
-  pxg "\",
-  top "\",
-  right "\",
-  down "\",
-  left "\",
-  hamburger "\",
-  list "\",
-  setting "\",
-  search "\",
-  star "\",
-  lock "\",
-  unlock "\",
-  question "\",
-  exclamation-circle "\",
-  exclamation-triangle "\",
-  twitter "\",
-  facebook "\",
-  gplus "\",
-  cat-elementary "\",
-  cat-mastering "\",
-  cat-standards "\",
-  cat-talk "\",
-  cat-architecture "\",
-  cat-report "\",
-  cat-design "\",
-  cat-future "\",
-  cat-work-style "\",
-  cat-survey "\",
-  cat-interview "\",
-  cat-discussion "\",
-  
-);
-
 span.CG2-icon--colored.CG2-icon-unlock           { color: #f8a000; }
 span.CG2-icon--colored.CG2-icon-cat-elementary   { color: #f4db00; }
 span.CG2-icon--colored.CG2-icon-cat-mastering    { color: #9cc500; }
@@ -365,18 +323,3 @@ span.CG2-icon--colored.CG2-icon-cat-work-style   { color: #ef0000; }
 span.CG2-icon--colored.CG2-icon-cat-survey       { color: #ee0155; }
 span.CG2-icon--colored.CG2-icon-cat-interview    { color: #ef007e; }
 span.CG2-icon--colored.CG2-icon-cat-discussion   { color: #9c0178; }
-
-@mixin icon ( $name ) {
-  content: getValue( $icons, $name );
-  font-family: "codegrid-icon";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: middle;
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
