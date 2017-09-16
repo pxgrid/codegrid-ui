@@ -504,12 +504,6 @@ pre.line-numbers > code {
 .token a {
   color: inherit; }
 
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-/* Sub-section comment block
-   ========================================================================== */
-/* Basic comment */
 @font-face {
   font-family: 'zeroWidth';
   src: url("../font/zero-width.woff") format("woff");
@@ -632,12 +626,6 @@ iframe[name="google_conversion_frame"] {
   width: 1px;
   height: 1px; }
 
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-/* Sub-section comment block
-   ========================================================================== */
-/* Basic comment */
 /* jump
    ========================================================================== */
 @keyframes anim-jump {
@@ -1109,12 +1097,6 @@ span.CG2-icon--colored.CG2-icon-cat-discussion {
       background: #303030; }
 
 /* ==========================================================================
-   Section comment block
-   ========================================================================== */
-/* Sub-section comment block
-   ========================================================================== */
-/* Basic comment */
-/* ==========================================================================
    offsetting an in-page anchor to adjust for fixed header
    http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors
    ========================================================================== */
@@ -1326,7 +1308,6 @@ templateItem:
     transform: scale(0); } }
 
 .CG2-pageHeader {
-  *zoom: 1;
   position: fixed;
   z-index: 20;
   box-sizing: border-box;
@@ -1787,22 +1768,15 @@ templateItem:
 .CG2-pageFooter__inner {
   table-layout: fixed;
   display: table;
-  width: 1072px;
+  max-width: 1072px;
+  width: auto;
   margin: 0 auto; }
-  @media screen and (max-width: 1100px) {
-    .CG2-pageFooter__inner {
-      width: auto; } }
   @media screen and (max-width: 979px) {
     .CG2-pageFooter__inner {
       display: block; } }
-  @media screen and (max-width: 639px) {
-    .CG2-pageFooter__inner {
-      display: block;
-      width: auto; } }
   @media print {
     .CG2-pageFooter__inner {
-      display: block;
-      width: auto; } }
+      display: block; } }
 
 .CG2-pageFooter__wwwNav {
   vertical-align: top;
@@ -1848,7 +1822,6 @@ templateItem:
   border: 1px solid #282828; }
   @media screen and (max-width: 979px) {
     .CG2-pageFooter__appNav {
-      *zoom: 1;
       display: block;
       width: auto;
       padding: 20px;
@@ -2369,11 +2342,7 @@ html.js-drawer--show .CG2-drawer__panelBody {
 
 .CG2-drawerBody__userName {
   white-space: normal;
-  word-break: break-word;
   word-break: break-all;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   font-size: 12px;
   vertical-align: middle;
   display: table-cell; }
@@ -2501,12 +2470,6 @@ templateItem:
       width: auto;
       padding: 30px 20px; } }
 
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-/* Sub-section comment block
-   ========================================================================== */
-/* Basic comment */
 /* ==========================================================================
    button
    ========================================================================== */
@@ -2849,9 +2812,9 @@ tag:
 ---
 name: header1
 category:
-  - Headings_and_Contexts
+  - Content
 tag:
-  - context
+  - content
 ---
 
 ```html
@@ -2890,9 +2853,9 @@ tag:
 ---
 name: header2
 category:
-  - Headings_and_Contexts
+  - Content
 tag:
-  - context
+  - content
 ---
 
 ```html
@@ -2921,9 +2884,9 @@ tag:
 ---
 name: header3
 category:
-  - Headings_and_Contexts
+  - Content
 tag:
-  - context
+  - content
 ---
 
 ```html
@@ -2945,9 +2908,9 @@ tag:
 ---
 name: leadtext
 category:
-  - Headings_and_Contexts
+  - Content
 tag:
-  - context
+  - content
 ---
 
 ```html
@@ -2979,9 +2942,9 @@ tag:
 ---
 name: shortCentered
 category:
-  - Headings_and_Contexts
+  - Content
 tag:
-  - context
+  - content
 ---
 
 ```html
@@ -3015,9 +2978,9 @@ tag:
 ---
 name: holizontalLine
 category:
-  - Headings_and_Contexts
+  - Content
 tag:
-  - context
+  - content
 ---
 
 ```html
@@ -3664,170 +3627,476 @@ tag:
   - www-item
 ---
 
-- 未読記事には`CG2-seriesList__article--unread`追加する
-- 有料時のカギアイコンは`<span class="CG2-icon-lock"></span>`を使う。`CG2-icon--colored`は付与しない
-
 ## 通常
+
+* 未購読・非ログイン状態の場合、公開されてない記事には`CG2-seriesList__articleOrder`の前に`CG2-seriesList__articleIcon`が追加
+* 未読の場合、`CG2-seriesList__article`に`CG2-seriesList__article--unread`が追加
+* お気に入りに追加した場合、`js-toggle-fav-series`に`CG2-seriesList__itemUtilButton--favAdded`が追加
+* 著者が3人までの場合、`CG2-seriesList__authors`に著者分の`CG2-seriesList__author`が入る（`<a>`でくるまれる）
+* 著者が4人以上の場合、`CG2-seriesList__authors`の中身が`CG2-seriesList__authorPicList`に置き換わる
+* appのトップでは、リストの最後には`CG2-seriesList__itemMore`がくる
 
 ```html
 <div class="CG2-seriesList">
   <div class="CG2-seriesList__inner">
+
+    <!-- 未購読状態、ログイン前 -->
 
     <div class="CG2-seriesList__item">
       <div class="CG2-seriesList__itemHeader">
         <div class="CG2-seriesList__itemCategory">
-          <a href="#"><span class="CG2-icon-cat-architecture"></span></a>
+          <a href=""><span class="CG2-icon-cat-talk"></span></a>
         </div>
         <div class="CG2-seriesList__itemTitle">
-          <a href="javascript:alert( 'シリーズ一覧へ' );">
-            <div class="CG2-seriesList__itemTitleText">Web Fonts 自由自在</div>
-          </a>
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">Webの文字の読みやすさ</span>
+            </a>
+          </div>
         </div>
         <div class="CG2-seriesList__itemUtil">
           <ul>
-            <li><a href="#"><span class="CG2-icon-list"></span></a></li>
-            <li><button class="CG2-seriesList__itemUtilButton--favAdded" onclick="javascript:alert('added to fav list');"><span class="CG2-icon-star"></span></button></li>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
           </ul>
         </div>
       </div>
-      <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
+      <div style="background-image: url('//cdn.codegrid.net/2014-readable-text-design/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
       <div class="CG2-seriesList__articles">
-        <div class="CG2-seriesList__article CG2-seriesList__article--unread">
-          <a href="#">
+        <div class="CG2-seriesList__article">
+          <a href="">
             <div class="CG2-seriesList__articleIcon">
-              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+              <div class="CG2-icon-lock"></div>
             </div>
             <div class="CG2-seriesList__articleOrder">第3回</div>
-            <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
-            <div class="CG2-seriesList__articleDate">4/16</div>
+            <div class="CG2-seriesList__articleTitle">読みやすさのために</div>
+            <div class="CG2-seriesList__articleDate">2014年07月17日</div>
           </a>
         </div>
         <div class="CG2-seriesList__article">
-          <a href="#">
+          <a href="">
             <div class="CG2-seriesList__articleIcon">
-              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+              <div class="CG2-icon-lock"></div>
             </div>
             <div class="CG2-seriesList__articleOrder">第2回</div>
-            <div class="CG2-seriesList__articleTitle">gulpで生成を自動化</div>
-            <div class="CG2-seriesList__articleDate">4/9</div>
+            <div class="CG2-seriesList__articleTitle">日本語の「読みやすさ」</div>
+            <div class="CG2-seriesList__articleDate">2014年07月10日</div>
           </a>
         </div>
         <div class="CG2-seriesList__article">
-          <a href="#">
-            <div class="CG2-seriesList__articleIcon">
-              <span class="CG2-icon-unlock CG2-icon--colored"></span>
-            </div>
+          <a href="">
             <div class="CG2-seriesList__articleOrder">第1回</div>
-            <div class="CG2-seriesList__articleTitle">Webアプリの利用</div>
-            <div class="CG2-seriesList__articleDate">4/2</div>
+            <div class="CG2-seriesList__articleTitle">あらためて、Webって？</div>
+            <div class="CG2-seriesList__articleDate">2014年07月03日</div>
           </a>
         </div>
       </div>
       <div class="CG2-seriesList__authors">
-        <a href="#">
+        <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">中村 享介 | フロントエンド・エンジニア</div>
           </div>
         </a>
-        <a href="#">
+        <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">小原 司 | UIデザイナー</div>
           </div>
         </a>
-        <a href="#">
+        <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">丸山 陽子 | エディター</div>
           </div>
         </a>
       </div>
     </div>
 
-    <!-- .CG2-seriesList__item 繰り返し -->
+    <!-- 購読済、ログイン後、お気に入り、未読あり -->
 
-    <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
+    <div class="CG2-seriesList__item">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory">
+          <a href=""><span class="CG2-icon-cat-mastering"></span></a>
+        </div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">z-index再入門</span>
+            </a>
+          </div>
+        </div>
+        <div class="CG2-seriesList__itemUtil">
+          <ul>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
+            <li>
+              <button type="button" aria-pressed="true" class="js-toggle-fav-series CG2-seriesList__itemUtilButton--favAdded">
+                <span aria-label="このシリーズのお気に入り解除" class="CG2-icon-star"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="background-image: url('//cdn.codegrid.net/2014-mastering-css/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article CG2-seriesList__article--unread">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第3回</div>
+            <div class="CG2-seriesList__articleTitle">z-indexの困った使用例</div>
+            <div class="CG2-seriesList__articleDate">2014年05月29日</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第2回</div>
+            <div class="CG2-seriesList__articleTitle">意図した順序に要素を重ねる</div>
+            <div class="CG2-seriesList__articleDate">2014年05月22日</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第1回</div>
+            <div class="CG2-seriesList__articleTitle">z-indexの仕組み</div>
+            <div class="CG2-seriesList__articleDate">2014年05月15日</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <a href="">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">坂巻 翔大郎 | フロントエンド・エンジニア</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 著者4人、お気に入り -->
+
+    <div class="CG2-seriesList__item">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory">
+          <a href=""><span class="CG2-icon-cat-standards"></span></a>
+        </div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">今日から使えるCSS</span>
+            </a>
+          </div>
+        </div>
+        <div class="CG2-seriesList__itemUtil">
+          <ul>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
+            <li>
+              <button type="button" aria-pressed="true" class="js-toggle-fav-series CG2-seriesList__itemUtilButton--favAdded">
+                <span aria-label="このシリーズのお気に入り解除" class="CG2-icon-star"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="background-image: url('//cdn.codegrid.net/2016-useful-css/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第4回</div>
+            <div class="CG2-seriesList__articleTitle">CSS Custom Properties</div>
+            <div class="CG2-seriesList__articleDate">2017年05月04日</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第3回</div>
+            <div class="CG2-seriesList__articleTitle">position: sticky</div>
+            <div class="CG2-seriesList__articleDate">2017年04月27日</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第2回</div>
+            <div class="CG2-seriesList__articleTitle">@supportsルール</div>
+            <div class="CG2-seriesList__articleDate">2017年02月16日</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <div class="CG2-seriesList__authorPicList">
+          <ul>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- 著者たくさん、未読あり -->
+
+    <div class="CG2-seriesList__item">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory">
+          <a href=""><span class="CG2-icon-cat-interview"></span></a>
+        </div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">エンジニアに聞く、仕事の行方</span>
+            </a>
+          </div>
+        </div>
+        <div class="CG2-seriesList__itemUtil">
+          <ul>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
+            <li>
+              <button type="button" aria-pressed="false" class="js-toggle-fav-series">
+                <span aria-label="このシリーズのお気に入り解除" class="CG2-icon-star"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="background-image: url('//cdn.codegrid.net/future-works/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article CG2-seriesList__article--unread">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第13回</div>
+            <div class="CG2-seriesList__articleTitle">奥野 賢太郎 編</div>
+            <div class="CG2-seriesList__articleDate">2017年08月24日</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article CG2-seriesList__article--unread">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第12回</div>
+            <div class="CG2-seriesList__articleTitle">矢倉 眞隆 編</div>
+            <div class="CG2-seriesList__articleDate">2017年05月04日</div>
+          </a>
+        </div>
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第11回</div>
+            <div class="CG2-seriesList__articleTitle">森 大典 編</div>
+            <div class="CG2-seriesList__articleDate">2016年07月28日</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <div class="CG2-seriesList__authorPicList">
+          <ul>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="德田 和規" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="宇野 陽太" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="森 大典" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中島 直博" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="大杉 充" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="外村 奈津子" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="丸山 陽子" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- more -->
+
+    <div class="CG2-seriesList__itemMore">
+      <a href="">more</a>
+    </div>
 
   </div>
 </div>
-
 ```
 
-## full width
+## 全幅
+
+appトップの今週号や、各号のページで利用。
+
+`CG2-seriesList__item`に`CG2-seriesList__item--fullWidth`が追加されただけで、その他は特に変わらない。
 
 ```html
 <div class="CG2-seriesList">
   <div class="CG2-seriesList__inner">
 
+    <!-- 未購読 -->
+
     <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
       <div class="CG2-seriesList__itemHeader">
         <div class="CG2-seriesList__itemCategory">
-          <a href="#"><span class="CG2-icon-cat-architecture"></span>実践</a>
+          <a href=""><span class="CG2-icon-cat-mastering"></span></a>
         </div>
-        <div class="CG2-seriesList__itemTitle">Web Fonts 自由自在</div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">Chrome DevToolsをモバイル開発で使いこなす</span>
+            </a>
+          </div>
+        </div>
         <div class="CG2-seriesList__itemUtil">
           <ul>
-            <li><a href="#"><span class="CG2-icon-list"></span></a></li>
-            <li><button class="CG2-seriesList__itemUtilButton--favAdded" onclick="javascript:alert('added to fav list');"><span class="CG2-icon-star"></span></button></li>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
           </ul>
         </div>
       </div>
-      <div class="CG2-seriesList__coverImage CG2-seriesList__coverImage--blurry" style="background-image: url( '/build/img/_01.jpg' )"></div>
+      <div style="background-image: url('//cdn.codegrid.net/2017-chrome-devtools/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
       <div class="CG2-seriesList__articles">
         <div class="CG2-seriesList__article">
-          <a href="#">
+          <a href="">
             <div class="CG2-seriesList__articleIcon">
-              <span class="CG2-icon-unlock CG2-icon--colored"></span>
+              <div class="CG2-icon-lock"></div>
             </div>
-            <div class="CG2-seriesList__articleOrder">第3回</div>
-            <div class="CG2-seriesList__articleTitle">アイコンの配置テクニック</div>
-            <div class="CG2-seriesList__articleDate">4/16</div>
+            <div class="CG2-seriesList__articleOrder">第2回</div>
+            <div class="CG2-seriesList__articleTitle">モバイルWebアプリ開発に活用</div>
+            <div class="CG2-seriesList__articleDate">2017年06月01日</div>
           </a>
         </div>
       </div>
       <div class="CG2-seriesList__authors">
-        <a href="#">
+        <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="CG2-seriesList__author">
-            <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-            </div>
-            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
-          </div>
-        </a>
-        <a href="#">
-          <div class="CG2-seriesList__author">
-            <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
-            </div>
-            <div class="CG2-seriesList__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">矢倉 眞隆 | フロントエンド・エンジニア</div>
           </div>
         </a>
       </div>
     </div>
 
-    <!-- .CG2-seriesList__item.CG2-seriesList__item--fullWidth 繰り返し -->
+    <!-- 購読済、お気に入り -->
 
-    <div class="CG2-seriesList__itemMore"><a href="#">more</a></div>
+    <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory">
+          <a href=""><span class="CG2-icon-cat-standards"></span></a>
+        </div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">今日から使えるCSS</span>
+            </a>
+          </div>
+        </div>
+        <div class="CG2-seriesList__itemUtil">
+          <ul>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
+            <li>
+              <button type="button" aria-pressed="false" class="js-toggle-fav-series CG2-seriesList__itemUtilButton--favAdded">
+                <span aria-label="このシリーズのお気に入り解除" class="CG2-icon-star"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="background-image: url('//cdn.codegrid.net/2016-useful-css/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第2回</div>
+            <div class="CG2-seriesList__articleTitle">@supportsルール</div>
+            <div class="CG2-seriesList__articleDate">2017年02月16日</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <a href="">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">坂巻 翔大郎 | フロントエンド・エンジニア</div>
+          </div>
+        </a>
+        <a href="">
+          <div class="CG2-seriesList__author">
+            <div class="CG2-seriesList__authorPic">
+              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+            </div>
+            <div class="CG2-seriesList__authorName">矢倉 眞隆 | フロントエンド・エンジニア</div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 著者たくさん、未読あり -->
+
+    <div class="CG2-seriesList__item CG2-seriesList__item--fullWidth">
+      <div class="CG2-seriesList__itemHeader">
+        <div class="CG2-seriesList__itemCategory">
+          <a href=""><span class="CG2-icon-cat-survey"></span></a>
+        </div>
+        <div class="CG2-seriesList__itemTitle">
+          <div class="CG2-seriesList__itemTitleInner">
+            <a href="">
+              <span class="CG2-seriesList__itemTitleText">ピクセルグリッドの開発環境サーベイ 2017</span>
+            </a>
+          </div>
+        </div>
+        <div class="CG2-seriesList__itemUtil">
+          <ul>
+            <li><a href=""><span class="CG2-icon-list"></span></a></li>
+            <li>
+              <button type="button" aria-pressed="false" class="js-toggle-fav-series">
+                <span aria-label="このシリーズのお気に入り解除" class="CG2-icon-star"></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style="background-image: url('//cdn.codegrid.net/2017-tool-survey/main-blur.jpg')" class="CG2-seriesList__coverImage"></div>
+      <div class="CG2-seriesList__articles">
+        <div class="CG2-seriesList__article CG2-seriesList__article--unread">
+          <a href="">
+            <div class="CG2-seriesList__articleOrder">第1回</div>
+            <div class="CG2-seriesList__articleTitle">エディタとおすすめツール編</div>
+            <div class="CG2-seriesList__articleDate">2017年03月02日</div>
+          </a>
+        </div>
+      </div>
+      <div class="CG2-seriesList__authors">
+        <div class="CG2-seriesList__authorPicList">
+          <ul>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="森 大典" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="德田 和規" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="丸山 陽子" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="宇野 陽太" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="大杉 充" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中島 直博" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
+            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
 ```
-
 */
 .CG2-seriesList__author, .CG2-series__author {
   display: table;
@@ -4111,8 +4380,6 @@ button.CG2-seriesList__itemUtilButton--favAdded span[class^="CG2-icon"] {
   .CG2-seriesList__item:hover .CG2-seriesList__coverImage,
   .CG2-seriesList__item:focus .CG2-seriesList__coverImage {
     transform: scale(1.4, 1.4); }
-  .CG2-seriesList__coverImage.CG2-seriesList__coverImage--blurry {
-    filter: blur(24px); }
 
 .CG2-seriesList__articles {
   position: relative;
@@ -4148,7 +4415,7 @@ button.CG2-seriesList__itemUtilButton--favAdded span[class^="CG2-icon"] {
   vertical-align: middle;
   box-sizing: border-box;
   width: 1px;
-  padding: 0 15px; }
+  padding: 0 12px 0 18px; }
   .CG2-seriesList__item--fullWidth .CG2-seriesList__articleIcon {
     font-size: 18px; }
   @media screen and (max-width: 767px) {
@@ -4318,6 +4585,8 @@ templateItem:
   - true
 ---
 
+## 購読済
+
 ```html
 <div class="CG2-seriesHeader">
   <div class="CG2-seriesHeader__inner">
@@ -4325,24 +4594,84 @@ templateItem:
       <div class="CG2-seriesHeader__categoryIcon">
         <span class="CG2-icon-cat-architecture"></span>
       </div>
-      <div class="CG2-seriesHeader__categoryName">カテゴリー名</div>
+      <div class="CG2-seriesHeader__categoryName">設計</div>
     </div>
     <div class="CG2-seriesHeader__main">
       <div class="CG2-seriesHeader__mainInner">
-        <div class="CG2-seriesHeader__title">Vue.jsを使いこなす</div>
+        <div class="CG2-seriesHeader__title">jQuery初心者のためのJavaScript設計トレーニング</div>
         <div class="CG2-seriesHeader__length">
-          全<span class="CG2-seriesHeader__value">8</span>回
+          全<span class="CG2-seriesHeader__value">1</span>回
         </div>
       </div>
     </div>
     <div class="CG2-seriesHeader__utils">
-      <button class="CG2-transparentButton"><span class="CG2-icon-star"></span>このシリーズをお気に入りに登録</button>
+      <button id="js-toggle-fav-series" type="button" aria-pressed="false" class="CG2-transparentButton">
+        <span aria-hidden="true" class="CG2-icon-star"></span>
+        <span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span>
+      </button>
     </div>
   </div>
-  <div class="CG2-seriesHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
+  <div style="background-image: url(//cdn.codegrid.net/2016-js-training-for-beginners/main-blur.jpg)" class="CG2-seriesHeader__bg"></div>
 </div>
 ```
 
+## 購読済、お気に入り追加
+
+`CG2-seriesHeader__utils`内のボタンが変化する。
+
+```html
+<div class="CG2-seriesHeader">
+  <div class="CG2-seriesHeader__inner">
+    <div class="CG2-seriesHeader__category">
+      <div class="CG2-seriesHeader__categoryIcon">
+        <span class="CG2-icon-cat-architecture"></span>
+      </div>
+      <div class="CG2-seriesHeader__categoryName">デザイン</div>
+    </div>
+    <div class="CG2-seriesHeader__main">
+      <div class="CG2-seriesHeader__mainInner">
+        <div class="CG2-seriesHeader__title">きちんと学ぶユーザーインターフェース</div>
+        <div class="CG2-seriesHeader__length">
+          全<span class="CG2-seriesHeader__value">4</span>回
+        </div>
+      </div>
+    </div>
+    <div class="CG2-seriesHeader__utils">
+      <button id="js-toggle-fav-series" type="button" aria-pressed="true" class="CG2-transparentButton CG2-transparentButton--favAdded">
+        <span aria-hidden="true" class="CG2-icon-star"></span>
+        <span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span>
+      </button>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2017-mastering-ui/main-blur.jpg)" class="CG2-seriesHeader__bg"></div>
+</div>
+```
+
+## 未購読・非ログイン
+
+`CG2-seriesHeader__utils`がない。
+
+```html
+<div class="CG2-seriesHeader">
+  <div class="CG2-seriesHeader__inner">
+    <div class="CG2-seriesHeader__category">
+      <div class="CG2-seriesHeader__categoryIcon">
+        <span class="CG2-icon-cat-architecture"></span>
+      </div>
+      <div class="CG2-seriesHeader__categoryName">未来・次世代</div>
+    </div>
+    <div class="CG2-seriesHeader__main">
+      <div class="CG2-seriesHeader__mainInner">
+        <div class="CG2-seriesHeader__title">一歩先行くCSS</div>
+        <div class="CG2-seriesHeader__length">
+          全<span class="CG2-seriesHeader__value">2</span>回
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2016-future-css/main-blur.jpg)" class="CG2-seriesHeader__bg"></div>
+</div>
+```
 */
 .CG2-seriesHeader {
   overflow: hidden;
@@ -4429,8 +4758,6 @@ templateItem:
   background-size: cover;
   transform: scale(1.2, 1.2);
   opacity: .64; }
-  .CG2-seriesHeader__bg.CG2-seriesHeader__bg--blurry {
-    filter: blur(24px); }
 
 /* ==========================================================================
    CG2-series
@@ -4445,70 +4772,92 @@ tag:
   - app-item-articlelist
 ---
 
-- 未読時は`CG2-series__item--unread`を追加する
-- 有料記事のアイコンは`<span class="CG2-icon-lock"></span>`を利用する。このとき`CG2-icon--colored`は不要
-
+## 未購読・購読済、著者1人・2人
 
 ```html
-
 <div class="CG2-series">
   <div class="CG2-series__item">
     <div class="CG2-series__itemHeader">
-      <a href="#">
+      <a href="">
         <div class="CG2-series__itemIcon">
-          <span class="CG2-icon-unlock CG2-icon--colored"></span>
+          <div class="CG2-icon-lock"></div>
         </div>
-        <div class="CG2-series__itemTitle">第1回 Vue.jsとは</div>
-        <div class="CG2-series__itemPubdate">2015/04/23</div>
+        <div class="CG2-series__itemTitle">第2回 SVGデータの作成 1</div>
+        <div class="CG2-series__itemPubdate">2014年05月15日</div>
       </a>
     </div>
     <div class="CG2-series__itemBody">
-      <p>双方向データバインディングに特化したVue.jsは、シンプルで学習コストも低いといわれます。第1回目はVue.jsがフレームワークとして、どんな強みをもっているのか、その特徴をコードから概観します。</p>
+      <p>Web媒体で使用するSVGデータの作成方法をAdobe Illustrator CCでのデータ作成、SVG書き出しを例に紹介します。まずは元データ作成時の環境設定、作成時の注意点などを解説します。</p>
     </div>
     <div class="CG2-series__authors">
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a>
         </div>
-        <div class="CG2-series__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
       </div>
     </div>
   </div>
-
-  <div class="CG2-series__item CG2-series__item--unread">
+  <div class="CG2-series__item">
     <div class="CG2-series__itemHeader">
-      <a href="#">
-        <div class="CG2-series__itemIcon">
-          <span class="CG2-icon-unlock CG2-icon--colored"></span>
-        </div>
-        <div class="CG2-series__itemTitle">第1回 Vue.jsとは</div>
-        <div class="CG2-series__itemPubdate">2015/04/23</div>
+      <a href="">
+        <div class="CG2-series__itemTitle">第1回 SVGコードの基本</div>
+        <div class="CG2-series__itemPubdate">2014年05月08日</div>
       </a>
     </div>
     <div class="CG2-series__itemBody">
-      <p>双方向データバインディングに特化したVue.jsは、シンプルで学習コストも低いといわれます。第1回目はVue.jsがフレームワークとして、どんな強みをもっているのか、その特徴をコードから概観します。</p>
+      <p>この記事ではまずSVGのコードとしての基本と、さまざまな実装方法を概観してみましょう。それぞれの特徴を捉えられると、実装方法の選択が適切にできます。</p>
     </div>
     <div class="CG2-series__authors">
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <img src="http://img.pxgrid.net/40x40" alt="" width="40" height="40">
+          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a>
         </div>
-        <div class="CG2-series__authorName">高津戸 壮 | フロントエンド・エンジニア</div>
+        <div class="CG2-series__authorName">小山田 晃浩 | フロントエンド・エンジニア</div>
+      </div>
+      <div class="CG2-series__author">
+        <div class="CG2-series__authorPic">
+          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a>
+        </div>
+        <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
       </div>
     </div>
   </div>
-
-  <div class="CG2-series__item">
-    ...
-  </div>
-
-  <div class="CG2-series__item">
-    ...
-  </div>
-
 </div>
 ```
 
+## 著者複数、未読
+
+```html
+<div class="CG2-series">
+  <div class="CG2-series__item CG2-series__item--unread">
+    <div class="CG2-series__itemHeader">
+      <a href="">
+        <div class="CG2-series__itemTitle">第1回 コミュニケーションツール</div>
+        <div class="CG2-series__itemPubdate">2013年10月10日</div>
+      </a>
+    </div>
+    <div class="CG2-series__itemBody">
+      <p>第1回はピクセルグリッドが日常の業務でのクライアントとのコミュニケーション方法やコミュニケーションツールがテーマです。</p>
+    </div>
+    <div class="CG2-series__authors">
+      <div class="CG2-series__authorPicList">
+        <ul>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="外村 奈津子" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+```
 */
 .CG2-series__item {
   margin-top: 45px; }
@@ -4565,7 +4914,7 @@ tag:
   .CG2-series__item--unread .CG2-series__itemTitle {
     font-weight: bold; }
   .CG2-series__itemTitle:first-child {
-    padding-left: 10px; }
+    padding-left: 20px; }
   @media screen and (max-width: 767px) {
     .CG2-series__itemTitle {
       font-size: 14px;
@@ -4752,6 +5101,172 @@ tag:
 </div>
 ```
 
+## 通常
+
+```html
+<div class="CG2-articleHeader">
+  <div class="CG2-articleHeader__inner">
+    <div class="CG2-articleHeader__category">
+      <div class="CG2-articleHeader__categoryIcon">
+        <span class="CG2-icon-cat-standards"></span>
+      </div>
+      <div class="CG2-articleHeader__categoryName">仕様解説</div>
+    </div>
+    <div class="CG2-articleHeader__main">
+      <div class="CG2-articleHeader__mainInner">
+        <div class="CG2-articleHeader__series">そこが知りたい、Flexible Box</div>
+        <div class="CG2-articleHeader__title">第2回 仕様を知る 2</div>
+        <div class="CG2-articleHeader__abstract">
+          <p>フレックスアイテムにflex-growやflex-shrinkを設定すると、フレックスコンテナの範囲内で伸びたり、縮んだりします。このときひとつひとつのアイテムの長さがどのように決まるのか解説します。</p>
+        </div>
+        <div class="CG2-articleHeader__pubDate">2015年04月16日発行</div>
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage">
+                <img src="http://img.pxgrid.net/48x48" alt="坂巻 翔大郎">
+              </div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="CG2-articleHeader__pagenation">
+      <ul>
+        <li class="CG2-articleHeader__pagenationPrev"><a href="">前回</a></li>
+        <li class="CG2-articleHeader__pagenationNext"><a href="">次回</a></li>
+      </ul>
+    </div>
+    <div class="CG2-articleHeader__utils">
+      <ul>
+        <li>
+          <a href="" class="CG2-transparentButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a>
+        </li>
+        <li>
+          <button id="js-toggle-fav-series" type="button" aria-pressed="false" class="CG2-transparentButton">
+            <span aria-hidden="true" class="CG2-icon-star"></span>
+            <span class="CG2-transparentButton__favText">このシリーズをお気に入りに登録</span>
+          </button>
+        </li>
+        <li>
+          <button id="js-unread" class="CG2-transparentButton">未読にする</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2015-css-flexiblebox/main-blur.jpg)" class="CG2-articleHeader__bg"></div>
+</div>
+```
+
+## 著者複数、前次回なし、お気に入り済、未読押下後
+
+```html
+<div data-page-id="entry-main" class="CG2-articleHeader">
+  <div class="CG2-articleHeader__inner">
+    <div class="CG2-articleHeader__category">
+      <div class="CG2-articleHeader__categoryIcon">
+        <span class="CG2-icon-cat-survey"></span>
+      </div>
+      <div class="CG2-articleHeader__categoryName">アンケート</div>
+    </div>
+    <div class="CG2-articleHeader__main">
+      <div class="CG2-articleHeader__mainInner">
+        <div class="CG2-articleHeader__series">ピクセルグリッド技術サーベイ 2015</div>
+        <div class="CG2-articleHeader__title">第1回 JavaScriptトランスパイラ編</div>
+        <div class="CG2-articleHeader__abstract">
+          <p>技術サーベイの第1回目は、 JavaScriptトランスパイラ編。最終的にJavaScriptとして書き出される3つの言語の使用経験を聞きました。どんな理由で使うのか、その将来性に迫ります。</p>
+        </div>
+        <div class="CG2-articleHeader__pubDate">2015年06月18日発行</div>
+        <div class="CG2-articleHeader__authors">
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="中村 享介"></div>
+              <div class="CG2-articleHeader__authorName">中村 享介</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="高津戸 壮"></div>
+              <div class="CG2-articleHeader__authorName">高津戸 壮</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="小山田 晃浩"></div>
+              <div class="CG2-articleHeader__authorName">小山田 晃浩</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="德田 和規"></div>
+              <div class="CG2-articleHeader__authorName">德田 和規</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="山田 順久"></div>
+              <div class="CG2-articleHeader__authorName">山田 順久</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="小原 司"></div>
+              <div class="CG2-articleHeader__authorName">小原 司</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="山田 敬美"></div>
+              <div class="CG2-articleHeader__authorName">山田 敬美</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="坂巻 翔大郎"></div>
+              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="中島 直博"></div>
+              <div class="CG2-articleHeader__authorName">中島 直博</div>
+            </a>
+          </div>
+          <div class="CG2-articleHeader__author">
+            <a href="">
+              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="宇野 陽太"></div>
+              <div class="CG2-articleHeader__authorName">宇野 陽太</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="CG2-articleHeader__pagenation">
+      <ul>
+      </ul>
+    </div>
+    <div class="CG2-articleHeader__utils">
+      <ul>
+        <li>
+          <a href="" class="CG2-transparentButton"><span class="CG2-icon-list"></span>このシリーズの記事一覧をみる</a>
+        </li>
+        <li>
+          <button id="js-toggle-fav-series" type="button" aria-pressed="false" class="CG2-transparentButton CG2-transparentButton--favAdded">
+            <span aria-hidden="true" class="CG2-icon-star"></span>
+            <span class="CG2-transparentButton__favText">このシリーズのお気に入り解除</span>
+          </button>
+        </li>
+        <li>
+          <button id="js-unread" class="CG2-transparentButton" disabled>未読にする</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div style="background-image: url(//cdn.codegrid.net/2015-tech-survey/main-blur.jpg)" class="CG2-articleHeader__bg"></div>
+</div>
+```
 */
 .CG2-articleHeader {
   overflow: hidden;
@@ -5059,8 +5574,6 @@ tag:
   background-size: cover;
   transform: scale(1.2, 1.2);
   opacity: .64; }
-  .CG2-articleHeader__bg.CG2-articleHeader__bg--blurry {
-    filter: blur(24px); }
 
 @media print {
   .CG2-articleHeader {
@@ -5297,7 +5810,6 @@ templateItem:
 
 */
 .CG2-narrowLayout {
-  *zoom: 1;
   max-width: 1016px;
   margin: 0 auto; }
   .CG2-narrowLayout:before, .CG2-narrowLayout:after {
@@ -5723,9 +6235,12 @@ tag:
         <td>データセル</td>
         <td>データセル</td>
       </tr>
-    </tbody></table>
-    <table>
-      <tbody><tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+      <tr>
         <th>見出しセル</th>
         <td>データセル</td>
         <td>データセル</td>
@@ -5738,18 +6253,6 @@ tag:
     </tbody>
   </table>
 
-  <aside>
-    <h1>*注：Autoprefixer</h1>
-    <p>Autoprefixerに関しては、次の記事を参照してください。<br><a href="#">「ビルドツールアラカルト」</a>シリーズ</p>
-  </aside>
-
-  <div class="Column">
-    <h1>コラムタイトル</h1>
-    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
-    <p><img src="http://img.pxgrid.net/1000x200"></p>
-    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
-  </div>
-
 </article>
 ```
 
@@ -5760,11 +6263,7 @@ article.CG2-article {
   border-bottom: 1px solid #dbdbdb;
   padding-bottom: 30px;
   margin-bottom: 20px;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto; }
+  word-wrap: break-word; }
   @media screen and (max-width: 767px) {
     article.CG2-article {
       line-height: 2;
@@ -5819,22 +6318,14 @@ article.CG2-article {
   article.CG2-article table {
     margin: 2em 0; }
     article.CG2-article table th, article.CG2-article table td {
-      word-wrap: break-word;
-      word-break: break-word;
       word-break: break-all;
-      overflow-wrap: break-word;
       padding: .3em 10px;
       border: 1px solid #dbdbdb; }
       article.CG2-article table th:first-child, article.CG2-article table td:first-child {
-        word-wrap: normal;
-        word-break: normal;
-        overflow-wrap: normal; }
+        word-wrap: normal; }
         @media screen and (max-width: 767px) {
           article.CG2-article table th:first-child, article.CG2-article table td:first-child {
-            word-wrap: break-word;
-            word-break: break-word;
-            word-break: break-all;
-            overflow-wrap: break-word; } }
+            word-break: break-all; } }
     article.CG2-article table th {
       background: #eee; }
   article.CG2-article figure {
@@ -5849,15 +6340,19 @@ article.CG2-article {
         article.CG2-article figure img {
           max-width: 100%;
           height: auto; } }
-  article.CG2-article pre {
+  article.CG2-article pre, article.CG2-article code {
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    line-height: 1.6; }
+    background-color: #f5f2f0; }
+  article.CG2-article pre {
+    line-height: 1.6;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto; }
     article.CG2-article pre code {
+      padding: 0;
       display: block; }
   article.CG2-article code {
-    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-    padding: 2px;
-    background: #f5f2f0; }
+    padding: 2px; }
   article.CG2-article section.CG2-article__rel {
     font-size: 14px;
     line-height: 1.6;
@@ -5884,24 +6379,6 @@ article.CG2-article {
     article.CG2-article section.CG2-article__rel > *:first-child {
       margin-top: 0; }
     article.CG2-article section.CG2-article__rel > *:last-child {
-      margin-bottom: 0; }
-  article.CG2-article aside {
-    color: #777;
-    font-size: 14px;
-    margin: 2em 0; }
-    @media screen and (max-width: 767px) {
-      article.CG2-article aside {
-        font-size: 10px;
-        margin: 1.6em 0; } }
-    article.CG2-article aside h1 {
-      font-size: 100%;
-      font-weight: bold;
-      margin: 0; }
-    article.CG2-article aside p {
-      margin: 0; }
-    article.CG2-article aside > *:first-child {
-      margin-top: 0; }
-    article.CG2-article aside > *:last-child {
       margin-bottom: 0; }
 
 @media print {
@@ -5969,6 +6446,30 @@ article.CG2-article pre.code {
   border: 1px solid #dbdbdb;
   background: #f5f2f0; }
 
+/* ==========================================================================
+   ImgBox
+   ========================================================================== */
+/*
+---
+name: ImgBox
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<article class="CG2-article">
+
+  <div class="ImgBox">
+    <h1>ラベル</h1>
+    <p>キャプション</p>
+    <p><img src="http://img.pxgrid.net/1000x200"></p>
+  </div>
+
+</article>
+```
+*/
 article.CG2-article .ImgBox {
   margin: 2em 0; }
 
@@ -6001,6 +6502,31 @@ article.CG2-article .ImgBox img {
   border: 1px solid #ccc;
   margin: 5px 0; }
 
+/* ==========================================================================
+   Column
+   ========================================================================== */
+/*
+---
+name: Column
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<article class="CG2-article">
+
+  <div class="Column">
+    <h1>コラムタイトル</h1>
+    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
+    <p><img src="http://img.pxgrid.net/1000x200"></p>
+    <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
+  </div>
+
+</article>
+```
+*/
 article.CG2-article .Column {
   font-size: 14px;
   line-height: 1.6;
@@ -6020,12 +6546,18 @@ article.CG2-article .Column {
     max-width: 100%; }
 
 article.CG2-article .Column h1,
+article.CG2-article .Column h2,
+article.CG2-article .Column h3,
+article.CG2-article .Column h4,
 article.CG2-article .Column-title {
   font-size: 14px;
   font-weight: bold;
   margin: 0; }
   @media screen and (max-width: 767px) {
     article.CG2-article .Column h1,
+    article.CG2-article .Column h2,
+    article.CG2-article .Column h3,
+    article.CG2-article .Column h4,
     article.CG2-article .Column-title {
       font-size: 12px;
       margin-bottom: 3px; } }
@@ -6039,6 +6571,29 @@ article.CG2-article .Column-body > *:last-child {
 article.CG2-article pre + .Column {
   margin-top: 2em; }
 
+/* ==========================================================================
+   Note
+   ========================================================================== */
+/*
+---
+name: Note
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<article class="CG2-article">
+
+  <div class="Note">
+    <h1>*注：Autoprefixer</h1>
+    <p>Autoprefixerに関しては、次の記事を参照してください。<br><a href="">「ビルドツールアラカルト」</a>シリーズ</p>
+  </div>
+
+</article>
+```
+*/
 article.CG2-article .Note {
   color: #777;
   font-size: 14px;
@@ -6051,6 +6606,9 @@ article.CG2-article .Note {
     margin: 0; }
 
 article.CG2-article .Note h1,
+article.CG2-article .Note h2,
+article.CG2-article .Note h3,
+article.CG2-article .Note h4,
 article.CG2-article .Note-title {
   font-size: 100%;
   font-weight: bold;
@@ -6061,6 +6619,25 @@ article.CG2-article .Note-body > *:first-child {
 
 article.CG2-article .Note-body > *:last-child {
   margin-bottom: 0; }
+
+article.CG2-article aside {
+  color: #777;
+  font-size: 14px;
+  margin: 2em 0; }
+  @media screen and (max-width: 767px) {
+    article.CG2-article aside {
+      font-size: 10px;
+      margin: 1.6em 0; } }
+  article.CG2-article aside h1 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: 0; }
+  article.CG2-article aside p {
+    margin: 0; }
+  article.CG2-article aside > *:first-child {
+    margin-top: 0; }
+  article.CG2-article aside > *:last-child {
+    margin-bottom: 0; }
 
 /* ==========================================================================
    CG2-articlePagination
@@ -6206,7 +6783,6 @@ tag:
 .CG2-articleUtil {
   margin: 20px 0; }
   .CG2-articleUtil ul {
-    *zoom: 1;
     list-style: none;
     padding: 0;
     margin: 0; }
@@ -6284,14 +6860,15 @@ tag:
 
 ```
 
-動く demo として、iframe を埋め込むことができる
+## iframe埋め込み
 
-iframeには、
+作ったデモをiframeで埋め込める。
+以下の追加クラスで、高さの指定が可能。
 
 - CG2-livecode__frame--small
 - CG2-livecode__frame--large
 
-を追加クラスとして明示することも可能。その場合それぞれ、iframeの高さが190px、590pxとなる。
+なお、iPhoneの場合はiframeが伸びる仕様を回避するため、高さが固定される。
 
 ```html
 <section class="CG2-livecode">
@@ -6313,7 +6890,6 @@ iframeには、
   </div>
 </section>
 ```
-
 */
 section.CG2-livecode {
   margin: 2em 0; }
@@ -6440,6 +7016,9 @@ section.CG2-livecode {
     text-align: center;
     display: block;
     width: 100%; }
+
+.CG2-livecode__body--inner {
+  height: 40vh; }
 
 /* ==========================================================================
    CG2-profile
@@ -6670,7 +7249,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/80x80" alt="" width="80" height="80"></div>
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">代表取締役, フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
@@ -6679,97 +7258,99 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/80x80" alt="" width="80" height="80"></div>
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
     </div>
 
-    <div class="CG2-authorList__item">...</div>
-    <div class="CG2-authorList__item">...</div>
-    <div class="CG2-authorList__item">...</div>
+    <div class="CG2-authorList__item">
+      <a href="#">
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
+        <div class="CG2-authorList__numOfPosts">記事数24</div>
+      </a>
+    </div>
+
+    <div class="CG2-authorList__item">
+      <a href="#">
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
+        <div class="CG2-authorList__numOfPosts">記事数24</div>
+      </a>
+    </div>
+
+    <div class="CG2-authorList__item">
+      <a href="#">
+        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
+        <div class="CG2-authorList__numOfPosts">記事数24</div>
+      </a>
+    </div>
 
   </div>
 </div>
 ```
-
 */
 .CG2-authorList__inner {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -28px; }
-  @media screen and (max-width: 767px) {
+  display: grid;
+  grid-column-gap: 40px; }
+  @media screen and (min-width: 767px) {
     .CG2-authorList__inner {
-      display: block;
-      margin: 0 -10px; } }
+      grid-template-columns: repeat(2, 1fr); } }
+  @media screen and (min-width: 979px) {
+    .CG2-authorList__inner {
+      grid-template-columns: repeat(3, 1fr); } }
 
 .CG2-authorList__item {
-  box-sizing: border-box;
-  position: relative;
-  width: calc( 33% - 40px);
-  min-height: 88px;
-  padding: 20px 20px 30px 90px;
-  border-top: 1px solid #dbdbdb;
-  margin: 0 20px; }
-  @media screen and (max-width: 979px) {
-    .CG2-authorList__item {
-      width: calc( 49.9% - 40px); } }
-  @media screen and (max-width: 767px) {
-    .CG2-authorList__item {
-      width: auto;
-      min-height: 104px;
-      padding: 12px 12px 12px 100px;
-      margin: 0; } }
+  border-top: 1px solid #dbdbdb; }
   .CG2-authorList__item a {
     color: inherit;
     text-decoration: none;
     display: block;
-    padding: 20px 20px 20px 90px;
-    margin: -20px -20px -20px -90px; }
-    @media screen and (max-width: 767px) {
+    padding: 12px 0 12px 92px;
+    min-height: 80px;
+    position: relative; }
+    @media screen and (min-width: 767px) {
       .CG2-authorList__item a {
-        padding: 12px 12px 12px 100px;
-        margin: -12px -12px -12px -100px; } }
+        padding: 20px 12px 20px 92px; } }
 
 .CG2-authorList__image {
   position: absolute;
-  top: 20px;
-  left: 28px; }
-  @media screen and (max-width: 767px) {
+  left: 0;
+  top: 12px; }
+  @media screen and (min-width: 767px) {
     .CG2-authorList__image {
-      top: 12px;
-      left: 0; } }
+      left: 28px;
+      top: 20px; } }
   .CG2-authorList__image img {
-    display: block;
-    width: 48px;
-    height: 48px; }
-    @media screen and (max-width: 767px) {
+    vertical-align: bottom;
+    width: 80px;
+    height: 80px; }
+    @media screen and (min-width: 767px) {
       .CG2-authorList__image img {
-        width: 80px;
-        height: 80px; } }
+        width: 48px;
+        height: 48px; } }
 
 .CG2-authorList__name {
+  font-size: 16px;
   font-weight: bold;
   margin-bottom: 3px; }
-  @media screen and (max-width: 767px) {
-    .CG2-authorList__name {
-      font-size: 16px;
-      margin-bottom: 6px; } }
 
 .CG2-authorList__title {
-  color: #777;
   font-size: 12px;
-  line-height: 1.2;
-  margin-bottom: 15px; }
-  @media screen and (max-width: 767px) {
+  color: #777; }
+  @media screen and (min-width: 767px) {
     .CG2-authorList__title {
-      margin-bottom: 8px; } }
+      margin-bottom: 15px; } }
 
 .CG2-authorList__numOfPosts {
-  color: #777;
   font-size: 12px;
-  line-height: 1.2; }
+  color: #777; }
 
 /* ==========================================================================
    CG2-searchFailed
@@ -6844,24 +7425,36 @@ tag:
         <div class="CG2-settings__fieldHGroup">
           <table>
             <tr>
-              <th>ログインメールアドレス</th>
+              <th>Googleアカウント</th>
               <td>oyamada@pxgrid.com</td>
             </tr>
           </table>
         </div>
       </div>
       <div class="CG2-settings__buttonContainer">
-        <button class="CG2-button CG2-button--setting">ログアウト</button>
+        <ul>
+          <li>
+          <a class="CG2-button CG2-button--setting" href="">ログアウト</a>
+          </li>
+        </ul>
       </div>
-      <div class="CG2-settings__field">
-        <div class="CG2-settings__fieldVGroup">
-          <div class="CG2-settings__fieldHeader">メールマガジンを受信するメールアドレス</div>
-          <div class="CG2-settings__fieldData"><input type="email" value="oyamada@pxgrid.com"></div>
+      <form>
+        <div class="CG2-settings__field">
+          <div class="CG2-settings__fieldVGroup">
+            <div class="CG2-settings__fieldHeader">メールマガジンを受信するメールアドレス</div>
+            <div class="CG2-settings__fieldData">
+              <input type="email" value="oyamada@pxgrid.com">
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="CG2-settings__buttonContainer">
-        <button class="CG2-button CG2-button--setting">変更</button>
-      </div>
+        <div class="CG2-settings__buttonContainer">
+          <ul>
+            <li>
+              <button type="button" class="CG2-button CG2-button--setting">変更</button>
+            </li>
+          </ul>
+        </div>
+      </form>
     </div>
     <div class="CG2-settings__col">
       <div class="CG2-settings__heading">購読情報</div>
@@ -6869,99 +7462,137 @@ tag:
         <div class="CG2-settings__fieldHGroup">
           <table>
             <tr>
-              <th>決済方法</th>
-              <td>PayPal</td>
+              <td>現在、購読の手続きはされていません。</td>
             </tr>
           </table>
         </div>
       </div>
-      <div class="CG2-settings__heading">退会</div>
+      <div class="CG2-settings__buttonContainer">
+        <ul>
+          <li>
+            <a class="CG2-button CG2-button--setting">購読の手続きを開始する</a>
+          </li>
+        </ul>
+      </div>
+      <div class="CG2-settings__heading">購読情報</div>
       <div class="CG2-settings__field">
-        <div class="CG2-settings__fieldVGroup">
-          <div class="CG2-settings__fieldHeader">退会理由を教えて下さい（1000文字以内）</div>
-          <div class="CG2-settings__fieldData"><textarea maxlength="1000"></textarea></div>
+        <div class="CG2-settings__fieldHGroup">
+          <table>
+            <tr>
+              <th>無料購読期間</th>
+              <td>残り30日</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="CG2-settings__field">
+        <div class="CG2-settings__fieldHGroup">
+          <table>
+            <tr>
+              <th>決済方法</th>
+              <td>PAY.JP</td>
+            </tr>
+            <tr>
+              <th>カード情報</th>
+              <td>XXXX</td>
+            </tr>
+          </table>
         </div>
       </div>
       <div class="CG2-settings__buttonContainer">
-        <button class="CG2-button CG2-button--setting">CodeGridを退会し、購読を停止する</button>
+        <ul>
+          <li>
+            <a class="CG2-button CG2-button--setting">カード情報の更新</a>
+          </li>
+        </ul>
       </div>
+      <div class="CG2-settings__heading">購読情報</div>
+      <div class="CG2-settings__field">
+        <div class="CG2-settings__fieldHGroup">
+          <table>
+            <tr>
+              <th>決済方法</th>
+              <td>WebMoney</td>
+            </tr>
+            <tr>
+              <th>有効期限</th>
+              <td>201X年12月31日</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="CG2-settings__buttonContainer">
+        <ul>
+          <li>
+            <a class="CG2-button CG2-button--setting">1ヶ月延長</a>
+          </li>
+          <li>
+            <a class="CG2-button CG2-button--setting">1年延長</a>
+          </li>
+        </ul>
+      </div>
+      <div class="CG2-settings__heading">退会</div>
+      <form>
+        <div class="CG2-settings__field">
+          <div class="CG2-settings__fieldVGroup">
+            <div class="CG2-settings__fieldHeader">退会理由を教えて下さい（1000文字以内）</div>
+            <div class="CG2-settings__fieldData"><textarea maxlength="1000"></textarea></div>
+          </div>
+        </div>
+        <div class="CG2-settings__buttonContainer">
+          <button type="button" class="CG2-button CG2-button--setting">CodeGridを退会し、購読を停止する</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 ```
-
 */
-.CG2-settings {
-  margin: 0 -40px; }
-  @media screen and (min-width: 768px) and (max-width: 1054px) {
-    .CG2-settings {
-      margin: 0 -20px; } }
-  @media screen and (max-width: 767px) {
-    .CG2-settings {
-      margin: 0; } }
+@media screen and (min-width: 767px) {
+  .CG2-settings__inner {
+    display: flex;
+    justify-content: space-between; } }
 
-.CG2-settings__inner {
-  border-spacing: 40px 0;
-  table-layout: fixed;
-  display: table;
-  width: 100%; }
-  @media screen and (max-width: 979px) {
-    .CG2-settings__inner {
-      border-spacing: 20px 0; } }
-  @media screen and (max-width: 767px) {
-    .CG2-settings__inner {
-      display: block;
-      width: auto; } }
+@media screen and (min-width: 767px) {
+  .CG2-settings__col {
+    width: calc(50% - 14px - 10px); } }
 
-.CG2-settings__col {
-  display: table-cell;
-  padding: 0 28px; }
-  @media screen and (max-width: 979px) {
-    .CG2-settings__col {
-      padding-left: 14px;
-      padding-right: 14px; } }
-  @media screen and (max-width: 767px) {
-    .CG2-settings__col {
-      display: block;
-      padding: 0; } }
-
-.CG2-settings__heading {
-  border-bottom: 1px solid #dbdbdb;
-  padding: 0 28px 5px;
-  margin: 50px -28px 24px; }
-  @media screen and (max-width: 979px) {
-    .CG2-settings__heading {
-      padding-left: 14px;
-      padding-right: 14px;
-      margin-left: -14px;
-      margin-right: -14px; } }
-  @media screen and (max-width: 767px) {
-    .CG2-settings__heading {
-      font-size: 16px;
-      margin: 30px -10px 24px;
-      padding-left: 10px;
-      padding-right: 10px; } }
-  .CG2-settings__heading:first-child {
-    margin-top: 0; }
-    @media screen and (max-width: 767px) {
-      .CG2-settings__heading:first-child {
-        margin-top: 50px; } }
-  @media screen and (max-width: 767px) {
-    .CG2-settings__col:first-child .CG2-settings__heading:first-child {
-      margin-top: 0; } }
+@media screen and (min-width: 979px) {
+  .CG2-settings__col {
+    width: calc(50% - 28px - 20px); } }
 
 .CG2-settings__field {
-  margin: 24px 0; }
-  @media screen and (max-width: 979px) {
+  margin: 10px 0; }
+  @media screen and (min-width: 979px) {
     .CG2-settings__field {
-      margin: 10px 0; } }
+      margin: 24px 0; } }
+
+.CG2-settings__heading {
+  border-bottom: 1px solid #dbdbdb; }
+  @media screen and (min-width: 0) and (max-width: 767px) {
+    .CG2-settings__heading {
+      padding: 0 10px;
+      margin: 30px -10px 24px; } }
+  @media screen and (min-width: 767px) and (max-width: 979px) {
+    .CG2-settings__heading {
+      padding: 0 14px;
+      margin: 50px -14px 24px; } }
+  @media screen and (min-width: 979px) {
+    .CG2-settings__heading {
+      padding: 0 28px 5px;
+      margin: 50px -28px 24px; } }
+  @media screen and (min-width: 0) and (max-width: 767px) {
+    .CG2-settings__col:first-child .CG2-settings__heading:first-child {
+      margin-top: 0; } }
+  @media screen and (min-width: 767px) {
+    .CG2-settings__heading:first-child {
+      margin-top: 0; } }
 
 .CG2-settings__fieldHGroup table {
   border-spacing: 0; }
 
 @media screen and (max-width: 979px) {
   .CG2-settings__fieldHGroup table, .CG2-settings__fieldHGroup tbody, .CG2-settings__fieldHGroup tr {
-    *zoom: 1;
     display: block; }
     .CG2-settings__fieldHGroup table:before, .CG2-settings__fieldHGroup table:after, .CG2-settings__fieldHGroup tbody:before, .CG2-settings__fieldHGroup tbody:after, .CG2-settings__fieldHGroup tr:before, .CG2-settings__fieldHGroup tr:after {
       content: "";
@@ -6973,23 +7604,18 @@ tag:
     clear: left; } }
 
 .CG2-settings__fieldHGroup th {
-  font-size: 10px;
+  font-size: 12px;
   font-weight: normal;
   vertical-align: middle; }
   @media screen and (max-width: 979px) {
     .CG2-settings__fieldHGroup th {
-      display: block;
-      font-size: 12px; } }
+      display: block; } }
   .CG2-settings__fieldHGroup th:after {
-    content: ' :'; }
+    content: '：'; }
 
 .CG2-settings__fieldHGroup td {
   white-space: normal;
-  word-break: break-word;
   word-break: break-all;
-  -webkit-hyphens: auto;
-      -ms-hyphens: auto;
-          hyphens: auto;
   vertical-align: middle;
   padding-left: 10px; }
   @media screen and (max-width: 979px) {
@@ -6998,28 +7624,18 @@ tag:
       padding-left: 0; } }
 
 .CG2-settings__fieldHeader {
-  font-size: 10px;
+  font-size: 12px;
   margin-bottom: 10px; }
-  @media screen and (max-width: 767px) {
-    .CG2-settings__fieldHeader {
-      font-size: 12px; } }
 
-@media screen and (max-width: 767px) {
-  .CG2-settings__fieldData {
-    font-size: 16px; } }
-
-.CG2-settings__fieldData input {
-  font-size: inherit;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 4px; }
-
-.CG2-settings__fieldData textarea {
-  font-size: inherit;
-  box-sizing: border-box;
-  width: 100%;
-  height: 8em;
-  padding: 4px; }
+.CG2-settings__fieldData {
+  font-size: 16px; }
+  .CG2-settings__fieldData input, .CG2-settings__fieldData textarea {
+    font-size: inherit;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 4px; }
+  .CG2-settings__fieldData textarea {
+    height: 8em; }
 
 .CG2-settings__buttonContainer ul {
   font-size: 0;
@@ -7056,48 +7672,40 @@ tag:
 ```
 */
 .CG2-formProgress {
-  font-size: 20px;
-  margin: 0 -40px 60px; }
-  @media screen and (max-width: 1054px) {
+  font-size: 16px;
+  margin: 10px 0 20px; }
+  @media screen and (min-width: 767px) {
     .CG2-formProgress {
-      font-size: 16px;
-      margin-left: -20px;
-      margin-right: -20px; } }
-  @media screen and (max-width: 767px) {
+      margin: 0 0 60px; } }
+  @media screen and (min-width: 979px) {
     .CG2-formProgress {
-      font-size: 16px;
-      margin: 10px 0 20px; } }
+      font-size: 18px; } }
   .CG2-formProgress ol {
     list-style: none;
-    table-layout: fixed;
-    border-spacing: 40px 0;
-    display: table;
-    width: 100%;
     padding: 0;
-    margin: 0; }
-    @media screen and (max-width: 979px) {
-      .CG2-formProgress ol {
-        border-spacing: 20px 0; } }
-    @media screen and (max-width: 767px) {
-      .CG2-formProgress ol {
-        display: block;
-        width: auto; } }
+    margin: 0;
+    display: flex;
+    justify-content: space-between; }
   .CG2-formProgress li {
-    opacity: 0.4;
-    text-align: center;
-    display: table-cell;
-    padding: 0 0 10px;
-    border-bottom: 1px solid #dbdbdb; }
-    @media screen and (max-width: 767px) {
+    border-bottom: 1px solid #dbdbdb;
+    padding: 0 10px 5px;
+    margin: 0 -10px;
+    width: 100%; }
+    @media screen and (min-width: 767px) {
       .CG2-formProgress li {
-        text-align: left;
-        display: none;
-        padding: 0 10px 5px;
-        margin: 0 -10px; } }
-    .CG2-formProgress li.CG2-formProgress__item--current {
-      opacity: 1; }
-      @media screen and (max-width: 767px) {
-        .CG2-formProgress li.CG2-formProgress__item--current {
+        text-align: center;
+        margin: 0;
+        padding: 0 0 5px;
+        width: calc(100% / 3 - 20px); } }
+    @media screen and (min-width: 979px) {
+      .CG2-formProgress li {
+        padding: 0 0 10px;
+        width: calc(100% / 3 - 40px); } }
+    .CG2-formProgress li:not(.CG2-formProgress__item--current) {
+      display: none;
+      opacity: 0.4; }
+      @media screen and (min-width: 767px) {
+        .CG2-formProgress li:not(.CG2-formProgress__item--current) {
           display: block; } }
 
 /* ==========================================================================
@@ -7521,12 +8129,6 @@ tag:
 .CG2-paymentLine__extra {
   font-size: 14px; }
 
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-/* Sub-section comment block
-   ========================================================================== */
-/* Basic comment */
 /* ==========================================================================
    CG2-logo3d
    ========================================================================== */
@@ -8230,7 +8832,6 @@ window.addEventListener( 'load', function () {
 } );</code></pre>
 */
 section.CG2-customerQuotes {
-  *zoom: 1;
   padding-top: 20px;
   margin: 0 -10px; }
   section.CG2-customerQuotes:before, section.CG2-customerQuotes:after {
@@ -8578,7 +9179,6 @@ section.CG2-form {
 
 @media screen and (max-width: 639px) {
   .CG2-form__table table, .CG2-form__table tbody, .CG2-form__table tr {
-    *zoom: 1;
     display: block; }
     .CG2-form__table table:before, .CG2-form__table table:after, .CG2-form__table tbody:before, .CG2-form__table tbody:after, .CG2-form__table tr:before, .CG2-form__table tr:after {
       content: "";
