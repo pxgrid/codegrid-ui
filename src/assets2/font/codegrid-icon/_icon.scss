@@ -1,3 +1,18 @@
+// このscssファイルはgulpによる自動生成
+// scssを編集したい場合は src/assets2/font/codegrid-icon/_icon.scss を編集すること
+
+@import "icon-utils";
+
+/* アイコンフォント
+   ========================================================================== */
+   @font-face {
+    font-family: "<%= fontName %>";
+    src: url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
+         url('<%= fontPath %><%= fontName %>.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 /*
 ---
 name: Icon
@@ -17,51 +32,22 @@ tag:
 <% } ); %>
 */
 
-@font-face {
-  font-family: "<%= fontName %>";
-  src: url('<%= fontPath %><%= fontName %>.woff2') format('woff2'),
-       url('<%= fontPath %><%= fontName %>.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+[class^="CG2-icon-"], [class*=" CG2-icon-"] {
+  // _icon-utilsに定義
+  @extend %codegrid-icon;
 
-[class^="<%= prefix %>-"], [class*=" <%= prefix %>-"] {
-  font-family: "<%= fontName %>";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: middle;
-  display: inline-block;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* For With CJK Text =========== */
+  // 日本語とのベースラインの兼ね合い
   position: relative;
   top: -0.1em;
 }
 
+// アイコン
+// ===========================================================================
 <% _.each ( glyphs, function( glyph ) { %>.<%= prefix %>-<%= glyph.name %>:before { content: "\<%= glyph.unicode.toString( 16 ).toUpperCase() %>"; }
 <% } ); %>
 
-@function getValue ( $assoc, $key ) {
-  @each $pair in $assoc {
-    @if nth( $pair, 1 ) == $key {
-      @return nth( $pair, 2 );
-    }
-  }
-  @return null;
-}
-
-$icons: (
-  <% _.each ( glyphs, function( glyph ) { %><%= glyph.name %> "\<%= glyph.unicode.toString( 16 ).toUpperCase() %>",
-  <% } ); %>
-);
-
+// 色付きのアイコン
+// ===========================================================================
 span.CG2-icon--colored.CG2-icon-unlock           { color: #f8a000; }
 span.CG2-icon--colored.CG2-icon-cat-elementary   { color: #f4db00; }
 span.CG2-icon--colored.CG2-icon-cat-mastering    { color: #9cc500; }
@@ -75,18 +61,3 @@ span.CG2-icon--colored.CG2-icon-cat-work-style   { color: #ef0000; }
 span.CG2-icon--colored.CG2-icon-cat-survey       { color: #ee0155; }
 span.CG2-icon--colored.CG2-icon-cat-interview    { color: #ef007e; }
 span.CG2-icon--colored.CG2-icon-cat-discussion   { color: #9c0178; }
-
-@mixin icon ( $name ) {
-  content: getValue( $icons, $name );
-  font-family: "<%= fontName %>";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: middle;
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}

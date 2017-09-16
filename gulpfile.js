@@ -134,7 +134,10 @@ gulp.task( 'iconfont', function () {
   } ) )
   .on( 'glyphs', function( glyphs, options ) {
 
-    gulp.src( './src/assets2/font/codegrid-icon/_icon.scss' )
+    gulp.src( [
+      './src/assets2/font/codegrid-icon/_icon.scss',
+      './src/assets2/font/codegrid-icon/_icon-utils.scss',
+    ] )
     .pipe( consolidate( 'underscore', {
       glyphs: glyphs,
       fontName: fontName,

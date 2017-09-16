@@ -1,0 +1,64 @@
+// このscssファイルはgulpによる自動生成
+// scssを編集したい場合は src/assets2/font/codegrid-icon/_icon-utils.scss を編集すること
+
+// アイコンをつける
+// ===========================================================================
+
+/* アイコンの基礎スタイル
+   ========================================================================== */
+   %codegrid-icon {
+    font-family: "codegrid-icon";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+    display: inline-block;
+  
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  // アイコンを呼び出す
+  // ===========================================================================
+  $icons: (
+    pxg: "\",
+    top: "\",
+    right: "\",
+    down: "\",
+    left: "\",
+    hamburger: "\",
+    list: "\",
+    setting: "\",
+    search: "\",
+    star: "\",
+    lock: "\",
+    unlock: "\",
+    question: "\",
+    exclamation-circle: "\",
+    exclamation-triangle: "\",
+    twitter: "\",
+    facebook: "\",
+    gplus: "\",
+    cat-elementary: "\",
+    cat-mastering: "\",
+    cat-standards: "\",
+    cat-talk: "\",
+    cat-architecture: "\",
+    cat-report: "\",
+    cat-design: "\",
+    cat-future: "\",
+    cat-work-style: "\",
+    cat-survey: "\",
+    cat-interview: "\",
+    cat-discussion: "\",
+    
+  );
+  
+  @mixin icon ( $name ) {
+    content: map-get( $icons, $name );
+    @extend %codegrid-icon;
+  }
