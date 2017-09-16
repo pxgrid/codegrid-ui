@@ -103,6 +103,7 @@ gulp.task( 'sass', function () {
 
   return gulp.src( [
           './src/assets2/scss/codegrid-ui.scss',
+          './src/assets2/scss/codegrid-ui-core.scss',
           './src/assets2/scss/codegrid-ui-www.scss',
           ] )
          .pipe( plumber() )
