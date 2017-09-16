@@ -1,14 +1,5 @@
-@font-face {
-  font-family: "codegrid-num";
-  src: url('../font/codegrid-num.woff2') format('woff2'),
-       url('../font/codegrid-num.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
 @import "vendor/_normalize";
 @import "vendor/_media-queries";
-@import "vendor/_prism";
 @import "0_vars";
 @import "1_utils";
 @import "2_basic";
