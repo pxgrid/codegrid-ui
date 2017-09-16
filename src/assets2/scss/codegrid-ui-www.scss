@@ -6,47 +6,7 @@
 @import "3_animations";
 @import "icon";
 
-%search{
-  box-sizing: border-box;
-  width: 100%;
-  background: #303030;
-  border-radius: 3px;
-}
-  %searchInner{
-    box-sizing: border-box;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    &:before{
-      @include icon( 'search' );
-      color: #777;
-      font-size: 12px;
-      line-height: 0;
-      position: absolute;
-      top: 50%;
-      left: 10px;
-    }
-    form{
-      height: 100%; // for Blink
-    }
-    input{
-      color: #fff;
-      font-size: 16px;
-      box-sizing: border-box;
-      display: block;
-      border: none;
-      width: 100%;
-      height: 100%;
-      padding: .5em 10px .5em 34px;
-      background: transparent;
-      transition: all .2s;
-      &:hover,
-      &:focus{
-        background: #303030;
-      }
-    }
-  }
-
+@import "placeholder";
 @import "template";
 @import "components";
 @import "www";
