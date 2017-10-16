@@ -101,7 +101,11 @@ gulp.task( 'js', function () {
 
 gulp.task( 'sass', function () {
 
-  return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
+  return gulp.src( [
+          './src/assets2/scss/codegrid-ui.scss',
+          './src/assets2/scss/codegrid-ui-core.scss',
+          './src/assets2/scss/codegrid-ui-www.scss',
+          ] )
          .pipe( plumber() )
          .pipe( sourcemaps.init() )
          .pipe( sass() )
@@ -130,7 +134,10 @@ gulp.task( 'iconfont', function () {
   } ) )
   .on( 'glyphs', function( glyphs, options ) {
 
-    gulp.src( './src/assets2/font/codegrid-icon/_icon.scss' )
+    gulp.src( [
+      './src/assets2/font/codegrid-icon/_icon.scss',
+      './src/assets2/font/codegrid-icon/_icon-utils.scss',
+    ] )
     .pipe( consolidate( 'underscore', {
       glyphs: glyphs,
       fontName: fontName,
