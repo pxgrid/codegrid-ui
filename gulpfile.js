@@ -99,7 +99,7 @@ gulp.task( 'js', function () {
 } );
 
 
-gulp.task( 'sass', function () {
+gulp.task( 'css', function () {
 
   return gulp.src( [
           './src/assets2/scss/codegrid-ui.scss',
@@ -188,24 +188,24 @@ gulp.task( 'watch', function () {
   } );
 
   watch( [ './src/assets2/scss/*.scss' ], function () {
-    runSequence( 'sass', browserSync.reload );
+    runSequence( 'css', browserSync.reload );
   } );
 
   // watch( [ './src/assets2/font/codegrid-icon/*.svg' ], function () {
-  //   runSequence( 'iconfont', 'sass', browserSync.reload );
+  //   runSequence( 'iconfont', 'css', browserSync.reload );
   // } );
 
 } );
 
 gulp.task( 'default', function ( callback ) {
 
-  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'watch', callback );
+  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'watch', callback );
 
 } );
 
 gulp.task( 'build', function ( callback ) {
 
-  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'guide', callback );
+  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'guide', callback );
 
 } );
 
