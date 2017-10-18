@@ -26,8 +26,8 @@
   "devDependencies": {
     "autoprefixer": "^7.1.5",
     "browser-sync": "^2.18.13",
-    "css-mqpacker": "^5.0.1",
-    "csswring": "^5.1.1",
+    "css-mqpacker": "^6.0.1",
+    "csswring": "^6.0.1",
     "del": "^3.0.0",
     "event-stream": "^3.3.4",
     "gulp": "^3.9.0",
