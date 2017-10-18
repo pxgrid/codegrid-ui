@@ -41,7 +41,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.6.1",
-    "gulp-uglify": "^2.0.1",
+    "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.8",
     "run-sequence": "^1.2.2",
     "underscore": "^1.8.3"
