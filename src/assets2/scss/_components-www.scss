@@ -33,24 +33,24 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
 </script>
 
 */
-.CG2-logo3d{
+.CG2-logo3d {
   position: relative;
   margin: 0 auto;
   background: #000;
 }
-  .CG2-logo3d__inner{
+  .CG2-logo3d__inner {
     height: calc( 100vh - 120px );
     background: #000;
     @include max-screen( $breakpoint-small ) {
       height: calc( 100vh - 30px );
     }
     img,
-    canvas{
+    canvas {
       display: block;
       margin: 0 auto;
     }
   }
-    .CG2-logo3d__overlayText{
+    .CG2-logo3d__overlayText {
       color: #fff;
       font-size: 32px;
       font-family: $fontSerif;
@@ -69,7 +69,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
         height: auto;
         padding: 10px 5px;
       }
-      &:after{
+      &:after {
         @include icon( down );
         font-size: 22px;
         display: block;
@@ -117,16 +117,16 @@ tag:
 ```
 
 */
-.CG2-features{
+.CG2-features {
   counter-reset: CG2features;
-  &:first-child{
+  &:first-child {
     margin-top: -40px;
     // @include max-screen( $breakpoint-middle ) {
     //   margin-top: 0;
     // }
   }
 }
-  .CG2-features__item{
+  .CG2-features__item {
     counter-increment: CG2features;
     padding: 0 120px;
     margin: 80px 0;
@@ -134,7 +134,7 @@ tag:
       padding: 0;
       margin: 40px 0;
     }
-    h1{
+    h1 {
       color: #282828;
       font-size: 32px;
       font-family: $fontSerif;
@@ -146,7 +146,7 @@ tag:
         position: relative;
         padding: 0 40px;
         margin-bottom: 20px;
-        &:before{
+        &:before {
           content: counter( CG2features );
           font-family: $fontCode;
           font-size: 40px;
@@ -159,11 +159,11 @@ tag:
         }
       }
     }
-    p{}
+    p {}
   }
-  .CG2-features__itemBody{
+  .CG2-features__itemBody {
     position: relative;
-    &:before{
+    &:before {
       content: counter( CG2features );
       line-height: 1;
       font-size: 60px;
@@ -177,14 +177,14 @@ tag:
       }
     }
   }
-  .CG2-features__embeddedTweets{
+  .CG2-features__embeddedTweets {
     display: flex;
     margin: 20px -5px;
     @include max-screen( $breakpoint-middle ) {
       display: block;
     }
     twitterwidget,
-    iframe{
+    iframe {
       width: 50%;
       margin: 10px 5px;
       @include max-screen( $breakpoint-middle ) {
@@ -193,7 +193,6 @@ tag:
       }
     }
   }
-
 
 
 /* ==========================================================================
@@ -230,12 +229,10 @@ tag:
   </div>
 </section>
 ```
-
 */
-
-.CG2-howYouReceive{
+.CG2-howYouReceive {
 }
-  .CG2-howYouReceive__header{
+  .CG2-howYouReceive__header {
     text-align: center;
     position: relative;
     margin: 0 -28px 20px;
@@ -243,7 +240,7 @@ tag:
       margin-left: 0;
       margin-right: 0;
     }
-    &:before{
+    &:before {
       content: '';
       display: block;
       position: absolute;
@@ -256,7 +253,7 @@ tag:
         content: none;
       }
     }
-    h1{
+    h1 {
       color: #282828;
       font-size: 24px;
       font-weight: normal;
@@ -273,14 +270,14 @@ tag:
       }
     }
   }
-  .CG2-howYouReceive__list{
+  .CG2-howYouReceive__list {
     display: table;
     border-spacing: 2px 0;
     @include max-screen( $breakpoint-middle ) {
       display: block;
     }
   }
-    .CG2-howYouReceive__item{
+    .CG2-howYouReceive__item {
       font-size: 14px;
       display: table-cell;
       @include max-screen( $breakpoint-middle ) {
@@ -288,15 +285,15 @@ tag:
         display: block;
         margin-bottom: 30px;
       }
-      p{;
+      p {
         text-align: center;
       }
     }
-      .CG2-howYouReceive__image{
+      .CG2-howYouReceive__image {
         @include max-screen( $breakpoint-middle ) {
           margin: 0 -10px 20px;
         }
-        img{
+        img {
           display: block;
           width: 100%;
           height: auto;
@@ -337,8 +334,8 @@ tag:
 
 */
 
-.CG2-bookInfo{
-  h1{
+.CG2-bookInfo {
+  h1 {
     color: #282828;
     font-size: 24px;
     font-weight: normal;
@@ -350,13 +347,13 @@ tag:
     }
   }
 } 
-  .CG2-bookInfo__body{
+  .CG2-bookInfo__body {
     display: table;
     @include max-screen( $breakpoint-middle ) {
       display: block;
     }
   }
-    .CG2-bookInfo__images{
+    .CG2-bookInfo__images {
       font-size: 0;
       white-space: nowrap;
       vertical-align: top;
@@ -366,7 +363,7 @@ tag:
         display: block;
         padding: 0;
       }
-      ul{
+      ul {
         display: table;
         padding: 0;
         margin: 0;
@@ -374,7 +371,7 @@ tag:
           margin: 0 auto 20px;
         }
       }
-        li{
+        li {
           display: table-cell;
           list-style: none;
           width: 1%;
@@ -386,18 +383,18 @@ tag:
             margin: 0;
           }
         }
-          img{
+          img {
             display: block;
           }
     }
-    .CG2-bookInfo__text{
+    .CG2-bookInfo__text {
       vertical-align: top;
       display: table-cell;
       font-size: 14px;
       @include max-screen( $breakpoint-middle ) {
         font-size: 12px;
       }
-      p{
+      p {
         margin: 0 0 20px;
       }
     }
@@ -440,13 +437,13 @@ tag:
 ```
 */
 
-.CG2-circulation{
+.CG2-circulation {
   @include max-screen( $breakpoint-middle ) {
     display: table;
     width: 100%;
   }
 }
-  .CG2-circulation__lastUpdate{
+  .CG2-circulation__lastUpdate {
     font-family: $fontSerif;
     float: right;
     @include max-screen( $breakpoint-middle ) {
@@ -454,13 +451,13 @@ tag:
       display: table-footer-group;
     }
   }
-  .CG2-circulation__dataList{
+  .CG2-circulation__dataList {
     display: table;
     @include max-screen( $breakpoint-middle ) {
       display: table-header-group;
     }
   }
-    .CG2-circulation__data{
+    .CG2-circulation__data {
       display: table-cell;
       font-size: 0;
       padding-left: 50px;
@@ -468,18 +465,18 @@ tag:
         display: inline-block;
         padding: 0 20px 0 0;
       }
-      &:first-child{
+      &:first-child {
         padding-left: 0;
       }
     }
-      .CG2-circulation__dataLabel{
+      .CG2-circulation__dataLabel {
         font-size: 16px;
         font-family: $fontSerif;
         @include max-screen( $breakpoint-middle ) {
           font-size: 12px;
         }
       }
-      .CG2-circulation__dataNumber{
+      .CG2-circulation__dataNumber {
         font-size: 64px;
         font-family: $fontCode;
         line-height: 1.2;
@@ -488,7 +485,7 @@ tag:
           font-size: 40px;
         }
       }
-      .CG2-circulation__dataUnit{
+      .CG2-circulation__dataUnit {
         font-size: 32px;
         font-family: $fontSerif;
         line-height: 1.2;
@@ -497,7 +494,6 @@ tag:
           font-size: 20px;
         }
       }
-
 
 
 /* ==========================================================================
@@ -527,21 +523,19 @@ tag:
 </section>
 ```
 */
-
-
-section.CG2-pickedup{
+section.CG2-pickedup {
   margin: 80px 0;
   @include max-screen( $breakpoint-middle ) {
     margin-top: 40px;
     margin-bottom: 40px;
   }
 }
-  header.CG2-pickedup__header{
+  header.CG2-pickedup__header {
     line-height: 1.2;
     text-align: center;
     margin-bottom: 30px;
   }
-    .CG2-pickedup__headerHeading{
+    .CG2-pickedup__headerHeading {
       font-size: 32px;
       font-family: $fontSerif;
       font-weight: bold;
@@ -550,13 +544,14 @@ section.CG2-pickedup{
         font-size: 20px;
       }
     }
-    .CG2-pickedup__headerSummary{
+    .CG2-pickedup__headerSummary {
       font-size: 16px;
       display: inline-block;
       @include max-screen( $breakpoint-middle ) {
         font-size: 12px;
       }
     }
+
 
 /* ==========================================================================
    CG2-categoryIntro
@@ -590,8 +585,8 @@ tag:
 </div>
 ```
 */
-.CG2-categoryIntro{
-  ul{
+.CG2-categoryIntro {
+  ul {
     color: #282828;
     font-size: 0;
     text-align: center;
@@ -602,13 +597,13 @@ tag:
       margin-left: -10px;
       margin-right: -10px;
     }
-    &:after{
+    &:after {
       content: '';
       display: block;
       margin-top: -30px;
     }
   }
-  li{
+  li {
     font-size: 14px;
     text-align: center;
     vertical-align: top;
@@ -621,7 +616,7 @@ tag:
       width: 25%;
     }
   }
-  span[class*="CG2-icon-cat"]{
+  span[class*="CG2-icon-cat"] {
     font-size: 80px;
     display: block;
     margin-bottom: 10px;
@@ -629,7 +624,7 @@ tag:
     @include max-screen( $breakpoint-middle ) {
       font-size: 50px;
     }
-    &:before{
+    &:before {
       display: block;
     }
   }
@@ -692,7 +687,7 @@ window.addEventListener( 'load', function () {
       'max-width: none !important;',
       'width: 100% !important;',
     '}',
-    '.sandboxroot.env-narrow p{',
+    '.sandboxroot.env-narrow p {',
       'font-size: 12px;',
     '}'
   ].join( '' );
@@ -720,7 +715,7 @@ window.addEventListener( 'load', function () {
       'max-width: none !important;',
       'width: 100% !important;',
     '}',
-    '.sandboxroot.env-narrow p{',
+    '.sandboxroot.env-narrow p {',
       'font-size: 12px;',
     '}'
   ].join( '' );
@@ -738,13 +733,12 @@ window.addEventListener( 'load', function () {
 
 } );</code></pre>
 */
-
-section.CG2-customerQuotes{
+section.CG2-customerQuotes {
   @include clearfix();
   padding-top: 20px;
   margin: 0 -10px;
 }
-  header.CG2-customerQuotes__header{
+  header.CG2-customerQuotes__header {
     display: table;
     width: calc( 100% + 46px );
     border-bottom: 1px solid #5c5c5c;
@@ -755,7 +749,7 @@ section.CG2-customerQuotes{
       margin: 0 0 10px;
       padding: 0 10px 5px;
     }
-    h1{
+    h1 {
       font-size: 32px;
       font-family: $fontSerif;
       font-weight: normal;
@@ -771,7 +765,7 @@ section.CG2-customerQuotes{
       }
     }
   }
-  .CG2-customerQuotes__headerSub{
+  .CG2-customerQuotes__headerSub {
     font-size: 14px;
     text-align: right;
     vertical-align: middle;
@@ -783,11 +777,11 @@ section.CG2-customerQuotes{
       padding: 0;
       display: none;
     }
-    a{
+    a {
       @include resetLink();
     }
   }
-  .CG2-customerQuotes__body{
+  .CG2-customerQuotes__body {
     display: table;
     width: 100%;
     @include max-screen( $breakpoint-middle ) {
@@ -795,7 +789,7 @@ section.CG2-customerQuotes{
       width: auto;
     }
   }
-    .CG2-customerQuotes__list{
+    .CG2-customerQuotes__list {
       vertical-align: top;
       box-sizing: border-box;
       display: table-cell;
@@ -806,18 +800,18 @@ section.CG2-customerQuotes{
         width: auto;
         padding-right: 0;
       }
-      ul{
+      ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      li{
+      li {
         margin: 0 0 20px;
         @include max-screen( $breakpoint-middle ) {
           margin-bottom: 10px;
         }
       }
-      iframe{
+      iframe {
         // twitter
         display: block !important;
         width: 100% !important;
@@ -825,7 +819,7 @@ section.CG2-customerQuotes{
         margin: 0 !important;
       }
     }
-    .CG2-customerQuotes__timeline{
+    .CG2-customerQuotes__timeline {
       vertical-align: top;
       box-sizing: border-box;
       display: table-cell;
@@ -836,7 +830,7 @@ section.CG2-customerQuotes{
         width: auto;
         padding-left: 0;
       }
-      iframe{
+      iframe {
         // twitter
         display: block !important;
         width: 100% !important;
@@ -872,11 +866,8 @@ templateItem:
   <div class="CG2-bannerHeader__bg" style="background-image: url( '/build/img/_01.jpg' )"></div>
 </div>
 ```
-
 */
-
-
-.CG2-bannerHeader{
+.CG2-bannerHeader {
   @include blurry-parent();
   color: #fff;
   padding: 130px 0;
@@ -886,36 +877,36 @@ templateItem:
     padding: 60px 15px;
   }
 }
-  .CG2-bannerHeader__inner{
+  .CG2-bannerHeader__inner {
     max-width: 740px;
     margin: 0 auto;
-    h1{
+    h1 {
       font-family: $fontSerif;
       font-size: 32px;
       font-weight: normal;
       text-align: center;
       margin: 0 0 30px;
     }
-    p{
+    p {
       line-height: 2;
       text-align: center;
       margin: 20px 0;
     }
-    & > *:last-child{
+    & > *:last-child {
       margin-bottom: 0;
     }
     @include max-screen( $breakpoint-middle ) {
       max-width: none;
-      h1{
+      h1 {
         font-size: 20px;
         margin-bottom: 20px;
       }
-      p{
+      p {
         font-size: 12px;
       }
     }
   }
-  .CG2-bannerHeader__bg{
+  .CG2-bannerHeader__bg {
     @include blurry();
   }
 
@@ -1001,22 +992,22 @@ tag:
 
 */
 
-section.CG2-form{
+section.CG2-form {
   padding: 50px;
   margin: 80px -28px;
   background: #eee;
-  form{
+  form {
     margin: 0;
   }
-  p{}
+  p {}
   @include max-screen( $breakpoint-middle ) {
     padding: 25px 20px;
     margin: 40px -20px;
   }
 }
-    .CG2-form__header{
+    .CG2-form__header {
       margin: 0 0 30px;
-      h1{
+      h1 {
         font-size: 32px;
         font-family: $fontSerif;
         font-weight: normal;
@@ -1024,38 +1015,38 @@ section.CG2-form{
         text-align: center;
         margin: 0 0 20px;
       }
-      p{
+      p {
         text-align: center;
         margin: 16px 0 0;
       }
       @include max-screen( $breakpoint-small ) {
         margin-bottom: 16px;
-        h1{
+        h1 {
           font-size: 20px;
           margin-bottom: 16px;
         }
-        p{
+        p {
           text-align: left;
         }
       }
     }
-    .CG2-form__table{
-      table{
+    .CG2-form__table {
+      table {
         width: 100%;
       }
-        th{
+        th {
           text-align: left;
           vertical-align: middle;
           padding: 8px;
         }
-        td{
+        td {
           padding: 8px;
         }
           input[type="text"],
           input[type="url"],
           input[type="email"],
           select,
-          textarea{
+          textarea {
             box-sizing: border-box;
             width: 100%;
             padding: 8px 14px;
@@ -1063,7 +1054,7 @@ section.CG2-form{
             border-radius: 3px;
             line-height: 1.4; // FIXME: FirefoxとChromeの違いをなんとかしたい
           }
-          select{
+          select {
             // FIXME: インラインSVG…
             // 元ファイルは src/assets2/font/codegrid-icon/uE603-down.svg
             // 以下をdata URLに。
@@ -1080,38 +1071,38 @@ section.CG2-form{
               background-position: right 14px center;
             }
           }
-          select{
+          select {
             -webkit-appearance: initial;
           }
-          select{
+          select {
             -moz-appearance: initial;
           }
           ::placeholder {
             opacity: 1; // for Firefox
             color: #767676;
           }
-          select.CG2-form__placeholder_selected{
+          select.CG2-form__placeholder_selected {
             color: #767676;
           }
       @include max-screen( $breakpoint-small ) {
         @include tableToBlock();
         th,
-        td{
+        td {
           padding: 0;
           width: 100%;
         }
-        th{margin-bottom: 6px;}
-        td{margin-bottom: 10px;}
+        th {margin-bottom: 6px;}
+        td {margin-bottom: 10px;}
           input[type="text"],
           input[type="url"],
           input[type="email"],
           select,
-          textarea{
+          textarea {
             font-size: 16px;
           }
       }
     }
-      span.CG2-form__required{
+      span.CG2-form__required {
         color: #ff0000;
         font-size: 12px;
         font-weight: normal;
@@ -1123,11 +1114,11 @@ section.CG2-form{
           margin-left: 0;
         }
       }
-    .CG2-form__legal{
+    .CG2-form__legal {
       font-size: 12px;
       text-align: center;
       margin: 15px 0;
-      a{
+      a {
         color: inherit;
       }
       @include max-screen( $breakpoint-small ) {
@@ -1136,7 +1127,7 @@ section.CG2-form{
         margin: 5px;
       }
     }
-    .CG2-form__notice{
+    .CG2-form__notice {
       font-size: 12px;
       text-align: center;
       margin: 15px 0;
@@ -1184,14 +1175,14 @@ tag:
 ```
 
 */
-.CG2-flowExplanation{
+.CG2-flowExplanation {
   margin: 40px 0;
   counter-reset: CG2flowExplanation;
   @include max-screen( $breakpoint-small ) {
     margin: 30px 0;
   }
 }
-  section.CG2-flowExplanation__item{
+  section.CG2-flowExplanation__item {
     counter-increment: CG2flowExplanation;
     display: table;
     width: 100%;
@@ -1201,16 +1192,16 @@ tag:
       margin: 30px 0;
     }
   }
-    .CG2-flowExplanation__image{
+    .CG2-flowExplanation__image {
       vertical-align: top;
       display: table-cell;
-      img{
+      img {
         display: block;
         border: 1px solid #dbdbdb;
       }
       @include max-screen( $breakpoint-middle ) {
         width: 40%;
-        img{
+        img {
           max-width: 100%;
           height: auto;
         }
@@ -1219,20 +1210,20 @@ tag:
         display: block;
         width: auto;
         margin: 0 0 10px;
-        img{
+        img {
           margin: 0 auto;
         }
       }
     }
-    .CG2-flowExplanation__text{
+    .CG2-flowExplanation__text {
       vertical-align: top;
       display: table-cell;
       padding-left: 66px;
-      h1{
+      h1 {
         font-size: 24px;
         font-weight: normal;
         margin: 0 0 20px;
-        &:before{
+        &:before {
           content: counter( CG2flowExplanation );
           font-size: 32px;
           font-family: $fontCode;
@@ -1243,14 +1234,14 @@ tag:
           margin-left: -1.2em;
         }
       }
-      p{}
+      p {}
       @include max-screen( $breakpoint-small ) {
         padding-left: 35px;
-        h1{
+        h1 {
           font-size: 12px;
           font-weight: bold;
           margin: 0 0 10px;
-          &:before{
+          &:before {
             font-size: 24px;
             font-weight: normal;
             line-height: 12px;
@@ -1258,7 +1249,7 @@ tag:
             margin-left: -26px;
           }
         }
-        p{
+        p {
           font-size: 12px;
         }
       }
@@ -1298,7 +1289,7 @@ tag:
 
 */
 
-.CG2-faq{
+.CG2-faq {
   font-size: 16px;
   margin: 40px 0;
   padding: 0 0 0 50px;
@@ -1308,7 +1299,7 @@ tag:
     padding-left: 38px;
   }
 }
-  .CG2-faq__question{
+  .CG2-faq__question {
     font-weight: bold;
     line-height: 1.5; //16(font-size) * 1.5(line-height) = 24(height)
     position: relative;
@@ -1319,7 +1310,7 @@ tag:
       padding-top: 6px;
       padding-bottom: 6px;
     }
-    &:before{
+    &:before {
       @include icon( 'question' );
       color: #282828;
       font-size: 40px;
@@ -1334,12 +1325,12 @@ tag:
       }
     }
   }
-  .CG2-faq__answer{
-    p{
+  .CG2-faq__answer {
+    p {
       margin-top: 0;
       margin-bottom: 1em;
     }
-    aside.CG2-faq__eg{
+    aside.CG2-faq__eg {
       padding: 20px 20px 20px 50px;
       margin: 20px 0 0 -50px;
       margin-left: -50px;
@@ -1348,17 +1339,17 @@ tag:
         padding: 10px 10px 10px 38px;
         margin-left: -38px;
       }
-      h1{
+      h1 {
         font-size: 100%;
         font-weight: bold;
         margin: 0;
       }
-      ul{
+      ul {
         margin-top: 0;
         margin-bottom: 0;
         padding-left: 30px;
       }
-      li{}
+      li {}
     }
   }
 
@@ -1385,10 +1376,10 @@ tag:
 ```
 
 */
-.CG2-additionalInfoLink{
+.CG2-additionalInfoLink {
   display: table;
   width: 100%;
-  .CG2-additionalInfoLink+&{
+  .CG2-additionalInfoLink+& {
     margin-top: 30px;
   }
   @include max-screen( $breakpoint-small ) {
@@ -1396,7 +1387,7 @@ tag:
     width: auto;
   }
 }
-  .CG2-additionalInfoLink__text{
+  .CG2-additionalInfoLink__text {
     font-size: 24px;
     line-height: 1.2;
     vertical-align: middle;
@@ -1407,10 +1398,10 @@ tag:
       display: block;
     }
   }
-  .CG2-additionalInfoLink__sub{
+  .CG2-additionalInfoLink__sub {
     font-size: 14px;
   }
-  .CG2-additionalInfoLink__link{
+  .CG2-additionalInfoLink__link {
     text-align: right;
     vertical-align: middle;
     display: table-cell;
@@ -1418,7 +1409,7 @@ tag:
       text-align: center;
       display: block;
       margin: 1em 0 0;
-      .CG2-button{
+      .CG2-button {
         font-size: 18px;
         display: block;
         padding: .3em;
@@ -1462,12 +1453,12 @@ tag:
 ```
 
 */
-section.CG2-publication{
+section.CG2-publication {
   display: table;
   width: 100%;
   margin: 40px 0;
 }
-  .CG2-publication__image{
+  .CG2-publication__image {
     vertical-align: top;
     display: table-cell;
     padding-right: 30px;
@@ -1476,27 +1467,27 @@ section.CG2-publication{
     @include max-screen( $breakpoint-middle ) {
       padding-right: 15px;
     }
-    img{
+    img {
       display: block;
       width: 100%;
       height: auto;
     }
   }
-  .CG2-publication__body{
+  .CG2-publication__body {
     font-size: 16px;
     vertical-align: top;
     display: table-cell;
     @include max-screen( $breakpoint-middle ) {
       font-size: 12px;
     }
-    p{}
+    p {}
   }
-    .CG2-publication__heading{
+    .CG2-publication__heading {
       margin: 0 0 25px;
       @include max-screen( $breakpoint-middle ) {
         margin-bottom: 15px;
       }
-      h1{
+      h1 {
         font-size: 24px;
         font-weight: normal;
         margin: 0;
@@ -1505,7 +1496,7 @@ section.CG2-publication{
         }
       }
     }
-    .CG2-publication__headingSub{
+    .CG2-publication__headingSub {
       font-size: 14px;
       margin: -20px 0 25px;
       @include max-screen( $breakpoint-middle ) {
@@ -1514,17 +1505,17 @@ section.CG2-publication{
         margin-bottom: 15px;
       }
     }
-    .CG2-publication__buttonContainer{
+    .CG2-publication__buttonContainer {
       margin-top: 30px;
       @include max-screen( $breakpoint-small ) {
         margin-top: 10px;
       }
-      ul{
+      ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
-      li{
+      li {
         display: inline-block;
         margin: 0 20px 0 0;
         @include max-screen( $breakpoint-small ) {
@@ -1560,12 +1551,12 @@ tag:
 ```
 
 */
-.CG2-term{
-  dl{}
-  dt{
+.CG2-term {
+  dl {}
+  dt {
     font-weight: bold;
   }
-  dd{
+  dd {
     margin: 0 0 15px;
   }
 }
@@ -1587,7 +1578,7 @@ tag:
 ```
 
 */
-.CG2-lastUpdate{
+.CG2-lastUpdate {
   margin-top: 80px;
   @include max-screen( $breakpoint-middle ) {
     margin-top: 40px;
@@ -1617,29 +1608,29 @@ tag:
 ```
 
 */
-.CG2-imageContainer{
+.CG2-imageContainer {
   font-size: 0;
   margin: 40px 0;
   text-align: center;
   &:before,
-  &:after{
+  &:after {
     content: '';
     display: block;
     height: 1px;
   }
-  &:before{
+  &:before {
     margin-bottom: -10px;
   }
-  &:after{
+  &:after {
     margin-top: -10px;
   }
 }
 
-.CG2-imageContainer__image{
+.CG2-imageContainer__image {
   vertical-align: middle;
   display: inline-block;
   margin: 10px 30px;
-  img{
+  img {
     max-width: 100%;
     height: auto;
   }
