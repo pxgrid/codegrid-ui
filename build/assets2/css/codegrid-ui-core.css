@@ -2282,6 +2282,405 @@ templateItem:
       padding: 30px 20px; } }
 
 /* ==========================================================================
+   button
+   ========================================================================== */
+/*
+---
+name: button
+category:
+  - Nav-items
+tag:
+  - button
+---
+work with both a and button tags
+```html
+<p>
+  <a class="CG2-button" href="#">button:a element</a>
+</p>
+<p>
+  <button class="CG2-button" href="#">button: button element</button>
+</p>
+```
+with an icon
+```html
+<p>
+  <a class="CG2-button" href="#"><span class="CG2-icon-pxg"></span>button</a>
+</p>
+```
+use for Primary, Action, Setting
+```html
+<p>
+  <a class="CG2-button CG2-button--primary" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--action" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--setting" href="#">button</a>
+</p>
+```
+sizes
+```html
+<p>
+  <a class="CG2-button CG2-button--thin" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--large" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--fullWidth" href="#">button</a>
+</p>
+```
+
+disabled
+`button`の時は`disabled`属性を明示、
+それ以外(`a`など)の場合は、`aria-disabled="true"`を明示
+```html
+<p>
+  <a class="CG2-button" aria-disabled="true" href="#">button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--primary" aria-disabled="true" href="#">primary button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--action" aria-disabled="true" href="#">action button</a>
+</p>
+<p>
+  <a class="CG2-button CG2-button--setting" aria-disabled="true" href="#">setting button</a>
+</p>
+```
+
+progress
+```html
+<p>
+  <a class="CG2-button CG2-button--progress" href="#">button</a>
+</p>
+```
+*/
+.CG2-button {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  border: 1px solid #777;
+  padding: 0.6em 1.8em;
+  border-radius: 2px;
+  background: #777;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  transition: all .2s; }
+  .CG2-button:hover:not([disabled]):not([aria-disabled="true"]):not(.CG2-button--progress), .CG2-button:focus:not([disabled]):not([aria-disabled="true"]):not(.CG2-button--progress) {
+    box-shadow: 0 0 3px #777;
+    background: #919191;
+    transition: all .2s; }
+  @media screen and (max-width: 767px) {
+    .CG2-button {
+      font-size: 12px; } }
+  .CG2-button.CG2-button--thin {
+    padding: 0.4em 1.8em; }
+  .CG2-button.CG2-button--large {
+    font-size: 20px;
+    text-align: center;
+    display: block;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto; }
+    @media screen and (max-width: 767px) {
+      .CG2-button.CG2-button--large {
+        font-size: 18px;
+        padding-top: .3em;
+        padding-bottom: .3em;
+        width: auto; } }
+  .CG2-button.CG2-button--fullWidth {
+    display: block;
+    width: 100%; }
+  .CG2-button span[class^="CG2-icon"] {
+    font-size: 20px;
+    margin-right: 5px; }
+    .CG2-button span[class^="CG2-icon"]:first-child {
+      margin-left: -.6em; }
+  .CG2-button.CG2-button--primary {
+    border-color: #10a040;
+    background: #10a040; }
+    .CG2-button.CG2-button--primary:hover:not([disabled]):not([aria-disabled="true"]), .CG2-button.CG2-button--primary:focus:not([disabled]):not([aria-disabled="true"]) {
+      box-shadow: 0 0 3px #10a040;
+      background: #15ce53; }
+  .CG2-button.CG2-button--action {
+    border-color: #282828;
+    background: #282828; }
+    .CG2-button.CG2-button--action:hover:not([disabled]):not([aria-disabled="true"]), .CG2-button.CG2-button--action:focus:not([disabled]):not([aria-disabled="true"]) {
+      box-shadow: 0 0 3px #282828;
+      background: #424242; }
+  .CG2-button.CG2-button--setting {
+    border-color: #777;
+    background: #777; }
+    .CG2-button.CG2-button--setting:hover:not([disabled]):not([aria-disabled="true"]), .CG2-button.CG2-button--setting:focus:not([disabled]):not([aria-disabled="true"]) {
+      box-shadow: 0 0 3px #777;
+      background: #919191; }
+  .CG2-button[disabled], .CG2-button[aria-disabled="true"] {
+    cursor: not-allowed;
+    border-color: #999;
+    background: #dbdbdb; }
+  .CG2-button.CG2-button--progress {
+    color: transparent;
+    cursor: not-allowed; }
+    .CG2-button.CG2-button--progress:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      bottom: 5px;
+      left: 5px;
+      max-width: 100px;
+      margin: auto;
+      display: block;
+      width: auto;
+      background: url("../img/CG2-button/loading.svg") no-repeat 50% 50%;
+      background-size: 100% 100%;
+      transform-origin: 50% 50%;
+      animation: button--loading 1s linear infinite; }
+
+@keyframes button--loading {
+  0% {
+    transform: rotate(0deg); }
+  100% {
+    transform: rotate(360deg); } }
+
+/* ==========================================================================
+   buttonContainer
+   ========================================================================== */
+/*
+---
+name: buttonContainer
+category:
+  - Nav-items
+tag:
+  - button
+---
+
+```html
+<div class="CG2-buttonContainer">
+  <ul>
+    <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+```
+左寄せ
+```html
+<div class="CG2-buttonContainer CG2-buttonContainer--pullLeft">
+  <ul>
+    <li><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+```
+ラージスクリーン時full width
+```html
+<div class="CG2-buttonContainer">
+  <ul>
+    <li class="CG2-buttonContainer__item--full"><a class="CG2-button CG2-button--primary" href="#">button 1</a></li>
+    <li><a class="CG2-button" href="#">button 2</a></li>
+  </ul>
+</div>
+```
+*/
+.CG2-buttonContainer {
+  margin: 20px 0; }
+  .CG2-buttonContainer ul {
+    font-size: 0;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+    margin: 0; }
+  .CG2-buttonContainer.CG2-buttonContainer--pullLeft ul {
+    text-align: left; }
+  .CG2-buttonContainer li {
+    font-size: 1rem;
+    display: inline-block;
+    margin: 0 8px; }
+    .CG2-buttonContainer li.CG2-buttonContainer__item--full {
+      display: block;
+      margin: 0 0 8px; }
+    @media screen and (max-width: 767px) {
+      .CG2-buttonContainer li {
+        display: block; } }
+  .CG2-buttonContainer.CG2-buttonContainer--pullLeft li {
+    margin: 0 16px 0 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-buttonContainer li,
+    .CG2-buttonContainer.CG2-buttonContainer--pullLeft li {
+      margin: 0 0 5px; } }
+  @media screen and (max-width: 767px) {
+    .CG2-buttonContainer .CG2-button {
+      font-size: 16px;
+      text-align: center;
+      padding: .4em 10px;
+      width: 100%; } }
+
+/* ==========================================================================
+   header1
+   ========================================================================== */
+/*
+---
+name: header1
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<div class="CG2-header1">
+  <div class="CG2-header1__heading">Heading text 1</div>
+</div>
+```
+*/
+.CG2-header1 {
+  padding: 0 28px 30px;
+  border-bottom: 1px solid #282828;
+  margin: 60px -28px 30px; }
+  .CG2-header1:first-child {
+    margin-top: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-header1 {
+      padding: 0 10px 10px;
+      margin: 20px -10px 30px; }
+      .CG2-header1:first-child {
+        margin-top: 20px; } }
+
+.CG2-header1__heading {
+  color: #282828;
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.2; }
+  @media screen and (max-width: 767px) {
+    .CG2-header1__heading {
+      font-size: 20px; } }
+
+/* ==========================================================================
+   header2
+   ========================================================================== */
+/*
+---
+name: header2
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<div class="CG2-header2">
+  <div class="CG2-header2__heading">Heading text 2</div>
+</div>
+```
+*/
+.CG2-header2 {
+  margin: 60px 0 15px; }
+  @media screen and (max-width: 767px) {
+    .CG2-header2 {
+      margin: 30px 0 10px; } }
+
+.CG2-header2__heading {
+  font-size: 24px; }
+  @media screen and (max-width: 767px) {
+    .CG2-header2__heading {
+      font-size: 16px; } }
+
+/* ==========================================================================
+   header3
+   ========================================================================== */
+/*
+---
+name: header3
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<div class="CG2-header3">
+  <div class="CG2-header3__heading">Heading text 3</div>
+</div>
+```
+*/
+.CG2-header3__heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 40px 0 15px; }
+
+/* ==========================================================================
+   leadText
+   ========================================================================== */
+/*
+---
+name: leadtext
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<div class="CG2-leadText">LeadText</div>
+```
+*/
+.CG2-leadText {
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.4;
+  text-align: center;
+  margin: 80px 0 40px; }
+  .CG2-header1 + .CG2-leadText {
+    margin-top: 50px; }
+  .CG2-container__inner > .CG2-leadText:first-child {
+    margin-top: 20px; }
+  .CG2-container__inner > .CG2-leadText:last-child {
+    margin-bottom: 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-leadText {
+      font-size: 20px;
+      margin: 50px -10px 20px; } }
+
+/* ==========================================================================
+   shortCentered
+   ========================================================================== */
+/*
+---
+name: shortCentered
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<div class="CG2-shortCentered">
+  <div class="CG2-shortCentered__inner">
+    短い時はセンタリング
+  </div>
+</div>
+
+<div class="CG2-shortCentered">
+  <div class="CG2-shortCentered__inner">
+    長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ長いテキストは左寄せ
+  </div>
+</div>
+```
+*/
+.CG2-shortCentered {
+  text-align: center;
+  margin: 20px 0; }
+
+.CG2-shortCentered__inner {
+  text-align: left;
+  display: inline-block; }
+
+/* ==========================================================================
    CG2-customers
    ========================================================================== */
 /*

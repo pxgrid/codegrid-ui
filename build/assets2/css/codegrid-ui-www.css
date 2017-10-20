@@ -231,7 +231,6 @@ tag:
   </div>
 </section>
 ```
-
 */
 .CG2-howYouReceive__header {
   text-align: center;
@@ -660,7 +659,7 @@ window.addEventListener( 'load', function () {
       'max-width: none !important;',
       'width: 100% !important;',
     '}',
-    '.sandboxroot.env-narrow p{',
+    '.sandboxroot.env-narrow p {',
       'font-size: 12px;',
     '}'
   ].join( '' );
@@ -688,7 +687,7 @@ window.addEventListener( 'load', function () {
       'max-width: none !important;',
       'width: 100% !important;',
     '}',
-    '.sandboxroot.env-narrow p{',
+    '.sandboxroot.env-narrow p {',
       'font-size: 12px;',
     '}'
   ].join( '' );
@@ -833,7 +832,6 @@ templateItem:
   <div class="CG2-bannerHeader__bg" style="background-image: url( '/build/img/_01.jpg' )"></div>
 </div>
 ```
-
 */
 .CG2-bannerHeader {
   overflow: hidden;
@@ -1562,3 +1560,32 @@ tag:
   .CG2-imageContainer__image img {
     max-width: 100%;
     height: auto; }
+
+/* ==========================================================================
+   holizontalLine
+   ========================================================================== */
+/*
+---
+name: holizontalLine
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+<div class="CG2-holizontalLine"></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+```
+
+*/
+.CG2-holizontalLine {
+  border-top: 1px solid #5c5c5c;
+  margin: 80px -28px; }
+  @media screen and (max-width: 767px) {
+    .CG2-holizontalLine {
+      border-color: #dbdbdb;
+      margin: 50px -10px; } }
