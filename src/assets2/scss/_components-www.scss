@@ -1644,3 +1644,34 @@ tag:
     height: auto;
   }
 }
+
+
+/* ==========================================================================
+   holizontalLine
+   ========================================================================== */
+/*
+---
+name: holizontalLine
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+<div class="CG2-holizontalLine"></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+```
+
+*/
+.CG2-holizontalLine {
+  border-top: 1px solid #5c5c5c;
+  margin: 80px -28px;
+  @include max-screen( $breakpoint-middle ) {
+    border-color: #dbdbdb;
+    margin: 50px -10px;
+  }
+}
