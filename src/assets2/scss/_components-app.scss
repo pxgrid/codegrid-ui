@@ -4255,3 +4255,59 @@ tag:
           }
         }
       }
+
+
+/* ==========================================================================
+   line-height-step実装
+   ========================================================================== */
+@supports (line-height-step: 1em) {
+  article.CG2-article {
+    // 現行のfont-sizeとline-heightから
+    // 16 * 1.8 = 28.8 -> 28
+    --step-grid: 28px;
+
+    // リズム確認用の罫線
+    /* background-size: 100% var(--step-grid); */
+    /* background-image: linear-gradient(to bottom, #00bcd1 1px, transparent 1px); */
+
+    & > h3 {
+      // 複数行になったときに広がりすぎるのを防ぎながら
+      // libe-height-stepの恩恵を受けるためにinline-blockにする
+      display: inline-block;
+      // そのままだと縮んでしまうので全幅に
+      width: 100%;
+
+      // 複数行になったとき開きすぎないように
+      line-height: 1.2;
+
+      // 上1、下0.5
+      line-height-step: var(--step-grid);
+      margin-top: calc(1 * var(--step-grid));
+      margin-bottom: calc(0.5 * var(--step-grid));
+    }
+
+    & > p {
+      line-height: 1.2;
+      line-height-step: var(--step-grid);
+      margin: var(--step-grid) 0;
+    }
+
+    & > ul,
+    & > ol {
+      margin: var(--step-grid) 0;
+    }
+
+    & > ul li,
+    & > ol li {
+      line-height: 1.2;
+      line-height-step: var(--step-grid);
+      margin: 0;
+    }
+
+    // .Noteはフォントサイズが小さいので、狭めに
+    & > .Note {
+      line-height: 1.2;
+      line-height-step: calc(var(--step-grid) * 0.8);
+    }
+  }
+}
