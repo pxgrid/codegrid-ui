@@ -7912,3 +7912,34 @@ tag:
     @media screen and (max-width: 767px) {
       .CG2-signupFrom__check input[type="checkbox"] {
         margin-right: 8px; } }
+
+/* ==========================================================================
+   line-height-step実装
+   ========================================================================== */
+@supports (line-height-step: 1em) {
+  article.CG2-article {
+    --step-grid: 28px;
+    /* background-size: 100% var(--step-grid); */
+    /* background-image: linear-gradient(to bottom, #00bcd1 1px, transparent 1px); */ }
+    article.CG2-article > h3 {
+      display: inline-block;
+      width: 100%;
+      line-height: 1.2;
+      line-height-step: var(--step-grid);
+      margin-top: calc(1 * var(--step-grid));
+      margin-bottom: calc(0.5 * var(--step-grid)); }
+    article.CG2-article > p {
+      line-height: 1.2;
+      line-height-step: var(--step-grid);
+      margin: var(--step-grid) 0; }
+    article.CG2-article > ul,
+    article.CG2-article > ol {
+      margin: var(--step-grid) 0; }
+    article.CG2-article > ul li,
+    article.CG2-article > ol li {
+      line-height: 1.2;
+      line-height-step: var(--step-grid);
+      margin: 0; }
+    article.CG2-article > .Note {
+      line-height: 1.2;
+      line-height-step: calc(var(--step-grid) * 0.8); } }
