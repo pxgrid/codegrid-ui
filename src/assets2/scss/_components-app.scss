@@ -2798,6 +2798,9 @@ article.CG2-article{
     img {
       max-width: 100%;
     }
+    & > :last-child {
+      margin-bottom: 0;
+    }
   }
   .Column h1,
   .Column h2,
