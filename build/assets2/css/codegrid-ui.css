@@ -2707,6 +2707,7 @@ tag:
   color: #282828;
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   line-height: 1.2; }
   @media screen and (max-width: 767px) {
     .CG2-header1__heading {
@@ -2784,6 +2785,7 @@ tag:
 .CG2-leadText {
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   line-height: 1.4;
   text-align: center;
   margin: 80px 0 40px; }
@@ -3150,6 +3152,7 @@ tag:
 
 .CG2-paymentLine__label {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 24px; }
 
 .CG2-paymentLine__value {
@@ -3158,6 +3161,7 @@ tag:
 
 .CG2-paymentLine__unit {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 24px; }
 
 .CG2-paymentLine__extra {
@@ -3704,6 +3708,7 @@ appトップの今週号や、各号のページで利用。
 
 .CG2-seriesList__itemCategory {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   vertical-align: middle;
   display: table-cell;
   width: 40px; }
@@ -3760,6 +3765,7 @@ appトップの今週号や、各号のページで利用。
   font-weight: bold;
   line-height: 1.4;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   text-align: center;
   vertical-align: middle;
   display: table-cell;
@@ -4304,6 +4310,7 @@ tag:
 
 span.CG2-seriesWeekHeader__label {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   display: block;
   font-size: 16px;
   vertical-align: baseline; }
@@ -4318,6 +4325,7 @@ span.CG2-seriesWeekHeader__number {
 
 span.CG2-seriesWeekHeader__text {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 16px;
   vertical-align: baseline; }
 
@@ -4477,6 +4485,7 @@ tag:
   .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__label {
     font-size: 16px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-feature-settings: "palt";
     display: block; }
     @media screen and (max-width: 979px) {
       .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__label {
@@ -4492,6 +4501,7 @@ tag:
   .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__unit {
     font-size: 32px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-feature-settings: "palt";
     line-height: 1; }
     @media screen and (max-width: 979px) {
       .CG2-seriesListHeader__articleLength span.CG2-seriesListHeader__unit {
@@ -4579,6 +4589,7 @@ tag:
         background: #fff; } }
   .CG2-compactNav li {
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-feature-settings: "palt";
     text-align: center;
     vertical-align: middle;
     display: table-cell;
@@ -4799,6 +4810,7 @@ templateItem:
 
 .CG2-seriesHeader__categoryName {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   margin-top: 3px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesHeader__categoryName {
@@ -4813,6 +4825,7 @@ templateItem:
 
 .CG2-seriesHeader__title {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 48px;
   line-height: 1.2; }
   @media screen and (max-width: 767px) {
@@ -4821,6 +4834,7 @@ templateItem:
 
 .CG2-seriesHeader__length {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   margin-top: 30px; }
   @media screen and (max-width: 767px) {
     .CG2-seriesHeader__length {
@@ -5190,7 +5204,7 @@ tag:
     </div>
 
   </div>
-  <div class="CG2-articleHeader__bg" style="background-image: url( './img/_01.jpg' )"></div>
+  <div class="CG2-articleHeader__bg" style="background-image: url(//cdn.codegrid.net/2015-css-flexiblebox/main-blur.jpg)"></div>
 </div>
 ```
 
@@ -5451,6 +5465,7 @@ tag:
 .CG2-articleHeader__series {
   font-size: 24px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   line-height: 1.4; }
   .CG2-articleHeader__series a {
     color: inherit;
@@ -5475,6 +5490,7 @@ tag:
 .CG2-articleHeader__title {
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-weight: 600;
   line-height: 1.4;
   margin-bottom: 22px; }
@@ -5963,6 +5979,7 @@ tag:
 
 .CG2-articleBeforeLogin__lead {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 32px;
   text-align: center;
   margin: 40px 0; }
@@ -6056,6 +6073,7 @@ header.CG2-articleTOC__header {
   header.CG2-articleTOC__header h1 {
     font-size: 28px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-feature-settings: "palt";
     font-weight: normal;
     min-height: 44px;
     margin: 0; }
@@ -6331,6 +6349,7 @@ article.CG2-article {
   article.CG2-article > h2 {
     font-size: 28px;
     font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-feature-settings: "palt";
     font-weight: normal;
     line-height: 1.2;
     padding-bottom: .5em;
@@ -6604,6 +6623,8 @@ article.CG2-article .Column {
       margin: 0; }
   article.CG2-article .Column img {
     max-width: 100%; }
+  article.CG2-article .Column > :last-child {
+    margin-bottom: 0; }
 
 article.CG2-article .Column h1,
 article.CG2-article .Column h2,
@@ -6808,41 +6829,20 @@ tag:
 
 ```html
 <div class="CG2-articleUtil">
-  <ul>
-    <li><button class="CG2-button CG2-button--action" data-socialitems-append><span class="CG2-icon-facebook"></span><span class="CG2-icon-twitter"></span><span class="CG2-icon-gplus"></span> シェアする</button></li>
-    <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-star"></span> お気に入りに登録</button></li>
-  </ul>
-  <div class="CG2-articleUtil__socialItems"></div>
+  <div class="CG2-articleUtil__socialItems">
+    <div class="CG2-articleUtil__socialItem CG2-articleUtil__socialItem--twitter">
+      <a href="https://twitter.com/share" data-lang="en" data-url="" data-text="シリーズ - タイトル" data-hashtags="codegrid" class="twitter-share-button">Tweet</a>
+    </div>
+    <div class="CG2-articleUtil__socialItem CG2-articleUtil__socialItem--facebook">
+      <iframe src="//www.facebook.com/plugins/like.php?href=&amp;send=false&amp;layout=standard&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=68" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:68px;" allowTransparency="true"></iframe>
+    </div>
+  </div>
   <script src="https://platform.twitter.com/widgets.js" async></script>
 </div>
 ```
-
 */
 .CG2-articleUtil {
   margin: 20px 0; }
-  .CG2-articleUtil ul {
-    list-style: none;
-    padding: 0;
-    margin: 0; }
-    .CG2-articleUtil ul:before, .CG2-articleUtil ul:after {
-      content: "";
-      display: table; }
-    .CG2-articleUtil ul:after {
-      clear: both; }
-  .CG2-articleUtil li {
-    float: left;
-    padding: 0;
-    margin: 0 5px 5px 0; }
-  @media screen and (max-width: 767px) {
-    .CG2-articleUtil .CG2-button {
-      font-size: 10px;
-      display: inline-block;
-      width: auto;
-      padding: 0.2em 1.5em;
-      border-radius: 1px; }
-      .CG2-articleUtil .CG2-button [class^="CG2-icon-"] {
-        font-size: 12px;
-        margin-right: 3px; } }
   .CG2-articleUtil .CG2-articleUtil__socialItems {
     overflow: hidden; }
   .CG2-articleUtil .CG2-articleUtil__socialItem {
@@ -7336,13 +7336,8 @@ tag:
 */
 .CG2-authorList__inner {
   display: grid;
-  grid-column-gap: 40px; }
-  @media screen and (min-width: 767px) {
-    .CG2-authorList__inner {
-      grid-template-columns: repeat(2, 1fr); } }
-  @media screen and (min-width: 979px) {
-    .CG2-authorList__inner {
-      grid-template-columns: repeat(3, 1fr); } }
+  grid-column-gap: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); }
 
 .CG2-authorList__item {
   border-top: 1px solid #dbdbdb; }
@@ -7811,6 +7806,7 @@ tag:
 */
 .CG2-signupFrom__lead {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 32px;
   text-align: center;
   margin-bottom: 30px; }

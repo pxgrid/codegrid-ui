@@ -2555,6 +2555,7 @@ tag:
   color: #282828;
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   line-height: 1.2; }
   @media screen and (max-width: 767px) {
     .CG2-header1__heading {
@@ -2632,6 +2633,7 @@ tag:
 .CG2-leadText {
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   line-height: 1.4;
   text-align: center;
   margin: 80px 0 40px; }
@@ -2998,6 +3000,7 @@ tag:
 
 .CG2-paymentLine__label {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 24px; }
 
 .CG2-paymentLine__value {
@@ -3006,6 +3009,7 @@ tag:
 
 .CG2-paymentLine__unit {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   font-size: 24px; }
 
 .CG2-paymentLine__extra {
@@ -3552,6 +3556,7 @@ appトップの今週号や、各号のページで利用。
 
 .CG2-seriesList__itemCategory {
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   vertical-align: middle;
   display: table-cell;
   width: 40px; }
@@ -3608,6 +3613,7 @@ appトップの今週号や、各号のページで利用。
   font-weight: bold;
   line-height: 1.4;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
   text-align: center;
   vertical-align: middle;
   display: table-cell;
