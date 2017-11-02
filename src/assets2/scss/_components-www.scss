@@ -213,20 +213,27 @@ tag:
 ```html
 <section class="CG2-howYouReceive">
   <header class="CG2-howYouReceive__header">
-    <h1>CodeGridの配信形式は、Webアプリ × メールマガジン</h1>
+    <h1>CodeGridの配信形式は、<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">Web・iOSアプリ × メールマガジン</h1>
   </header>
   <div class="CG2-howYouReceive__list">
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+        <img src="http://img.pxgrid.net/320x180" alt="" height="180" width="320">
       </div>
-      <p>フロントエンドに特化した<br>300本以上の技術記事が読めるWebアプリ。<br><a href="#">Chromeアプリもご用意しています</a></p>
+      <p>フロントエンドに特化した<br>300本以上の技術記事が読めるWebアプリ。<br><a href="">Chromeアプリもご用意しています</a></p>
     </div>
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+        <img src="http://img.pxgrid.net/320x180" alt="" height="180" width="320">
       </div>
-      <p>毎週木曜日配信（月4回）。<br>最新記事が定期的に届くメールマガジン。<br><a href="#">サンプルへ</a></p>
+      <p>iPhoneからアクセスする最良の方法。</p>
+      <p><a href="" style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/ja-jp/appstore-lrg.svg), no-repeat;width:135px;height:40px;background-size:contain;"></a></p>
+    </div>
+    <div class="CG2-howYouReceive__item">
+      <div class="CG2-howYouReceive__image">
+        <img src="http://img.pxgrid.net/320x180" alt="" height="180" width="320">
+      </div>
+      <p>毎週木曜日配信（月4回）。<br>最新記事が定期的に届くメールマガジン。<br><a href="">サンプルへ</a></p>
     </div>
   </div>
 </section>
