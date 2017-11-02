@@ -3057,42 +3057,20 @@ tag:
 
 ```html
 <div class="CG2-articleUtil">
-  <ul>
-    <li><button class="CG2-button CG2-button--action" data-socialitems-append><span class="CG2-icon-facebook"></span><span class="CG2-icon-twitter"></span><span class="CG2-icon-gplus"></span> シェアする</button></li>
-    <li><button class="CG2-button CG2-button--action"><span class="CG2-icon-star"></span> お気に入りに登録</button></li>
-  </ul>
-  <div class="CG2-articleUtil__socialItems"></div>
+  <div class="CG2-articleUtil__socialItems">
+    <div class="CG2-articleUtil__socialItem CG2-articleUtil__socialItem--twitter">
+      <a href="https://twitter.com/share" data-lang="en" data-url="" data-text="シリーズ - タイトル" data-hashtags="codegrid" class="twitter-share-button">Tweet</a>
+    </div>
+    <div class="CG2-articleUtil__socialItem CG2-articleUtil__socialItem--facebook">
+      <iframe src="//www.facebook.com/plugins/like.php?href=&amp;send=false&amp;layout=standard&amp;show_faces=true&amp;font&amp;colorscheme=light&amp;action=like&amp;height=68" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:68px;" allowTransparency="true"></iframe>
+    </div>
+  </div>
   <script src="https://platform.twitter.com/widgets.js" async></script>
 </div>
 ```
-
 */
 .CG2-articleUtil{
   margin: 20px 0;
-  ul{
-    @include clearfix();
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-    li{
-      float: left;
-      padding: 0;
-      margin: 0 5px 5px 0;
-    }
-    .CG2-button{
-      @include max-screen( $breakpoint-middle ) {
-        font-size: 10px;
-        display: inline-block;
-        width: auto;
-        padding: 0.2em 1.5em;
-        border-radius: 1px;
-        [class^="CG2-icon-"]{
-          font-size: 12px;
-          margin-right: 3px;
-        }
-      }
-    }
   .CG2-articleUtil__socialItems{
     overflow: hidden;
   }
