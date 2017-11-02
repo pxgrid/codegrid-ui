@@ -309,6 +309,7 @@ tag:
   color: #282828;
   font-size: 32px;
   font-family: $fontSerif;
+  font-feature-settings: "palt";
   line-height: 1.2;
   @include max-screen( $breakpoint-middle ) {
     font-size: 20px;
@@ -394,6 +395,7 @@ tag:
 .CG2-leadText {
   font-size: 32px;
   font-family: $fontSerif;
+  font-feature-settings: "palt";
   line-height: 1.4;
   text-align: center;
   margin: 80px 0 40px;
@@ -828,6 +830,7 @@ tag:
 
 .CG2-paymentLine__label {
   font-family: $fontSerif;
+  font-feature-settings: "palt";
   font-size: 24px;
 }
 
@@ -838,6 +841,7 @@ tag:
 
 .CG2-paymentLine__unit {
   font-family: $fontSerif;
+  font-feature-settings: "palt";
   font-size: 24px;
 }
 
@@ -1400,6 +1404,7 @@ appトップの今週号や、各号のページで利用。
 
 .CG2-seriesList__itemCategory {
   font-family: $fontSerif;
+  font-feature-settings: "palt";
   vertical-align: middle;
   display: table-cell;
   width: 40px;
@@ -1469,6 +1474,7 @@ appトップの今週号や、各号のページで利用。
   font-weight: bold;
   line-height: 1.4;
   font-family: $fontSerif;
+  font-feature-settings: "palt";
   text-align: center;
   vertical-align: middle;
   display: table-cell;

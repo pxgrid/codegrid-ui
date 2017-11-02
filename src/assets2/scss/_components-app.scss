@@ -260,6 +260,7 @@ tag:
     }
       span.CG2-seriesWeekHeader__label{
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         display: block;
         font-size: 16px;
         vertical-align: baseline;
@@ -275,6 +276,7 @@ tag:
       }
       span.CG2-seriesWeekHeader__text{
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         font-size: 16px;
         vertical-align: baseline;
       }
@@ -431,6 +433,7 @@ tag:
     span.CG2-seriesListHeader__label{
       font-size: 16px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       display: block;
       @include max-screen( $breakpoint-base ) {
         font-size: 12px;
@@ -448,6 +451,7 @@ tag:
     span.CG2-seriesListHeader__unit{
       font-size: 32px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       line-height: 1;
       @include max-screen( $breakpoint-base ) {
         font-size: 20px;
@@ -543,6 +547,7 @@ tag:
   }
     li{
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       text-align: center;
       vertical-align: middle;
       display: table-cell;
@@ -778,6 +783,7 @@ templateItem:
       }
       .CG2-seriesHeader__categoryName{
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         margin-top: 3px;
         @include max-screen( $breakpoint-middle ) {
           font-size: 10px;
@@ -793,6 +799,7 @@ templateItem:
       }
         .CG2-seriesHeader__title{
           font-family: $fontSerif;
+          font-feature-settings: "palt";
           font-size: 48px;
           line-height: 1.2;
           @include max-screen( $breakpoint-middle ) {
@@ -801,6 +808,7 @@ templateItem:
         }
         .CG2-seriesHeader__length{
           font-family: $fontSerif;
+          font-feature-settings: "palt";
           margin-top: 30px;
           @include max-screen( $breakpoint-middle ) {
             font-size: 10px;
@@ -1488,6 +1496,7 @@ tag:
       .CG2-articleHeader__series{
         font-size: 24px;
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         line-height: 1.4;
         a{
           color: inherit;
@@ -1516,6 +1525,7 @@ tag:
       .CG2-articleHeader__title{
         font-size: 32px;
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         font-weight: 600;
         line-height: 1.4;
         margin-bottom: 22px;
@@ -2059,6 +2069,7 @@ tag:
 }
   .CG2-articleBeforeLogin__lead{
     font-family: $fontSerif;
+    font-feature-settings: "palt";
     font-size: 32px;
     text-align: center;
     margin: 40px 0;
@@ -2158,6 +2169,7 @@ section.CG2-articleTOC{
     h1{
       font-size: 28px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       font-weight: normal;
       min-height: 44px;
       margin: 0;
@@ -2455,6 +2467,7 @@ article.CG2-article{
   & > h2{
     font-size: 28px;
     font-family: $fontSerif;
+    font-feature-settings: "palt";
     font-weight: normal;
     line-height: 1.2;
     padding-bottom: .5em;
@@ -4137,6 +4150,7 @@ tag:
     }
       .CG2-signupFrom__lead{
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         font-size: 32px;
         text-align: center;
         margin-bottom: 30px;

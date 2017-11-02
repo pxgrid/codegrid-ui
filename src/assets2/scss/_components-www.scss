@@ -54,6 +54,7 @@ var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
       color: #fff;
       font-size: 32px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       text-align: center;
       cursor: pointer;
       position: absolute;
@@ -138,6 +139,7 @@ tag:
       color: #282828;
       font-size: 32px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       font-weight: normal;
       text-align: center;
       margin: 0 0 30px;
@@ -445,6 +447,7 @@ tag:
 }
   .CG2-circulation__lastUpdate {
     font-family: $fontSerif;
+    font-feature-settings: "palt";
     float: right;
     @include max-screen( $breakpoint-middle ) {
       float: none;
@@ -472,6 +475,7 @@ tag:
       .CG2-circulation__dataLabel {
         font-size: 16px;
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         @include max-screen( $breakpoint-middle ) {
           font-size: 12px;
         }
@@ -488,6 +492,7 @@ tag:
       .CG2-circulation__dataUnit {
         font-size: 32px;
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         line-height: 1.2;
         display: inline;
         @include max-screen( $breakpoint-middle ) {
@@ -538,6 +543,7 @@ section.CG2-pickedup {
     .CG2-pickedup__headerHeading {
       font-size: 32px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       font-weight: bold;
       margin-bottom: 15px;
       @include max-screen( $breakpoint-small ) {
@@ -752,6 +758,7 @@ section.CG2-customerQuotes {
     h1 {
       font-size: 32px;
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       font-weight: normal;
       line-height: 1.2;
       vertical-align: middle;
@@ -882,6 +889,7 @@ templateItem:
     margin: 0 auto;
     h1 {
       font-family: $fontSerif;
+      font-feature-settings: "palt";
       font-size: 32px;
       font-weight: normal;
       text-align: center;
@@ -1010,6 +1018,7 @@ section.CG2-form {
       h1 {
         font-size: 32px;
         font-family: $fontSerif;
+        font-feature-settings: "palt";
         font-weight: normal;
         line-height: 1.6;
         text-align: center;
