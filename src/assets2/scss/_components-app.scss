@@ -3615,18 +3615,12 @@ tag:
 ```
 */
 .CG2-authorList {}
-.CG2-authorList__inner {}
 
 // アイテムのレイアウト
 .CG2-authorList__inner {
   display: grid;
   grid-column-gap: 40px;
-  @include min-screen( $breakpoint-middle ) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @include min-screen( $breakpoint-base ) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
 }
 
 // アイテムのスタイル
