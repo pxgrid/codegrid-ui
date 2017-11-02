@@ -1,15 +1,3 @@
-
-/* ==========================================================================
-   Section comment block
-   ========================================================================== */
-
-/* Sub-section comment block
-   ========================================================================== */
-
-/* Basic comment */
-
-
-
 /* ==========================================================================
    offsetting an in-page anchor to adjust for fixed header
    http://stackoverflow.com/questions/4086107/html-positionfixed-page-header-and-in-page-anchors
@@ -97,9 +85,17 @@ templateItem:
       <div class="CG2-pageHeader__logo">
         <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
       </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
+      </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__buttons">
@@ -122,11 +118,19 @@ templateItem:
   <header class="CG2-pageHeader" style="position:relative;">
     <div class="CG2-pageHeader__inner">
       <div class="CG2-pageHeader__logo">
-        <a href="#"><img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24"></a>
+        <img src="../../../assets2/img/CG2-pageHeader/logo.svg" alt="CodeGrid" width="125" height="24">
+      </div>
+      <div class="CG2-pageHeader__appNav">
+        <ul>
+          <li><a href="#">最新記事一覧</a></li>
+          <li><a href="#">お気に入り一覧</a></li>
+        </ul>
       </div>
       <div class="CG2-pageHeader__search">
         <div class="CG2-pageHeader__searchInner">
-          <input>
+          <form>
+            <input type="search">
+          </form>
         </div>
       </div>
       <div class="CG2-pageHeader__user">
@@ -138,13 +142,14 @@ templateItem:
           <div class="CG2-pageHeader__userOpener"></div>
         </div>
         <div class="CG2-pageHeader__userMenu">
-          <ul>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
-            <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
-          </ul>
+          <div class="CG2-pageHeader__userMenuInner">
+            <ul>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">設定</a></li>
+              <li><a class="CG2-button CG2-button--fullWidth CG2--alignCenter" href="#">ログアウト</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div class="CG2-pageHeader__opener" data-drawer-toggle></div>
     </div>
   </header>
 </div>
@@ -166,6 +171,60 @@ templateItem:
 
 */
 
+@keyframes wf1-pageHeader-onmounted {
+  0% {
+    overflow: hidden;
+    height: 0;
+  }
+  99% {
+    overflow: hidden;
+    height: 0;
+  }
+  100% {
+    overflow: visible;
+    height: auto;
+  }
+}
+@keyframes wf1-pageHeader-elastic-in {
+  0% {
+    height: 0;
+    opacity: 0;
+    transform: scale(0);
+  }
+  1% {
+    height: auto;
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes wf1-pageHeader-elastic-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.1);
+  }
+  99% {
+    visibility: visible;
+    height: auto;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    transform: scale(0);
+  }
+}
+
+
 .CG2-pageHeader{
   @include clearfix();
   position: fixed;
@@ -175,17 +234,14 @@ templateItem:
   left: 0;
   width: 100%;
   height: 56px;
-  background: rgba( 0, 0, 0, .8 );
+  background: rgba( 0, 0, 0, 0.8 );
   transform: translate3d( 0, 0, 0 );
   @include max-screen( $breakpoint-middle ) {
     height: 35px;
     padding: 0 10px;
-    -webkit-transition: -webkit-transform .4s;
-            transition:         transform .4s;
+    transition: transform .4s;
     html.js-drawer--show & {
-      -webkit-transform: translateX( -100% ) translateX( 50px );
-          -ms-transform: translateX( -100% ) translateX( 50px );
-              transform: translateX( -100% ) translateX( 50px );
+      transform: translateX( -100% ) translateX( 50px );
     }
   }
   @include print () {
@@ -196,21 +252,22 @@ templateItem:
 }
   .CG2-pageHeader__inner{
     position: relative;
-    // max-width: 1016px;
+    display: flex;
+    align-items: center;
     max-width: 1100px;
+    height: 100%;
     padding: 0 28px;
     margin: 0 auto;
+    @include max-screen( $breakpoint-middle ) {
+      padding: 0 28px 0 0;
+    }
   }
     .CG2-pageHeader__logo{
-      position: absolute;
-      top: 16px;
-      left: 28px;
+      margin: 0 30px 0 0;
       img{
         display: block;
       }
       @include max-screen( $breakpoint-middle ) {
-        top: 10px;
-        left: 0;
         img{
           width: 90px;
           height: auto;
@@ -219,6 +276,7 @@ templateItem:
     }
     .CG2-pageHeader__nav{
       text-align: center;
+      margin: 0 auto;
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -251,7 +309,51 @@ templateItem:
         padding: 10px;
         margin: -10px;
         &:hover{
-          color: #FFF;
+          color: #fff;
+        }
+      }
+      @include print () {
+        display: none;
+      }
+    }
+    .CG2-pageHeader__appNav{
+      @include max-screen( $breakpoint-middle ) {
+        display: none;
+      }
+      ul{
+        font-size: 0;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        &:before{
+          content: '';
+          display: inline-block;
+          width: 0;
+          height: 56px;
+          vertical-align: middle;
+          @include max-screen( $pageMaxWidth ) {
+            content: none;
+          }
+        }
+      }
+      li{
+        font-size: .875rem;
+        vertical-align: middle;
+        display: inline-block;
+        padding: 0;
+        margin: 0 10px;
+        @include max-screen( $pageMaxWidth ) {
+          font-size: .75rem;
+        }
+      }
+      a{
+        color: #999;
+        text-decoration: none;
+        display: inline-block;
+        padding: 10px;
+        margin: -10px;
+        &:hover{
+          color: #fff;
         }
       }
       @include print () {
@@ -260,10 +362,9 @@ templateItem:
     }
     .CG2-pageHeader__search{
       @extend %search;
-      position: absolute;
-      top: 11px;
-      left: 180px;
       width: 280px;
+      height: 32px;
+      margin: 0 0 0 auto;
       border :1px solid #777;
       background: transparent;
       @include max-screen( $breakpoint-middle ) {
@@ -276,16 +377,9 @@ templateItem:
       .CG2-pageHeader__searchInner{
         @extend %searchInner;
         input{
-        //   color: #FFF;
-        //   font-size: 14px;
-        //   box-sizing: border-box;
-        //   display: block;
-        //   border: none;
-        //   width: 100%;
-        //   height: 100%;
+          line-height: 22px;
+          height: 30px;
           padding: 4px 10px 4px 30px;
-        //   background: transparent;
-        //   transition: all .2s;
           &:hover,
           &:focus{
             background: #303030;
@@ -293,9 +387,7 @@ templateItem:
         }
       }
     .CG2-pageHeader__buttons{
-      position: absolute;
-      top: 0;
-      right: 28px;
+      margin: 0 0 0 30px;
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -329,14 +421,16 @@ templateItem:
         padding: 10px;
         margin: -10px;
         &:hover{
-          color: #FFF;
+          color: #fff;
         }
       }
     }
     .CG2-pageHeader__user{
-      position: absolute;
-      top: 0;
-      right: 0;
+      position: relative;
+      margin: 0 0 0 30px;
+      @include max-screen( $breakpoint-base ) {
+        margin-left: 20px;
+      }
       @include max-screen( $breakpoint-middle ) {
         display: none;
       }
@@ -372,7 +466,7 @@ templateItem:
           }
         }
         .CG2-pageHeader__userOpener{
-          color: #EEE;
+          color: #eee;
           text-align: center;
           display: table-cell;
           vertical-align: middle;
@@ -381,52 +475,70 @@ templateItem:
           &:after{
             @include icon( down );
             position: relative;
-            top: 0;
-            transition: all .2s;
-            .CG2-pageHeader__userHeader:hover &{
-              color: #FFF;
-              top: 2px;
+            transition: transform .4s cubic-bezier(.3, 2, .6, 1 );
+            .CG2-pageHeader__userHeader:hover &,
+            .CG2-pageHeader__userHeader:focus &{
+              color: #fff;
+              transform: translateY( 2px );
+              transition-duration: .4s;
             }
           }
         }
         .CG2-pageHeader__userMenu{
-          box-sizing: border-box;
+          overflow: hidden;
           position: absolute;
-          display: none;
+          // display: none;
           width: 100%;
-          padding: 10px;
-          border: 1px solid rgba(0,0,0,0.1);
+          height: 0;
           margin-top: 2px;
-          border-radius: 2px;
-          box-shadow: 0 3px 12px rgba(0,0,0,0.1);
-          background: #FFF;
+          animation-name: wf1-pageHeader-onmounted;
+          animation-fill-mode: forwards;
+          animation-duration: .3s;
           &.CG2-pageHeader__userMenu--show{
-            display: block;
-          }
-          &:before{
-            content: "";
-            position: absolute;
-            top: -14px;
-            right: 38px;
-            display: block;
-            border: 7px solid transparent;
-            border-bottom-color: #FFF;
-          }
-          ul{
-            list-style: none;
-            padding: 0;
-            margin: 0;
-          }
-          li{
-            margin: 0;
-            &+li{
-              margin-top: 10px;
+            overflow: visible;
+            height: auto;
+            .CG2-pageHeader__userMenuInner{
+              visibility: visible;
+              animation-name: wf1-pageHeader-elastic-in;
             }
           }
         }
+          .CG2-pageHeader__userMenuInner{
+            visibility: hidden;
+            box-sizing: border-box;
+            padding: 10px;
+            border: 1px solid rgba( 0, 0, 0, 0.1 );
+            border-radius: 2px;
+            box-shadow: 0 3px 12px rgba( 0, 0, 0, 0.1 );
+            background: #fff;
+            transform-origin: 150px 0;
+            animation-name: wf1-pageHeader-elastic-out;
+            animation-duration: .3s;
+            animation-fill-mode: forwards;
+            &:before{
+              content: "";
+              position: absolute;
+              top: -14px;
+              right: 38px;
+              display: block;
+              border: 7px solid transparent;
+              border-bottom-color: #fff;
+            }
+            ul{
+              list-style: none;
+              padding: 0;
+              margin: 0;
+            }
+            li{
+              margin: 0;
+              &+li{
+                margin-top: 10px;
+              }
+            }
+          }
     .CG2-pageHeader__opener{
       @include max-screen( $breakpoint-middle ) {
-        color: #FFF;
+        color: #fff;
         font-size: 20px;
         text-align: center;
         cursor: pointer;
@@ -482,7 +594,9 @@ templateItem:
         </div>
         <div class="CG2-pageFooter__appNavSearch">
           <div class="CG2-pageFooter__appNavSearchInner">
-            <input>
+            <form>
+              <input type="search">
+            </form>
           </div>
         </div>
       </div>
@@ -498,18 +612,18 @@ templateItem:
       </div>
       <div class="CG2-pageFooter__appNavCategory">
         <ul>
-          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-practice"></span>実践</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
           <li><a href="#"><span class="CG2-icon-cat-architecture"></span>設計</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
           <li><a href="#"><span class="CG2-icon-cat-future"></span>未来・次世代</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-workstyle"></span>仕事術</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-talk"></span>座談会</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-mastering"></span>実践</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-elementary"></span>入門</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-standards"></span>仕様解説</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-work-style"></span>仕事術</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-report"></span>レポート</a></li>
           <li><a href="#"><span class="CG2-icon-cat-design"></span>デザイン</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディスカッション</a></li>
           <li><a href="#"><span class="CG2-icon-cat-interview"></span>インタビュー</a></li>
-          <li><a href="#"><span class="CG2-icon-cat-discussion"></span>ディカッション</a></li>
+          <li><a href="#"><span class="CG2-icon-cat-survey"></span>アンケート</a></li>
         </ul>
       </div>
     </div>
@@ -522,7 +636,7 @@ templateItem:
         <li><a href="#">プライバシーポリシー</a></li>
         <li><a href="#">特定商取引法に基づく表示</a></li>
       </ul>
-      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></a></div>
+      <div class="CG2-pageFooter__company"><a href="#">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="PixelGrid" width="128" height="32"></a></div>
     </div>
   </div>
 <!-- /.CG2-pageFooter --></footer>
@@ -534,7 +648,7 @@ templateItem:
 <footer class="CG2-pageFooter CG2-pageFooter--simple">
   <div class="CG2-pageFooter__inner">
     <div class="CG2-pageFooter__legalNav">
-      <div class="CG2-pageFooter__company">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="Pixel Grid" width="128" height="32"></div>
+      <div class="CG2-pageFooter__company">運営会社<img src="../../../assets2/img/CG2-pageFooter/pxg-logo.svg" alt="PixelGrid" width="128" height="32"></div>
     </div>
   </div>
 <!-- /.CG2-pageFooter --></footer>
@@ -579,28 +693,21 @@ templateItem:
     display: block;
     transition: all .2s;
     &:hover{
-      color: #FFF;
+      color: #fff;
     }
   }
 }
   .CG2-pageFooter__inner{
     table-layout: fixed;
     display: table;
-    width: 1016px + 28 + 28;
+    max-width: 1016px + 28 + 28;
+    width: auto;
     margin: 0 auto;
-    @include max-screen( 1100px ) {
-      width: auto;
-    }
     @include max-screen( $breakpoint-base ) {
       display: block;
     }
-    @include max-screen( $breakpoint-small ) {
-      display: block;
-      width: auto;
-    }
     @include print () {
       display: block;
-      width: auto;
     }
   }
     .CG2-pageFooter__wwwNav{
@@ -723,7 +830,7 @@ templateItem:
 .CG2-pageFooter__appNavHeader{
   display: table;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
 }
   .CG2-pageFooter__appNavHeading{
     font-size: 20px;
@@ -756,7 +863,7 @@ templateItem:
         left: 10px;
       }
       input{
-        color: #FFF;
+        color: #fff;
         font-size: 14px;
         box-sizing: border-box;
         display: block;
@@ -776,7 +883,7 @@ templateItem:
     padding: 0;
   }
   li{
-    margin: 12px 0 0;
+    margin: 0 0 12px;
   }
   a{
     &:before{
@@ -789,16 +896,14 @@ templateItem:
   float: left;
   width: 54.99%;
   ul{
-    -webkit-column-count: 2;
-    -moz-column-count: 2;
     column-count: 2;
     list-style: none;
     margin: 0;
     padding: 0;
-    
+
   }
   li{
-    margin: 12px 0 0;
+    margin: 0 0 12px;
   }
   a{}
   span[class^="CG2-icon-cat"]{
@@ -862,7 +967,7 @@ templateItem:
       text-align: center;
       margin-top: 0;
       a{
-        color: #FFF;
+        color: #fff;
         display: table;
         margin: 0 auto;
       }
@@ -881,7 +986,7 @@ templateItem:
       text-align: center;
       margin-top: 0;
       a{
-        color: #FFF;
+        color: #fff;
         display: table;
         margin: 0 auto;
       }
@@ -927,7 +1032,7 @@ templateItem:
             </div>
             <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
           </div>
-          
+
           <div class="CG2-drawerBody__nav">
             <ul>
               <li><a href="#">アプリトップ</a></li>
@@ -948,7 +1053,9 @@ templateItem:
           <div class="CG2-drawerBody__separator"></div>
           <div class="CG2-drawerBody__search">
             <div class="CG2-drawerBody__searchInner">
-              <input>
+              <form>
+                <input type="search">
+              </form>
             </div>
           </div>
           <div class="CG2-drawerBody__nav">
@@ -1042,30 +1149,22 @@ $drawerLeft: 50px;
   width: 100%;
   height: 100%;
   background: rgba( 0, 0, 0, 0 );
-  -webkit-transform: translate3d( ( -$drawerLeft ), 0, 0 );
-      -ms-transform: translateX( ( -$drawerLeft ) );
-          transform: translate3d( ( -$drawerLeft ), 0, 0 );
-  -webkit-transition: -webkit-transform .4s;
-          transition:         transform .4s;
+  transform: translate3d( ( -$drawerLeft ), 0, 0 );
+  transition: transform .4s;
 }
 .CG2-drawer__panel, x::-ms-fill {
   transform: translateX( ( -$drawerLeft ) ); /* IE10, 11, avoid using GPU feature */
 }
 
 html:not( .js-drawer--show ) .CG2-drawer__panel {
-  -webkit-animation-name: zIndexOut;
-          animation-name: zIndexOut;
-  -webkit-animation-duration: .4s;
-          animation-duration: .4s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
+  animation-name: zIndexOut;
+  animation-duration: .4s;
+  animation-iteration-count: 1;
 }
 html.js-drawer--show .CG2-drawer__panel {
   margin-left: 0;
   z-index: $z-pageHeader - 1;
-  -webkit-transform: translateX( -100% );
-      -ms-transform: translateX( -100% );
-          transform: translateX( -100% );
+  transform: translateX( -100% );
 }
 html.js-drawer--dragging,
 html.js-drawer--dragging * {
@@ -1074,8 +1173,7 @@ html.js-drawer--dragging * {
   cursor: grabbing;
 }
 html:not( .js-drawer--dragging ) .CG2-drawer__panel {
-  -webkit-transition: -webkit-transform .4s, margin .1s;
-          transition:         transform .4s, margin .1s;
+  transition: transform .4s, margin .1s;
 }
 .CG2-drawer__panel:before {
   content: '';
@@ -1101,8 +1199,7 @@ html:not( .js-drawer--dragging ) .CG2-drawer__panel {
   box-sizing: border-box;
   min-height: 100%;
   box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0 );
-  -webkit-transition: box-shadow .4s;
-          transition: box-shadow .4s;
+  transition: box-shadow .4s;
 }
 html.js-drawer--show .CG2-drawer__panelBody {
   box-shadow: -2px 2px 4px rgba( 0, 0, 0, 0.3 );
@@ -1125,15 +1222,11 @@ html.js-drawer--show .CG2-drawer__panelBody {
   bottom: 0;
   left: 0;
   background: rgba( 0, 0, 0, 0 );
-  -webkit-transition: background .4s;
-          transition: background .4s;
+    transition: background .4s;
   html:not( .js-drawer--show ) & {
-    -webkit-animation-name: bgOut;
-            animation-name: bgOut;
-    -webkit-animation-duration: .4s;
-            animation-duration: .4s;
-    -webkit-animation-iteration-count: 1;
-            animation-iteration-count: 1;
+    animation-name: bgOut;
+    animation-duration: .4s;
+    animation-iteration-count: 1;
   }
   html.js-drawer--show & {
     z-index: $z-pageHeader - 2;
@@ -1142,21 +1235,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
 }
 
 
-@-webkit-keyframes bgOut {
-    0% { z-index:  $z-pageHeader - 2; }
-   99% { z-index:  $z-pageHeader - 2; }
-  100% { z-index: -1; }
-}
-
 @keyframes bgOut {
     0% { z-index:  $z-pageHeader - 2; }
    99% { z-index:  $z-pageHeader - 2; }
-  100% { z-index: -1; }
-}
-
-@-webkit-keyframes zIndexOut {
-    0% { z-index:  $z-pageHeader - 1; }
-   99% { z-index:  $z-pageHeader - 1; }
   100% { z-index: -1; }
 }
 
@@ -1288,7 +1369,9 @@ html.js-drawer--show .CG2-drawer__panelBody {
   &:before{
     font-size: 20px;
   }
-  input{}
+  input{
+    height: 40px;
+  }
 }
 
 
@@ -1336,7 +1419,7 @@ templateItem:
 .CG2-container+.CG2-container,
 .CG2-container+.CG2-container+.CG2-container+.CG2-container,
 .CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container+.CG2-container{
-  background: #EEE;
+  background: #eee;
 }
 .CG2-container__inner{
   box-sizing: border-box;

@@ -1,0 +1,15 @@
+/* CodeGrid-UI core */
+
+// ビルドに必要な変数やmixinなど
+@import "vendor/_normalize";
+@import "vendor/_media-queries";
+@import "0_vars";
+@import "1_utils";
+@import "2_basic";
+@import "3_animations";
+@import "icon";
+@import "placeholder";
+
+// ページのテンプレート用のスタイルと、共通コンポーネント
+@import "template";
+@import "components-shared";

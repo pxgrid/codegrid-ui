@@ -1,0 +1,21 @@
+version: 2
+jobs:
+  build:
+    working_directory: /workspace
+    docker:
+      - image: node:6
+        environment:
+          TZ: Asia/Tokyo
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - deploy:
+          name: Deploying to S3 (on master only)
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              npm run deploy
+            else
+              echo "do nothing ;D"
+            fi

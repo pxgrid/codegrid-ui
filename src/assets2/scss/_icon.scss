@@ -1,3 +1,18 @@
+// このscssファイルはgulpによる自動生成
+// scssを編集したい場合は src/assets2/font/codegrid-icon/_icon.scss を編集すること
+
+@import "icon-utils";
+
+/* アイコンフォント
+   ========================================================================== */
+@font-face {
+  font-family: "codegrid-icon";
+  src: url('../font/codegrid-icon.woff2') format('woff2'),
+        url('../font/codegrid-icon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /*
 ---
 name: Icon
@@ -249,37 +264,17 @@ cat-discussion
 
 */
 
-@font-face {
-  font-family: "codegrid-icon";
-  src: url('../font/codegrid-icon.eot');
-  src: url('../font/codegrid-icon.eot?#iefix') format('embedded-opentype'),
-    url('../font/codegrid-icon.woff') format('woff'),
-    url('../font/codegrid-icon.ttf') format('truetype'),
-    url('../font/codegrid-icon.svg#codegrid-icon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
 [class^="CG2-icon-"], [class*=" CG2-icon-"] {
-  font-family: "codegrid-icon";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: middle;
-  display: inline-block;
+  // _icon-utilsに定義
+  @extend %codegrid-icon;
 
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-
-  /* For With CJK Text =========== */
+  // 日本語とのベースラインの兼ね合い
   position: relative;
   top: -0.1em;
 }
 
+// アイコン
+// ===========================================================================
 .CG2-icon-pxg:before { content: "\"; }
 .CG2-icon-top:before { content: "\"; }
 .CG2-icon-right:before { content: "\"; }
@@ -312,49 +307,8 @@ cat-discussion
 .CG2-icon-cat-discussion:before { content: "\"; }
 
 
-@function getValue ( $assoc, $key ) {
-  @each $pair in $assoc {
-    @if nth( $pair, 1 ) == $key {
-      @return nth( $pair, 2 );
-    }
-  }
-  @return null;
-}
-
-$icons: (
-  pxg "\",
-  top "\",
-  right "\",
-  down "\",
-  left "\",
-  hamburger "\",
-  list "\",
-  setting "\",
-  search "\",
-  star "\",
-  lock "\",
-  unlock "\",
-  question "\",
-  exclamation-circle "\",
-  exclamation-triangle "\",
-  twitter "\",
-  facebook "\",
-  gplus "\",
-  cat-elementary "\",
-  cat-mastering "\",
-  cat-standards "\",
-  cat-talk "\",
-  cat-architecture "\",
-  cat-report "\",
-  cat-design "\",
-  cat-future "\",
-  cat-work-style "\",
-  cat-survey "\",
-  cat-interview "\",
-  cat-discussion "\",
-  
-);
-
+// 色付きのアイコン
+// ===========================================================================
 span.CG2-icon--colored.CG2-icon-unlock           { color: #f8a000; }
 span.CG2-icon--colored.CG2-icon-cat-elementary   { color: #f4db00; }
 span.CG2-icon--colored.CG2-icon-cat-mastering    { color: #9cc500; }
@@ -368,18 +322,3 @@ span.CG2-icon--colored.CG2-icon-cat-work-style   { color: #ef0000; }
 span.CG2-icon--colored.CG2-icon-cat-survey       { color: #ee0155; }
 span.CG2-icon--colored.CG2-icon-cat-interview    { color: #ef007e; }
 span.CG2-icon--colored.CG2-icon-cat-discussion   { color: #9c0178; }
-
-@mixin icon ( $name ) {
-  content: getValue( $icons, $name );
-  font-family: "codegrid-icon";
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  vertical-align: middle;
-  display: inline-block;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}

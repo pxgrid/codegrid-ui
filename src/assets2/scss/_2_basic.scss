@@ -1,40 +1,14 @@
-/* ==========================================================================
-   Section comment block
+/* レイアウトのためのゼロ幅フォント
    ========================================================================== */
-
-/* Sub-section comment block
-   ========================================================================== */
-
-/* Basic comment */
-
-
 @font-face {
   font-family: 'zeroWidth';
-  src:url('../font/zero-width.eot');
-  src:url('../font/zero-width.eot#iefix') format('embedded-opentype'),
-      url('../font/zero-width.woff') format('woff'),
-      url('../font/zero-width.ttf') format('truetype');
+  src: url('../font/zero-width.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
-
-/* ==========================================================================
-   for styleguide
+/* mqpackerが意図した順番にソースを並び替えるためのおまじない
    ========================================================================== */
-.DEBUG{
-  color: #FFF;
-  font-size: 16px;
-  font-family: $fontSansSerif;
-  padding: 5px;
-  margin: 1em 0;
-  background: orange;
-}
-
-#__bs_notify__{
-  pointer-events: none;
-}
-
 @include max-screen( $breakpoint-base )   { _x { _x : 0 } }
 @include max-screen( $breakpoint-middle ) { _x { _x : 0 } }
 @include max-screen( $breakpoint-small )  { _x { _x : 0 } }
@@ -81,9 +55,9 @@
 /* ==========================================================================
    general style
    ========================================================================== */
-::-webkit-selection {background: rgba( 174, 217, 17, .6 ); text-shadow: none; }
-::-moz-selection    {background: rgba( 174, 217, 17, .6 ); text-shadow: none; }
-::selection         {background: rgba( 174, 217, 17, .6 ); text-shadow: none; }
+::-webkit-selection {background: rgba( 174, 217, 17, 0.6 ); text-shadow: none; }
+::-moz-selection    {background: rgba( 174, 217, 17, 0.6 ); text-shadow: none; }
+::selection         {background: rgba( 174, 217, 17, 0.6 ); text-shadow: none; }
 
 html{
   color: #242424;
@@ -101,7 +75,7 @@ html{
 
 body{
   margin:0;
-  background: #FFF;
+  background: #fff;
   @include max-screen( $breakpoint-middle ) {
     min-width: 0;
   }

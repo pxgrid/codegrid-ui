@@ -18,21 +18,12 @@ var iconfont     = require( 'gulp-iconfont' );
 var plumber      = require( 'gulp-plumber' );
 var rename       = require( 'gulp-rename' );
 var sass         = require( 'gulp-sass' );
+var sourcemaps   = require( 'gulp-sourcemaps' );
 var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
 var awspublish   = require( 'gulp-awspublish' );
 
 var runSequence  = require( 'run-sequence' ).use( gulp );
-
-
-var AUTOPREFIXER_BROWSERS = {
-  browsers: [
-    'ie >= 9',
-    'safari >= 7',
-    'ios >= 7',
-    'android >= 4'
-  ]
-};
 
 
 gulp.task( 'browser-sync', function () {
@@ -55,10 +46,6 @@ gulp.task( 'clean', function () {
 gulp.task( 'copy-font', function () {
 
   return gulp.src( [
-          './src/assets2/font/zero-width.eot',
-          './src/assets2/font/zero-width.otf',
-          './src/assets2/font/zero-width.svg',
-          './src/assets2/font/zero-width.ttf',
           './src/assets2/font/zero-width.woff'
          ] )
          .pipe( gulp.dest( './build/assets2/font/' ) );
@@ -96,33 +83,40 @@ gulp.task( 'js', function () {
           './src/assets2/js/CG2-tab.js',
           './src/assets2/js/CG2-articleSeriesNav.js',
           './src/assets2/js/CG2-livecode.js',
+          './src/assets2/js/CG2-forms.js',
           './src/assets2/js/old-jade-click-to-play.js',
           './src/assets2/js/old-jade-prism.js'
          ] )
          .pipe( plumber() )
+         .pipe( sourcemaps.init() )
          .pipe( concat( 'codegrid-ui.js' ) )
          .pipe( gulp.dest( './build/assets2/js/' ) )
          .pipe( uglify() )
          .pipe( rename( { extname: '.min.js' } ) )
+         .pipe( sourcemaps.write('.') )
          .pipe( gulp.dest( './build/assets2/js/' ) );
 
 } );
 
 
-gulp.task( 'sass', function () {
+gulp.task( 'css', function () {
 
-  var processors = [
-    autoprefixer( AUTOPREFIXER_BROWSERS ),
-    mqpacker,
-    csswring
-  ];
-
-  return gulp.src( './src/assets2/scss/codegrid-ui.scss' )
+  return gulp.src( [
+          './src/assets2/scss/codegrid-ui.scss',
+          './src/assets2/scss/codegrid-ui-core.scss',
+          './src/assets2/scss/codegrid-ui-www.scss',
+          ] )
          .pipe( plumber() )
+         .pipe( sourcemaps.init() )
          .pipe( sass() )
+         .pipe( postcss( [ autoprefixer( { supports: false } ) ] ) )
          .pipe( gulp.dest( './build/assets2/css/' ) )
+         .pipe( postcss( [
+           mqpacker(),
+           csswring(),
+           ] ) )
          .pipe( rename( { extname: '.min.css' } ) )
-         .pipe( postcss( processors ) )
+         .pipe( sourcemaps.write('.') )
          .pipe( gulp.dest( './build/assets2/css/' ) );
 
 } );
@@ -135,11 +129,15 @@ gulp.task( 'iconfont', function () {
   return gulp.src( [ './src/assets2/font/codegrid-icon/*.svg' ] )
   .pipe( iconfont( {
     fontName: fontName,
+    formats: ['woff', 'woff2'],
     appendCodepoints: true
   } ) )
   .on( 'glyphs', function( glyphs, options ) {
 
-    gulp.src( './src/assets2/font/codegrid-icon/_icon.scss' )
+    gulp.src( [
+      './src/assets2/font/codegrid-icon/_icon.scss',
+      './src/assets2/font/codegrid-icon/_icon-utils.scss',
+    ] )
     .pipe( consolidate( 'underscore', {
       glyphs: glyphs,
       fontName: fontName,
@@ -161,6 +159,7 @@ gulp.task( 'numfont', function () {
   return gulp.src( [ './src/assets2/font/codegrid-num/*.svg' ] )
   .pipe( iconfont( {
     fontName: fontName,
+    formats: ['woff', 'woff2'],
     fontHeight: 256,
     descent: 24
   } ) )
@@ -189,24 +188,24 @@ gulp.task( 'watch', function () {
   } );
 
   watch( [ './src/assets2/scss/*.scss' ], function () {
-    runSequence( 'sass', browserSync.reload );
+    runSequence( 'css', browserSync.reload );
   } );
 
   // watch( [ './src/assets2/font/codegrid-icon/*.svg' ], function () {
-  //   runSequence( 'iconfont', 'sass', browserSync.reload );
+  //   runSequence( 'iconfont', 'css', browserSync.reload );
   // } );
 
 } );
 
 gulp.task( 'default', function ( callback ) {
 
-  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'watch', callback );
+  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'watch', callback );
 
 } );
 
 gulp.task( 'build', function ( callback ) {
 
-  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'sass' ], 'guide', callback );
+  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'guide', callback );
 
 } );
 

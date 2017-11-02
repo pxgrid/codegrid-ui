@@ -1,0 +1,1591 @@
+@charset "UTF-8";
+/* CodeGrid-UI for CodeGrid website */
+/* アイコンの基礎スタイル
+   ========================================================================== */
+.CG2-logo3d__overlayText:after, .CG2-faq__question:before {
+  font-family: "codegrid-icon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* ==========================================================================
+   CG2-logo3d
+   ========================================================================== */
+/*
+---
+name: Logo_3D
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-logo3d">
+  <div class="CG2-logo3d__inner">
+    <div class="CG2-logo3d__overlayText">
+      フロントエンドに<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">関わる人々のガイド
+    </div>
+  </div>
+</div>
+```
+
+three.min.js (r72)、Logo3D.jsを読み込み、`new CGUI.Logo3D( document.querySelector( '.CG2-logo3d__inner' )`する必要がある
+
+<script src="/static/js/three.min.js"></script>
+<script src="/static/js/makePNoise1D.js"></script>
+<script src="/static/js/Logo3D.js"></script>
+<script>
+var logo3d = new CG2.Logo3D( document.querySelector( '.CG2-logo3d__inner' ) );
+</script>
+
+*/
+.CG2-logo3d {
+  position: relative;
+  margin: 0 auto;
+  background: #000; }
+
+.CG2-logo3d__inner {
+  height: calc( 100vh - 120px);
+  background: #000; }
+  @media screen and (max-width: 639px) {
+    .CG2-logo3d__inner {
+      height: calc( 100vh - 30px); } }
+  .CG2-logo3d__inner img,
+  .CG2-logo3d__inner canvas {
+    display: block;
+    margin: 0 auto; }
+
+.CG2-logo3d__overlayText {
+  color: #fff;
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  height: 120px;
+  padding: 30px 0 0;
+  background: rgba(0, 0, 0, 0.8); }
+  @media screen and (max-width: 639px) {
+    .CG2-logo3d__overlayText {
+      font-size: 20px;
+      line-height: 1.2;
+      height: auto;
+      padding: 10px 5px; } }
+  .CG2-logo3d__overlayText:after {
+    content: "";
+    font-size: 22px;
+    display: block;
+    text-align: center;
+    margin-top: 16px; }
+    @media screen and (max-width: 639px) {
+      .CG2-logo3d__overlayText:after {
+        font-size: 16px;
+        margin-top: 6px; } }
+
+/* ==========================================================================
+   CG2-features
+   ========================================================================== */
+/*
+---
+name: features
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-features">
+  <section class="CG2-features__item">
+    <h1>執筆陣は現役のフロントエンドエンジニア</h1>
+    <div class="CG2-features__itemBody">
+      <p>CodeGridで執筆しているのは、ピクセルグリッドのフロントエンドエンジニアたち。書籍執筆や講演の実績を持つエンジニアも多数在籍しています。だから、配信される記事では実際にプロジェクトで使った現場の実感から、本当に実務に必要な知識をお届けします。また、CodeGridは専任の編集者が編集のうえで配信しますので、記事の正確さ読みやすさにも自信があります。</p>
+    </div>
+  </section>
+  <section class="CG2-features__item">
+    <h1>基礎から最新トレンド技術まで</h1>
+    <div class="CG2-features__itemBody">
+      <p>忙しいと追うのを忘れがちになる新しい技術情報。エンジニア同士の会話でついていけなかったなんてことはありませんか？　CodeGridでは、最新トレンド技術もきちんと検証した上でしっかり解説します。もちろん「今さら聞けない」と思われがちな入門的な記事も配信。CodeGridを読んでいれば、基礎から最新トレンドまでフロントエンド界隈の情報をキャッチできます。</p>
+    </div>
+    <div class="CG2-features__embeddedTweets">
+      //twitterの埋め込みコード など
+    </div>
+  </section>
+</div>
+```
+
+*/
+.CG2-features {
+  counter-reset: CG2features; }
+  .CG2-features:first-child {
+    margin-top: -40px; }
+
+.CG2-features__item {
+  counter-increment: CG2features;
+  padding: 0 120px;
+  margin: 80px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-features__item {
+      padding: 0;
+      margin: 40px 0; } }
+  .CG2-features__item h1 {
+    color: #282828;
+    font-size: 32px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 30px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__item h1 {
+        font-size: 20px;
+        position: relative;
+        padding: 0 40px;
+        margin-bottom: 20px; }
+        .CG2-features__item h1:before {
+          content: counter(CG2features);
+          font-family: "Lucida Console", Monaco, monospace;
+          font-size: 40px;
+          line-height: 0;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          display: block;
+          width: 40px; } }
+
+.CG2-features__itemBody {
+  position: relative; }
+  .CG2-features__itemBody:before {
+    content: counter(CG2features);
+    line-height: 1;
+    font-size: 60px;
+    font-family: "Lucida Console", Monaco, monospace;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -120px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__itemBody:before {
+        content: none; } }
+
+.CG2-features__embeddedTweets {
+  display: flex;
+  margin: 20px -5px; }
+  @media screen and (max-width: 767px) {
+    .CG2-features__embeddedTweets {
+      display: block; } }
+  .CG2-features__embeddedTweets twitterwidget,
+  .CG2-features__embeddedTweets iframe {
+    width: 50%;
+    margin: 10px 5px; }
+    @media screen and (max-width: 767px) {
+      .CG2-features__embeddedTweets twitterwidget,
+      .CG2-features__embeddedTweets iframe {
+        width: 100%;
+        margin: 10px auto; } }
+
+/* ==========================================================================
+   CG2-howYouReceive
+   ========================================================================== */
+/*
+---
+name: howYouReceive
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-howYouReceive">
+  <header class="CG2-howYouReceive__header">
+    <h1>CodeGridの配信形式は、Webアプリ × メールマガジン</h1>
+  </header>
+  <div class="CG2-howYouReceive__list">
+    <div class="CG2-howYouReceive__item">
+      <div class="CG2-howYouReceive__image">
+        <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+      </div>
+      <p>フロントエンドに特化した<br>300本以上の技術記事が読めるWebアプリ。<br><a href="#">Chromeアプリもご用意しています</a></p>
+    </div>
+    <div class="CG2-howYouReceive__item">
+      <div class="CG2-howYouReceive__image">
+        <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+      </div>
+      <p>毎週木曜日配信（月4回）。<br>最新記事が定期的に届くメールマガジン。<br><a href="#">サンプルへ</a></p>
+    </div>
+  </div>
+</section>
+```
+*/
+.CG2-howYouReceive__header {
+  text-align: center;
+  position: relative;
+  margin: 0 -28px 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-howYouReceive__header {
+      margin-left: 0;
+      margin-right: 0; } }
+  .CG2-howYouReceive__header:before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid #000; }
+    @media screen and (max-width: 767px) {
+      .CG2-howYouReceive__header:before {
+        content: none; } }
+  .CG2-howYouReceive__header h1 {
+    color: #282828;
+    font-size: 24px;
+    font-weight: normal;
+    position: relative;
+    display: inline-block;
+    padding: 0 40px;
+    margin: 0;
+    background: #fff; }
+    @media screen and (max-width: 767px) {
+      .CG2-howYouReceive__header h1 {
+        font-size: 16px;
+        display: block;
+        padding: 0;
+        background: none; } }
+
+.CG2-howYouReceive__list {
+  display: table;
+  border-spacing: 2px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-howYouReceive__list {
+      display: block; } }
+
+.CG2-howYouReceive__item {
+  font-size: 14px;
+  display: table-cell; }
+  @media screen and (max-width: 767px) {
+    .CG2-howYouReceive__item {
+      font-size: 12px;
+      display: block;
+      margin-bottom: 30px; } }
+  .CG2-howYouReceive__item p {
+    text-align: center; }
+
+@media screen and (max-width: 767px) {
+  .CG2-howYouReceive__image {
+    margin: 0 -10px 20px; } }
+
+.CG2-howYouReceive__image img {
+  display: block;
+  width: 100%;
+  height: auto; }
+
+/* ==========================================================================
+   CG2-bookInfo [www top]
+   ========================================================================== */
+/*
+---
+name: bookInfo
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-bookInfo">
+  <h1>CodeGridが書籍になりました</h1>
+  <div class="CG2-bookInfo__body">
+    <div class="CG2-bookInfo__images">
+      <ul>
+        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+      </ul>
+    </div>
+    <div class="CG2-bookInfo__text">
+      <p>書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。書籍についての説明文や、Webで同じ内容が今すぐ読めるなどのアナウンスがはいります。</p>
+      <a class="CG2-button" href="#">書籍について</a>
+    </div>
+  </div>
+</section>
+```
+
+*/
+.CG2-bookInfo h1 {
+  color: #282828;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo h1 {
+      font-size: 16px;
+      margin-bottom: 20px; } }
+
+.CG2-bookInfo__body {
+  display: table; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo__body {
+      display: block; } }
+
+.CG2-bookInfo__images {
+  font-size: 0;
+  white-space: nowrap;
+  vertical-align: top;
+  display: table-cell;
+  padding-right: 25px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo__images {
+      display: block;
+      padding: 0; } }
+  .CG2-bookInfo__images ul {
+    display: table;
+    padding: 0;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .CG2-bookInfo__images ul {
+        margin: 0 auto 20px; } }
+  .CG2-bookInfo__images li {
+    display: table-cell;
+    list-style: none;
+    width: 1%;
+    padding-right: 10px;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .CG2-bookInfo__images li {
+        width: auto;
+        padding: 0 10px;
+        margin: 0; } }
+  .CG2-bookInfo__images img {
+    display: block; }
+
+.CG2-bookInfo__text {
+  vertical-align: top;
+  display: table-cell;
+  font-size: 14px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bookInfo__text {
+      font-size: 12px; } }
+  .CG2-bookInfo__text p {
+    margin: 0 0 20px; }
+
+/* ==========================================================================
+   CG2-circulation
+   ========================================================================== */
+/*
+---
+name: circulation
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<div class="CG2-circulation">
+  <div class="CG2-circulation__lastUpdate">（最新号 2015年5月21日発行）</div>
+  <div class="CG2-circulation__dataList">
+    <div class="CG2-circulation__data">
+      <div class="CG2-circulation__dataLabel">発行号数</div>
+      <div class="CG2-circulation__dataNumber">151</div>
+      <div class="CG2-circulation__dataUnit">号</div>
+    </div>
+    <div class="CG2-circulation__data">
+      <div class="CG2-circulation__dataLabel">特集</div>
+      <div class="CG2-circulation__dataNumber">70</div>
+      <div class="CG2-circulation__dataUnit">シリーズ</div>
+    </div>
+    <div class="CG2-circulation__data">
+      <div class="CG2-circulation__dataLabel">記事数</div>
+      <div class="CG2-circulation__dataNumber">321</div>
+      <div class="CG2-circulation__dataUnit">本</div>
+    </div>
+  </div>
+</div>
+```
+*/
+@media screen and (max-width: 767px) {
+  .CG2-circulation {
+    display: table;
+    width: 100%; } }
+
+.CG2-circulation__lastUpdate {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  float: right; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__lastUpdate {
+      float: none;
+      display: table-footer-group; } }
+
+.CG2-circulation__dataList {
+  display: table; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataList {
+      display: table-header-group; } }
+
+.CG2-circulation__data {
+  display: table-cell;
+  font-size: 0;
+  padding-left: 50px; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__data {
+      display: inline-block;
+      padding: 0 20px 0 0; } }
+  .CG2-circulation__data:first-child {
+    padding-left: 0; }
+
+.CG2-circulation__dataLabel {
+  font-size: 16px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataLabel {
+      font-size: 12px; } }
+
+.CG2-circulation__dataNumber {
+  font-size: 64px;
+  font-family: "Lucida Console", Monaco, monospace;
+  line-height: 1.2;
+  display: inline; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataNumber {
+      font-size: 40px; } }
+
+.CG2-circulation__dataUnit {
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  line-height: 1.2;
+  display: inline; }
+  @media screen and (max-width: 767px) {
+    .CG2-circulation__dataUnit {
+      font-size: 20px; } }
+
+/* ==========================================================================
+   CG2-pickedup
+   ========================================================================== */
+/*
+---
+name: pickedup
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-pickedup">
+  <header class="CG2-pickedup__header">
+    <h1 class="CG2-pickedup__headerHeading">人気の特集</h1>
+    <div class="CG2-pickedup__headerSummary">多くの会員の皆様がお気に入りに登録した記事</div>
+  </header>
+
+  <div class="CG2-seriesList">
+    CG2-seriesList を入れる
+  </div>
+
+</section>
+```
+*/
+section.CG2-pickedup {
+  margin: 80px 0; }
+  @media screen and (max-width: 767px) {
+    section.CG2-pickedup {
+      margin-top: 40px;
+      margin-bottom: 40px; } }
+
+header.CG2-pickedup__header {
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 30px; }
+
+.CG2-pickedup__headerHeading {
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-weight: bold;
+  margin-bottom: 15px; }
+  @media screen and (max-width: 639px) {
+    .CG2-pickedup__headerHeading {
+      font-size: 20px; } }
+
+.CG2-pickedup__headerSummary {
+  font-size: 16px;
+  display: inline-block; }
+  @media screen and (max-width: 767px) {
+    .CG2-pickedup__headerSummary {
+      font-size: 12px; } }
+
+/* ==========================================================================
+   CG2-categoryIntro
+   ========================================================================== */
+/*
+---
+name: categoryIntro
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<div class="CG2-categoryIntro">
+  <ul>
+    <li><span class="CG2-icon-cat-elementary CG2-icon--colored"></span>入門</li>
+    <li><span class="CG2-icon-cat-mastering CG2-icon--colored"></span>実践</li>
+    <li><span class="CG2-icon-cat-standards CG2-icon--colored"></span>仕様解説</li>
+    <li><span class="CG2-icon-cat-talk CG2-icon--colored"></span>座談会</li>
+    <li><span class="CG2-icon-cat-architecture CG2-icon--colored"></span>設計</li>
+    <li><span class="CG2-icon-cat-report CG2-icon--colored"></span>レポート</li>
+    <li><span class="CG2-icon-cat-design CG2-icon--colored"></span>デザイン</li>
+    <li><span class="CG2-icon-cat-future CG2-icon--colored"></span>未来・次世代</li>
+    <li><span class="CG2-icon-cat-work-style CG2-icon--colored"></span>仕事術</li>
+    <li><span class="CG2-icon-cat-survey CG2-icon--colored"></span>アンケート</li>
+    <li><span class="CG2-icon-cat-interview CG2-icon--colored"></span>インタビュー</li>
+    <li><span class="CG2-icon-cat-discussion CG2-icon--colored"></span>ディスカッション</li>
+  </ul>
+</div>
+```
+*/
+.CG2-categoryIntro ul {
+  color: #282828;
+  font-size: 0;
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-categoryIntro ul {
+      margin-left: -10px;
+      margin-right: -10px; } }
+  .CG2-categoryIntro ul:after {
+    content: '';
+    display: block;
+    margin-top: -30px; }
+
+.CG2-categoryIntro li {
+  font-size: 14px;
+  text-align: center;
+  vertical-align: top;
+  display: inline-block;
+  width: 130px;
+  padding: 0;
+  margin: 0 0 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-categoryIntro li {
+      font-size: 10px;
+      width: 25%; } }
+
+.CG2-categoryIntro span[class*="CG2-icon-cat"] {
+  font-size: 80px;
+  display: block;
+  margin-bottom: 10px;
+  position: static; }
+  @media screen and (max-width: 767px) {
+    .CG2-categoryIntro span[class*="CG2-icon-cat"] {
+      font-size: 50px; } }
+  .CG2-categoryIntro span[class*="CG2-icon-cat"]:before {
+    display: block; }
+
+/* ==========================================================================
+   CG2-customerQuotes
+   ========================================================================== */
+/*
+---
+name: customerQuotes
+category:
+  - Blocks/www
+tag:
+  - www-item
+  - www-top-item
+---
+
+```html
+<section class="CG2-customerQuotes">
+  <header class="CG2-customerQuotes__header">
+    <h1>CodeGrid関連ツィート</h1>
+    <div class="CG2-customerQuotes__headerSub">
+      <a href="https://twitter.com/codegrid">@CodeGridで最新情報を配信しています <span class="CG2-icon-twitter"></span></a>
+    </div>
+  </header>
+  <div class="CG2-customerQuotes__body">
+    <div class="CG2-customerQuotes__list">
+      <ul>
+        <li>
+          <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
+        </li>
+        <li>
+          <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
+        </li>
+        <li>
+          <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
+        </li>
+      </ul>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+    </div>
+    <div class="CG2-customerQuotes__timeline">
+      <a class="twitter-timeline" href="https://twitter.com/hashtag/codegrid" data-widget-id="628812249822408705">#codegrid のツイート</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>
+    </div>
+  </div>
+</section>
+```
+
+JSでtwitterのiframe内にstyleを挿入してmax-widthを打ち消す大きさを調整する必要がある
+
+<script>
+window.addEventListener( 'load', function () {
+  
+  var i,l;
+  var css = [
+    '.EmbeddedTweet, .timeline {',
+      'box-sizing: border-box;',
+      'max-width: none !important;',
+      'width: 100% !important;',
+    '}',
+    '.sandboxroot.env-narrow p {',
+      'font-size: 12px;',
+    '}'
+  ].join( '' );
+  var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
+  
+  for ( i = 0|0, l = iframe.length|0; i < l; i = ( i + 1 )|0 ) {
+
+    var doc  = iframe[ i ].contentWindow.document;
+    var head  = doc.querySelector( 'head' );
+    var style = doc.createElement( 'style' );
+    style.innerText = css;
+    head.appendChild( style );
+    
+  }
+
+} );
+</script>
+
+<pre><code>window.addEventListener( 'load', function () {
+
+  var i,l;
+  var css = [
+    '.EmbeddedTweet, .timeline {',
+      'box-sizing: border-box;',
+      'max-width: none !important;',
+      'width: 100% !important;',
+    '}',
+    '.sandboxroot.env-narrow p {',
+      'font-size: 12px;',
+    '}'
+  ].join( '' );
+  var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
+  
+  for ( i = 0|0, l = iframe.length|0; i &lt; l; i = ( i + 1 )|0 ) {
+
+    var doc  = iframe[ i ].contentWindow.document;
+    var head  = doc.querySelector( 'head' );
+    var style = doc.createElement( 'style' );
+    style.innerText = css;
+    head.appendChild( style );
+    
+  }
+
+} );</code></pre>
+*/
+section.CG2-customerQuotes {
+  padding-top: 20px;
+  margin: 0 -10px; }
+  section.CG2-customerQuotes:before, section.CG2-customerQuotes:after {
+    content: "";
+    display: table; }
+  section.CG2-customerQuotes:after {
+    clear: both; }
+
+header.CG2-customerQuotes__header {
+  display: table;
+  width: calc( 100% + 46px);
+  border-bottom: 1px solid #5c5c5c;
+  margin: 0 -28px 30px; }
+  @media screen and (max-width: 767px) {
+    header.CG2-customerQuotes__header {
+      display: block;
+      width: auto;
+      margin: 0 0 10px;
+      padding: 0 10px 5px; } }
+  header.CG2-customerQuotes__header h1 {
+    font-size: 32px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-weight: normal;
+    line-height: 1.2;
+    vertical-align: middle;
+    display: table-cell;
+    padding: 0 0 30px 28px;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      header.CG2-customerQuotes__header h1 {
+        font-size: 20px;
+        display: block;
+        padding: 0; } }
+
+.CG2-customerQuotes__headerSub {
+  font-size: 14px;
+  text-align: right;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 0 28px 30px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__headerSub {
+      font-size: 12px;
+      display: block;
+      padding: 0;
+      display: none; } }
+  .CG2-customerQuotes__headerSub a {
+    color: inherit; }
+
+.CG2-customerQuotes__body {
+  display: table;
+  width: 100%; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__body {
+      display: block;
+      width: auto; } }
+
+.CG2-customerQuotes__list {
+  vertical-align: top;
+  box-sizing: border-box;
+  display: table-cell;
+  width: 60%;
+  padding-right: 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__list {
+      display: block;
+      width: auto;
+      padding-right: 0; } }
+  .CG2-customerQuotes__list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .CG2-customerQuotes__list li {
+    margin: 0 0 20px; }
+    @media screen and (max-width: 767px) {
+      .CG2-customerQuotes__list li {
+        margin-bottom: 10px; } }
+  .CG2-customerQuotes__list iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important; }
+
+.CG2-customerQuotes__timeline {
+  vertical-align: top;
+  box-sizing: border-box;
+  display: table-cell;
+  width: 40%;
+  padding-left: 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-customerQuotes__timeline {
+      display: block;
+      width: auto;
+      padding-left: 0; } }
+  .CG2-customerQuotes__timeline iframe {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important; }
+    @media screen and (max-width: 767px) {
+      .CG2-customerQuotes__timeline iframe {
+        height: 300px !important; } }
+
+/* ==========================================================================
+   CG2-bannerHeader
+   ========================================================================== */
+/*
+---
+name: bannerHeader
+category:
+  - Blocks/www
+tag:
+  - www-item
+templateItem:
+  - true
+---
+
+```html
+<div class="CG2-bannerHeader">
+  <div class="CG2-bannerHeader__inner">
+    <h1>チームのフロントエンド開発力を<br>根底からアップしよう</h1>
+    <p>団体購読とは、購読管理者の方に複数の購読者を取りまとめていただき、毎月、購読者全員の購読料を一括した請求書を発行し、まとめてお支払いいただくシステムです。</p>
+  </div>
+  <div class="CG2-bannerHeader__bg" style="background-image: url( '/build/img/_01.jpg' )"></div>
+</div>
+```
+*/
+.CG2-bannerHeader {
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+  background: #000;
+  color: #fff;
+  padding: 130px 0;
+  background-position: 50% 50%;
+  background-size: cover; }
+  @media screen and (max-width: 767px) {
+    .CG2-bannerHeader {
+      padding: 60px 15px; } }
+
+.CG2-bannerHeader__inner {
+  max-width: 740px;
+  margin: 0 auto; }
+  .CG2-bannerHeader__inner h1 {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-size: 32px;
+    font-weight: normal;
+    text-align: center;
+    margin: 0 0 30px; }
+  .CG2-bannerHeader__inner p {
+    line-height: 2;
+    text-align: center;
+    margin: 20px 0; }
+  .CG2-bannerHeader__inner > *:last-child {
+    margin-bottom: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-bannerHeader__inner {
+      max-width: none; }
+      .CG2-bannerHeader__inner h1 {
+        font-size: 20px;
+        margin-bottom: 20px; }
+      .CG2-bannerHeader__inner p {
+        font-size: 12px; } }
+
+.CG2-bannerHeader__bg {
+  pointer-events: none;
+  position: absolute;
+  z-index: -1;
+  top: -10px;
+  right: -10px;
+  bottom: -10px;
+  left: -10px;
+  background-position: 50% 50%;
+  background-size: cover;
+  transform: scale(1.2, 1.2);
+  opacity: .64; }
+
+/* ==========================================================================
+   CG2-form
+   ========================================================================== */
+/*
+---
+name: form
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<section class="CG2-form">
+  <form>
+    <div class="CG2-form__header">
+      <h1>団体購読のお申込み</h1>
+      <p>購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
+    </div>
+    <p class="CG2--alignCenter">購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
+    <div class="CG2-form__table">
+      <table>
+        <col width="30%">
+        <col width="70%">
+        <tr>
+          <th>
+            <label>会社名・団体名</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <input type="text" placeholder="例）株式会社 ピクセルグリッド">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label>管理者のメールアドレス</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <input type="text" placeholder="例）codegrid@pxgrid.com">
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label>お問い合わせ事項</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <select>
+              <option value="" class="CG2-form__placeholder">お問い合わせ事項、お問い合わせの内容をお選びください。</option>
+              <option>記事内容について</option>
+              <option>CodeGridの利用全般について</option>
+              <option>課金について</option>
+              <option>その他</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label>お問い合わせ内容</label>
+            <span class="CG2-form__required">（必須）</span>
+          </th>
+          <td>
+            <textarea placeholder="記事内容についてのお問い合わせは、必ず該当記事のURLを明記してください。" cols="50" rows="6"></textarea>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="CG2-buttonContainer">
+      <ul>
+        <li class="CG2-buttonContainer__item--full">
+          <button class="CG2-button CG2-button--primary CG2-button--large" type="submit">送信</button>
+        </li>
+      </ul>
+    </div>
+  </form>
+</section>
+```
+
+*/
+section.CG2-form {
+  padding: 50px;
+  margin: 80px -28px;
+  background: #eee; }
+  section.CG2-form form {
+    margin: 0; }
+  @media screen and (max-width: 767px) {
+    section.CG2-form {
+      padding: 25px 20px;
+      margin: 40px -20px; } }
+
+.CG2-form__header {
+  margin: 0 0 30px; }
+  .CG2-form__header h1 {
+    font-size: 32px;
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+    font-weight: normal;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 0 20px; }
+  .CG2-form__header p {
+    text-align: center;
+    margin: 16px 0 0; }
+  @media screen and (max-width: 639px) {
+    .CG2-form__header {
+      margin-bottom: 16px; }
+      .CG2-form__header h1 {
+        font-size: 20px;
+        margin-bottom: 16px; }
+      .CG2-form__header p {
+        text-align: left; } }
+
+.CG2-form__table table {
+  width: 100%; }
+
+.CG2-form__table th {
+  text-align: left;
+  vertical-align: middle;
+  padding: 8px; }
+
+.CG2-form__table td {
+  padding: 8px; }
+
+.CG2-form__table input[type="text"],
+.CG2-form__table input[type="url"],
+.CG2-form__table input[type="email"],
+.CG2-form__table select,
+.CG2-form__table textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  line-height: 1.4; }
+
+.CG2-form__table select {
+  background-image: url(data:image/svg+xml,%3Csvg%20width=%2226%22%20height=%2214%22%20viewBox=%220%200%2026%2014%22%20xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cpath%20fill=%22%23777%22%20d=%22M3%200L0%202.7%2013%2014%2026%202.7%2023%200%2013%208.7%22/%3E%3C/svg%3E);
+  background-repeat: no-repeat;
+  background-size: 14px 8px;
+  background-position: right 14px center;
+  background-color: #fff;
+  padding-right: 40px; }
+  @media screen and (max-width: 767px) {
+    .CG2-form__table select {
+      background-position: right 14px center; } }
+
+.CG2-form__table select {
+  -webkit-appearance: initial; }
+
+.CG2-form__table select {
+  -moz-appearance: initial; }
+
+.CG2-form__table ::-webkit-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table :-ms-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table ::placeholder {
+  opacity: 1;
+  color: #767676; }
+
+.CG2-form__table select.CG2-form__placeholder_selected {
+  color: #767676; }
+
+@media screen and (max-width: 639px) {
+  .CG2-form__table table, .CG2-form__table tbody, .CG2-form__table tr {
+    display: block; }
+    .CG2-form__table table:before, .CG2-form__table table:after, .CG2-form__table tbody:before, .CG2-form__table tbody:after, .CG2-form__table tr:before, .CG2-form__table tr:after {
+      content: "";
+      display: table; }
+    .CG2-form__table table:after, .CG2-form__table tbody:after, .CG2-form__table tr:after {
+      clear: both; }
+  .CG2-form__table th, .CG2-form__table td {
+    float: left;
+    clear: left; }
+  .CG2-form__table th,
+  .CG2-form__table td {
+    padding: 0;
+    width: 100%; }
+  .CG2-form__table th {
+    margin-bottom: 6px; }
+  .CG2-form__table td {
+    margin-bottom: 10px; }
+  .CG2-form__table input[type="text"],
+  .CG2-form__table input[type="url"],
+  .CG2-form__table input[type="email"],
+  .CG2-form__table select,
+  .CG2-form__table textarea {
+    font-size: 16px; } }
+
+span.CG2-form__required {
+  color: #ff0000;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 22px;
+  margin-left: 10px;
+  float: right; }
+  @media screen and (max-width: 639px) {
+    span.CG2-form__required {
+      float: none;
+      margin-left: 0; } }
+
+.CG2-form__legal {
+  font-size: 12px;
+  text-align: center;
+  margin: 15px 0; }
+  .CG2-form__legal a {
+    color: inherit; }
+  @media screen and (max-width: 639px) {
+    .CG2-form__legal {
+      font-size: 8px;
+      text-align: left;
+      margin: 5px; } }
+
+.CG2-form__notice {
+  font-size: 12px;
+  text-align: center;
+  margin: 15px 0; }
+  @media screen and (max-width: 639px) {
+    .CG2-form__notice {
+      font-size: 8px;
+      text-align: left;
+      margin: 5px; } }
+
+/* ==========================================================================
+   CG2-flowExplanation
+   ========================================================================== */
+/*
+---
+name: flowExplanation
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-flowExplanation">
+  <section class="CG2-flowExplanation__item">
+    <div class="CG2-flowExplanation__image">
+      <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
+    </div>
+    <div class="CG2-flowExplanation__text">
+      <h1>お申込頂くと、管理者様へ団体管理画面へのリンクが送信されます</h1>
+      <p>補足などがはいります。補足などがはいります。補足などがはいります。補足などがはいります。</p>
+    </div>
+  </section>
+
+  <section class="CG2-flowExplanation__item">
+    <div class="CG2-flowExplanation__image">
+      <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
+    </div>
+    <div class="CG2-flowExplanation__text">
+      <h1>管理画面にて、パスワードの設定をお願いします</h1>
+      <p>補足などがはいります。補足などがはいります。補足などがはいります。補足などがはいります。</p>
+    </div>
+  </section>
+</div>
+```
+
+*/
+.CG2-flowExplanation {
+  margin: 40px 0;
+  counter-reset: CG2flowExplanation; }
+  @media screen and (max-width: 639px) {
+    .CG2-flowExplanation {
+      margin: 30px 0; } }
+
+section.CG2-flowExplanation__item {
+  counter-increment: CG2flowExplanation;
+  display: table;
+  width: 100%;
+  margin: 50px 0; }
+  @media screen and (max-width: 639px) {
+    section.CG2-flowExplanation__item {
+      display: block;
+      margin: 30px 0; } }
+
+.CG2-flowExplanation__image {
+  vertical-align: top;
+  display: table-cell; }
+  .CG2-flowExplanation__image img {
+    display: block;
+    border: 1px solid #dbdbdb; }
+  @media screen and (max-width: 767px) {
+    .CG2-flowExplanation__image {
+      width: 40%; }
+      .CG2-flowExplanation__image img {
+        max-width: 100%;
+        height: auto; } }
+  @media screen and (max-width: 639px) {
+    .CG2-flowExplanation__image {
+      display: block;
+      width: auto;
+      margin: 0 0 10px; }
+      .CG2-flowExplanation__image img {
+        margin: 0 auto; } }
+
+.CG2-flowExplanation__text {
+  vertical-align: top;
+  display: table-cell;
+  padding-left: 66px; }
+  .CG2-flowExplanation__text h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0 0 20px; }
+    .CG2-flowExplanation__text h1:before {
+      content: counter(CG2flowExplanation);
+      font-size: 32px;
+      font-family: "Lucida Console", Monaco, monospace;
+      line-height: 24px;
+      vertical-align: middle;
+      display: inline-block;
+      width: 1.2em;
+      margin-left: -1.2em; }
+  @media screen and (max-width: 639px) {
+    .CG2-flowExplanation__text {
+      padding-left: 35px; }
+      .CG2-flowExplanation__text h1 {
+        font-size: 12px;
+        font-weight: bold;
+        margin: 0 0 10px; }
+        .CG2-flowExplanation__text h1:before {
+          font-size: 24px;
+          font-weight: normal;
+          line-height: 12px;
+          width: 26px;
+          margin-left: -26px; }
+      .CG2-flowExplanation__text p {
+        font-size: 12px; } }
+
+/* ==========================================================================
+   CG2-faq
+   ========================================================================== */
+/*
+---
+name: faq
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-faq">
+  <div class="CG2-faq__question">
+    PayPalアカウントやWebMoneyのほかに、銀行振込など別の支払い方法はありますか？
+  </div>
+  <div class="CG2-faq__answer">
+    <p>個人で購読される方は、PayPalアカウント、もしくはWebMoneyのお支払いのみ受け付けております。団体で購読される方は、請求書払いで銀行振込ができます。</p>
+    <aside class="CG2-faq__eg">
+      <h1>未払い購読料の扱い（例）</h1>
+      <ul>
+        <li>前月未払い : 864円</li>
+        <li>今月請求 : 1,728円（前回未払い864円＋今回購読料864円）</li>
+      </ul>
+    </aside>
+  </div>
+</div>
+```
+
+*/
+.CG2-faq {
+  font-size: 16px;
+  margin: 40px 0;
+  padding: 0 0 0 50px; }
+  @media screen and (max-width: 767px) {
+    .CG2-faq {
+      font-size: 12px;
+      margin: 20px -10px;
+      padding-left: 38px; } }
+
+.CG2-faq__question {
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+  min-height: 24px;
+  padding: 8px 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-faq__question {
+      min-height: 16px;
+      padding-top: 6px;
+      padding-bottom: 6px; } }
+  .CG2-faq__question:before {
+    content: "";
+    color: #282828;
+    font-size: 40px;
+    line-height: 40px;
+    position: absolute;
+    top: 0;
+    left: -50px; }
+    @media screen and (max-width: 767px) {
+      .CG2-faq__question:before {
+        font-size: 28px;
+        line-height: 28px;
+        left: -38px; } }
+
+.CG2-faq__answer p {
+  margin-top: 0;
+  margin-bottom: 1em; }
+
+.CG2-faq__answer aside.CG2-faq__eg {
+  padding: 20px 20px 20px 50px;
+  margin: 20px 0 0 -50px;
+  margin-left: -50px;
+  background: #eee; }
+  @media screen and (max-width: 767px) {
+    .CG2-faq__answer aside.CG2-faq__eg {
+      padding: 10px 10px 10px 38px;
+      margin-left: -38px; } }
+  .CG2-faq__answer aside.CG2-faq__eg h1 {
+    font-size: 100%;
+    font-weight: bold;
+    margin: 0; }
+  .CG2-faq__answer aside.CG2-faq__eg ul {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-left: 30px; }
+
+/* ==========================================================================
+   CG2-additionalInfoLink
+   ========================================================================== */
+/*
+---
+name: additionalInfoLink
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-additionalInfoLink">
+  <div class="CG2-additionalInfoLink__text">
+    団体購読では、請求書払いにも対応しています<span class="CG2-additionalInfoLink__sub">小さい文字</span>
+  </div>
+  <div class="CG2-additionalInfoLink__link"><a class="CG2-button" href="#">団体購読について</a></div>
+</div>
+```
+
+*/
+.CG2-additionalInfoLink {
+  display: table;
+  width: 100%; }
+  .CG2-additionalInfoLink + .CG2-additionalInfoLink {
+    margin-top: 30px; }
+  @media screen and (max-width: 639px) {
+    .CG2-additionalInfoLink {
+      display: block;
+      width: auto; } }
+
+.CG2-additionalInfoLink__text {
+  font-size: 24px;
+  line-height: 1.2;
+  vertical-align: middle;
+  display: table-cell; }
+  @media screen and (max-width: 639px) {
+    .CG2-additionalInfoLink__text {
+      font-size: 16px;
+      text-align: center;
+      display: block; } }
+
+.CG2-additionalInfoLink__sub {
+  font-size: 14px; }
+
+.CG2-additionalInfoLink__link {
+  text-align: right;
+  vertical-align: middle;
+  display: table-cell; }
+  @media screen and (max-width: 639px) {
+    .CG2-additionalInfoLink__link {
+      text-align: center;
+      display: block;
+      margin: 1em 0 0; }
+      .CG2-additionalInfoLink__link .CG2-button {
+        font-size: 18px;
+        display: block;
+        padding: .3em; } }
+
+/* ==========================================================================
+   CG2-publication
+   ========================================================================== */
+/*
+---
+name: publication
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<section class="CG2-publication">
+  <div class="CG2-publication__image">
+    <img src="http://img.pxgrid.net/206x290" alt="" width="206" height="290">
+  </div>
+  <div class="CG2-publication__body">
+    <div class="CG2-publication__heading">
+      <h1>Web制作者のためのGit入門</h1>
+    </div>
+    <div class="CG2-publication__headingSub">
+      大杉 充 (著), 外村 和仁 (著), CodeGrid (編集)  2014/6/28
+    </div>
+    <p>本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。本の説明が入ります。</p>
+    <div class="CG2-publication__buttonContainer">
+      <ul>
+        <li><a class="CG2-button" href="#">Amazonで購入</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+```
+
+*/
+section.CG2-publication {
+  display: table;
+  width: 100%;
+  margin: 40px 0; }
+
+.CG2-publication__image {
+  vertical-align: top;
+  display: table-cell;
+  padding-right: 30px;
+  max-width: 206px;
+  width: 20%; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__image {
+      padding-right: 15px; } }
+  .CG2-publication__image img {
+    display: block;
+    width: 100%;
+    height: auto; }
+
+.CG2-publication__body {
+  font-size: 16px;
+  vertical-align: top;
+  display: table-cell; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__body {
+      font-size: 12px; } }
+
+.CG2-publication__heading {
+  margin: 0 0 25px; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__heading {
+      margin-bottom: 15px; } }
+  .CG2-publication__heading h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0; }
+    @media screen and (max-width: 767px) {
+      .CG2-publication__heading h1 {
+        font-size: 16px; } }
+
+.CG2-publication__headingSub {
+  font-size: 14px;
+  margin: -20px 0 25px; }
+  @media screen and (max-width: 767px) {
+    .CG2-publication__headingSub {
+      font-size: 10px;
+      margin-top: -15px;
+      margin-bottom: 15px; } }
+
+.CG2-publication__buttonContainer {
+  margin-top: 30px; }
+  @media screen and (max-width: 639px) {
+    .CG2-publication__buttonContainer {
+      margin-top: 10px; } }
+  .CG2-publication__buttonContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  .CG2-publication__buttonContainer li {
+    display: inline-block;
+    margin: 0 20px 0 0; }
+    @media screen and (max-width: 639px) {
+      .CG2-publication__buttonContainer li {
+        display: block;
+        margin-bottom: 10px; } }
+
+/* ==========================================================================
+   CG2-term
+   ========================================================================== */
+/*
+---
+name: term
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-term">
+  <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+  </dl>
+</div>
+```
+
+*/
+.CG2-term dt {
+  font-weight: bold; }
+
+.CG2-term dd {
+  margin: 0 0 15px; }
+
+/* ==========================================================================
+   CG2-lastUpdate
+   ========================================================================== */
+/*
+---
+name: lastUpdate
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-lastUpdate">Last Update: 20xx-08-01</div>
+```
+
+*/
+.CG2-lastUpdate {
+  margin-top: 80px; }
+  @media screen and (max-width: 767px) {
+    .CG2-lastUpdate {
+      margin-top: 40px; } }
+
+/* ==========================================================================
+   CG2-imageContainer
+   ========================================================================== */
+/*
+---
+name: imageContainer
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-imageContainer">
+  <div class="CG2-imageContainer__image">
+    <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+  </div>
+</div>
+```
+
+*/
+.CG2-imageContainer {
+  font-size: 0;
+  margin: 40px 0;
+  text-align: center; }
+  .CG2-imageContainer:before, .CG2-imageContainer:after {
+    content: '';
+    display: block;
+    height: 1px; }
+  .CG2-imageContainer:before {
+    margin-bottom: -10px; }
+  .CG2-imageContainer:after {
+    margin-top: -10px; }
+
+.CG2-imageContainer__image {
+  vertical-align: middle;
+  display: inline-block;
+  margin: 10px 30px; }
+  .CG2-imageContainer__image img {
+    max-width: 100%;
+    height: auto; }
+
+/* ==========================================================================
+   holizontalLine
+   ========================================================================== */
+/*
+---
+name: holizontalLine
+category:
+  - Content
+tag:
+  - content
+---
+
+```html
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+
+<div class="CG2-holizontalLine"></div>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+```
+
+*/
+.CG2-holizontalLine {
+  border-top: 1px solid #5c5c5c;
+  margin: 80px -28px; }
+  @media screen and (max-width: 767px) {
+    .CG2-holizontalLine {
+      border-color: #dbdbdb;
+      margin: 50px -10px; } }

@@ -1,0 +1,15 @@
+root = true
+
+[*]
+charset = utf-8
+insert_final_newline = true
+end_of_line = lf
+indent_style = space
+indent_size = 2
+
+[src/assets2/font/codegrid-{icon,num}/*.svg]
+indent_style = tab
+end_of_line = crlf
+
+[src/assets2/vendor/_prism.scss]
+indent_style = tab

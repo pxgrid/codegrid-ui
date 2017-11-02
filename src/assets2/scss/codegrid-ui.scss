@@ -1,57 +1,29 @@
+/* CodeGrid-UI for CodeGrid app */
+
+// articleSeriesNavで使われる縦中横フォント
+// FIXME: ちゃんとした場所に移動する
 @font-face {
   font-family: "codegrid-num";
-  src: url('../font/codegrid-num.eot');
-  src: url('../font/codegrid-num.eot?#iefix') format('embedded-opentype'),
-    url('../font/codegrid-num.woff') format('woff'),
-    url('../font/codegrid-num.ttf') format('truetype'),
-    url('../font/codegrid-num.svg#codegrid-num') format('svg');
+  src: url('../font/codegrid-num.woff2') format('woff2'),
+       url('../font/codegrid-num.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
+// ビルドに必要な変数やmixinなど
 @import "vendor/_normalize";
 @import "vendor/_media-queries";
 @import "vendor/_prism";
 @import "0_vars";
 @import "1_utils";
 @import "2_basic";
+@import "3_animations";
 @import "icon";
 
-%search{
-  box-sizing: border-box;
-  width: 100%;
-  background: #303030;
-  border-radius: 3px;
-}
-  %searchInner{
-    position: relative;
-    &:before{
-      @include icon( 'search' );
-      color: #777;
-      font-size: 12px;
-      line-height: 0;
-      position: absolute;
-      top: 50%;
-      left: 10px;
-    }
-    input{
-      color: #FFF;
-      font-size: 16px;
-      box-sizing: border-box;
-      display: block;
-      border: none;
-      width: 100%;
-      height: 100%;
-      padding: .5em 10px .5em 34px;
-      background: transparent;
-      transition: all .2s;
-      &:hover,
-      &:focus{
-        background: #303030;
-      }
-    }
-  }
-
+// ページのテンプレート用のスタイルと、共通コンポーネント
+@import "placeholder";
 @import "template";
-@import "components";
-@import "www";
+@import "components-shared";
+
+// codegrid-appのみで使われるコンポーネント
+@import "components-app";
