@@ -218,7 +218,7 @@ tag:
   <div class="CG2-howYouReceive__list">
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/320x180" alt="" height="180" width="320">
+        <img src="http://img.pxgrid.net/320x180" alt="" width="320">
       </div>
       <div class="CG2-howYouReceive__text">
         <p>フロントエンドに特化した<br>300本以上の技術記事が読めるWebアプリ。<br><a href="">Chromeアプリもご用意しています</a></p>
@@ -226,7 +226,7 @@ tag:
     </div>
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/320x180" alt="" height="180" width="320">
+        <img src="http://img.pxgrid.net/320x180" alt="" width="320">
       </div>
       <div class="CG2-howYouReceive__text">
         <p>iPhoneからアクセスする最良の方法。</p>
@@ -235,7 +235,7 @@ tag:
     </div>
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/320x180" alt="" height="180" width="320">
+        <img src="http://img.pxgrid.net/320x180" alt="" width="320">
       </div>
       <div class="CG2-howYouReceive__text">
         <p>毎週木曜日配信（月4回）。<br>最新記事が定期的に届くメールマガジン。<br><a href="">サンプルへ</a></p>
@@ -315,6 +315,70 @@ tag:
 //         }
 //       }
 
+.CG2-howYouReceive {}
+
+.CG2-howYouReceive__header {
+  text-align: center;
+  position: relative;
+  margin: 0 0 20px;
+  @include min-screen( $breakpoint-middle ) {
+    margin: 0 -28px 20px;
+    // 背後に線を引く
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 0;
+      border-top: 1px solid #000;
+    }
+  }
+}
+.CG2-howYouReceive__heading {
+  color: #282828;
+  font-size: 16px;
+  font-weight: normal;
+  // 文字に背景の線が重ならないように
+  @include min-screen( $breakpoint-middle ) {
+    font-size: 24px;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0 40px;
+    background: #fff;
+  }
+}
+
+// 画像のレイアウト
+@include min-screen( $breakpoint-middle ) {
+  .CG2-howYouReceive__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2px;
+    justify-items: center;
+    font-size: 14px;
+
+    display: -ms-grid;
+    -ms-grid-columns: 1fr 2px 1fr 2px 1fr; // IE11にはgapがない
+  }
+  // IE11用レイアウト
+  @for $i from 1 through 3 {
+    .CG2-howYouReceive__item:nth-of-type(#{$i}) {
+      -ms-grid-column: #{$i * 2 - 1}; // gapぶんカラムむ位置を進める
+    }
+  }
+}
+.CG2-howYouReceive__image {
+  img {
+    vertical-align: bottom;
+    width: 100%;
+  }
+}
+.CG2-howYouReceive__text {
+  text-align: center;
+}
 
 
 /* ==========================================================================
