@@ -112,13 +112,13 @@ tag:
 ```html
 <div class="CG2-features">
   <section class="CG2-features__item">
-    <h1>執筆陣は現役のフロントエンドエンジニア</h1>
+    <h2 class="CG2-features__heading">執筆陣は現役のフロントエンドエンジニア</h2>
     <div class="CG2-features__itemBody">
       <p>CodeGridで執筆しているのは、ピクセルグリッドのフロントエンドエンジニアたち。書籍執筆や講演の実績を持つエンジニアも多数在籍しています。だから、配信される記事では実際にプロジェクトで使った現場の実感から、本当に実務に必要な知識をお届けします。また、CodeGridは専任の編集者が編集のうえで配信しますので、記事の正確さ読みやすさにも自信があります。</p>
     </div>
   </section>
   <section class="CG2-features__item">
-    <h1>基礎から最新トレンド技術まで</h1>
+    <h2 class="CG2-features__heading">基礎から最新トレンド技術まで</h2>
     <div class="CG2-features__itemBody">
       <p>忙しいと追うのを忘れがちになる新しい技術情報。エンジニア同士の会話でついていけなかったなんてことはありませんか？　CodeGridでは、最新トレンド技術もきちんと検証した上でしっかり解説します。もちろん「今さら聞けない」と思われがちな入門的な記事も配信。CodeGridを読んでいれば、基礎から最新トレンドまでフロントエンド界隈の情報をキャッチできます。</p>
     </div>
@@ -143,30 +143,31 @@ tag:
     .CG2-features__item {
       padding: 0;
       margin: 40px 0; } }
-  .CG2-features__item h1 {
-    color: #282828;
-    font-size: 32px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-    font-feature-settings: "palt";
-    font-weight: normal;
-    text-align: center;
-    margin: 0 0 30px; }
-    @media screen and (max-width: 767px) {
-      .CG2-features__item h1 {
-        font-size: 20px;
-        position: relative;
-        padding: 0 40px;
-        margin-bottom: 20px; }
-        .CG2-features__item h1:before {
-          content: counter(CG2features);
-          font-family: "Lucida Console", Monaco, monospace;
-          font-size: 40px;
-          line-height: 0;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          display: block;
-          width: 40px; } }
+
+.CG2-features__heading {
+  color: #282828;
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-features__heading {
+      font-size: 20px;
+      position: relative;
+      padding: 0 40px;
+      margin-bottom: 20px; }
+      .CG2-features__heading:before {
+        content: counter(CG2features);
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 40px;
+        line-height: 0;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        display: block;
+        width: 40px; } }
 
 .CG2-features__itemBody {
   position: relative; }
@@ -215,7 +216,7 @@ tag:
 ```html
 <section class="CG2-howYouReceive">
   <header class="CG2-howYouReceive__header">
-    <h1 class="CG2-howYouReceive__heading">CodeGridの配信形式は、<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">Web・iOSアプリ × メールマガジン</h1>
+    <h2 class="CG2-howYouReceive__heading">CodeGridの配信形式は、<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">Web・iOSアプリ × メールマガジン</h2>
   </header>
   <div class="CG2-howYouReceive__list">
     <div class="CG2-howYouReceive__item">
@@ -315,7 +316,7 @@ tag:
 
 ```html
 <section class="CG2-bookInfo">
-  <h1>CodeGridが書籍になりました</h1>
+  <h2 class="CG2-bookInfo__heading">CodeGridが書籍になりました</h2>
   <div class="CG2-bookInfo__body">
     <div class="CG2-bookInfo__images">
       <ul>
@@ -330,16 +331,15 @@ tag:
   </div>
 </section>
 ```
-
 */
-.CG2-bookInfo h1 {
+.CG2-bookInfo__heading {
   color: #282828;
   font-size: 24px;
   font-weight: normal;
   text-align: center;
   margin: 0 0 30px; }
   @media screen and (max-width: 767px) {
-    .CG2-bookInfo h1 {
+    .CG2-bookInfo__heading {
       font-size: 16px;
       margin-bottom: 20px; } }
 
@@ -485,11 +485,11 @@ tag:
       font-size: 20px; } }
 
 /* ==========================================================================
-   CG2-pickedup
+   CG2-featured
    ========================================================================== */
 /*
 ---
-name: pickedup
+name: featured
 category:
   - Blocks/www
 tag:
@@ -498,10 +498,10 @@ tag:
 ---
 
 ```html
-<section class="CG2-pickedup">
-  <header class="CG2-pickedup__header">
-    <h1 class="CG2-pickedup__headerHeading">人気の特集</h1>
-    <div class="CG2-pickedup__headerSummary">多くの会員の皆様がお気に入りに登録した記事</div>
+<section class="CG2-featured">
+  <header class="CG2-featured__header">
+    <h2 class="CG2-featured__heading">人気の特集</h2>
+    <div class="CG2-featured__summary">多くの購読者に活用されるCodeGridのロングセラー</div>
   </header>
 
   <div class="CG2-seriesList">
@@ -511,33 +511,33 @@ tag:
 </section>
 ```
 */
-section.CG2-pickedup {
+.CG2-featured {
   margin: 80px 0; }
   @media screen and (max-width: 767px) {
-    section.CG2-pickedup {
+    .CG2-featured {
       margin-top: 40px;
       margin-bottom: 40px; } }
 
-header.CG2-pickedup__header {
+.CG2-featured__header {
   line-height: 1.2;
   text-align: center;
   margin-bottom: 30px; }
 
-.CG2-pickedup__headerHeading {
+.CG2-featured__heading {
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-feature-settings: "palt";
   font-weight: bold;
-  margin-bottom: 15px; }
+  margin: 0.6em 0 15px; }
   @media screen and (max-width: 639px) {
-    .CG2-pickedup__headerHeading {
+    .CG2-featured__heading {
       font-size: 20px; } }
 
-.CG2-pickedup__headerSummary {
+.CG2-featured__summary {
   font-size: 16px;
   display: inline-block; }
   @media screen and (max-width: 767px) {
-    .CG2-pickedup__headerSummary {
+    .CG2-featured__summary {
       font-size: 12px; } }
 
 /* ==========================================================================
@@ -613,11 +613,11 @@ tag:
     display: block; }
 
 /* ==========================================================================
-   CG2-customerQuotes
+   CG2-quotes
    ========================================================================== */
 /*
 ---
-name: customerQuotes
+name: quotes
 category:
   - Blocks/www
 tag:
@@ -626,15 +626,15 @@ tag:
 ---
 
 ```html
-<section class="CG2-customerQuotes">
-  <header class="CG2-customerQuotes__header">
-    <h1>CodeGrid関連ツィート</h1>
-    <div class="CG2-customerQuotes__headerSub">
+<section class="CG2-quotes">
+  <header class="CG2-quotes__header">
+    <h2 class="CG2-quotes__heading">CodeGrid関連ツイート</h2>
+    <div class="CG2-quotes__headerSub">
       <a href="https://twitter.com/codegrid">@CodeGridで最新情報を配信しています <span class="CG2-icon-twitter"></span></a>
     </div>
   </header>
-  <div class="CG2-customerQuotes__body">
-    <div class="CG2-customerQuotes__list">
+  <div class="CG2-quotes__body">
+    <div class="CG2-quotes__list">
       <ul>
         <li>
           <blockquote class="twitter-tweet" data-conversation="none" lang="ja"><p lang="ja" dir="ltr">have made a caustics shader with three.js とりあえずコークティクスできた iphone でも見れるよ! <a href="https://t.co/dJMzth2PlB">https://t.co/dJMzth2PlB</a></p>&mdash; Akihiro Oyamada (@yomotsu) <a href="https://twitter.com/yomotsu/status/627256992340574209">2015, 7月 31</a></blockquote>
@@ -648,7 +648,7 @@ tag:
       </ul>
       <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
-    <div class="CG2-customerQuotes__timeline">
+    <div class="CG2-quotes__timeline">
       <a class="twitter-timeline" href="https://twitter.com/hashtag/codegrid" data-widget-id="628812249822408705">#codegrid のツイート</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+\"://platform.twitter.com/widgets.js\";fjs.parentNode.insertBefore(js,fjs);}}(document,\"script\",\"twitter-wjs\");</script>
     </div>
@@ -660,7 +660,6 @@ JSでtwitterのiframe内にstyleを挿入してmax-widthを打ち消す大きさ
 
 <script>
 window.addEventListener( 'load', function () {
-  
   var i,l;
   var css = [
     '.EmbeddedTweet, .timeline {',
@@ -673,22 +672,17 @@ window.addEventListener( 'load', function () {
     '}'
   ].join( '' );
   var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
-  
-  for ( i = 0|0, l = iframe.length|0; i < l; i = ( i + 1 )|0 ) {
-
-    var doc  = iframe[ i ].contentWindow.document;
-    var head  = doc.querySelector( 'head' );
+  for ( i = 0, l = iframe.length; i < l; i++ ) {
+    var doc = iframe[ i ].contentWindow.document;
+    var head = doc.querySelector( 'head' );
     var style = doc.createElement( 'style' );
-    style.innerText = css;
+    style.textContent = css;
     head.appendChild( style );
-    
   }
-
 } );
 </script>
 
 <pre><code>window.addEventListener( 'load', function () {
-
   var i,l;
   var css = [
     '.EmbeddedTweet, .timeline {',
@@ -701,122 +695,119 @@ window.addEventListener( 'load', function () {
     '}'
   ].join( '' );
   var iframe = document.querySelectorAll( 'iframe[id^=twitter-widget-' );
-  
-  for ( i = 0|0, l = iframe.length|0; i &lt; l; i = ( i + 1 )|0 ) {
-
-    var doc  = iframe[ i ].contentWindow.document;
-    var head  = doc.querySelector( 'head' );
+  for ( i = 0, l = iframe.length; i < l; i++ ) {
+    var doc = iframe[ i ].contentWindow.document;
+    var head = doc.querySelector( 'head' );
     var style = doc.createElement( 'style' );
-    style.innerText = css;
+    style.textContent = css;
     head.appendChild( style );
-    
   }
-
 } );</code></pre>
 */
-section.CG2-customerQuotes {
+.CG2-quotes {
   padding-top: 20px;
   margin: 0 -10px; }
-  section.CG2-customerQuotes:before, section.CG2-customerQuotes:after {
+  .CG2-quotes:before, .CG2-quotes:after {
     content: "";
     display: table; }
-  section.CG2-customerQuotes:after {
+  .CG2-quotes:after {
     clear: both; }
 
-header.CG2-customerQuotes__header {
+.CG2-quotes__header {
   display: table;
   width: calc( 100% + 46px);
   border-bottom: 1px solid #5c5c5c;
   margin: 0 -28px 30px; }
   @media screen and (max-width: 767px) {
-    header.CG2-customerQuotes__header {
+    .CG2-quotes__header {
       display: block;
       width: auto;
       margin: 0 0 10px;
       padding: 0 10px 5px; } }
-  header.CG2-customerQuotes__header h1 {
-    font-size: 32px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-    font-feature-settings: "palt";
-    font-weight: normal;
-    line-height: 1.2;
-    vertical-align: middle;
-    display: table-cell;
-    padding: 0 0 30px 28px;
-    margin: 0; }
-    @media screen and (max-width: 767px) {
-      header.CG2-customerQuotes__header h1 {
-        font-size: 20px;
-        display: block;
-        padding: 0; } }
 
-.CG2-customerQuotes__headerSub {
+.CG2-quotes__heading {
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
+  font-weight: normal;
+  line-height: 1.2;
+  vertical-align: middle;
+  display: table-cell;
+  padding: 0 0 30px 28px;
+  margin: 0; }
+  @media screen and (max-width: 767px) {
+    .CG2-quotes__heading {
+      font-size: 20px;
+      display: block;
+      padding: 0; } }
+
+.CG2-quotes__headerSub {
   font-size: 14px;
   text-align: right;
   vertical-align: middle;
   display: table-cell;
   padding: 0 28px 30px 0; }
   @media screen and (max-width: 767px) {
-    .CG2-customerQuotes__headerSub {
+    .CG2-quotes__headerSub {
       font-size: 12px;
       display: block;
       padding: 0;
       display: none; } }
-  .CG2-customerQuotes__headerSub a {
+  .CG2-quotes__headerSub a {
     color: inherit; }
 
-.CG2-customerQuotes__body {
+.CG2-quotes__body {
   display: table;
   width: 100%; }
   @media screen and (max-width: 767px) {
-    .CG2-customerQuotes__body {
+    .CG2-quotes__body {
       display: block;
       width: auto; } }
 
-.CG2-customerQuotes__list {
+.CG2-quotes__list {
   vertical-align: top;
   box-sizing: border-box;
   display: table-cell;
   width: 60%;
   padding-right: 20px; }
   @media screen and (max-width: 767px) {
-    .CG2-customerQuotes__list {
+    .CG2-quotes__list {
       display: block;
       width: auto;
       padding-right: 0; } }
-  .CG2-customerQuotes__list ul {
+  .CG2-quotes__list ul {
     list-style: none;
     padding: 0;
     margin: 0; }
-  .CG2-customerQuotes__list li {
+  .CG2-quotes__list li {
     margin: 0 0 20px; }
     @media screen and (max-width: 767px) {
-      .CG2-customerQuotes__list li {
+      .CG2-quotes__list li {
         margin-bottom: 10px; } }
-  .CG2-customerQuotes__list iframe {
+  .CG2-quotes__list iframe {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important; }
 
-.CG2-customerQuotes__timeline {
+.CG2-quotes__timeline {
   vertical-align: top;
   box-sizing: border-box;
   display: table-cell;
   width: 40%;
   padding-left: 20px; }
   @media screen and (max-width: 767px) {
-    .CG2-customerQuotes__timeline {
+    .CG2-quotes__timeline {
       display: block;
       width: auto;
       padding-left: 0; } }
-  .CG2-customerQuotes__timeline iframe {
+  .CG2-quotes__timeline iframe {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important; }
     @media screen and (max-width: 767px) {
-      .CG2-customerQuotes__timeline iframe {
+      .CG2-quotes__timeline iframe {
         height: 300px !important; } }
 
 /* ==========================================================================
@@ -836,7 +827,7 @@ templateItem:
 ```html
 <div class="CG2-bannerHeader">
   <div class="CG2-bannerHeader__inner">
-    <h1>チームのフロントエンド開発力を<br>根底からアップしよう</h1>
+    <h1 class=".CG2-bannerHeader__heading">チームのフロントエンド開発力を<br>根底からアップしよう</h1>
     <p>団体購読とは、購読管理者の方に複数の購読者を取りまとめていただき、毎月、購読者全員の購読料を一括した請求書を発行し、まとめてお支払いいただくシステムです。</p>
   </div>
   <div class="CG2-bannerHeader__bg" style="background-image: url( '/build/img/_01.jpg' )"></div>
@@ -859,13 +850,6 @@ templateItem:
 .CG2-bannerHeader__inner {
   max-width: 740px;
   margin: 0 auto; }
-  .CG2-bannerHeader__inner h1 {
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-    font-feature-settings: "palt";
-    font-size: 32px;
-    font-weight: normal;
-    text-align: center;
-    margin: 0 0 30px; }
   .CG2-bannerHeader__inner p {
     line-height: 2;
     text-align: center;
@@ -875,11 +859,20 @@ templateItem:
   @media screen and (max-width: 767px) {
     .CG2-bannerHeader__inner {
       max-width: none; }
-      .CG2-bannerHeader__inner h1 {
-        font-size: 20px;
-        margin-bottom: 20px; }
       .CG2-bannerHeader__inner p {
         font-size: 12px; } }
+
+.CG2-bannerHeader__heading {
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
+  font-size: 32px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 30px; }
+  @media screen and (max-width: 767px) {
+    .CG2-bannerHeader__heading {
+      font-size: 20px;
+      margin-bottom: 20px; } }
 
 .CG2-bannerHeader__bg {
   pointer-events: none;
@@ -910,7 +903,7 @@ tag:
 <section class="CG2-form">
   <form>
     <div class="CG2-form__header">
-      <h1>団体購読のお申込み</h1>
+      <h2 class="CG2-form__heading">団体購読のお申込み</h2>
       <p>購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
     </div>
     <p class="CG2--alignCenter">購読者お一人につき、月額800円（税抜）<br>月の途中で購読者の登録・削除があった場合は日割り計算されます。</p>
@@ -947,6 +940,7 @@ tag:
               <option>記事内容について</option>
               <option>CodeGridの利用全般について</option>
               <option>課金について</option>
+              <option>団体購読について</option>
               <option>その他</option>
             </select>
           </td>
@@ -987,25 +981,27 @@ section.CG2-form {
 
 .CG2-form__header {
   margin: 0 0 30px; }
-  .CG2-form__header h1 {
-    font-size: 32px;
-    font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
-    font-feature-settings: "palt";
-    font-weight: normal;
-    line-height: 1.6;
-    text-align: center;
-    margin: 0 0 20px; }
   .CG2-form__header p {
     text-align: center;
     margin: 16px 0 0; }
   @media screen and (max-width: 639px) {
     .CG2-form__header {
       margin-bottom: 16px; }
-      .CG2-form__header h1 {
-        font-size: 20px;
-        margin-bottom: 16px; }
       .CG2-form__header p {
         text-align: left; } }
+
+.CG2-form__heading {
+  font-size: 32px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
+  font-feature-settings: "palt";
+  font-weight: normal;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0 0 20px; }
+  @media screen and (max-width: 639px) {
+    .CG2-form__heading {
+      font-size: 20px;
+      margin-bottom: 16px; } }
 
 .CG2-form__table table {
   width: 100%; }
@@ -1137,7 +1133,7 @@ tag:
       <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
     </div>
     <div class="CG2-flowExplanation__text">
-      <h1>お申込頂くと、管理者様へ団体管理画面へのリンクが送信されます</h1>
+      <h3 class="CG2-flowExplanation__heading">お申込頂くと、管理者様へ団体管理画面へのリンクが送信されます</h3>
       <p>補足などがはいります。補足などがはいります。補足などがはいります。補足などがはいります。</p>
     </div>
   </section>
@@ -1147,7 +1143,7 @@ tag:
       <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
     </div>
     <div class="CG2-flowExplanation__text">
-      <h1>管理画面にて、パスワードの設定をお願いします</h1>
+      <h3 class="CG2-flowExplanation__heading">管理画面にて、パスワードの設定をお願いします</h3>
       <p>補足などがはいります。補足などがはいります。補足などがはいります。補足などがはいります。</p>
     </div>
   </section>
@@ -1196,34 +1192,37 @@ section.CG2-flowExplanation__item {
   vertical-align: top;
   display: table-cell;
   padding-left: 66px; }
-  .CG2-flowExplanation__text h1 {
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0 0 20px; }
-    .CG2-flowExplanation__text h1:before {
-      content: counter(CG2flowExplanation);
-      font-size: 32px;
-      font-family: "Lucida Console", Monaco, monospace;
-      line-height: 24px;
-      vertical-align: middle;
-      display: inline-block;
-      width: 1.2em;
-      margin-left: -1.2em; }
   @media screen and (max-width: 639px) {
     .CG2-flowExplanation__text {
       padding-left: 35px; }
-      .CG2-flowExplanation__text h1 {
-        font-size: 12px;
-        font-weight: bold;
-        margin: 0 0 10px; }
-        .CG2-flowExplanation__text h1:before {
-          font-size: 24px;
-          font-weight: normal;
-          line-height: 12px;
-          width: 26px;
-          margin-left: -26px; }
       .CG2-flowExplanation__text p {
         font-size: 12px; } }
+
+.CG2-flowExplanation__heading {
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0 0 20px; }
+  @media screen and (max-width: 639px) {
+    .CG2-flowExplanation__heading {
+      font-size: 12px;
+      font-weight: bold;
+      margin: 0 0 10px; } }
+  .CG2-flowExplanation__heading:before {
+    content: counter(CG2flowExplanation);
+    font-size: 32px;
+    font-family: "Lucida Console", Monaco, monospace;
+    line-height: 24px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 1.2em;
+    margin-left: -1.2em; }
+    @media screen and (max-width: 639px) {
+      .CG2-flowExplanation__heading:before {
+        font-size: 24px;
+        font-weight: normal;
+        line-height: 12px;
+        width: 26px;
+        margin-left: -26px; } }
 
 /* ==========================================================================
    CG2-faq
@@ -1239,13 +1238,13 @@ tag:
 
 ```html
 <div class="CG2-faq">
-  <div class="CG2-faq__question">
+  <h3 class="CG2-faq__question">
     PayPalアカウントやWebMoneyのほかに、銀行振込など別の支払い方法はありますか？
-  </div>
+  </h3>
   <div class="CG2-faq__answer">
     <p>個人で購読される方は、PayPalアカウント、もしくはWebMoneyのお支払いのみ受け付けております。団体で購読される方は、請求書払いで銀行振込ができます。</p>
-    <aside class="CG2-faq__eg">
-      <h1>未払い購読料の扱い（例）</h1>
+    <aside class="CG2-faq-eg">
+      <h4 class="CG2-faq-eg__heading">未払い購読料の扱い（例）</h4>
       <ul>
         <li>前月未払い : 864円</li>
         <li>今月請求 : 1,728円（前回未払い864円＋今回購読料864円）</li>
@@ -1271,6 +1270,7 @@ tag:
   line-height: 1.5;
   position: relative;
   min-height: 24px;
+  margin: 0;
   padding: 8px 0; }
   @media screen and (max-width: 767px) {
     .CG2-faq__question {
@@ -1295,20 +1295,19 @@ tag:
   margin-top: 0;
   margin-bottom: 1em; }
 
-.CG2-faq__answer aside.CG2-faq__eg {
+.CG2-faq-eg {
   padding: 20px 20px 20px 50px;
   margin: 20px 0 0 -50px;
-  margin-left: -50px;
   background: #eee; }
   @media screen and (max-width: 767px) {
-    .CG2-faq__answer aside.CG2-faq__eg {
+    .CG2-faq-eg {
       padding: 10px 10px 10px 38px;
       margin-left: -38px; } }
-  .CG2-faq__answer aside.CG2-faq__eg h1 {
-    font-size: 100%;
+  .CG2-faq-eg .CG2-faq-eg__heading {
+    font-size: 16px;
     font-weight: bold;
     margin: 0; }
-  .CG2-faq__answer aside.CG2-faq__eg ul {
+  .CG2-faq-eg ul {
     margin-top: 0;
     margin-bottom: 0;
     padding-left: 30px; }
@@ -1391,8 +1390,8 @@ tag:
     <img src="http://img.pxgrid.net/206x290" alt="" width="206" height="290">
   </div>
   <div class="CG2-publication__body">
-    <div class="CG2-publication__heading">
-      <h1>Web制作者のためのGit入門</h1>
+    <div class="CG2-publication__header">
+      <h2 class="CG2-publication__heading">Web制作者のためのGit入門</h2>
     </div>
     <div class="CG2-publication__headingSub">
       大杉 充 (著), 外村 和仁 (著), CodeGrid (編集)  2014/6/28
@@ -1435,17 +1434,17 @@ section.CG2-publication {
     .CG2-publication__body {
       font-size: 12px; } }
 
-.CG2-publication__heading {
+.CG2-publication__header {
   margin: 0 0 25px; }
   @media screen and (max-width: 767px) {
-    .CG2-publication__heading {
+    .CG2-publication__header {
       margin-bottom: 15px; } }
-  .CG2-publication__heading h1 {
+  .CG2-publication__header .CG2-publication__heading {
     font-size: 24px;
     font-weight: normal;
     margin: 0; }
     @media screen and (max-width: 767px) {
-      .CG2-publication__heading h1 {
+      .CG2-publication__header .CG2-publication__heading {
         font-size: 16px; } }
 
 .CG2-publication__headingSub {

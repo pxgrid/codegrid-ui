@@ -2684,9 +2684,11 @@ tag:
   - content
 ---
 
+見出しレベルは文章の構成に応じて変更する。
+
 ```html
 <div class="CG2-header1">
-  <div class="CG2-header1__heading">Heading text 1</div>
+  <h1 class="CG2-header1__heading">Heading text 1</h1>
 </div>
 ```
 */
@@ -2708,7 +2710,9 @@ tag:
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-feature-settings: "palt";
-  line-height: 1.2; }
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0; }
   @media screen and (max-width: 767px) {
     .CG2-header1__heading {
       font-size: 20px; } }
@@ -2725,9 +2729,11 @@ tag:
   - content
 ---
 
+見出しレベルは文章の構成に応じて変更する。
+
 ```html
 <div class="CG2-header2">
-  <div class="CG2-header2__heading">Heading text 2</div>
+  <h3 class="CG2-header2__heading">Heading text 2</h3>
 </div>
 ```
 */
@@ -2738,7 +2744,9 @@ tag:
       margin: 30px 0 10px; } }
 
 .CG2-header2__heading {
-  font-size: 24px; }
+  font-size: 24px;
+  font-weight: normal;
+  margin: 0; }
   @media screen and (max-width: 767px) {
     .CG2-header2__heading {
       font-size: 16px; } }
@@ -2755,9 +2763,11 @@ tag:
   - content
 ---
 
+見出しレベルは文章の構成に応じて変更する。
+
 ```html
 <div class="CG2-header3">
-  <div class="CG2-header3__heading">Heading text 3</div>
+  <h3 class="CG2-header3__heading">Heading text 3</h3>
 </div>
 ```
 */
@@ -2778,6 +2788,8 @@ tag:
   - content
 ---
 
+見出しと判断されるものには見出しレベルを付与する。
+
 ```html
 <div class="CG2-leadText">LeadText</div>
 ```
@@ -2786,6 +2798,7 @@ tag:
   font-size: 32px;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, "Klee", "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝ProN W3", "HiraMinProN-W3", "ヒラギノ明朝Pro W3", "Hiragino Mincho Pro", "HG正楷書体-PRO", "ＤＦ中楷書体", "ＭＳ 明朝", "MS Mincho", "メイリオ", Meiryo, serif;
   font-feature-settings: "palt";
+  font-weight: normal;
   line-height: 1.4;
   text-align: center;
   margin: 80px 0 40px; }
@@ -2849,7 +2862,7 @@ tag:
 
 ```html
 <section class="CG2-customers">
-  <h1>団体購読も承っております</h1>
+  <h2 class="CG2-customers__heading">団体購読も承っております</h2>
   <p>CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
   <div class="CG2-customers__logos">
     <ul>
@@ -2865,17 +2878,6 @@ tag:
 </section>
 ```
 */
-.CG2-customers h1 {
-  color: #282828;
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-  margin: 0 0 20px; }
-  @media screen and (max-width: 767px) {
-    .CG2-customers h1 {
-      font-size: 16px;
-      margin-bottom: 10px; } }
-
 .CG2-customers p {
   text-align: center; }
   @media screen and (max-width: 767px) {
@@ -2885,6 +2887,17 @@ tag:
 
 .CG2-customers > *:first-child {
   margin-top: 0; }
+
+.CG2-customers__heading {
+  color: #282828;
+  font-size: 24px;
+  font-weight: normal;
+  text-align: center;
+  margin: 0 0 20px; }
+  @media screen and (max-width: 767px) {
+    .CG2-customers__heading {
+      font-size: 16px;
+      margin-bottom: 10px; } }
 
 .CG2-customers__logos {
   text-align: center;
