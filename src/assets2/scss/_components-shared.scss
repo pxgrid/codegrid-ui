@@ -530,68 +530,68 @@ customersについているstyle属性は外すこと。
 </section>
 ```
 */
-.CG2-customers {
-  p {
-    text-align: center;
-
-    @include max-screen( $breakpoint-middle ) {
-      font-size: 12px;
-      text-align: left;
-    }
-  }
-
-  & > *:first-child {
-    margin-top: 0;
-  }
-}
-
-.CG2-customers__heading {
-  color: #282828;
-  font-size: 24px;
-  font-weight: normal;
-  text-align: center;
-  margin: 0 0 20px;
-
-  @include max-screen( $breakpoint-middle ) {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-}
-
-.CG2-customers__logos {
-  text-align: center;
-  padding: 10px 30px;
-  background: #fff;
-
-  @include max-screen( $breakpoint-middle ) {
-    padding: 10px;
-  }
-
-  ul {
-    font-size: 0;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  li {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 10px 20px;
-
-    @include max-screen( $breakpoint-middle ) {
-      margin: 5px;
-    }
-  }
-
-  img {
-    vertical-align: bottom;
-
-    @include max-screen( $breakpoint-middle ) {
-      zoom: 0.45;
-    }
-  }
-}
+// .CG2-customers {
+//   p {
+//     text-align: center;
+//
+//     @include max-screen( $breakpoint-middle ) {
+//       font-size: 12px;
+//       text-align: left;
+//     }
+//   }
+//
+//   & > *:first-child {
+//     margin-top: 0;
+//   }
+// }
+//
+// .CG2-customers__heading {
+//   color: #282828;
+//   font-size: 24px;
+//   font-weight: normal;
+//   text-align: center;
+//   margin: 0 0 20px;
+//
+//   @include max-screen( $breakpoint-middle ) {
+//     font-size: 16px;
+//     margin-bottom: 10px;
+//   }
+// }
+//
+// .CG2-customers__logos {
+//   text-align: center;
+//   padding: 10px 30px;
+//   background: #fff;
+//
+//   @include max-screen( $breakpoint-middle ) {
+//     padding: 10px;
+//   }
+//
+//   ul {
+//     font-size: 0;
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+//   }
+//
+//   li {
+//     display: inline-block;
+//     vertical-align: middle;
+//     margin: 10px 20px;
+//
+//     @include max-screen( $breakpoint-middle ) {
+//       margin: 5px;
+//     }
+//   }
+//
+//   img {
+//     vertical-align: bottom;
+//
+//     @include max-screen( $breakpoint-middle ) {
+//       zoom: 0.45;
+//     }
+//   }
+// }
 
 
 /* ==========================================================================
