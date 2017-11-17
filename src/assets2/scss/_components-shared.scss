@@ -592,6 +592,78 @@ customersについているstyle属性は外すこと。
 //     }
 //   }
 // }
+// レイアウト
+.CG2-customers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.CG2-customers__heading {
+  margin: 2em 0 0;
+}
+.CG2-customers__text {
+  margin: 2.2em 0 2em;
+}
+.CG2-customers__logos {
+  // ロゴが最後にある（コンパクトなやつ）の場合
+  // これで下に灰色の線が引かれるので、ブロックの区切りがわかるようになる。
+  &:last-child {
+    margin-bottom: 2.5em;
+  }
+}
+.CG2-customers__button {
+  margin: 2.5em 0;
+}
+@include max-screen( $breakpoint-middle ) {
+  .CG2-customers__heading {
+    margin: 1.5em 0 0;
+  }
+  .CG2-customers__text,
+  .CG2-customers__button {
+    margin: 1.5em 0;
+  }
+}
+
+.CG2-customers__heading {
+  padding: 0 10px;
+  color: #282828;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.2;
+
+  @include max-screen( $breakpoint-middle ) {
+    font-size: 16px;
+  }
+}
+
+.CG2-customers__text {
+  padding: 0 10px;
+  line-height: 1.2;
+}
+
+.CG2-customers__logos {
+  background-color: #fff;
+
+  ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+  li {
+    margin: 15px 20px;
+
+    @include max-screen( $breakpoint-middle ) {
+      margin: 10px 15px;
+    }
+  }
+  img {
+    vertical-align: middle;
+  }
+}
 
 
 /* ==========================================================================
