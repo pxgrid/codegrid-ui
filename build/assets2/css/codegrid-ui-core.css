@@ -2708,69 +2708,113 @@ tag:
   - www-item
 ---
 
+## 通常（見出し、テキスト、ロゴ、ボタン）
+
+customersについているstyle属性は外すこと。
+
 ```html
-<section class="CG2-customers">
+<section class="CG2-customers" style="background-color: #eee">
   <h2 class="CG2-customers__heading">団体購読も承っております</h2>
-  <p>CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
+  <p class="CG2-customers__text">CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
   <div class="CG2-customers__logos">
     <ul>
-      <li><img src="http://img.pxgrid.net/109x66" alt="" width="109" height="66"></li>
-      <li><img src="http://img.pxgrid.net/158x79" alt="" width="158" height="79"></li>
-      <li><img src="http://img.pxgrid.net/158x61" alt="" width="158" height="61"></li>
-      <li><img src="http://img.pxgrid.net/140x80" alt="" width="140" height="80"></li>
-      <li><img src="http://img.pxgrid.net/196x58" alt="" width="196" height="58"></li>
-      <li><img src="http://img.pxgrid.net/176x69" alt="" width="176" height="69"></li>
-      <li><img src="http://img.pxgrid.net/216x65" alt="" width="216" height="65"></li>
+      <li><img src="http://img.pxgrid.net/58x30" width="58" height="30"></li>
+      <li><img src="http://img.pxgrid.net/211x25" width="211" height="25"></li>
+      <li><img src="http://img.pxgrid.net/208x30" width="208" height="30"></li>
+      <li><img src="http://img.pxgrid.net/101x30" width="101" height="30"></li>
+      <li><img src="http://img.pxgrid.net/210x35" width="210" height="35"></li>
+      <li><img src="http://img.pxgrid.net/116x25" width="116" height="25"></li>
+      <li><img src="http://img.pxgrid.net/123x35" width="123" height="35"></li>
+      <li><img src="http://img.pxgrid.net/151x40" width="151" height="40"></li>
+      <li><img src="http://img.pxgrid.net/111x35" width="111" height="35"></li>
+      <li><img src="http://img.pxgrid.net/152x35" width="152" height="35"></li>
+    </ul>
+  </div>
+  <div class="CG2-customers__button">
+    <a class="CG2-button CG2-button--primary" href="">団体購読について</a>
+  </div>
+</section>
+```
+
+## コンパクト（テキスト・ロゴのみ）
+
+customersについているstyle属性は外すこと。
+
+```html
+<section class="CG2-customers" style="background-color: #eee">
+  <p class="CG2-customers__text">CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
+  <div class="CG2-customers__logos">
+    <ul>
+      <li><img src="http://img.pxgrid.net/58x30" width="58" height="30"></li>
+      <li><img src="http://img.pxgrid.net/211x25" width="211" height="25"></li>
+      <li><img src="http://img.pxgrid.net/208x30" width="208" height="30"></li>
+      <li><img src="http://img.pxgrid.net/101x30" width="101" height="30"></li>
+      <li><img src="http://img.pxgrid.net/210x35" width="210" height="35"></li>
+      <li><img src="http://img.pxgrid.net/116x25" width="116" height="25"></li>
+      <li><img src="http://img.pxgrid.net/123x35" width="123" height="35"></li>
+      <li><img src="http://img.pxgrid.net/151x40" width="151" height="40"></li>
+      <li><img src="http://img.pxgrid.net/111x35" width="111" height="35"></li>
+      <li><img src="http://img.pxgrid.net/152x35" width="152" height="35"></li>
     </ul>
   </div>
 </section>
 ```
 */
-.CG2-customers p {
-  text-align: center; }
-  @media screen and (max-width: 767px) {
-    .CG2-customers p {
-      font-size: 12px;
-      text-align: left; } }
-
-.CG2-customers > *:first-child {
-  margin-top: 0; }
+.CG2-customers {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
 
 .CG2-customers__heading {
+  margin: 2em 0 0; }
+
+.CG2-customers__text {
+  margin: 2.2em 0 2em; }
+
+.CG2-customers__logos:last-child {
+  margin-bottom: 2.5em; }
+
+.CG2-customers__button {
+  margin: 2.5em 0; }
+
+@media screen and (max-width: 767px) {
+  .CG2-customers__heading {
+    margin: 1.5em 0 0; }
+  .CG2-customers__text,
+  .CG2-customers__button {
+    margin: 1.5em 0; } }
+
+.CG2-customers__heading {
+  padding: 0 10px;
   color: #282828;
   font-size: 24px;
   font-weight: normal;
-  text-align: center;
-  margin: 0 0 20px; }
+  line-height: 1.2; }
   @media screen and (max-width: 767px) {
     .CG2-customers__heading {
-      font-size: 16px;
-      margin-bottom: 10px; } }
+      font-size: 16px; } }
+
+.CG2-customers__text {
+  padding: 0 10px;
+  line-height: 1.2; }
 
 .CG2-customers__logos {
-  text-align: center;
-  padding: 10px 30px;
-  background: #fff; }
-  @media screen and (max-width: 767px) {
-    .CG2-customers__logos {
-      padding: 10px; } }
+  background-color: #fff; }
   .CG2-customers__logos ul {
-    font-size: 0;
     list-style: none;
-    padding: 0;
-    margin: 0; }
+    padding: 20px 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
   .CG2-customers__logos li {
-    display: inline-block;
-    vertical-align: middle;
-    margin: 10px 20px; }
+    margin: 15px 20px; }
     @media screen and (max-width: 767px) {
       .CG2-customers__logos li {
-        margin: 5px; } }
+        margin: 10px 15px; } }
   .CG2-customers__logos img {
-    vertical-align: bottom; }
-    @media screen and (max-width: 767px) {
-      .CG2-customers__logos img {
-        zoom: 0.45; } }
+    vertical-align: middle; }
 
 /* ==========================================================================
    CG2-paymentTable
