@@ -2923,8 +2923,13 @@ customersについているstyle属性は外すこと。
 .CG2-customers__text {
   margin: 2.2em 0 2em; }
 
-.CG2-customers__logos:last-child {
-  margin-bottom: 2.5em; }
+.CG2-customers__logos {
+  width: 100%; }
+  .CG2-customers__logos:last-child {
+    margin-bottom: 2.5em; }
+  .CG2-customers__logos ul {
+    max-width: 1020px;
+    margin: 0 auto; }
 
 .CG2-customers__button {
   margin: 2.5em 0; }
@@ -2955,7 +2960,6 @@ customersについているstyle属性は外すこと。
   .CG2-customers__logos ul {
     list-style: none;
     padding: 20px 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
