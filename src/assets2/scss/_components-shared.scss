@@ -543,10 +543,15 @@ customersについているstyle属性は外すこと。
   margin: 2.2em 0 2em;
 }
 .CG2-customers__logos {
+  width: 100%;
   // ロゴが最後にある（コンパクトなやつ）の場合
   // これで下に灰色の線が引かれるので、ブロックの区切りがわかるようになる。
   &:last-child {
     margin-bottom: 2.5em;
+  }
+  ul {
+    max-width: 1020px; // 980 + 2 * 20
+    margin: 0 auto;
   }
 }
 .CG2-customers__button {
@@ -585,7 +590,6 @@ customersについているstyle属性は外すこと。
   ul {
     list-style: none;
     padding: 20px 0;
-    margin: 0;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
