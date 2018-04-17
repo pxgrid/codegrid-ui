@@ -3,7 +3,6 @@
 var es           = require( 'event-stream' );
 var del          = require( 'del' );
 var browserSync  = require( 'browser-sync' ).create();
-var reload       = browserSync.reload;
 
 var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
@@ -22,8 +21,6 @@ var sourcemaps   = require( 'gulp-sourcemaps' );
 var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
 var awspublish   = require( 'gulp-awspublish' );
-
-// var runSequence  = require( 'run-sequence' ).use( gulp );
 
 
 gulp.task('serve', function () {
@@ -177,38 +174,8 @@ gulp.task('guide', function () {
 });
 
 
-// gulp.task( 'watch', function () {
-//
-//   // watch( [ './**/*.html' ], function () {
-//   //   runSequence( browserSync.reload );
-//   // } );
-//
-//   watch( [ './src/assets2/js/*.js' ], function () {
-//     runSequence( 'js', browserSync.reload );
-//   } );
-//
-//   watch( [ './src/assets2/scss/*.scss' ], function () {
-//     runSequence( 'css', browserSync.reload );
-//   } );
-//
-//   // watch( [ './src/assets2/font/codegrid-icon/*.svg' ], function () {
-//   //   runSequence( 'iconfont', 'css', browserSync.reload );
-//   // } );
-//
-// } );
-
-// gulp.task( 'default', function ( callback ) {
-//
-//   runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'watch', callback );
-//
-// } );
-//
-// gulp.task( 'build', function ( callback ) {
-//
-//   runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'guide', callback );
-//
-// } );
-
+// todo: スタイルガイドのHTMLの変更を検知して更新するタスク
+// todo: アイコンフォント用SVGファイルの変更を検知するタスク（要るかな）
 
 gulp.task('watch:css', function () {
   return gulp.watch('./src/assets2/scss/**/*.scss', gulp.series('css'));
