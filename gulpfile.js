@@ -23,7 +23,7 @@ var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
 var awspublish   = require( 'gulp-awspublish' );
 
-var runSequence  = require( 'run-sequence' ).use( gulp );
+// var runSequence  = require( 'run-sequence' ).use( gulp );
 
 
 gulp.task( 'browser-sync', function () {
@@ -177,37 +177,37 @@ gulp.task( 'guide', function () {
 } );
 
 
-gulp.task( 'watch', function () {
+// gulp.task( 'watch', function () {
+//
+//   // watch( [ './**/*.html' ], function () {
+//   //   runSequence( browserSync.reload );
+//   // } );
+//
+//   watch( [ './src/assets2/js/*.js' ], function () {
+//     runSequence( 'js', browserSync.reload );
+//   } );
+//
+//   watch( [ './src/assets2/scss/*.scss' ], function () {
+//     runSequence( 'css', browserSync.reload );
+//   } );
+//
+//   // watch( [ './src/assets2/font/codegrid-icon/*.svg' ], function () {
+//   //   runSequence( 'iconfont', 'css', browserSync.reload );
+//   // } );
+//
+// } );
 
-  // watch( [ './**/*.html' ], function () {
-  //   runSequence( browserSync.reload );
-  // } );
-
-  watch( [ './src/assets2/js/*.js' ], function () {
-    runSequence( 'js', browserSync.reload );
-  } );
-
-  watch( [ './src/assets2/scss/*.scss' ], function () {
-    runSequence( 'css', browserSync.reload );
-  } );
-
-  // watch( [ './src/assets2/font/codegrid-icon/*.svg' ], function () {
-  //   runSequence( 'iconfont', 'css', browserSync.reload );
-  // } );
-
-} );
-
-gulp.task( 'default', function ( callback ) {
-
-  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'watch', callback );
-
-} );
-
-gulp.task( 'build', function ( callback ) {
-
-  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'guide', callback );
-
-} );
+// gulp.task( 'default', function ( callback ) {
+//
+//   runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'watch', callback );
+//
+// } );
+//
+// gulp.task( 'build', function ( callback ) {
+//
+//   runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'guide', callback );
+//
+// } );
 
 gulp.task( 'deploy', function () {
 
