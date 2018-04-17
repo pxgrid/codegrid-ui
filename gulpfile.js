@@ -26,16 +26,16 @@ var awspublish   = require( 'gulp-awspublish' );
 // var runSequence  = require( 'run-sequence' ).use( gulp );
 
 
-gulp.task( 'browser-sync', function () {
-
+gulp.task('serve', function () {
   browserSync.init({
     server: {
       baseDir: './',
-      directory: true
-    }
-  } );
-
-} );
+      directory: true,
+    },
+    notify: false,
+    open: false,
+  });
+});
 
 
 gulp.task('clean', function () {
@@ -208,7 +208,7 @@ gulp.task('guide', function () {
 
 
 gulp.task('default', gulp.series(
-  // todo: serve
+  'serve',
   'iconfont',
   gulp.parallel(
     'numfont',
