@@ -30,7 +30,6 @@
     "csswring": "^6.0.3",
     "del": "^3.0.0",
     "event-stream": "^3.3.4",
-    "gulp": "^3.9.0",
     "gulp-aigis": "^1.3.0",
     "gulp-awspublish": "^3.3.3",
     "gulp-concat": "^2.6.1",
