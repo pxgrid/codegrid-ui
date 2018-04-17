@@ -168,13 +168,10 @@ gulp.task( 'numfont', function () {
 } );
 
 
-gulp.task( 'guide', function () {
-
-  return gulp.src( './aigis_config.yml' )
-         .pipe( aigis() )
-         .pipe( gulp.dest( '' ) );
-
-} );
+gulp.task('guide', function () {
+  return gulp.src('./aigis_config.yml')
+         .pipe(aigis());
+});
 
 
 // gulp.task( 'watch', function () {
