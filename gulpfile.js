@@ -32,6 +32,9 @@ gulp.task('serve', function () {
       baseDir: './',
       directory: true,
     },
+    files: [
+      'build'
+    ],
     notify: false,
     open: false,
   });
@@ -207,8 +210,19 @@ gulp.task('guide', function () {
 // } );
 
 
+gulp.task('watch:css', function () {
+  return gulp.watch('./src/assets2/scss/**/*.scss', gulp.series('css'));
+});
+
+gulp.task('watch:js', function () {
+  return gulp.watch('./src/assets2/js/**/*.js', gulp.series('js'));
+});
+
+gulp.task('watch', gulp.parallel('watch:css', 'watch:js'))
+
+
+
 gulp.task('default', gulp.series(
-  'serve',
   'iconfont',
   gulp.parallel(
     'numfont',
@@ -217,8 +231,8 @@ gulp.task('default', gulp.series(
     'copy-static',
     'js',
     'css'
-  )
-  // todo: watch
+  ),
+  gulp.parallel('watch', 'serve')
 ));
 
 
