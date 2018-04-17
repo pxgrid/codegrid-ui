@@ -209,6 +209,38 @@ gulp.task( 'guide', function () {
 //
 // } );
 
+
+gulp.task('default', gulp.series(
+  // todo: serve
+  'iconfont',
+  gulp.parallel(
+    'numfont',
+    'copy-font',
+    'copy-img',
+    'copy-static',
+    'js',
+    'css'
+  )
+  // todo: watch
+));
+
+
+gulp.task('build', gulp.series(
+  'clean',
+  'iconfont',
+  gulp.parallel(
+    'numfont',
+    'copy-font',
+    'copy-img',
+    'copy-static',
+    'js',
+    'css'
+  ),
+  'guide'
+));
+
+
+
 gulp.task( 'deploy', function () {
 
   var publisher = awspublish.create( {
