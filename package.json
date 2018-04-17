@@ -42,7 +42,6 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^4.3.8",
-    "run-sequence": "^2.2.1",
     "underscore": "^1.8.3"
   },
   "browserslist": [
