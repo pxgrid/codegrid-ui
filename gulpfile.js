@@ -37,11 +37,11 @@ gulp.task( 'browser-sync', function () {
 
 } );
 
-gulp.task( 'clean', function () {
 
-  del( './build/' );
+gulp.task('clean', function () {
+  return del('./build/');
+});
 
-} );
 
 gulp.task( 'copy-font', function () {
 
