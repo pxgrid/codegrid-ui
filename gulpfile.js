@@ -203,7 +203,7 @@ gulp.task('deploy', () => {
     endpoint: 's3-ap-northeast-1.amazonaws.com',
   });
 
-  gulp
+  return gulp
     .src('./build/**/*')
     .pipe(publisher.publish())
     .pipe(publisher.sync())
