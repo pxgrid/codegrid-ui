@@ -21,7 +21,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const awspublish = require('gulp-awspublish');
 
-gulp.task('serve', function() {
+gulp.task('serve', () => {
   browserSync.init({
     server: {
       baseDir: './',
@@ -33,28 +33,27 @@ gulp.task('serve', function() {
   });
 });
 
-gulp.task('clean', function() {
+gulp.task('clean', () => {
   return del('./build/');
 });
 
-x;
-gulp.task('copy-font', function() {
+gulp.task('copy-font', () => {
   return gulp
     .src(['./src/assets2/font/zero-width.woff'])
     .pipe(gulp.dest('./build/assets2/font/'));
 });
 
-gulp.task('copy-img', function() {
+gulp.task('copy-img', () => {
   return gulp
     .src(['./src/assets2/img/*/**'])
     .pipe(gulp.dest('./build/assets2/img/'));
 });
 
-gulp.task('copy-static', function() {
+gulp.task('copy-static', () => {
   return gulp.src(['./static/*/**']).pipe(gulp.dest('./build/'));
 });
 
-gulp.task('js', function() {
+gulp.task('js', () => {
   return gulp
     .src([
       './src/assets2/js/vendor/EventDispatcher.js',
@@ -81,7 +80,7 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./build/assets2/js/'));
 });
 
-gulp.task('css', function() {
+gulp.task('css', () => {
   return gulp
     .src([
       './src/assets2/scss/codegrid-ui.scss',
@@ -99,7 +98,7 @@ gulp.task('css', function() {
     .pipe(gulp.dest('./build/assets2/css/'));
 });
 
-gulp.task('iconfont', function() {
+gulp.task('iconfont', () => {
   const fontName = 'codegrid-icon';
 
   return gulp
@@ -111,7 +110,7 @@ gulp.task('iconfont', function() {
         appendCodepoints: true,
       })
     )
-    .on('glyphs', function(glyphs, options) {
+    .on('glyphs', (glyphs, options) => {
       gulp
         .src([
           './src/assets2/font/codegrid-icon/_icon.scss',
@@ -130,7 +129,7 @@ gulp.task('iconfont', function() {
     .pipe(gulp.dest('./build/assets2/font/'));
 });
 
-gulp.task('numfont', function() {
+gulp.task('numfont', () => {
   const fontName = 'codegrid-num';
 
   return gulp
@@ -146,18 +145,18 @@ gulp.task('numfont', function() {
     .pipe(gulp.dest('./build/assets2/font/'));
 });
 
-gulp.task('guide', function() {
+gulp.task('guide', () => {
   return gulp.src('./aigis_config.yml').pipe(aigis());
 });
 
 // todo: スタイルガイドのHTMLの変更を検知して更新するタスク
 // todo: アイコンフォント用SVGファイルの変更を検知するタスク（要るかな）
 
-gulp.task('watch:css', function() {
+gulp.task('watch:css', () => {
   return gulp.watch('./src/assets2/scss/**/*.scss', gulp.series('css'));
 });
 
-gulp.task('watch:js', function() {
+gulp.task('watch:js', () => {
   return gulp.watch('./src/assets2/js/**/*.js', gulp.series('js'));
 });
 
@@ -196,7 +195,7 @@ gulp.task(
   )
 );
 
-gulp.task('deploy', function() {
+gulp.task('deploy', () => {
   const publisher = awspublish.create({
     params: {
       Bucket: 'ui.codegrid.net',
