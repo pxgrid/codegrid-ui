@@ -3,7 +3,6 @@
 var es           = require( 'event-stream' );
 var del          = require( 'del' );
 var browserSync  = require( 'browser-sync' ).create();
-var reload       = browserSync.reload;
 
 var postcss      = require( 'gulp-postcss' );
 var autoprefixer = require( 'autoprefixer' );
@@ -23,25 +22,26 @@ var uglify       = require( 'gulp-uglify' );
 var watch        = require( 'gulp-watch' );
 var awspublish   = require( 'gulp-awspublish' );
 
-var runSequence  = require( 'run-sequence' ).use( gulp );
 
-
-gulp.task( 'browser-sync', function () {
-
+gulp.task('serve', function () {
   browserSync.init({
     server: {
       baseDir: './',
-      directory: true
-    }
-  } );
+      directory: true,
+    },
+    files: [
+      'build'
+    ],
+    notify: false,
+    open: false,
+  });
+});
 
-} );
 
-gulp.task( 'clean', function () {
+gulp.task('clean', function () {
+  return del('./build/');
+});
 
-  del( './build/' );
-
-} );
 
 gulp.task( 'copy-font', function () {
 
@@ -168,46 +168,56 @@ gulp.task( 'numfont', function () {
 } );
 
 
-gulp.task( 'guide', function () {
-
-  return gulp.src( './aigis_config.yml' )
-         .pipe( aigis() )
-         .pipe( gulp.dest( '' ) );
-
-} );
+gulp.task('guide', function () {
+  return gulp.src('./aigis_config.yml')
+         .pipe(aigis());
+});
 
 
-gulp.task( 'watch', function () {
+// todo: スタイルガイドのHTMLの変更を検知して更新するタスク
+// todo: アイコンフォント用SVGファイルの変更を検知するタスク（要るかな）
 
-  // watch( [ './**/*.html' ], function () {
-  //   runSequence( browserSync.reload );
-  // } );
+gulp.task('watch:css', function () {
+  return gulp.watch('./src/assets2/scss/**/*.scss', gulp.series('css'));
+});
 
-  watch( [ './src/assets2/js/*.js' ], function () {
-    runSequence( 'js', browserSync.reload );
-  } );
+gulp.task('watch:js', function () {
+  return gulp.watch('./src/assets2/js/**/*.js', gulp.series('js'));
+});
 
-  watch( [ './src/assets2/scss/*.scss' ], function () {
-    runSequence( 'css', browserSync.reload );
-  } );
+gulp.task('watch', gulp.parallel('watch:css', 'watch:js'))
 
-  // watch( [ './src/assets2/font/codegrid-icon/*.svg' ], function () {
-  //   runSequence( 'iconfont', 'css', browserSync.reload );
-  // } );
 
-} );
 
-gulp.task( 'default', function ( callback ) {
+gulp.task('default', gulp.series(
+  'iconfont',
+  gulp.parallel(
+    'numfont',
+    'copy-font',
+    'copy-img',
+    'copy-static',
+    'js',
+    'css'
+  ),
+  gulp.parallel('watch', 'serve')
+));
 
-  runSequence( 'browser-sync', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'watch', callback );
 
-} );
+gulp.task('build', gulp.series(
+  'clean',
+  'iconfont',
+  gulp.parallel(
+    'numfont',
+    'copy-font',
+    'copy-img',
+    'copy-static',
+    'js',
+    'css'
+  ),
+  'guide'
+));
 
-gulp.task( 'build', function ( callback ) {
 
-  runSequence( 'clean', 'iconfont', [ 'numfont', 'copy-font', 'copy-img', 'copy-static', 'js', 'css' ], 'guide', callback );
-
-} );
 
 gulp.task( 'deploy', function () {
 
