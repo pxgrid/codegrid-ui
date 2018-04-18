@@ -1,26 +1,26 @@
 'use strict';
 
-var es = require('event-stream');
-var del = require('del');
-var browserSync = require('browser-sync').create();
+const es = require('event-stream');
+const del = require('del');
+const browserSync = require('browser-sync').create();
 
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var mqpacker = require('css-mqpacker');
-var csswring = require('csswring');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const mqpacker = require('css-mqpacker');
+const csswring = require('csswring');
 
-var gulp = require('gulp');
-var aigis = require('gulp-aigis');
-var concat = require('gulp-concat');
-var consolidate = require('gulp-consolidate');
-var iconfont = require('gulp-iconfont');
-var plumber = require('gulp-plumber');
-var rename = require('gulp-rename');
-var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var watch = require('gulp-watch');
-var awspublish = require('gulp-awspublish');
+const gulp = require('gulp');
+const aigis = require('gulp-aigis');
+const concat = require('gulp-concat');
+const consolidate = require('gulp-consolidate');
+const iconfont = require('gulp-iconfont');
+const plumber = require('gulp-plumber');
+const rename = require('gulp-rename');
+const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const uglify = require('gulp-uglify');
+const watch = require('gulp-watch');
+const awspublish = require('gulp-awspublish');
 
 gulp.task('serve', function() {
   browserSync.init({
@@ -101,7 +101,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('iconfont', function() {
-  var fontName = 'codegrid-icon';
+  const fontName = 'codegrid-icon';
 
   return gulp
     .src(['./src/assets2/font/codegrid-icon/*.svg'])
@@ -132,7 +132,7 @@ gulp.task('iconfont', function() {
 });
 
 gulp.task('numfont', function() {
-  var fontName = 'codegrid-num';
+  const fontName = 'codegrid-num';
 
   return gulp
     .src(['./src/assets2/font/codegrid-num/*.svg'])
@@ -198,7 +198,7 @@ gulp.task(
 );
 
 gulp.task('deploy', function() {
-  var publisher = awspublish.create({
+  const publisher = awspublish.create({
     params: {
       Bucket: 'ui.codegrid.net',
     },
