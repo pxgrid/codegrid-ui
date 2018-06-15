@@ -135,6 +135,9 @@ tag:
       padding: 0;
       margin: 40px 0;
     }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   .CG2-features__heading {
     color: #282828;
@@ -1667,5 +1670,75 @@ tag:
   @include max-screen( $breakpoint-middle ) {
     border-color: #dbdbdb;
     margin: 50px -10px;
+  }
+}
+
+
+
+/* ==========================================================================
+   CG2-comparisonTable
+   ========================================================================== */
+/*
+---
+name: comparisonTable
+category:
+  - Blocks/www
+tag:
+  - www-item
+---
+
+```html
+<div class="CG2-comparisonTable">
+  <table border class="CG2-comparisonTable__table">
+    <thead>
+      <tr>
+        <td></td>
+        <th scope="col">個人購読</th>
+        <th scope="col">団体購読</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row" nowrap>契約方法</th>
+        <td nowrap>1人ずつで契約する</td>
+        <td nowrap>複数人分で契約する</td>
+      </tr>
+      <tr>
+        <th scope="row" nowrap>支払い方法</th>
+        <td>クレジットカード</td>
+        <td>銀行振込（請求書発行）、クレジットカードのどちらか</td>
+      </tr>
+      <tr>
+        <th scope="row" nowrap>講読人数</th>
+        <td>1名</td>
+        <td>2名〜</td>
+      </tr>
+      <tr>
+        <th scope="row" nowrap>領収書の発行</th>
+        <td>設定画面から発行</td>
+        <td>団体購読管理画面から発行</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+```
+
+*/
+.CG2-comparisonTable {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.CG2-comparisonTable__table { // table
+  width: 100%;
+  margin: 40px 0 15px;
+
+  th, td {
+    padding: 0.3em 0.8em;
+    border: 1px solid #dbdbdb;
+  }
+
+  tbody th {
+    text-align: right;
   }
 }
