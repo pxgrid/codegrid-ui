@@ -7999,3 +7999,21 @@ tag:
     article.CG2-article > .Note {
       line-height: 1.2;
       line-height-step: calc(var(--step-grid) * 0.8); } }
+
+/* ==========================================================================
+   Chromeで印刷時に日本語が消えるバグへの対応
+   ========================================================================== */
+/*
+Chrome 66くらいから確認中。
+指定したら消えているフォント：
+  * Klee, YuMincho, Hiragino Mincho ProN
+  * Osaka
+*/
+@media print {
+  .CG2-articleHeader__series,
+  .CG2-articleHeader__title,
+  header.CG2-articleTOC__header h1,
+  article.CG2-article > h2 {
+    font-family: serif !important; }
+  article.CG2-article pre, article.CG2-article code {
+    font-family: Consolas, Monaco, Menlo, sans-serif !important; } }
