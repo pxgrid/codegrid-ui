@@ -195,7 +195,9 @@ tag: latest
 }
 
 .aigis-preview {
-  padding: 16px;
+  /* padding: 16px; */
+  display: flow-root;
+  padding: 0 20px;
   margin-top: 10px;
 }
 
