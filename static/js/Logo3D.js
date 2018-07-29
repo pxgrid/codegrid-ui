@@ -11,19 +11,6 @@ CG2.Logo3D = ( function () {
 
   };
 
-  var isWindowHidden = function () {
-
-     if ( typeof ( document.hidden || document.msHidden || document.webkitHidden ) === 'undefined' ) {
-
-      // if the API is not supported, always returns false
-      return false;
-
-     }
-
-     return document.hidden || document.msHidden || document.webkitHidden;
-
-  };
-
   var isWindowUnfocused = ( function () {
 
     var isUnfocused = false;
@@ -585,7 +572,7 @@ CG2.Logo3D = ( function () {
 
   function onvisibleModeChange ( event ) {
 
-    if ( isWindowHidden() ) {
+    if ( document.hidden ) {
 
       this.stop();
       return;
