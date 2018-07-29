@@ -80,10 +80,6 @@ CG2.Logo3D = ( function () {
     window.addEventListener( 'focus', function () { if ( that.isVisible() ) { that.play(); } } );
     window.addEventListener( 'blur',  function () { that.stop(); } );
     window.addEventListener( 'visibilitychange',       this.onvisibleModeChange );
-    window.addEventListener( 'mozvisibilitychange',    this.onvisibleModeChange );
-    window.addEventListener( 'msvisibilitychange',     this.onvisibleModeChange );
-    window.addEventListener( 'webkitvisibilitychange', this.onvisibleModeChange );
-
   };
 
   Logo3D.prototype = {
