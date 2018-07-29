@@ -14,20 +14,16 @@ window.addEventListener( 'DOMContentLoaded', function () {
   var ua = ( function () {
     return {
       pointer: window.navigator.pointerEnabled,
-      MSPoniter: window.navigator.msPointerEnabled,
       touch: typeof document.ontouchstart !== 'undefined'
     }
   } )();
   var _pointerstart = ua.pointer   ? 'pointerdown' :
-                      ua.MSPoniter ? 'MSPointerDown' :
                       ua.touch     ? 'touchstart' :
                       'mousedown';
   var _pointermove  = ua.pointer   ? 'pointermove' :
-                      ua.MSPoniter ? 'MSPointerMove' :
                       ua.touch     ? 'touchmove' :
                       'mousemove';
   var _pointerend   = ua.pointer   ? 'pointerup' :
-                      ua.MSPoniter ? 'MSPointerUp' :
                       ua.touch     ? 'touchend' :
                       'mouseup';
 
