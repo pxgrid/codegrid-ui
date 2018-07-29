@@ -13,7 +13,7 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   var ua = ( function () {
     return {
-      pointer: window.navigator.pointerEnabled,
+      pointer: 'PointerEvent' in window,
       touch: typeof document.ontouchstart !== 'undefined'
     }
   } )();
