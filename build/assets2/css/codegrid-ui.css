@@ -1666,7 +1666,7 @@ templateItem:
   <div class="CG2-pageFooter__inner">
     <div class="CG2-pageFooter__wwwNav">
       <div class="CG2-pageFooter__logo">
-        <img src="http://img.pxgrid.net/128x32" alt="CodeGrid" width="128" height="32">
+        <img src="__dummy__128x32" alt="CodeGrid" width="128" height="32">
       </div>
       <ul>
         <li><a href="#">CodeGridについて</a></li>
@@ -2869,16 +2869,16 @@ customersについているstyle属性は外すこと。
   <p class="CG2-customers__text">CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
   <div class="CG2-customers__logos">
     <ul>
-      <li><img src="http://img.pxgrid.net/58x30" width="58" height="30"></li>
-      <li><img src="http://img.pxgrid.net/211x25" width="211" height="25"></li>
-      <li><img src="http://img.pxgrid.net/208x30" width="208" height="30"></li>
-      <li><img src="http://img.pxgrid.net/101x30" width="101" height="30"></li>
-      <li><img src="http://img.pxgrid.net/210x35" width="210" height="35"></li>
-      <li><img src="http://img.pxgrid.net/116x25" width="116" height="25"></li>
-      <li><img src="http://img.pxgrid.net/123x35" width="123" height="35"></li>
-      <li><img src="http://img.pxgrid.net/151x40" width="151" height="40"></li>
-      <li><img src="http://img.pxgrid.net/111x35" width="111" height="35"></li>
-      <li><img src="http://img.pxgrid.net/152x35" width="152" height="35"></li>
+      <li><img src="__dummy__58x30" width="58" height="30"></li>
+      <li><img src="__dummy__211x25" width="211" height="25"></li>
+      <li><img src="__dummy__208x30" width="208" height="30"></li>
+      <li><img src="__dummy__101x30" width="101" height="30"></li>
+      <li><img src="__dummy__210x35" width="210" height="35"></li>
+      <li><img src="__dummy__116x25" width="116" height="25"></li>
+      <li><img src="__dummy__123x35" width="123" height="35"></li>
+      <li><img src="__dummy__151x40" width="151" height="40"></li>
+      <li><img src="__dummy__111x35" width="111" height="35"></li>
+      <li><img src="__dummy__152x35" width="152" height="35"></li>
     </ul>
   </div>
   <div class="CG2-customers__button">
@@ -2896,16 +2896,16 @@ customersについているstyle属性は外すこと。
   <p class="CG2-customers__text">CodeGridは、すでにいくつもの会社で団体購読いただき、好評を得ています。</p>
   <div class="CG2-customers__logos">
     <ul>
-      <li><img src="http://img.pxgrid.net/58x30" width="58" height="30"></li>
-      <li><img src="http://img.pxgrid.net/211x25" width="211" height="25"></li>
-      <li><img src="http://img.pxgrid.net/208x30" width="208" height="30"></li>
-      <li><img src="http://img.pxgrid.net/101x30" width="101" height="30"></li>
-      <li><img src="http://img.pxgrid.net/210x35" width="210" height="35"></li>
-      <li><img src="http://img.pxgrid.net/116x25" width="116" height="25"></li>
-      <li><img src="http://img.pxgrid.net/123x35" width="123" height="35"></li>
-      <li><img src="http://img.pxgrid.net/151x40" width="151" height="40"></li>
-      <li><img src="http://img.pxgrid.net/111x35" width="111" height="35"></li>
-      <li><img src="http://img.pxgrid.net/152x35" width="152" height="35"></li>
+      <li><img src="__dummy__58x30" width="58" height="30"></li>
+      <li><img src="__dummy__211x25" width="211" height="25"></li>
+      <li><img src="__dummy__208x30" width="208" height="30"></li>
+      <li><img src="__dummy__101x30" width="101" height="30"></li>
+      <li><img src="__dummy__210x35" width="210" height="35"></li>
+      <li><img src="__dummy__116x25" width="116" height="25"></li>
+      <li><img src="__dummy__123x35" width="123" height="35"></li>
+      <li><img src="__dummy__151x40" width="151" height="40"></li>
+      <li><img src="__dummy__111x35" width="111" height="35"></li>
+      <li><img src="__dummy__152x35" width="152" height="35"></li>
     </ul>
   </div>
 </section>
@@ -3308,7 +3308,7 @@ tag:
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">中村 享介 | フロントエンド・エンジニア</div>
           </div>
@@ -3316,7 +3316,7 @@ tag:
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">小原 司 | UIデザイナー</div>
           </div>
@@ -3324,7 +3324,7 @@ tag:
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">丸山 陽子 | エディター</div>
           </div>
@@ -3385,7 +3385,7 @@ tag:
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">坂巻 翔大郎 | フロントエンド・エンジニア</div>
           </div>
@@ -3445,10 +3445,10 @@ tag:
       <div class="CG2-seriesList__authors">
         <div class="CG2-seriesList__authorPicList">
           <ul>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
           </ul>
         </div>
       </div>
@@ -3506,24 +3506,24 @@ tag:
       <div class="CG2-seriesList__authors">
         <div class="CG2-seriesList__authorPicList">
           <ul>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="德田 和規" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="宇野 陽太" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="森 大典" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中島 直博" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="大杉 充" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="外村 奈津子" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="丸山 陽子" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="德田 和規" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="宇野 陽太" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="森 大典" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="中村 享介" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="中島 直博" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="大杉 充" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="外村 奈津子" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="丸山 陽子" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="山田 順久" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
           </ul>
         </div>
       </div>
@@ -3586,7 +3586,7 @@ appトップの今週号や、各号のページで利用。
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">矢倉 眞隆 | フロントエンド・エンジニア</div>
           </div>
@@ -3633,7 +3633,7 @@ appトップの今週号や、各号のページで利用。
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">坂巻 翔大郎 | フロントエンド・エンジニア</div>
           </div>
@@ -3641,7 +3641,7 @@ appトップの今週号や、各号のページで利用。
         <a href="">
           <div class="CG2-seriesList__author">
             <div class="CG2-seriesList__authorPic">
-              <img src="http://img.pxgrid.net/80x80" alt="" width="40" height="40">
+              <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
             <div class="CG2-seriesList__authorName">矢倉 眞隆 | フロントエンド・エンジニア</div>
           </div>
@@ -3687,22 +3687,22 @@ appトップの今週号や、各号のページで利用。
       <div class="CG2-seriesList__authors">
         <div class="CG2-seriesList__authorPicList">
           <ul>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="森 大典" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="德田 和規" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="丸山 陽子" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="宇野 陽太" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="大杉 充" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中島 直博" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
-            <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="森 大典" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="中村 享介" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="德田 和規" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="山田 順久" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="丸山 陽子" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="宇野 陽太" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="大杉 充" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="中島 直博" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
           </ul>
         </div>
       </div>
@@ -4959,7 +4959,7 @@ tag:
     <div class="CG2-series__authors">
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a>
+          <a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a>
         </div>
         <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
       </div>
@@ -4978,13 +4978,13 @@ tag:
     <div class="CG2-series__authors">
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a>
+          <a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a>
         </div>
         <div class="CG2-series__authorName">小山田 晃浩 | フロントエンド・エンジニア</div>
       </div>
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a>
+          <a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a>
         </div>
         <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
       </div>
@@ -5010,15 +5010,15 @@ tag:
     <div class="CG2-series__authors">
       <div class="CG2-series__authorPicList">
         <ul>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="中村 享介" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="高津戸 壮" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="外村 奈津子" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 順久" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="山田 敬美" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-          <li><a href=""><img src="http://img.pxgrid.net/80x80" alt="小原 司" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="中村 享介" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="高津戸 壮" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="外村 奈津子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="山田 順久" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a></li>
         </ul>
       </div>
     </div>
@@ -5229,7 +5229,7 @@ tag:
           <div class="CG2-articleHeader__author">
             <a href="#">
               <div class="CG2-articleHeader__authorImage">
-                <img src="http://img.pxgrid.net/48x48" alt="">
+                <img src="__dummy__48x48" alt="">
               </div>
               <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
               <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
@@ -5238,7 +5238,7 @@ tag:
           <div class="CG2-articleHeader__author">
             <a href="#">
               <div class="CG2-articleHeader__authorImage">
-                <img src="http://img.pxgrid.net/48x48" alt="">
+                <img src="__dummy__48x48" alt="">
               </div>
               <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
             </a>
@@ -5291,7 +5291,7 @@ tag:
           <div class="CG2-articleHeader__author">
             <a href="">
               <div class="CG2-articleHeader__authorImage">
-                <img src="http://img.pxgrid.net/48x48" alt="坂巻 翔大郎">
+                <img src="__dummy__48x48" alt="坂巻 翔大郎">
               </div>
               <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
               <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
@@ -5349,61 +5349,61 @@ tag:
         <div class="CG2-articleHeader__authors">
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="中村 享介"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="中村 享介"></div>
               <div class="CG2-articleHeader__authorName">中村 享介</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="高津戸 壮"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="高津戸 壮"></div>
               <div class="CG2-articleHeader__authorName">高津戸 壮</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="小山田 晃浩"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="小山田 晃浩"></div>
               <div class="CG2-articleHeader__authorName">小山田 晃浩</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="德田 和規"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="德田 和規"></div>
               <div class="CG2-articleHeader__authorName">德田 和規</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="山田 順久"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="山田 順久"></div>
               <div class="CG2-articleHeader__authorName">山田 順久</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="小原 司"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="小原 司"></div>
               <div class="CG2-articleHeader__authorName">小原 司</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="山田 敬美"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="山田 敬美"></div>
               <div class="CG2-articleHeader__authorName">山田 敬美</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="坂巻 翔大郎"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="坂巻 翔大郎"></div>
               <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="中島 直博"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="中島 直博"></div>
               <div class="CG2-articleHeader__authorName">中島 直博</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="http://img.pxgrid.net/48x48" alt="宇野 陽太"></div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="宇野 陽太"></div>
               <div class="CG2-articleHeader__authorName">宇野 陽太</div>
             </a>
           </div>
@@ -6603,7 +6603,7 @@ tag:
   <div class="ImgBox">
     <h1>ラベル</h1>
     <p>キャプション</p>
-    <p><img src="http://img.pxgrid.net/1000x200"></p>
+    <p><img src="__dummy__1000x200"></p>
   </div>
 
 </article>
@@ -6659,7 +6659,7 @@ tag:
   <div class="Column">
     <h1>コラムタイトル</h1>
     <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
-    <p><img src="http://img.pxgrid.net/1000x200"></p>
+    <p><img src="__dummy__1000x200"></p>
     <p>テキスト<a href="#">リンク</a>てきすと<code>code</code>テキストてきすとテキストてきすと</p>
   </div>
 
@@ -7135,7 +7135,7 @@ tag:
 ```html
 <div class="CG2-profile">
   <div class="CG2-profile__image">
-    <img src="http://img.pxgrid.net/120x120" alt="">
+    <img src="__dummy__120x120" alt="">
   </div>
   <div class="CG2-profile__main">
     <div class="CG2-profile__header">
@@ -7256,7 +7256,7 @@ tag:
 ```html
 <div class="CG2-profileSimple">
   <div class="CG2-profileSimple__image">
-    <img src="http://img.pxgrid.net/120x120" alt="">
+    <img src="__dummy__120x120" alt="">
   </div>
   <div class="CG2-profileSimple__main">
     <div class="CG2-profileSimple__header">
@@ -7347,7 +7347,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">代表取締役, フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
@@ -7356,7 +7356,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
@@ -7365,7 +7365,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
@@ -7374,7 +7374,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
@@ -7383,7 +7383,7 @@ tag:
 
     <div class="CG2-authorList__item">
       <a href="#">
-        <div class="CG2-authorList__image"><img src="http://img.pxgrid.net/96x96" alt="" width="48" height="48"></div>
+        <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
         <div class="CG2-authorList__name">中村 享介</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>

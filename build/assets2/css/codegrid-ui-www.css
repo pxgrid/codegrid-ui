@@ -223,7 +223,7 @@ tag:
   <div class="CG2-howYouReceive__list">
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/320x180" alt="" width="320">
+        <img src="__dummy__320x180" alt="" width="320">
       </div>
       <div class="CG2-howYouReceive__text">
         <p>フロントエンドに特化した<br>300本以上の技術記事が読めるWebアプリ。<br><a href="">Chromeアプリもご用意しています</a></p>
@@ -231,7 +231,7 @@ tag:
     </div>
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/320x180" alt="" width="320">
+        <img src="__dummy__320x180" alt="" width="320">
       </div>
       <div class="CG2-howYouReceive__text">
         <p>iPhoneからアクセスする最良の方法。</p>
@@ -240,7 +240,7 @@ tag:
     </div>
     <div class="CG2-howYouReceive__item">
       <div class="CG2-howYouReceive__image">
-        <img src="http://img.pxgrid.net/320x180" alt="" width="320">
+        <img src="__dummy__320x180" alt="" width="320">
       </div>
       <div class="CG2-howYouReceive__text">
         <p>毎週木曜日配信（月4回）。<br>最新記事が定期的に届くメールマガジン。<br><a href="">サンプルへ</a></p>
@@ -322,8 +322,8 @@ tag:
   <div class="CG2-bookInfo__body">
     <div class="CG2-bookInfo__images">
       <ul>
-        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
-        <li><img src="http://img.pxgrid.net/100x140" alt="" width="100 height="140""></li>
+        <li><img src="__dummy__100x140" alt="" width="100 height="140""></li>
+        <li><img src="__dummy__100x140" alt="" width="100 height="140""></li>
       </ul>
     </div>
     <div class="CG2-bookInfo__text">
@@ -1131,7 +1131,7 @@ tag:
 <div class="CG2-flowExplanation">
   <section class="CG2-flowExplanation__item">
     <div class="CG2-flowExplanation__image">
-      <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
+      <img src="__dummy__320x180" alt="" width="320" height="180">
     </div>
     <div class="CG2-flowExplanation__text">
       <h3 class="CG2-flowExplanation__heading">お申込頂くと、管理者様へ団体管理画面へのリンクが送信されます</h3>
@@ -1141,7 +1141,7 @@ tag:
 
   <section class="CG2-flowExplanation__item">
     <div class="CG2-flowExplanation__image">
-      <img src="http://img.pxgrid.net/320x180" alt="" width="320" height="180">
+      <img src="__dummy__320x180" alt="" width="320" height="180">
     </div>
     <div class="CG2-flowExplanation__text">
       <h3 class="CG2-flowExplanation__heading">管理画面にて、パスワードの設定をお願いします</h3>
@@ -1388,7 +1388,7 @@ tag:
 ```html
 <section class="CG2-publication">
   <div class="CG2-publication__image">
-    <img src="http://img.pxgrid.net/206x290" alt="" width="206" height="290">
+    <img src="__dummy__206x290" alt="" width="206" height="290">
   </div>
   <div class="CG2-publication__body">
     <div class="CG2-publication__header">
@@ -1542,7 +1542,7 @@ tag:
 ```html
 <div class="CG2-imageContainer">
   <div class="CG2-imageContainer__image">
-    <img src="http://img.pxgrid.net/480x180" alt="" width="480" height="180">
+    <img src="__dummy__480x180" alt="" width="480" height="180">
   </div>
 </div>
 ```
