@@ -213,21 +213,17 @@ window.addEventListener( 'DOMContentLoaded', function () {
 
   var ua = ( function () {
     return {
-      pointer: window.navigator.pointerEnabled,
-      MSPoniter: window.navigator.msPointerEnabled,
+      pointer: 'PointerEvent' in window,
       touch: typeof document.ontouchstart !== 'undefined'
     }
   } )();
   var _pointerstart = ua.pointer   ? 'pointerdown' :
-                      ua.MSPoniter ? 'MSPointerDown' :
                       ua.touch     ? 'touchstart' :
                       'mousedown';
   var _pointermove  = ua.pointer   ? 'pointermove' :
-                      ua.MSPoniter ? 'MSPointerMove' :
                       ua.touch     ? 'touchmove' :
                       'mousemove';
   var _pointerend   = ua.pointer   ? 'pointerup' :
-                      ua.MSPoniter ? 'MSPointerUp' :
                       ua.touch     ? 'touchend' :
                       'mouseup';
 
@@ -663,15 +659,11 @@ window.addEventListener( 'DOMContentLoaded', function () {
   if ( $tabs.length === 0 ) { return; }
 
   // elementMatches(element, selector)
-  // Element.matches for unsupported　browsers
+  // Element.matches for unsupported browsers
   var elementMatches = function () {
 
     var proto = Element.prototype;
-    var matches = proto.matches = proto.matchesSelector    ||
-                                  proto.mozMatchesSelector ||
-                                  proto.msMatchesSelector  ||
-                                  proto.oMatchesSelector   ||
-                                  proto.webkitMatchesSelector;
+    var matches = proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector;
 
     return function( element, selector ) {
 

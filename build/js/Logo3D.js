@@ -11,19 +11,6 @@ CG2.Logo3D = ( function () {
 
   };
 
-  var isWindowHidden = function () {
-
-     if ( typeof ( document.hidden || document.msHidden || document.webkitHidden ) === 'undefined' ) {
-
-      // if the API is not supported, always returns false
-      return false;
-
-     }
-
-     return document.hidden || document.msHidden || document.webkitHidden;
-
-  };
-
   var isWindowUnfocused = ( function () {
 
     var isUnfocused = false;
@@ -93,10 +80,6 @@ CG2.Logo3D = ( function () {
     window.addEventListener( 'focus', function () { if ( that.isVisible() ) { that.play(); } } );
     window.addEventListener( 'blur',  function () { that.stop(); } );
     window.addEventListener( 'visibilitychange',       this.onvisibleModeChange );
-    window.addEventListener( 'mozvisibilitychange',    this.onvisibleModeChange );
-    window.addEventListener( 'msvisibilitychange',     this.onvisibleModeChange );
-    window.addEventListener( 'webkitvisibilitychange', this.onvisibleModeChange );
-
   };
 
   Logo3D.prototype = {
@@ -585,7 +568,7 @@ CG2.Logo3D = ( function () {
 
   function onvisibleModeChange ( event ) {
 
-    if ( isWindowHidden() ) {
+    if ( document.hidden ) {
 
       this.stop();
       return;
