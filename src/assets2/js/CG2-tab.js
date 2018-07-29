@@ -13,15 +13,11 @@ window.addEventListener( 'DOMContentLoaded', function () {
   if ( $tabs.length === 0 ) { return; }
 
   // elementMatches(element, selector)
-  // Element.matches for unsupported　browsers
+  // Element.matches for unsupported browsers
   var elementMatches = function () {
 
     var proto = Element.prototype;
-    var matches = proto.matches = proto.matchesSelector    ||
-                                  proto.mozMatchesSelector ||
-                                  proto.msMatchesSelector  ||
-                                  proto.oMatchesSelector   ||
-                                  proto.webkitMatchesSelector;
+    var matches = proto.matches = proto.msMatchesSelector || proto.webkitMatchesSelector;
 
     return function( element, selector ) {
 
