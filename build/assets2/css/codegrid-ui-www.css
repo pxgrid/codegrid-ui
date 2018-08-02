@@ -296,9 +296,15 @@ tag:
   .CG2-howYouReceive__item:nth-of-type(3) {
     -ms-grid-column: 5; } }
 
+.CG2-howYouReceive__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
 .CG2-howYouReceive__image img {
   vertical-align: bottom;
-  width: 100%; }
+  width: 100%;
+  max-width: 320px; }
 
 .CG2-howYouReceive__text {
   text-align: center; }
