@@ -302,10 +302,17 @@ tag:
     }
   }
 }
+.CG2-howYouReceive__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .CG2-howYouReceive__image {
   img {
     vertical-align: bottom;
     width: 100%;
+    max-width: 320px;
   }
 }
 .CG2-howYouReceive__text {
