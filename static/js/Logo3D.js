@@ -84,7 +84,7 @@ CG2.Logo3D = ( function () {
 
   Logo3D.prototype = {
 
-    linebrake: function ( state ) {
+    breakIntoLines: function ( state ) {
 
       if (
          state && !this.isNoWrap ||
@@ -611,8 +611,8 @@ CG2.Logo3D = ( function () {
 
     }
 
-    var needsLineBrake = aspect <= 1.4;
-    this.linebrake( needsLineBrake );
+    var needsLineBreak = aspect <= 1.4;
+    this.breakIntoLines( needsLineBreak );
 
     this.renderer.setSize( this.width, this.height );
     this.camera.aspect = aspect;
