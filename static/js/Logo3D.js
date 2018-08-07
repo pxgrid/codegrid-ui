@@ -575,7 +575,7 @@ CG2.Logo3D = ( function () {
 
     }
 
-    if ( that.isVisible() ) {
+    if ( this.isVisible() ) {
 
       this.play();
       return;
