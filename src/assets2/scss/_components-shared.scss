@@ -627,9 +627,7 @@ tag:
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th><img src="/build/assets2/img/logos/paypal.svg" alt="PayPal" width="100" height="25"></th>
-        <th><img src="/build/assets2/img/logos/webmoney.png" alt="WebMoney" width="156" height="30"></th>
+        <th colspan="2"><img src="https://www.codegrid.net/img/payment/img_01.svg" alt="VISA, MasterCard, JCB, American Express, Diners Club" width="275"></th>
       </tr>
     </thead>
     <tbody>
@@ -647,29 +645,10 @@ tag:
             </ul>
           </div>
         </td>
-        <td>
-          <div class="CG2-paymentTable__priceList">
-            <ul>
-              <li>
-                <div class="CG2-paymentTable__priceLabel">月払い</div>
-                <div class="CG2-paymentTable__priceValue">800</div>
-                <div class="CG2-paymentTable__priceUnit">円</div>
-                <div class="CG2-paymentTable__priceAnnotation">（税込864円）</div>
-              </li>
-              <li>
-                <div class="CG2-paymentTable__priceLabel">年払い</div>
-                <div class="CG2-paymentTable__priceValue">9,600</div>
-                <div class="CG2-paymentTable__priceUnit">円</div>
-                <div class="CG2-paymentTable__priceAnnotation">（税込10,368円）</div>
-              </li>
-            </ul>
-          </div>
-        </td>
       </tr>
       <tr>
-        <th>購読料</th>
+        <th>購読期間</th>
         <td>自動継続</td>
-        <td>随時購入</td>
       </tr>
       <tr>
         <th>無料購読期間</th>
@@ -677,19 +656,9 @@ tag:
           <div class="CG2-paymentTable__valueList">
             <ul>
               <li>
-                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
-                <span class="CG2-paymentTable__value">30</span>
-                <span class="CG2-paymentTable__valueUnit">日</span>
-              </li>
-            </ul>
-          </div>
-        </td>
-        <td>
-          <div class="CG2-paymentTable__valueList">
-            <ul>
-              <li>
-                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
-                <span class="CG2-paymentTable__valueText">なし</span>
+                <div class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</div>
+                <div class="CG2-paymentTable__value">30</div>
+                <div class="CG2-paymentTable__valueUnit">日</div>
               </li>
             </ul>
           </div>
