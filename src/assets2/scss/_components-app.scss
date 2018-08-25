@@ -4123,6 +4123,118 @@ tag:
   </div>
 </div>
 ```
+
+ログイン方法について（未ログイン）
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__lead">
+    購読料は月額800円（税抜）
+    <div class="CG2-signupFrom__leadSub">
+      初回登録時は30日間無料
+    </div>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a href="" class="CG2-button CG2-button--primary">
+        Googleアカウントを使用して<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">CodeGridにログイン</a></li>
+    </ul>
+    <div class="CG2-signupFrom__buttonContainerText">
+      <p>
+        ※CodeGridの購読にはGoogleアカウントが必要です。<br>
+        <a href="https://accounts.google.com/SignUp" target="_blank">Googleアカウント作成</a>
+      </p>
+    </div>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer">
+    <ul>
+      <li><a class="CG2-button" href="">購読済みの方はログイン</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+ログイン方法について（ログイン済み）
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__lead">
+    購読料は月額800円（税抜）
+    <div class="CG2-signupFrom__leadSub">
+      初回登録時は30日間無料
+    </div>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a href="" class="CG2-button CG2-button--primary">このアカウントで購読する</a></li>
+    </ul>
+    <div class="CG2-signupFrom__buttonContainerText">
+      <p>
+        現在 gurio@pxgrid.example でログインしています<br>
+        <a href="">別のGoogleアカウントで購読するには一度ログアウトする必要があります。</a>
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+クレジットカードを登録
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__text">
+    <p>CodeGridを購読いただくためには、<a href="https://www.codegrid.net/terms.html" target="_blank">利用規約</a>への同意が必要です。</p>
+  </div>
+  <div class="CG2-signupFrom__check">
+    <label><input type="checkbox">利用規約に同意する</label>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a class="CG2-button CG2-button--primary">クレジットカードを登録</a></li>
+    </ul>
+  </div>
+</div>
+```
+
+登録完了
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__lead">
+    購読手続きが完了しました！
+  </div>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a class="CG2-button CG2-button--primary">記事を読む</a></li>
+    </ul>
+  </div>
+  <div class="CG2-signupFrom__text">
+    <p><a href="">CodeGrid運営からのごあいさつ記事へ</a></p>
+  </div>
+</div>
+```
+
+エラー
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__information">
+    <p>支払い処理中にエラーが発生しました</p>
+  </div>
+  <div class="CG2-signupFrom__text">
+    <p>お手数ですがもう一度手続きをおこなってください。</p>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer">
+    <ul>
+      <li><a class="CG2-button CG2-button--primary">再度支払い手続きをおこなう</a></li>
+    </ul>
+  </div>
+  <div class="CG2-signupFrom__annotation">
+    <p>再度エラーになる場合は以下よりお問い合わせください。</p>
+    <p><a href="https://www.codegrid.net/inquiry.html" target="_blank">お問い合わせフォーム</a></p>
+  </div>
+</div>
+```
 */
     .CG2-signupFrom{
     }
