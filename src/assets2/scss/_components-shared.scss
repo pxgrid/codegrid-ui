@@ -166,6 +166,7 @@ progress
     &:before {
       pointer-events: none;
       content: '';
+      display: block;
       position: absolute;
       top: 5px;
       right: 5px;
@@ -173,7 +174,6 @@ progress
       left: 5px;
       max-width: 100px;
       margin: auto;
-      display: block;
       width: auto;
       background-image: url( '../img/CG2-button/loading.svg' );
       background-repeat: no-repeat;
