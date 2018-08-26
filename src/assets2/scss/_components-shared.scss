@@ -175,7 +175,9 @@ progress
       margin: auto;
       display: block;
       width: auto;
-      background: url( '../img/CG2-button/loading.svg' ) no-repeat 50% 50%;
+      background-image: url( '../img/CG2-button/loading.svg' );
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
       background-size: contain;
       transform-origin: 50% 50%;
       animation: button--loading 1s linear infinite;
