@@ -55,7 +55,10 @@
 /* ==========================================================================
    general style
    ========================================================================== */
-::selection         {background: rgba( 174, 217, 17, 0.6 ); text-shadow: none; }
+::selection {
+  background-color: hsl(75, 75%, 75%);
+  text-shadow: none;
+}
 
 html{
   color: #242424;
