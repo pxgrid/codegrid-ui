@@ -64,12 +64,3 @@
 // @mixin blurry--blurry () {
 //   filter: blur( 24px );
 // }
-
-
-// print query
-// ========================================================================== */
-@mixin print () {
-  @media print {
-    @content;
-  }
-}
