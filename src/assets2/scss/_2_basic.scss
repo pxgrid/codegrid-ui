@@ -15,41 +15,41 @@
 
 /* modifier: align
    ========================================================================== */
-.CG2--alignLeft   {text-align:left !important; }
-.CG2--alignRight  {text-align:right !important; }
-.CG2--alignCenter {text-align:center !important; }
-.CG2--alignTop    {vertical-align:top !important; }
-.CG2--alignMiddle {vertical-align:middle !important; }
-.CG2--alignBottom {vertical-align:bottom !important; }
+.CG2--alignLeft   { text-align: left !important }
+.CG2--alignRight  { text-align: right !important }
+.CG2--alignCenter { text-align: center !important }
+.CG2--alignTop    { vertical-align: top !important }
+.CG2--alignMiddle { vertical-align: middle !important }
+.CG2--alignBottom { vertical-align: bottom !important }
 
 /* modifier: display
    ========================================================================== */
-:root .CG2--disableLargeScreen{display:none;}
+:root .CG2--disableLargeScreen { display: none }
 
-@media screen and ( max-width: $breakpoint-middle ) and ( min-width: $breakpoint-small + 1 )  {
-  :root .CG2--disableLargeScreen {display: block;}
-  :root .CG2--disableMiddleScreen {display: none !important;}
-  :root .CG2--disableSmallScreen  {display: block;}
+@media screen and ( max-width: $breakpoint-middle ) and ( min-width: $breakpoint-small + 1 ) {
+  :root .CG2--disableLargeScreen  { display: block }
+  :root .CG2--disableMiddleScreen { display: none !important }
+  :root .CG2--disableSmallScreen  { display: block }
 
   :root span.CG2--disableLargeScreen,
-  :root br.CG2--disableLargeScreen  {display: inline;}
+  :root   br.CG2--disableLargeScreen  { display: inline }
   :root span.CG2--disableMiddleScreen,
-  :root br.CG2--disableMiddleScreen {display: none !important;}
+  :root   br.CG2--disableMiddleScreen { display: none !important }
   :root span.CG2--disableSmallScreen,
-  :root br.CG2--disableSmallScreen  {display: inline;}
+  :root   br.CG2--disableSmallScreen  { display: inline }
 }
 
 @include max-screen( $breakpoint-small ) {
-  :root .CG2--disableLargeScreen  {display: block;}
-  :root .CG2--disableMiddleScreen {display: block;}
-  :root .CG2--disableSmallScreen  {display: none !important;}
+  :root .CG2--disableLargeScreen  { display: block }
+  :root .CG2--disableMiddleScreen { display: block }
+  :root .CG2--disableSmallScreen  { display: none !important }
 
   :root span.CG2--disableLargeScreen,
-  :root br.CG2--disableLargeScreen  {display: inline;}
+  :root   br.CG2--disableLargeScreen  { display: inline }
   :root span.CG2--disableMiddleScreen,
-  :root br.CG2--disableMiddleScreen {display: inline;}
+  :root   br.CG2--disableMiddleScreen { display: inline }
   :root span.CG2--disableSmallScreen,
-  :root br.CG2--disableSmallScreen  {display: none !important;}
+  :root   br.CG2--disableSmallScreen  { display: none !important }
 }
 
 /* ==========================================================================
@@ -60,7 +60,7 @@
   text-shadow: none;
 }
 
-html{
+html {
   color: #242424;
   font-family: $fontSansSerif;
   font-size: 16px;
@@ -74,7 +74,7 @@ html{
   }
 }
 
-body{
+body {
   margin:0;
   background: #fff;
   @include max-screen( $breakpoint-middle ) {
@@ -82,11 +82,12 @@ body{
   }
 }
 
-a{
+a {
   color: #10a040;
   transition: color .2s;
 }
-a:hover,a:active{
+a:hover,
+a:active {
   // color: #2f353d;
   transition: color 0s;
 }
@@ -98,4 +99,3 @@ iframe[name="google_conversion_frame"]{
   width: 1px;
   height: 1px;
 }
-
