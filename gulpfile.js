@@ -194,18 +194,3 @@ gulp.task(
     'guide'
   )
 );
-
-gulp.task('deploy', () => {
-  const publisher = awspublish.create({
-    params: {
-      Bucket: 'ui.codegrid.net',
-    },
-    endpoint: 's3-ap-northeast-1.amazonaws.com',
-  });
-
-  return gulp
-    .src('./build/**/*')
-    .pipe(publisher.publish())
-    .pipe(publisher.sync())
-    .pipe(awspublish.reporter());
-});
