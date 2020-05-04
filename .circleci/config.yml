@@ -17,6 +17,7 @@ jobs:
     steps:
       - checkout
       - run: npm ci
+      - run: npm run build
       - deploy:
           name: Deploying to S3
           command: npm run deploy
