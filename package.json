@@ -47,7 +47,7 @@
   },
   "browserslist": [
     "ie >= 11",
-    "safari >= 10.1",
-    "ios >= 10.3"
+    "safari >= 12.1",
+    "ios >= 12.0"
   ]
 }
