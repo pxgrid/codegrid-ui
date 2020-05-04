@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/pxgrid/codegrid-ui#readme",
   "devDependencies": {
-    "autoprefixer": "^8.6.5",
+    "autoprefixer": "^9.7.6",
     "browser-sync": "^2.26.7",
     "css-mqpacker": "^6.0.2",
     "csswring": "^6.0.3",
