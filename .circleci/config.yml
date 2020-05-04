@@ -1,21 +1,35 @@
-version: 2
+version: 2.1
+
 jobs:
-  build:
-    working_directory: /workspace
+  test-setup:
     docker:
-      - image: node:6
+      - image: circleci/node:12
         environment:
           TZ: Asia/Tokyo
     steps:
       - checkout
-      - run:
-          name: Install dependencies
-          command: npm install
+      - run: npm ci
+  deploy:
+    docker:
+      - image: circleci/node:12
+        environment:
+          TZ: Asia/Tokyo
+    steps:
+      - checkout
+      - run: npm ci
       - deploy:
-          name: Deploying to S3 (on master only)
-          command: |
-            if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              npm run deploy
-            else
-              echo "do nothing ;D"
-            fi
+          name: Deploying to S3
+          command: npm run deploy
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test-setup
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master

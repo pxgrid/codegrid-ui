@@ -1387,7 +1387,7 @@ appトップの今週号や、各号のページで利用。
     margin-right: -18px;
   }
 
-  @include print() {
+  @media print {
     margin-left: 0;
     margin-right: 0;
   }
