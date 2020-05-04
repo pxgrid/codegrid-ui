@@ -589,12 +589,8 @@ pre.line-numbers > code {
 /* ==========================================================================
    general style
    ========================================================================== */
-::-webkit-selection {
-  background: rgba(174, 217, 17, 0.6);
-  text-shadow: none; }
-
 ::selection {
-  background: rgba(174, 217, 17, 0.6);
+  background-color: #d7ef8f;
   text-shadow: none; }
 
 html {
@@ -620,7 +616,8 @@ a {
   color: #10a040;
   transition: color .2s; }
 
-a:hover, a:active {
+a:hover,
+a:active {
   transition: color 0s; }
 
 iframe[name="google_conversion_frame"] {
@@ -1271,9 +1268,9 @@ templateItem:
       </div>
       <div class="CG2-pageHeader__user">
         <div class="CG2-pageHeader__userHeader">
-          <div class="CG2-pageHeader__userName">oyamada.akihiro@email.com</div>
+          <div class="CG2-pageHeader__userName">gurio@pxgrid.example</div>
           <div class="CG2-pageHeader__userAvatar">
-            <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+            <img src="__dummy__112x112" alt="" width="56" height="56">
           </div>
           <div class="CG2-pageHeader__userOpener"></div>
         </div>
@@ -2076,9 +2073,9 @@ templateItem:
 
           <div class="CG2-drawerBody__user">
             <div class="CG2-drawerBody__userAvatar">
-              <img src="http://www.gravatar.com/avatar/3d8d92b9ff9e708e3e4c247d5ab787ba.png?s=112" alt="" width="56" height="56">
+              <img src="__dummy__112x112" alt="" width="56" height="56">
             </div>
-            <div class="CG2-drawerBody__userName">oyamada.akihiro@email.com</div>
+            <div class="CG2-drawerBody__userName">gurio@pxgrid.example</div>
           </div>
 
           <div class="CG2-drawerBody__nav">
@@ -2186,7 +2183,7 @@ templateItem:
   left: 100%;
   width: 100%;
   height: 100%;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   transform: translate3d(-50px, 0, 0);
   transition: transform .4s; }
 
@@ -2234,7 +2231,7 @@ html:not(.js-drawer--dragging) .CG2-drawer__panel {
 .CG2-drawer__panelBody {
   box-sizing: border-box;
   min-height: 100%;
-  box-shadow: -2px 2px 4px transparent;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0);
   transition: box-shadow .4s; }
 
 html.js-drawer--show .CG2-drawer__panelBody {
@@ -2245,7 +2242,7 @@ html.js-drawer--show .CG2-drawer__panelBody {
   top: 0;
   width: 50px;
   height: 100%;
-  background: transparent; }
+  background: rgba(0, 0, 0, 0); }
 
 .CG2-drawer__bg {
   position: fixed;
@@ -2254,7 +2251,7 @@ html.js-drawer--show .CG2-drawer__panelBody {
   right: 0;
   bottom: 0;
   left: 0;
-  background: transparent;
+  background: rgba(0, 0, 0, 0);
   transition: background .4s; }
   html:not(.js-drawer--show) .CG2-drawer__bg {
     animation-name: bgOut;
@@ -2579,6 +2576,7 @@ progress
     .CG2-button.CG2-button--progress:before {
       pointer-events: none;
       content: '';
+      display: block;
       position: absolute;
       top: 5px;
       right: 5px;
@@ -2586,10 +2584,11 @@ progress
       left: 5px;
       max-width: 100px;
       margin: auto;
-      display: block;
       width: auto;
-      background: url("../img/CG2-button/loading.svg") no-repeat 50% 50%;
-      background-size: 100% 100%;
+      background-image: url("../img/CG2-button/loading.svg");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: contain;
       transform-origin: 50% 50%;
       animation: button--loading 1s linear infinite; }
 
@@ -2990,9 +2989,7 @@ tag:
   <table>
     <thead>
       <tr>
-        <th></th>
-        <th><img src="/build/assets2/img/logos/paypal.svg" alt="PayPal" width="100" height="25"></th>
-        <th><img src="/build/assets2/img/logos/webmoney.png" alt="WebMoney" width="156" height="30"></th>
+        <th colspan="2"><img src="https://www.codegrid.net/img/payment/img_01.svg" alt="VISA, MasterCard, JCB, American Express, Diners Club" width="275"></th>
       </tr>
     </thead>
     <tbody>
@@ -3010,29 +3007,10 @@ tag:
             </ul>
           </div>
         </td>
-        <td>
-          <div class="CG2-paymentTable__priceList">
-            <ul>
-              <li>
-                <div class="CG2-paymentTable__priceLabel">月払い</div>
-                <div class="CG2-paymentTable__priceValue">800</div>
-                <div class="CG2-paymentTable__priceUnit">円</div>
-                <div class="CG2-paymentTable__priceAnnotation">（税込864円）</div>
-              </li>
-              <li>
-                <div class="CG2-paymentTable__priceLabel">年払い</div>
-                <div class="CG2-paymentTable__priceValue">9,600</div>
-                <div class="CG2-paymentTable__priceUnit">円</div>
-                <div class="CG2-paymentTable__priceAnnotation">（税込10,368円）</div>
-              </li>
-            </ul>
-          </div>
-        </td>
       </tr>
       <tr>
-        <th>購読料</th>
+        <th>購読期間</th>
         <td>自動継続</td>
-        <td>随時購入</td>
       </tr>
       <tr>
         <th>無料購読期間</th>
@@ -3040,19 +3018,9 @@ tag:
           <div class="CG2-paymentTable__valueList">
             <ul>
               <li>
-                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
-                <span class="CG2-paymentTable__value">30</span>
-                <span class="CG2-paymentTable__valueUnit">日</span>
-              </li>
-            </ul>
-          </div>
-        </td>
-        <td>
-          <div class="CG2-paymentTable__valueList">
-            <ul>
-              <li>
-                <span class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</span>
-                <span class="CG2-paymentTable__valueText">なし</span>
+                <div class="CG2-paymentTable__valueText CG2--disableLargeScreen">無料購読期間</div>
+                <div class="CG2-paymentTable__value">30</div>
+                <div class="CG2-paymentTable__valueUnit">日</div>
               </li>
             </ul>
           </div>
@@ -3310,7 +3278,7 @@ tag:
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">中村 享介 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">安田 麻由 | フロントエンド・エンジニア</div>
           </div>
         </a>
         <a href="">
@@ -3318,7 +3286,7 @@ tag:
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">小原 司 | UIデザイナー</div>
+            <div class="CG2-seriesList__authorName">長坂 菫 | UIデザイナー</div>
           </div>
         </a>
         <a href="">
@@ -3326,7 +3294,7 @@ tag:
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">丸山 陽子 | エディター</div>
+            <div class="CG2-seriesList__authorName">中野 富子 | エディター</div>
           </div>
         </a>
       </div>
@@ -3387,7 +3355,7 @@ tag:
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">坂巻 翔大郎 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">佐川 沙織 | フロントエンド・エンジニア</div>
           </div>
         </a>
       </div>
@@ -3445,10 +3413,10 @@ tag:
       <div class="CG2-seriesList__authors">
         <div class="CG2-seriesList__authorPicList">
           <ul>
-            <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="佐川 沙織" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="影山 和子" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="玉田 義之" width="40" height="40"></a></li>
+            <li><a href=""><img src="__dummy__80x80" alt="杉原 幸次郎" width="40" height="40"></a></li>
           </ul>
         </div>
       </div>
@@ -3484,21 +3452,21 @@ tag:
         <div class="CG2-seriesList__article CG2-seriesList__article--unread">
           <a href="">
             <div class="CG2-seriesList__articleOrder">第13回</div>
-            <div class="CG2-seriesList__articleTitle">奥野 賢太郎 編</div>
+            <div class="CG2-seriesList__articleTitle">ピクセル グリオ 編</div>
             <div class="CG2-seriesList__articleDate">2017年08月24日</div>
           </a>
         </div>
         <div class="CG2-seriesList__article CG2-seriesList__article--unread">
           <a href="">
             <div class="CG2-seriesList__articleOrder">第12回</div>
-            <div class="CG2-seriesList__articleTitle">矢倉 眞隆 編</div>
+            <div class="CG2-seriesList__articleTitle">影山 和子 編</div>
             <div class="CG2-seriesList__articleDate">2017年05月04日</div>
           </a>
         </div>
         <div class="CG2-seriesList__article">
           <a href="">
             <div class="CG2-seriesList__articleOrder">第11回</div>
-            <div class="CG2-seriesList__articleTitle">森 大典 編</div>
+            <div class="CG2-seriesList__articleTitle">橋本 孝治 編</div>
             <div class="CG2-seriesList__articleDate">2016年07月28日</div>
           </a>
         </div>
@@ -3506,24 +3474,27 @@ tag:
       <div class="CG2-seriesList__authors">
         <div class="CG2-seriesList__authorPicList">
           <ul>
-            <li><a href=""><img src="__dummy__80x80" alt="德田 和規" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="宇野 陽太" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="森 大典" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="中村 享介" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="中島 直博" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="大杉 充" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="外村 奈津子" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="高津戸 壮" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="丸山 陽子" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="山田 順久" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="佐川 沙織" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="河田 理香" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="尾上 友美" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="新田 道雄" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="安田 麻由" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="野間 夏子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="神戸 克巳" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="杉原 幸次郎" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="田代 隆男" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="新田 春子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="中野 富子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="玉田 義之" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="柳川 健治" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="長坂 菫" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="坪田 健之" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="仲村 孝二" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="橋本 孝治" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="大澤 直子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="山口 弘一" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="影山 和子" width="40" height="40"></a></li>
           </ul>
         </div>
       </div>
@@ -3588,7 +3559,7 @@ appトップの今週号や、各号のページで利用。
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">矢倉 眞隆 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">影山 和子 | フロントエンド・エンジニア</div>
           </div>
         </a>
       </div>
@@ -3635,7 +3606,7 @@ appトップの今週号や、各号のページで利用。
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">坂巻 翔大郎 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">佐川 沙織 | フロントエンド・エンジニア</div>
           </div>
         </a>
         <a href="">
@@ -3643,7 +3614,7 @@ appトップの今週号や、各号のページで利用。
             <div class="CG2-seriesList__authorPic">
               <img src="__dummy__80x80" alt="" width="40" height="40">
             </div>
-            <div class="CG2-seriesList__authorName">矢倉 眞隆 | フロントエンド・エンジニア</div>
+            <div class="CG2-seriesList__authorName">影山 和子 | フロントエンド・エンジニア</div>
           </div>
         </a>
       </div>
@@ -3687,22 +3658,27 @@ appトップの今週号や、各号のページで利用。
       <div class="CG2-seriesList__authors">
         <div class="CG2-seriesList__authorPicList">
           <ul>
-            <li><a href=""><img src="__dummy__80x80" alt="森 大典" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="杉浦 有右嗣" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="中村 享介" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="高津戸 壮" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="德田 和規" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="山田 順久" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="丸山 陽子" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="宇野 陽太" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="大杉 充" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="中島 直博" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="矢倉 眞隆" width="40" height="40"></a></li>
-            <li><a href=""><img src="__dummy__80x80" alt="奥野 賢太郎" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="佐川 沙織" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="河田 理香" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="尾上 友美" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="新田 道雄" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="安田 麻由" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="野間 夏子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="神戸 克巳" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="杉原 幸次郎" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="田代 隆男" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="新田 春子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="中野 富子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="玉田 義之" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="柳川 健治" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="長坂 菫" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="坪田 健之" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="仲村 孝二" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="橋本 孝治" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="大澤 直子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="山口 弘一" width="40" height="40"></a></li>
+          <li><a href=""><img src="__summy__80x80" alt="影山 和子" width="40" height="40"></a></li>
           </ul>
         </div>
       </div>
@@ -4010,7 +3986,7 @@ button.CG2-seriesList__itemUtilButton--favAdded span[class^="CG2-icon"] {
   @media screen and (max-width: 767px) {
     .CG2-seriesList__articleOrder {
       font-size: 14px;
-      padding-right: 10px; }
+      padding-right: 14px; }
       .CG2-seriesList__articleOrder:first-child {
         padding-left: 10px; } }
   .CG2-seriesList__item--fullWidth .CG2-seriesList__articleOrder {
@@ -4216,7 +4192,7 @@ fav
     color: #ff0;
     opacity: 1; }
   .CG2-transparentButton.CG2-transparentButton--favAdded span.CG2-transparentButton__favText {
-    color: transparent;
+    color: rgba(0, 0, 0, 0);
     font-size: 0;
     line-height: 0; }
     .CG2-transparentButton.CG2-transparentButton--favAdded span.CG2-transparentButton__favText:after {
@@ -4959,9 +4935,9 @@ tag:
     <div class="CG2-series__authors">
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a>
+          <a href=""><img src="__dummy__80x80" alt="長坂 菫" width="40" height="40"></a>
         </div>
-        <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
+        <div class="CG2-series__authorName">長坂 菫 | UIデザイナー</div>
       </div>
     </div>
   </div>
@@ -4978,15 +4954,15 @@ tag:
     <div class="CG2-series__authors">
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a>
+          <a href=""><img src="__dummy__80x80" alt="杉原 幸次郎" width="40" height="40"></a>
         </div>
-        <div class="CG2-series__authorName">小山田 晃浩 | フロントエンド・エンジニア</div>
+        <div class="CG2-series__authorName">杉原 幸次郎 | フロントエンド・エンジニア</div>
       </div>
       <div class="CG2-series__author">
         <div class="CG2-series__authorPic">
-          <a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a>
+          <a href=""><img src="__dummy__80x80" alt="長坂 菫" width="40" height="40"></a>
         </div>
-        <div class="CG2-series__authorName">小原 司 | UIデザイナー</div>
+        <div class="CG2-series__authorName">長坂 菫 | UIデザイナー</div>
       </div>
     </div>
   </div>
@@ -5010,15 +4986,14 @@ tag:
     <div class="CG2-series__authors">
       <div class="CG2-series__authorPicList">
         <ul>
-          <li><a href=""><img src="__dummy__80x80" alt="中村 享介" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="高津戸 壮" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="小山田 晃浩" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="佐川 沙織" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="河田 理香" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="尾上 友美" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="新田 道雄" width="40" height="40"></a></li>
           <li><a href=""><img src="__dummy__80x80" alt="ピクセル グリオ" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="外村 奈津子" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="山田 順久" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="山田 敬美" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="坂巻 翔大郎" width="40" height="40"></a></li>
-          <li><a href=""><img src="__dummy__80x80" alt="小原 司" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="安田 麻由" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="野間 夏子" width="40" height="40"></a></li>
+          <li><a href=""><img src="__dummy__80x80" alt="神戸 克巳" width="40" height="40"></a></li>
         </ul>
       </div>
     </div>
@@ -5231,7 +5206,7 @@ tag:
               <div class="CG2-articleHeader__authorImage">
                 <img src="__dummy__48x48" alt="">
               </div>
-              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorName">佐川 沙織</div>
               <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
             </a>
           </div>
@@ -5240,7 +5215,7 @@ tag:
               <div class="CG2-articleHeader__authorImage">
                 <img src="__dummy__48x48" alt="">
               </div>
-              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorName">佐川 沙織</div>
             </a>
           </div>
         </div>
@@ -5291,9 +5266,9 @@ tag:
           <div class="CG2-articleHeader__author">
             <a href="">
               <div class="CG2-articleHeader__authorImage">
-                <img src="__dummy__48x48" alt="坂巻 翔大郎">
+                <img src="__dummy__48x48" alt="佐川 沙織">
               </div>
-              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorName">佐川 沙織</div>
               <div class="CG2-articleHeader__authorTitle">フロントエンド・エンジニア</div>
             </a>
           </div>
@@ -5349,62 +5324,62 @@ tag:
         <div class="CG2-articleHeader__authors">
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="中村 享介"></div>
-              <div class="CG2-articleHeader__authorName">中村 享介</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="大澤 直子"></div>
+              <div class="CG2-articleHeader__authorName">大澤 直子</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="高津戸 壮"></div>
-              <div class="CG2-articleHeader__authorName">高津戸 壮</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="山口 弘一"></div>
+              <div class="CG2-articleHeader__authorName">山口 弘一</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="小山田 晃浩"></div>
-              <div class="CG2-articleHeader__authorName">小山田 晃浩</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="杉原 幸次郎"></div>
+              <div class="CG2-articleHeader__authorName">杉原 幸次郎</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="德田 和規"></div>
-              <div class="CG2-articleHeader__authorName">德田 和規</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="玉田 義之"></div>
+              <div class="CG2-articleHeader__authorName">玉田 義之</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="山田 順久"></div>
-              <div class="CG2-articleHeader__authorName">山田 順久</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="橋本 孝治"></div>
+              <div class="CG2-articleHeader__authorName">橋本 孝治</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="小原 司"></div>
-              <div class="CG2-articleHeader__authorName">小原 司</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="長坂 菫"></div>
+              <div class="CG2-articleHeader__authorName">長坂 菫</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="山田 敬美"></div>
-              <div class="CG2-articleHeader__authorName">山田 敬美</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="玉田 義之"></div>
+              <div class="CG2-articleHeader__authorName">玉田 義之</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="坂巻 翔大郎"></div>
-              <div class="CG2-articleHeader__authorName">坂巻 翔大郎</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="佐川 沙織"></div>
+              <div class="CG2-articleHeader__authorName">佐川 沙織</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="中島 直博"></div>
-              <div class="CG2-articleHeader__authorName">中島 直博</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="坪田 健之"></div>
+              <div class="CG2-articleHeader__authorName">坪田 健之</div>
             </a>
           </div>
           <div class="CG2-articleHeader__author">
             <a href="">
-              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="宇野 陽太"></div>
-              <div class="CG2-articleHeader__authorName">宇野 陽太</div>
+              <div class="CG2-articleHeader__authorImage"><img src="__dummy__48x48" alt="野間 夏子"></div>
+              <div class="CG2-articleHeader__authorName">野間 夏子</div>
             </a>
           </div>
         </div>
@@ -6467,6 +6442,8 @@ article.CG2-article {
             word-break: break-all; } }
     article.CG2-article table th {
       background: #eee; }
+    article.CG2-article table td {
+      background: #fff; }
   article.CG2-article figure {
     margin: 2em 0; }
     article.CG2-article figure img {
@@ -7348,7 +7325,7 @@ tag:
     <div class="CG2-authorList__item">
       <a href="#">
         <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
-        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__name">大澤 直子</div>
         <div class="CG2-authorList__title">代表取締役, フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
@@ -7357,7 +7334,7 @@ tag:
     <div class="CG2-authorList__item">
       <a href="#">
         <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
-        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__name">大澤 直子</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
@@ -7366,7 +7343,7 @@ tag:
     <div class="CG2-authorList__item">
       <a href="#">
         <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
-        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__name">大澤 直子</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
@@ -7375,7 +7352,7 @@ tag:
     <div class="CG2-authorList__item">
       <a href="#">
         <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
-        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__name">大澤 直子</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
@@ -7384,7 +7361,7 @@ tag:
     <div class="CG2-authorList__item">
       <a href="#">
         <div class="CG2-authorList__image"><img src="__dummy__96x96" alt="" width="48" height="48"></div>
-        <div class="CG2-authorList__name">中村 享介</div>
+        <div class="CG2-authorList__name">大澤 直子</div>
         <div class="CG2-authorList__title">フロントエンド・エンジニア</div>
         <div class="CG2-authorList__numOfPosts">記事数24</div>
       </a>
@@ -7519,7 +7496,7 @@ tag:
           <table>
             <tr>
               <th>Googleアカウント</th>
-              <td>oyamada@pxgrid.com</td>
+              <td>gurio@pxgrid.example</td>
             </tr>
           </table>
         </div>
@@ -7536,7 +7513,7 @@ tag:
           <div class="CG2-settings__fieldVGroup">
             <div class="CG2-settings__fieldHeader">メールマガジンを受信するメールアドレス</div>
             <div class="CG2-settings__fieldData">
-              <input type="email" value="oyamada@pxgrid.com">
+              <input type="email" value="gurio@pxgrid.example">
             </div>
           </div>
         </div>
@@ -7758,7 +7735,7 @@ tag:
 <div class="CG2-formProgress">
   <ol>
     <li>1. ログイン方法について</li>
-    <li class="CG2-formProgress__item--current">2. 決済方法選択</li>
+    <li class="CG2-formProgress__item--current">2. クレジットカード登録</li>
     <li>3. 登録完了</li>
   </ol>
 </div>
@@ -7814,52 +7791,114 @@ tag:
   - app-form
 ---
 
+ログイン方法について（未ログイン）
+
 ```html
 <div class="CG2-signupFrom">
-
   <div class="CG2-signupFrom__lead">
     購読料は月額800円（税抜）
     <div class="CG2-signupFrom__leadSub">
-      PayPal払いなら30日間無料
+      初回登録時は30日間無料
     </div>
   </div>
-
-  <div class="CG2-signupFrom__information">
-    <p>支払い処理中にエラーが発生しました</p>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a href="" class="CG2-button CG2-button--primary">
+        Googleアカウントを使用して<br class="CG2--disableLargeScreen CG2--disableMiddleScreen">CodeGridにログイン</a></li>
+    </ul>
+    <div class="CG2-signupFrom__buttonContainerText">
+      <p>
+        ※CodeGridの購読にはGoogleアカウントが必要です。<br>
+        <a href="https://accounts.google.com/SignUp" target="_blank">Googleアカウント作成</a>
+      </p>
+    </div>
   </div>
+  <div class="CG2-signupFrom__buttonContainer">
+    <ul>
+      <li><a class="CG2-button" href="">購読済みの方はログイン</a></li>
+    </ul>
+  </div>
+</div>
+```
 
+ログイン方法について（ログイン済み）
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__lead">
+    購読料は月額800円（税抜）
+    <div class="CG2-signupFrom__leadSub">
+      初回登録時は30日間無料
+    </div>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a href="" class="CG2-button CG2-button--primary">このアカウントで購読する</a></li>
+    </ul>
+    <div class="CG2-signupFrom__buttonContainerText">
+      <p>
+        現在 gurio@pxgrid.example でログインしています<br>
+        <a href="">別のGoogleアカウントで購読するには一度ログアウトする必要があります。</a>
+      </p>
+    </div>
+  </div>
+</div>
+```
+
+クレジットカードを登録
+
+```html
+<div class="CG2-signupFrom">
   <div class="CG2-signupFrom__text">
-    <p>お手数ですがもう一度手続きをおこなってください。</p>
+    <p>CodeGridを購読いただくためには、<a href="https://www.codegrid.net/terms.html" target="_blank">利用規約</a>への同意が必要です。</p>
   </div>
-
   <div class="CG2-signupFrom__check">
     <label><input type="checkbox">利用規約に同意する</label>
   </div>
-
-  <div class="CG2-signupFrom__buttonContainer">
-    <ul>
-      <li><a class="CG2-button CG2-button--primary" href="#">再度支払い手続きをおこなう</a></li>
-    </ul>
-    <div class="CG2-signupFrom__buttonContainerText">
-      <p>※CodeGridの購読にはGoogleアカウントが必要です。　<a href="#">Googleアカウント作成</a></p>
-    </div>
-  </div>
-
   <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
     <ul>
-      <li><a class="CG2-button CG2-button--primary" href="#">PayPalで支払う</a></li>
+      <li><a class="CG2-button CG2-button--primary">クレジットカードを登録</a></li>
     </ul>
-    <ul>
-      <li><a class="CG2-button CG2-button--primary" href="#">WebMoney 1ヶ月分</a></li>
-      <li><a class="CG2-button CG2-button--primary" href="#">WebMoney 1年分</a></li>
-    </ul>
-    <div class="CG2-signupFrom__buttonContainerText">
-      <p>※CodeGridの購読にはGoogleアカウントが必要です。　<a href="#">Googleアカウント作成</a></p>
-    </div>
   </div>
+</div>
+```
 
+登録完了
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__lead">
+    購読手続きが完了しました！
+  </div>
+  <div class="CG2-signupFrom__buttonContainer CG2-signupFrom__buttonContainer--fullWidth">
+    <ul>
+      <li><a class="CG2-button CG2-button--primary">記事を読む</a></li>
+    </ul>
+  </div>
+  <div class="CG2-signupFrom__text">
+    <p><a href="">CodeGrid運営からのごあいさつ記事へ</a></p>
+  </div>
+</div>
+```
+
+エラー
+
+```html
+<div class="CG2-signupFrom">
+  <div class="CG2-signupFrom__information">
+    <p>支払い処理中にエラーが発生しました</p>
+  </div>
+  <div class="CG2-signupFrom__text">
+    <p>お手数ですがもう一度手続きをおこなってください。</p>
+  </div>
+  <div class="CG2-signupFrom__buttonContainer">
+    <ul>
+      <li><a class="CG2-button CG2-button--primary">再度支払い手続きをおこなう</a></li>
+    </ul>
+  </div>
   <div class="CG2-signupFrom__annotation">
     <p>再度エラーになる場合は以下よりお問い合わせください。</p>
+    <p><a href="https://www.codegrid.net/inquiry.html" target="_blank">お問い合わせフォーム</a></p>
   </div>
 </div>
 ```

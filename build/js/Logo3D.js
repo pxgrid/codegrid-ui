@@ -84,7 +84,7 @@ CG2.Logo3D = ( function () {
 
   Logo3D.prototype = {
 
-    linebrake: function ( state ) {
+    breakIntoLines: function ( state ) {
 
       if (
          state && !this.isNoWrap ||
@@ -112,7 +112,7 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 3 ].geometry.applyMatrix( m );
 
         m.set(
-          1, 0, 0, -290 - 90 + 40,
+          1, 0, 0, -290 - 90 + 60,
           0, 1, 0, -100,
           0, 0, 1,    0,
           0, 0, 0,    1
@@ -139,7 +139,7 @@ CG2.Logo3D = ( function () {
         this.letterMeshes[ 3 ].geometry.applyMatrix( m );
 
         m.set(
-          1, 0, 0,  290 + 90 - 40,
+          1, 0, 0,  290 + 90 - 60,
           0, 1, 0,  100,
           0, 0, 1,    0,
           0, 0, 0,    1
@@ -251,15 +251,15 @@ CG2.Logo3D = ( function () {
   // SVG の polyline 要素の points 属性を配列にしてロゴ部分に使う
   // 1グリッドはSVG内で10刻み
   Logo3D.SVGPolylines = [
-    [ [ 90, 0 ], [ 0, 0 ], [ 0, 180 ], [ 90, 180 ] ], // C
-    [ [ 140, 70 ], [ 230, 70 ], [ 230, 180 ], [ 140, 180 ], [ 140, 70 ] ], // o
-    [ [ 350, 0 ], [ 350, 180 ], [ 280, 180 ], [ 280, 70 ], [ 350, 70 ] ],  // d
-    [ [ 400, 120 ], [ 490, 120 ], [ 490, 70 ], [ 400, 70 ], [ 400, 180 ], [ 490, 180 ] ], // e
+    /* C */ [ [ 90, 0 ], [ 0, 0 ], [ 0, 180 ], [ 90, 180 ] ],
+    /* o */ [ [ 130, 70 ], [ 130, 180 ], [ 220, 180 ], [ 220, 70 ], [ 130, 70 ] ],
+    /* d */ [ [ 350, 70 ], [ 260, 70 ], [ 260, 180 ], [ 350, 180 ], [ 350, 0 ] ],
+    /* e */ [ [ 390, 120 ], [ 480, 120 ], [ 480, 70 ], [ 390, 70 ], [ 390, 180 ], [ 480, 180 ] ],
 
-    [ [ 670 - 40, 0 ], [580 - 40, 0 ], [ 580 - 40, 180 ], [ 670 - 40, 180 ], [ 670 - 40, 80 ] ], //G
-    [ [ 760 - 40, 70 ], [720 - 40, 70 ], [ 720 - 40, 180 ] ], //r
-    [ [ 800 - 40, 70 ], [800 - 40, 180 ] ], //i
-    [ [ 920 - 40, 0 ], [920 - 40, 180 ], [850 - 40, 180 ], [ 850 - 40, 70 ], [ 920 - 40, 70 ] ]//d
+    /* G */ [ [ 610, 0 ], [ 520, 0 ], [ 520, 180 ], [ 610, 180 ], [ 610, 70 ] ],
+    /* r */ [ [ 650, 180 ], [ 650, 70 ], [ 700, 70 ] ],
+    /* i */ [ [ 740, 70 ], [ 740, 180 ] ],
+    /* d */ [ [ 870, 70 ], [ 780, 70 ], [ 780, 180 ], [ 870, 180 ], [ 870, 0 ] ]
   ];
 
 
@@ -575,7 +575,7 @@ CG2.Logo3D = ( function () {
 
     }
 
-    if ( that.isVisible() ) {
+    if ( this.isVisible() ) {
 
       this.play();
       return;
@@ -611,8 +611,8 @@ CG2.Logo3D = ( function () {
 
     }
 
-    var needsLineBrake = aspect <= 1.4;
-    this.linebrake( needsLineBrake );
+    var needsLineBreak = aspect <= 1.4;
+    this.breakIntoLines( needsLineBreak );
 
     this.renderer.setSize( this.width, this.height );
     this.camera.aspect = aspect;
