@@ -1,8 +1,5 @@
 version: 2.1
 
-orbs:
-  aws-s3: circleci/aws-s3@1.0.15
-
 jobs:
   test-setup:
     docker:
@@ -21,10 +18,6 @@ jobs:
       - checkout
       - run: npm ci
       - run: npm run build
-      - aws-s3/sync:
-          from: build
-          to: s3://ui.codegrid.net
-          arguments: --delete --acl public-read
 
 workflows:
   version: 2
