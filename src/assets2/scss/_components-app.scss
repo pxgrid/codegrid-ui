@@ -4363,6 +4363,40 @@ tag:
   }
 }
 
+/* ==========================================================================
+   記事内のビデオ
+   ========================================================================== */
+/*
+---
+name: article
+category:
+  - Blocks/app
+tag:
+  - app-item
+  - app-item-article
+---
+
+記事内にあるビデオ
+
+```html
+<article class="CG2-article">
+
+  <p>ビデオです。</p>
+
+  <video src="..." controls muted></video>
+
+</article>
+```
+
+*/
+article.CG2-article video {
+  display: block;
+  max-width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  background-color: #eee;
+}
+
 
 /* ==========================================================================
    Chromeで印刷時に日本語が消えるバグへの対応
