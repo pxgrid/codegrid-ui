@@ -3,14 +3,14 @@ jobs:
   build:
     working_directory: /workspace
     docker:
-      - image: node:6
+      - image: node:12
         environment:
           TZ: Asia/Tokyo
     steps:
       - checkout
       - run:
           name: Install dependencies
-          command: npm install
+          command: npm ci
       - deploy:
           name: Deploying to S3 (on master only)
           command: |
