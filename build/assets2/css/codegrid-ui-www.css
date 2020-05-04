@@ -1051,6 +1051,10 @@ section.CG2-form {
 .CG2-form__table select {
   -moz-appearance: initial; }
 
+.CG2-form__table :-ms-input-placeholder {
+  opacity: 1;
+  color: #767676; }
+
 .CG2-form__table ::placeholder {
   opacity: 1;
   color: #767676; }

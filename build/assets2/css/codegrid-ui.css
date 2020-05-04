@@ -2203,7 +2203,6 @@ html.js-drawer--show .CG2-drawer__panel {
 
 html.js-drawer--dragging,
 html.js-drawer--dragging * {
-  cursor: -webkit-grabbing;
   cursor: grabbing; }
 
 html:not(.js-drawer--dragging) .CG2-drawer__panel {
@@ -5467,10 +5466,10 @@ tag:
 .CG2-articleHeader__categoryName {
   letter-spacing: 0.2em;
   line-height: 50px;
-  -webkit-writing-mode: vertical-rl;
   -ms-writing-mode: tb-rl;
       writing-mode: tb-rl;
-  writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+      writing-mode: vertical-rl;
   margin: auto; }
   @media screen and (max-width: 767px) {
     .CG2-articleHeader__categoryName {
@@ -5478,10 +5477,10 @@ tag:
       letter-spacing: 0;
       line-height: normal;
       vertical-align: middle;
-      -webkit-writing-mode: inherit;
       -ms-writing-mode: inherit;
           writing-mode: inherit;
-      writing-mode: inherit;
+      -ms-writing-mode: inherit;
+          writing-mode: inherit;
       display: table-cell;
       padding-left: 10px; } }
 
@@ -6230,20 +6229,20 @@ tag:
       padding-top: 0;
       border-top: none; } }
   .CG2-articleSeriesNav__inner ul {
-    -webkit-writing-mode: vertical-rl;
     -ms-writing-mode: tb-rl;
         writing-mode: tb-rl;
-    writing-mode: vertical-rl;
+    -ms-writing-mode: tb-rl;
+        writing-mode: vertical-rl;
     list-style: none;
     width: 8em;
     padding: 0;
     margin: 0 auto 20px; }
     @media screen and (max-width: 979px) {
       .CG2-articleSeriesNav__inner ul {
-        -webkit-writing-mode: horizontal-tb;
         -ms-writing-mode: lr-tb;
             writing-mode: lr-tb;
-        writing-mode: horizontal-tb;
+        -ms-writing-mode: lr-tb;
+            writing-mode: horizontal-tb;
         width: auto;
         margin: 0; } }
   .CG2-articleSeriesNav__inner li {
