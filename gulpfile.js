@@ -148,9 +148,6 @@ gulp.task('guide', () => {
   return gulp.src('./aigis_config.yml').pipe(aigis());
 });
 
-// todo: スタイルガイドのHTMLの変更を検知して更新するタスク
-// todo: アイコンフォント用SVGファイルの変更を検知するタスク（要るかな）
-
 gulp.task('watch:css', () => {
   return gulp.watch('./src/assets2/scss/**/*.scss', gulp.series('css'));
 });
